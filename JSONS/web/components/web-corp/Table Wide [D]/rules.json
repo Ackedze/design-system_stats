@@ -106,6 +106,44 @@
       "ruleText": "Scheduled-части таблиц являются lifecycle context для агента. Не считай scheduled status дизайн-нарушением, если не найден отдельный pattern или exact design rule."
     },
     {
+      "ruleId": "component:web-corp.table-wide-d.column-controls-min-width",
+      "severity": "error",
+      "source": "composition-contract",
+      "appliesTo": "component.composition",
+      "checkType": "deterministic",
+      "matchKind": "exact_component_rule",
+      "conditions": {
+        "component": "Table Wide [D]",
+        "cell": "[D] HeadCell",
+        "hasVisibleColumnControls": true
+      },
+      "requiredComposition": {
+        "minColumnWidthPx": 160,
+        "minGapBetweenTitleAndControlsPx": 8,
+        "controls": [
+          "Sorting",
+          "HeaderAddon",
+          "ColumnControl"
+        ],
+        "measurement": "column width must fit visible title text plus all visible controls without bounding-box intersections",
+        "dateColumnOverride": {
+          "headerExamples": [
+            "Дата",
+            "Дата заявки",
+            "Дата создания",
+            "Дата изменения"
+          ],
+          "minColumnWidthPx": 160
+        }
+      },
+      "forbidden": {
+        "overlapBetweenControls": true,
+        "overlapBetweenTitleAndControls": true,
+        "columnWidthBelowRequiredMinimum": true
+      },
+      "ruleText": "Колонка Table Wide [D], в заголовке которой видны управляющие элементы Sorting, HeaderAddon или ColumnControl, должна иметь ширину, достаточную для текста и всех controls. Для колонок даты минимальная ширина 160 px. Между текстом заголовка и controls должен сохраняться зазор не меньше 8 px; управляющие элементы не должны пересекаться друг с другом или с текстом. Если ширины недостаточно, увеличь колонку или используй корректное сокращение текста без наложения controls."
+    },
+    {
       "ruleId": "component:web-corp.table-wide-d.background-plate-wrapper-in-content",
       "severity": "error",
       "source": "composition-contract",

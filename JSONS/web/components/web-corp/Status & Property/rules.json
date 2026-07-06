@@ -68,6 +68,37 @@
       "appliesTo": "component.status",
       "checkType": "manual",
       "ruleText": "Lifecycle status компонента является контекстом для агента. Не считай его дизайн-нарушением, если не найден отдельный pattern или exact design rule."
+    },
+    {
+      "ruleId": "component:web-corp.status-property.status-preset-contrast-on-grey-surface",
+      "severity": "error",
+      "source": "composition-contract",
+      "appliesTo": "variant.Style",
+      "checkType": "deterministic",
+      "matchKind": "exact_component_rule",
+      "conditions": {
+        "components": [
+          "🔒 [D] StatusPreset",
+          "🔒 [M] StatusPreset",
+          "[D] StatusPreset",
+          "[M] StatusPreset"
+        ],
+        "variantProperty": "Style",
+        "backgroundSurface": [
+          "grey",
+          "neutral",
+          "page-grey",
+          "surface-grey",
+          "CorporateContent grey background"
+        ]
+      },
+      "requiredVariant": {
+        "Style": "Contrast"
+      },
+      "forbiddenVariant": {
+        "Style": "Muted"
+      },
+      "ruleText": "Если StatusPreset размещён на сером или нейтральном фоне страницы/контентной области, используй Style=Contrast. Не используй Style=Muted на сером фоне: muted-версия теряет контраст и хуже отделяется от поверхности. Для белого или явно контрастного контейнера Style=Muted допустим, если это соответствует статусной семантике и соседним компонентам."
     }
   ]
 }
