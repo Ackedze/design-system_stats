@@ -97,40 +97,7 @@
           "CorporatePage"
         ]
       },
-      "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context. Для таблицы в CorporateContent, вложенной в [D] BackgroundPlateSlot table wrapper, контекстный baseline padding слота: top 0 px, right 16 px, bottom 16 px, left 16 px; не сравнивай этот случай со standalone padding 24 px."
-    },
-    {
-      "ruleId": "component:web-corp.corporate-page.table-wrapper-background-plate-slot-padding",
-      "severity": "info",
-      "source": "composition-contract",
-      "appliesTo": "layout.padding.*",
-      "checkType": "deterministic",
-      "matchKind": "exact_component_rule",
-      "conditions": {
-        "ancestorComponent": "[D] CorporateContent",
-        "nestedLayer": "[D] BackgroundPlateSlot",
-        "slotPurpose": "table wrapper",
-        "nestedComponentsAnyOf": [
-          "Table Basic [D]",
-          "Table Wide [D]",
-          "[D] Table Basic",
-          "[D] Table Wide"
-        ],
-        "placement": "CorporateContent body",
-        "isStandaloneTableBlock": true
-      },
-      "contextualBaseline": {
-        "layout.padding.top": 0,
-        "layout.padding.right": 16,
-        "layout.padding.bottom": 16,
-        "layout.padding.left": 16
-      },
-      "classification": {
-        "whenActualMatchesContextualBaseline": "allowed_contextual_baseline",
-        "doNotReportAsStandaloneCustomization": true,
-        "doNotRecommendResetToStandalonePadding": true
-      },
-      "ruleText": "Внутри [D] CorporateContent таблица, размещённая как самостоятельный блок, должна лежать в [D] BackgroundPlate через [D] BackgroundPlateSlot. Для этого слота padding top 0 px, right 16 px, bottom 16 px, left 16 px является контекстным baseline, поэтому отличие от standalone 24 px не является отдельной ошибкой BackgroundPlateSlot."
+      "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context."
     },
     {
       "ruleId": "component:web-corp.corporate-page.lifecycle-context-is-informational",
