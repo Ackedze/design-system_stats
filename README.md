@@ -1,22 +1,45 @@
-# design-system_agentic
+# design-system_stats
 
-Apollo agent and component contract artifacts for the AB design system.
+Единое хранилище JSON-отчётов Apollo.
 
-This repository contains agent-facing component files and the Apollo runtime
-contract index:
+Репозиторий предназначен только для статистики проверок, которую Apollo
+передаёт через Supabase Edge Function. Каталоги дизайн-системы, индексы,
+паттерны и agentic-контракты здесь не хранятся.
 
-- `agent-context.json`
-- `audit-mapping.json`
-- `composition-contract.json`
-- `contract.generated.json`
-- `contract.overrides.json`
-- `examples.json`
-- `rules.json`
-- component-level `README.md`
-- `JSONS/apollo/indexes/componentContractIndex.json`
+## Структура
 
-Raw web Figma catalogs remain in `design-system_ab`. ABM catalogs live in
-`desing-system_abm`.
+```text
+apollo/
+  stats/
+    <figma-user>/
+      dd-mm-yyyy/
+        <figma-user>_dd-mm-yyyy_hh-mm-ss.json
+        <figma-user>_dd-mm-yyyy_hh-mm-ss_agent.json
+```
 
-See `AGENTIC_FILE_TYPES.md` for file schemas, applicability metadata and usage
-rules.
+## Типы отчётов
+
+- `*.json` — полный технический отчёт Apollo для отладки аудита.
+- `*_agent.json` — компактный отчёт для отправки в корпоративного агента.
+
+## Публикация
+
+Production-сборка Apollo не пишет в репозиторий напрямую. Плагин отправляет
+отчёт в Supabase Edge Function `apollo-stats`, а функция уже публикует JSON в
+этот репозиторий.
+
+При переезде с `design-system_ab` нужно обновить настройки Edge Function:
+
+- целевой GitHub repo: `Ackedze/design-system_stats`;
+- целевая ветка: `main`;
+- путь внутри repo: `apollo/stats`.
+
+## Что не хранить здесь
+
+- raw-каталоги Figma;
+- `referenceSourcesMVP.json`;
+- `componentContractIndex.json`;
+- `agent-context.json`, `rules.json`, `contract.generated.json` и другие
+  agentic-файлы компонентов;
+- markdown-паттерны дизайн-системы.
+
