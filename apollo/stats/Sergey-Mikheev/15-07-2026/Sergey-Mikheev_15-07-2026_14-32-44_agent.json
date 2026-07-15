@@ -1,0 +1,2685 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1103601421254724802-1784118764624-muptvit6:agent",
+  "sourceReportId": "apollo-1103601421254724802-1784118764624-muptvit6",
+  "generatedAt": "2026-07-15T12:32:44.624Z",
+  "suggestedFileName": "Sergey-Mikheev_15-07-2026_14-32-44_agent.json",
+  "user": {
+    "id": "1103601421254724802",
+    "name": "Sergey Mikheev",
+    "slug": "Sergey-Mikheev"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.1.39"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "[MW] Тарифы: Просмотр + Смена",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "iOS",
+    "startedAt": "2026-07-15T12:32:06.114Z",
+    "finishedAt": "2026-07-15T12:32:44.624Z",
+    "durationMs": 38510,
+    "selection": [
+      {
+        "nodeId": "10574:35774",
+        "name": "Тариф",
+        "nodeType": "FRAME",
+        "path": "Аналитика комиссий / Тариф",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 117,
+    "problemOccurrenceCount": 103,
+    "categoryCounts": {
+      "deprecatedComponents": 7,
+      "deprecatedStyles": 0,
+      "customStyles": 0,
+      "updates": 0,
+      "customizations": 0,
+      "localComponents": 0,
+      "detachedComponents": 0,
+      "presets": 3,
+      "technicalComponents": 0,
+      "currentComponents": 13,
+      "wrongChannel": 93,
+      "themization": 0
+    },
+    "includedFindingCount": 103,
+    "omittedCurrentComponentCount": 13
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with severity=error and matchKind=exact_component_rule for the same property/change.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 7,
+      "includedCount": 7,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 3,
+      "includedCount": 3,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 93,
+      "includedCount": 93,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "deprecatedComponents",
+      "severityHint": "high",
+      "title": "Устаревший компонент",
+      "node": {
+        "id": "I10574:35782;12184:137480",
+        "name": "🔄 ↔ SpacingHorizontal",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Top / cost / BannerWrapperMobile / 🔄 ↔ SpacingHorizontal",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 ↔ SpacingHorizontal",
+        "key": "a3653350bc0a98ef797f83b76fdb7c488cf51536",
+        "library": "Web :: Old Core Default Components",
+        "sourceFile": "web/components/web-old-core-default-components/Web _ Old Core Default Components -- Spacing.json"
+      },
+      "variant": {
+        "name": "Size=m | 16px",
+        "key": "a3653350bc0a98ef797f83b76fdb7c488cf51536"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "deprecatedComponents",
+      "severityHint": "high",
+      "title": "Устаревший компонент",
+      "node": {
+        "id": "I10574:35782;12184:137483",
+        "name": "🔄 ↕ SpacingVertical",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Top / cost / BannerWrapperMobile / Layout / 🔄 ↕ SpacingVertical",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 ↕ SpacingVertical",
+        "key": "cb607a2578fd1f34183efaf6dada44c295e9fe91",
+        "library": "Web :: Old Core Default Components",
+        "sourceFile": "web/components/web-old-core-default-components/Web _ Old Core Default Components -- Spacing.json"
+      },
+      "variant": {
+        "name": "Size=s | 12px",
+        "key": "cb607a2578fd1f34183efaf6dada44c295e9fe91"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "deprecatedComponents",
+      "severityHint": "high",
+      "title": "Устаревший компонент",
+      "node": {
+        "id": "I10574:35782;12184:137486",
+        "name": "🔄 ↔ SpacingHorizontal",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Top / cost / BannerWrapperMobile / Layout / ContentLayout / Content / 🔄 ↔ SpacingHorizontal",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 ↔ SpacingHorizontal",
+        "key": "e5971791b96066c4ecfde13624dd405507f7b971",
+        "library": "Web :: Old Core Default Components",
+        "sourceFile": "web/components/web-old-core-default-components/Web _ Old Core Default Components -- Spacing.json"
+      },
+      "variant": {
+        "name": "Size=Zero",
+        "key": "e5971791b96066c4ecfde13624dd405507f7b971"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "deprecatedComponents",
+      "severityHint": "high",
+      "title": "Устаревший компонент",
+      "node": {
+        "id": "I10574:35782;12184:137494",
+        "name": "🔄 ↔ SpacingHorizontal",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Top / cost / BannerWrapperMobile / Layout / ContentLayout / Content / 🔄 ↔ SpacingHorizontal",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 ↔ SpacingHorizontal",
+        "key": "8b6f97827f3c7b7eb10e4210f3ff04764f5e5a52",
+        "library": "Web :: Old Core Default Components",
+        "sourceFile": "web/components/web-old-core-default-components/Web _ Old Core Default Components -- Spacing.json"
+      },
+      "variant": {
+        "name": "Size=3xs | 02px",
+        "key": "8b6f97827f3c7b7eb10e4210f3ff04764f5e5a52"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "deprecatedComponents",
+      "severityHint": "high",
+      "title": "Устаревший компонент",
+      "node": {
+        "id": "I10574:35782;12184:137496",
+        "name": "🔄 ↔ SpacingHorizontal",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Top / cost / BannerWrapperMobile / Layout / ContentLayout / Content / 🔄 ↔ SpacingHorizontal",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 ↔ SpacingHorizontal",
+        "key": "e5971791b96066c4ecfde13624dd405507f7b971",
+        "library": "Web :: Old Core Default Components",
+        "sourceFile": "web/components/web-old-core-default-components/Web _ Old Core Default Components -- Spacing.json"
+      },
+      "variant": {
+        "name": "Size=Zero",
+        "key": "e5971791b96066c4ecfde13624dd405507f7b971"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "deprecatedComponents",
+      "severityHint": "high",
+      "title": "Устаревший компонент",
+      "node": {
+        "id": "I10574:35782;12184:137500",
+        "name": "🔄 ↕ SpacingVertical",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Top / cost / BannerWrapperMobile / Layout / 🔄 ↕ SpacingVertical",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 ↕ SpacingVertical",
+        "key": "cb607a2578fd1f34183efaf6dada44c295e9fe91",
+        "library": "Web :: Old Core Default Components",
+        "sourceFile": "web/components/web-old-core-default-components/Web _ Old Core Default Components -- Spacing.json"
+      },
+      "variant": {
+        "name": "Size=s | 12px",
+        "key": "cb607a2578fd1f34183efaf6dada44c295e9fe91"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "deprecatedComponents",
+      "severityHint": "high",
+      "title": "Устаревший компонент",
+      "node": {
+        "id": "I10574:35782;12184:137502",
+        "name": "🔄 ↔ SpacingHorizontal",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Top / cost / BannerWrapperMobile / 🔄 ↔ SpacingHorizontal",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 ↔ SpacingHorizontal",
+        "key": "a3653350bc0a98ef797f83b76fdb7c488cf51536",
+        "library": "Web :: Old Core Default Components",
+        "sourceFile": "web/components/web-old-core-default-components/Web _ Old Core Default Components -- Spacing.json"
+      },
+      "variant": {
+        "name": "Size=m | 16px",
+        "key": "a3653350bc0a98ef797f83b76fdb7c488cf51536"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "10574:35781",
+        "name": "🔒 [M] AmountHeadline",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Top / cost / 🔒 [M] AmountHeadline",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [M] AmountHeadline",
+        "key": "43da0c4a03340b0a536c3ab7262a0b5b975d5ce4",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- AmountStyles.json"
+      },
+      "variant": {
+        "name": "Style=Headline 30/36",
+        "key": "43da0c4a03340b0a536c3ab7262a0b5b975d5ce4"
+      },
+      "comparisonIssues": [
+        "Нет данных для скруглений в снапшоте для «Style=Headline 30/36 / Amount / Major / Major»",
+        "Нет данных для скруглений в снапшоте для «Style=Headline 30/36 / Amount / Currency / Currency»"
+      ]
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "10574:35784",
+        "name": "🔒 [M] ButtonStack",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Top / 🔒 [M] ButtonStack",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [M] ButtonStack",
+        "key": "0946de85408790654221b1af6200989fe8500387",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- ButtonStack [M].json"
+      },
+      "variant": {
+        "name": "Presets=Primary, Background=False",
+        "key": "0946de85408790654221b1af6200989fe8500387"
+      },
+      "comparisonIssues": [
+        "Нет данных для скруглений в снапшоте для «Presets=Primary, Background=False / Content / MainButtonStack / [M] Button / Text / Label»"
+      ]
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "10705:3366",
+        "name": "🔒 AmountParagraph",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / StackWrapper / 🔒 AmountParagraph",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 AmountParagraph",
+        "key": "d41ead6809bdacf2a1c4fec638bb9a9669f24ffd",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- AmountStyles.json"
+      },
+      "variant": {
+        "name": "Style=Paragraph 14/20",
+        "key": "d41ead6809bdacf2a1c4fec638bb9a9669f24ffd"
+      },
+      "comparisonIssues": [
+        "Нет данных для скруглений в снапшоте для «Style=Paragraph 14/20 / Amount / Major / Major»",
+        "Нет данных для скруглений в снапшоте для «Style=Paragraph 14/20 / Amount / Minor / Minor»",
+        "Нет данных для скруглений в снапшоте для «Style=Paragraph 14/20 / Amount / Currency / Currency»"
+      ]
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "10574:35780",
+        "name": "[M] TitleView",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Top / cost / [M] TitleView",
+        "visible": true
+      },
+      "component": {
+        "name": "[M] TitleView",
+        "key": "2a7ff9ecfca8d440fa3a4422df7a1d8c0a97fe02",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "View=Small, Skeleton=False",
+        "key": "2a7ff9ecfca8d440fa3a4422df7a1d8c0a97fe02"
+      },
+      "comparisonIssues": [
+        "Нет данных для скруглений в снапшоте для «View=Small, Skeleton=False / MainContent / Heading / Title»"
+      ]
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "10574:35781",
+        "name": "🔒 [M] AmountHeadline",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Top / cost / 🔒 [M] AmountHeadline",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [M] AmountHeadline",
+        "key": "43da0c4a03340b0a536c3ab7262a0b5b975d5ce4",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- AmountStyles.json"
+      },
+      "variant": {
+        "name": "Style=Headline 30/36",
+        "key": "43da0c4a03340b0a536c3ab7262a0b5b975d5ce4"
+      },
+      "comparisonIssues": [
+        "Нет данных для скруглений в снапшоте для «Style=Headline 30/36 / Amount / Major / Major»",
+        "Нет данных для скруглений в снапшоте для «Style=Headline 30/36 / Amount / Currency / Currency»"
+      ]
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10574:35781;57388:16335",
+        "name": "Amount",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Top / cost / 🔒 [M] AmountHeadline / Amount",
+        "visible": true
+      },
+      "component": {
+        "name": "Amount",
+        "key": "fe3399f71c9e0971646821d935b64657e462c28e",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Amount.json"
+      },
+      "variant": {
+        "name": "Amount",
+        "key": "fe3399f71c9e0971646821d935b64657e462c28e"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10574:35781;57388:16335;485:67102",
+        "name": "Major",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Top / cost / 🔒 [M] AmountHeadline / Amount / Major",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Major",
+        "key": "a833c02e4fcb75fea1a89bf786912e108b8f93ba",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Amount.json"
+      },
+      "variant": {
+        "name": "🔩 Major",
+        "key": "a833c02e4fcb75fea1a89bf786912e108b8f93ba"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10574:35781;57388:16335;485:67104",
+        "name": "Currency",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Top / cost / 🔒 [M] AmountHeadline / Amount / Currency",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Currency",
+        "key": "5bef50328b151427bf28c514c2266233e2bfbf6c",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Amount.json"
+      },
+      "variant": {
+        "name": "Opacity=False, Type=₽",
+        "key": "5bef50328b151427bf28c514c2266233e2bfbf6c"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "10574:35782",
+        "name": "BannerWrapperMobile",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Top / cost / BannerWrapperMobile",
+        "visible": true
+      },
+      "component": {
+        "name": "BannerWrapperMobile",
+        "key": "3e76347e60d7fb3fae0d39df9c2d9bd74df6468c",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BannerWrapperMobile [M].json"
+      },
+      "variant": {
+        "name": "Banner=False, Skeleton=False",
+        "key": "3e76347e60d7fb3fae0d39df9c2d9bd74df6468c"
+      },
+      "comparisonIssues": [
+        "Нет данных для скруглений в снапшоте для «Banner=False, Skeleton=False / Layout / ContentLayout / Content / TextContent / Title / wrapper / value»"
+      ]
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10574:35782;12184:137492",
+        "name": "Title",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Top / cost / BannerWrapperMobile / Layout / ContentLayout / Content / TextContent / Title",
+        "visible": true
+      },
+      "component": {
+        "name": ".TextContent",
+        "key": "81699889a399c7b7a24470daf642a7e477ce8eb8",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BannerWrapperMobile [M].json"
+      },
+      "variant": {
+        "name": "Type=Title",
+        "key": "81699889a399c7b7a24470daf642a7e477ce8eb8"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10574:35782;12184:137495",
+        "name": ".RightContent",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Top / cost / BannerWrapperMobile / Layout / ContentLayout / Content / .RightContent",
+        "visible": true
+      },
+      "component": {
+        "name": ".RightContent",
+        "key": "14d6bbaa485d4380a6f212cf75badec7bea64e4c",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BannerWrapperMobile [M].json"
+      },
+      "variant": {
+        "name": "Type=IconWrapper, Skeleton=No",
+        "key": "14d6bbaa485d4380a6f212cf75badec7bea64e4c"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "10574:35783",
+        "name": "[M] BackgroundPlate",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Top / cost / [M] BackgroundPlate",
+        "visible": true
+      },
+      "component": {
+        "name": "[M] BackgroundPlate",
+        "key": "41e2c5c17d573baf32ae78d01b69c0a3d7ba033c",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Position=Level 1 (outer)",
+        "key": "41e2c5c17d573baf32ae78d01b69c0a3d7ba033c"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10574:35783;66402:30705",
+        "name": "[M] Style Level 1",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Top / cost / [M] BackgroundPlate / [M] Style Level 1",
+        "visible": true
+      },
+      "component": {
+        "name": "[M] Style Level 1",
+        "key": "01b744c9f1d5183cd25aa5ac48759857487931b7",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "BackgroundColor=base-bg-alt (gray), Type=Primary, Skeleton=False",
+        "key": "01b744c9f1d5183cd25aa5ac48759857487931b7"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "10574:35784",
+        "name": "🔒 [M] ButtonStack",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Top / 🔒 [M] ButtonStack",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [M] ButtonStack",
+        "key": "0946de85408790654221b1af6200989fe8500387",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- ButtonStack [M].json"
+      },
+      "variant": {
+        "name": "Presets=Primary, Background=False",
+        "key": "0946de85408790654221b1af6200989fe8500387"
+      },
+      "comparisonIssues": [
+        "Нет данных для скруглений в снапшоте для «Presets=Primary, Background=False / Content / MainButtonStack / [M] Button / Text / Label»"
+      ]
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10574:35784;34796:35566",
+        "name": "[M] Button",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Top / 🔒 [M] ButtonStack / Content / MainButtonStack / [M] Button",
+        "visible": true
+      },
+      "component": {
+        "name": "[M] Button",
+        "key": "d5c2304aede89a2a8dc7512677bd0a77114a3cdd",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Button.json"
+      },
+      "variant": {
+        "name": "View=Primary, Size=56, Shape=Rectangular, SingleIcon=False, DisabledState=False",
+        "key": "d5c2304aede89a2a8dc7512677bd0a77114a3cdd"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10702:40684;20838:39966;20838:39928",
+        "name": "IconView",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / [M] BannerLongSlider / [M] BannerLong / Cross / IconView",
+        "visible": true
+      },
+      "component": {
+        "name": "IconView",
+        "key": "da76ef0432f226c9eccfa7b4a874ca7f3a82b164",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=24",
+        "key": "da76ef0432f226c9eccfa7b4a874ca7f3a82b164"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10702:40684;20838:39966;20838:39928;448:17389",
+        "name": "Shape",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / [M] BannerLongSlider / [M] BannerLong / Cross / IconView / Content / Shape / Shape",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Shape",
+        "key": "b4edd4bc79a58812bd3ad0186cf5f73d5f20eb3e",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconView.json"
+      },
+      "variant": {
+        "name": "Form=Circle",
+        "key": "b4edd4bc79a58812bd3ad0186cf5f73d5f20eb3e"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10702:40684;20838:39966;20838:39928;448:34345",
+        "name": "Content",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / [M] BannerLongSlider / [M] BannerLong / Cross / IconView / Content / ShapeContent / Content",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Content",
+        "key": "90f926b8dae92180c97b1ea25c9eba66cecff979",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=16, Type=Icon",
+        "key": "90f926b8dae92180c97b1ea25c9eba66cecff979"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10702:40684;20838:39966;20838:39930",
+        "name": "[M] BackgroundPlate",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / [M] BannerLongSlider / [M] BannerLong / [M] BackgroundPlate",
+        "visible": true
+      },
+      "component": {
+        "name": "[M] BackgroundPlate",
+        "key": "41e2c5c17d573baf32ae78d01b69c0a3d7ba033c",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Position=Level 1 (outer)",
+        "key": "41e2c5c17d573baf32ae78d01b69c0a3d7ba033c"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10702:40684;20838:39966;20838:39930;66402:30705",
+        "name": "[M] Style Level 1",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / [M] BannerLongSlider / [M] BannerLong / [M] BackgroundPlate / [M] Style Level 1",
+        "visible": true
+      },
+      "component": {
+        "name": "[M] Style Level 1",
+        "key": "01b744c9f1d5183cd25aa5ac48759857487931b7",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "BackgroundColor=base-bg-alt (gray), Type=Primary, Skeleton=False",
+        "key": "01b744c9f1d5183cd25aa5ac48759857487931b7"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "10574:35787",
+        "name": "[M] TitleView",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / [M] TitleView",
+        "visible": true
+      },
+      "component": {
+        "name": "[M] TitleView",
+        "key": "5df72d2bd34d87c914ed4ad3f834d912aea876e7",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "View=Medium, Skeleton=False",
+        "key": "5df72d2bd34d87c914ed4ad3f834d912aea876e7"
+      },
+      "comparisonIssues": [
+        "Нет данных для скруглений в снапшоте для «View=Medium, Skeleton=False / MainContent / Heading / Title»"
+      ]
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "10703:13689",
+        "name": "IconView",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / StackWrapper / IconView",
+        "visible": true
+      },
+      "component": {
+        "name": "IconView",
+        "key": "da76ef0432f226c9eccfa7b4a874ca7f3a82b164",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=24",
+        "key": "da76ef0432f226c9eccfa7b4a874ca7f3a82b164"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10703:13689;448:34345",
+        "name": "🔩 Content",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / StackWrapper / IconView / Content / ShapeContent / 🔩 Content",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Content",
+        "key": "656a48efd3ed9db44d549f4ab100f58a8dd1556d",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=24, Type=Icon",
+        "key": "656a48efd3ed9db44d549f4ab100f58a8dd1556d"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "10703:13935",
+        "name": "Text",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / StackWrapper / Text",
+        "visible": true
+      },
+      "component": {
+        "name": "Text",
+        "key": "418cef72a4f4b0e21dce94c09cf0081a1521ba07",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Text.json"
+      },
+      "variant": {
+        "name": "Text",
+        "key": "418cef72a4f4b0e21dce94c09cf0081a1521ba07"
+      },
+      "comparisonIssues": [
+        "Нет данных для скруглений в снапшоте для «Text / Content / Text»"
+      ]
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "10703:14079",
+        "name": "IconView",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / StackWrapper / IconView",
+        "visible": true
+      },
+      "component": {
+        "name": "IconView",
+        "key": "da76ef0432f226c9eccfa7b4a874ca7f3a82b164",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=24",
+        "key": "da76ef0432f226c9eccfa7b4a874ca7f3a82b164"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10703:14079;448:34345",
+        "name": "🔩 Content",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / StackWrapper / IconView / Content / ShapeContent / 🔩 Content",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Content",
+        "key": "656a48efd3ed9db44d549f4ab100f58a8dd1556d",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=24, Type=Icon",
+        "key": "656a48efd3ed9db44d549f4ab100f58a8dd1556d"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "10703:14080",
+        "name": "Text",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / StackWrapper / Text",
+        "visible": true
+      },
+      "component": {
+        "name": "Text",
+        "key": "418cef72a4f4b0e21dce94c09cf0081a1521ba07",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Text.json"
+      },
+      "variant": {
+        "name": "Text",
+        "key": "418cef72a4f4b0e21dce94c09cf0081a1521ba07"
+      },
+      "comparisonIssues": [
+        "Нет данных для скруглений в снапшоте для «Text / Content / Text»"
+      ]
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "10703:14103",
+        "name": "Indicator",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / StackWrapper / Indicator",
+        "visible": true
+      },
+      "component": {
+        "name": "Indicator",
+        "key": "2572746f3540564fc613831fdc7176eb26335874",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Indicator.json"
+      },
+      "variant": {
+        "name": "Size=20, View=White, Border=False",
+        "key": "2572746f3540564fc613831fdc7176eb26335874"
+      },
+      "comparisonIssues": [
+        "Нет данных для скруглений в снапшоте для «Size=20, View=White, Border=False / Count»"
+      ]
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "10703:14118",
+        "name": "IconView",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / StackWrapper / IconView",
+        "visible": true
+      },
+      "component": {
+        "name": "IconView",
+        "key": "da76ef0432f226c9eccfa7b4a874ca7f3a82b164",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=24",
+        "key": "da76ef0432f226c9eccfa7b4a874ca7f3a82b164"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10703:14118;448:34345",
+        "name": "🔩 Content",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / StackWrapper / IconView / Content / ShapeContent / 🔩 Content",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Content",
+        "key": "656a48efd3ed9db44d549f4ab100f58a8dd1556d",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=24, Type=Icon",
+        "key": "656a48efd3ed9db44d549f4ab100f58a8dd1556d"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "10703:14119",
+        "name": "Text",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / StackWrapper / Text",
+        "visible": true
+      },
+      "component": {
+        "name": "Text",
+        "key": "418cef72a4f4b0e21dce94c09cf0081a1521ba07",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Text.json"
+      },
+      "variant": {
+        "name": "Text",
+        "key": "418cef72a4f4b0e21dce94c09cf0081a1521ba07"
+      },
+      "comparisonIssues": [
+        "Нет данных для скруглений в снапшоте для «Text / Content / Text»"
+      ]
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "10703:14120",
+        "name": "Indicator",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / StackWrapper / Indicator",
+        "visible": true
+      },
+      "component": {
+        "name": "Indicator",
+        "key": "2572746f3540564fc613831fdc7176eb26335874",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Indicator.json"
+      },
+      "variant": {
+        "name": "Size=20, View=White, Border=False",
+        "key": "2572746f3540564fc613831fdc7176eb26335874"
+      },
+      "comparisonIssues": [
+        "Нет данных для скруглений в снапшоте для «Size=20, View=White, Border=False / Count»"
+      ]
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "10703:13686",
+        "name": "[M] BackgroundPlate",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] BackgroundPlate",
+        "visible": true
+      },
+      "component": {
+        "name": "[M] BackgroundPlate",
+        "key": "41e2c5c17d573baf32ae78d01b69c0a3d7ba033c",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Position=Level 1 (outer)",
+        "key": "41e2c5c17d573baf32ae78d01b69c0a3d7ba033c"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10703:13686;66402:30705",
+        "name": "[M] Style Level 1",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] BackgroundPlate / [M] Style Level 1",
+        "visible": true
+      },
+      "component": {
+        "name": "[M] Style Level 1",
+        "key": "cdc3f827449db161006abe2250f936b0ee27fafc",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "BackgroundColor=base-bg (white), Type=Primary, Skeleton=False",
+        "key": "cdc3f827449db161006abe2250f936b0ee27fafc"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "10574:36390",
+        "name": "[M] TitleView",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / [M] TitleView",
+        "visible": true
+      },
+      "component": {
+        "name": "[M] TitleView",
+        "key": "5df72d2bd34d87c914ed4ad3f834d912aea876e7",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "View=Medium, Skeleton=False",
+        "key": "5df72d2bd34d87c914ed4ad3f834d912aea876e7"
+      },
+      "comparisonIssues": [
+        "Нет данных для скруглений в снапшоте для «View=Medium, Skeleton=False / MainContent / Heading / Title»"
+      ]
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10574:36390;37705:55960",
+        "name": "[M] RightAddon",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / [M] TitleView / [M] RightAddon",
+        "visible": true
+      },
+      "component": {
+        "name": "[M] RightAddon",
+        "key": "efbd1dd110925087c38cdb156a1634b91bdb359a",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "Type=IconButton",
+        "key": "efbd1dd110925087c38cdb156a1634b91bdb359a"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10574:36390;37705:55960;116929:102933",
+        "name": "[D] IconButton",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / [M] TitleView / [M] RightAddon / [D] IconButton",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] IconButton",
+        "key": "48414fca829cc7122e12d22c6b49efb9e36e43c4",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconButton.json"
+      },
+      "variant": {
+        "name": "Size=24, View=Primary, TransparentBg=False",
+        "key": "48414fca829cc7122e12d22c6b49efb9e36e43c4"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10574:36390;37705:55960;116929:102933;603:60610",
+        "name": "Icon",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / [M] TitleView / [M] RightAddon / [D] IconButton / Icon",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Icon",
+        "key": "0acc12c55f8d55764ac0f21cd19061555a0ff057",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconButton.json"
+      },
+      "variant": {
+        "name": "Type=Icon 24",
+        "key": "0acc12c55f8d55764ac0f21cd19061555a0ff057"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "10703:14181",
+        "name": "Text",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / StackWrapper / Text",
+        "visible": true
+      },
+      "component": {
+        "name": "Text",
+        "key": "418cef72a4f4b0e21dce94c09cf0081a1521ba07",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Text.json"
+      },
+      "variant": {
+        "name": "Text",
+        "key": "418cef72a4f4b0e21dce94c09cf0081a1521ba07"
+      },
+      "comparisonIssues": [
+        "Нет данных для скруглений в снапшоте для «Text / Content / Text»"
+      ]
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "10705:3366",
+        "name": "🔒 AmountParagraph",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / StackWrapper / 🔒 AmountParagraph",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 AmountParagraph",
+        "key": "d41ead6809bdacf2a1c4fec638bb9a9669f24ffd",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- AmountStyles.json"
+      },
+      "variant": {
+        "name": "Style=Paragraph 14/20",
+        "key": "d41ead6809bdacf2a1c4fec638bb9a9669f24ffd"
+      },
+      "comparisonIssues": [
+        "Нет данных для скруглений в снапшоте для «Style=Paragraph 14/20 / Amount / Major / Major»",
+        "Нет данных для скруглений в снапшоте для «Style=Paragraph 14/20 / Amount / Minor / Minor»",
+        "Нет данных для скруглений в снапшоте для «Style=Paragraph 14/20 / Amount / Currency / Currency»"
+      ]
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10705:3366;57377:15929",
+        "name": "Amount",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / StackWrapper / 🔒 AmountParagraph / Amount",
+        "visible": true
+      },
+      "component": {
+        "name": "Amount",
+        "key": "fe3399f71c9e0971646821d935b64657e462c28e",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Amount.json"
+      },
+      "variant": {
+        "name": "Amount",
+        "key": "fe3399f71c9e0971646821d935b64657e462c28e"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10705:3366;57377:15929;485:67102",
+        "name": "Major",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / StackWrapper / 🔒 AmountParagraph / Amount / Major",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Major",
+        "key": "a833c02e4fcb75fea1a89bf786912e108b8f93ba",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Amount.json"
+      },
+      "variant": {
+        "name": "🔩 Major",
+        "key": "a833c02e4fcb75fea1a89bf786912e108b8f93ba"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10705:3366;57377:15929;485:67103",
+        "name": "Minor",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / StackWrapper / 🔒 AmountParagraph / Amount / Minor",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Minor",
+        "key": "1af9948d2ef74777f91e41a8d889ca28d036d7bb",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Amount.json"
+      },
+      "variant": {
+        "name": "Opacity=False",
+        "key": "1af9948d2ef74777f91e41a8d889ca28d036d7bb"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10705:3366;57377:15929;485:67104",
+        "name": "Currency",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / StackWrapper / 🔒 AmountParagraph / Amount / Currency",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Currency",
+        "key": "5bef50328b151427bf28c514c2266233e2bfbf6c",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Amount.json"
+      },
+      "variant": {
+        "name": "Opacity=False, Type=₽",
+        "key": "5bef50328b151427bf28c514c2266233e2bfbf6c"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "10857:65993",
+        "name": "[M] PureCell",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell",
+        "visible": true
+      },
+      "component": {
+        "name": "[M] PureCell",
+        "key": "2e857ccef1c4b5e406dc28c478081e3d254cd244",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- PureCell.json"
+      },
+      "variant": {
+        "name": "GraphicsSide=Left",
+        "key": "2e857ccef1c4b5e406dc28c478081e3d254cd244"
+      },
+      "comparisonIssues": [
+        "Нет данных для скруглений в снапшоте для «GraphicsSide=Left / Content / Body / Main / Row / Amount / Major / Major»",
+        "Нет данных для скруглений в снапшоте для «GraphicsSide=Left / Content / Body / Main / Row / Amount / Minor / Minor»",
+        "Нет данных для скруглений в снапшоте для «GraphicsSide=Left / Content / Body / Main / Row / Amount / Currency / Currency»"
+      ]
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10857:65993;203:2472",
+        "name": "IconView",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell / IconView",
+        "visible": true
+      },
+      "component": {
+        "name": "IconView",
+        "key": "c4b38625705e72815994262ee15404c780c432f2",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=20",
+        "key": "c4b38625705e72815994262ee15404c780c432f2"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10857:65993;203:2472;448:37824",
+        "name": "🔩 Content",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell / IconView / Content / ShapeContent / 🔩 Content",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Content",
+        "key": "4dd76d5f619901e4670c33f5796a163543fff93b",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=20, Type=Icon",
+        "key": "4dd76d5f619901e4670c33f5796a163543fff93b"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10857:65993;203:2477",
+        "name": "RowTitle",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell / Content / Body / Main / Row / RowTitle",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 [M] RowTitle",
+        "key": "2c482720f6c2fb15371750a2c1cedb1689a15573",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- PureCell.json"
+      },
+      "variant": {
+        "name": "Type=Subtitle 14-20",
+        "key": "2c482720f6c2fb15371750a2c1cedb1689a15573"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10857:65993;203:2478",
+        "name": "Amount",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell / Content / Body / Main / Row / Amount",
+        "visible": true
+      },
+      "component": {
+        "name": "Amount",
+        "key": "fe3399f71c9e0971646821d935b64657e462c28e",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Amount.json"
+      },
+      "variant": {
+        "name": "Amount",
+        "key": "fe3399f71c9e0971646821d935b64657e462c28e"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10857:65993;203:2478;485:67102",
+        "name": "Major",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell / Content / Body / Main / Row / Amount / Major",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Major",
+        "key": "a833c02e4fcb75fea1a89bf786912e108b8f93ba",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Amount.json"
+      },
+      "variant": {
+        "name": "🔩 Major",
+        "key": "a833c02e4fcb75fea1a89bf786912e108b8f93ba"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10857:65993;203:2478;485:67103",
+        "name": "Minor",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell / Content / Body / Main / Row / Amount / Minor",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Minor",
+        "key": "1af9948d2ef74777f91e41a8d889ca28d036d7bb",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Amount.json"
+      },
+      "variant": {
+        "name": "Opacity=False",
+        "key": "1af9948d2ef74777f91e41a8d889ca28d036d7bb"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10857:65993;203:2478;485:67104",
+        "name": "Currency",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell / Content / Body / Main / Row / Amount / Currency",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Currency",
+        "key": "5bef50328b151427bf28c514c2266233e2bfbf6c",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Amount.json"
+      },
+      "variant": {
+        "name": "Opacity=False, Type=₽",
+        "key": "5bef50328b151427bf28c514c2266233e2bfbf6c"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "10917:22973",
+        "name": "[M] PureCell",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell",
+        "visible": true
+      },
+      "component": {
+        "name": "[M] PureCell",
+        "key": "2e857ccef1c4b5e406dc28c478081e3d254cd244",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- PureCell.json"
+      },
+      "variant": {
+        "name": "GraphicsSide=Left",
+        "key": "2e857ccef1c4b5e406dc28c478081e3d254cd244"
+      },
+      "comparisonIssues": [
+        "Нет данных для скруглений в снапшоте для «GraphicsSide=Left / Content / Body / Main / Row / RowValue / Major / Major»",
+        "Нет данных для скруглений в снапшоте для «GraphicsSide=Left / Content / Body / Main / Row / RowValue / Minor / Minor»",
+        "Нет данных для скруглений в снапшоте для «GraphicsSide=Left / Content / Body / Main / Row / RowValue / Currency / Currency»"
+      ]
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10917:22973;203:2472",
+        "name": "IconView",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell / IconView",
+        "visible": true
+      },
+      "component": {
+        "name": "IconView",
+        "key": "c4b38625705e72815994262ee15404c780c432f2",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=20",
+        "key": "c4b38625705e72815994262ee15404c780c432f2"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10917:22973;203:2472;448:37824",
+        "name": "🔩 Content",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell / IconView / Content / ShapeContent / 🔩 Content",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Content",
+        "key": "4dd76d5f619901e4670c33f5796a163543fff93b",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=20, Type=Icon",
+        "key": "4dd76d5f619901e4670c33f5796a163543fff93b"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10917:22973;203:2477",
+        "name": "RowTitle",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell / Content / Body / Main / Row / RowTitle",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 [M] RowTitle",
+        "key": "2c482720f6c2fb15371750a2c1cedb1689a15573",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- PureCell.json"
+      },
+      "variant": {
+        "name": "Type=Subtitle 14-20",
+        "key": "2c482720f6c2fb15371750a2c1cedb1689a15573"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10917:22973;203:2478",
+        "name": "RowValue",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell / Content / Body / Main / Row / RowValue",
+        "visible": true
+      },
+      "component": {
+        "name": "Amount",
+        "key": "fe3399f71c9e0971646821d935b64657e462c28e",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Amount.json"
+      },
+      "variant": {
+        "name": "Amount",
+        "key": "fe3399f71c9e0971646821d935b64657e462c28e"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10917:22973;203:2478;485:67102",
+        "name": "Major",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell / Content / Body / Main / Row / RowValue / Major",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Major",
+        "key": "a833c02e4fcb75fea1a89bf786912e108b8f93ba",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Amount.json"
+      },
+      "variant": {
+        "name": "🔩 Major",
+        "key": "a833c02e4fcb75fea1a89bf786912e108b8f93ba"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10917:22973;203:2478;485:67103",
+        "name": "Minor",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell / Content / Body / Main / Row / RowValue / Minor",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Minor",
+        "key": "1af9948d2ef74777f91e41a8d889ca28d036d7bb",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Amount.json"
+      },
+      "variant": {
+        "name": "Opacity=False",
+        "key": "1af9948d2ef74777f91e41a8d889ca28d036d7bb"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10917:22973;203:2478;485:67104",
+        "name": "Currency",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell / Content / Body / Main / Row / RowValue / Currency",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Currency",
+        "key": "5bef50328b151427bf28c514c2266233e2bfbf6c",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Amount.json"
+      },
+      "variant": {
+        "name": "Opacity=False, Type=₽",
+        "key": "5bef50328b151427bf28c514c2266233e2bfbf6c"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "10917:23012",
+        "name": "[M] PureCell",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell",
+        "visible": true
+      },
+      "component": {
+        "name": "[M] PureCell",
+        "key": "2e857ccef1c4b5e406dc28c478081e3d254cd244",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- PureCell.json"
+      },
+      "variant": {
+        "name": "GraphicsSide=Left",
+        "key": "2e857ccef1c4b5e406dc28c478081e3d254cd244"
+      },
+      "comparisonIssues": [
+        "Нет данных для скруглений в снапшоте для «GraphicsSide=Left / Content / Body / Main / Row / RowValue / Major / Major»",
+        "Нет данных для скруглений в снапшоте для «GraphicsSide=Left / Content / Body / Main / Row / RowValue / Minor / Minor»",
+        "Нет данных для скруглений в снапшоте для «GraphicsSide=Left / Content / Body / Main / Row / RowValue / Currency / Currency»"
+      ]
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10917:23012;203:2472",
+        "name": "IconView",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell / IconView",
+        "visible": true
+      },
+      "component": {
+        "name": "IconView",
+        "key": "c4b38625705e72815994262ee15404c780c432f2",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=20",
+        "key": "c4b38625705e72815994262ee15404c780c432f2"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10917:23012;203:2472;448:37824",
+        "name": "🔩 Content",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell / IconView / Content / ShapeContent / 🔩 Content",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Content",
+        "key": "4dd76d5f619901e4670c33f5796a163543fff93b",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=20, Type=Icon",
+        "key": "4dd76d5f619901e4670c33f5796a163543fff93b"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10917:23012;203:2477",
+        "name": "RowTitle",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell / Content / Body / Main / Row / RowTitle",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 [M] RowTitle",
+        "key": "2c482720f6c2fb15371750a2c1cedb1689a15573",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- PureCell.json"
+      },
+      "variant": {
+        "name": "Type=Subtitle 14-20",
+        "key": "2c482720f6c2fb15371750a2c1cedb1689a15573"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10917:23012;203:2478",
+        "name": "RowValue",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell / Content / Body / Main / Row / RowValue",
+        "visible": true
+      },
+      "component": {
+        "name": "Amount",
+        "key": "fe3399f71c9e0971646821d935b64657e462c28e",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Amount.json"
+      },
+      "variant": {
+        "name": "Amount",
+        "key": "fe3399f71c9e0971646821d935b64657e462c28e"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10917:23012;203:2478;485:67102",
+        "name": "Major",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell / Content / Body / Main / Row / RowValue / Major",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Major",
+        "key": "a833c02e4fcb75fea1a89bf786912e108b8f93ba",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Amount.json"
+      },
+      "variant": {
+        "name": "🔩 Major",
+        "key": "a833c02e4fcb75fea1a89bf786912e108b8f93ba"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10917:23012;203:2478;485:67103",
+        "name": "Minor",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell / Content / Body / Main / Row / RowValue / Minor",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Minor",
+        "key": "1af9948d2ef74777f91e41a8d889ca28d036d7bb",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Amount.json"
+      },
+      "variant": {
+        "name": "Opacity=False",
+        "key": "1af9948d2ef74777f91e41a8d889ca28d036d7bb"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10917:23012;203:2478;485:67104",
+        "name": "Currency",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell / Content / Body / Main / Row / RowValue / Currency",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Currency",
+        "key": "5bef50328b151427bf28c514c2266233e2bfbf6c",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Amount.json"
+      },
+      "variant": {
+        "name": "Opacity=False, Type=₽",
+        "key": "5bef50328b151427bf28c514c2266233e2bfbf6c"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "10917:23051",
+        "name": "[M] PureCell",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell",
+        "visible": true
+      },
+      "component": {
+        "name": "[M] PureCell",
+        "key": "2e857ccef1c4b5e406dc28c478081e3d254cd244",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- PureCell.json"
+      },
+      "variant": {
+        "name": "GraphicsSide=Left",
+        "key": "2e857ccef1c4b5e406dc28c478081e3d254cd244"
+      },
+      "comparisonIssues": [
+        "Нет данных для скруглений в снапшоте для «GraphicsSide=Left / Content / Body / Main / Row / RowValue / Major / Major»",
+        "Нет данных для скруглений в снапшоте для «GraphicsSide=Left / Content / Body / Main / Row / RowValue / Minor / Minor»",
+        "Нет данных для скруглений в снапшоте для «GraphicsSide=Left / Content / Body / Main / Row / RowValue / Currency / Currency»"
+      ]
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10917:23051;203:2472",
+        "name": "IconView",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell / IconView",
+        "visible": true
+      },
+      "component": {
+        "name": "IconView",
+        "key": "c4b38625705e72815994262ee15404c780c432f2",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=20",
+        "key": "c4b38625705e72815994262ee15404c780c432f2"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10917:23051;203:2472;448:37824",
+        "name": "🔩 Content",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell / IconView / Content / ShapeContent / 🔩 Content",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Content",
+        "key": "4dd76d5f619901e4670c33f5796a163543fff93b",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=20, Type=Icon",
+        "key": "4dd76d5f619901e4670c33f5796a163543fff93b"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10917:23051;203:2477",
+        "name": "RowTitle",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell / Content / Body / Main / Row / RowTitle",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 [M] RowTitle",
+        "key": "2c482720f6c2fb15371750a2c1cedb1689a15573",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- PureCell.json"
+      },
+      "variant": {
+        "name": "Type=Subtitle 14-20",
+        "key": "2c482720f6c2fb15371750a2c1cedb1689a15573"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10917:23051;203:2478",
+        "name": "RowValue",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell / Content / Body / Main / Row / RowValue",
+        "visible": true
+      },
+      "component": {
+        "name": "Amount",
+        "key": "fe3399f71c9e0971646821d935b64657e462c28e",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Amount.json"
+      },
+      "variant": {
+        "name": "Amount",
+        "key": "fe3399f71c9e0971646821d935b64657e462c28e"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10917:23051;203:2478;485:67102",
+        "name": "Major",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell / Content / Body / Main / Row / RowValue / Major",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Major",
+        "key": "a833c02e4fcb75fea1a89bf786912e108b8f93ba",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Amount.json"
+      },
+      "variant": {
+        "name": "🔩 Major",
+        "key": "a833c02e4fcb75fea1a89bf786912e108b8f93ba"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10917:23051;203:2478;485:67103",
+        "name": "Minor",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell / Content / Body / Main / Row / RowValue / Minor",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Minor",
+        "key": "1af9948d2ef74777f91e41a8d889ca28d036d7bb",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Amount.json"
+      },
+      "variant": {
+        "name": "Opacity=False",
+        "key": "1af9948d2ef74777f91e41a8d889ca28d036d7bb"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10917:23051;203:2478;485:67104",
+        "name": "Currency",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell / Content / Body / Main / Row / RowValue / Currency",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Currency",
+        "key": "5bef50328b151427bf28c514c2266233e2bfbf6c",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Amount.json"
+      },
+      "variant": {
+        "name": "Opacity=False, Type=₽",
+        "key": "5bef50328b151427bf28c514c2266233e2bfbf6c"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "10917:23090",
+        "name": "[M] PureCell",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell",
+        "visible": true
+      },
+      "component": {
+        "name": "[M] PureCell",
+        "key": "2e857ccef1c4b5e406dc28c478081e3d254cd244",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- PureCell.json"
+      },
+      "variant": {
+        "name": "GraphicsSide=Left",
+        "key": "2e857ccef1c4b5e406dc28c478081e3d254cd244"
+      },
+      "comparisonIssues": [
+        "Нет данных для скруглений в снапшоте для «GraphicsSide=Left / Content / Body / Main / Row / RowValue / Major / Major»",
+        "Нет данных для скруглений в снапшоте для «GraphicsSide=Left / Content / Body / Main / Row / RowValue / Minor / Minor»",
+        "Нет данных для скруглений в снапшоте для «GraphicsSide=Left / Content / Body / Main / Row / RowValue / Currency / Currency»"
+      ]
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10917:23090;203:2472",
+        "name": "IconView",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell / IconView",
+        "visible": true
+      },
+      "component": {
+        "name": "IconView",
+        "key": "c4b38625705e72815994262ee15404c780c432f2",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=20",
+        "key": "c4b38625705e72815994262ee15404c780c432f2"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10917:23090;203:2472;448:37824",
+        "name": "Content",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell / IconView / Content / ShapeContent / Content",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Content",
+        "key": "4dd76d5f619901e4670c33f5796a163543fff93b",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=20, Type=Icon",
+        "key": "4dd76d5f619901e4670c33f5796a163543fff93b"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10917:23090;203:2477",
+        "name": "RowTitle",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell / Content / Body / Main / Row / RowTitle",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 [M] RowTitle",
+        "key": "2c482720f6c2fb15371750a2c1cedb1689a15573",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- PureCell.json"
+      },
+      "variant": {
+        "name": "Type=Subtitle 14-20",
+        "key": "2c482720f6c2fb15371750a2c1cedb1689a15573"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10917:23090;203:2478",
+        "name": "RowValue",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell / Content / Body / Main / Row / RowValue",
+        "visible": true
+      },
+      "component": {
+        "name": "Amount",
+        "key": "fe3399f71c9e0971646821d935b64657e462c28e",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Amount.json"
+      },
+      "variant": {
+        "name": "Amount",
+        "key": "fe3399f71c9e0971646821d935b64657e462c28e"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10917:23090;203:2478;485:67102",
+        "name": "Major",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell / Content / Body / Main / Row / RowValue / Major",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Major",
+        "key": "a833c02e4fcb75fea1a89bf786912e108b8f93ba",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Amount.json"
+      },
+      "variant": {
+        "name": "🔩 Major",
+        "key": "a833c02e4fcb75fea1a89bf786912e108b8f93ba"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10917:23090;203:2478;485:67103",
+        "name": "Minor",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell / Content / Body / Main / Row / RowValue / Minor",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Minor",
+        "key": "1af9948d2ef74777f91e41a8d889ca28d036d7bb",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Amount.json"
+      },
+      "variant": {
+        "name": "Opacity=False",
+        "key": "1af9948d2ef74777f91e41a8d889ca28d036d7bb"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10917:23090;203:2478;485:67104",
+        "name": "Currency",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] PureCell / Content / Body / Main / Row / RowValue / Currency",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Currency",
+        "key": "5bef50328b151427bf28c514c2266233e2bfbf6c",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Amount.json"
+      },
+      "variant": {
+        "name": "Opacity=False, Type=₽",
+        "key": "5bef50328b151427bf28c514c2266233e2bfbf6c"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "10703:14190",
+        "name": "[M] BackgroundPlate",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] BackgroundPlate",
+        "visible": true
+      },
+      "component": {
+        "name": "[M] BackgroundPlate",
+        "key": "41e2c5c17d573baf32ae78d01b69c0a3d7ba033c",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Position=Level 1 (outer)",
+        "key": "41e2c5c17d573baf32ae78d01b69c0a3d7ba033c"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10703:14190;66402:30705",
+        "name": "[M] Style Level 1",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Wrapper / Wrapper / [M] BackgroundPlate / [M] Style Level 1",
+        "visible": true
+      },
+      "component": {
+        "name": "[M] Style Level 1",
+        "key": "cdc3f827449db161006abe2250f936b0ee27fafc",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "BackgroundColor=base-bg (white), Type=Primary, Skeleton=False",
+        "key": "cdc3f827449db161006abe2250f936b0ee27fafc"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "10702:40492",
+        "name": "[M] ContentCardWrapper",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / [M] ContentCardWrapper",
+        "visible": true
+      },
+      "component": {
+        "name": "[M] ContentCardWrapper",
+        "key": "49f3809833823f53f1594fbff9104dd08fe990c4",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- ContentCardWrapper.json"
+      },
+      "variant": {
+        "name": "State=Active, Skeleton=False",
+        "key": "49f3809833823f53f1594fbff9104dd08fe990c4"
+      },
+      "comparisonIssues": [
+        "Нет данных для скруглений в снапшоте для «State=Active, Skeleton=False / IconView / Content / Shape / Shape / Mask»",
+        "Нет данных для скруглений в снапшоте для «State=Active, Skeleton=False / MiddleSlot / 🔩 [M] MiddleContentSlot / 🔩 [M] ContentPresets / [M] TitleView / MainContent / Heading / Title»"
+      ]
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10702:40492;55413:56437",
+        "name": "IconView",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / [M] ContentCardWrapper / IconView",
+        "visible": true
+      },
+      "component": {
+        "name": "IconView",
+        "key": "1a67004b61bf91e9a12eb69f907fe92de4dcd35a",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=48",
+        "key": "1a67004b61bf91e9a12eb69f907fe92de4dcd35a"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10702:40492;55413:56437;448:17266",
+        "name": "Shape",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / [M] ContentCardWrapper / IconView / Content / Shape / Shape",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Shape",
+        "key": "aef4d79e3e57da1bb7b2e00b9b30d19b37bdd7f7",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconView.json"
+      },
+      "variant": {
+        "name": "Form=Superellipse",
+        "key": "aef4d79e3e57da1bb7b2e00b9b30d19b37bdd7f7"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10702:40492;55413:56437;448:31937",
+        "name": "🔩 Content",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / [M] ContentCardWrapper / IconView / Content / ShapeContent / 🔩 Content",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Content",
+        "key": "656a48efd3ed9db44d549f4ab100f58a8dd1556d",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=24, Type=Icon",
+        "key": "656a48efd3ed9db44d549f4ab100f58a8dd1556d"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10702:40492;55413:73391",
+        "name": "🔩 [M] MiddleContentSlot",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / [M] ContentCardWrapper / MiddleSlot / 🔩 [M] MiddleContentSlot",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 [M] MiddleContentSlot",
+        "key": "3e6b9b5592f619dc1650938b84054a98805deeac",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- ContentCardWrapper.json"
+      },
+      "variant": {
+        "name": "Capacity=1, Connected=False",
+        "key": "3e6b9b5592f619dc1650938b84054a98805deeac"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10702:40492;55413:73391;55482:490781",
+        "name": "🔩 [M] ContentPresets",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / [M] ContentCardWrapper / MiddleSlot / 🔩 [M] MiddleContentSlot / 🔩 [M] ContentPresets",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 [M] ContentPresets",
+        "key": "bac9bc51f6e5ced1f5f433353356653d4f731545",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- ContentCardWrapper.json"
+      },
+      "variant": {
+        "name": "Presets=ExtraTitle",
+        "key": "bac9bc51f6e5ced1f5f433353356653d4f731545"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10702:40492;55413:73391;55482:490781;55413:56073",
+        "name": "[M] TitleView",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / [M] ContentCardWrapper / MiddleSlot / 🔩 [M] MiddleContentSlot / 🔩 [M] ContentPresets / [M] TitleView",
+        "visible": true
+      },
+      "component": {
+        "name": "[M] TitleView",
+        "key": "2a7ff9ecfca8d440fa3a4422df7a1d8c0a97fe02",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "View=Small, Skeleton=False",
+        "key": "2a7ff9ecfca8d440fa3a4422df7a1d8c0a97fe02"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10702:40492;55413:56443",
+        "name": "[M] BackgroundPlate",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / [M] ContentCardWrapper / [M] BackgroundPlate",
+        "visible": true
+      },
+      "component": {
+        "name": "[M] BackgroundPlate",
+        "key": "41e2c5c17d573baf32ae78d01b69c0a3d7ba033c",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Position=Level 1 (outer)",
+        "key": "41e2c5c17d573baf32ae78d01b69c0a3d7ba033c"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I10702:40492;55413:56443;66402:30705",
+        "name": "[M] Style Level 1",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / [M] ContentCardWrapper / [M] BackgroundPlate / [M] Style Level 1",
+        "visible": true
+      },
+      "component": {
+        "name": "[M] Style Level 1",
+        "key": "01b744c9f1d5183cd25aa5ac48759857487931b7",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "BackgroundColor=base-bg-alt (gray), Type=Primary, Skeleton=False",
+        "key": "01b744c9f1d5183cd25aa5ac48759857487931b7"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "10702:41702",
+        "name": "Text",
+        "type": "INSTANCE",
+        "pageName": "Аналитика комиссий ",
+        "path": "Аналитика комиссий / Тариф / [M] Content / Settings / Text",
+        "visible": true
+      },
+      "component": {
+        "name": "Text",
+        "key": "31515679735130e1a8940cd827964859690628e9",
+        "library": "Web :: Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Presets=Text",
+        "key": "31515679735130e1a8940cd827964859690628e9"
+      },
+      "comparisonIssues": []
+    }
+  ]
+}
