@@ -1,0 +1,2197 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1524705623793347474-1784194361927-j9j9adec:agent",
+  "sourceReportId": "apollo-1524705623793347474-1784194361927-j9j9adec",
+  "generatedAt": "2026-07-16T09:32:41.927Z",
+  "suggestedFileName": "Darina-Vinogradova_16-07-2026_12-32-41_agent.json",
+  "user": {
+    "id": "1524705623793347474",
+    "name": "Darina Vinogradova",
+    "slug": "Darina-Vinogradova"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.1.39"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "✈️ [W] – Альфа- Командировки",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "startedAt": "2026-07-16T09:32:27.604Z",
+    "finishedAt": "2026-07-16T09:32:41.927Z",
+    "durationMs": 14323,
+    "selection": [
+      {
+        "nodeId": "496:199520",
+        "name": "[D] CorporatePage",
+        "nodeType": "FRAME",
+        "path": "[D] CorporatePage",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 107,
+    "problemOccurrenceCount": 27,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 9,
+      "updates": 2,
+      "customizations": 5,
+      "localComponents": 0,
+      "detachedComponents": 0,
+      "presets": 8,
+      "technicalComponents": 0,
+      "currentComponents": 96,
+      "wrongChannel": 0,
+      "themization": 3
+    },
+    "includedFindingCount": 27,
+    "omittedCurrentComponentCount": 96
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with severity=error and matchKind=exact_component_rule for the same property/change.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 9,
+      "includedCount": 9,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 2,
+      "includedCount": 2,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 5,
+      "includedCount": 5,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 8,
+      "includedCount": 8,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 3,
+      "includedCount": 3,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "496:199520",
+        "name": "[D] CorporatePage",
+        "type": "FRAME",
+        "pageName": "Витрина",
+        "path": "[D] CorporatePage",
+        "visible": true
+      },
+      "style": {
+        "name": "dc20fcedbd330ee715c0a3f6c7d3089862a48cfb",
+        "key": "dc20fcedbd330ee715c0a3f6c7d3089862a48cfb",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I496:199526;135096:147276;496:200731",
+        "name": "Frame 2147237629",
+        "type": "FRAME",
+        "pageName": "Витрина",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Frame 2147237634 / Карточка / Frame 2147237632 / Frame 2147237629",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I496:199526;135096:147276;496:200751",
+        "name": "Frame 2147237629",
+        "type": "FRAME",
+        "pageName": "Витрина",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Frame 2147237634 / Карточка / Frame 2147237632 / Frame 2147237629",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I496:199526;135096:147276;496:200771",
+        "name": "Frame 2147237629",
+        "type": "FRAME",
+        "pageName": "Витрина",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Frame 2147237634 / Карточка / Frame 2147237632 / Frame 2147237629",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I496:199526;135096:147276;496:324206",
+        "name": "Connect",
+        "type": "FRAME",
+        "pageName": "Витрина",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Connect",
+        "visible": true
+      },
+      "style": {
+        "name": "Фон (Background blur)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Фон (Background blur)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "496:199527",
+        "name": "🔒 [D] SpotlightBar",
+        "type": "INSTANCE",
+        "pageName": "Витрина",
+        "path": "[D] CorporatePage / 🔒 [D] SpotlightBar",
+        "visible": true
+      },
+      "style": {
+        "name": "Spotlight/Bar Up Shadow",
+        "key": "30aa972ba2d52e52fc7579e4a0300f44b86487e3",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Inner shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I496:199527;80:27656;80:27143;79:26990;79:26974",
+        "name": "Spot",
+        "type": "ELLIPSE",
+        "pageName": "Витрина",
+        "path": "[D] CorporatePage / 🔒 [D] SpotlightBar / Left / SpotlightLogo / Icon 28 / 🔩 Shadow / Spot",
+        "visible": true
+      },
+      "style": {
+        "name": "Слой (Layer blur)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Слой (Layer blur)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I496:199527;80:27656;80:27143;79:26950",
+        "name": "🔩 Shape",
+        "type": "INSTANCE",
+        "pageName": "Витрина",
+        "path": "[D] CorporatePage / 🔒 [D] SpotlightBar / Left / SpotlightLogo / Icon 28 / 🔩 Shape",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Inner shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Inner shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I496:199527;80:27656;80:27143;79:26950;79:26775",
+        "name": "Mask",
+        "type": "VECTOR",
+        "pageName": "Витрина",
+        "path": "[D] CorporatePage / 🔒 [D] SpotlightBar / Left / SpotlightLogo / Icon 28 / 🔩 Shape / Mask",
+        "visible": true
+      },
+      "style": {
+        "name": "Spotlight/logo-bg",
+        "key": "03c3f9304ce99af99e5f761c9a6bb90cc7f46f65",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I496:199526;135096:147276;496:199550",
+        "name": "[D][Corporate] Button",
+        "type": "INSTANCE",
+        "pageName": "Витрина",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Frame 2147237619 / Connect / Left / [D][Corporate] Button",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Button",
+        "key": "dfcd5a4347a7e9b72460bb586055dfb1c09c849a",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Button.json"
+      },
+      "variant": {
+        "name": "View=Primary, Size=48, Shape=Rectangular, SingleIcon=False, DisabledState=False",
+        "key": "dfcd5a4347a7e9b72460bb586055dfb1c09c849a"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I496:199526;135096:147276;496:324216",
+        "name": "[D][Corporate] Button",
+        "type": "INSTANCE",
+        "pageName": "Витрина",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Connect / Left / [D][Corporate] Button",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Button",
+        "key": "dfcd5a4347a7e9b72460bb586055dfb1c09c849a",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Button.json"
+      },
+      "variant": {
+        "name": "View=Primary, Size=48, Shape=Rectangular, SingleIcon=False, DisabledState=False",
+        "key": "dfcd5a4347a7e9b72460bb586055dfb1c09c849a"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "496:199524",
+        "name": "CustomButton",
+        "type": "INSTANCE",
+        "pageName": "Витрина",
+        "path": "[D] CorporatePage / Page / Body / CustomButton",
+        "visible": true
+      },
+      "component": {
+        "name": "CustomButton",
+        "key": "7136c943be86b77f792200b5d309959fa3e128ca",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- CustomButton.json"
+      },
+      "variant": {
+        "name": "CustomButton",
+        "key": "7136c943be86b77f792200b5d309959fa3e128ca"
+      },
+      "comparisonIssues": [
+        "Нет данных для заливка в снапшоте для «CustomButton / LeftAddon / 🔩 Addon»",
+        "Нет данных для обводка в снапшоте для «CustomButton / LeftAddon / 🔩 Addon»",
+        "Нет данных для толщины обводки в снапшоте для «CustomButton / LeftAddon / 🔩 Addon»"
+      ],
+      "changes": [
+        {
+          "node": {
+            "id": "496:199524",
+            "name": "CustomButton",
+            "type": null,
+            "pageName": "Витрина",
+            "path": "CustomButton",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "fill: VariableID:587496c4b18675f26a868d9dd6c8c5589f177de5/3541:144 → static_neutral/0",
+          "referenceValue": "status-muted-alt/info",
+          "actualValue": "static_neutral/0",
+          "referenceRawValue": "VariableID:587496c4b18675f26a868d9dd6c8c5589f177de5/3541:144",
+          "actualRawValue": "static_neutral/0",
+          "referenceDisplayValue": "status-muted-alt/info",
+          "actualDisplayValue": "static_neutral/0",
+          "referenceResource": {
+            "name": "status-muted-alt/info",
+            "key": "587496c4b18675f26a868d9dd6c8c5589f177de5",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "static_neutral/0",
+            "key": "301d7bbf1c36b77ee22fa00b2008e56228859595",
+            "library": "Interface Static",
+            "sourceFile": "002 :: Interface Static Colors"
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.custom-button.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            }
+          ],
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "496:199524",
+            "name": "CustomButton",
+            "type": null,
+            "pageName": "Витрина",
+            "path": "CustomButton",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 0 → 16",
+          "referenceValue": "0",
+          "actualValue": "16",
+          "referenceRawValue": "0",
+          "actualRawValue": "16",
+          "referenceDisplayValue": "0",
+          "actualDisplayValue": "16",
+          "referenceResource": null,
+          "actualResource": null,
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.custom-button.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            }
+          ],
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I496:199524;3:7710",
+            "name": "LeftAddon",
+            "type": null,
+            "pageName": "Витрина",
+            "path": "CustomButton / LeftAddon",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.right",
+          "message": "Паддинг right: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": 0,
+          "referenceRawValue": 8,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 0,
+          "referenceResource": null,
+          "actualResource": null,
+          "componentRules": [
+            {
+              "ruleId": "component:web-core-navigation.navigation-bar.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-core.bottom-sheet.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-core.custom-button.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-core.file-upload-item.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-core.file-upload-item-v1.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.banner-wrapper-mobile.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.corporate-app-header-mobile.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.corporate-app-header-new.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.hub-menu.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.table-basic-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null
+            }
+          ],
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I496:199524;3:7710",
+            "name": "LeftAddon",
+            "type": null,
+            "pageName": "Витрина",
+            "path": "CustomButton / LeftAddon",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.left",
+          "message": "Паддинг left: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": 0,
+          "referenceRawValue": 8,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 0,
+          "referenceResource": null,
+          "actualResource": null,
+          "componentRules": [
+            {
+              "ruleId": "component:web-core-navigation.navigation-bar.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-core.bottom-sheet.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-core.custom-button.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-core.file-upload-item.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-core.file-upload-item-v1.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.banner-wrapper-mobile.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.corporate-app-header-mobile.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.corporate-app-header-new.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.hub-menu.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.table-basic-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null
+            }
+          ],
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I496:199524;3:7708;16:5968",
+            "name": "PaintMe",
+            "type": null,
+            "pageName": "Витрина",
+            "path": "CustomButton / LeftAddon / 🔩 Addon / Fixer / PaintMe",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: status/info → static_neutral-translucent/1300",
+          "referenceValue": "status/info",
+          "actualValue": "static_neutral-translucent/1300",
+          "referenceRawValue": "status/info",
+          "actualRawValue": "static_neutral-translucent/1300",
+          "referenceDisplayValue": "status/info",
+          "actualDisplayValue": "static_neutral-translucent/1300",
+          "referenceResource": {
+            "name": "status/info",
+            "key": "b10db1879590531b56541f549df1687fe4a23efb",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "static_neutral-translucent/1300",
+            "key": "a85d96e37cfd4de58ccd8515f26255a3f86c4160",
+            "library": "Interface Static",
+            "sourceFile": "002 :: Interface Static Colors"
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core-navigation.navigation-bar.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-core.amount.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-core.bottom-sheet.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-core.calendar.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-core.custom-button.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-core.file-upload-item.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-core.file-upload-item-v1.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-core.icon-button.manual-icon-fill-is-layer-property",
+              "severity": "warning",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "PaintMe.fills|PaintMe.fill|fill|fills",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Ручные изменения fill на IconButton PaintMe, diamonds или icon layers являются layer customizations. Их нужно показывать отдельно от component property changes.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-core.master-input.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-core.master-input.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.banner-wrapper-mobile.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.corporate-app-header-mobile.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.corporate-app-header-new.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.hub-menu.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.table-basic-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.table-basic-d.manual-visual-styles-forbidden",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "styles.text|fill|stroke|opacity|layout.padding|layout.itemSpacing|radius",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "В строках и ячейках Table Basic запрещено вручную менять typography, fill, stroke, opacity, padding, spacing и radius. Разрешены alignment, ширина обычных колонок, текст и предусмотренные компонентом presets.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.table-basic-d.visual-states-use-effective-baseline",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "state.hover|state.selected|state.disabled|fill|stroke|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Hover, selected и disabled состояния строк и ячеек Table Basic полностью определяются effective baseline. Ручная настройка их цветов и визуальных стилей запрещена.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.manual-visual-styles-forbidden",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "styles.text|fill|stroke|opacity|layout.padding|layout.itemSpacing|radius",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "В строках и ячейках Table Wide запрещено вручную менять typography, fill, stroke, opacity, padding, spacing и radius. Разрешены alignment, ширина обычных колонок, текст и предусмотренные компонентом presets.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.visual-states-use-effective-baseline",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "state.hover|state.selected|state.disabled|fill|stroke|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Hover, selected и disabled состояния строк и ячеек Table Wide полностью определяются effective baseline. Ручная настройка их цветов и визуальных стилей запрещена.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web.promo-table-view.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            }
+          ],
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "496:199526",
+        "name": "[D] CorporateContent",
+        "type": "INSTANCE",
+        "pageName": "Витрина",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] CorporateContent",
+        "key": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateContent.json"
+      },
+      "variant": {
+        "name": "[D] CorporateContent",
+        "key": "a8d13cb6e1ae67a7296709f669238f41971c7197"
+      },
+      "comparisonIssues": [
+        "Нет данных для скруглений в снапшоте для «[D] CorporateContent / [D] Body / [D] TitleView / MainContent / Heading / Title»",
+        "Нет данных для скруглений в снапшоте для «[D] CorporateContent / [D] Body / Frame 2147237619 / Connect / Left / [D][Corporate] Button / Text / Label»",
+        "Нет данных для скруглений в снапшоте для «[D] CorporateContent / [D] Body / Frame 2147237619 / Frame 2147237618 / Connect / Left / Top / Frame 2147237643 / StatusPreset / Status / 🔩 Label / Label»",
+        "Нет данных для скруглений в снапшоте для «[D] CorporateContent / [D] Body / [D] TitleView / MainContent / Heading / Title@@2»",
+        "Нет данных для padding top в снапшоте для «[D] CorporateContent / [D] Body / Cards / [D] BenefitCard / IconView / Content / ShapeContent / Content»",
+        "Нет данных для padding right в снапшоте для «[D] CorporateContent / [D] Body / Cards / [D] BenefitCard / IconView / Content / ShapeContent / Content»",
+        "Нет данных для padding bottom в снапшоте для «[D] CorporateContent / [D] Body / Cards / [D] BenefitCard / IconView / Content / ShapeContent / Content»",
+        "Нет данных для padding left в снапшоте для «[D] CorporateContent / [D] Body / Cards / [D] BenefitCard / IconView / Content / ShapeContent / Content»",
+        "Нет данных для скруглений в снапшоте для «[D] CorporateContent / [D] Body / Cards / [D] BenefitCard / ContentWrapper / Content / Content / Title / value»",
+        "Нет данных для скруглений в снапшоте для «[D] CorporateContent / [D] Body / Cards / [D] BenefitCard / ContentWrapper / Content / Content / Subtitle / value»",
+        "Нет данных для скруглений в снапшоте для «[D] CorporateContent / [D] Body / Frame 2147237634 / Карточка / Frame 2147237632 / Frame 2147237629 / Frame 2147237631 / 🔒 [D] PropertyPreset / Status / 🔩 Label / Label»",
+        "Нет данных для скруглений в снапшоте для «[D] CorporateContent / [D] Body / Connect / Left / [D][Corporate] Button / Text / Label»"
+      ],
+      "changes": [
+        {
+          "node": {
+            "id": "I496:199526;135096:147276;496:199545;66402:30698",
+            "name": "[D] Style Level 1",
+            "type": null,
+            "pageName": "Витрина",
+            "path": "[D] CorporateContent / [D] Body / Frame 2147237619 / Connect / [D] BackgroundPlate / [D] Style Level 1",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: base-bg-alt/secondary → decorative-soft/indigo",
+          "referenceValue": "base-bg-alt/secondary",
+          "actualValue": "decorative-soft/indigo",
+          "referenceRawValue": "base-bg-alt/secondary",
+          "actualRawValue": "decorative-soft/indigo",
+          "referenceDisplayValue": "base-bg-alt/secondary",
+          "actualDisplayValue": "decorative-soft/indigo",
+          "referenceResource": {
+            "name": "base-bg-alt/secondary",
+            "key": "8e2800951104c0afbc2ed28e5331d61aa4214a9a",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "decorative-soft/indigo",
+            "key": "59ab13cbe895e7e898908a4a67dde082668189b8",
+            "library": "Decorative Dynamic",
+            "sourceFile": "003 :: Decorative Dynamic Colors"
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|styles.fill|styles.stroke|fill|stroke|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри компонентов семейства BackgroundPlate нужно сравнивать с effective baseline текущего component variant и nested owner context. Изменения layout.padding.* у BackgroundPlateSlot являются допустимыми дизайнерскими кастомизациями, если они нужны композиции и заданы через токены Spacing. Это правило не разрешает изменение radius: скругления BackgroundPlate и Style Level фиксируются компонентным baseline и не должны изменяться вручную.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.background-plate.colored-and-border-use-color-tokens",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "fill|stroke|variant.BackgroundColor",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Для Type=Colored цвет заливки должен быть задан через цветовой токен дизайн-системы. Для Type=Border через цветовой токен задаётся цвет обводки, а видимая заливка запрещена отдельным правилом. Конкретный цвет может отличаться по смыслу поверхности, но raw fill или raw stroke без требуемого token binding являются нарушением.",
+              "remediation": "Для Colored привяжите fill к цветовому токену. Для Border удалите fill и привяжите stroke к цветовому токену."
+            },
+            {
+              "ruleId": "component:web-corp.background-plate.border-has-no-visible-fill",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "fill|styles.fill",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Type=Border всегда используется без видимой заливки. Любая заливка, включая привязанную к цветовому токену, нарушает контракт. Визуальная поверхность Border формируется только обводкой.",
+              "remediation": "Удалите заливку у Type=Border и оставьте только токенизированную обводку."
+            },
+            {
+              "ruleId": "component:web-corp.background-plate.colored-uses-fill-without-stroke",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "fill|styles.fill|stroke|styles.stroke",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Type=Colored формируется только видимой токенизированной заливкой. Любая видимая обводка, включая привязанную к цветовому токену, нарушает контракт.",
+              "remediation": "Удалите обводку и оставьте для Type=Colored только заливку, привязанную к цветовому токену."
+            },
+            {
+              "ruleId": "component:web-corp.background-plate.primary-secondary-paint-is-fixed",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "fill|styles.fill|stroke|styles.stroke",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Внешний вид Type=Primary и Type=Secondary полностью определяется компонентом, уровнем поверхности и BackgroundColor. Ручные изменения fill или stroke запрещены, даже если новое значение привязано к токену. Производные paint-изменения при переключении Type или BackgroundColor не считаются отдельной кастомизацией.",
+              "remediation": "Сбросьте ручные изменения fill и stroke к effective baseline текущего Type, уровня и BackgroundColor."
+            },
+            {
+              "ruleId": "component:web-corp.corporate-content.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.corporate-content.background-mode-only",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "fill|variables.BackgroundPlate Color",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Цвет фона CorporateContent задаётся выбором mode коллекции BackgroundPlate Color для всего фрейма. Ручное изменение fill запрещено.",
+              "remediation": null
+            }
+          ],
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.background-plate.colored-and-border-use-color-tokens",
+            "message": "Для Type=Colored цвет заливки должен быть задан через цветовой токен дизайн-системы. Для Type=Border через цветовой токен задаётся цвет обводки, а видимая заливка запрещена отдельным правилом. Конкретный цвет может отличаться по смыслу поверхности, но raw fill или raw stroke без требуемого token binding являются нарушением.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I496:199526;135096:147276;496:199576;448:17354",
+            "name": "Shape",
+            "type": null,
+            "pageName": "Витрина",
+            "path": "[D] CorporateContent / [D] Body / Cards / [D] BenefitCard / IconView / Content / Shape",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 0 → 2",
+          "referenceValue": 0,
+          "actualValue": "2",
+          "referenceRawValue": 0,
+          "actualRawValue": "2",
+          "referenceDisplayValue": 0,
+          "actualDisplayValue": "2",
+          "referenceResource": null,
+          "actualResource": null,
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.circular-progress-bar.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-core.file-upload-item.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-core.icon-view.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-core.tooltip.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.corporate-content.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.corporate-content.root-visual-overrides-prohibited",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "radius|stroke|effects.*|opacity|clipsContent",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "У корня CorporateContent нельзя вручную менять radius, stroke, effects, opacity и clips content.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.corporate-content.section-detach-and-style-overrides-prohibited",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "component.instanceState|fill|stroke|radius|opacity|effects.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Section, Content и Isle нельзя detach-ить или вручную менять их fill, stroke, radius, opacity и effects.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.corporate-topbar-visuals-use-effective-baseline",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|layoutSizing*|styles.text|fill|stroke|radius|opacity|effects.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Корень и внутренние слои [D] TopBar должны сохранять effective baseline выбранных Filtered, Skeleton и nested component states. Нельзя вручную менять sizing, направление, выравнивание, padding, gap, текстовые стили, fill, stroke, radius, opacity и effects.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.hub-menu.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web.benefit-card.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            }
+          ],
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I496:199526;135096:147276;496:199580;102592:139628",
+            "name": "[D][Promo] Style Level 1",
+            "type": null,
+            "pageName": "Витрина",
+            "path": "[D] CorporateContent / [D] Body / Cards / [D] BenefitCard / BackgroundPlate / [D][Promo] BackgroundPlate / [D][Promo] Style Level 1",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 24 → 16",
+          "referenceValue": 24,
+          "actualValue": "16",
+          "referenceRawValue": 24,
+          "actualRawValue": "16",
+          "referenceDisplayValue": 24,
+          "actualDisplayValue": "16",
+          "referenceResource": null,
+          "actualResource": null,
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.radius-is-fixed-by-component-baseline",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "radius|layout.radius|cornerRadius|cornerRadius.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Скругления BackgroundPlate, BackgroundPlateSlot и вложенных Style Level задаются компонентом и его effective baseline. Дизайнер не должен вручную изменять radius/cornerRadius у root-layer BackgroundPlate, BackgroundPlateSlot или Style Level. Любое отличие radius от effective baseline является нарушением, а не допустимой композиционной настройкой.",
+              "remediation": "Сбросьте radius к effective baseline выбранного варианта BackgroundPlate. Не задавайте скругления BackgroundPlate и Style Level вручную."
+            },
+            {
+              "ruleId": "component:web-corp.corporate-content.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.corporate-content.root-visual-overrides-prohibited",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "radius|stroke|effects.*|opacity|clipsContent",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "У корня CorporateContent нельзя вручную менять radius, stroke, effects, opacity и clips content.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web.benefit-card.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            }
+          ],
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.background-plate.radius-is-fixed-by-component-baseline",
+            "message": "Скругления BackgroundPlate, BackgroundPlateSlot и вложенных Style Level задаются компонентом и его effective baseline. Дизайнер не должен вручную изменять radius/cornerRadius у root-layer BackgroundPlate, BackgroundPlateSlot или Style Level. Любое отличие radius от effective baseline является нарушением, а не допустимой композиционной настройкой.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I496:199526;135096:147276;496:200737;148606:16342",
+            "name": "icon",
+            "type": null,
+            "pageName": "Витрина",
+            "path": "[D] CorporateContent / [D] Body / Frame 2147237634 / Карточка / Frame 2147237632 / Frame 2147237629 / Frame 2147237633 / heart / icon",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: rgba(144,50,238,1) → base-bg-alt/secondary",
+          "referenceValue": "rgba(144,50,238,1)",
+          "actualValue": "base-bg-alt/secondary",
+          "referenceRawValue": "rgba(144,50,238,1)",
+          "actualRawValue": "base-bg-alt/secondary",
+          "referenceDisplayValue": "rgba(144,50,238,1)",
+          "actualDisplayValue": "base-bg-alt/secondary",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "base-bg-alt/secondary",
+            "key": "8e2800951104c0afbc2ed28e5331d61aa4214a9a",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.icon-button.manual-root-layer-property",
+              "severity": "warning",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Ручные изменения root layout, fill, stroke, radius или opacity на IconButton являются layer customizations и должны сравниваться с effective component state baseline.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-core.icon-button.manual-icon-fill-is-layer-property",
+              "severity": "warning",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "PaintMe.fills|PaintMe.fill|fill|fills",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Ручные изменения fill на IconButton PaintMe, diamonds или icon layers являются layer customizations. Их нужно показывать отдельно от component property changes.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.corporate-content.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.corporate-content.background-mode-only",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "fill|variables.BackgroundPlate Color",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Цвет фона CorporateContent задаётся выбором mode коллекции BackgroundPlate Color для всего фрейма. Ручное изменение fill запрещено.",
+              "remediation": null
+            }
+          ],
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I496:199526;135096:147276;496:200741;156739:21424",
+            "name": "icon",
+            "type": null,
+            "pageName": "Витрина",
+            "path": "[D] CorporateContent / [D] Body / Frame 2147237634 / Карточка / Frame 2147237632 / Frame 2147237631 / Frame 2147237627 / Frame 2147237628 / star / icon",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: rgba(144,50,238,1) → text/primary",
+          "referenceValue": "rgba(144,50,238,1)",
+          "actualValue": "text/primary",
+          "referenceRawValue": "rgba(144,50,238,1)",
+          "actualRawValue": "text/primary",
+          "referenceDisplayValue": "rgba(144,50,238,1)",
+          "actualDisplayValue": "text/primary",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "text/primary",
+            "key": "53f842b1771349c5dca692351edfc422e8f081b5",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.icon-button.manual-root-layer-property",
+              "severity": "warning",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Ручные изменения root layout, fill, stroke, radius или opacity на IconButton являются layer customizations и должны сравниваться с effective component state baseline.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-core.icon-button.manual-icon-fill-is-layer-property",
+              "severity": "warning",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "PaintMe.fills|PaintMe.fill|fill|fills",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Ручные изменения fill на IconButton PaintMe, diamonds или icon layers являются layer customizations. Их нужно показывать отдельно от component property changes.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.corporate-content.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.corporate-content.background-mode-only",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "fill|variables.BackgroundPlate Color",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Цвет фона CorporateContent задаётся выбором mode коллекции BackgroundPlate Color для всего фрейма. Ручное изменение fill запрещено.",
+              "remediation": null
+            }
+          ],
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I496:199527;80:27656;80:27143;79:26951",
+        "name": "neural-assistant",
+        "type": "INSTANCE",
+        "pageName": "Витрина",
+        "path": "[D] CorporatePage / 🔒 [D] SpotlightBar / Left / SpotlightLogo / Icon 28 / neural-assistant",
+        "visible": true
+      },
+      "component": {
+        "name": "neural-assistant",
+        "key": "feb45fe4478d29c36478c4d54e907193b49a2151",
+        "library": "Icons",
+        "sourceFile": "icons/Icons -- corp.json"
+      },
+      "variant": {
+        "name": "Size=m",
+        "key": "feb45fe4478d29c36478c4d54e907193b49a2151"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I496:199527;80:27656;80:27143;79:26951;144621:10052",
+            "name": "icon",
+            "type": null,
+            "pageName": "Витрина",
+            "path": "Size=m / icon",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #0024E1 → static_neutral/0",
+          "referenceValue": "#0024E1",
+          "actualValue": "static_neutral/0",
+          "referenceRawValue": "#0024E1",
+          "actualRawValue": "static_neutral/0",
+          "referenceDisplayValue": "#0024E1",
+          "actualDisplayValue": "static_neutral/0",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "static_neutral/0",
+            "key": "301d7bbf1c36b77ee22fa00b2008e56228859595",
+            "library": "Interface Static",
+            "sourceFile": "002 :: Interface Static Colors"
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.icon-button.manual-root-layer-property",
+              "severity": "warning",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Ручные изменения root layout, fill, stroke, radius или opacity на IconButton являются layer customizations и должны сравниваться с effective component state baseline.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-core.icon-button.manual-icon-fill-is-layer-property",
+              "severity": "warning",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "PaintMe.fills|PaintMe.fill|fill|fills",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Ручные изменения fill на IconButton PaintMe, diamonds или icon layers являются layer customizations. Их нужно показывать отдельно от component property changes.",
+              "remediation": null
+            }
+          ],
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I496:199527;3:5308;1209:29761",
+        "name": "RightAddon1",
+        "type": "INSTANCE",
+        "pageName": "Витрина",
+        "path": "[D] CorporatePage / 🔒 [D] SpotlightBar / Right / [D][Corporate] Input / Field / RightAddons / RightAddon1",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Addon",
+        "key": "aed4c2993452251cf0ea38aeb98a16d334495e16",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- _ _ MasterInput.json"
+      },
+      "variant": {
+        "name": "Type=IconSecondary",
+        "key": "aed4c2993452251cf0ea38aeb98a16d334495e16"
+      },
+      "comparisonIssues": [
+        "Нет данных для заливка в снапшоте для «Type=IconSecondary»",
+        "Нет данных для обводка в снапшоте для «Type=IconSecondary»",
+        "Нет данных для толщины обводки в снапшоте для «Type=IconSecondary»"
+      ],
+      "changes": [
+        {
+          "node": {
+            "id": "I496:199527;3:5308;1209:29761;29:32753",
+            "name": "PaintMe",
+            "type": null,
+            "pageName": "Витрина",
+            "path": "Type=IconSecondary / Fixer / PaintMe",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "fill: VariableID:faac436b14cc199cfe97243b05af867af9ecb365/3541:130 → neutral-translucent/500",
+          "referenceValue": "neutral-translucent/700",
+          "actualValue": "neutral-translucent/500",
+          "referenceRawValue": "VariableID:faac436b14cc199cfe97243b05af867af9ecb365/3541:130",
+          "actualRawValue": "neutral-translucent/500",
+          "referenceDisplayValue": "neutral-translucent/700",
+          "actualDisplayValue": "neutral-translucent/500",
+          "referenceResource": {
+            "name": "neutral-translucent/700",
+            "key": "faac436b14cc199cfe97243b05af867af9ecb365",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "neutral-translucent/500",
+            "key": "8e44b1c2e5a90ce2fea643e2e5be2c6e838feaef",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.icon-button.manual-icon-fill-is-layer-property",
+              "severity": "warning",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "PaintMe.fills|PaintMe.fill|fill|fills",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "ruleText": "Ручные изменения fill на IconButton PaintMe, diamonds или icon layers являются layer customizations. Их нужно показывать отдельно от component property changes.",
+              "remediation": null
+            }
+          ],
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I496:199527;110:54481",
+        "name": "[D] Button",
+        "type": "INSTANCE",
+        "pageName": "Витрина",
+        "path": "[D] CorporatePage / 🔒 [D] SpotlightBar / Right / [D] Button",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] Button",
+        "key": "29bef518986ed2a50664887147b81bbfbaf47017",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Button.json"
+      },
+      "variant": {
+        "name": "View=Accent, Size=48, Shape=Rounded, SingleIcon=False, DisabledState=False",
+        "key": "29bef518986ed2a50664887147b81bbfbaf47017"
+      },
+      "comparisonIssues": [
+        "Нет данных для заливка в снапшоте для «View=Accent, Size=48, Shape=Rounded, SingleIcon=False, DisabledState=False / LeftAddon / LeftAddon»",
+        "Нет данных для обводка в снапшоте для «View=Accent, Size=48, Shape=Rounded, SingleIcon=False, DisabledState=False / LeftAddon / LeftAddon»",
+        "Нет данных для толщины обводки в снапшоте для «View=Accent, Size=48, Shape=Rounded, SingleIcon=False, DisabledState=False / LeftAddon / LeftAddon»",
+        "Нет данных для скруглений в снапшоте для «View=Accent, Size=48, Shape=Rounded, SingleIcon=False, DisabledState=False / Text / Label»"
+      ],
+      "changes": [
+        {
+          "node": {
+            "id": "I496:199527;110:54481",
+            "name": "[D] Button",
+            "type": null,
+            "pageName": "Витрина",
+            "path": "View=Accent, Size=48, Shape=Rounded, SingleIcon=False, DisabledState=False",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.top",
+          "message": "Паддинг top: 4 → 10",
+          "referenceValue": 4,
+          "actualValue": 10,
+          "referenceRawValue": 4,
+          "actualRawValue": 10,
+          "referenceDisplayValue": 4,
+          "actualDisplayValue": 10,
+          "referenceResource": null,
+          "actualResource": null,
+          "componentRules": [],
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I496:199527;110:54481",
+            "name": "[D] Button",
+            "type": null,
+            "pageName": "Витрина",
+            "path": "View=Accent, Size=48, Shape=Rounded, SingleIcon=False, DisabledState=False",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.bottom",
+          "message": "Паддинг bottom: 4 → 10",
+          "referenceValue": 4,
+          "actualValue": 10,
+          "referenceRawValue": 4,
+          "actualRawValue": 10,
+          "referenceDisplayValue": 4,
+          "actualDisplayValue": 10,
+          "referenceResource": null,
+          "actualResource": null,
+          "componentRules": [],
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I496:199526;135096:147276;496:199559",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "Витрина",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Frame 2147237619 / Frame 2147237618 / Connect / Left / Top / Frame 2147237643 / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "19285e102ff78415287602f8da731e0884aca960",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Action, Style=Muted, Size=20",
+        "key": "19285e102ff78415287602f8da731e0884aca960"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I496:199526;135096:147276;496:199568",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "Витрина",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Frame 2147237619 / Frame 2147237618 / Connect / Left / Top / Frame 2147237643 / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "19285e102ff78415287602f8da731e0884aca960",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Action, Style=Muted, Size=20",
+        "key": "19285e102ff78415287602f8da731e0884aca960"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I496:199526;135096:147276;496:200734",
+        "name": "🔒 [D] PropertyPreset",
+        "type": "INSTANCE",
+        "pageName": "Витрина",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Frame 2147237634 / Карточка / Frame 2147237632 / Frame 2147237629 / Frame 2147237631 / 🔒 [D] PropertyPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] PropertyPreset",
+        "key": "0d68443b991b2eb0201c2c9ad5dd6127147fd475",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Color=Blue, Style=Contrast, Size=24",
+        "key": "0d68443b991b2eb0201c2c9ad5dd6127147fd475"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I496:199526;135096:147276;496:200735",
+        "name": "🔒 [D] PropertyPreset",
+        "type": "INSTANCE",
+        "pageName": "Витрина",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Frame 2147237634 / Карточка / Frame 2147237632 / Frame 2147237629 / Frame 2147237631 / 🔒 [D] PropertyPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] PropertyPreset",
+        "key": "0d68443b991b2eb0201c2c9ad5dd6127147fd475",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Color=Blue, Style=Contrast, Size=24",
+        "key": "0d68443b991b2eb0201c2c9ad5dd6127147fd475"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I496:199526;135096:147276;496:200754",
+        "name": "🔒 [D] PropertyPreset",
+        "type": "INSTANCE",
+        "pageName": "Витрина",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Frame 2147237634 / Карточка / Frame 2147237632 / Frame 2147237629 / Frame 2147237631 / 🔒 [D] PropertyPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] PropertyPreset",
+        "key": "0d68443b991b2eb0201c2c9ad5dd6127147fd475",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Color=Blue, Style=Contrast, Size=24",
+        "key": "0d68443b991b2eb0201c2c9ad5dd6127147fd475"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I496:199526;135096:147276;496:200755",
+        "name": "🔒 [D] PropertyPreset",
+        "type": "INSTANCE",
+        "pageName": "Витрина",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Frame 2147237634 / Карточка / Frame 2147237632 / Frame 2147237629 / Frame 2147237631 / 🔒 [D] PropertyPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] PropertyPreset",
+        "key": "0d68443b991b2eb0201c2c9ad5dd6127147fd475",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Color=Blue, Style=Contrast, Size=24",
+        "key": "0d68443b991b2eb0201c2c9ad5dd6127147fd475"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I496:199526;135096:147276;496:200774",
+        "name": "🔒 [D] PropertyPreset",
+        "type": "INSTANCE",
+        "pageName": "Витрина",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Frame 2147237634 / Карточка / Frame 2147237632 / Frame 2147237629 / Frame 2147237631 / 🔒 [D] PropertyPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] PropertyPreset",
+        "key": "0d68443b991b2eb0201c2c9ad5dd6127147fd475",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Color=Blue, Style=Contrast, Size=24",
+        "key": "0d68443b991b2eb0201c2c9ad5dd6127147fd475"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I496:199526;135096:147276;496:200775",
+        "name": "🔒 [D] PropertyPreset",
+        "type": "INSTANCE",
+        "pageName": "Витрина",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Frame 2147237634 / Карточка / Frame 2147237632 / Frame 2147237629 / Frame 2147237631 / 🔒 [D] PropertyPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] PropertyPreset",
+        "key": "0d68443b991b2eb0201c2c9ad5dd6127147fd475",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Color=Blue, Style=Contrast, Size=24",
+        "key": "0d68443b991b2eb0201c2c9ad5dd6127147fd475"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "496:199520",
+        "name": "Страница: Витрина",
+        "type": "PAGE",
+        "pageName": "Витрина",
+        "path": "Витрина",
+        "visible": true
+      },
+      "kind": "missingThemeMode",
+      "recommendation": "Смени темизацию на Corp",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I496:199526;135096:147276;496:199550",
+        "name": "[D][Corporate] Button",
+        "type": "INSTANCE",
+        "pageName": "Витрина",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Frame 2147237619 / Connect / Left / [D][Corporate] Button",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Button",
+      "component": {
+        "name": "[D][Corporate] Button",
+        "key": "f9979d6cc8598aec25f721e0a45b7eef2eeb0088",
+        "library": "Web _ Core",
+        "sourceFile": null
+      }
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I496:199526;135096:147276;496:324216",
+        "name": "[D][Corporate] Button",
+        "type": "INSTANCE",
+        "pageName": "Витрина",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Connect / Left / [D][Corporate] Button",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Button",
+      "component": {
+        "name": "[D][Corporate] Button",
+        "key": "f9979d6cc8598aec25f721e0a45b7eef2eeb0088",
+        "library": "Web _ Core",
+        "sourceFile": null
+      }
+    }
+  ]
+}
