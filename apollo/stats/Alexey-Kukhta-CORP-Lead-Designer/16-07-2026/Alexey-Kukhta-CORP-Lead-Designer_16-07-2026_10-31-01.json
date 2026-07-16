@@ -1,0 +1,685 @@
+{
+  "schemaVersion": 1,
+  "reportId": "apollo-1096330610570928879-1784187061647-o8rdn4q9",
+  "generatedAt": "2026-07-16T07:31:01.647Z",
+  "suggestedFileName": "Alexey-Kukhta-CORP-Lead-Designer_16-07-2026_10-31-01.json",
+  "user": {
+    "id": "1096330610570928879",
+    "name": "Alexey Kukhta / CORP / Lead Designer",
+    "slug": "Alexey-Kukhta-CORP-Lead-Designer"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.1.52"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "❇️ Мастерская :: AI",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "startedAt": "2026-07-16T07:31:01.069Z",
+    "finishedAt": "2026-07-16T07:31:01.647Z",
+    "durationMs": 578,
+    "selection": [
+      {
+        "nodeId": "10716:45073",
+        "name": "Body",
+        "nodeType": "FRAME",
+        "path": "Page / Body",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 16,
+    "problemOccurrenceCount": 2,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 0,
+      "updates": 0,
+      "customizations": 1,
+      "localComponents": 0,
+      "detachedComponents": 0,
+      "presets": 1,
+      "technicalComponents": 0,
+      "currentComponents": 16,
+      "wrongChannel": 0,
+      "themization": 0
+    }
+  },
+  "categories": {
+    "deprecatedComponents": {
+      "count": 0,
+      "items": []
+    },
+    "deprecatedStyles": {
+      "count": 0,
+      "items": []
+    },
+    "customStyles": {
+      "count": 0,
+      "items": []
+    },
+    "updates": {
+      "count": 0,
+      "items": []
+    },
+    "customizations": {
+      "count": 1,
+      "items": [
+        {
+          "node": {
+            "id": "10716:45079",
+            "name": "[D] CorporateContent",
+            "type": "INSTANCE",
+            "pageName": "     Генерация",
+            "path": "Page / Body / [D] CorporateContent",
+            "visible": true
+          },
+          "component": {
+            "type": "component",
+            "name": "[D] CorporateContent",
+            "key": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+            "id": null,
+            "library": "Web _ Corp Components",
+            "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateContent.json"
+          },
+          "variant": {
+            "type": "component-variant",
+            "name": "[D] CorporateContent",
+            "key": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+            "id": null,
+            "library": "Web _ Corp Components",
+            "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateContent.json"
+          },
+          "comparisonIssues": [],
+          "changes": [
+            {
+              "node": {
+                "id": "10716:45079",
+                "name": "[D] CorporateContent",
+                "type": null,
+                "pageName": "     Генерация",
+                "path": "[D] CorporateContent",
+                "visible": true
+              },
+              "kind": "layout",
+              "property": "layout.padding.top",
+              "message": "Переменная padding top: Grid/TopMargin → Отвязана (значение: 40)",
+              "reference": {
+                "value": 40,
+                "resource": {
+                  "type": "token",
+                  "name": "Grid/TopMargin",
+                  "key": "82268:155710",
+                  "id": "VariableID:82268:155710",
+                  "library": "[D] Grid & Cols",
+                  "sourceFile": "Web :: Corp Components"
+                },
+                "binding": {
+                  "id": "VariableID:82268:155710",
+                  "key": "4164cb88d5e217e5e7fb57d3406fe5f1b80513fc",
+                  "name": "Grid/TopMargin",
+                  "collectionId": "VariableCollectionId:76532:102337",
+                  "collectionName": "[D] Grid & Cols",
+                  "resolvedModeId": null,
+                  "resolvedModeName": null,
+                  "explicitModeId": null,
+                  "explicitModeName": null,
+                  "modeSource": "unknown",
+                  "modeOwnerNodeId": null,
+                  "modeOwnerName": null,
+                  "modeOwnerPath": null
+                }
+              },
+              "actual": {
+                "value": 40,
+                "resource": null,
+                "binding": null
+              },
+              "bindingStatus": "unbound",
+              "variableMode": null,
+              "signature": "component:a8d13cb6e1ae67a7296709f669238f41971c7197:layout:layout.padding.top:82268:155710->40",
+              "context": {
+                "actualComponentKey": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+                "referenceComponentKey": null,
+                "referenceOrigin": "host",
+                "actualNestedOwnerComponentKey": null,
+                "actualNestedOwnerPath": null,
+                "actualNestedOwnerRelativePath": null,
+                "nestedOwnerComponentKey": null,
+                "nestedOwnerPath": null,
+                "nestedOwnerRelativePath": null
+              },
+              "componentRules": [
+                {
+                  "ruleId": "component:web-corp.corporate-content.spacing-uses-grid-cols-mode",
+                  "severity": "error",
+                  "source": "pattern-link",
+                  "ruleKind": null,
+                  "severityScope": null,
+                  "appliesTo": "layout.padding.*|variables.Grid & Cols",
+                  "checkType": "deterministic",
+                  "matchKind": "exact_component_rule",
+                  "ruleText": "Отступы CorporateContent определяются mode коллекции Grid & Cols, а не ручными padding. Для [M] CorporateContent обязательны TopMargin=24 и BottomMargin=24.",
+                  "remediation": null
+                }
+              ],
+              "presentation": {
+                "scope": "layer-property",
+                "groupTitle": "Параметры слоя",
+                "displayName": null,
+                "priority": 20,
+                "resetAction": "reset-layer-properties",
+                "effectiveBaseline": "composition-contract"
+              },
+              "assessment": {
+                "verdict": "violation",
+                "source": "component-contract",
+                "reasonCode": "component-contract-violation",
+                "ruleId": "component:web-corp.corporate-content.spacing-uses-grid-cols-mode",
+                "message": "Отступы CorporateContent определяются mode коллекции Grid & Cols, а не ручными padding. Для [M] CorporateContent обязательны TopMargin=24 и BottomMargin=24.",
+                "remediation": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "localComponents": {
+      "count": 0,
+      "items": []
+    },
+    "detachedComponents": {
+      "count": 0,
+      "items": []
+    },
+    "presets": {
+      "count": 1,
+      "items": [
+        {
+          "node": {
+            "id": "I10716:45079;135096:147276;10716:45076",
+            "name": "🔒 [D] HubTitle",
+            "type": "INSTANCE",
+            "pageName": "     Генерация",
+            "path": "Page / Body / [D] CorporateContent / [D] Body / 🔒 [D] HubTitle",
+            "visible": true
+          },
+          "component": {
+            "type": "component",
+            "name": "🔒 [D] HubTitle",
+            "key": "83793c4bd78ac67b8586b0d4ae5d995af49da965",
+            "id": null,
+            "library": "Web _ Corp Components",
+            "sourceFile": "web/components/web-corp/Web _ Corp Components -- HubPage [D].json"
+          },
+          "variant": {
+            "type": "component-variant",
+            "name": "Skeleton=false",
+            "key": "83793c4bd78ac67b8586b0d4ae5d995af49da965",
+            "id": null,
+            "library": "Web _ Corp Components",
+            "sourceFile": "web/components/web-corp/Web _ Corp Components -- HubPage [D].json"
+          },
+          "comparisonIssues": []
+        }
+      ]
+    },
+    "technicalComponents": {
+      "count": 0,
+      "items": []
+    },
+    "currentComponents": {
+      "count": 16,
+      "items": [
+        {
+          "node": {
+            "id": "10716:45079",
+            "name": "[D] CorporateContent",
+            "type": "INSTANCE",
+            "pageName": "     Генерация",
+            "path": "Page / Body / [D] CorporateContent",
+            "visible": true
+          },
+          "component": {
+            "type": "component",
+            "name": "[D] CorporateContent",
+            "key": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+            "id": null,
+            "library": "Web _ Corp Components",
+            "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateContent.json"
+          },
+          "variant": {
+            "type": "component-variant",
+            "name": "[D] CorporateContent",
+            "key": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+            "id": null,
+            "library": "Web _ Corp Components",
+            "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateContent.json"
+          },
+          "comparisonIssues": []
+        },
+        {
+          "node": {
+            "id": "I10716:45079;135096:147276;10716:45076",
+            "name": "🔒 [D] HubTitle",
+            "type": "INSTANCE",
+            "pageName": "     Генерация",
+            "path": "Page / Body / [D] CorporateContent / [D] Body / 🔒 [D] HubTitle",
+            "visible": true
+          },
+          "component": {
+            "type": "component",
+            "name": "🔒 [D] HubTitle",
+            "key": "83793c4bd78ac67b8586b0d4ae5d995af49da965",
+            "id": null,
+            "library": "Web _ Corp Components",
+            "sourceFile": "web/components/web-corp/Web _ Corp Components -- HubPage [D].json"
+          },
+          "variant": {
+            "type": "component-variant",
+            "name": "Skeleton=false",
+            "key": "83793c4bd78ac67b8586b0d4ae5d995af49da965",
+            "id": null,
+            "library": "Web _ Corp Components",
+            "sourceFile": "web/components/web-corp/Web _ Corp Components -- HubPage [D].json"
+          },
+          "comparisonIssues": []
+        },
+        {
+          "node": {
+            "id": "I10716:45079;135096:147276;10716:45076;135400:92756",
+            "name": "[D] TitleView",
+            "type": "INSTANCE",
+            "pageName": "     Генерация",
+            "path": "Page / Body / [D] CorporateContent / [D] Body / 🔒 [D] HubTitle / [D] TitleView",
+            "visible": true
+          },
+          "component": {
+            "type": "component",
+            "name": "[D] TitleView",
+            "key": "02b8a91e65c73fbef66fdf9a9a66725bdeac6411",
+            "id": null,
+            "library": "Web _ Corp Components",
+            "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+          },
+          "variant": {
+            "type": "component-variant",
+            "name": "View=Large, Skeleton=False",
+            "key": "02b8a91e65c73fbef66fdf9a9a66725bdeac6411",
+            "id": null,
+            "library": "Web _ Corp Components",
+            "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+          },
+          "comparisonIssues": []
+        },
+        {
+          "node": {
+            "id": "I10716:45079;135096:147276;10865:30076",
+            "name": "[D] TabsView",
+            "type": "INSTANCE",
+            "pageName": "     Генерация",
+            "path": "Page / Body / [D] CorporateContent / [D] Body / [D] TabsView",
+            "visible": true
+          },
+          "component": {
+            "type": "component",
+            "name": "[D] TabsView",
+            "key": "519118350c338878dff70f5c8e62cf9c7d53bffd",
+            "id": null,
+            "library": "Web _ Corp Components",
+            "sourceFile": "web/components/web-corp/Web _ Corp Components -- TabsView.json"
+          },
+          "variant": {
+            "type": "component-variant",
+            "name": "Skeleton=false",
+            "key": "519118350c338878dff70f5c8e62cf9c7d53bffd",
+            "id": null,
+            "library": "Web _ Corp Components",
+            "sourceFile": "web/components/web-corp/Web _ Corp Components -- TabsView.json"
+          },
+          "comparisonIssues": []
+        },
+        {
+          "node": {
+            "id": "I10716:45079;135096:147276;10865:30076;57470:17493",
+            "name": "TabsPrimary",
+            "type": "INSTANCE",
+            "pageName": "     Генерация",
+            "path": "Page / Body / [D] CorporateContent / [D] Body / [D] TabsView / TabsPrimary",
+            "visible": true
+          },
+          "component": {
+            "type": "component",
+            "name": "TabsPrimary",
+            "key": "0b6cbeb2069d15adf5be7b9a4ba17acc6a397017",
+            "id": null,
+            "library": "Web :: Core Navigation",
+            "sourceFile": "web/components/web-core/navigation/Web _ Core Navigation -- Tabs.json"
+          },
+          "variant": {
+            "type": "component-variant",
+            "name": "TabsPrimary",
+            "key": "0b6cbeb2069d15adf5be7b9a4ba17acc6a397017",
+            "id": null,
+            "library": "Web :: Core Navigation",
+            "sourceFile": "web/components/web-core/navigation/Web _ Core Navigation -- Tabs.json"
+          },
+          "comparisonIssues": []
+        },
+        {
+          "node": {
+            "id": "I10716:45079;135096:147276;10865:30076;57470:17493;1:3214",
+            "name": "TabPrimary",
+            "type": "INSTANCE",
+            "pageName": "     Генерация",
+            "path": "Page / Body / [D] CorporateContent / [D] Body / [D] TabsView / TabsPrimary / Items / TabPrimary",
+            "visible": true
+          },
+          "component": {
+            "type": "component",
+            "name": "🔩 TabPrimary",
+            "key": "8d0c9384f60a66603f4f91a52fe9ef931738fa45",
+            "id": null,
+            "library": "Web :: Core Navigation",
+            "sourceFile": "web/components/web-core/navigation/Web _ Core Navigation -- Tabs.json"
+          },
+          "variant": {
+            "type": "component-variant",
+            "name": "ActiveState=True, DisabledState=False",
+            "key": "8d0c9384f60a66603f4f91a52fe9ef931738fa45",
+            "id": null,
+            "library": "Web :: Core Navigation",
+            "sourceFile": "web/components/web-core/navigation/Web _ Core Navigation -- Tabs.json"
+          },
+          "comparisonIssues": []
+        },
+        {
+          "node": {
+            "id": "I10716:45079;135096:147276;10865:30076;57470:17493;1:3215",
+            "name": "TabPrimary",
+            "type": "INSTANCE",
+            "pageName": "     Генерация",
+            "path": "Page / Body / [D] CorporateContent / [D] Body / [D] TabsView / TabsPrimary / Items / TabPrimary",
+            "visible": true
+          },
+          "component": {
+            "type": "component",
+            "name": "🔩 TabPrimary",
+            "key": "00ec4434736ab29772c5394982dc97cd25a07dde",
+            "id": null,
+            "library": "Web :: Core Navigation",
+            "sourceFile": "web/components/web-core/navigation/Web _ Core Navigation -- Tabs.json"
+          },
+          "variant": {
+            "type": "component-variant",
+            "name": "ActiveState=False, DisabledState=False",
+            "key": "00ec4434736ab29772c5394982dc97cd25a07dde",
+            "id": null,
+            "library": "Web :: Core Navigation",
+            "sourceFile": "web/components/web-core/navigation/Web _ Core Navigation -- Tabs.json"
+          },
+          "comparisonIssues": []
+        },
+        {
+          "node": {
+            "id": "I10716:45079;135096:147276;10865:30076;57470:17493;1:3216",
+            "name": "TabPrimary",
+            "type": "INSTANCE",
+            "pageName": "     Генерация",
+            "path": "Page / Body / [D] CorporateContent / [D] Body / [D] TabsView / TabsPrimary / Items / TabPrimary",
+            "visible": true
+          },
+          "component": {
+            "type": "component",
+            "name": "🔩 TabPrimary",
+            "key": "00ec4434736ab29772c5394982dc97cd25a07dde",
+            "id": null,
+            "library": "Web :: Core Navigation",
+            "sourceFile": "web/components/web-core/navigation/Web _ Core Navigation -- Tabs.json"
+          },
+          "variant": {
+            "type": "component-variant",
+            "name": "ActiveState=False, DisabledState=False",
+            "key": "00ec4434736ab29772c5394982dc97cd25a07dde",
+            "id": null,
+            "library": "Web :: Core Navigation",
+            "sourceFile": "web/components/web-core/navigation/Web _ Core Navigation -- Tabs.json"
+          },
+          "comparisonIssues": []
+        },
+        {
+          "node": {
+            "id": "I10716:45079;135096:147276;10865:30076;57470:17493;1:3217",
+            "name": "TabPrimary",
+            "type": "INSTANCE",
+            "pageName": "     Генерация",
+            "path": "Page / Body / [D] CorporateContent / [D] Body / [D] TabsView / TabsPrimary / Items / TabPrimary",
+            "visible": true
+          },
+          "component": {
+            "type": "component",
+            "name": "🔩 TabPrimary",
+            "key": "00ec4434736ab29772c5394982dc97cd25a07dde",
+            "id": null,
+            "library": "Web :: Core Navigation",
+            "sourceFile": "web/components/web-core/navigation/Web _ Core Navigation -- Tabs.json"
+          },
+          "variant": {
+            "type": "component-variant",
+            "name": "ActiveState=False, DisabledState=False",
+            "key": "00ec4434736ab29772c5394982dc97cd25a07dde",
+            "id": null,
+            "library": "Web :: Core Navigation",
+            "sourceFile": "web/components/web-core/navigation/Web _ Core Navigation -- Tabs.json"
+          },
+          "comparisonIssues": []
+        },
+        {
+          "node": {
+            "id": "I10716:45079;135096:147276;10865:30076;57470:17493;1:3218",
+            "name": "TabPrimary",
+            "type": "INSTANCE",
+            "pageName": "     Генерация",
+            "path": "Page / Body / [D] CorporateContent / [D] Body / [D] TabsView / TabsPrimary / Items / TabPrimary",
+            "visible": true
+          },
+          "component": {
+            "type": "component",
+            "name": "🔩 TabPrimary",
+            "key": "00ec4434736ab29772c5394982dc97cd25a07dde",
+            "id": null,
+            "library": "Web :: Core Navigation",
+            "sourceFile": "web/components/web-core/navigation/Web _ Core Navigation -- Tabs.json"
+          },
+          "variant": {
+            "type": "component-variant",
+            "name": "ActiveState=False, DisabledState=False",
+            "key": "00ec4434736ab29772c5394982dc97cd25a07dde",
+            "id": null,
+            "library": "Web :: Core Navigation",
+            "sourceFile": "web/components/web-core/navigation/Web _ Core Navigation -- Tabs.json"
+          },
+          "comparisonIssues": []
+        },
+        {
+          "node": {
+            "id": "I10716:45079;135096:147276;10865:30076;57470:17494",
+            "name": "[D] TabsSecondary",
+            "type": "INSTANCE",
+            "pageName": "     Генерация",
+            "path": "Page / Body / [D] CorporateContent / [D] Body / [D] TabsView / [D] TabsSecondary",
+            "visible": true
+          },
+          "component": {
+            "type": "component",
+            "name": "[D] TabsSecondary",
+            "key": "d44e07075d37245006c02b03ca28fa9a8681fa1e",
+            "id": null,
+            "library": "Web :: Core Navigation",
+            "sourceFile": "web/components/web-core/navigation/Web _ Core Navigation -- Tabs.json"
+          },
+          "variant": {
+            "type": "component-variant",
+            "name": "Size=40",
+            "key": "d44e07075d37245006c02b03ca28fa9a8681fa1e",
+            "id": null,
+            "library": "Web :: Core Navigation",
+            "sourceFile": "web/components/web-core/navigation/Web _ Core Navigation -- Tabs.json"
+          },
+          "comparisonIssues": []
+        },
+        {
+          "node": {
+            "id": "I10716:45079;135096:147276;10865:30076;57470:17494;8976:3301",
+            "name": "[D] Tag",
+            "type": "INSTANCE",
+            "pageName": "     Генерация",
+            "path": "Page / Body / [D] CorporateContent / [D] Body / [D] TabsView / [D] TabsSecondary / Items / [D] Tag",
+            "visible": true
+          },
+          "component": {
+            "type": "component",
+            "name": "[D] Tag_Filled",
+            "key": "da874fbc1750ce68c942384fc3f0c95d1660e2fc",
+            "id": null,
+            "library": "Web _ Core",
+            "sourceFile": "web/components/web-core/core/Web _ Core -- Tag.json"
+          },
+          "variant": {
+            "type": "component-variant",
+            "name": "Size=40, Shape=Rounded, SelectedState=True, DisabledState=False, SingleIcon=False, Indicator=Hidden, ClearButton=False",
+            "key": "da874fbc1750ce68c942384fc3f0c95d1660e2fc",
+            "id": null,
+            "library": "Web _ Core",
+            "sourceFile": "web/components/web-core/core/Web _ Core -- Tag.json"
+          },
+          "comparisonIssues": []
+        },
+        {
+          "node": {
+            "id": "I10716:45079;135096:147276;10865:30076;57470:17494;8976:3302",
+            "name": "[D] Tag",
+            "type": "INSTANCE",
+            "pageName": "     Генерация",
+            "path": "Page / Body / [D] CorporateContent / [D] Body / [D] TabsView / [D] TabsSecondary / Items / [D] Tag",
+            "visible": true
+          },
+          "component": {
+            "type": "component",
+            "name": "[D] Tag_Filled",
+            "key": "0af28acc144e083a3a4119bebe2604eac9fe0383",
+            "id": null,
+            "library": "Web _ Core",
+            "sourceFile": "web/components/web-core/core/Web _ Core -- Tag.json"
+          },
+          "variant": {
+            "type": "component-variant",
+            "name": "Size=40, Shape=Rounded, SelectedState=False, DisabledState=False, SingleIcon=False, Indicator=Hidden, ClearButton=False",
+            "key": "0af28acc144e083a3a4119bebe2604eac9fe0383",
+            "id": null,
+            "library": "Web _ Core",
+            "sourceFile": "web/components/web-core/core/Web _ Core -- Tag.json"
+          },
+          "comparisonIssues": []
+        },
+        {
+          "node": {
+            "id": "I10716:45079;135096:147276;10865:30076;57470:17494;8976:3303",
+            "name": "[D] Tag",
+            "type": "INSTANCE",
+            "pageName": "     Генерация",
+            "path": "Page / Body / [D] CorporateContent / [D] Body / [D] TabsView / [D] TabsSecondary / Items / [D] Tag",
+            "visible": true
+          },
+          "component": {
+            "type": "component",
+            "name": "[D] Tag_Filled",
+            "key": "0af28acc144e083a3a4119bebe2604eac9fe0383",
+            "id": null,
+            "library": "Web _ Core",
+            "sourceFile": "web/components/web-core/core/Web _ Core -- Tag.json"
+          },
+          "variant": {
+            "type": "component-variant",
+            "name": "Size=40, Shape=Rounded, SelectedState=False, DisabledState=False, SingleIcon=False, Indicator=Hidden, ClearButton=False",
+            "key": "0af28acc144e083a3a4119bebe2604eac9fe0383",
+            "id": null,
+            "library": "Web _ Core",
+            "sourceFile": "web/components/web-core/core/Web _ Core -- Tag.json"
+          },
+          "comparisonIssues": []
+        },
+        {
+          "node": {
+            "id": "I10716:45079;135096:147276;10865:30076;57470:17494;8976:3304",
+            "name": "[D] Tag",
+            "type": "INSTANCE",
+            "pageName": "     Генерация",
+            "path": "Page / Body / [D] CorporateContent / [D] Body / [D] TabsView / [D] TabsSecondary / Items / [D] Tag",
+            "visible": true
+          },
+          "component": {
+            "type": "component",
+            "name": "[D] Tag_Filled",
+            "key": "0af28acc144e083a3a4119bebe2604eac9fe0383",
+            "id": null,
+            "library": "Web _ Core",
+            "sourceFile": "web/components/web-core/core/Web _ Core -- Tag.json"
+          },
+          "variant": {
+            "type": "component-variant",
+            "name": "Size=40, Shape=Rounded, SelectedState=False, DisabledState=False, SingleIcon=False, Indicator=Hidden, ClearButton=False",
+            "key": "0af28acc144e083a3a4119bebe2604eac9fe0383",
+            "id": null,
+            "library": "Web _ Core",
+            "sourceFile": "web/components/web-core/core/Web _ Core -- Tag.json"
+          },
+          "comparisonIssues": []
+        },
+        {
+          "node": {
+            "id": "I10716:45079;135096:147276;10717:45682",
+            "name": "[D] Section",
+            "type": "INSTANCE",
+            "pageName": "     Генерация",
+            "path": "Page / Body / [D] CorporateContent / [D] Body / [D] Section",
+            "visible": true
+          },
+          "component": {
+            "type": "component",
+            "name": "[D] Section",
+            "key": "685dbfc35cab059bd9b051d677a4ac61232e73d9",
+            "id": null,
+            "library": "Web _ Corp Components",
+            "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateContent.json"
+          },
+          "variant": {
+            "type": "component-variant",
+            "name": "Position=false, 👽 TabletIsle=true",
+            "key": "685dbfc35cab059bd9b051d677a4ac61232e73d9",
+            "id": null,
+            "library": "Web _ Corp Components",
+            "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateContent.json"
+          },
+          "comparisonIssues": []
+        }
+      ]
+    },
+    "wrongChannel": {
+      "count": 0,
+      "items": []
+    },
+    "themization": {
+      "count": 0,
+      "items": []
+    }
+  }
+}
