@@ -1,0 +1,641 @@
+{
+  "schemaVersion": 1,
+  "reportId": "apollo-1096330610570928879-1784369049060-s6aq0hva",
+  "generatedAt": "2026-07-18T10:04:09.060Z",
+  "suggestedFileName": "Alexey-Kukhta-CORP-Lead-Designer_18-07-2026_13-04-09.json",
+  "user": {
+    "id": "1096330610570928879",
+    "name": "Alexey Kukhta / CORP / Lead Designer",
+    "slug": "Alexey-Kukhta-CORP-Lead-Designer"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.1.56"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "Виджет рисков в Альфа-Босс",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "startedAt": "2026-07-18T10:04:04.990Z",
+    "finishedAt": "2026-07-18T10:04:09.060Z",
+    "durationMs": 4070,
+    "selection": [
+      {
+        "nodeId": "57:13691",
+        "name": "  Холдинг / ошибка",
+        "nodeType": "FRAME",
+        "path": "Виджет / Индикатор риска / Холдинг /   Холдинг / ошибка",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 5,
+    "problemOccurrenceCount": 4,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 1,
+      "updates": 0,
+      "customizations": 1,
+      "localComponents": 1,
+      "detachedComponents": 0,
+      "presets": 0,
+      "technicalComponents": 0,
+      "currentComponents": 4,
+      "wrongChannel": 0,
+      "themization": 1
+    }
+  },
+  "categories": {
+    "deprecatedComponents": {
+      "count": 0,
+      "items": []
+    },
+    "deprecatedStyles": {
+      "count": 0,
+      "items": []
+    },
+    "customStyles": {
+      "count": 1,
+      "items": [
+        {
+          "node": {
+            "id": "57:13692",
+            "name": "RiskWidget",
+            "type": "INSTANCE",
+            "pageName": "     Виджет индикатора рисков",
+            "path": "Виджет / Индикатор риска / Холдинг /   Холдинг / ошибка / RiskWidget",
+            "visible": true
+          },
+          "style": {
+            "type": "raw-value",
+            "name": "Raw fill",
+            "key": null,
+            "id": null,
+            "library": null,
+            "sourceFile": null
+          },
+          "usage": "fill"
+        }
+      ]
+    },
+    "updates": {
+      "count": 0,
+      "items": []
+    },
+    "customizations": {
+      "count": 1,
+      "items": [
+        {
+          "node": {
+            "id": "I57:13692;57:8188",
+            "name": "[D] ErrorView",
+            "type": "INSTANCE",
+            "pageName": "     Виджет индикатора рисков",
+            "path": "Виджет / Индикатор риска / Холдинг /   Холдинг / ошибка / RiskWidget / [D] ErrorView",
+            "visible": true
+          },
+          "component": {
+            "type": "component",
+            "name": "[D] ErrorView",
+            "key": "d70909405eff4cdf872005136ca362b2ef75ea94",
+            "id": null,
+            "library": "Web _ Corp Components",
+            "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateSystemMessage.json"
+          },
+          "variant": {
+            "type": "component-variant",
+            "name": "Type=Internal Server Error",
+            "key": "d70909405eff4cdf872005136ca362b2ef75ea94",
+            "id": null,
+            "library": "Web _ Corp Components",
+            "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateSystemMessage.json"
+          },
+          "comparisonIssues": [],
+          "changes": [
+            {
+              "node": {
+                "id": "I57:13692;57:8188;87696:94738;87696:94784",
+                "name": "Subtitle",
+                "type": null,
+                "pageName": "     Виджет индикатора рисков",
+                "path": "Type=Internal Server Error / SystemMessage.Base / Content / Subtitle",
+                "visible": true
+              },
+              "kind": "layout",
+              "property": "layout.padding.bottom",
+              "message": "Паддинг bottom: 12 → 0",
+              "reference": {
+                "value": 12,
+                "resource": null,
+                "binding": null
+              },
+              "actual": {
+                "value": 0,
+                "resource": null,
+                "binding": null
+              },
+              "bindingStatus": null,
+              "variableMode": null,
+              "signature": "component:d70909405eff4cdf872005136ca362b2ef75ea94:layout:layout.padding.bottom:12->0",
+              "context": {
+                "actualComponentKey": null,
+                "referenceComponentKey": null,
+                "referenceOrigin": "nested-component",
+                "actualNestedOwnerComponentKey": "2d5fd9a8fd9cf6f63eaa20cb1db7cf1a41095595",
+                "actualNestedOwnerPath": "Type=Internal Server Error / SystemMessage.Base",
+                "actualNestedOwnerRelativePath": "Content / Subtitle",
+                "nestedOwnerComponentKey": "2d5fd9a8fd9cf6f63eaa20cb1db7cf1a41095595",
+                "nestedOwnerPath": "Type=Internal Server Error / SystemMessage.Base",
+                "nestedOwnerRelativePath": "Content / Subtitle"
+              },
+              "componentRules": [
+                {
+                  "ruleId": "component:web-corp.corporate-system-message.effective-baseline-protected",
+                  "severity": "error",
+                  "source": "component-contract",
+                  "ruleKind": null,
+                  "severityScope": null,
+                  "appliesTo": "layout.*|layoutSizing*|styles.text|fill|stroke|radius|opacity|effects.*",
+                  "checkType": "deterministic",
+                  "matchKind": "exact_component_rule",
+                  "changeScope": null,
+                  "ruleText": "Геометрию и визуальные стили корня и внутренних слоёв нельзя менять вручную. Используй effective baseline выбранных View, Size и BG plate.",
+                  "remediation": null
+                }
+              ],
+              "presentation": {
+                "scope": "layer-property",
+                "groupTitle": "Параметры слоя",
+                "displayName": null,
+                "priority": 20,
+                "resetAction": "reset-layer-properties",
+                "effectiveBaseline": "composition-contract"
+              },
+              "assessment": {
+                "verdict": "unknown",
+                "source": "standalone-reference",
+                "reasonCode": "no-contextual-expectation",
+                "ruleId": null,
+                "message": "Контекстное правило не найдено",
+                "remediation": null
+              }
+            },
+            {
+              "node": {
+                "id": "I57:13692;57:8188;87696:94738;87696:94785",
+                "name": "Subtitle",
+                "type": null,
+                "pageName": "     Виджет индикатора рисков",
+                "path": "Type=Internal Server Error / SystemMessage.Base / Content / Subtitle / Subtitle",
+                "visible": true
+              },
+              "kind": "text-style",
+              "property": "styles.text",
+              "message": "Стиль текст: Paragraph/16–24 Primary Medium → Paragraph/14–20 Primary Small",
+              "reference": {
+                "value": "Paragraph/16–24 Primary Medium",
+                "resource": {
+                  "type": "style",
+                  "name": "Paragraph/16–24 Primary Medium",
+                  "key": "f0f0d59f9f92db92901605dd929cfa3b93540058",
+                  "id": "S:f0f0d59f9f92db92901605dd929cfa3b93540058,134161:55803",
+                  "library": "Web :: Typography",
+                  "sourceFile": "styles/Web _ Typography.json"
+                },
+                "binding": null
+              },
+              "actual": {
+                "value": "Paragraph/14–20 Primary Small",
+                "resource": {
+                  "type": "style",
+                  "name": "Paragraph/14–20 Primary Small",
+                  "key": "6fb5ab6969beee7da9e23dfcbab2f4864b30b665",
+                  "id": "S:6fb5ab6969beee7da9e23dfcbab2f4864b30b665,9221:96",
+                  "library": "Web :: Typography",
+                  "sourceFile": "styles/Web _ Typography.json"
+                },
+                "binding": null
+              },
+              "bindingStatus": null,
+              "variableMode": null,
+              "signature": "component:d70909405eff4cdf872005136ca362b2ef75ea94:text-style:styles.text:f0f0d59f9f92db92901605dd929cfa3b93540058->6fb5ab6969beee7da9e23dfcbab2f4864b30b665",
+              "context": {
+                "actualComponentKey": null,
+                "referenceComponentKey": null,
+                "referenceOrigin": "nested-component",
+                "actualNestedOwnerComponentKey": "2d5fd9a8fd9cf6f63eaa20cb1db7cf1a41095595",
+                "actualNestedOwnerPath": "Type=Internal Server Error / SystemMessage.Base",
+                "actualNestedOwnerRelativePath": "Content / Subtitle / Subtitle",
+                "nestedOwnerComponentKey": "2d5fd9a8fd9cf6f63eaa20cb1db7cf1a41095595",
+                "nestedOwnerPath": "Type=Internal Server Error / SystemMessage.Base",
+                "nestedOwnerRelativePath": "Content / Subtitle / Subtitle"
+              },
+              "componentRules": [
+                {
+                  "ruleId": "component:web-corp.corporate-system-message.effective-baseline-protected",
+                  "severity": "error",
+                  "source": "component-contract",
+                  "ruleKind": null,
+                  "severityScope": null,
+                  "appliesTo": "layout.*|layoutSizing*|styles.text|fill|stroke|radius|opacity|effects.*",
+                  "checkType": "deterministic",
+                  "matchKind": "exact_component_rule",
+                  "changeScope": null,
+                  "ruleText": "Геометрию и визуальные стили корня и внутренних слоёв нельзя менять вручную. Используй effective baseline выбранных View, Size и BG plate.",
+                  "remediation": null
+                }
+              ],
+              "presentation": {
+                "scope": "layer-property",
+                "groupTitle": "Параметры слоя",
+                "displayName": "Стиль текст",
+                "priority": 30,
+                "resetAction": "reset-layer-properties",
+                "effectiveBaseline": "composition-contract"
+              },
+              "assessment": {
+                "verdict": "unknown",
+                "source": "standalone-reference",
+                "reasonCode": "no-contextual-expectation",
+                "ruleId": null,
+                "message": "Контекстное правило не найдено",
+                "remediation": null
+              }
+            },
+            {
+              "node": {
+                "id": "I57:13692;57:8188;87696:94738;87696:94785",
+                "name": "Subtitle",
+                "type": null,
+                "pageName": "     Виджет индикатора рисков",
+                "path": "Type=Internal Server Error / SystemMessage.Base / Content / Subtitle / Subtitle",
+                "visible": true
+              },
+              "kind": "paint",
+              "property": "fill",
+              "message": "fill: VariableID:53f842b1771349c5dca692351edfc422e8f081b5/3541:208 → text/secondary",
+              "reference": {
+                "value": "VariableID:53f842b1771349c5dca692351edfc422e8f081b5/3541:208",
+                "resource": {
+                  "type": "token",
+                  "name": "text/primary",
+                  "key": "53f842b1771349c5dca692351edfc422e8f081b5",
+                  "id": "VariableID:53f842b1771349c5dca692351edfc422e8f081b5/3541:208",
+                  "library": "Interface Dynamic",
+                  "sourceFile": "001 :: Interface Dynamic Colors"
+                },
+                "binding": {
+                  "id": "VariableID:53f842b1771349c5dca692351edfc422e8f081b5/3541:208",
+                  "key": "53f842b1771349c5dca692351edfc422e8f081b5",
+                  "name": "text/primary",
+                  "collectionId": null,
+                  "collectionName": "Interface Dynamic",
+                  "resolvedModeId": null,
+                  "resolvedModeName": null,
+                  "explicitModeId": null,
+                  "explicitModeName": null,
+                  "modeSource": "unknown",
+                  "modeOwnerNodeId": null,
+                  "modeOwnerName": null,
+                  "modeOwnerPath": null
+                }
+              },
+              "actual": {
+                "value": "text/secondary",
+                "resource": {
+                  "type": "token",
+                  "name": "text/secondary",
+                  "key": "d9d26239617e3ab9e69d7ed378d811a3c4561063",
+                  "id": "VariableID:d9d26239617e3ab9e69d7ed378d811a3c4561063/3541:205",
+                  "library": "Interface Dynamic",
+                  "sourceFile": "001 :: Interface Dynamic Colors"
+                },
+                "binding": {
+                  "id": "VariableID:d9d26239617e3ab9e69d7ed378d811a3c4561063/3541:205",
+                  "key": "d9d26239617e3ab9e69d7ed378d811a3c4561063",
+                  "name": "text/secondary",
+                  "collectionId": "VariableCollectionId:868:9636",
+                  "collectionName": "Interface Dynamic",
+                  "resolvedModeId": null,
+                  "resolvedModeName": null,
+                  "explicitModeId": null,
+                  "explicitModeName": null,
+                  "modeSource": "unknown",
+                  "modeOwnerNodeId": null,
+                  "modeOwnerName": null,
+                  "modeOwnerPath": null
+                }
+              },
+              "bindingStatus": null,
+              "variableMode": null,
+              "signature": "component:d70909405eff4cdf872005136ca362b2ef75ea94:paint:fill:53f842b1771349c5dca692351edfc422e8f081b5->d9d26239617e3ab9e69d7ed378d811a3c4561063",
+              "context": {
+                "actualComponentKey": null,
+                "referenceComponentKey": null,
+                "referenceOrigin": "nested-component",
+                "actualNestedOwnerComponentKey": "2d5fd9a8fd9cf6f63eaa20cb1db7cf1a41095595",
+                "actualNestedOwnerPath": "Type=Internal Server Error / SystemMessage.Base",
+                "actualNestedOwnerRelativePath": "Content / Subtitle / Subtitle",
+                "nestedOwnerComponentKey": "2d5fd9a8fd9cf6f63eaa20cb1db7cf1a41095595",
+                "nestedOwnerPath": "Type=Internal Server Error / SystemMessage.Base",
+                "nestedOwnerRelativePath": "Content / Subtitle / Subtitle"
+              },
+              "componentRules": [
+                {
+                  "ruleId": "component:web-corp.corporate-system-message.effective-baseline-protected",
+                  "severity": "error",
+                  "source": "component-contract",
+                  "ruleKind": null,
+                  "severityScope": null,
+                  "appliesTo": "layout.*|layoutSizing*|styles.text|fill|stroke|radius|opacity|effects.*",
+                  "checkType": "deterministic",
+                  "matchKind": "exact_component_rule",
+                  "changeScope": null,
+                  "ruleText": "Геометрию и визуальные стили корня и внутренних слоёв нельзя менять вручную. Используй effective baseline выбранных View, Size и BG plate.",
+                  "remediation": null
+                }
+              ],
+              "presentation": {
+                "scope": "layer-property",
+                "groupTitle": "Параметры слоя",
+                "displayName": null,
+                "priority": 40,
+                "resetAction": "reset-layer-properties",
+                "effectiveBaseline": "composition-contract"
+              },
+              "assessment": {
+                "verdict": "unknown",
+                "source": "standalone-reference",
+                "reasonCode": "no-contextual-expectation",
+                "ruleId": null,
+                "message": "Контекстное правило не найдено",
+                "remediation": null
+              }
+            },
+            {
+              "node": {
+                "id": "I57:13692;57:8188;87696:94738;87696:94789;87696:94713",
+                "name": "Button",
+                "type": null,
+                "pageName": "     Виджет индикатора рисков",
+                "path": "Type=Internal Server Error / SystemMessage.Base / Buttons / ButtonsGroup / Button",
+                "visible": true
+              },
+              "kind": "other",
+              "property": "variant.Size",
+              "message": "size: 48 → 40",
+              "reference": {
+                "value": "48",
+                "resource": null,
+                "binding": null
+              },
+              "actual": {
+                "value": "40",
+                "resource": null,
+                "binding": null
+              },
+              "bindingStatus": null,
+              "variableMode": null,
+              "signature": "component:d70909405eff4cdf872005136ca362b2ef75ea94:other:variant.Size:48->40",
+              "context": {
+                "actualComponentKey": "31f2ee6f9abd90f582f914d77f10e5a18ceaf708",
+                "referenceComponentKey": null,
+                "referenceOrigin": "nested-component",
+                "actualNestedOwnerComponentKey": "346c169f6bfbedaaaad941d372c011f61ad561b6",
+                "actualNestedOwnerPath": "Type=Internal Server Error / SystemMessage.Base / Buttons / ButtonsGroup",
+                "actualNestedOwnerRelativePath": "Button",
+                "nestedOwnerComponentKey": "346c169f6bfbedaaaad941d372c011f61ad561b6",
+                "nestedOwnerPath": "Type=Internal Server Error / SystemMessage.Base / Buttons / ButtonsGroup",
+                "nestedOwnerRelativePath": "Button"
+              },
+              "componentRules": [
+                {
+                  "ruleId": "component:web-core.button.variant-state-is-component-property",
+                  "severity": "info",
+                  "source": "component-contract",
+                  "ruleKind": null,
+                  "severityScope": null,
+                  "appliesTo": "variant.*",
+                  "checkType": "deterministic",
+                  "matchKind": null,
+                  "changeScope": null,
+                  "ruleText": "Изменения View, Size, Shape, SingleIcon и DisabledState являются component property changes и должны показываться как самостоятельные customizations.",
+                  "remediation": null
+                },
+                {
+                  "ruleId": "component:web-core.button.desktop-safe-variants",
+                  "severity": "error",
+                  "source": "pattern-link",
+                  "ruleKind": null,
+                  "severityScope": null,
+                  "appliesTo": "variant.View|variant.Size|variant.Shape",
+                  "checkType": "deterministic",
+                  "matchKind": null,
+                  "changeScope": null,
+                  "ruleText": "В desktop нельзя использовать Button variants и параметры, запрещённые button pattern.",
+                  "remediation": null
+                }
+              ],
+              "presentation": {
+                "scope": "slot-property",
+                "groupTitle": "Параметры слота",
+                "displayName": null,
+                "priority": 15,
+                "resetAction": "reset-component-properties",
+                "effectiveBaseline": null
+              },
+              "assessment": {
+                "verdict": "unknown",
+                "source": "standalone-reference",
+                "reasonCode": "no-contextual-expectation",
+                "ruleId": null,
+                "message": "Контекстное правило не найдено",
+                "remediation": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "localComponents": {
+      "count": 1,
+      "items": [
+        {
+          "node": {
+            "id": "57:13692",
+            "name": "RiskWidget",
+            "type": "INSTANCE",
+            "pageName": "     Виджет индикатора рисков",
+            "path": "Виджет / Индикатор риска / Холдинг /   Холдинг / ошибка / RiskWidget",
+            "visible": true
+          },
+          "component": {
+            "type": "component",
+            "name": "RiskWidget",
+            "key": "45b5781f75a73de554028aeb3d0bc5e405c4caa7",
+            "id": null,
+            "library": null,
+            "sourceFile": null
+          },
+          "variant": null,
+          "comparisonIssues": []
+        }
+      ]
+    },
+    "detachedComponents": {
+      "count": 0,
+      "items": []
+    },
+    "presets": {
+      "count": 0,
+      "items": []
+    },
+    "technicalComponents": {
+      "count": 0,
+      "items": []
+    },
+    "currentComponents": {
+      "count": 4,
+      "items": [
+        {
+          "node": {
+            "id": "I57:13692;57:8188",
+            "name": "[D] ErrorView",
+            "type": "INSTANCE",
+            "pageName": "     Виджет индикатора рисков",
+            "path": "Виджет / Индикатор риска / Холдинг /   Холдинг / ошибка / RiskWidget / [D] ErrorView",
+            "visible": true
+          },
+          "component": {
+            "type": "component",
+            "name": "[D] ErrorView",
+            "key": "d70909405eff4cdf872005136ca362b2ef75ea94",
+            "id": null,
+            "library": "Web _ Corp Components",
+            "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateSystemMessage.json"
+          },
+          "variant": {
+            "type": "component-variant",
+            "name": "Type=Internal Server Error",
+            "key": "d70909405eff4cdf872005136ca362b2ef75ea94",
+            "id": null,
+            "library": "Web _ Corp Components",
+            "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateSystemMessage.json"
+          },
+          "comparisonIssues": []
+        },
+        {
+          "node": {
+            "id": "I57:13692;57:8188;87696:94738",
+            "name": "SystemMessage.Base",
+            "type": "INSTANCE",
+            "pageName": "     Виджет индикатора рисков",
+            "path": "Виджет / Индикатор риска / Холдинг /   Холдинг / ошибка / RiskWidget / [D] ErrorView / SystemMessage.Base",
+            "visible": true
+          },
+          "component": {
+            "type": "component",
+            "name": "[D] SystemMessageLarge",
+            "key": "2d5fd9a8fd9cf6f63eaa20cb1db7cf1a41095595",
+            "id": null,
+            "library": "Web _ Corp Components",
+            "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateSystemMessage.json"
+          },
+          "variant": {
+            "type": "component-variant",
+            "name": "[D] SystemMessageLarge",
+            "key": "2d5fd9a8fd9cf6f63eaa20cb1db7cf1a41095595",
+            "id": null,
+            "library": "Web _ Corp Components",
+            "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateSystemMessage.json"
+          },
+          "comparisonIssues": []
+        },
+        {
+          "node": {
+            "id": "I57:13692;57:8188;87696:94738;87696:94789",
+            "name": "ButtonsGroup",
+            "type": "INSTANCE",
+            "pageName": "     Виджет индикатора рисков",
+            "path": "Виджет / Индикатор риска / Холдинг /   Холдинг / ошибка / RiskWidget / [D] ErrorView / SystemMessage.Base / Buttons / ButtonsGroup",
+            "visible": true
+          },
+          "component": {
+            "type": "component",
+            "name": "[D] ButtonsGroupLarge",
+            "key": "346c169f6bfbedaaaad941d372c011f61ad561b6",
+            "id": null,
+            "library": "Web _ Corp Components",
+            "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateSystemMessage.json"
+          },
+          "variant": {
+            "type": "component-variant",
+            "name": "Axis=Horizontal, PrimaryButton=False, SecondaryButton=True",
+            "key": "346c169f6bfbedaaaad941d372c011f61ad561b6",
+            "id": null,
+            "library": "Web _ Corp Components",
+            "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateSystemMessage.json"
+          },
+          "comparisonIssues": []
+        },
+        {
+          "node": {
+            "id": "I57:13692;57:8188;87696:94738;87696:94789;87696:94713",
+            "name": "Button",
+            "type": "INSTANCE",
+            "pageName": "     Виджет индикатора рисков",
+            "path": "Виджет / Индикатор риска / Холдинг /   Холдинг / ошибка / RiskWidget / [D] ErrorView / SystemMessage.Base / Buttons / ButtonsGroup / Button",
+            "visible": true
+          },
+          "component": {
+            "type": "component",
+            "name": "[D] Button",
+            "key": "31f2ee6f9abd90f582f914d77f10e5a18ceaf708",
+            "id": null,
+            "library": "Web _ Core",
+            "sourceFile": "web/components/web-core/core/Web _ Core -- Button.json"
+          },
+          "variant": {
+            "type": "component-variant",
+            "name": "View=Secondary, Size=40, Shape=Rectangular, SingleIcon=False, DisabledState=False",
+            "key": "31f2ee6f9abd90f582f914d77f10e5a18ceaf708",
+            "id": null,
+            "library": "Web _ Core",
+            "sourceFile": "web/components/web-core/core/Web _ Core -- Button.json"
+          },
+          "comparisonIssues": []
+        }
+      ]
+    },
+    "wrongChannel": {
+      "count": 0,
+      "items": []
+    },
+    "themization": {
+      "count": 1,
+      "items": [
+        {
+          "node": {
+            "id": "57:13691",
+            "name": "Страница:      Виджет индикатора рисков",
+            "type": "PAGE",
+            "pageName": "     Виджет индикатора рисков",
+            "path": "     Виджет индикатора рисков",
+            "visible": true
+          },
+          "kind": "missingThemeMode",
+          "recommendation": "Смени темизацию на Corp",
+          "component": null
+        }
+      ]
+    }
+  }
+}
