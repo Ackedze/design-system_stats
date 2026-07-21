@@ -1,0 +1,2608 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1200412749423678867-1784616669187-93pw3xoy:agent",
+  "sourceReportId": "apollo-1200412749423678867-1784616669187-93pw3xoy",
+  "generatedAt": "2026-07-21T06:51:09.187Z",
+  "suggestedFileName": "Vadim-Glotov_21-07-2026_09-51-09_agent.json",
+  "user": {
+    "id": "1200412749423678867",
+    "name": "Vadim Glotov",
+    "slug": "Vadim-Glotov"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.1.56"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "W | Выплаты самозанятым ЛК",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "startedAt": "2026-07-21T06:49:34.219Z",
+    "finishedAt": "2026-07-21T06:51:09.187Z",
+    "durationMs": 94968,
+    "selection": [
+      {
+        "nodeId": "2283:36260",
+        "name": "[D] CorporatePage",
+        "nodeType": "FRAME",
+        "path": "[D] CorporatePage",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 487,
+    "problemOccurrenceCount": 52,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 5,
+      "updates": 0,
+      "customizations": 4,
+      "localComponents": 32,
+      "detachedComponents": 0,
+      "presets": 10,
+      "technicalComponents": 0,
+      "currentComponents": 446,
+      "wrongChannel": 0,
+      "themization": 1
+    },
+    "includedFindingCount": 52,
+    "omittedCurrentComponentCount": 446
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with severity=error and matchKind=exact_component_rule for the same property/change.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 5,
+      "includedCount": 5,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 4,
+      "includedCount": 4,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 32,
+      "includedCount": 32,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 10,
+      "includedCount": 10,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "2283:36260",
+        "name": "[D] CorporatePage",
+        "type": "FRAME",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage",
+        "visible": true
+      },
+      "style": {
+        "name": "dc20fcedbd330ee715c0a3f6c7d3089862a48cfb",
+        "key": "dc20fcedbd330ee715c0a3f6c7d3089862a48cfb",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "2283:36300",
+        "name": "🔒 [D] SpotlightBar",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / 🔒 [D] SpotlightBar",
+        "visible": true
+      },
+      "style": {
+        "name": "Spotlight/Bar Up Shadow",
+        "key": "30aa972ba2d52e52fc7579e4a0300f44b86487e3",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Inner shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2283:36300;80:27656;80:27143;79:26990;79:26974",
+        "name": "Spot",
+        "type": "ELLIPSE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / 🔒 [D] SpotlightBar / Left / SpotlightLogo / Icon 28 / 🔩 Shadow / Spot",
+        "visible": true
+      },
+      "style": {
+        "name": "Слой (Layer blur)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Слой (Layer blur)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2283:36300;80:27656;80:27143;79:26950",
+        "name": "🔩 Shape",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / 🔒 [D] SpotlightBar / Left / SpotlightLogo / Icon 28 / 🔩 Shape",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Inner shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Inner shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2283:36300;80:27656;80:27143;79:26950;79:26775",
+        "name": "Mask",
+        "type": "VECTOR",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / 🔒 [D] SpotlightBar / Left / SpotlightLogo / Icon 28 / 🔩 Shape / Mask",
+        "visible": true
+      },
+      "style": {
+        "name": "Spotlight/logo-bg",
+        "key": "03c3f9304ce99af99e5f761c9a6bb90cc7f46f65",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "2283:36299",
+        "name": "[D] CorporateContent",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] CorporateContent",
+        "key": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateContent.json"
+      },
+      "variant": {
+        "name": "[D] CorporateContent",
+        "key": "a8d13cb6e1ae67a7296709f669238f41971c7197"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I2283:36299;135096:147276;2283:36277;57470:17493;1:3215",
+            "name": "TabPrimary",
+            "type": null,
+            "pageName": "Аннулирование чека",
+            "path": "[D] CorporateContent / [D] Body / [D] TabsView / TabsPrimary / Items / TabPrimary@@2",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.ActiveState",
+          "message": "activeState: true → false",
+          "referenceValue": "True",
+          "actualValue": "False",
+          "referenceRawValue": "True",
+          "actualRawValue": "False",
+          "referenceDisplayValue": "True",
+          "actualDisplayValue": "False",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "00ec4434736ab29772c5394982dc97cd25a07dde",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "0b6cbeb2069d15adf5be7b9a4ba17acc6a397017",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / [D] TabsView / TabsPrimary",
+            "actualNestedOwnerRelativePath": "Items / TabPrimary",
+            "nestedOwnerComponentKey": "8d0c9384f60a66603f4f91a52fe9ef931738fa45",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / [D] TabsView / TabsPrimary / Items / TabPrimary",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I2283:36299;135096:147276;2283:36282;80390:51819;31003:10303;48:100893",
+            "name": "LeftAddon",
+            "type": null,
+            "pageName": "Аннулирование чека",
+            "path": "[D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / [D] TopBar / Content / Button Group / [D] Settings / [D] Button / LeftAddon / LeftAddon",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Type",
+          "message": "type: icon-16 → icon-20",
+          "referenceValue": "Icon-16",
+          "actualValue": "Icon-20",
+          "referenceRawValue": "Icon-16",
+          "actualRawValue": "Icon-20",
+          "referenceDisplayValue": "Icon-16",
+          "actualDisplayValue": "Icon-20",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "029c2506e2a659e706f08d848158f4177192db5e",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "0973a407e778adad7ba475e4c023e3947409a768",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / [D] TopBar / Content / Button Group / [D] Settings / [D] Button",
+            "actualNestedOwnerRelativePath": "LeftAddon / LeftAddon",
+            "nestedOwnerComponentKey": "0973a407e778adad7ba475e4c023e3947409a768",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / [D] TopBar / Content / Button Group / [D] Settings / [D] Button",
+            "nestedOwnerRelativePath": "LeftAddon / LeftAddon"
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.button.variant-state-is-component-property",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": null,
+              "changeScope": null,
+              "ruleText": "Изменения View, Size, Shape, SingleIcon и DisabledState являются component property changes и должны показываться как самостоятельные customizations.",
+              "remediation": null
+            }
+          ],
+          "presentation": {
+            "scope": "slot-property",
+            "groupTitle": "Параметры слота",
+            "displayName": null,
+            "priority": 15,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I2283:36299;135096:147276;2283:36287;639:394327",
+            "name": "[D] BodyCell :: Wide",
+            "type": null,
+            "pageName": "Аннулирование чека",
+            "path": "[D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide",
+            "visible": true
+          },
+          "kind": "opacity",
+          "property": "opacity",
+          "message": "Прозрачность: 1 → 0.84",
+          "referenceValue": 1,
+          "actualValue": 0.84,
+          "referenceRawValue": 1,
+          "actualRawValue": 0.84,
+          "referenceDisplayValue": 1,
+          "actualDisplayValue": 0.84,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "076a0aefba1ef824fd0c477db0031e201dbb1bf7",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable",
+            "actualNestedOwnerRelativePath": "Cells / [D] BodyCell :: Wide",
+            "nestedOwnerComponentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-wide-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.manual-visual-styles-forbidden",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "styles.text|fill|stroke|opacity|layout.padding|layout.itemSpacing|radius",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "В строках и ячейках Table Wide запрещено вручную менять typography, fill, stroke, opacity, padding, spacing и radius. Разрешены alignment, ширина обычных колонок, текст и предусмотренные компонентом presets.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.visual-states-use-effective-baseline",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "state.hover|state.selected|state.disabled|fill|stroke|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Hover, selected и disabled состояния строк и ячеек Table Wide полностью определяются effective baseline. Ручная настройка их цветов и визуальных стилей запрещена.",
+              "remediation": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 70,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I2283:36299;135096:147276;2283:36287;1047:184880;74661:67583",
+            "name": "Text",
+            "type": null,
+            "pageName": "Аннулирование чека",
+            "path": "[D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text@@2",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Presets",
+          "message": "presets: status → text",
+          "referenceValue": "Status",
+          "actualValue": "Text",
+          "referenceRawValue": "Status",
+          "actualRawValue": "Text",
+          "referenceDisplayValue": "Status",
+          "actualDisplayValue": "Text",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "31515679735130e1a8940cd827964859690628e9",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide",
+            "actualNestedOwnerRelativePath": "Text",
+            "nestedOwnerComponentKey": "583a857150133e41d530a8031e9b53045017a0bd",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-wide-d.component-properties-are-first-class",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения variant/property в компонентах семейства таблиц являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.supported-presets-allowed",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.Presets",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Дизайнер может выбирать предусмотренные компонентом presets ячеек и addons. Это не является произвольным instance swap.",
+              "remediation": null
+            }
+          ],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I2283:36299;135096:147276;2283:36287;1015:45433;74661:67583",
+            "name": "Text",
+            "type": null,
+            "pageName": "Аннулирование чека",
+            "path": "[D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text@@3",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Presets",
+          "message": "presets: amount → text",
+          "referenceValue": "Amount",
+          "actualValue": "Text",
+          "referenceRawValue": "Amount",
+          "actualRawValue": "Text",
+          "referenceDisplayValue": "Amount",
+          "actualDisplayValue": "Text",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "31515679735130e1a8940cd827964859690628e9",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide",
+            "actualNestedOwnerRelativePath": "Text",
+            "nestedOwnerComponentKey": "7bd146b0de6c963268e6b325cf54e019b917df63",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-wide-d.component-properties-are-first-class",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения variant/property в компонентах семейства таблиц являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.supported-presets-allowed",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.Presets",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Дизайнер может выбирать предусмотренные компонентом presets ячеек и addons. Это не является произвольным instance swap.",
+              "remediation": null
+            }
+          ],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I2283:36299;135096:147276;2283:36289;1015:45433;74661:67583;74661:67470;115762:155855",
+            "name": "StatusBadge",
+            "type": null,
+            "pageName": "Аннулирование чека",
+            "path": "[D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / LeftAddon / LeftAddon / StatusBadge@@3",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.View",
+          "message": "view: neutralcross → positivecheckmark",
+          "referenceValue": "NeutralCross",
+          "actualValue": "PositiveCheckmark",
+          "referenceRawValue": "NeutralCross",
+          "actualRawValue": "PositiveCheckmark",
+          "referenceDisplayValue": "NeutralCross",
+          "actualDisplayValue": "PositiveCheckmark",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "7d85ef89304e59fcb628185798fe42302a093410",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "4ac2230be6600f5f9a7eb4030c741b25b211b363",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / LeftAddon / LeftAddon",
+            "actualNestedOwnerRelativePath": "StatusBadge",
+            "nestedOwnerComponentKey": "bf55ef3b57405356ef1664f5da9838bf67ca0de2",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / LeftAddon / LeftAddon / StatusBadge",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.status-badge.component-properties-are-first-class",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения variant/property в этом семействе компонентов являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+              "remediation": null
+            }
+          ],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I2283:36299;135096:147276;2283:36288;1015:45604;74661:67583;74661:67482;4:23779",
+            "name": "StatusPreset",
+            "type": null,
+            "pageName": "Аннулирование чека",
+            "path": "[D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / StatusPreset / StatusPreset@@2",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Type",
+          "message": "type: error / risk → approved",
+          "referenceValue": "Error / Risk",
+          "actualValue": "Approved",
+          "referenceRawValue": "Error / Risk",
+          "actualRawValue": "Approved",
+          "referenceDisplayValue": "Error / Risk",
+          "actualDisplayValue": "Approved",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "72c7daa5edc8f9646d865e68579d97453e4b592d",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / StatusPreset",
+            "actualNestedOwnerRelativePath": "StatusPreset",
+            "nestedOwnerComponentKey": "9dba4ba7b0121b6beed8b2b9bbc317a0302a0c29",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / StatusPreset / StatusPreset",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I2283:36300;80:27656;80:27143;79:26951",
+        "name": "neural-assistant",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / 🔒 [D] SpotlightBar / Left / SpotlightLogo / Icon 28 / neural-assistant",
+        "visible": true
+      },
+      "component": {
+        "name": "neural-assistant",
+        "key": "feb45fe4478d29c36478c4d54e907193b49a2151",
+        "library": "Icons",
+        "sourceFile": "icons/Icons -- corp.json"
+      },
+      "variant": {
+        "name": "Size=m",
+        "key": "feb45fe4478d29c36478c4d54e907193b49a2151"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I2283:36300;80:27656;80:27143;79:26951;144621:10052",
+            "name": "icon",
+            "type": null,
+            "pageName": "Аннулирование чека",
+            "path": "Size=m / icon",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #0024E1 → static_neutral/0",
+          "referenceValue": "#0024E1",
+          "actualValue": "static_neutral/0",
+          "referenceRawValue": "#0024E1",
+          "actualRawValue": "static_neutral/0",
+          "referenceDisplayValue": "#0024E1",
+          "actualDisplayValue": "static_neutral/0",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "static_neutral/0",
+            "key": "301d7bbf1c36b77ee22fa00b2008e56228859595",
+            "library": "Interface Static",
+            "sourceFile": "002 :: Interface Static Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:301d7bbf1c36b77ee22fa00b2008e56228859595/1930:47",
+            "key": "301d7bbf1c36b77ee22fa00b2008e56228859595",
+            "name": "static_neutral/0",
+            "collectionId": "VariableCollectionId:942:3863",
+            "collectionName": "Interface Static",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "feb45fe4478d29c36478c4d54e907193b49a2151",
+            "actualNestedOwnerPath": "Size=m",
+            "actualNestedOwnerRelativePath": "icon",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I2283:36300;3:5308;1209:29761",
+        "name": "RightAddon1",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / 🔒 [D] SpotlightBar / Right / [D][Corporate] Input / Field / RightAddons / RightAddon1",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Addon",
+        "key": "aed4c2993452251cf0ea38aeb98a16d334495e16",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- _ _ MasterInput.json"
+      },
+      "variant": {
+        "name": "Type=IconSecondary",
+        "key": "aed4c2993452251cf0ea38aeb98a16d334495e16"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I2283:36300;3:5308;1209:29761;29:32753",
+            "name": "PaintMe",
+            "type": null,
+            "pageName": "Аннулирование чека",
+            "path": "Type=IconSecondary / Fixer / PaintMe",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "fill: VariableID:faac436b14cc199cfe97243b05af867af9ecb365/3541:130 → neutral-translucent/500",
+          "referenceValue": "neutral-translucent/700",
+          "actualValue": "neutral-translucent/500",
+          "referenceRawValue": "VariableID:faac436b14cc199cfe97243b05af867af9ecb365/3541:130",
+          "actualRawValue": "neutral-translucent/500",
+          "referenceDisplayValue": "neutral-translucent/700",
+          "actualDisplayValue": "neutral-translucent/500",
+          "referenceResource": {
+            "name": "neutral-translucent/700",
+            "key": "faac436b14cc199cfe97243b05af867af9ecb365",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "neutral-translucent/500",
+            "key": "8e44b1c2e5a90ce2fea643e2e5be2c6e838feaef",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": {
+            "id": "VariableID:faac436b14cc199cfe97243b05af867af9ecb365/3541:130",
+            "key": "faac436b14cc199cfe97243b05af867af9ecb365",
+            "name": "neutral-translucent/700",
+            "collectionId": null,
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:8e44b1c2e5a90ce2fea643e2e5be2c6e838feaef/3541:112",
+            "key": "8e44b1c2e5a90ce2fea643e2e5be2c6e838feaef",
+            "name": "neutral-translucent/500",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "aed4c2993452251cf0ea38aeb98a16d334495e16",
+            "actualNestedOwnerPath": "Type=IconSecondary",
+            "actualNestedOwnerRelativePath": "Fixer / PaintMe",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I2283:36300;110:54481",
+        "name": "[D] Button",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / 🔒 [D] SpotlightBar / Right / [D] Button",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] Button",
+        "key": "29bef518986ed2a50664887147b81bbfbaf47017",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Button.json"
+      },
+      "variant": {
+        "name": "View=Accent, Size=48, Shape=Rounded, SingleIcon=False, DisabledState=False",
+        "key": "29bef518986ed2a50664887147b81bbfbaf47017"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I2283:36300;110:54481",
+            "name": "[D] Button",
+            "type": null,
+            "pageName": "Аннулирование чека",
+            "path": "View=Accent, Size=48, Shape=Rounded, SingleIcon=False, DisabledState=False",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.top",
+          "message": "Паддинг top: 4 → 10",
+          "referenceValue": 4,
+          "actualValue": 10,
+          "referenceRawValue": 4,
+          "actualRawValue": 10,
+          "referenceDisplayValue": 4,
+          "actualDisplayValue": 10,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "29bef518986ed2a50664887147b81bbfbaf47017",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I2283:36300;110:54481",
+            "name": "[D] Button",
+            "type": null,
+            "pageName": "Аннулирование чека",
+            "path": "View=Accent, Size=48, Shape=Rounded, SingleIcon=False, DisabledState=False",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.bottom",
+          "message": "Паддинг bottom: 4 → 10",
+          "referenceValue": 4,
+          "actualValue": 10,
+          "referenceRawValue": 4,
+          "actualRawValue": 10,
+          "referenceDisplayValue": 4,
+          "actualDisplayValue": 10,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "29bef518986ed2a50664887147b81bbfbaf47017",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36275",
+        "name": "titleHead",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / titleHead",
+        "visible": true
+      },
+      "component": {
+        "name": "titleHead",
+        "key": "d88b04dbb7e2db49b7f5e9c3ec3cb5bdd07b62b8",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36285",
+        "name": "rowPaymentTable",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Header / rowPaymentTable",
+        "visible": true
+      },
+      "component": {
+        "name": "rowPaymentTable",
+        "key": "ae2696a24c776f002a846ec47cca0c5ebb04cce1",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36287",
+        "name": "rowPaymentTable",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable",
+        "visible": true
+      },
+      "component": {
+        "name": "rowPaymentTable",
+        "key": "076a0aefba1ef824fd0c477db0031e201dbb1bf7",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36287;639:394327;74661:67583;74661:67470;74661:67425",
+        "name": "icon",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / LeftAddon / LeftAddon / icon",
+        "visible": true
+      },
+      "component": {
+        "name": "icon",
+        "key": "581875f0d73948d7435448545d4e62c03d7cd2b2",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36287;1015:45604;74661:67583;74661:67482",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "StatusPreset",
+        "key": "72c7daa5edc8f9646d865e68579d97453e4b592d",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36288",
+        "name": "rowPaymentTable",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable",
+        "visible": true
+      },
+      "component": {
+        "name": "rowPaymentTable",
+        "key": "076a0aefba1ef824fd0c477db0031e201dbb1bf7",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36288;639:394327;74661:67583;74661:67470;74661:67425",
+        "name": "icon",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / LeftAddon / LeftAddon / icon",
+        "visible": true
+      },
+      "component": {
+        "name": "icon",
+        "key": "581875f0d73948d7435448545d4e62c03d7cd2b2",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36288;1015:45604;74661:67583;74661:67482",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "StatusPreset",
+        "key": "72c7daa5edc8f9646d865e68579d97453e4b592d",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36289",
+        "name": "rowPaymentTable",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable",
+        "visible": true
+      },
+      "component": {
+        "name": "rowPaymentTable",
+        "key": "076a0aefba1ef824fd0c477db0031e201dbb1bf7",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36289;639:394327;74661:67583;74661:67470;74661:67425",
+        "name": "icon",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / LeftAddon / LeftAddon / icon",
+        "visible": true
+      },
+      "component": {
+        "name": "icon",
+        "key": "581875f0d73948d7435448545d4e62c03d7cd2b2",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36289;1015:45604;74661:67583;74661:67482",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "StatusPreset",
+        "key": "72c7daa5edc8f9646d865e68579d97453e4b592d",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36290",
+        "name": "rowPaymentTable",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable",
+        "visible": true
+      },
+      "component": {
+        "name": "rowPaymentTable",
+        "key": "076a0aefba1ef824fd0c477db0031e201dbb1bf7",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36290;639:394327;74661:67583;74661:67470;74661:67425",
+        "name": "icon",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / LeftAddon / LeftAddon / icon",
+        "visible": true
+      },
+      "component": {
+        "name": "icon",
+        "key": "581875f0d73948d7435448545d4e62c03d7cd2b2",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36290;1015:45604;74661:67583;74661:67482",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "StatusPreset",
+        "key": "72c7daa5edc8f9646d865e68579d97453e4b592d",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36291",
+        "name": "rowPaymentTable",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable",
+        "visible": true
+      },
+      "component": {
+        "name": "rowPaymentTable",
+        "key": "076a0aefba1ef824fd0c477db0031e201dbb1bf7",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36291;639:394327;74661:67583;74661:67470;74661:67425",
+        "name": "icon",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / LeftAddon / LeftAddon / icon",
+        "visible": true
+      },
+      "component": {
+        "name": "icon",
+        "key": "581875f0d73948d7435448545d4e62c03d7cd2b2",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36291;1015:45604;74661:67583;74661:67482",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "StatusPreset",
+        "key": "72c7daa5edc8f9646d865e68579d97453e4b592d",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36292",
+        "name": "rowPaymentTable",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable",
+        "visible": true
+      },
+      "component": {
+        "name": "rowPaymentTable",
+        "key": "076a0aefba1ef824fd0c477db0031e201dbb1bf7",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36292;639:394327;74661:67583;74661:67470;74661:67425",
+        "name": "icon",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / LeftAddon / LeftAddon / icon",
+        "visible": true
+      },
+      "component": {
+        "name": "icon",
+        "key": "581875f0d73948d7435448545d4e62c03d7cd2b2",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36292;1015:45604;74661:67583;74661:67482",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "StatusPreset",
+        "key": "c70c8380deca92defd97921ccb411c1c69748f85",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36293",
+        "name": "rowPaymentTable",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable",
+        "visible": true
+      },
+      "component": {
+        "name": "rowPaymentTable",
+        "key": "076a0aefba1ef824fd0c477db0031e201dbb1bf7",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36293;639:394327;74661:67583;74661:67470;74661:67425",
+        "name": "icon",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / LeftAddon / LeftAddon / icon",
+        "visible": true
+      },
+      "component": {
+        "name": "icon",
+        "key": "581875f0d73948d7435448545d4e62c03d7cd2b2",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36293;1015:45604;74661:67583;74661:67482",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "StatusPreset",
+        "key": "72c7daa5edc8f9646d865e68579d97453e4b592d",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36294",
+        "name": "rowPaymentTable",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable",
+        "visible": true
+      },
+      "component": {
+        "name": "rowPaymentTable",
+        "key": "076a0aefba1ef824fd0c477db0031e201dbb1bf7",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36294;639:394327;74661:67583;74661:67470;74661:67425",
+        "name": "icon",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / LeftAddon / LeftAddon / icon",
+        "visible": true
+      },
+      "component": {
+        "name": "icon",
+        "key": "581875f0d73948d7435448545d4e62c03d7cd2b2",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36294;1015:45604;74661:67583;74661:67482",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "StatusPreset",
+        "key": "72c7daa5edc8f9646d865e68579d97453e4b592d",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36295",
+        "name": "rowPaymentTable",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable",
+        "visible": true
+      },
+      "component": {
+        "name": "rowPaymentTable",
+        "key": "076a0aefba1ef824fd0c477db0031e201dbb1bf7",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36295;639:394327;74661:67583;74661:67470;74661:67425",
+        "name": "icon",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / LeftAddon / LeftAddon / icon",
+        "visible": true
+      },
+      "component": {
+        "name": "icon",
+        "key": "581875f0d73948d7435448545d4e62c03d7cd2b2",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36295;1015:45604;74661:67583;74661:67482",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "StatusPreset",
+        "key": "72c7daa5edc8f9646d865e68579d97453e4b592d",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36296",
+        "name": "rowPaymentTable",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable",
+        "visible": true
+      },
+      "component": {
+        "name": "rowPaymentTable",
+        "key": "076a0aefba1ef824fd0c477db0031e201dbb1bf7",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36296;639:394327;74661:67583;74661:67470;74661:67425",
+        "name": "icon",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / LeftAddon / LeftAddon / icon",
+        "visible": true
+      },
+      "component": {
+        "name": "icon",
+        "key": "581875f0d73948d7435448545d4e62c03d7cd2b2",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36296;1015:45604;74661:67583;74661:67482",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "StatusPreset",
+        "key": "72c7daa5edc8f9646d865e68579d97453e4b592d",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36287;1015:45604;74661:67583;74661:67482;4:23779",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / StatusPreset / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Approved, Style=Muted, Size=20",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36288;1015:45604;74661:67583;74661:67482;4:23779",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / StatusPreset / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Approved, Style=Muted, Size=20",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36289;1015:45604;74661:67583;74661:67482;4:23779",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / StatusPreset / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Approved, Style=Muted, Size=20",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36290;1015:45604;74661:67583;74661:67482;4:23779",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / StatusPreset / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Approved, Style=Muted, Size=20",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36291;1015:45604;74661:67583;74661:67482;4:23779",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / StatusPreset / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Approved, Style=Muted, Size=20",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36292;1015:45604;74661:67583;74661:67482;4:23783",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / StatusPreset / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "9dba4ba7b0121b6beed8b2b9bbc317a0302a0c29",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Error / Risk, Style=Muted, Size=20",
+        "key": "9dba4ba7b0121b6beed8b2b9bbc317a0302a0c29"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36293;1015:45604;74661:67583;74661:67482;4:23779",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / StatusPreset / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Approved, Style=Muted, Size=20",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36294;1015:45604;74661:67583;74661:67482;4:23779",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / StatusPreset / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Approved, Style=Muted, Size=20",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36295;1015:45604;74661:67583;74661:67482;4:23779",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / StatusPreset / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Approved, Style=Muted, Size=20",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I2283:36299;135096:147276;2283:36296;1015:45604;74661:67583;74661:67482;4:23779",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "Аннулирование чека",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D](1600) TableBasic :: StickyPagination / [D](1600) TableWide :: SuperLight / Table / Content / rowPaymentTable / Cells / [D] BodyCell :: Wide / Text / StatusPreset / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Approved, Style=Muted, Size=20",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "2283:36260",
+        "name": "Страница: Аннулирование чека",
+        "type": "PAGE",
+        "pageName": "Аннулирование чека",
+        "path": "Аннулирование чека",
+        "visible": true
+      },
+      "kind": "missingThemeMode",
+      "recommendation": "Смени темизацию на Corp",
+      "component": null
+    }
+  ],
+  "componentContexts": [
+    {
+      "componentKey": "web-core-navigation.tabs",
+      "summary": "Web Core Navigation Tabs содержит standalone-компоненты primary и secondary tabs. Он задаёт baseline values для TabsPrimary и TabPrimary, но composite components вроде TabsView могут владеть другими effective baselines через собственные composition contracts.",
+      "criticalBaselines": [
+        "Standalone TabsPrimary / Items / TabPrimary has layout.itemSpacing = 12.",
+        "Standalone TabPrimary label has text style Paragraph/18–24 Primary Large.",
+        "If [D] TabsView reports TabPrimary 12 → 16 or Paragraph/18–24 → Action/18–24, first check TabsView composition-contract: those can be host-owned effective baselines, not designer customizations."
+      ],
+      "agentInstructions": [
+        "Do not call TabsView-owned nested overrides violations when actual equals the TabsView effective baseline.",
+        "Use this core Tabs contract to identify standalone baselines and component keys.",
+        "Use the host component composition-contract to decide whether a nested difference is owned by the host wrapper or by the designer."
+      ],
+      "includedComponents": [
+        "[M] 🔄 TabsSecondary",
+        "[D] 🔄 TabsSecondary",
+        "🔩 ExampleOptionListContent",
+        "🔩 ExampleAddon",
+        "🔩 TabPrimary",
+        "🔩 Addon",
+        "🔩 Slider",
+        "🔩 Slider",
+        "🔩 Slider",
+        "🔩 Slider",
+        "🔩 Slider",
+        "[M] TabsSecondary",
+        "[D] TabsSecondary",
+        "TabsPrimary"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.ActiveState",
+            "variant.DisabledState",
+            "variant.Size",
+            "variant.View"
+          ],
+          "layerProperties": [
+            "layout.itemSpacing",
+            "layout.padding.*",
+            "styles.text",
+            "styles.fill",
+            "styles.stroke",
+            "fill",
+            "stroke",
+            "radius",
+            "opacity"
+          ],
+          "dependencyPolicy": "Standalone Tabs contract описывает core baseline. Composite wrappers вроде TabsView могут переопределять nested TabsPrimary или TabPrimary baselines через собственный composition-contract."
+        },
+        "publicApi": {
+          "components": [
+            {
+              "name": "[M] 🔄 TabsSecondary",
+              "key": "6e662f3c27660bda0a5b17995b67a6319e6286b7",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "scheduled",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] 🔄 TabsSecondary",
+              "key": "470ba328cc0e1b5fcf59edcedb733255750120bf",
+              "role": "main",
+              "platform": "desktop",
+              "status": "scheduled",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "🔩 ExampleOptionListContent",
+              "key": "5e988eea2a439f7aeb2a55a05b7d4ca58e4d5624",
+              "role": "part",
+              "platform": "universal",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "🔩 ExampleAddon",
+              "key": "25567b89ee5a4ac534d1bf71163cc0d1ac12519d",
+              "role": "part",
+              "platform": "universal",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "🔩 TabPrimary",
+              "key": "8d45c768b56f9781ec44a60b93a5467a3310236c",
+              "role": "part",
+              "platform": "universal",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "🔩 Addon",
+              "key": "f875b10e3bb447d250a4208675e5dbaefa24b754",
+              "role": "part",
+              "platform": "universal",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "🔩 Slider",
+              "key": "d6d7eed01d99cc3511dfe15cf4df35d771683894",
+              "role": "part",
+              "platform": "universal",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "🔩 Slider",
+              "key": "18e95cc695ac9ddff019545dbd9932751b07c3b4",
+              "role": "part",
+              "platform": "universal",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "🔩 Slider",
+              "key": "6a29142107d9a4d2ac60e88c9a2aaa16de51f4ac",
+              "role": "part",
+              "platform": "universal",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "🔩 Slider",
+              "key": "7e96411b167cdb8223d73640aeb4ea5f1d3f602b",
+              "role": "part",
+              "platform": "universal",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "🔩 Slider",
+              "key": "71f50751224f2becd3515bc3c8da24cb13725dee",
+              "role": "part",
+              "platform": "universal",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TabsSecondary",
+              "key": "4d05d1c47c37f00fcd2705dd44a74a9750f9f922",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TabsSecondary",
+              "key": "742f286666794402fc4e91cb801f5c202f30e00c",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "TabsPrimary",
+              "key": "0b6cbeb2069d15adf5be7b9a4ba17acc6a397017",
+              "role": "main",
+              "platform": "universal",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            }
+          ],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web-core.button",
+      "summary": "Button — семейство action controls. Apollo должен трактовать изменения Button variant как component property changes, а ручные изменения style/token/layout как layer customizations.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] Button",
+        "[D] Button_Inverted",
+        "[M] Button",
+        "[M] Button_Inverted",
+        "🔄 [D][Corporate] Button",
+        "🔄 [D][Corporate] Button_Inverted",
+        "🔄 [M][Corporate] Button",
+        "🔄 [M][Corporate] Button_Inverted",
+        "🔩 Addon",
+        "🔩 Addon"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*",
+          "variant.View",
+          "variant.Size",
+          "variant.Shape",
+          "variant.SingleIcon",
+          "variant.DisabledState"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent",
+          "layout.padding",
+          "layout.itemSpacing"
+        ],
+        "baselinePolicy": "Если component property изменилась, сравнивай ручные layer overrides с baseline текущего actual-состояния компонента, а не с исходным reference baseline.",
+        "slotProperties": [
+          "LeftAddon.variant.Type",
+          "RightAddon.variant.Type"
+        ],
+        "ordering": [
+          "component-property",
+          "slot-property",
+          "layer-property"
+        ]
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.View",
+            "variant.Size",
+            "variant.Shape",
+            "variant.SingleIcon",
+            "variant.DisabledState"
+          ],
+          "layerProperties": [
+            "fills",
+            "strokes",
+            "strokeWeight",
+            "cornerRadius",
+            "opacity",
+            "layout.padding",
+            "layout.itemSpacing",
+            "styles.text",
+            "typography"
+          ],
+          "dependencyPolicy": "При reset component property layer differences, вызванные только этой property, могут исчезнуть автоматически. Ручные layer overrides должны оставаться независимо сбрасываемыми, пока reset родительской property не уберёт их target state."
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web-core.master-input",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔩 Addon",
+        "🔩 Addon",
+        "🔩 Addon",
+        "🔩 Addon",
+        "🔩 Placeholder",
+        "🔩 Placeholder",
+        "🔩 Placeholder",
+        "🔩 Placeholder",
+        "🔩 Placeholder",
+        "🔩 Placeholder",
+        "🔩 Placeholder",
+        "🔩 Placeholder",
+        "🔩 Placeholder",
+        "🔩 Placeholder",
+        "🔩 Placeholder",
+        "🔩 Placeholder",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.status-badge",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "StatusBadge",
+        "StatusBadge_Inverted"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.corporate-content",
+      "summary": "CorporateContent — обязательная контентная область продуктовой страницы. Используй [D] CorporateContent для desktop и [M] CorporateContent для mobile-web.",
+      "criticalBaselines": [],
+      "agentInstructions": [
+        "Не считай произвольный контент или несколько дочерних элементов внутри Body нарушением сами по себе.",
+        "Проверяй содержимое Body по собственным компонентным контрактам и паттернам.",
+        "Считай использование переходного [T] CorporateContent явным нарушением.",
+        "Не рекомендуй ручную правку fill, grid style или padding корня CorporateContent; рекомендуй правильный mode переменных.",
+        "Не требуй наличия родительского компонента CorporatePage в Figma: такого компонента нет, самостоятельное использование CorporateContent допустимо.",
+        "Не применяй Gutter как обязательный itemSpacing внутри Body; он допустим в любой горизонтальной композиции без обязательного Section.",
+        "На ширине 768 требуй [D] CorporateContent и mode 768 коллекции [D] Grid & Cols.",
+        "Не придумывай условия выбора между base-bg-alt и base-bg до появления отдельного паттерна; default — base-bg-alt (grey).",
+        "Не разрешай кликабельность корня или detach CorporateContent и Body.",
+        "Не разрешай вкладывать CorporateContent внутрь CorporateContent и не оставляй SwapMe после добавления реального содержимого.",
+        "Требуй Header или HeaderMenu непосредственно над CorporateContent в общем вертикальном контейнере с gap 0.",
+        "Не разрешай менять вертикальное направление, itemSpacing=0 или clipsContent=false корня CorporateContent."
+      ],
+      "includedComponents": [
+        "[D] Section",
+        "[D] CorporateContent",
+        "[M] CorporateContent",
+        "❌ [D] BottomMagrin",
+        "❌ [D] TopMargin",
+        "❌ [D](1024+) Content",
+        "❌ [D](1024+) ContentBody",
+        "❌ [D](768) Content",
+        "❌ [D](768) ContentBody",
+        "❌ [M] Content",
+        "❌ [M](320-767) ContentBody",
+        "🔄 [D] Body",
+        "🔄 [M} Body",
+        "🔄 [T] Body",
+        "🔄 [T] CorporateContent"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.status-property",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔒 [D] PropertyPreset",
+        "🔒 [D] StatusPreset",
+        "🔒 [M] PropertyPreset",
+        "🔒 [M] StatusPreset"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.table-wide-d",
+      "summary": "Table Wide [D] — семейство для таблиц с одним текстовым слотом в ячейке, большим количеством столбцов, группировкой и горизонтальным скроллом.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] BodyActionCell :: Wide",
+        "[D] BodyCell :: Wide",
+        "[D] BodyControlCell :: Wide",
+        "[D] HeadActionCell",
+        "[D] HeadCell",
+        "[D] HeadControlCell",
+        "ActionButton",
+        "BorderLine",
+        "Chevron",
+        "ColumnControl",
+        "ColumnControl :: OptionList",
+        "ControlAddon",
+        "HeaderAddon",
+        "LeftAddon",
+        "RightAddon",
+        "Sorting",
+        "Text",
+        "[D] BodyGroupRow :: Wide",
+        "[D] BodyRow :: Wide",
+        "[D] HeadRow :: Universal",
+        "GroupBorderLine",
+        "HeadDivider"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.*"
+          ],
+          "layerProperties": [
+            "fills",
+            "strokes",
+            "strokeWeight",
+            "cornerRadius",
+            "opacity",
+            "layout.padding",
+            "layout.itemSpacing",
+            "styles.text",
+            "typography"
+          ],
+          "dependencyPolicy": "Nested diffs семейства таблиц должны использовать effective baseline выбранного table component перед fallback к standalone baselines вложенных компонентов."
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    }
+  ]
+}
