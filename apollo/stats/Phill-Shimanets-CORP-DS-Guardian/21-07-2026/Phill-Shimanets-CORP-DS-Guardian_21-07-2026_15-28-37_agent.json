@@ -1,0 +1,1429 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1256584474811604593-1784633317397-rmlspimi:agent",
+  "sourceReportId": "apollo-1256584474811604593-1784633317397-rmlspimi",
+  "generatedAt": "2026-07-21T11:28:37.397Z",
+  "suggestedFileName": "Phill-Shimanets-CORP-DS-Guardian_21-07-2026_15-28-37_agent.json",
+  "user": {
+    "id": "1256584474811604593",
+    "name": "Phill Shimanets • CORP DS • Guardian",
+    "slug": "Phill-Shimanets-CORP-DS-Guardian"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.1.56"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "[W] Альфа-кредит",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "startedAt": "2026-07-21T11:27:56.731Z",
+    "finishedAt": "2026-07-21T11:28:37.397Z",
+    "durationMs": 40666,
+    "selection": [
+      {
+        "nodeId": "29054:366006",
+        "name": "[D] CorporateContent",
+        "nodeType": "INSTANCE",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов / Page / Body / [D] CorporateContent",
+        "componentKey": "a8d13cb6e1ae67a7296709f669238f41971c7197"
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 241,
+    "problemOccurrenceCount": 22,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 0,
+      "updates": 0,
+      "customizations": 1,
+      "localComponents": 11,
+      "detachedComponents": 0,
+      "presets": 10,
+      "technicalComponents": 0,
+      "currentComponents": 230,
+      "wrongChannel": 0,
+      "themization": 0
+    },
+    "includedFindingCount": 22,
+    "omittedCurrentComponentCount": 230
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with severity=error and matchKind=exact_component_rule for the same property/change.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 11,
+      "includedCount": 11,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 10,
+      "includedCount": 10,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "29054:366006",
+        "name": "[D] CorporateContent",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов / Page / Body / [D] CorporateContent",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] CorporateContent",
+        "key": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateContent.json"
+      },
+      "variant": {
+        "name": "[D] CorporateContent",
+        "key": "a8d13cb6e1ae67a7296709f669238f41971c7197"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "29054:366006",
+            "name": "[D] CorporateContent",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "[D] CorporateContent",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "fill: VariableID:136853:7710 → base-bg/secondary",
+          "referenceValue": "BackgroundColor",
+          "actualValue": "base-bg/secondary",
+          "referenceRawValue": "VariableID:136853:7710",
+          "actualRawValue": "base-bg/secondary",
+          "referenceDisplayValue": "BackgroundColor",
+          "actualDisplayValue": "base-bg/secondary",
+          "referenceResource": {
+            "name": "BackgroundColor",
+            "key": "db84ea8cdc3ae910e107478f4b4b3fad114302a0",
+            "library": "BackgroundPlate Level",
+            "sourceFile": "Web :: Corp Components"
+          },
+          "actualResource": {
+            "name": "base-bg/secondary",
+            "key": "be3bf2c65d1f3fd8c66b5d74e95d79a608ee8f72",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": {
+            "id": "VariableID:136853:7710",
+            "key": "db84ea8cdc3ae910e107478f4b4b3fad114302a0",
+            "name": "BackgroundColor",
+            "collectionId": null,
+            "collectionName": "BackgroundPlate Level",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:be3bf2c65d1f3fd8c66b5d74e95d79a608ee8f72/3541:152",
+            "key": "be3bf2c65d1f3fd8c66b5d74e95d79a608ee8f72",
+            "name": "base-bg/secondary",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.corporate-content.background-mode-only",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "fill|variables.BackgroundPlate Color",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Цвет фона CorporateContent задаётся выбором mode коллекции BackgroundPlate Color для всего фрейма. Ручное изменение fill запрещено.",
+              "remediation": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29054:366006;135096:147276;29054:365989;80390:51819;31003:10303;48:100893",
+            "name": "LeftAddon",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "[D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / [D] TopBar / Content / Button Group / [D] Settings / [D] Button / LeftAddon / LeftAddon",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Type",
+          "message": "type: icon-16 → icon-20",
+          "referenceValue": "Icon-16",
+          "actualValue": "Icon-20",
+          "referenceRawValue": "Icon-16",
+          "actualRawValue": "Icon-20",
+          "referenceDisplayValue": "Icon-16",
+          "actualDisplayValue": "Icon-20",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "029c2506e2a659e706f08d848158f4177192db5e",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "0973a407e778adad7ba475e4c023e3947409a768",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / [D] TopBar / Content / Button Group / [D] Settings / [D] Button",
+            "actualNestedOwnerRelativePath": "LeftAddon / LeftAddon",
+            "nestedOwnerComponentKey": "0973a407e778adad7ba475e4c023e3947409a768",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / [D] TopBar / Content / Button Group / [D] Settings / [D] Button",
+            "nestedOwnerRelativePath": "LeftAddon / LeftAddon"
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.button.variant-state-is-component-property",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": null,
+              "changeScope": null,
+              "ruleText": "Изменения View, Size, Shape, SingleIcon и DisabledState являются component property changes и должны показываться как самостоятельные customizations.",
+              "remediation": null
+            }
+          ],
+          "presentation": {
+            "scope": "slot-property",
+            "groupTitle": "Параметры слота",
+            "displayName": null,
+            "priority": 15,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29054:366006;135096:147276;29054:365994;29054:336813",
+            "name": "[D] BodyCell :: Basic",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "[D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table / Cells / [D] BodyCell :: Basic@@2",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Presets",
+          "message": "presets: status → text",
+          "referenceValue": "Status",
+          "actualValue": "Text",
+          "referenceRawValue": "Status",
+          "actualRawValue": "Text",
+          "referenceDisplayValue": "Status",
+          "actualDisplayValue": "Text",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "ae425ce1591c438ae6ae981641cc939ec2a836a2",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "c29e0b44a27cecb2ebe3370c2c1dbc11310d32b9",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table",
+            "actualNestedOwnerRelativePath": "Cells / [D] BodyCell :: Basic",
+            "nestedOwnerComponentKey": "cb97f7b1385d8ce0260e4eb2fc4688aafbfe8ae1",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table / Cells / [D] BodyCell :: Basic",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-basic-d.component-properties-are-first-class",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения variant/property в компонентах семейства таблиц являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.table-basic-d.supported-presets-allowed",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.Presets",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Дизайнер может выбирать предусмотренные компонентом presets ячеек и addons. Это не является произвольным instance swap.",
+              "remediation": null
+            }
+          ],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29054:366006;135096:147276;29054:365994;29054:339439;74754:73719",
+            "name": "StatusPreset",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "[D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table / Cells / [D] BodyCell :: Basic / Content / StatusPreset",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Type",
+          "message": "type: processing → approved",
+          "referenceValue": "Processing",
+          "actualValue": "Approved",
+          "referenceRawValue": "Processing",
+          "actualRawValue": "Approved",
+          "referenceDisplayValue": "Processing",
+          "actualDisplayValue": "Approved",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "cb97f7b1385d8ce0260e4eb2fc4688aafbfe8ae1",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table / Cells / [D] BodyCell :: Basic",
+            "actualNestedOwnerRelativePath": "Content / StatusPreset",
+            "nestedOwnerComponentKey": "ae2effd2c3826917be0af4b689b5f17598ee80b2",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table / Cells / [D] BodyCell :: Basic / Content / StatusPreset",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29054:366006;135096:147276;29054:365995;29054:339439;74754:73719",
+            "name": "StatusPreset",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "[D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table / Cells / [D] BodyCell :: Basic / Content / StatusPreset@@2",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Type",
+          "message": "type: approved → error / risk",
+          "referenceValue": "Approved",
+          "actualValue": "Error / Risk",
+          "referenceRawValue": "Approved",
+          "actualRawValue": "Error / Risk",
+          "referenceDisplayValue": "Approved",
+          "actualDisplayValue": "Error / Risk",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "9dba4ba7b0121b6beed8b2b9bbc317a0302a0c29",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "cb97f7b1385d8ce0260e4eb2fc4688aafbfe8ae1",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table / Cells / [D] BodyCell :: Basic",
+            "actualNestedOwnerRelativePath": "Content / StatusPreset",
+            "nestedOwnerComponentKey": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table / Cells / [D] BodyCell :: Basic / Content / StatusPreset",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29054:366006;135096:147276;29054:365996;29054:339439;74754:73719",
+            "name": "StatusPreset",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "[D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table / Cells / [D] BodyCell :: Basic / Content / StatusPreset@@3",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Type",
+          "message": "type: error / risk → approved",
+          "referenceValue": "Error / Risk",
+          "actualValue": "Approved",
+          "referenceRawValue": "Error / Risk",
+          "actualRawValue": "Approved",
+          "referenceDisplayValue": "Error / Risk",
+          "actualDisplayValue": "Approved",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "cb97f7b1385d8ce0260e4eb2fc4688aafbfe8ae1",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table / Cells / [D] BodyCell :: Basic",
+            "actualNestedOwnerRelativePath": "Content / StatusPreset",
+            "nestedOwnerComponentKey": "9dba4ba7b0121b6beed8b2b9bbc317a0302a0c29",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table / Cells / [D] BodyCell :: Basic / Content / StatusPreset",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29054:366006;135096:147276;29054:365997;29054:339439;74754:73719",
+            "name": "StatusPreset",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "[D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table / Cells / [D] BodyCell :: Basic / Content / StatusPreset@@4",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Type",
+          "message": "type: neutral → processing",
+          "referenceValue": "Neutral",
+          "actualValue": "Processing",
+          "referenceRawValue": "Neutral",
+          "actualRawValue": "Processing",
+          "referenceDisplayValue": "Neutral",
+          "actualDisplayValue": "Processing",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "ae2effd2c3826917be0af4b689b5f17598ee80b2",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "cb97f7b1385d8ce0260e4eb2fc4688aafbfe8ae1",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table / Cells / [D] BodyCell :: Basic",
+            "actualNestedOwnerRelativePath": "Content / StatusPreset",
+            "nestedOwnerComponentKey": "190cf8e4e07e55603201d3a06a2538af3cc78c51",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table / Cells / [D] BodyCell :: Basic / Content / StatusPreset",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29054:366006;135096:147276;29054:365998;29054:339439;74754:73719",
+            "name": "StatusPreset",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "[D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table / Cells / [D] BodyCell :: Basic / Content / StatusPreset@@5",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Type",
+          "message": "type: attention → processing",
+          "referenceValue": "Attention",
+          "actualValue": "Processing",
+          "referenceRawValue": "Attention",
+          "actualRawValue": "Processing",
+          "referenceDisplayValue": "Attention",
+          "actualDisplayValue": "Processing",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "ae2effd2c3826917be0af4b689b5f17598ee80b2",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "cb97f7b1385d8ce0260e4eb2fc4688aafbfe8ae1",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table / Cells / [D] BodyCell :: Basic",
+            "actualNestedOwnerRelativePath": "Content / StatusPreset",
+            "nestedOwnerComponentKey": "7e5ea33a45d0ca278c5e46190af24f2e0aa3aabc",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table / Cells / [D] BodyCell :: Basic / Content / StatusPreset",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I29054:366006;135096:147276;29054:365992",
+        "name": "AK - DR Table",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов / Page / Body / [D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Header / AK - DR Table",
+        "visible": true
+      },
+      "component": {
+        "name": "AK - DR Table",
+        "key": "b814e4062bc8d742300b5cb20a439491dead4a52",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I29054:366006;135096:147276;29054:365994",
+        "name": "AK - DR Table",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов / Page / Body / [D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table",
+        "visible": true
+      },
+      "component": {
+        "name": "AK - DR Table",
+        "key": "c29e0b44a27cecb2ebe3370c2c1dbc11310d32b9",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I29054:366006;135096:147276;29054:365995",
+        "name": "AK - DR Table",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов / Page / Body / [D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table",
+        "visible": true
+      },
+      "component": {
+        "name": "AK - DR Table",
+        "key": "c29e0b44a27cecb2ebe3370c2c1dbc11310d32b9",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I29054:366006;135096:147276;29054:365996",
+        "name": "AK - DR Table",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов / Page / Body / [D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table",
+        "visible": true
+      },
+      "component": {
+        "name": "AK - DR Table",
+        "key": "c29e0b44a27cecb2ebe3370c2c1dbc11310d32b9",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I29054:366006;135096:147276;29054:365997",
+        "name": "AK - DR Table",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов / Page / Body / [D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table",
+        "visible": true
+      },
+      "component": {
+        "name": "AK - DR Table",
+        "key": "c29e0b44a27cecb2ebe3370c2c1dbc11310d32b9",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I29054:366006;135096:147276;29054:365998",
+        "name": "AK - DR Table",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов / Page / Body / [D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table",
+        "visible": true
+      },
+      "component": {
+        "name": "AK - DR Table",
+        "key": "c29e0b44a27cecb2ebe3370c2c1dbc11310d32b9",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I29054:366006;135096:147276;29054:365999",
+        "name": "AK - DR Table",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов / Page / Body / [D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table",
+        "visible": true
+      },
+      "component": {
+        "name": "AK - DR Table",
+        "key": "c29e0b44a27cecb2ebe3370c2c1dbc11310d32b9",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I29054:366006;135096:147276;29054:366000",
+        "name": "AK - DR Table",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов / Page / Body / [D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table",
+        "visible": true
+      },
+      "component": {
+        "name": "AK - DR Table",
+        "key": "c29e0b44a27cecb2ebe3370c2c1dbc11310d32b9",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I29054:366006;135096:147276;29054:366001",
+        "name": "AK - DR Table",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов / Page / Body / [D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table",
+        "visible": true
+      },
+      "component": {
+        "name": "AK - DR Table",
+        "key": "c29e0b44a27cecb2ebe3370c2c1dbc11310d32b9",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I29054:366006;135096:147276;29054:366002",
+        "name": "AK - DR Table",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов / Page / Body / [D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table",
+        "visible": true
+      },
+      "component": {
+        "name": "AK - DR Table",
+        "key": "c29e0b44a27cecb2ebe3370c2c1dbc11310d32b9",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I29054:366006;135096:147276;29054:366003",
+        "name": "AK - DR Table",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов / Page / Body / [D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table",
+        "visible": true
+      },
+      "component": {
+        "name": "AK - DR Table",
+        "key": "c29e0b44a27cecb2ebe3370c2c1dbc11310d32b9",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I29054:366006;135096:147276;29054:365994;29054:339439;74754:73719",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов / Page / Body / [D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table / Cells / [D] BodyCell :: Basic / Content / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Approved, Style=Muted, Size=20",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I29054:366006;135096:147276;29054:365995;29054:339439;74754:73719",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов / Page / Body / [D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table / Cells / [D] BodyCell :: Basic / Content / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "9dba4ba7b0121b6beed8b2b9bbc317a0302a0c29",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Error / Risk, Style=Muted, Size=20",
+        "key": "9dba4ba7b0121b6beed8b2b9bbc317a0302a0c29"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I29054:366006;135096:147276;29054:365996;29054:339439;74754:73719",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов / Page / Body / [D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table / Cells / [D] BodyCell :: Basic / Content / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Approved, Style=Muted, Size=20",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I29054:366006;135096:147276;29054:365997;29054:339439;74754:73719",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов / Page / Body / [D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table / Cells / [D] BodyCell :: Basic / Content / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "ae2effd2c3826917be0af4b689b5f17598ee80b2",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Processing, Style=Muted, Size=20",
+        "key": "ae2effd2c3826917be0af4b689b5f17598ee80b2"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I29054:366006;135096:147276;29054:365998;29054:339439;74754:73719",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов / Page / Body / [D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table / Cells / [D] BodyCell :: Basic / Content / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "ae2effd2c3826917be0af4b689b5f17598ee80b2",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Processing, Style=Muted, Size=20",
+        "key": "ae2effd2c3826917be0af4b689b5f17598ee80b2"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I29054:366006;135096:147276;29054:365999;29054:339439;74754:73719",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов / Page / Body / [D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table / Cells / [D] BodyCell :: Basic / Content / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "190cf8e4e07e55603201d3a06a2538af3cc78c51",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Neutral, Style=Muted, Size=20",
+        "key": "190cf8e4e07e55603201d3a06a2538af3cc78c51"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I29054:366006;135096:147276;29054:366000;29054:339439;74754:73719",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов / Page / Body / [D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table / Cells / [D] BodyCell :: Basic / Content / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "190cf8e4e07e55603201d3a06a2538af3cc78c51",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Neutral, Style=Muted, Size=20",
+        "key": "190cf8e4e07e55603201d3a06a2538af3cc78c51"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I29054:366006;135096:147276;29054:366001;29054:339439;74754:73719",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов / Page / Body / [D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table / Cells / [D] BodyCell :: Basic / Content / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "190cf8e4e07e55603201d3a06a2538af3cc78c51",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Neutral, Style=Muted, Size=20",
+        "key": "190cf8e4e07e55603201d3a06a2538af3cc78c51"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I29054:366006;135096:147276;29054:366002;29054:339439;74754:73719",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов / Page / Body / [D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table / Cells / [D] BodyCell :: Basic / Content / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "7e5ea33a45d0ca278c5e46190af24f2e0aa3aabc",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Attention, Style=Muted, Size=20",
+        "key": "7e5ea33a45d0ca278c5e46190af24f2e0aa3aabc"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I29054:366006;135096:147276;29054:366003;29054:339439;74754:73719",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов / Page / Body / [D] CorporateContent / [D] Body / AKDocumentsTable_new / [D](1600) TableBasic / Table / Content / AK - DR Table / Cells / [D] BodyCell :: Basic / Content / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Approved, Style=Muted, Size=20",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7"
+      },
+      "comparisonIssues": []
+    }
+  ],
+  "componentContexts": [
+    {
+      "componentKey": "web-core.button",
+      "summary": "Button — семейство action controls. Apollo должен трактовать изменения Button variant как component property changes, а ручные изменения style/token/layout как layer customizations.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] Button",
+        "[D] Button_Inverted",
+        "[M] Button",
+        "[M] Button_Inverted",
+        "🔄 [D][Corporate] Button",
+        "🔄 [D][Corporate] Button_Inverted",
+        "🔄 [M][Corporate] Button",
+        "🔄 [M][Corporate] Button_Inverted",
+        "🔩 Addon",
+        "🔩 Addon"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*",
+          "variant.View",
+          "variant.Size",
+          "variant.Shape",
+          "variant.SingleIcon",
+          "variant.DisabledState"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent",
+          "layout.padding",
+          "layout.itemSpacing"
+        ],
+        "baselinePolicy": "Если component property изменилась, сравнивай ручные layer overrides с baseline текущего actual-состояния компонента, а не с исходным reference baseline.",
+        "slotProperties": [
+          "LeftAddon.variant.Type",
+          "RightAddon.variant.Type"
+        ],
+        "ordering": [
+          "component-property",
+          "slot-property",
+          "layer-property"
+        ]
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.View",
+            "variant.Size",
+            "variant.Shape",
+            "variant.SingleIcon",
+            "variant.DisabledState"
+          ],
+          "layerProperties": [
+            "fills",
+            "strokes",
+            "strokeWeight",
+            "cornerRadius",
+            "opacity",
+            "layout.padding",
+            "layout.itemSpacing",
+            "styles.text",
+            "typography"
+          ],
+          "dependencyPolicy": "При reset component property layer differences, вызванные только этой property, могут исчезнуть автоматически. Ручные layer overrides должны оставаться независимо сбрасываемыми, пока reset родительской property не уберёт их target state."
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web-corp.corporate-content",
+      "summary": "CorporateContent — обязательная контентная область продуктовой страницы. Используй [D] CorporateContent для desktop и [M] CorporateContent для mobile-web.",
+      "criticalBaselines": [],
+      "agentInstructions": [
+        "Не считай произвольный контент или несколько дочерних элементов внутри Body нарушением сами по себе.",
+        "Проверяй содержимое Body по собственным компонентным контрактам и паттернам.",
+        "Считай использование переходного [T] CorporateContent явным нарушением.",
+        "Не рекомендуй ручную правку fill, grid style или padding корня CorporateContent; рекомендуй правильный mode переменных.",
+        "Не требуй наличия родительского компонента CorporatePage в Figma: такого компонента нет, самостоятельное использование CorporateContent допустимо.",
+        "Не применяй Gutter как обязательный itemSpacing внутри Body; он допустим в любой горизонтальной композиции без обязательного Section.",
+        "На ширине 768 требуй [D] CorporateContent и mode 768 коллекции [D] Grid & Cols.",
+        "Не придумывай условия выбора между base-bg-alt и base-bg до появления отдельного паттерна; default — base-bg-alt (grey).",
+        "Не разрешай кликабельность корня или detach CorporateContent и Body.",
+        "Не разрешай вкладывать CorporateContent внутрь CorporateContent и не оставляй SwapMe после добавления реального содержимого.",
+        "Требуй Header или HeaderMenu непосредственно над CorporateContent в общем вертикальном контейнере с gap 0.",
+        "Не разрешай менять вертикальное направление, itemSpacing=0 или clipsContent=false корня CorporateContent."
+      ],
+      "includedComponents": [
+        "[D] Section",
+        "[D] CorporateContent",
+        "[M] CorporateContent",
+        "❌ [D] BottomMagrin",
+        "❌ [D] TopMargin",
+        "❌ [D](1024+) Content",
+        "❌ [D](1024+) ContentBody",
+        "❌ [D](768) Content",
+        "❌ [D](768) ContentBody",
+        "❌ [M] Content",
+        "❌ [M](320-767) ContentBody",
+        "🔄 [D] Body",
+        "🔄 [M} Body",
+        "🔄 [T] Body",
+        "🔄 [T] CorporateContent"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.status-property",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔒 [D] PropertyPreset",
+        "🔒 [D] StatusPreset",
+        "🔒 [M] PropertyPreset",
+        "🔒 [M] StatusPreset"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.table-basic-d",
+      "summary": "Table Basic [D] — семейство более воздушных таблиц до пяти столбцов с поддержкой двух текстовых слотов в одной ячейке.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] BodyActionCell :: Basic",
+        "[D] BodyCell :: Basic",
+        "[D] BodyControlCell :: Basic",
+        "[D] GroupDivider :: Basic",
+        "🔄 [D] BodyActionCell",
+        "🔄 [D] BodyCell",
+        "🔄 [D] BodyControlCell",
+        "🔄 [D] HeadActionCell",
+        "🔄 [D] HeadCell",
+        "🔄 [D] HeadControlCell",
+        "🔄 Chevron",
+        "🔄 HeadControl",
+        "🔄 Sorting",
+        "🔒 [D] BodyCell",
+        "ActionButton",
+        "Control",
+        "Graphics",
+        "GraphicsSkeleton",
+        "LeftAddon",
+        "RightAddon",
+        "RightAddon",
+        "Text",
+        "[D] BodyRow :: Basic",
+        "🔄 [D] BodyRow :: Core",
+        "🔄 [D] HeadRow :: Core",
+        "🔄 [D] ListHeaderRow :: Core"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.*"
+          ],
+          "layerProperties": [
+            "fills",
+            "strokes",
+            "strokeWeight",
+            "cornerRadius",
+            "opacity",
+            "layout.padding",
+            "layout.itemSpacing",
+            "styles.text",
+            "typography"
+          ],
+          "dependencyPolicy": "Nested diffs семейства таблиц должны использовать effective baseline выбранного table component перед fallback к standalone baselines вложенных компонентов."
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    }
+  ]
+}
