@@ -1,0 +1,2047 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1256584474811604593-1784633589821-icns8pf5:agent",
+  "sourceReportId": "apollo-1256584474811604593-1784633589821-icns8pf5",
+  "generatedAt": "2026-07-21T11:33:09.821Z",
+  "suggestedFileName": "Phill-Shimanets-CORP-DS-Guardian_21-07-2026_15-33-09_agent.json",
+  "user": {
+    "id": "1256584474811604593",
+    "name": "Phill Shimanets • CORP DS • Guardian",
+    "slug": "Phill-Shimanets-CORP-DS-Guardian"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.1.56"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "[W] Альфа-кредит",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "startedAt": "2026-07-21T11:33:04.232Z",
+    "finishedAt": "2026-07-21T11:33:09.821Z",
+    "durationMs": 5589,
+    "selection": [
+      {
+        "nodeId": "29001:328792",
+        "name": "[D] 1660 - Отправка документов - Статус - Черновик",
+        "nodeType": "FRAME",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов - Статус - Черновик",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 114,
+    "problemOccurrenceCount": 9,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 0,
+      "updates": 0,
+      "customizations": 3,
+      "localComponents": 6,
+      "detachedComponents": 0,
+      "presets": 0,
+      "technicalComponents": 0,
+      "currentComponents": 104,
+      "wrongChannel": 0,
+      "themization": 0
+    },
+    "includedFindingCount": 9,
+    "omittedCurrentComponentCount": 104
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with severity=error and matchKind=exact_component_rule for the same property/change.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 3,
+      "includedCount": 3,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 6,
+      "includedCount": 6,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I29001:328794;28937:470157;46640:78305;46640:78232",
+        "name": "IconView",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов - Статус - Черновик / Page / sideMenuAK / [D] SideMenu / Footer / Content / ProductFooter / ProductFooterCell / IconView",
+        "visible": true
+      },
+      "component": {
+        "name": "IconView",
+        "key": "da76ef0432f226c9eccfa7b4a874ca7f3a82b164",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=24",
+        "key": "da76ef0432f226c9eccfa7b4a874ca7f3a82b164"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I29001:328794;28937:470157;46640:78305;46640:78232;448:34345;448:24917;93755:26806",
+            "name": "icon",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "Size=24 / Content / ShapeContent / 🔩 Content / Fixer / PaintMe / arrow-asc-bold / icon",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: rgba(0,36,225,1) → decorative/blue",
+          "referenceValue": "rgba(0,36,225,1)",
+          "actualValue": "decorative/blue",
+          "referenceRawValue": "rgba(0,36,225,1)",
+          "actualRawValue": "decorative/blue",
+          "referenceDisplayValue": "rgba(0,36,225,1)",
+          "actualDisplayValue": "decorative/blue",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "decorative/blue",
+            "key": "b2eeb3c4c02e5eab348bbc6434a62146cf735838",
+            "library": "Decorative Dynamic",
+            "sourceFile": "003 :: Decorative Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:b2eeb3c4c02e5eab348bbc6434a62146cf735838/1816:134",
+            "key": "b2eeb3c4c02e5eab348bbc6434a62146cf735838",
+            "name": "decorative/blue",
+            "collectionId": "VariableCollectionId:944:1243",
+            "collectionName": "Decorative Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "31dc723fc39e2cbc62bb66732b5a4126dc019a82",
+            "actualNestedOwnerPath": "Size=24 / Content / ShapeContent / 🔩 Content / Fixer / PaintMe / arrow-asc-bold",
+            "actualNestedOwnerRelativePath": "icon",
+            "nestedOwnerComponentKey": "31dc723fc39e2cbc62bb66732b5a4126dc019a82",
+            "nestedOwnerPath": "Size=24 / Content / ShapeContent / 🔩 Content / Fixer / PaintMe / arrow-asc-bold",
+            "nestedOwnerRelativePath": "icon"
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29001:328794;28937:470157;46640:78305;46640:78232;448:34345",
+            "name": "🔩 Content",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "Size=24 / Content / ShapeContent / 🔩 Content",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Size",
+          "message": "size: 16 → 20",
+          "referenceValue": "16",
+          "actualValue": "20",
+          "referenceRawValue": "16",
+          "actualRawValue": "20",
+          "referenceDisplayValue": "16",
+          "actualDisplayValue": "20",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "4dd76d5f619901e4670c33f5796a163543fff93b",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I29001:328796;25593:452693",
+        "name": "Button",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов - Статус - Черновик / Page / Body / AK_Header / Left / Button",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] Button",
+        "key": "3b05080686c7d3cceee3abefdff71c7ec88594de",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Button.json"
+      },
+      "variant": {
+        "name": "View=Transparent, Size=40, Shape=Rectangular, SingleIcon=False, DisabledState=False",
+        "key": "3b05080686c7d3cceee3abefdff71c7ec88594de"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I29001:328796;25593:452693",
+            "name": "Button",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "View=Transparent, Size=40, Shape=Rectangular, SingleIcon=False, DisabledState=False",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.right",
+          "message": "Паддинг right: 16 → 20",
+          "referenceValue": 16,
+          "actualValue": 20,
+          "referenceRawValue": 16,
+          "actualRawValue": 20,
+          "referenceDisplayValue": 16,
+          "actualDisplayValue": 20,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "3b05080686c7d3cceee3abefdff71c7ec88594de",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29001:328796;25593:452693;48:100879",
+            "name": "LeftAddon",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "View=Transparent, Size=40, Shape=Rectangular, SingleIcon=False, DisabledState=False / LeftAddon / LeftAddon",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Type",
+          "message": "type: Icon-16 → Icon 24",
+          "referenceValue": "Icon-16",
+          "actualValue": "Icon 24",
+          "referenceRawValue": "Icon-16",
+          "actualRawValue": "Icon 24",
+          "referenceDisplayValue": "Icon-16",
+          "actualDisplayValue": "Icon 24",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "96f3e268d8fafaa37f71c84d18d722a408f5a8f1",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "3b05080686c7d3cceee3abefdff71c7ec88594de",
+            "actualNestedOwnerPath": "View=Transparent, Size=40, Shape=Rectangular, SingleIcon=False, DisabledState=False",
+            "actualNestedOwnerRelativePath": "LeftAddon / LeftAddon",
+            "nestedOwnerComponentKey": "96f3e268d8fafaa37f71c84d18d722a408f5a8f1",
+            "nestedOwnerPath": "View=Transparent, Size=40, Shape=Rectangular, SingleIcon=False, DisabledState=False / LeftAddon / LeftAddon",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.button.variant-state-is-component-property",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": null,
+              "changeScope": null,
+              "ruleText": "Изменения View, Size, Shape, SingleIcon и DisabledState являются component property changes и должны показываться как самостоятельные customizations.",
+              "remediation": null
+            }
+          ],
+          "presentation": {
+            "scope": "slot-property",
+            "groupTitle": "Параметры слота",
+            "displayName": null,
+            "priority": 15,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29001:328796;25593:452693;48:100879;3:7833",
+            "name": "PaintMe",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "View=Transparent, Size=40, Shape=Rectangular, SingleIcon=False, DisabledState=False / LeftAddon / LeftAddon / Fixer / PaintMe",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "fill: VariableID:53f842b1771349c5dca692351edfc422e8f081b5/3541:208 → neutral-translucent/700",
+          "referenceValue": "text/primary",
+          "actualValue": "neutral-translucent/700",
+          "referenceRawValue": "VariableID:53f842b1771349c5dca692351edfc422e8f081b5/3541:208",
+          "actualRawValue": "neutral-translucent/700",
+          "referenceDisplayValue": "text/primary",
+          "actualDisplayValue": "neutral-translucent/700",
+          "referenceResource": {
+            "name": "text/primary",
+            "key": "53f842b1771349c5dca692351edfc422e8f081b5",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "neutral-translucent/700",
+            "key": "faac436b14cc199cfe97243b05af867af9ecb365",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": {
+            "id": "VariableID:53f842b1771349c5dca692351edfc422e8f081b5/3541:208",
+            "key": "53f842b1771349c5dca692351edfc422e8f081b5",
+            "name": "text/primary",
+            "collectionId": null,
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:faac436b14cc199cfe97243b05af867af9ecb365/1250:698",
+            "key": "faac436b14cc199cfe97243b05af867af9ecb365",
+            "name": "neutral-translucent/700",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "96f3e268d8fafaa37f71c84d18d722a408f5a8f1",
+            "actualNestedOwnerPath": "View=Transparent, Size=40, Shape=Rectangular, SingleIcon=False, DisabledState=False / LeftAddon / LeftAddon",
+            "actualNestedOwnerRelativePath": "Fixer / PaintMe",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29001:328796;25593:452693;48:100881",
+            "name": "Label",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "View=Transparent, Size=40, Shape=Rectangular, SingleIcon=False, DisabledState=False / Text / Label",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "fill: VariableID:53f842b1771349c5dca692351edfc422e8f081b5/3541:208 → text/secondary",
+          "referenceValue": "text/primary",
+          "actualValue": "text/secondary",
+          "referenceRawValue": "VariableID:53f842b1771349c5dca692351edfc422e8f081b5/3541:208",
+          "actualRawValue": "text/secondary",
+          "referenceDisplayValue": "text/primary",
+          "actualDisplayValue": "text/secondary",
+          "referenceResource": {
+            "name": "text/primary",
+            "key": "53f842b1771349c5dca692351edfc422e8f081b5",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "text/secondary",
+            "key": "d9d26239617e3ab9e69d7ed378d811a3c4561063",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": {
+            "id": "VariableID:53f842b1771349c5dca692351edfc422e8f081b5/3541:208",
+            "key": "53f842b1771349c5dca692351edfc422e8f081b5",
+            "name": "text/primary",
+            "collectionId": null,
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:d9d26239617e3ab9e69d7ed378d811a3c4561063/1268:1",
+            "key": "d9d26239617e3ab9e69d7ed378d811a3c4561063",
+            "name": "text/secondary",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "3b05080686c7d3cceee3abefdff71c7ec88594de",
+            "actualNestedOwnerPath": "View=Transparent, Size=40, Shape=Rectangular, SingleIcon=False, DisabledState=False",
+            "actualNestedOwnerRelativePath": "Text / Label",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "29001:328831",
+        "name": "[D] CorporateContent",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов - Статус - Черновик / Page / Body / [D] CorporateContent",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] CorporateContent",
+        "key": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateContent.json"
+      },
+      "variant": {
+        "name": "[D] CorporateContent",
+        "key": "a8d13cb6e1ae67a7296709f669238f41971c7197"
+      },
+      "comparisonIssues": [
+        "Нет данных для заливка в снапшоте для «[D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot / Slot / [D] FileUpload / Files / FilesGroup / FileUploadItem / RightAddon»",
+        "Нет данных для обводка в снапшоте для «[D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot / Slot / [D] FileUpload / Files / FilesGroup / FileUploadItem / RightAddon»",
+        "Нет данных для толщины обводки в снапшоте для «[D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot / Slot / [D] FileUpload / Files / FilesGroup / FileUploadItem / RightAddon»"
+      ],
+      "changes": [
+        {
+          "node": {
+            "id": "I29001:328831;135096:147276;29035:169575",
+            "name": "[D] BackgroundPlateSlot",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "[D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.top",
+          "message": "Паддинг top: 24 → 32",
+          "referenceValue": 24,
+          "actualValue": 32,
+          "referenceRawValue": 24,
+          "actualRawValue": 32,
+          "referenceDisplayValue": 24,
+          "actualDisplayValue": 32,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "6d5d4dda10be00621991e9b5a0152db4e47f4e2f",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+            "actualNestedOwnerPath": "[D] CorporateContent",
+            "actualNestedOwnerRelativePath": "[D] Body / Frame 2131330463 / [D] BackgroundPlateSlot",
+            "nestedOwnerComponentKey": "6d5d4dda10be00621991e9b5a0152db4e47f4e2f",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|styles.fill|styles.stroke|fill|stroke|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства BackgroundPlate нужно сравнивать с effective baseline текущего component variant и nested owner context. Изменения layout.padding.* у BackgroundPlateSlot являются допустимыми дизайнерскими кастомизациями, если они нужны композиции и заданы через токены Spacing. Это правило не разрешает изменение radius: скругления BackgroundPlate и Style Level фиксируются компонентным baseline и не должны изменяться вручную.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.background-plate.padding-is-designer-controlled",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.padding.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Рекомендуемый стартовый padding BackgroundPlateSlot: Spacing/32 для Level-1 (outer) и Spacing/24 для Level-2 (inner). Дизайнер может свободно изменить padding под контекст композиции или применимый паттерн. Само отличие от рекомендуемого значения не является нарушением и не требует сброса. Показывай изменение как layer customization и проверяй только обязательную привязку каждого layout.padding.* к токену Spacing.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "layout.padding.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Базовые padding у BackgroundPlate могут быть любыми по значению, но каждое layout.padding.* должно быть задано через токен из коллекции Spacing. Ручные px-значения без token binding являются нарушением, даже если число совпадает со spacing-шкалой.",
+              "remediation": "Привяжите каждое значение padding к соответствующему токену коллекции Spacing; не оставляйте raw px."
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens",
+            "message": "Базовые padding у BackgroundPlate могут быть любыми по значению, но каждое layout.padding.* должно быть задано через токен из коллекции Spacing. Ручные px-значения без token binding являются нарушением, даже если число совпадает со spacing-шкалой.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29001:328831;135096:147276;29035:169575",
+            "name": "[D] BackgroundPlateSlot",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "[D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.right",
+          "message": "Паддинг right: 24 → 32",
+          "referenceValue": 24,
+          "actualValue": 32,
+          "referenceRawValue": 24,
+          "actualRawValue": 32,
+          "referenceDisplayValue": 24,
+          "actualDisplayValue": 32,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "6d5d4dda10be00621991e9b5a0152db4e47f4e2f",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+            "actualNestedOwnerPath": "[D] CorporateContent",
+            "actualNestedOwnerRelativePath": "[D] Body / Frame 2131330463 / [D] BackgroundPlateSlot",
+            "nestedOwnerComponentKey": "6d5d4dda10be00621991e9b5a0152db4e47f4e2f",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|styles.fill|styles.stroke|fill|stroke|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства BackgroundPlate нужно сравнивать с effective baseline текущего component variant и nested owner context. Изменения layout.padding.* у BackgroundPlateSlot являются допустимыми дизайнерскими кастомизациями, если они нужны композиции и заданы через токены Spacing. Это правило не разрешает изменение radius: скругления BackgroundPlate и Style Level фиксируются компонентным baseline и не должны изменяться вручную.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.background-plate.padding-is-designer-controlled",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.padding.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Рекомендуемый стартовый padding BackgroundPlateSlot: Spacing/32 для Level-1 (outer) и Spacing/24 для Level-2 (inner). Дизайнер может свободно изменить padding под контекст композиции или применимый паттерн. Само отличие от рекомендуемого значения не является нарушением и не требует сброса. Показывай изменение как layer customization и проверяй только обязательную привязку каждого layout.padding.* к токену Spacing.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "layout.padding.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Базовые padding у BackgroundPlate могут быть любыми по значению, но каждое layout.padding.* должно быть задано через токен из коллекции Spacing. Ручные px-значения без token binding являются нарушением, даже если число совпадает со spacing-шкалой.",
+              "remediation": "Привяжите каждое значение padding к соответствующему токену коллекции Spacing; не оставляйте raw px."
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens",
+            "message": "Базовые padding у BackgroundPlate могут быть любыми по значению, но каждое layout.padding.* должно быть задано через токен из коллекции Spacing. Ручные px-значения без token binding являются нарушением, даже если число совпадает со spacing-шкалой.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29001:328831;135096:147276;29035:169575",
+            "name": "[D] BackgroundPlateSlot",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "[D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.bottom",
+          "message": "Паддинг bottom: 24 → 32",
+          "referenceValue": 24,
+          "actualValue": 32,
+          "referenceRawValue": 24,
+          "actualRawValue": 32,
+          "referenceDisplayValue": 24,
+          "actualDisplayValue": 32,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "6d5d4dda10be00621991e9b5a0152db4e47f4e2f",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+            "actualNestedOwnerPath": "[D] CorporateContent",
+            "actualNestedOwnerRelativePath": "[D] Body / Frame 2131330463 / [D] BackgroundPlateSlot",
+            "nestedOwnerComponentKey": "6d5d4dda10be00621991e9b5a0152db4e47f4e2f",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|styles.fill|styles.stroke|fill|stroke|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства BackgroundPlate нужно сравнивать с effective baseline текущего component variant и nested owner context. Изменения layout.padding.* у BackgroundPlateSlot являются допустимыми дизайнерскими кастомизациями, если они нужны композиции и заданы через токены Spacing. Это правило не разрешает изменение radius: скругления BackgroundPlate и Style Level фиксируются компонентным baseline и не должны изменяться вручную.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.background-plate.padding-is-designer-controlled",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.padding.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Рекомендуемый стартовый padding BackgroundPlateSlot: Spacing/32 для Level-1 (outer) и Spacing/24 для Level-2 (inner). Дизайнер может свободно изменить padding под контекст композиции или применимый паттерн. Само отличие от рекомендуемого значения не является нарушением и не требует сброса. Показывай изменение как layer customization и проверяй только обязательную привязку каждого layout.padding.* к токену Spacing.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "layout.padding.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Базовые padding у BackgroundPlate могут быть любыми по значению, но каждое layout.padding.* должно быть задано через токен из коллекции Spacing. Ручные px-значения без token binding являются нарушением, даже если число совпадает со spacing-шкалой.",
+              "remediation": "Привяжите каждое значение padding к соответствующему токену коллекции Spacing; не оставляйте raw px."
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens",
+            "message": "Базовые padding у BackgroundPlate могут быть любыми по значению, но каждое layout.padding.* должно быть задано через токен из коллекции Spacing. Ручные px-значения без token binding являются нарушением, даже если число совпадает со spacing-шкалой.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29001:328831;135096:147276;29035:169575",
+            "name": "[D] BackgroundPlateSlot",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "[D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.left",
+          "message": "Паддинг left: 24 → 32",
+          "referenceValue": 24,
+          "actualValue": 32,
+          "referenceRawValue": 24,
+          "actualRawValue": 32,
+          "referenceDisplayValue": 24,
+          "actualDisplayValue": 32,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "6d5d4dda10be00621991e9b5a0152db4e47f4e2f",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+            "actualNestedOwnerPath": "[D] CorporateContent",
+            "actualNestedOwnerRelativePath": "[D] Body / Frame 2131330463 / [D] BackgroundPlateSlot",
+            "nestedOwnerComponentKey": "6d5d4dda10be00621991e9b5a0152db4e47f4e2f",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|styles.fill|styles.stroke|fill|stroke|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства BackgroundPlate нужно сравнивать с effective baseline текущего component variant и nested owner context. Изменения layout.padding.* у BackgroundPlateSlot являются допустимыми дизайнерскими кастомизациями, если они нужны композиции и заданы через токены Spacing. Это правило не разрешает изменение radius: скругления BackgroundPlate и Style Level фиксируются компонентным baseline и не должны изменяться вручную.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.background-plate.padding-is-designer-controlled",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.padding.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Рекомендуемый стартовый padding BackgroundPlateSlot: Spacing/32 для Level-1 (outer) и Spacing/24 для Level-2 (inner). Дизайнер может свободно изменить padding под контекст композиции или применимый паттерн. Само отличие от рекомендуемого значения не является нарушением и не требует сброса. Показывай изменение как layer customization и проверяй только обязательную привязку каждого layout.padding.* к токену Spacing.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "layout.padding.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Базовые padding у BackgroundPlate могут быть любыми по значению, но каждое layout.padding.* должно быть задано через токен из коллекции Spacing. Ручные px-значения без token binding являются нарушением, даже если число совпадает со spacing-шкалой.",
+              "remediation": "Привяжите каждое значение padding к соответствующему токену коллекции Spacing; не оставляйте raw px."
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens",
+            "message": "Базовые padding у BackgroundPlate могут быть любыми по значению, но каждое layout.padding.* должно быть задано через токен из коллекции Spacing. Ручные px-значения без token binding являются нарушением, даже если число совпадает со spacing-шкалой.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29001:328831;135096:147276;29035:168062;136846:8891;29035:168051;166:8524",
+            "name": "Switch",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "[D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot / Slot / File_Uploader / PrototypeAttach -- Sender / File_Uploader / PrototypeAttach -- Sender / AttachSwitcher / [D] CheckboxGroup / Items / SwitchLabel / Switch@@2",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.SelectedState",
+          "message": "selectedState: true → false",
+          "referenceValue": "True",
+          "actualValue": "False",
+          "referenceRawValue": "True",
+          "actualRawValue": "False",
+          "referenceDisplayValue": "True",
+          "actualDisplayValue": "False",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "a65f40e3d8b146e4ff5499b25871c37b8760fd2a",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "84799656a1b3be0232a00be64594d496fbbf4b1c",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot / Slot / File_Uploader / PrototypeAttach -- Sender / File_Uploader / PrototypeAttach -- Sender / AttachSwitcher / [D] CheckboxGroup / Items / SwitchLabel",
+            "actualNestedOwnerRelativePath": "Switch",
+            "nestedOwnerComponentKey": "a6e98fb2f8dcd0ed74e5e46b415fca95457092fa",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot / Slot / File_Uploader / PrototypeAttach -- Sender / File_Uploader / PrototypeAttach -- Sender / AttachSwitcher / [D] CheckboxGroup / Items / SwitchLabel / Switch",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.switch.component-properties-are-first-class",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения variant/property в этом семействе компонентов являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-core.switch.variant-state-is-component-property",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": null,
+              "changeScope": null,
+              "ruleText": "Изменения SelectedState, DisabledState, Reverse и Hint являются component property changes и должны показываться как самостоятельные customizations.",
+              "remediation": null
+            }
+          ],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29001:328831;135096:147276;29035:168062;136846:8891;29035:168523;67900:4065;3073:1568;3073:1490;448:31937",
+            "name": "🔩 Content",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "[D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot / Slot / [D] FileUpload / Files / FilesGroup / FileUploadItem / 🔩 LeftAddon / IconView / Content / ShapeContent / 🔩 Content",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Size",
+          "message": "size: 32 → 24",
+          "referenceValue": "32",
+          "actualValue": "24",
+          "referenceRawValue": "32",
+          "actualRawValue": "24",
+          "referenceDisplayValue": "32",
+          "actualDisplayValue": "24",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "656a48efd3ed9db44d549f4ab100f58a8dd1556d",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "1a67004b61bf91e9a12eb69f907fe92de4dcd35a",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot / Slot / [D] FileUpload / Files / FilesGroup / FileUploadItem / 🔩 LeftAddon / IconView",
+            "actualNestedOwnerRelativePath": "Content / ShapeContent / 🔩 Content",
+            "nestedOwnerComponentKey": "1a67004b61bf91e9a12eb69f907fe92de4dcd35a",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot / Slot / [D] FileUpload / Files / FilesGroup / FileUploadItem / 🔩 LeftAddon / IconView",
+            "nestedOwnerRelativePath": "Content / ShapeContent / 🔩 Content"
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29001:328831;135096:147276;29035:168062;136846:8891;29035:168523;67900:4065;3073:1570",
+            "name": "RightAddon",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "[D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot / Slot / [D] FileUpload / Files / FilesGroup / FileUploadItem / RightAddon",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.left",
+          "message": "Паддинг left: 0 → 8",
+          "referenceValue": 0,
+          "actualValue": 8,
+          "referenceRawValue": 0,
+          "actualRawValue": 8,
+          "referenceDisplayValue": 0,
+          "actualDisplayValue": 8,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "3ca0beb0703eebb73b73cb16e100dde70a80889c",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "b06b456958317c5b98789ce678616cae15f042ea",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot / Slot / [D] FileUpload / Files / FilesGroup / FileUploadItem",
+            "actualNestedOwnerRelativePath": "RightAddon",
+            "nestedOwnerComponentKey": "b06b456958317c5b98789ce678616cae15f042ea",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot / Slot / [D] FileUpload / Files / FilesGroup / FileUploadItem",
+            "nestedOwnerRelativePath": "RightAddon"
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29001:328831;135096:147276;29035:168062;136846:8891;29035:168523;67900:4065;3073:1570",
+            "name": "RightAddon",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "[D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot / Slot / [D] FileUpload / Files / FilesGroup / FileUploadItem / RightAddon",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.itemSpacing",
+          "message": "Отступ между элементами: 0 → 8",
+          "referenceValue": 0,
+          "actualValue": 8,
+          "referenceRawValue": 0,
+          "actualRawValue": 8,
+          "referenceDisplayValue": 0,
+          "actualDisplayValue": 8,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "3ca0beb0703eebb73b73cb16e100dde70a80889c",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "b06b456958317c5b98789ce678616cae15f042ea",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot / Slot / [D] FileUpload / Files / FilesGroup / FileUploadItem",
+            "actualNestedOwnerRelativePath": "RightAddon",
+            "nestedOwnerComponentKey": "b06b456958317c5b98789ce678616cae15f042ea",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot / Slot / [D] FileUpload / Files / FilesGroup / FileUploadItem",
+            "nestedOwnerRelativePath": "RightAddon"
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29001:328831;135096:147276;29035:168062;136846:8891;29035:168523;67900:4065;3073:1570",
+            "name": "RightAddon",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "[D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot / Slot / [D] FileUpload / Files / FilesGroup / FileUploadItem / RightAddon",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": "0",
+          "referenceRawValue": 8,
+          "actualRawValue": "0",
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": "0",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "3ca0beb0703eebb73b73cb16e100dde70a80889c",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "b06b456958317c5b98789ce678616cae15f042ea",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot / Slot / [D] FileUpload / Files / FilesGroup / FileUploadItem",
+            "actualNestedOwnerRelativePath": "RightAddon",
+            "nestedOwnerComponentKey": "b06b456958317c5b98789ce678616cae15f042ea",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot / Slot / [D] FileUpload / Files / FilesGroup / FileUploadItem",
+            "nestedOwnerRelativePath": "RightAddon"
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29001:328831;135096:147276;29035:168062;136846:8891;29035:168523;67900:4070;67900:4150;16:11345",
+            "name": "LeftAddon",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "[D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot / Slot / [D] FileUpload / Attach / Button + Extension / Attach / LeftAddon / LeftAddon",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Type",
+          "message": "type: icon-16 → icon 16",
+          "referenceValue": "Icon-16",
+          "actualValue": "Icon 16",
+          "referenceRawValue": "Icon-16",
+          "actualRawValue": "Icon 16",
+          "referenceDisplayValue": "Icon-16",
+          "actualDisplayValue": "Icon 16",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "907635c55db4f3aead88861c90fa5a56a7e11524",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "31f2ee6f9abd90f582f914d77f10e5a18ceaf708",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot / Slot / [D] FileUpload / Attach / Button + Extension / Attach",
+            "actualNestedOwnerRelativePath": "LeftAddon / LeftAddon",
+            "nestedOwnerComponentKey": "31f2ee6f9abd90f582f914d77f10e5a18ceaf708",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot / Slot / [D] FileUpload / Attach / Button + Extension / Attach",
+            "nestedOwnerRelativePath": "LeftAddon / LeftAddon"
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.button.variant-state-is-component-property",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": null,
+              "changeScope": null,
+              "ruleText": "Изменения View, Size, Shape, SingleIcon и DisabledState являются component property changes и должны показываться как самостоятельные customizations.",
+              "remediation": null
+            }
+          ],
+          "presentation": {
+            "scope": "slot-property",
+            "groupTitle": "Параметры слота",
+            "displayName": null,
+            "priority": 15,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "29001:328794",
+        "name": "sideMenuAK",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов - Статус - Черновик / Page / sideMenuAK",
+        "visible": true
+      },
+      "component": {
+        "name": "sideMenuAK",
+        "key": "428bf73b78ef2a7781708f24bb715ae12a475f24",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I29001:328794;28937:332239",
+        "name": "LogoCell",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов - Статус - Черновик / Page / sideMenuAK / [D] SideMenu / LogoCell",
+        "visible": true
+      },
+      "component": {
+        "name": "LogoCell",
+        "key": "ebe4ebb828b4be9aefadb018b9e13b30b97c7202",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "29001:328796",
+        "name": "AK_Header",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов - Статус - Черновик / Page / Body / AK_Header",
+        "visible": true
+      },
+      "component": {
+        "name": "AK_Header",
+        "key": "0816bb8da7bd8749c1235665a28d3f4e1a98b5c2",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I29001:328831;135096:147276;29035:168062;136846:8891;29035:168523;67900:4065;3073:1570",
+        "name": "RightAddon",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов - Статус - Черновик / Page / Body / [D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot / Slot / [D] FileUpload / Files / FilesGroup / FileUploadItem / RightAddon",
+        "visible": true
+      },
+      "component": {
+        "name": "RightAddon",
+        "key": "3ca0beb0703eebb73b73cb16e100dde70a80889c",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I29001:328831;135096:147276;29035:168062;136846:8891;29035:168523;67900:4066;3073:1570",
+        "name": "RightAddon",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов - Статус - Черновик / Page / Body / [D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot / Slot / [D] FileUpload / Files / FilesGroup / FileUploadItem / RightAddon",
+        "visible": true
+      },
+      "component": {
+        "name": "RightAddon",
+        "key": "3ca0beb0703eebb73b73cb16e100dde70a80889c",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I29001:328831;135096:147276;29035:168062;136846:8891;29035:168523;67900:4067;3073:1570",
+        "name": "👻 AKUploadFileRightPart",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов - Статус - Черновик / Page / Body / [D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot / Slot / [D] FileUpload / Files / FilesGroup / FileUploadItem / 👻 AKUploadFileRightPart",
+        "visible": true
+      },
+      "component": {
+        "name": "👻 AKUploadFileRightPart",
+        "key": "d3dfc57530fca3354a87d26793dab757914b4397",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    }
+  ],
+  "componentContexts": [
+    {
+      "componentKey": "web-core.button",
+      "summary": "Button — семейство action controls. Apollo должен трактовать изменения Button variant как component property changes, а ручные изменения style/token/layout как layer customizations.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] Button",
+        "[D] Button_Inverted",
+        "[M] Button",
+        "[M] Button_Inverted",
+        "🔄 [D][Corporate] Button",
+        "🔄 [D][Corporate] Button_Inverted",
+        "🔄 [M][Corporate] Button",
+        "🔄 [M][Corporate] Button_Inverted",
+        "🔩 Addon",
+        "🔩 Addon"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*",
+          "variant.View",
+          "variant.Size",
+          "variant.Shape",
+          "variant.SingleIcon",
+          "variant.DisabledState"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent",
+          "layout.padding",
+          "layout.itemSpacing"
+        ],
+        "baselinePolicy": "Если component property изменилась, сравнивай ручные layer overrides с baseline текущего actual-состояния компонента, а не с исходным reference baseline.",
+        "slotProperties": [
+          "LeftAddon.variant.Type",
+          "RightAddon.variant.Type"
+        ],
+        "ordering": [
+          "component-property",
+          "slot-property",
+          "layer-property"
+        ]
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.View",
+            "variant.Size",
+            "variant.Shape",
+            "variant.SingleIcon",
+            "variant.DisabledState"
+          ],
+          "layerProperties": [
+            "fills",
+            "strokes",
+            "strokeWeight",
+            "cornerRadius",
+            "opacity",
+            "layout.padding",
+            "layout.itemSpacing",
+            "styles.text",
+            "typography"
+          ],
+          "dependencyPolicy": "При reset component property layer differences, вызванные только этой property, могут исчезнуть автоматически. Ручные layer overrides должны оставаться независимо сбрасываемыми, пока reset родительской property не уберёт их target state."
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web-core.file-upload-item",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "FileUploadItem",
+        "🔩 Progress",
+        "🔩 Content",
+        "🔩 RightAddon",
+        "🔩 LeftAddon"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.icon-view",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Content",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "IconView"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.switch",
+      "summary": "Switch — семейство бинарных on/off controls. Apollo должен трактовать SelectedState, DisabledState, Reverse и Hint как component property changes, а ручные area/oval/label visual changes как layer customizations.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "Switch",
+        "Switch_Inverted",
+        "SwitchLabel",
+        "SwitchLabel_Inverted"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*",
+          "variant.SelectedState",
+          "variant.DisabledState",
+          "variant.Reverse",
+          "variant.Hint"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent",
+          "strokeWeight",
+          "layout.padding",
+          "layout.itemSpacing"
+        ],
+        "baselinePolicy": "Если component property изменилась, сравнивай ручные layer overrides с baseline текущего actual-состояния компонента, а не с исходным reference baseline.",
+        "slotProperties": [
+          "Switch.variant.SelectedState",
+          "Switch.variant.DisabledState"
+        ],
+        "contentProperties": [
+          "Label.characters"
+        ],
+        "ordering": [
+          "component-property",
+          "slot-property",
+          "layer-property",
+          "content-property"
+        ]
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.SelectedState",
+            "variant.DisabledState",
+            "variant.Reverse",
+            "variant.Hint"
+          ],
+          "layerProperties": [
+            "fills",
+            "strokes",
+            "strokeWeight",
+            "cornerRadius",
+            "opacity",
+            "layout.padding",
+            "layout.itemSpacing",
+            "styles.text",
+            "typography"
+          ],
+          "dependencyPolicy": "При reset состояния компонента layer differences, вызванные только этим состоянием, могут исчезнуть автоматически. Ручные layer overrides должны оставаться независимо сбрасываемыми, пока reset родительского состояния не уберёт их target state."
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web-corp.background-plate",
+      "summary": "BackgroundPlate — семейство variable-driven surface-компонентов. Для нового контента используется BackgroundPlateSlot: Level-0 задаётся главной поверхности, первый компонент получает Level-1, а опциональный Level-2 располагается только непосредственно внутри Level-1. Type, BackgroundColor, Skeleton и layer-свойства трактуются по exact component rules. BackgroundPlateView — кодовый alias этого же семейства.",
+      "criticalBaselines": [
+        "Для новых макетов основным контейнером является BackgroundPlateSlot; BackgroundPlate считается legacy для генерации, но его существующее использование не является нарушением само по себе.",
+        "Mode BackgroundPlate Level=Level-0 назначается главной поверхности страницы или модальной сущности. Первый вложенный BackgroundPlateSlot получает Level-1; Level-2 всегда располагается непосредственно внутри Level-1.",
+        "Обычный контент может лежать непосредственно в Slot Level-1. Level-2 является опциональной вложенной поверхностью; Level-0 и Level-1 внутри Slot запрещены.",
+        "Рекомендуемый padding: Spacing/32 для Level-1 и Spacing/24 для Level-2. Другие значения допустимы под контекст или паттерн только с Spacing token binding.",
+        "Axis, gap и alignment Slot определяются контекстом; width должен быть Fill, height — Hug. Clip content может быть true или false по контексту.",
+        "Primary и Secondary получают fill/stroke только из effective baseline. Colored использует только токенизированную заливку без stroke. Border используется без fill, с токенизированным stroke; strokeWeight контекстный, strokeAlign всегда INSIDE.",
+        "Radius, opacity и blend mode фиксируются effective baseline. Drop shadow и Inner shadow запрещены; Layer blur и Background blur разрешены по контексту.",
+        "Skeleton=True является штатным состоянием загрузки компонента или контента. Сложная skeleton-композиция допустима только при явном сценарии паттерна.",
+        "BackgroundPlateView в code/private usage маппится на BackgroundPlate и должен использовать те же правила, контракты и pattern links.",
+        "Для desktop рабочей поверхности Level 1 использует radius 16, Level 2 использует radius 12. Promo и mobile variants могут иметь другие baseline из каталога.",
+        "BackgroundColor зависит от surface context: для страниц используются base-bg/base-bg-alt, для модальных сущностей используются modal-bg/modal-bg-alt. Суффикс в скобках (gray)/(white) описывает визуальный фон, а часть имени до скобок соответствует цветовому токену поверхности.",
+        "В каталоге вариант обводочной поверхности называется Type=Border. В тексте рекомендаций можно пояснять его как bordered/обводочный, но в машинных фактах и таблицах используй точное значение Border.",
+        "Radius/cornerRadius у BackgroundPlate, BackgroundPlateSlot и вложенных Style Level фиксируется component effective baseline. Ручное изменение скруглений запрещено и должно трактоваться как нарушение, а не как допустимая композиционная настройка.",
+        "Для Table Wide [D] в BackgroundPlateSlot действует специальное правило: Slot padding top=Spacing/0, right/bottom/left=Spacing/16. [D] TopBar расположен рядом с плейтом в общем Level-0 контейнере, а не внутри Slot."
+      ],
+      "agentInstructions": [
+        "Не выводи нарушение из примера. Используй только exact rules, exact component contracts и явно найденные pattern rules.",
+        "Если во входном отчёте встречается BackgroundPlateView, трактуй его как code/private alias компонента BackgroundPlate, а не как отдельный компонент без правил.",
+        "Изменения variant/property показывай как component-property customizations; изменения fill, stroke, stroke geometry, radius, opacity, effects, blend mode, layout и style показывай как layer-property customizations.",
+        "Если nested diff принадлежит wrapper и actual совпадает с effective baseline, не показывай его как дизайнерскую кастомизацию.",
+        "Если actual отличается от effective baseline, показывай effectiveBaseline -> actual. Не подставляй standalone baseline вложенного Style Level вместо baseline выбранного BackgroundPlate variant.",
+        "Padding у BackgroundPlateSlot может быть осознанной настройкой композиции. Комментируй его как layer customization и проверяй Spacing token binding; не требуй вернуть 32 или 24 только из-за отличия от рекомендации.",
+        "Не требуй Level-2 для обычного контента Slot Level-1. Если внутри Slot найден BackgroundPlate Level-0 или Level-1, используй rule:components.background-plate.slot-content-levels.",
+        "Axis, gap, alignment и Clip content Slot трактуй как контекстные настройки. Width не должен отличаться от Fill, height — от Hug.",
+        "При анализе BackgroundColor сначала определи контекст поверхности: page или modal. Не рекомендуй modal-bg* для обычной страницы и не рекомендуй base-bg* для модальной сущности, если exact rule или отчёт указывают на противоположный surface context.",
+        "Для Primary и Secondary любое ручное изменение fill/stroke является нарушением, даже при token binding. Сравнивай с effective baseline текущего Type, уровня и BackgroundColor.",
+        "Для Colored разрешена только видимая заливка через color token; raw fill, отсутствие fill и любой stroke являются нарушением.",
+        "Для Border fill запрещён, stroke должен быть привязан к color token. StrokeWeight можно менять под контекст; strokeAlign должен оставаться INSIDE. Border не может быть кликабельным.",
+        "Если в отчёте есть изменение radius/cornerRadius, opacity или blend mode, используй соответствующее exact component rule и рекомендуй сброс к effective baseline.",
+        "Drop shadow и Inner shadow трактуй как нарушения. Layer blur и Background blur являются допустимыми контекстными кастомизациями и не должны попадать под запрет теней.",
+        "Переключение Skeleton=False → True само по себе разрешено. Ручную простую skeleton-композицию вместо component property считай нарушением; сложное исключение допускай только по явному паттерну.",
+        "Для Table Wide не разрешай дублировать table inset внутри плейта: HeadRow, BodyRow и ячейки используют собственные effective baseline без дополнительных padding."
+      ],
+      "includedComponents": [
+        "[D] BackgroundPlate",
+        "[D] BackgroundPlateSlot",
+        "[D] Style Level 1",
+        "[D] Style Level 2",
+        "[D][Promo] BackgroundPlate",
+        "[D][Promo] Style Level 1",
+        "[D][Promo] Style Level 2",
+        "[M] BackgroundPlate",
+        "[M] BackgroundPlateSlot",
+        "[M] Style Level 1",
+        "[M] Style Level 2",
+        "[M][Promo] BackgroundPlate",
+        "[M][Promo] Style Level 1",
+        "[M][Promo] Style Level 2"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.*"
+          ],
+          "layerProperties": [
+            "layout.*",
+            "styles.*",
+            "fill",
+            "stroke",
+            "radius",
+            "opacity",
+            "text.*"
+          ],
+          "dependencyPolicy": "Component-property reset и layer-property reset разделены. Layer reset должен использовать effective baseline после nested variant/materialization resolution. Для BackgroundPlateView применяй тот же reset model, что и для BackgroundPlate."
+        },
+        "publicApi": {
+          "components": [
+            {
+              "name": "[D] BackgroundPlate",
+              "key": "2c7332d281570f4d5af6d334f8df378d24a1f235",
+              "role": "legacy-surface",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "legacy",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D] BackgroundPlateSlot",
+              "key": "5b6c5ac720154aff36be2f8a883bd058faa663cf",
+              "role": "content-container",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "preferred",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[D] Style Level 1",
+              "key": "adb65a62cde9ebedc5d0d41d2d77cd63e71e0745",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D] Style Level 2",
+              "key": "c8735f4834a8b43fd2ab821ffc0a6e72a57c4b5b",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D][Promo] BackgroundPlate",
+              "key": "c49f08db71ab44ea64f0880730220de1d93ac263",
+              "role": "promo-surface",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "promo-only",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[D][Promo] Style Level 1",
+              "key": "2b46e94cdecdab7d4cb977055c0405b2f6204127",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D][Promo] Style Level 2",
+              "key": "a5a4240097211b28195291a593c567e9d7c62bd3",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M] BackgroundPlate",
+              "key": "4cfe3915785e5c37255190ae16314f6f2a1d05b3",
+              "role": "legacy-surface",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "legacy",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M] BackgroundPlateSlot",
+              "key": "1745af83255e324781c2fbadfe0ad8cc7f13e0d8",
+              "role": "content-container",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "preferred",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[M] Style Level 1",
+              "key": "efc528bd86582d96a824edeb2c257dc8b22a8f14",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M] Style Level 2",
+              "key": "74f025a02889239c3f6eed60d74ba85f292bdcb0",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M][Promo] BackgroundPlate",
+              "key": "a58fa7ae11989280fc24069f204ba617fdb1f93c",
+              "role": "promo-surface",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "promo-only",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[M][Promo] Style Level 1",
+              "key": "19b4b6ed5718d82888a6551b56e0c776f4993ccc",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M][Promo] Style Level 2",
+              "key": "b33f77cc56c5feffb4f24a5912d74e3af927140e",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            }
+          ],
+          "aliases": null,
+          "codeExports": [
+            {
+              "name": "BackgroundPlate",
+              "kind": "react-component-export",
+              "mapsTo": "[D] BackgroundPlate / [M] BackgroundPlate",
+              "usage": "Основной code/private export, который соответствует Figma-компонентам семейства BackgroundPlate."
+            },
+            {
+              "name": "BackgroundPlateView",
+              "kind": "react-view-export",
+              "mapsTo": "BackgroundPlate",
+              "usage": "Кодовая обёртка/представление BackgroundPlate. В Apollo и агентском анализе не является отдельным Figma-компонентом и должна использовать тот же componentKey web-corp.background-plate."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "componentKey": "web-corp.corporate-content",
+      "summary": "CorporateContent — обязательная контентная область продуктовой страницы. Используй [D] CorporateContent для desktop и [M] CorporateContent для mobile-web.",
+      "criticalBaselines": [],
+      "agentInstructions": [
+        "Не считай произвольный контент или несколько дочерних элементов внутри Body нарушением сами по себе.",
+        "Проверяй содержимое Body по собственным компонентным контрактам и паттернам.",
+        "Считай использование переходного [T] CorporateContent явным нарушением.",
+        "Не рекомендуй ручную правку fill, grid style или padding корня CorporateContent; рекомендуй правильный mode переменных.",
+        "Не требуй наличия родительского компонента CorporatePage в Figma: такого компонента нет, самостоятельное использование CorporateContent допустимо.",
+        "Не применяй Gutter как обязательный itemSpacing внутри Body; он допустим в любой горизонтальной композиции без обязательного Section.",
+        "На ширине 768 требуй [D] CorporateContent и mode 768 коллекции [D] Grid & Cols.",
+        "Не придумывай условия выбора между base-bg-alt и base-bg до появления отдельного паттерна; default — base-bg-alt (grey).",
+        "Не разрешай кликабельность корня или detach CorporateContent и Body.",
+        "Не разрешай вкладывать CorporateContent внутрь CorporateContent и не оставляй SwapMe после добавления реального содержимого.",
+        "Требуй Header или HeaderMenu непосредственно над CorporateContent в общем вертикальном контейнере с gap 0.",
+        "Не разрешай менять вертикальное направление, itemSpacing=0 или clipsContent=false корня CorporateContent."
+      ],
+      "includedComponents": [
+        "[D] Section",
+        "[D] CorporateContent",
+        "[M] CorporateContent",
+        "❌ [D] BottomMagrin",
+        "❌ [D] TopMargin",
+        "❌ [D](1024+) Content",
+        "❌ [D](1024+) ContentBody",
+        "❌ [D](768) Content",
+        "❌ [D](768) ContentBody",
+        "❌ [M] Content",
+        "❌ [M](320-767) ContentBody",
+        "🔄 [D] Body",
+        "🔄 [M} Body",
+        "🔄 [T] Body",
+        "🔄 [T] CorporateContent"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    }
+  ]
+}
