@@ -1,0 +1,1104 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1256584474811604593-1784633533895-lvxq7h8t:agent",
+  "sourceReportId": "apollo-1256584474811604593-1784633533895-lvxq7h8t",
+  "generatedAt": "2026-07-21T11:32:13.895Z",
+  "suggestedFileName": "Phill-Shimanets-CORP-DS-Guardian_21-07-2026_15-32-13_agent.json",
+  "user": {
+    "id": "1256584474811604593",
+    "name": "Phill Shimanets • CORP DS • Guardian",
+    "slug": "Phill-Shimanets-CORP-DS-Guardian"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.1.56"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "[W] Альфа-кредит",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "startedAt": "2026-07-21T11:32:12.031Z",
+    "finishedAt": "2026-07-21T11:32:13.895Z",
+    "durationMs": 1864,
+    "selection": [
+      {
+        "nodeId": "I29001:328746;135096:147276;29035:165259;136846:8891;29035:165441;67900:4063",
+        "name": "Files",
+        "nodeType": "FRAME",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов - Статус - Черновик / Page / Body / [D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot / Slot / [D] FileUpload / Files",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 55,
+    "problemOccurrenceCount": 7,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 1,
+      "updates": 0,
+      "customizations": 3,
+      "localComponents": 3,
+      "detachedComponents": 0,
+      "presets": 0,
+      "technicalComponents": 0,
+      "currentComponents": 52,
+      "wrongChannel": 0,
+      "themization": 0
+    },
+    "includedFindingCount": 7,
+    "omittedCurrentComponentCount": 52
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with severity=error and matchKind=exact_component_rule for the same property/change.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 3,
+      "includedCount": 3,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 3,
+      "includedCount": 3,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I29001:328746;135096:147276;29035:165259;136846:8891;29035:165441;67900:4067;3073:1568;3073:1495;3073:1559",
+        "name": "Stroke",
+        "type": "BOOLEAN_OPERATION",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов - Статус - Черновик / Page / Body / [D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot / Slot / [D] FileUpload / Files / FilesGroup / FileUploadItem / 🔩 LeftAddon / Progress / Stroke",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I29001:328746;135096:147276;29035:165259;136846:8891;29035:165441;67900:4065",
+        "name": "FileUploadItem",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов - Статус - Черновик / Page / Body / [D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot / Slot / [D] FileUpload / Files / FilesGroup / FileUploadItem",
+        "visible": true
+      },
+      "component": {
+        "name": "FileUploadItem",
+        "key": "b06b456958317c5b98789ce678616cae15f042ea",
+        "library": "Web :: Core File Upload",
+        "sourceFile": "web/components/web-core/fileupload/Web _ Core File Upload -- FileUploadItem.json"
+      },
+      "variant": {
+        "name": "FileUploadItem",
+        "key": "b06b456958317c5b98789ce678616cae15f042ea"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I29001:328746;135096:147276;29035:165259;136846:8891;29035:165441;67900:4065;3073:1568;3073:1490;448:31937",
+            "name": "🔩 Content",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "FileUploadItem / 🔩 LeftAddon / IconView / Content / ShapeContent / 🔩 Content",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Size",
+          "message": "size: 32 → 24",
+          "referenceValue": "32",
+          "actualValue": "24",
+          "referenceRawValue": "32",
+          "actualRawValue": "24",
+          "referenceDisplayValue": "32",
+          "actualDisplayValue": "24",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "656a48efd3ed9db44d549f4ab100f58a8dd1556d",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "1a67004b61bf91e9a12eb69f907fe92de4dcd35a",
+            "actualNestedOwnerPath": "FileUploadItem / 🔩 LeftAddon / IconView",
+            "actualNestedOwnerRelativePath": "Content / ShapeContent / 🔩 Content",
+            "nestedOwnerComponentKey": "1a67004b61bf91e9a12eb69f907fe92de4dcd35a",
+            "nestedOwnerPath": "FileUploadItem / 🔩 LeftAddon / IconView",
+            "nestedOwnerRelativePath": "Content / ShapeContent / 🔩 Content"
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29001:328746;135096:147276;29035:165259;136846:8891;29035:165441;67900:4065;3073:1568",
+            "name": "🔩 LeftAddon",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "FileUploadItem / 🔩 LeftAddon",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Preset",
+          "message": "preset: swapme → pdf or ppt",
+          "referenceValue": "SwapMe",
+          "actualValue": "PDF or PPT",
+          "referenceRawValue": "SwapMe",
+          "actualRawValue": "PDF or PPT",
+          "referenceDisplayValue": "SwapMe",
+          "actualDisplayValue": "PDF or PPT",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "aa635fe2215801fd224f055c6f5947591f899aeb",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29001:328746;135096:147276;29035:165259;136846:8891;29035:165441;67900:4065;3073:1568",
+            "name": "🔩 LeftAddon",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "FileUploadItem / 🔩 LeftAddon",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Style",
+          "message": "style: none → colored",
+          "referenceValue": "None",
+          "actualValue": "Colored",
+          "referenceRawValue": "None",
+          "actualRawValue": "Colored",
+          "referenceDisplayValue": "None",
+          "actualDisplayValue": "Colored",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "aa635fe2215801fd224f055c6f5947591f899aeb",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29001:328746;135096:147276;29035:165259;136846:8891;29035:165441;67900:4065;3073:1569",
+            "name": "🔩 Content",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "FileUploadItem / 🔩 Content",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Preset",
+          "message": "preset: swapme → default",
+          "referenceValue": "SwapMe",
+          "actualValue": "Default",
+          "referenceRawValue": "SwapMe",
+          "actualRawValue": "Default",
+          "referenceDisplayValue": "SwapMe",
+          "actualDisplayValue": "Default",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "9ac4ea339ce0cdf9a74e50abc42f89bb1f59a1b3",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I29001:328746;135096:147276;29035:165259;136846:8891;29035:165441;67900:4066",
+        "name": "FileUploadItem",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов - Статус - Черновик / Page / Body / [D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot / Slot / [D] FileUpload / Files / FilesGroup / FileUploadItem",
+        "visible": true
+      },
+      "component": {
+        "name": "FileUploadItem",
+        "key": "b06b456958317c5b98789ce678616cae15f042ea",
+        "library": "Web :: Core File Upload",
+        "sourceFile": "web/components/web-core/fileupload/Web _ Core File Upload -- FileUploadItem.json"
+      },
+      "variant": {
+        "name": "FileUploadItem",
+        "key": "b06b456958317c5b98789ce678616cae15f042ea"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I29001:328746;135096:147276;29035:165259;136846:8891;29035:165441;67900:4066;3073:1568;3073:1496;448:31937",
+            "name": "🔩 Content",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "FileUploadItem / 🔩 LeftAddon / IconView / Content / ShapeContent / 🔩 Content",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Size",
+          "message": "size: 32 → 24",
+          "referenceValue": "32",
+          "actualValue": "24",
+          "referenceRawValue": "32",
+          "actualRawValue": "24",
+          "referenceDisplayValue": "32",
+          "actualDisplayValue": "24",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "656a48efd3ed9db44d549f4ab100f58a8dd1556d",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "1a67004b61bf91e9a12eb69f907fe92de4dcd35a",
+            "actualNestedOwnerPath": "FileUploadItem / 🔩 LeftAddon / IconView",
+            "actualNestedOwnerRelativePath": "Content / ShapeContent / 🔩 Content",
+            "nestedOwnerComponentKey": "1a67004b61bf91e9a12eb69f907fe92de4dcd35a",
+            "nestedOwnerPath": "FileUploadItem / 🔩 LeftAddon / IconView",
+            "nestedOwnerRelativePath": "Content / ShapeContent / 🔩 Content"
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29001:328746;135096:147276;29035:165259;136846:8891;29035:165441;67900:4066;3073:1568",
+            "name": "🔩 LeftAddon",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "FileUploadItem / 🔩 LeftAddon",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Preset",
+          "message": "preset: swapme → excel",
+          "referenceValue": "SwapMe",
+          "actualValue": "Excel",
+          "referenceRawValue": "SwapMe",
+          "actualRawValue": "Excel",
+          "referenceDisplayValue": "SwapMe",
+          "actualDisplayValue": "Excel",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "ec9767417e699c03aec7954143c9427eb82f9cd6",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29001:328746;135096:147276;29035:165259;136846:8891;29035:165441;67900:4066;3073:1568",
+            "name": "🔩 LeftAddon",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "FileUploadItem / 🔩 LeftAddon",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Style",
+          "message": "style: none → colored",
+          "referenceValue": "None",
+          "actualValue": "Colored",
+          "referenceRawValue": "None",
+          "actualRawValue": "Colored",
+          "referenceDisplayValue": "None",
+          "actualDisplayValue": "Colored",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "ec9767417e699c03aec7954143c9427eb82f9cd6",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29001:328746;135096:147276;29035:165259;136846:8891;29035:165441;67900:4066;3073:1569",
+            "name": "🔩 Content",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "FileUploadItem / 🔩 Content",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Preset",
+          "message": "preset: swapme → size & date",
+          "referenceValue": "SwapMe",
+          "actualValue": "Size & Date",
+          "referenceRawValue": "SwapMe",
+          "actualRawValue": "Size & Date",
+          "referenceDisplayValue": "SwapMe",
+          "actualDisplayValue": "Size & Date",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "f6460b19e28f075057e247f1de4088432fe52cc4",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I29001:328746;135096:147276;29035:165259;136846:8891;29035:165441;67900:4067",
+        "name": "FileUploadItem",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов - Статус - Черновик / Page / Body / [D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot / Slot / [D] FileUpload / Files / FilesGroup / FileUploadItem",
+        "visible": true
+      },
+      "component": {
+        "name": "FileUploadItem",
+        "key": "b06b456958317c5b98789ce678616cae15f042ea",
+        "library": "Web :: Core File Upload",
+        "sourceFile": "web/components/web-core/fileupload/Web _ Core File Upload -- FileUploadItem.json"
+      },
+      "variant": {
+        "name": "FileUploadItem",
+        "key": "b06b456958317c5b98789ce678616cae15f042ea"
+      },
+      "comparisonIssues": [
+        "Нет данных для itemSpacing в снапшоте для «FileUploadItem / 🔩 LeftAddon»"
+      ],
+      "changes": [
+        {
+          "node": {
+            "id": "I29001:328746;135096:147276;29035:165259;136846:8891;29035:165441;67900:4067;3073:1568;3073:1496;448:31937",
+            "name": "🔩 Content",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "FileUploadItem / 🔩 LeftAddon / IconView / Content / ShapeContent / 🔩 Content",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Size",
+          "message": "size: 32 → 24",
+          "referenceValue": "32",
+          "actualValue": "24",
+          "referenceRawValue": "32",
+          "actualRawValue": "24",
+          "referenceDisplayValue": "32",
+          "actualDisplayValue": "24",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "656a48efd3ed9db44d549f4ab100f58a8dd1556d",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "1a67004b61bf91e9a12eb69f907fe92de4dcd35a",
+            "actualNestedOwnerPath": "FileUploadItem / 🔩 LeftAddon / IconView",
+            "actualNestedOwnerRelativePath": "Content / ShapeContent / 🔩 Content",
+            "nestedOwnerComponentKey": "1a67004b61bf91e9a12eb69f907fe92de4dcd35a",
+            "nestedOwnerPath": "FileUploadItem / 🔩 LeftAddon / IconView",
+            "nestedOwnerRelativePath": "Content / ShapeContent / 🔩 Content"
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29001:328746;135096:147276;29035:165259;136846:8891;29035:165441;67900:4067;3073:1569",
+            "name": "🔩 Content",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "FileUploadItem / 🔩 Content",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.right",
+          "message": "Паддинг right: 0 → 16",
+          "referenceValue": 0,
+          "actualValue": 16,
+          "referenceRawValue": 0,
+          "actualRawValue": 16,
+          "referenceDisplayValue": 0,
+          "actualDisplayValue": 16,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "b04532472e30662d1bb37d22771e28e038298b57",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "b06b456958317c5b98789ce678616cae15f042ea",
+            "actualNestedOwnerPath": "FileUploadItem",
+            "actualNestedOwnerRelativePath": "🔩 Content",
+            "nestedOwnerComponentKey": "b04532472e30662d1bb37d22771e28e038298b57",
+            "nestedOwnerPath": "FileUploadItem / 🔩 Content",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29001:328746;135096:147276;29035:165259;136846:8891;29035:165441;67900:4067;3073:1568",
+            "name": "🔩 LeftAddon",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "FileUploadItem / 🔩 LeftAddon",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Preset",
+          "message": "preset: swapme → excel",
+          "referenceValue": "SwapMe",
+          "actualValue": "Excel",
+          "referenceRawValue": "SwapMe",
+          "actualRawValue": "Excel",
+          "referenceDisplayValue": "SwapMe",
+          "actualDisplayValue": "Excel",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "ec9767417e699c03aec7954143c9427eb82f9cd6",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29001:328746;135096:147276;29035:165259;136846:8891;29035:165441;67900:4067;3073:1568",
+            "name": "🔩 LeftAddon",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "FileUploadItem / 🔩 LeftAddon",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Style",
+          "message": "style: none → colored",
+          "referenceValue": "None",
+          "actualValue": "Colored",
+          "referenceRawValue": "None",
+          "actualRawValue": "Colored",
+          "referenceDisplayValue": "None",
+          "actualDisplayValue": "Colored",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "ec9767417e699c03aec7954143c9427eb82f9cd6",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29001:328746;135096:147276;29035:165259;136846:8891;29035:165441;67900:4067;3073:1569",
+            "name": "🔩 Content",
+            "type": null,
+            "pageName": "     ↳ Обновление компонентов / Отправка документов",
+            "path": "FileUploadItem / 🔩 Content",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Preset",
+          "message": "preset: swapme → uploading",
+          "referenceValue": "SwapMe",
+          "actualValue": "Uploading",
+          "referenceRawValue": "SwapMe",
+          "actualRawValue": "Uploading",
+          "referenceDisplayValue": "SwapMe",
+          "actualDisplayValue": "Uploading",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "b04532472e30662d1bb37d22771e28e038298b57",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I29001:328746;135096:147276;29035:165259;136846:8891;29035:165441;67900:4065;3073:1570",
+        "name": "👻 AKUploadFileRightPart",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов - Статус - Черновик / Page / Body / [D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot / Slot / [D] FileUpload / Files / FilesGroup / FileUploadItem / 👻 AKUploadFileRightPart",
+        "visible": true
+      },
+      "component": {
+        "name": "👻 AKUploadFileRightPart",
+        "key": "d3dfc57530fca3354a87d26793dab757914b4397",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I29001:328746;135096:147276;29035:165259;136846:8891;29035:165441;67900:4066;3073:1570",
+        "name": "👻 AKUploadFileRightPart",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов - Статус - Черновик / Page / Body / [D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot / Slot / [D] FileUpload / Files / FilesGroup / FileUploadItem / 👻 AKUploadFileRightPart",
+        "visible": true
+      },
+      "component": {
+        "name": "👻 AKUploadFileRightPart",
+        "key": "d3dfc57530fca3354a87d26793dab757914b4397",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I29001:328746;135096:147276;29035:165259;136846:8891;29035:165441;67900:4067;3073:1570",
+        "name": "👻 AKUploadFileRightPart",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Обновление компонентов / Отправка документов",
+        "path": "Для чека ДС / ⠀ / Frame 2131329479 / Нет возможности выбора, в рамках договора только один счёт и валюта / [D] 1660 - Отправка документов - Статус - Черновик / Page / Body / [D] CorporateContent / [D] Body / Frame 2131330463 / [D] BackgroundPlateSlot / Slot / [D] FileUpload / Files / FilesGroup / FileUploadItem / 👻 AKUploadFileRightPart",
+        "visible": true
+      },
+      "component": {
+        "name": "👻 AKUploadFileRightPart",
+        "key": "d3dfc57530fca3354a87d26793dab757914b4397",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    }
+  ],
+  "componentContexts": [
+    {
+      "componentKey": "web-core.file-upload-item",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "FileUploadItem",
+        "🔩 Progress",
+        "🔩 Content",
+        "🔩 RightAddon",
+        "🔩 LeftAddon"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.icon-view",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Content",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "IconView"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    }
+  ]
+}
