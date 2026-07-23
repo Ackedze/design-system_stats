@@ -1,0 +1,850 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1096330610570928879-1784807883129-3orzjohe:agent",
+  "sourceReportId": "apollo-1096330610570928879-1784807883129-3orzjohe",
+  "generatedAt": "2026-07-23T11:58:03.129Z",
+  "suggestedFileName": "Alexey-Kukhta-CORP-Lead-Designer_23-07-2026_14-58-03_agent.json",
+  "user": {
+    "id": "1096330610570928879",
+    "name": "Alexey Kukhta / CORP / Lead Designer",
+    "slug": "Alexey-Kukhta-CORP-Lead-Designer"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.1.62"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "❇️ Мастерская :: AI",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "startedAt": "2026-07-23T11:58:03.021Z",
+    "finishedAt": "2026-07-23T11:58:03.129Z",
+    "durationMs": 108,
+    "selection": [
+      {
+        "nodeId": "11108:37477",
+        "name": "Onboarding Hint",
+        "nodeType": "INSTANCE",
+        "path": "Onboarding Hint",
+        "componentKey": "640a7b44b6b4984a41ab6ce85e544b1dbe46f068"
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 6,
+    "problemOccurrenceCount": 2,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 0,
+      "updates": 0,
+      "customizations": 1,
+      "localComponents": 0,
+      "detachedComponents": 0,
+      "presets": 0,
+      "technicalComponents": 0,
+      "currentComponents": 6,
+      "wrongChannel": 0,
+      "themization": 1
+    },
+    "includedFindingCount": 2,
+    "omittedCurrentComponentCount": 6
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with severity=error and matchKind=exact_component_rule for the same property/change.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "11108:37477",
+        "name": "Onboarding Hint",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Onboarding Hint",
+        "visible": true
+      },
+      "component": {
+        "name": "Onboarding Hint",
+        "key": "640a7b44b6b4984a41ab6ce85e544b1dbe46f068",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Onboarding Hint [D].json"
+      },
+      "variant": {
+        "name": "Tail Direction=→, Tail Position=Center",
+        "key": "640a7b44b6b4984a41ab6ce85e544b1dbe46f068"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I11108:37477;67467:50201",
+            "name": "[D] Button",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Tail Direction=→, Tail Position=Center / Content / Content / [D] Button",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.View",
+          "message": "view: text → secondary",
+          "referenceValue": "Text",
+          "actualValue": "Secondary",
+          "referenceRawValue": "Text",
+          "actualRawValue": "Secondary",
+          "referenceDisplayValue": "Text",
+          "actualDisplayValue": "Secondary",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "c7e13b203cff4207d508cd0ef04e07f5566ac320",
+            "referenceComponentKey": "f9979d6cc8598aec25f721e0a45b7eef2eeb0088",
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "640a7b44b6b4984a41ab6ce85e544b1dbe46f068",
+            "actualNestedOwnerPath": "Tail Direction=→, Tail Position=Center",
+            "actualNestedOwnerRelativePath": "Content / Content / [D] Button",
+            "nestedOwnerComponentKey": "f9979d6cc8598aec25f721e0a45b7eef2eeb0088",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "Tail Direction=→, Tail Position=Center / Content / Content / [D] Button",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "View": "Secondary",
+              "Size": "32",
+              "Shape": "Rectangular",
+              "SingleIcon": "False",
+              "DisabledState": "False"
+            },
+            "referenceVariantProperties": {
+              "DisabledState": "False",
+              "Shape": "Rectangular",
+              "SingleIcon": "False",
+              "Size": "32",
+              "View": "Text"
+            },
+            "surfaceContext": {
+              "kind": "unknown",
+              "source": "unresolved",
+              "nodeId": null,
+              "nodeName": null,
+              "tokenId": null,
+              "tokenName": null,
+              "color": null
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.button.component-properties-are-first-class",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения variant/property в этом семействе компонентов являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-core.button.variant-state-is-component-property",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": null,
+              "changeScope": null,
+              "ruleText": "Изменения View, Size, Shape, SingleIcon и DisabledState являются component property changes и должны показываться как самостоятельные customizations.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-core.button.desktop-safe-variants",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.View|variant.Size|variant.Shape",
+              "checkType": "deterministic",
+              "matchKind": null,
+              "changeScope": null,
+              "ruleText": "В desktop нельзя использовать Button variants и параметры, запрещённые button pattern.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.onboarding-hint.button-configuration-is-fixed",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "variant.Size|variant.View|variant.Shape|variant.SingleIcon|variant.DisabledState|component.visibility",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Встроенная кнопка обязательна и использует Size=32, View=Text, Shape=Rectangular, SingleIcon=False, DisabledState=False, без LeftAddon и RightAddon. Её конфигурацию нельзя менять вручную.",
+              "remediation": null
+            }
+          ],
+          "presentation": {
+            "scope": "slot-property",
+            "groupTitle": "Параметры слота",
+            "displayName": null,
+            "priority": 15,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.onboarding-hint.button-configuration-is-fixed",
+            "message": "Встроенная кнопка обязательна и использует Size=32, View=Text, Shape=Rectangular, SingleIcon=False, DisabledState=False, без LeftAddon и RightAddon. Её конфигурацию нельзя менять вручную.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I11108:37477;67467:50202;603:60612;603:59881",
+            "name": "PaintMe",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Tail Direction=→, Tail Position=Center / Content / Cross / 🔩 Icon / Fixer / PaintMe",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: status/info → text_inverted/primary",
+          "referenceValue": "status/info",
+          "actualValue": "text_inverted/primary",
+          "referenceRawValue": "status/info",
+          "actualRawValue": "text_inverted/primary",
+          "referenceDisplayValue": "status/info",
+          "actualDisplayValue": "text_inverted/primary",
+          "referenceResource": {
+            "name": "status/info",
+            "key": "b10db1879590531b56541f549df1687fe4a23efb",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "text_inverted/primary",
+            "key": "de53e1056e003a1b3aedbb9e81b2d767e4c85fa2",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": {
+            "id": "VariableID:b10db1879590531b56541f549df1687fe4a23efb/3541:190",
+            "key": "b10db1879590531b56541f549df1687fe4a23efb",
+            "name": "status/info",
+            "collectionId": null,
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:de53e1056e003a1b3aedbb9e81b2d767e4c85fa2/3541:135",
+            "key": "de53e1056e003a1b3aedbb9e81b2d767e4c85fa2",
+            "name": "text_inverted/primary",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "0e082f8b49ba5c6be90dd6f049fc01b88c53927e",
+            "actualNestedOwnerPath": "Tail Direction=→, Tail Position=Center / Content / Cross / 🔩 Icon",
+            "actualNestedOwnerRelativePath": "Fixer / PaintMe",
+            "nestedOwnerComponentKey": "0e082f8b49ba5c6be90dd6f049fc01b88c53927e",
+            "nestedOwnerComponentRole": "Part",
+            "nestedOwnerPath": "Tail Direction=→, Tail Position=Center / Content / Cross / 🔩 Icon",
+            "nestedOwnerRelativePath": "Fixer / PaintMe",
+            "actualVariantProperties": {
+              "Type": "Icon 16"
+            },
+            "referenceVariantProperties": {
+              "Type": "Icon 16"
+            },
+            "surfaceContext": {
+              "kind": "unknown",
+              "source": "unresolved",
+              "nodeId": null,
+              "nodeName": null,
+              "tokenId": null,
+              "tokenName": null,
+              "color": null
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.icon-button.manual-icon-fill-is-layer-property",
+              "severity": "warning",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "PaintMe.fills|PaintMe.fill|fill|fills",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Ручные изменения fill на IconButton PaintMe, diamonds или icon layers являются layer customizations. Их нужно показывать отдельно от component property changes.",
+              "remediation": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "component-state"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I11108:37477;67467:50202;603:60612",
+            "name": "🔩 Icon",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Tail Direction=→, Tail Position=Center / Content / Cross / 🔩 Icon",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Type",
+          "message": "type: icon-20 → icon 16",
+          "referenceValue": "icon-20",
+          "actualValue": "Icon 16",
+          "referenceRawValue": "icon-20",
+          "actualRawValue": "Icon 16",
+          "referenceDisplayValue": "icon-20",
+          "actualDisplayValue": "Icon 16",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "0e082f8b49ba5c6be90dd6f049fc01b88c53927e",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "120229c6e23bf8785733b2729d48deb5cb1df8e5",
+            "actualNestedOwnerPath": "Tail Direction=→, Tail Position=Center / Content / Cross",
+            "actualNestedOwnerRelativePath": "🔩 Icon",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Type": "Icon 16"
+            },
+            "referenceVariantProperties": {
+              "Type": "icon-20"
+            },
+            "surfaceContext": {
+              "kind": "unknown",
+              "source": "unresolved",
+              "nodeId": null,
+              "nodeName": null,
+              "tokenId": null,
+              "tokenName": null,
+              "color": null
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.icon-button.component-properties-are-first-class",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения variant/property в этом семействе компонентов являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-core.icon-button.icon-type-is-part-property",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "Icon.variant.Type|variant.Type",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения nested Icon Type являются part/component configuration, а не свободным layer style change.",
+              "remediation": null
+            }
+          ],
+          "presentation": {
+            "scope": "part-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I11108:37477;67467:50202;603:60612;603:59882",
+            "name": "cross",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Tail Direction=→, Tail Position=Center / Content / Cross / 🔩 Icon / Fixer / PaintMe / cross",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Size",
+          "message": "size: 20 → s",
+          "referenceValue": "20",
+          "actualValue": "s",
+          "referenceRawValue": "20",
+          "actualRawValue": "s",
+          "referenceDisplayValue": "20",
+          "actualDisplayValue": "s",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "783fceedb322d2e71d62e83cacc272c38df97ce2",
+            "referenceComponentKey": "24b22d85e000348a427b2cbbca5ea8baeb11863a",
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "0e082f8b49ba5c6be90dd6f049fc01b88c53927e",
+            "actualNestedOwnerPath": "Tail Direction=→, Tail Position=Center / Content / Cross / 🔩 Icon",
+            "actualNestedOwnerRelativePath": "Fixer / PaintMe / cross",
+            "nestedOwnerComponentKey": "24b22d85e000348a427b2cbbca5ea8baeb11863a",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "Tail Direction=→, Tail Position=Center / Content / Cross / 🔩 Icon / Fixer / PaintMe / cross",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "Size": "s"
+            },
+            "referenceVariantProperties": {
+              "Color": "False",
+              "Size": "20",
+              "Style": "Thinline"
+            },
+            "surfaceContext": {
+              "kind": "unknown",
+              "source": "unresolved",
+              "nodeId": null,
+              "nodeName": null,
+              "tokenId": null,
+              "tokenName": null,
+              "color": null
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "11108:37477",
+        "name": "Страница:      Лаборатория",
+        "type": "PAGE",
+        "pageName": "     Лаборатория",
+        "path": "     Лаборатория",
+        "visible": true
+      },
+      "kind": "missingThemeMode",
+      "recommendation": "Смени темизацию на Corp",
+      "component": null
+    }
+  ],
+  "componentContexts": [
+    {
+      "componentKey": "web-core.button",
+      "summary": "Button — семейство action controls. Apollo должен трактовать изменения Button variant как component property changes, а ручные изменения style/token/layout как layer customizations.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] Button",
+        "[D] Button_Inverted",
+        "[M] Button",
+        "[M] Button_Inverted",
+        "🔄 [D][Corporate] Button",
+        "🔄 [D][Corporate] Button_Inverted",
+        "🔄 [M][Corporate] Button",
+        "🔄 [M][Corporate] Button_Inverted",
+        "🔩 Addon",
+        "🔩 Addon"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*",
+          "variant.View",
+          "variant.Size",
+          "variant.Shape",
+          "variant.SingleIcon",
+          "variant.DisabledState"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent",
+          "layout.padding",
+          "layout.itemSpacing"
+        ],
+        "baselinePolicy": "Если component property изменилась, сравнивай ручные layer overrides с baseline текущего actual-состояния компонента, а не с исходным reference baseline.",
+        "slotProperties": [
+          "LeftAddon.variant.Type",
+          "RightAddon.variant.Type"
+        ],
+        "ordering": [
+          "component-property",
+          "slot-property",
+          "layer-property"
+        ]
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.View",
+            "variant.Size",
+            "variant.Shape",
+            "variant.SingleIcon",
+            "variant.DisabledState"
+          ],
+          "layerProperties": [
+            "fills",
+            "strokes",
+            "strokeWeight",
+            "cornerRadius",
+            "opacity",
+            "layout.padding",
+            "layout.itemSpacing",
+            "styles.text",
+            "typography"
+          ],
+          "dependencyPolicy": "При reset component property layer differences, вызванные только этой property, могут исчезнуть автоматически. Ручные layer overrides должны оставаться независимо сбрасываемыми, пока reset родительской property не уберёт их target state."
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web-core.icon-button",
+      "summary": "IconButton — семейство компонентов для icon-only actions. Apollo должен трактовать Size, View, TransparentBg и nested Icon Type как component/part properties, а ручные root/icon visual changes как layer customizations.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] IconButton",
+        "[D] IconButton_Inverted",
+        "[M] IconButton",
+        "[M] IconButton_Inverted",
+        "🔄 [D][Corporate] IconButton",
+        "🔄 [D][Corporate] IconButton_Inverted",
+        "🔄 [M][Corporate] IconButton",
+        "🔄 [M][Corporate] IconButton_Inverted",
+        "🔩 Icon"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*",
+          "variant.Size",
+          "variant.View",
+          "variant.TransparentBg"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent",
+          "strokeWeight",
+          "layout.padding",
+          "layout.itemSpacing"
+        ],
+        "baselinePolicy": "Если component property изменилась, а затем icon/root layer был вручную кастомизирован, сравнивай layer с текущим IconButton state baseline, а не с исходным reference baseline.",
+        "partProperties": [
+          "Icon.variant.Type"
+        ],
+        "ordering": [
+          "component-property",
+          "part-property",
+          "layer-property"
+        ]
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.Size",
+            "variant.View",
+            "variant.TransparentBg"
+          ],
+          "layerProperties": [
+            "fills",
+            "strokes",
+            "strokeWeight",
+            "cornerRadius",
+            "opacity",
+            "layout.padding",
+            "layout.itemSpacing"
+          ],
+          "dependencyPolicy": "При reset IconButton component property visual differences, вызванные только этой property, могут исчезнуть автоматически. Ручные layer overrides должны оставаться независимо сбрасываемыми, пока reset родительской property не уберёт их target state."
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web-corp.onboarding-hint",
+      "summary": "Onboarding Hint — desktop-компонент для знакомства пользователя с новой или изменившейся функцией. Для обычного краткого пояснения элемента интерфейса используй Hint.",
+      "criticalBaselines": [
+        "Onboarding Hint [D] используется только на desktop от 768 px; на mobile-web используется BottomSheet.",
+        "Title, одна кнопка, Close и Tail обязательны, скрывать их нельзя.",
+        "Title содержит не более 70 символов.",
+        "Встроенная кнопка использует Size=32, View=Text, Shape=Rectangular, SingleIcon=False, DisabledState=False, без addons.",
+        "Кнопка может завершить hint как результат действия или запустить связанную функцию.",
+        "Hint может запускаться автоматически или по триггерному событию; повторный показ определяется бизнес-логикой.",
+        "Tail должен указывать на связанный объект или область.",
+        "Hint не перекрывает связанный объект; объект остаётся видимым и интерактивным.",
+        "Самостоятельно прервать hint можно только через Close без подтверждения. Esc и клик снаружи не закрывают hint.",
+        "Высота всегда Hug; ширину разрешено менять; остальные визуальные параметры соответствуют effective baseline.",
+        "Hint полностью помещается во viewport и может использоваться поверх Modal или Drawer.",
+        "Title содержит только обычный текст, без ссылок, списков и rich text.",
+        "Close соответствует effective baseline и не может быть заменён.",
+        "Допустимо только обычное состояние, без loading, disabled и error.",
+        "Одновременно отображается только один hint; его нельзя запускать без видимого объекта внутри viewport.",
+        "Hint не блокирует взаимодействие с остальным интерфейсом."
+      ],
+      "agentInstructions": [
+        "Не называй любое использование Onboarding Hint нарушением: сначала проверь платформу, обязательную анатомию и exact component rules.",
+        "Не придумывай ограничения на действие кнопки: допустимы закрытие hint и запуск связанной функции.",
+        "Не переноси правила многошагового Onboarding Tooltip на Onboarding Hint без отдельного правила.",
+        "Не запрещай ручное изменение ширины: это разрешённая настройка.",
+        "Не предлагай закрытие по Esc или клику снаружи.",
+        "Не требуй blocking overlay: Onboarding Hint не блокирует остальной интерфейс.",
+        "Не придумывай loading, disabled или error states.",
+        "Не запрещай перенос Title и не требуй truncation.",
+        "Не считай изменение label кнопки нарушением само по себе.",
+        "Не предлагай сделать кликабельной всю поверхность hint.",
+        "Не превращай несколько Onboarding Hint в многошаговый onboarding.",
+        "Не применяй к Onboarding Hint правило no-final-dot-in-hint.",
+        "Не предлагай backdrop или spotlight.",
+        "Не используй Onboarding Hint как замену Toast, Notification или CorporateStatusScreen."
+      ],
+      "includedComponents": [
+        "Onboarding Hint",
+        "Tail"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "cdb832111bbc0efc2c6d215db6b4eed1e1d02e51",
+          "name": "Onboarding Hint",
+          "purpose": "Познакомить пользователя с новой или изменившейся функцией.",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "approved",
+          "provenance": "design-system-author"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline выбранных Tail Direction и Tail Position. Изменения обязательной анатомии и конфигурации вложенной кнопки трактуй по exact component rules."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    }
+  ]
+}
