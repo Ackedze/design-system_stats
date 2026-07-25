@@ -1,0 +1,3035 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1103601421254724802-1784939367688-w3ai431b:agent",
+  "sourceReportId": "apollo-1103601421254724802-1784939367688-w3ai431b",
+  "generatedAt": "2026-07-25T00:29:27.688Z",
+  "suggestedFileName": "Sergey-Mikheev_25-07-2026_02-29-27_agent.json",
+  "user": {
+    "id": "1103601421254724802",
+    "name": "Sergey Mikheev",
+    "slug": "Sergey-Mikheev"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.1.56"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "[W] Карты 2025-2026 💳",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "startedAt": "2026-07-25T00:28:05.101Z",
+    "finishedAt": "2026-07-25T00:29:27.688Z",
+    "durationMs": 82587,
+    "selection": [
+      {
+        "nodeId": "130226:351687",
+        "name": "[D] CorporatePage",
+        "nodeType": "FRAME",
+        "path": "Подписки и привилегии / [D] CorporatePage",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 128,
+    "problemOccurrenceCount": 12,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 1,
+      "customStyles": 4,
+      "updates": 0,
+      "customizations": 1,
+      "localComponents": 1,
+      "detachedComponents": 0,
+      "presets": 0,
+      "technicalComponents": 4,
+      "currentComponents": 116,
+      "wrongChannel": 0,
+      "themization": 1
+    },
+    "includedFindingCount": 12,
+    "omittedCurrentComponentCount": 116
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with severity=error and matchKind=exact_component_rule for the same property/change.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 4,
+      "includedCount": 4,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 4,
+      "includedCount": 4,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "deprecatedStyles",
+      "severityHint": "medium",
+      "title": "Устаревший стиль",
+      "node": {
+        "id": "I130226:351692;135096:147276;130226:351747;125515:255601;17067:150053;16094:63771",
+        "name": ".Details / CardCover",
+        "type": "INSTANCE",
+        "pageName": "Подписки в заказе",
+        "path": "Подписки и привилегии / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Content / Card preview / Product Card / CardImage / .Details / CardItem / .Details / CardCover",
+        "visible": true
+      },
+      "style": {
+        "name": "static/bg-dark/primary",
+        "key": "afb9a9aeb248c6de75f132893873dbf92cffaa5c",
+        "library": "022 :: Colors BlueTint Static",
+        "sourceFile": "styles/022 _ Colors BlueTint Static.json"
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "130226:351687",
+        "name": "[D] CorporatePage",
+        "type": "FRAME",
+        "pageName": "Подписки в заказе",
+        "path": "Подписки и привилегии / [D] CorporatePage",
+        "visible": true
+      },
+      "style": {
+        "name": "dc20fcedbd330ee715c0a3f6c7d3089862a48cfb",
+        "key": "dc20fcedbd330ee715c0a3f6c7d3089862a48cfb",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I130226:351692;135096:147276;130228:18973;66402:30698",
+        "name": "[D] Style Level 1",
+        "type": "INSTANCE",
+        "pageName": "Подписки в заказе",
+        "path": "Подписки и привилегии / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Content / Frame 1948754510 / Benefit_widget / [D] BackgroundPlate / [D] Style Level 1",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I130226:351692;135096:147276;130226:351732;66402:30698",
+        "name": "[D] Style Level 1",
+        "type": "INSTANCE",
+        "pageName": "Подписки в заказе",
+        "path": "Подписки и привилегии / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Content / Frame 1948754510 / Content / Benefit_widget / [D] BackgroundPlate / [D] Style Level 1",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I130226:351692;135096:147276;130226:355179;66402:30698",
+        "name": "[D] Style Level 1",
+        "type": "INSTANCE",
+        "pageName": "Подписки в заказе",
+        "path": "Подписки и привилегии / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Content / Frame 1948754510 / Content / Benefit_widget / [D] BackgroundPlate / [D] Style Level 1",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "130226:351692",
+        "name": "[D] CorporateContent",
+        "type": "INSTANCE",
+        "pageName": "Подписки в заказе",
+        "path": "Подписки и привилегии / [D] CorporatePage / Page / Body / [D] CorporateContent",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] CorporateContent",
+        "key": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateContent.json"
+      },
+      "variant": {
+        "name": "[D] CorporateContent",
+        "key": "a8d13cb6e1ae67a7296709f669238f41971c7197"
+      },
+      "comparisonIssues": [
+        "Нет данных для заливка в снапшоте для «[D] CorporateContent / [D] Body / Steps_Horizontal / Steps_Horizontal / HorizontalLabel@@2»",
+        "Нет данных для заливка в снапшоте для «[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Content / Benefit_widget / 🔩 [D] Graphics / IconView / Content / ShapeContent / BgColor»"
+      ],
+      "changes": [
+        {
+          "node": {
+            "id": "I130226:351692;135096:147276;130226:351709;4497:17905",
+            "name": "🔩 IndicatorContent",
+            "type": null,
+            "pageName": "Подписки в заказе",
+            "path": "[D] CorporateContent / [D] Body / Steps_Horizontal / Steps_Horizontal / 🔩 IndicatorContent@@2",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Active",
+          "message": "active: true → false",
+          "referenceValue": "True",
+          "actualValue": "False",
+          "referenceRawValue": "True",
+          "actualRawValue": "False",
+          "referenceDisplayValue": "True",
+          "actualDisplayValue": "False",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "615a0b51df59f8926c8e690253943af223922efa",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "a3f8602ed190d2192626784906dd2d3e94382272",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Steps_Horizontal / Steps_Horizontal",
+            "actualNestedOwnerRelativePath": "🔩 IndicatorContent",
+            "nestedOwnerComponentKey": "04134e88815301cec2c85574ab3aafe33de90a84",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Steps_Horizontal / Steps_Horizontal / 🔩 IndicatorContent",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I130226:351692;135096:147276;130226:351709;4497:17905",
+            "name": "🔩 IndicatorContent",
+            "type": null,
+            "pageName": "Подписки в заказе",
+            "path": "[D] CorporateContent / [D] Body / Steps_Horizontal / Steps_Horizontal / 🔩 IndicatorContent@@2",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Ordered",
+          "message": "ordered: true → false",
+          "referenceValue": "True",
+          "actualValue": "False",
+          "referenceRawValue": "True",
+          "actualRawValue": "False",
+          "referenceDisplayValue": "True",
+          "actualDisplayValue": "False",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "615a0b51df59f8926c8e690253943af223922efa",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "a3f8602ed190d2192626784906dd2d3e94382272",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Steps_Horizontal / Steps_Horizontal",
+            "actualNestedOwnerRelativePath": "🔩 IndicatorContent",
+            "nestedOwnerComponentKey": "04134e88815301cec2c85574ab3aafe33de90a84",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Steps_Horizontal / Steps_Horizontal / 🔩 IndicatorContent",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I130226:351692;135096:147276;130226:351709;4497:17905",
+            "name": "🔩 IndicatorContent",
+            "type": null,
+            "pageName": "Подписки в заказе",
+            "path": "[D] CorporateContent / [D] Body / Steps_Horizontal / Steps_Horizontal / 🔩 IndicatorContent@@2",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Positive",
+          "message": "positive: false → true",
+          "referenceValue": "False",
+          "actualValue": "True",
+          "referenceRawValue": "False",
+          "actualRawValue": "True",
+          "referenceDisplayValue": "False",
+          "actualDisplayValue": "True",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "615a0b51df59f8926c8e690253943af223922efa",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "a3f8602ed190d2192626784906dd2d3e94382272",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Steps_Horizontal / Steps_Horizontal",
+            "actualNestedOwnerRelativePath": "🔩 IndicatorContent",
+            "nestedOwnerComponentKey": "04134e88815301cec2c85574ab3aafe33de90a84",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Steps_Horizontal / Steps_Horizontal / 🔩 IndicatorContent",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I130226:351692;135096:147276;130226:351709",
+            "name": "Steps_Horizontal",
+            "type": null,
+            "pageName": "Подписки в заказе",
+            "path": "[D] CorporateContent / [D] Body / Steps_Horizontal / Steps_Horizontal@@2",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.LastStep",
+          "message": "lastStep: true → false",
+          "referenceValue": "True",
+          "actualValue": "False",
+          "referenceRawValue": "True",
+          "actualRawValue": "False",
+          "referenceDisplayValue": "True",
+          "actualDisplayValue": "False",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "a3f8602ed190d2192626784906dd2d3e94382272",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+            "actualNestedOwnerPath": "[D] CorporateContent",
+            "actualNestedOwnerRelativePath": "[D] Body / Steps_Horizontal / Steps_Horizontal",
+            "nestedOwnerComponentKey": "dbdabbd5be329e959b4b024809d4d5f29ac5919e",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Steps_Horizontal / Steps_Horizontal",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I130226:351692;135096:147276;130226:351710;4497:17905",
+            "name": "🔩 IndicatorContent",
+            "type": null,
+            "pageName": "Подписки в заказе",
+            "path": "[D] CorporateContent / [D] Body / Steps_Horizontal / Steps_Horizontal / 🔩 IndicatorContent@@3",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Ordered",
+          "message": "ordered: true → false",
+          "referenceValue": "True",
+          "actualValue": "False",
+          "referenceRawValue": "True",
+          "actualRawValue": "False",
+          "referenceDisplayValue": "True",
+          "actualDisplayValue": "False",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "615a0b51df59f8926c8e690253943af223922efa",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "a3f8602ed190d2192626784906dd2d3e94382272",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Steps_Horizontal / Steps_Horizontal",
+            "actualNestedOwnerRelativePath": "🔩 IndicatorContent",
+            "nestedOwnerComponentKey": "2e1988c0f04b92aba65f9c732166d1f284883725",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Steps_Horizontal / Steps_Horizontal / 🔩 IndicatorContent",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I130226:351692;135096:147276;130226:351710;4497:17905",
+            "name": "🔩 IndicatorContent",
+            "type": null,
+            "pageName": "Подписки в заказе",
+            "path": "[D] CorporateContent / [D] Body / Steps_Horizontal / Steps_Horizontal / 🔩 IndicatorContent@@3",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Positive",
+          "message": "positive: false → true",
+          "referenceValue": "False",
+          "actualValue": "True",
+          "referenceRawValue": "False",
+          "actualRawValue": "True",
+          "referenceDisplayValue": "False",
+          "actualDisplayValue": "True",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "615a0b51df59f8926c8e690253943af223922efa",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "a3f8602ed190d2192626784906dd2d3e94382272",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Steps_Horizontal / Steps_Horizontal",
+            "actualNestedOwnerRelativePath": "🔩 IndicatorContent",
+            "nestedOwnerComponentKey": "2e1988c0f04b92aba65f9c732166d1f284883725",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Steps_Horizontal / Steps_Horizontal / 🔩 IndicatorContent",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I130226:351692;135096:147276;130228:18964",
+            "name": "🔩 [D] RightSlot",
+            "type": null,
+            "pageName": "Подписки в заказе",
+            "path": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Benefit_widget / 🔩 [D] RightSlot",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 8 → 10",
+          "referenceValue": 8,
+          "actualValue": "10",
+          "referenceRawValue": 8,
+          "actualRawValue": "10",
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": "10",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "15753ca11ab0ad6017983cfd12dfb45ec4a6ea7a",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+            "actualNestedOwnerPath": "[D] CorporateContent",
+            "actualNestedOwnerRelativePath": "[D] Body / Content / Frame 1948754510 / Benefit_widget / 🔩 [D] RightSlot",
+            "nestedOwnerComponentKey": "15753ca11ab0ad6017983cfd12dfb45ec4a6ea7a",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Benefit_widget / 🔩 [D] RightSlot",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.content-card-wrapper.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|styles.fill|styles.stroke|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри семейства ContentCardWrapper нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I130226:351692;135096:147276;130228:18965;55398:49308",
+            "name": "Switch",
+            "type": null,
+            "pageName": "Подписки в заказе",
+            "path": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Benefit_widget / 🔩 [D] LeftSlot / Switch",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.SelectedState",
+          "message": "selectedState: false → true",
+          "referenceValue": "False",
+          "actualValue": "True",
+          "referenceRawValue": "False",
+          "actualRawValue": "True",
+          "referenceDisplayValue": "False",
+          "actualDisplayValue": "True",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "a6e98fb2f8dcd0ed74e5e46b415fca95457092fa",
+            "referenceComponentKey": "7ea79a8992bd08cef8a25815b143549983ef8a5a",
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "08cc6eca964d083ddbbdaf758b4b072dde3b8f60",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Benefit_widget / 🔩 [D] LeftSlot",
+            "actualNestedOwnerRelativePath": "Switch",
+            "nestedOwnerComponentKey": "08cc6eca964d083ddbbdaf758b4b072dde3b8f60",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Benefit_widget / 🔩 [D] LeftSlot",
+            "nestedOwnerRelativePath": "Switch"
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.switch.component-properties-are-first-class",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения variant/property в этом семействе компонентов являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-core.switch.variant-state-is-component-property",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": null,
+              "changeScope": null,
+              "ruleText": "Изменения SelectedState, DisabledState, Reverse и Hint являются component property changes и должны показываться как самостоятельные customizations.",
+              "remediation": null
+            }
+          ],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I130226:351692;135096:147276;130228:18968;55413:55528;55413:55309;37705:55415",
+            "name": "Title",
+            "type": null,
+            "pageName": "Подписки в заказе",
+            "path": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Benefit_widget / MiddleSlot / 🔩 MiddleContentSlot / 🔩 [D] ContentPresets / [D] TitleView / MainContent / Heading / Title",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Headline–System/18–22 xSmall → Headline–System/22–26 Small",
+          "referenceValue": "Headline–System/18–22 xSmall",
+          "actualValue": "Headline–System/22–26 Small",
+          "referenceRawValue": "Headline–System/18–22 xSmall",
+          "actualRawValue": "Headline–System/22–26 Small",
+          "referenceDisplayValue": "Headline–System/18–22 xSmall",
+          "actualDisplayValue": "Headline–System/22–26 Small",
+          "referenceResource": {
+            "name": "Headline–System/18–22 xSmall",
+            "key": "69723bb178c1d1f9ec90e7b5670389dadb9de724",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": {
+            "name": "Headline–System/22–26 Small",
+            "key": "952e7df724ba0235d6d170ca152117522e48f11c",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Benefit_widget / MiddleSlot / 🔩 MiddleContentSlot / 🔩 [D] ContentPresets / [D] TitleView",
+            "actualNestedOwnerRelativePath": "MainContent / Heading / Title",
+            "nestedOwnerComponentKey": "803e194564c290e6df9be40e711717fe9153c2ad",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Benefit_widget / MiddleSlot / 🔩 MiddleContentSlot / 🔩 [D] ContentPresets",
+            "nestedOwnerRelativePath": "[D] TitleView / MainContent / Heading / Title"
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.content-card-wrapper.title-text-style-by-platform",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "styles.text",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Для заголовка карточки в Desktop используется Headline-System / 18-22 xSmall. В MobileWeb используется Action / 16-24 Medium.",
+              "remediation": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": "Стиль текст",
+            "priority": 30,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I130226:351692;135096:147276;130228:18968;55413:55531",
+            "name": "🔩 [D] ContentPresets",
+            "type": null,
+            "pageName": "Подписки в заказе",
+            "path": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Benefit_widget / MiddleSlot / 🔩 MiddleContentSlot / 🔩 [D] ContentPresets@@2",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Presets",
+          "message": "presets: swapme → extratitle",
+          "referenceValue": "SwapMe",
+          "actualValue": "ExtraTitle",
+          "referenceRawValue": "SwapMe",
+          "actualRawValue": "ExtraTitle",
+          "referenceDisplayValue": "SwapMe",
+          "actualDisplayValue": "ExtraTitle",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "803e194564c290e6df9be40e711717fe9153c2ad",
+            "referenceComponentKey": "4704c20700329cff93f3202a5a591cedb4147a9f",
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "283463a5433b4781b0752016654d42be56eb9155",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Benefit_widget / MiddleSlot / 🔩 MiddleContentSlot",
+            "actualNestedOwnerRelativePath": "🔩 [D] ContentPresets",
+            "nestedOwnerComponentKey": "cbc49fd5598be2d5d43edb41ad53b5524a230a89",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Benefit_widget / MiddleSlot / 🔩 MiddleContentSlot",
+            "nestedOwnerRelativePath": "🔩 [D] ContentPresets"
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.content-card-wrapper.component-properties-are-first-class",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения variant/property в семействе ContentCardWrapper являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+              "remediation": null
+            }
+          ],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I130226:351692;135096:147276;130228:18973;66402:30698",
+            "name": "[D] Style Level 1",
+            "type": null,
+            "pageName": "Подписки в заказе",
+            "path": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Benefit_widget / [D] BackgroundPlate / [D] Style Level 1",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "Переменная заливки: base-bg-alt/secondary → Отвязана (значение: #FFFFFF)",
+          "referenceValue": "base-bg-alt/secondary",
+          "actualValue": "#FFFFFF",
+          "referenceRawValue": "base-bg-alt/secondary",
+          "actualRawValue": "#FFFFFF",
+          "referenceDisplayValue": "base-bg-alt/secondary",
+          "actualDisplayValue": "#FFFFFF",
+          "referenceResource": {
+            "name": "base-bg-alt/secondary",
+            "key": "8e2800951104c0afbc2ed28e5331d61aa4214a9a",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": null,
+          "referenceBinding": {
+            "id": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+            "key": "8e2800951104c0afbc2ed28e5331d61aa4214a9a",
+            "name": "base-bg-alt/secondary",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": null,
+          "bindingStatus": "unbound",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "4f38c23d743bed97de0b14c39b4d4eaf5b511a2a",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Benefit_widget / [D] BackgroundPlate",
+            "actualNestedOwnerRelativePath": "[D] Style Level 1",
+            "nestedOwnerComponentKey": "4f38c23d743bed97de0b14c39b4d4eaf5b511a2a",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Benefit_widget / [D] BackgroundPlate / [D] Style Level 1",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|styles.fill|styles.stroke|fill|stroke|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства BackgroundPlate нужно сравнивать с effective baseline текущего component variant и nested owner context. Изменения layout.padding.* у BackgroundPlateSlot являются допустимыми дизайнерскими кастомизациями, если они нужны композиции и заданы через токены Spacing. Это правило не разрешает изменение radius: скругления BackgroundPlate и Style Level фиксируются компонентным baseline и не должны изменяться вручную.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.background-plate.primary-secondary-paint-is-fixed",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "fill|styles.fill|stroke|styles.stroke",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Внешний вид Type=Primary и Type=Secondary полностью определяется компонентом, уровнем поверхности и BackgroundColor. Ручные изменения fill или stroke запрещены, даже если новое значение привязано к токену. Производные paint-изменения при переключении Type или BackgroundColor не считаются отдельной кастомизацией.",
+              "remediation": "Сбросьте ручные изменения fill и stroke к effective baseline текущего Type, уровня и BackgroundColor."
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.background-plate.primary-secondary-paint-is-fixed",
+            "message": "Внешний вид Type=Primary и Type=Secondary полностью определяется компонентом, уровнем поверхности и BackgroundColor. Ручные изменения fill или stroke запрещены, даже если новое значение привязано к токену. Производные paint-изменения при переключении Type или BackgroundColor не считаются отдельной кастомизацией.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I130226:351692;135096:147276;130226:351721;406:281438",
+            "name": "💊Rulers / Side",
+            "type": null,
+            "pageName": "Подписки в заказе",
+            "path": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Spacers / 💊Rulers / Side",
+            "visible": true
+          },
+          "kind": "opacity",
+          "property": "opacity",
+          "message": "Прозрачность: 1 → 0",
+          "referenceValue": 1,
+          "actualValue": 0,
+          "referenceRawValue": 1,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 1,
+          "actualDisplayValue": 0,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "8d82004435ce6a515c9d78254202f9113210061f",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "0d07d91db245e10c616fadc04727d22a39127cba",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Spacers",
+            "actualNestedOwnerRelativePath": "💊Rulers / Side",
+            "nestedOwnerComponentKey": "8d82004435ce6a515c9d78254202f9113210061f",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Spacers / 💊Rulers / Side",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 70,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I130226:351692;135096:147276;130226:354900;13:25900",
+            "name": "IconView",
+            "type": null,
+            "pageName": "Подписки в заказе",
+            "path": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Content / Benefit_widget / 🔩 [D] Graphics / IconView",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Size",
+          "message": "size: 48 → 80",
+          "referenceValue": "48",
+          "actualValue": "80",
+          "referenceRawValue": "48",
+          "actualRawValue": "80",
+          "referenceDisplayValue": "48",
+          "actualDisplayValue": "80",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "8b09f235dfee37e9adbf766b55fd58fe56e39757",
+            "referenceComponentKey": "f188fb1de981b2f32966f4844a4b10cffdb81c35",
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "afbdfba7c646248b45960345528bb3ac90e2895e",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Content / Benefit_widget / 🔩 [D] Graphics",
+            "actualNestedOwnerRelativePath": "IconView",
+            "nestedOwnerComponentKey": "afbdfba7c646248b45960345528bb3ac90e2895e",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Content / Benefit_widget / 🔩 [D] Graphics",
+            "nestedOwnerRelativePath": "IconView"
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.icon-view.component-properties-are-first-class",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения variant/property в этом семействе компонентов являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+              "remediation": null
+            }
+          ],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I130226:351692;135096:147276;130226:351732;66402:30698",
+            "name": "[D] Style Level 1",
+            "type": null,
+            "pageName": "Подписки в заказе",
+            "path": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Content / Benefit_widget / [D] BackgroundPlate / [D] Style Level 1",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "Переменная заливки: base-bg-alt/secondary → Отвязана (значение: #FFFFFF)",
+          "referenceValue": "base-bg-alt/secondary",
+          "actualValue": "#FFFFFF",
+          "referenceRawValue": "base-bg-alt/secondary",
+          "actualRawValue": "#FFFFFF",
+          "referenceDisplayValue": "base-bg-alt/secondary",
+          "actualDisplayValue": "#FFFFFF",
+          "referenceResource": {
+            "name": "base-bg-alt/secondary",
+            "key": "8e2800951104c0afbc2ed28e5331d61aa4214a9a",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": null,
+          "referenceBinding": {
+            "id": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+            "key": "8e2800951104c0afbc2ed28e5331d61aa4214a9a",
+            "name": "base-bg-alt/secondary",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": null,
+          "bindingStatus": "unbound",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "4f38c23d743bed97de0b14c39b4d4eaf5b511a2a",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Content / Benefit_widget / [D] BackgroundPlate",
+            "actualNestedOwnerRelativePath": "[D] Style Level 1",
+            "nestedOwnerComponentKey": "4f38c23d743bed97de0b14c39b4d4eaf5b511a2a",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Content / Benefit_widget / [D] BackgroundPlate / [D] Style Level 1",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|styles.fill|styles.stroke|fill|stroke|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства BackgroundPlate нужно сравнивать с effective baseline текущего component variant и nested owner context. Изменения layout.padding.* у BackgroundPlateSlot являются допустимыми дизайнерскими кастомизациями, если они нужны композиции и заданы через токены Spacing. Это правило не разрешает изменение radius: скругления BackgroundPlate и Style Level фиксируются компонентным baseline и не должны изменяться вручную.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.background-plate.primary-secondary-paint-is-fixed",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "fill|styles.fill|stroke|styles.stroke",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Внешний вид Type=Primary и Type=Secondary полностью определяется компонентом, уровнем поверхности и BackgroundColor. Ручные изменения fill или stroke запрещены, даже если новое значение привязано к токену. Производные paint-изменения при переключении Type или BackgroundColor не считаются отдельной кастомизацией.",
+              "remediation": "Сбросьте ручные изменения fill и stroke к effective baseline текущего Type, уровня и BackgroundColor."
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.background-plate.primary-secondary-paint-is-fixed",
+            "message": "Внешний вид Type=Primary и Type=Secondary полностью определяется компонентом, уровнем поверхности и BackgroundColor. Ручные изменения fill или stroke запрещены, даже если новое значение привязано к токену. Производные paint-изменения при переключении Type или BackgroundColor не считаются отдельной кастомизацией.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I130226:351692;135096:147276;130226:353419",
+            "name": "[D] PureCell",
+            "type": null,
+            "pageName": "Подписки в заказе",
+            "path": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / [D] PureCell",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.right",
+          "message": "Паддинг right: 0 → 24",
+          "referenceValue": 0,
+          "actualValue": "24 (Spacing)",
+          "referenceRawValue": 0,
+          "actualRawValue": 24,
+          "referenceDisplayValue": 0,
+          "actualDisplayValue": "24 (Spacing)",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "24",
+            "key": "f7b969edbf5d6f8d732bf46ef7fd3f7c5511fb49",
+            "library": "Spacing",
+            "sourceFile": "Spacing"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:f7b969edbf5d6f8d732bf46ef7fd3f7c5511fb49/1:38",
+            "key": "f7b969edbf5d6f8d732bf46ef7fd3f7c5511fb49",
+            "name": "24",
+            "collectionId": "VariableCollectionId:1:2",
+            "collectionName": "Spacing",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "3e089aea83b054b928cd73dce0627f7e6258c745",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+            "actualNestedOwnerPath": "[D] CorporateContent",
+            "actualNestedOwnerRelativePath": "[D] Body / Content / Frame 1948754510 / [D] PureCell",
+            "nestedOwnerComponentKey": "3e089aea83b054b928cd73dce0627f7e6258c745",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / [D] PureCell",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I130226:351692;135096:147276;130226:353419",
+            "name": "[D] PureCell",
+            "type": null,
+            "pageName": "Подписки в заказе",
+            "path": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / [D] PureCell",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.paddingTokens.left",
+          "message": "Паддинг left (токен): 0 (Paddings) → 0 (Spacing)",
+          "referenceValue": "0 (Paddings)",
+          "actualValue": "0 (Spacing)",
+          "referenceRawValue": 0,
+          "actualRawValue": 0,
+          "referenceDisplayValue": "0 (Paddings)",
+          "actualDisplayValue": "0 (Spacing)",
+          "referenceResource": {
+            "name": "Horizontal Paddings/None",
+            "key": "e92e193060a47659d57660329b23585d1755efbd",
+            "library": "Paddings",
+            "sourceFile": "Web :: Core Wrappers"
+          },
+          "actualResource": {
+            "name": "0",
+            "key": "72e2988d91d32bc45f988052a35513d3755e8c56",
+            "library": "Spacing",
+            "sourceFile": "Spacing"
+          },
+          "referenceBinding": {
+            "id": "VariableID:89:3508",
+            "key": "e92e193060a47659d57660329b23585d1755efbd",
+            "name": "Horizontal Paddings/None",
+            "collectionId": "VariableCollectionId:88:5106",
+            "collectionName": "Paddings",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:72e2988d91d32bc45f988052a35513d3755e8c56/1:7",
+            "key": "72e2988d91d32bc45f988052a35513d3755e8c56",
+            "name": "0",
+            "collectionId": "VariableCollectionId:1:2",
+            "collectionName": "Spacing",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "3e089aea83b054b928cd73dce0627f7e6258c745",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+            "actualNestedOwnerPath": "[D] CorporateContent",
+            "actualNestedOwnerRelativePath": "[D] Body / Content / Frame 1948754510 / [D] PureCell",
+            "nestedOwnerComponentKey": "3e089aea83b054b928cd73dce0627f7e6258c745",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / [D] PureCell",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I130226:351692;135096:147276;130229:22481",
+            "name": "[D] PureCell",
+            "type": null,
+            "pageName": "Подписки в заказе",
+            "path": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Element / [D] PureCell",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.top",
+          "message": "Паддинг top: 12 → 24",
+          "referenceValue": 12,
+          "actualValue": "24 (Spacing)",
+          "referenceRawValue": 12,
+          "actualRawValue": 24,
+          "referenceDisplayValue": 12,
+          "actualDisplayValue": "24 (Spacing)",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "24",
+            "key": "f7b969edbf5d6f8d732bf46ef7fd3f7c5511fb49",
+            "library": "Spacing",
+            "sourceFile": "Spacing"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:f7b969edbf5d6f8d732bf46ef7fd3f7c5511fb49/1:38",
+            "key": "f7b969edbf5d6f8d732bf46ef7fd3f7c5511fb49",
+            "name": "24",
+            "collectionId": "VariableCollectionId:1:2",
+            "collectionName": "Spacing",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "13ae19489fc7e2a4535e9642485952083d72a81c",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+            "actualNestedOwnerPath": "[D] CorporateContent",
+            "actualNestedOwnerRelativePath": "[D] Body / Content / Frame 1948754510 / Element / [D] PureCell",
+            "nestedOwnerComponentKey": "13ae19489fc7e2a4535e9642485952083d72a81c",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Element / [D] PureCell",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I130226:351692;135096:147276;130229:22481",
+            "name": "[D] PureCell",
+            "type": null,
+            "pageName": "Подписки в заказе",
+            "path": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Element / [D] PureCell",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.right",
+          "message": "Паддинг right: 0 → Graphics Padding/24 рх",
+          "referenceValue": 0,
+          "actualValue": "24 (Paddings)",
+          "referenceRawValue": 0,
+          "actualRawValue": 24,
+          "referenceDisplayValue": 0,
+          "actualDisplayValue": "24 (Paddings)",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "Graphics Padding/24 рх",
+            "key": "673246443fdb9ca72377ff4a5b6724d3efbe7b77",
+            "library": "Paddings",
+            "sourceFile": "Web :: Core Wrappers"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:673246443fdb9ca72377ff4a5b6724d3efbe7b77/10909:2",
+            "key": "673246443fdb9ca72377ff4a5b6724d3efbe7b77",
+            "name": "Graphics Padding/24 рх",
+            "collectionId": "VariableCollectionId:88:5106",
+            "collectionName": "Paddings",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "13ae19489fc7e2a4535e9642485952083d72a81c",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+            "actualNestedOwnerPath": "[D] CorporateContent",
+            "actualNestedOwnerRelativePath": "[D] Body / Content / Frame 1948754510 / Element / [D] PureCell",
+            "nestedOwnerComponentKey": "13ae19489fc7e2a4535e9642485952083d72a81c",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Element / [D] PureCell",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I130226:351692;135096:147276;130229:22481",
+            "name": "[D] PureCell",
+            "type": null,
+            "pageName": "Подписки в заказе",
+            "path": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Element / [D] PureCell",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.bottom",
+          "message": "Паддинг bottom: 12 → 16",
+          "referenceValue": 12,
+          "actualValue": "16 (Spacing)",
+          "referenceRawValue": 12,
+          "actualRawValue": 16,
+          "referenceDisplayValue": 12,
+          "actualDisplayValue": "16 (Spacing)",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "16",
+            "key": "59ff0616087ba120b5ba63514ac2699c634960e4",
+            "library": "Spacing",
+            "sourceFile": "Spacing"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:59ff0616087ba120b5ba63514ac2699c634960e4/1:36",
+            "key": "59ff0616087ba120b5ba63514ac2699c634960e4",
+            "name": "16",
+            "collectionId": "VariableCollectionId:1:2",
+            "collectionName": "Spacing",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "13ae19489fc7e2a4535e9642485952083d72a81c",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+            "actualNestedOwnerPath": "[D] CorporateContent",
+            "actualNestedOwnerRelativePath": "[D] Body / Content / Frame 1948754510 / Element / [D] PureCell",
+            "nestedOwnerComponentKey": "13ae19489fc7e2a4535e9642485952083d72a81c",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Element / [D] PureCell",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I130226:351692;135096:147276;130229:22481",
+            "name": "[D] PureCell",
+            "type": null,
+            "pageName": "Подписки в заказе",
+            "path": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Element / [D] PureCell",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.left",
+          "message": "Паддинг left: 0 → Graphics Padding/24 рх",
+          "referenceValue": 0,
+          "actualValue": "24 (Paddings)",
+          "referenceRawValue": 0,
+          "actualRawValue": 24,
+          "referenceDisplayValue": 0,
+          "actualDisplayValue": "24 (Paddings)",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "Graphics Padding/24 рх",
+            "key": "673246443fdb9ca72377ff4a5b6724d3efbe7b77",
+            "library": "Paddings",
+            "sourceFile": "Web :: Core Wrappers"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:673246443fdb9ca72377ff4a5b6724d3efbe7b77/10909:2",
+            "key": "673246443fdb9ca72377ff4a5b6724d3efbe7b77",
+            "name": "Graphics Padding/24 рх",
+            "collectionId": "VariableCollectionId:88:5106",
+            "collectionName": "Paddings",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "13ae19489fc7e2a4535e9642485952083d72a81c",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+            "actualNestedOwnerPath": "[D] CorporateContent",
+            "actualNestedOwnerRelativePath": "[D] Body / Content / Frame 1948754510 / Element / [D] PureCell",
+            "nestedOwnerComponentKey": "13ae19489fc7e2a4535e9642485952083d72a81c",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Element / [D] PureCell",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I130226:351692;135096:147276;130229:22481;92:3605;13:25900;448:31937",
+            "name": "🔩 Content",
+            "type": null,
+            "pageName": "Подписки в заказе",
+            "path": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Element / [D] PureCell / 🔩 [D] Graphics / IconView / Content / ShapeContent / 🔩 Content",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Size",
+          "message": "size: 32 → 24",
+          "referenceValue": "32",
+          "actualValue": "24",
+          "referenceRawValue": "32",
+          "actualRawValue": "24",
+          "referenceDisplayValue": "32",
+          "actualDisplayValue": "24",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "656a48efd3ed9db44d549f4ab100f58a8dd1556d",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "1a67004b61bf91e9a12eb69f907fe92de4dcd35a",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Element / [D] PureCell / 🔩 [D] Graphics / IconView",
+            "actualNestedOwnerRelativePath": "Content / ShapeContent / 🔩 Content",
+            "nestedOwnerComponentKey": "afbdfba7c646248b45960345528bb3ac90e2895e",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Element / [D] PureCell / 🔩 [D] Graphics",
+            "nestedOwnerRelativePath": "IconView / Content / ShapeContent / 🔩 Content"
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I130226:351692;135096:147276;130229:22481;92:3616;13:26756;603:60006;603:59877",
+            "name": "PaintMe",
+            "type": null,
+            "pageName": "Подписки в заказе",
+            "path": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Element / [D] PureCell / Content / Body / Addon / 🔩 [D] Addon / [D] IconButton / Icon / Fixer / PaintMe",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: text/primary → neutral-translucent/700",
+          "referenceValue": "text/primary",
+          "actualValue": "neutral-translucent/700",
+          "referenceRawValue": "text/primary",
+          "actualRawValue": "neutral-translucent/700",
+          "referenceDisplayValue": "text/primary",
+          "actualDisplayValue": "neutral-translucent/700",
+          "referenceResource": {
+            "name": "text/primary",
+            "key": "53f842b1771349c5dca692351edfc422e8f081b5",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "neutral-translucent/700",
+            "key": "faac436b14cc199cfe97243b05af867af9ecb365",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": {
+            "id": "VariableID:53f842b1771349c5dca692351edfc422e8f081b5/3541:208",
+            "key": "53f842b1771349c5dca692351edfc422e8f081b5",
+            "name": "text/primary",
+            "collectionId": null,
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:faac436b14cc199cfe97243b05af867af9ecb365/3541:130",
+            "key": "faac436b14cc199cfe97243b05af867af9ecb365",
+            "name": "neutral-translucent/700",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "0acc12c55f8d55764ac0f21cd19061555a0ff057",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Element / [D] PureCell / Content / Body / Addon / 🔩 [D] Addon / [D] IconButton / Icon",
+            "actualNestedOwnerRelativePath": "Fixer / PaintMe",
+            "nestedOwnerComponentKey": "b3a1146426c81d81f0f92746027599a7be182de2",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / Element / [D] PureCell / Content / Body / Addon / 🔩 [D] Addon",
+            "nestedOwnerRelativePath": "[D] IconButton / Icon / Fixer / PaintMe"
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "component-state"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I130226:351692;135096:147276;130226:354112;494:7601;494:7627",
+            "name": "_Dash",
+            "type": null,
+            "pageName": "Подписки в заказе",
+            "path": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / .Additional Info / List / 🔩 Marker / _Dash",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Paragraph/16–24 Primary Medium → Paragraph/14–20 Primary Small",
+          "referenceValue": "Paragraph/16–24 Primary Medium",
+          "actualValue": "Paragraph/14–20 Primary Small",
+          "referenceRawValue": "Paragraph/16–24 Primary Medium",
+          "actualRawValue": "Paragraph/14–20 Primary Small",
+          "referenceDisplayValue": "Paragraph/16–24 Primary Medium",
+          "actualDisplayValue": "Paragraph/14–20 Primary Small",
+          "referenceResource": {
+            "name": "Paragraph/16–24 Primary Medium",
+            "key": "f0f0d59f9f92db92901605dd929cfa3b93540058",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": {
+            "name": "Paragraph/14–20 Primary Small",
+            "key": "6fb5ab6969beee7da9e23dfcbab2f4864b30b665",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "4af10c952b55ea67a125c67733b2626c32978b2e",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / .Additional Info / List / 🔩 Marker",
+            "actualNestedOwnerRelativePath": "_Dash",
+            "nestedOwnerComponentKey": "4af10c952b55ea67a125c67733b2626c32978b2e",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / .Additional Info / List / 🔩 Marker",
+            "nestedOwnerRelativePath": "_Dash"
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": "Стиль текст",
+            "priority": 30,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I130226:351692;135096:147276;130226:354112;494:7601;494:7627",
+            "name": "_Dash",
+            "type": null,
+            "pageName": "Подписки в заказе",
+            "path": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / .Additional Info / List / 🔩 Marker / _Dash",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: text/primary → text/secondary",
+          "referenceValue": "text/primary",
+          "actualValue": "text/secondary",
+          "referenceRawValue": "text/primary",
+          "actualRawValue": "text/secondary",
+          "referenceDisplayValue": "text/primary",
+          "actualDisplayValue": "text/secondary",
+          "referenceResource": {
+            "name": "text/primary",
+            "key": "53f842b1771349c5dca692351edfc422e8f081b5",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "text/secondary",
+            "key": "d9d26239617e3ab9e69d7ed378d811a3c4561063",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": {
+            "id": "VariableID:53f842b1771349c5dca692351edfc422e8f081b5/3541:208",
+            "key": "53f842b1771349c5dca692351edfc422e8f081b5",
+            "name": "text/primary",
+            "collectionId": null,
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:d9d26239617e3ab9e69d7ed378d811a3c4561063/3541:205",
+            "key": "d9d26239617e3ab9e69d7ed378d811a3c4561063",
+            "name": "text/secondary",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "4af10c952b55ea67a125c67733b2626c32978b2e",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / .Additional Info / List / 🔩 Marker",
+            "actualNestedOwnerRelativePath": "_Dash",
+            "nestedOwnerComponentKey": "4af10c952b55ea67a125c67733b2626c32978b2e",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Content / Frame 1948754510 / .Additional Info / List / 🔩 Marker",
+            "nestedOwnerRelativePath": "_Dash"
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I130226:351692;135096:147276;130226:351747",
+        "name": "Card preview",
+        "type": "INSTANCE",
+        "pageName": "Подписки в заказе",
+        "path": "Подписки и привилегии / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Content / Card preview",
+        "visible": true
+      },
+      "component": {
+        "name": "Card preview",
+        "key": "adf0f583afe752e20d1220fcd1c327eef07e7c51",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "technicalComponents",
+      "severityHint": "low",
+      "title": "Технический компонент",
+      "node": {
+        "id": "I130226:351692;135096:147276;130226:351721;406:281438",
+        "name": "💊Rulers / Side",
+        "type": "INSTANCE",
+        "pageName": "Подписки в заказе",
+        "path": "Подписки и привилегии / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Content / Frame 1948754510 / Spacers / 💊Rulers / Side",
+        "visible": true
+      },
+      "component": {
+        "name": "💊Rulers / Side",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f",
+        "library": "Web :: Core Helpers",
+        "sourceFile": "web/components/web-core-helpers/Web _ Core Helpers -- Documentation.json"
+      },
+      "variant": {
+        "name": "Direction=←",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "technicalComponents",
+      "severityHint": "low",
+      "title": "Технический компонент",
+      "node": {
+        "id": "I130226:351692;135096:147276;130226:353749;406:281411",
+        "name": "💊Rulers / Side",
+        "type": "INSTANCE",
+        "pageName": "Подписки в заказе",
+        "path": "Подписки и привилегии / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Content / Frame 1948754510 / Spacers / 💊Rulers / Side",
+        "visible": true
+      },
+      "component": {
+        "name": "💊Rulers / Side",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f",
+        "library": "Web :: Core Helpers",
+        "sourceFile": "web/components/web-core-helpers/Web _ Core Helpers -- Documentation.json"
+      },
+      "variant": {
+        "name": "Direction=←",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "technicalComponents",
+      "severityHint": "low",
+      "title": "Технический компонент",
+      "node": {
+        "id": "I130226:351692;135096:147276;130226:354081;406:281438",
+        "name": "💊Rulers / Side",
+        "type": "INSTANCE",
+        "pageName": "Подписки в заказе",
+        "path": "Подписки и привилегии / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Content / Frame 1948754510 / Spacers / 💊Rulers / Side",
+        "visible": true
+      },
+      "component": {
+        "name": "💊Rulers / Side",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f",
+        "library": "Web :: Core Helpers",
+        "sourceFile": "web/components/web-core-helpers/Web _ Core Helpers -- Documentation.json"
+      },
+      "variant": {
+        "name": "Direction=←",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "technicalComponents",
+      "severityHint": "low",
+      "title": "Технический компонент",
+      "node": {
+        "id": "I130226:351692;135096:147276;130226:351743;406:281446",
+        "name": "💊Rulers / Side",
+        "type": "INSTANCE",
+        "pageName": "Подписки в заказе",
+        "path": "Подписки и привилегии / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Content / Frame 1948754510 / Spacers / 💊Rulers / Side",
+        "visible": true
+      },
+      "component": {
+        "name": "💊Rulers / Side",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f",
+        "library": "Web :: Core Helpers",
+        "sourceFile": "web/components/web-core-helpers/Web _ Core Helpers -- Documentation.json"
+      },
+      "variant": {
+        "name": "Direction=←",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "130226:351687",
+        "name": "Страница: Подписки в заказе",
+        "type": "PAGE",
+        "pageName": "Подписки в заказе",
+        "path": "Подписки в заказе",
+        "visible": true
+      },
+      "kind": "missingThemeMode",
+      "recommendation": "Смени темизацию на Corp",
+      "component": null
+    }
+  ],
+  "componentContexts": [
+    {
+      "componentKey": "web-core.icon-button",
+      "summary": "IconButton — семейство компонентов для icon-only actions. Apollo должен трактовать Size, View, TransparentBg и nested Icon Type как component/part properties, а ручные root/icon visual changes как layer customizations.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] IconButton",
+        "[D] IconButton_Inverted",
+        "[M] IconButton",
+        "[M] IconButton_Inverted",
+        "🔄 [D][Corporate] IconButton",
+        "🔄 [D][Corporate] IconButton_Inverted",
+        "🔄 [M][Corporate] IconButton",
+        "🔄 [M][Corporate] IconButton_Inverted",
+        "🔩 Icon"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*",
+          "variant.Size",
+          "variant.View",
+          "variant.TransparentBg"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent",
+          "strokeWeight",
+          "layout.padding",
+          "layout.itemSpacing"
+        ],
+        "baselinePolicy": "Если component property изменилась, а затем icon/root layer был вручную кастомизирован, сравнивай layer с текущим IconButton state baseline, а не с исходным reference baseline.",
+        "partProperties": [
+          "Icon.variant.Type"
+        ],
+        "ordering": [
+          "component-property",
+          "part-property",
+          "layer-property"
+        ]
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.Size",
+            "variant.View",
+            "variant.TransparentBg"
+          ],
+          "layerProperties": [
+            "fills",
+            "strokes",
+            "strokeWeight",
+            "cornerRadius",
+            "opacity",
+            "layout.padding",
+            "layout.itemSpacing"
+          ],
+          "dependencyPolicy": "При reset IconButton component property visual differences, вызванные только этой property, могут исчезнуть автоматически. Ручные layer overrides должны оставаться независимо сбрасываемыми, пока reset родительской property не уберёт их target state."
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web-core.icon-view",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Content",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "IconView"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.list",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔩 Marker",
+        "List"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.pure-cell",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔄 [M][Corporate] PureCell",
+        "🔄 [D][Corporate] PureCell",
+        "[M] PureCell",
+        "[D] PureCell",
+        "🔄 🔩 [M][Corporate] RowValue",
+        "🔄 🔩 [D][Corporate] RowValue",
+        "🔄 🔩 [M][Corporate] RowTitle",
+        "🔄 🔩 [D][Corporate] RowTitle",
+        "🔄 🔩 [M][Corporate] Footer",
+        "🔄 🔩 [D][Corporate] Footer",
+        "🔄 🔩 [M][Corporate] Addon",
+        "🔄 🔩 [D][Corporate] Addon",
+        "🔄 🔩 [M][Corporate] Graphics",
+        "🔄 🔩 [D][Corporate] Graphics",
+        "🔩 [M] RowValue",
+        "🔩 [D] RowValue",
+        "🔩 [M] RowTitle",
+        "🔩 [D] RowTitle",
+        "🔩 [M] Footer",
+        "🔩 [D] Footer",
+        "🔩 [M] Addon",
+        "🔩 [D] Addon",
+        "🔩 [M] Graphics",
+        "🔩 [D] Graphics"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.steps",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "❌  Indicator",
+        "❌  Line",
+        "❌ Steps_Vertical",
+        "🔩 IndicatorContent",
+        "🔩 Line",
+        "🔩 Line",
+        "🔩 MinSpace",
+        "Steps_Horizontal",
+        "Steps_Vertical",
+        "❌   HorizontalLabel",
+        "❌  Steps_Horizontal",
+        "❌  SwapMe",
+        "🔩 HorizontalLabel",
+        "🔩 SwapMe"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.switch",
+      "summary": "Switch — семейство бинарных on/off controls. Apollo должен трактовать SelectedState, DisabledState, Reverse и Hint как component property changes, а ручные area/oval/label visual changes как layer customizations.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "Switch",
+        "Switch_Inverted",
+        "SwitchLabel",
+        "SwitchLabel_Inverted"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*",
+          "variant.SelectedState",
+          "variant.DisabledState",
+          "variant.Reverse",
+          "variant.Hint"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent",
+          "strokeWeight",
+          "layout.padding",
+          "layout.itemSpacing"
+        ],
+        "baselinePolicy": "Если component property изменилась, сравнивай ручные layer overrides с baseline текущего actual-состояния компонента, а не с исходным reference baseline.",
+        "slotProperties": [
+          "Switch.variant.SelectedState",
+          "Switch.variant.DisabledState"
+        ],
+        "contentProperties": [
+          "Label.characters"
+        ],
+        "ordering": [
+          "component-property",
+          "slot-property",
+          "layer-property",
+          "content-property"
+        ]
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.SelectedState",
+            "variant.DisabledState",
+            "variant.Reverse",
+            "variant.Hint"
+          ],
+          "layerProperties": [
+            "fills",
+            "strokes",
+            "strokeWeight",
+            "cornerRadius",
+            "opacity",
+            "layout.padding",
+            "layout.itemSpacing",
+            "styles.text",
+            "typography"
+          ],
+          "dependencyPolicy": "При reset состояния компонента layer differences, вызванные только этим состоянием, могут исчезнуть автоматически. Ручные layer overrides должны оставаться независимо сбрасываемыми, пока reset родительского состояния не уберёт их target state."
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web-corp.background-plate",
+      "summary": "BackgroundPlate — семейство variable-driven surface-компонентов. Для нового контента используется BackgroundPlateSlot: Level-0 задаётся главной поверхности, первый компонент получает Level-1, а опциональный Level-2 располагается только непосредственно внутри Level-1. Type, BackgroundColor, Skeleton и layer-свойства трактуются по exact component rules. BackgroundPlateView — кодовый alias этого же семейства.",
+      "criticalBaselines": [
+        "Для новых макетов основным контейнером является BackgroundPlateSlot; BackgroundPlate считается legacy для генерации, но его существующее использование не является нарушением само по себе.",
+        "Mode BackgroundPlate Level=Level-0 назначается главной поверхности страницы или модальной сущности. Первый вложенный BackgroundPlateSlot получает Level-1; Level-2 всегда располагается непосредственно внутри Level-1.",
+        "Обычный контент может лежать непосредственно в Slot Level-1. Level-2 является опциональной вложенной поверхностью; Level-0 и Level-1 внутри Slot запрещены.",
+        "Рекомендуемый padding: Spacing/32 для Level-1 и Spacing/24 для Level-2. Другие значения допустимы под контекст или паттерн только с Spacing token binding.",
+        "Axis, gap и alignment Slot определяются контекстом; width должен быть Fill, height — Hug. Clip content может быть true или false по контексту.",
+        "Primary и Secondary получают fill/stroke только из effective baseline. Colored использует только токенизированную заливку без stroke. Border используется без fill, с токенизированным stroke; strokeWeight контекстный, strokeAlign всегда INSIDE.",
+        "Radius, opacity и blend mode фиксируются effective baseline. Drop shadow и Inner shadow запрещены; Layer blur и Background blur разрешены по контексту.",
+        "Skeleton=True является штатным состоянием загрузки компонента или контента. Сложная skeleton-композиция допустима только при явном сценарии паттерна.",
+        "BackgroundPlateView в code/private usage маппится на BackgroundPlate и должен использовать те же правила, контракты и pattern links.",
+        "Для desktop рабочей поверхности Level 1 использует radius 16, Level 2 использует radius 12. Promo и mobile variants могут иметь другие baseline из каталога.",
+        "BackgroundColor зависит от surface context: для страниц используются base-bg/base-bg-alt, для модальных сущностей используются modal-bg/modal-bg-alt. Суффикс в скобках (gray)/(white) описывает визуальный фон, а часть имени до скобок соответствует цветовому токену поверхности.",
+        "В каталоге вариант обводочной поверхности называется Type=Border. В тексте рекомендаций можно пояснять его как bordered/обводочный, но в машинных фактах и таблицах используй точное значение Border.",
+        "Radius/cornerRadius у BackgroundPlate, BackgroundPlateSlot и вложенных Style Level фиксируется component effective baseline. Ручное изменение скруглений запрещено и должно трактоваться как нарушение, а не как допустимая композиционная настройка.",
+        "Для Table Wide [D] в BackgroundPlateSlot действует специальное правило: Slot padding top=Spacing/0, right/bottom/left=Spacing/16. [D] TopBar расположен рядом с плейтом в общем Level-0 контейнере, а не внутри Slot."
+      ],
+      "agentInstructions": [
+        "Не выводи нарушение из примера. Используй только exact rules, exact component contracts и явно найденные pattern rules.",
+        "Если во входном отчёте встречается BackgroundPlateView, трактуй его как code/private alias компонента BackgroundPlate, а не как отдельный компонент без правил.",
+        "Изменения variant/property показывай как component-property customizations; изменения fill, stroke, stroke geometry, radius, opacity, effects, blend mode, layout и style показывай как layer-property customizations.",
+        "Если nested diff принадлежит wrapper и actual совпадает с effective baseline, не показывай его как дизайнерскую кастомизацию.",
+        "Если actual отличается от effective baseline, показывай effectiveBaseline -> actual. Не подставляй standalone baseline вложенного Style Level вместо baseline выбранного BackgroundPlate variant.",
+        "Padding у BackgroundPlateSlot может быть осознанной настройкой композиции. Комментируй его как layer customization и проверяй Spacing token binding; не требуй вернуть 32 или 24 только из-за отличия от рекомендации.",
+        "Не требуй Level-2 для обычного контента Slot Level-1. Если внутри Slot найден BackgroundPlate Level-0 или Level-1, используй rule:components.background-plate.slot-content-levels.",
+        "Axis, gap, alignment и Clip content Slot трактуй как контекстные настройки. Width не должен отличаться от Fill, height — от Hug.",
+        "При анализе BackgroundColor сначала определи контекст поверхности: page или modal. Не рекомендуй modal-bg* для обычной страницы и не рекомендуй base-bg* для модальной сущности, если exact rule или отчёт указывают на противоположный surface context.",
+        "Для Primary и Secondary любое ручное изменение fill/stroke является нарушением, даже при token binding. Сравнивай с effective baseline текущего Type, уровня и BackgroundColor.",
+        "Для Colored разрешена только видимая заливка через color token; raw fill, отсутствие fill и любой stroke являются нарушением.",
+        "Для Border fill запрещён, stroke должен быть привязан к color token. StrokeWeight можно менять под контекст; strokeAlign должен оставаться INSIDE. Border не может быть кликабельным.",
+        "Если в отчёте есть изменение radius/cornerRadius, opacity или blend mode, используй соответствующее exact component rule и рекомендуй сброс к effective baseline.",
+        "Drop shadow и Inner shadow трактуй как нарушения. Layer blur и Background blur являются допустимыми контекстными кастомизациями и не должны попадать под запрет теней.",
+        "Переключение Skeleton=False → True само по себе разрешено. Ручную простую skeleton-композицию вместо component property считай нарушением; сложное исключение допускай только по явному паттерну.",
+        "Для Table Wide не разрешай дублировать table inset внутри плейта: HeadRow, BodyRow и ячейки используют собственные effective baseline без дополнительных padding."
+      ],
+      "includedComponents": [
+        "[D] BackgroundPlate",
+        "[D] BackgroundPlateSlot",
+        "[D] Style Level 1",
+        "[D] Style Level 2",
+        "[D][Promo] BackgroundPlate",
+        "[D][Promo] Style Level 1",
+        "[D][Promo] Style Level 2",
+        "[M] BackgroundPlate",
+        "[M] BackgroundPlateSlot",
+        "[M] Style Level 1",
+        "[M] Style Level 2",
+        "[M][Promo] BackgroundPlate",
+        "[M][Promo] Style Level 1",
+        "[M][Promo] Style Level 2"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.*"
+          ],
+          "layerProperties": [
+            "layout.*",
+            "styles.*",
+            "fill",
+            "stroke",
+            "radius",
+            "opacity",
+            "text.*"
+          ],
+          "dependencyPolicy": "Component-property reset и layer-property reset разделены. Layer reset должен использовать effective baseline после nested variant/materialization resolution. Для BackgroundPlateView применяй тот же reset model, что и для BackgroundPlate."
+        },
+        "publicApi": {
+          "components": [
+            {
+              "name": "[D] BackgroundPlate",
+              "key": "2c7332d281570f4d5af6d334f8df378d24a1f235",
+              "role": "legacy-surface",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "legacy",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D] BackgroundPlateSlot",
+              "key": "5b6c5ac720154aff36be2f8a883bd058faa663cf",
+              "role": "content-container",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "preferred",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[D] Style Level 1",
+              "key": "adb65a62cde9ebedc5d0d41d2d77cd63e71e0745",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D] Style Level 2",
+              "key": "c8735f4834a8b43fd2ab821ffc0a6e72a57c4b5b",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D][Promo] BackgroundPlate",
+              "key": "c49f08db71ab44ea64f0880730220de1d93ac263",
+              "role": "promo-surface",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "promo-only",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[D][Promo] Style Level 1",
+              "key": "2b46e94cdecdab7d4cb977055c0405b2f6204127",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D][Promo] Style Level 2",
+              "key": "a5a4240097211b28195291a593c567e9d7c62bd3",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M] BackgroundPlate",
+              "key": "4cfe3915785e5c37255190ae16314f6f2a1d05b3",
+              "role": "legacy-surface",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "legacy",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M] BackgroundPlateSlot",
+              "key": "1745af83255e324781c2fbadfe0ad8cc7f13e0d8",
+              "role": "content-container",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "preferred",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[M] Style Level 1",
+              "key": "efc528bd86582d96a824edeb2c257dc8b22a8f14",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M] Style Level 2",
+              "key": "74f025a02889239c3f6eed60d74ba85f292bdcb0",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M][Promo] BackgroundPlate",
+              "key": "a58fa7ae11989280fc24069f204ba617fdb1f93c",
+              "role": "promo-surface",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "promo-only",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[M][Promo] Style Level 1",
+              "key": "19b4b6ed5718d82888a6551b56e0c776f4993ccc",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M][Promo] Style Level 2",
+              "key": "b33f77cc56c5feffb4f24a5912d74e3af927140e",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            }
+          ],
+          "aliases": null,
+          "codeExports": [
+            {
+              "name": "BackgroundPlate",
+              "kind": "react-component-export",
+              "mapsTo": "[D] BackgroundPlate / [M] BackgroundPlate",
+              "usage": "Основной code/private export, который соответствует Figma-компонентам семейства BackgroundPlate."
+            },
+            {
+              "name": "BackgroundPlateView",
+              "kind": "react-view-export",
+              "mapsTo": "BackgroundPlate",
+              "usage": "Кодовая обёртка/представление BackgroundPlate. В Apollo и агентском анализе не является отдельным Figma-компонентом и должна использовать тот же componentKey web-corp.background-plate."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "componentKey": "web-corp.content-card-wrapper",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] ContentCardWrapper",
+        "[M] ContentCardWrapper",
+        "🔩 [D] ContentPresets",
+        "🔩 [D] LeftSlot",
+        "🔩 [D] RightSlot",
+        "🔩 [M] ContentPresets",
+        "🔩 [M] LeftSlot",
+        "🔩 [M] MiddleContentSlot",
+        "🔩 [M] RightSlot",
+        "🔩 MiddleContentSlot",
+        "SwapMe"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.corporate-content",
+      "summary": "CorporateContent — обязательная контентная область продуктовой страницы. Используй [D] CorporateContent для desktop и [M] CorporateContent для mobile-web.",
+      "criticalBaselines": [],
+      "agentInstructions": [
+        "Не считай произвольный контент или несколько дочерних элементов внутри Body нарушением сами по себе.",
+        "Проверяй содержимое Body по собственным компонентным контрактам и паттернам.",
+        "Считай использование переходного [T] CorporateContent явным нарушением.",
+        "Не рекомендуй ручную правку fill, grid style или padding корня CorporateContent; рекомендуй правильный mode переменных.",
+        "Не требуй наличия родительского компонента CorporatePage в Figma: такого компонента нет, самостоятельное использование CorporateContent допустимо.",
+        "Не применяй Gutter как обязательный itemSpacing внутри Body; он допустим в любой горизонтальной композиции без обязательного Section.",
+        "На ширине 768 требуй [D] CorporateContent и mode 768 коллекции [D] Grid & Cols.",
+        "Не придумывай условия выбора между base-bg-alt и base-bg до появления отдельного паттерна; default — base-bg-alt (grey).",
+        "Не разрешай кликабельность корня или detach CorporateContent и Body.",
+        "Не разрешай вкладывать CorporateContent внутрь CorporateContent и не оставляй SwapMe после добавления реального содержимого.",
+        "Требуй Header или HeaderMenu непосредственно над CorporateContent в общем вертикальном контейнере с gap 0.",
+        "Не разрешай менять вертикальное направление, itemSpacing=0 или clipsContent=false корня CorporateContent."
+      ],
+      "includedComponents": [
+        "[D] Section",
+        "[D] CorporateContent",
+        "[M] CorporateContent",
+        "❌ [D] BottomMagrin",
+        "❌ [D] TopMargin",
+        "❌ [D](1024+) Content",
+        "❌ [D](1024+) ContentBody",
+        "❌ [D](768) Content",
+        "❌ [D](768) ContentBody",
+        "❌ [M] Content",
+        "❌ [M](320-767) ContentBody",
+        "🔄 [D] Body",
+        "🔄 [M} Body",
+        "🔄 [T] Body",
+        "🔄 [T] CorporateContent"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.title-view",
+      "summary": "TitleView — составная обёртка заголовка для сценария с основным заголовком, статусом и действиями. Компонент объединяет Title, Status, TitleAddon, RightAddon, выбор компании, Subtitle, TitleStatus и Button group в готовую DS-композицию.",
+      "criticalBaselines": [
+        "Nested [D]/[M] Button instances внутри Button group являются частью TitleView baseline; изменения variant дизайнером нужно показывать относительно TitleView effective baseline.",
+        "StatusPreset и Status внутри MainContent / Status являются ожидаемыми nested structures; само использование preset нормально, если preset не изменён за пределами его variant API.",
+        "View и Skeleton являются public TitleView component properties.",
+        "На странице допускается только один TitleView с View=xLarge.",
+        "Внешние отступы 40 px, 32 px и 12 px, определённые правилами TitleView, обязательны для соответствующих соседних блоков.",
+        "Если одновременно используются Status и TitleStatus, значения Type должны совпадать: Type определяет статусный цвет.",
+        "В View=xLarge primary-действия размещаются в Button group. В View=Large, Medium и Small primary-действия размещаются вне TitleView.",
+        "Запрет primary-действия в RightAddon применяется ко всем значениям View.",
+        "Частичная загрузка отдельных слотов допустима при Skeleton=False у родительского TitleView.",
+        "Для View=Large, Medium и Small доступны только Title, Subtitle, TitleAddon и RightAddon.",
+        "Holding обязателен для одиночного выбора компании, когда пользователь работает от группы компаний, а страница доступна только в моно-режиме.",
+        "Ручные изменения layout, sizing, типографики, цвета, прозрачности и других стилей корня и всего внутреннего дерева TitleView запрещены.",
+        "Для корня TitleView рекомендуется ширина Fill container и высота Hug contents; правило одинаково для desktop и mobile-web.",
+        "Порядок слотов Status -> Heading -> Holding -> Subtitle -> TitleStatus -> Button group обязателен.",
+        "В предусмотренных слотах разрешён instance swap на произвольные компоненты, если сохраняются порядок слотов и структура TitleView.",
+        "Корень TitleView не оформляется вручную и не может быть единой кликабельной поверхностью."
+      ],
+      "agentInstructions": [
+        "Не выводи pattern violations из примеров. Используй только exact rules и exact component contracts.",
+        "Используй component-property facts для variant changes и layer-property facts для styles/layout/paint changes.",
+        "Если nested diff принадлежит host wrapper и actual совпадает с effective baseline, не показывай его как designer customization.",
+        "Если actual отличается от effective baseline, показывай effectiveBaseline -> actual.",
+        "Для сценария заголовка со статусом и действиями рекомендуй настройку встроенных slots TitleView, а не внешнюю ручную композицию из отдельных локальных компонентов.",
+        "Не считай отсутствие опциональных Status, TitleStatus, TitleAddon, RightAddon, Subtitle или Button group нарушением без отдельного правила.",
+        "Если загружается только отдельный вложенный элемент, не требуй переключать весь TitleView в Skeleton=True.",
+        "Для View=Large, Medium и Small рекомендуй primary-действие вне TitleView, а не в RightAddon.",
+        "Не считай изменение label у Status нарушением, если Type корректен и нет отдельного текстового правила.",
+        "Не придумывай ограничения параметров FilterCompanySelect_Single: используй его собственный компонентный контракт, когда он будет доступен.",
+        "Для настроек View, addons, hint и singleIcon вложенных Button используй паттерн «Кнопки и группы кнопок»; не создавай отдельные ограничения TitleView.",
+        "Применяй правила p_title-view-editable.md как часть правил TitleView, когда обнаружен editable-сценарий.",
+        "Не требуй Enter, Escape или отдельные кнопки подтверждения и отмены без точного правила для конкретной платформы и сценария.",
+        "Не считай сам факт instance swap внутри предусмотренного слота нарушением; оценивай выбранный компонент по его собственному контракту.",
+        "Проверяй обязательный порядок слотов отдельно от содержимого каждого слота.",
+        "Не разрешай ручное оформление корня или внутренних слоёв TitleView и не предлагай делать весь TitleView кликабельным."
+      ],
+      "includedComponents": [
+        "[D] RightAddon",
+        "[D] RightAddonXL",
+        "[D] TitleAddon",
+        "[D] TitleAddonXL",
+        "[D] TitleStatus",
+        "[D] TitleView",
+        "[M] RightAddon",
+        "[M] RightAddonXL",
+        "[M] TitleAddon",
+        "[M] TitleAddonXL",
+        "[M] TitleStatus",
+        "[M] TitleView"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.*"
+          ],
+          "layerProperties": [
+            "layout.*",
+            "styles.*",
+            "fill",
+            "stroke",
+            "radius",
+            "opacity",
+            "text.*"
+          ],
+          "dependencyPolicy": "Component-property reset и layer-property reset разделены. Layer reset должен использовать effective baseline после nested variant/materialization resolution."
+        },
+        "publicApi": {
+          "components": [
+            {
+              "name": "[D] RightAddon",
+              "key": "edd174301746415867bc998cd0c0322b68c6269c",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] RightAddonXL",
+              "key": "8edd3829b4b7091209299a5b5c838f0a159018aa",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleAddon",
+              "key": "f32313498fd345a1a41584c8d9edc61c3e2053bf",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleAddonXL",
+              "key": "b4cd3e21d108962a24b75aec2de71fba0672d63f",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleStatus",
+              "key": "6a8aa56ae7c8b57b9d9dfbbf23af14c348d83763",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleView",
+              "key": "fbc4ff889c9fe2db128bc76471f512271d4cc229",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] RightAddon",
+              "key": "b762143a2872257a497f9c3e0a012a9bed92f9ca",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] RightAddonXL",
+              "key": "c1092f678271e7de3291bb5699eeab4ad43c7710",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleAddon",
+              "key": "50d8b48cc1dcd4052efc7a151219578d1d993e2f",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleAddonXL",
+              "key": "a40e2549a5a23e645fb38c2af4c15df0f6813153",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleStatus",
+              "key": "e64c6d19cadc818b180b9176a51e3f65714b84b0",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleView",
+              "key": "227149bd55130d69d63e33cd3c8c52ae3f4e7e19",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            }
+          ],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web.documentation",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        ".x / PropertyValue",
+        "💊Rulers / Corner radius",
+        "💊Rulers / Inline",
+        "💊Rulers / Side",
+        ".Details / Triangle",
+        ".Details / Body",
+        ".Details / Spacer_hor",
+        ".Details / Spacer_vert",
+        "💊Documentations / Plates / Bottom",
+        "💊Documentations / Inline / Plates",
+        ".Details / Plate / Icon",
+        "💊Documentations / Inline / Code",
+        ".Details / Plate / Master",
+        "💊Documentations / Inline / Good and Bad",
+        "💊Documentations / Plates / Cell",
+        "💊Documentations / Plates / Head"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    }
+  ]
+}
