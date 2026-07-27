@@ -1,0 +1,3045 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1096320301135139074-1785149189335-lurey6gy:agent",
+  "sourceReportId": "apollo-1096320301135139074-1785149189335-lurey6gy",
+  "generatedAt": "2026-07-27T10:46:29.335Z",
+  "suggestedFileName": "Anna-Razbitneva_27-07-2026_13-46-29_agent.json",
+  "user": {
+    "id": "1096320301135139074",
+    "name": "Anna Razbitneva",
+    "slug": "Anna-Razbitneva"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.1.56"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "[W] Альфа-Выгодно [new levels]",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "startedAt": "2026-07-27T10:46:25.781Z",
+    "finishedAt": "2026-07-27T10:46:29.335Z",
+    "durationMs": 3554,
+    "selection": [
+      {
+        "nodeId": "10740:496275",
+        "name": "[D] UniversalMoadal",
+        "nodeType": "FRAME",
+        "path": "Все флоу / Кэшбэк / Выбран / [D] UniversalMoadal",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 68,
+    "problemOccurrenceCount": 17,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 4,
+      "updates": 3,
+      "customizations": 2,
+      "localComponents": 6,
+      "detachedComponents": 0,
+      "presets": 0,
+      "technicalComponents": 0,
+      "currentComponents": 59,
+      "wrongChannel": 0,
+      "themization": 2
+    },
+    "includedFindingCount": 17,
+    "omittedCurrentComponentCount": 59
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with severity=error and matchKind=exact_component_rule for the same property/change.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 4,
+      "includedCount": 4,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 3,
+      "includedCount": 3,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 2,
+      "includedCount": 2,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 6,
+      "includedCount": 6,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 2,
+      "includedCount": 2,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I10740:496277;50305:25087;10740:497694;1875:101130;2145:165",
+        "name": "Image",
+        "type": "RECTANGLE",
+        "pageName": "Детализация лимита [23.07.2026 - ]",
+        "path": "Все флоу / Кэшбэк / Выбран / [D] UniversalMoadal / [D] UniversalModalBody / BodyContent / BodyContent / PrizeWidget / ImageContainer / Image",
+        "visible": true
+      },
+      "style": {
+        "name": "Слой (Layer blur)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Слой (Layer blur)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I10740:496277;50305:25087;10742:524233;92:3605;506:137416;448:17272",
+        "name": "BgImg",
+        "type": "RECTANGLE",
+        "pageName": "Детализация лимита [23.07.2026 - ]",
+        "path": "Все флоу / Кэшбэк / Выбран / [D] UniversalMoadal / [D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] PureCell / Product / IconView / Content / ShapeContent / BgImg",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I10740:496277;50305:25087;10743:525353;92:3605;506:137416;448:17272",
+        "name": "BgImg",
+        "type": "RECTANGLE",
+        "pageName": "Детализация лимита [23.07.2026 - ]",
+        "path": "Все флоу / Кэшбэк / Выбран / [D] UniversalMoadal / [D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] PureCell / Product / IconView / Content / ShapeContent / BgImg",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I10740:496277;50305:25087;10742:524237;92:3605;506:137416;448:17272",
+        "name": "BgImg",
+        "type": "RECTANGLE",
+        "pageName": "Детализация лимита [23.07.2026 - ]",
+        "path": "Все флоу / Кэшбэк / Выбран / [D] UniversalMoadal / [D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] PureCell / Product / IconView / Content / ShapeContent / BgImg",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I10740:496277;50305:25087;10742:524240;39:8328",
+        "name": "[D][Corporate] PureCell",
+        "type": "INSTANCE",
+        "pageName": "Детализация лимита [23.07.2026 - ]",
+        "path": "Все флоу / Кэшбэк / Выбран / [D] UniversalMoadal / [D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] SubscriptionCard :: BottomAddon / [D][Corporate] PureCell",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] PureCell",
+        "key": "6caa1bbb70b1759b137f0831820bc4dedbddc956",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- PureCell.json"
+      },
+      "variant": {
+        "name": "GraphicsSide=Left",
+        "key": "6caa1bbb70b1759b137f0831820bc4dedbddc956"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I10740:496277;50305:25087;10742:524240;39:8328;215:15030",
+        "name": "RowTitle",
+        "type": "INSTANCE",
+        "pageName": "Детализация лимита [23.07.2026 - ]",
+        "path": "Все флоу / Кэшбэк / Выбран / [D] UniversalMoadal / [D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] SubscriptionCard :: BottomAddon / [D][Corporate] PureCell / Content / Body / Main / Row / RowTitle",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 🔩 [D][Corporate] RowTitle",
+        "key": "31bf832dc500b119f05098d0c8c0dda90372e08f",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- PureCell.json"
+      },
+      "variant": {
+        "name": "Type=Text 16",
+        "key": "31bf832dc500b119f05098d0c8c0dda90372e08f"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I10740:496277;50305:25087;10742:524240;39:8328;215:15033",
+        "name": "RowTitle",
+        "type": "INSTANCE",
+        "pageName": "Детализация лимита [23.07.2026 - ]",
+        "path": "Все флоу / Кэшбэк / Выбран / [D] UniversalMoadal / [D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] SubscriptionCard :: BottomAddon / [D][Corporate] PureCell / Content / Body / Main / Row / RowTitle",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 🔩 [D][Corporate] RowTitle",
+        "key": "86d9789ed28f40d006d192a9fc5d61beba32b0a4",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- PureCell.json"
+      },
+      "variant": {
+        "name": "Type=Text 14",
+        "key": "86d9789ed28f40d006d192a9fc5d61beba32b0a4"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "10740:496277",
+        "name": "[D] UniversalModalBody",
+        "type": "INSTANCE",
+        "pageName": "Детализация лимита [23.07.2026 - ]",
+        "path": "Все флоу / Кэшбэк / Выбран / [D] UniversalMoadal / [D] UniversalModalBody",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] UniversalModalBody",
+        "key": "91428cc8a0e08451abb7c204605bb242e0b9a165",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- UniversalModal.json"
+      },
+      "variant": {
+        "name": "[D] UniversalModalBody",
+        "key": "91428cc8a0e08451abb7c204605bb242e0b9a165"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I10740:496277;50305:25087",
+            "name": "BodyContent",
+            "type": null,
+            "pageName": "Детализация лимита [23.07.2026 - ]",
+            "path": "[D] UniversalModalBody / BodyContent",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.bottom",
+          "message": "Паддинг bottom: 0 → 32",
+          "referenceValue": 0,
+          "actualValue": "32 (Spacing)",
+          "referenceRawValue": 0,
+          "actualRawValue": 32,
+          "referenceDisplayValue": 0,
+          "actualDisplayValue": "32 (Spacing)",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "32",
+            "key": "3d9a2eee092ea793ffa757f1b5e04abb658296a2",
+            "library": "Spacing",
+            "sourceFile": "Spacing"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:3d9a2eee092ea793ffa757f1b5e04abb658296a2/1:39",
+            "key": "3d9a2eee092ea793ffa757f1b5e04abb658296a2",
+            "name": "32",
+            "collectionId": "VariableCollectionId:1:2",
+            "collectionName": "Spacing",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "91428cc8a0e08451abb7c204605bb242e0b9a165",
+            "actualNestedOwnerPath": "[D] UniversalModalBody",
+            "actualNestedOwnerRelativePath": "BodyContent",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I10740:496277;50305:25087;10740:497694;1875:101123;66402:30698",
+            "name": "[D] Style Level 1",
+            "type": null,
+            "pageName": "Детализация лимита [23.07.2026 - ]",
+            "path": "[D] UniversalModalBody / BodyContent / BodyContent / PrizeWidget / [D] BackgroundPlate / [D] Style Level 1",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: base-bg-alt/secondary → neutral-translucent/100",
+          "referenceValue": "base-bg-alt/secondary",
+          "actualValue": "neutral-translucent/100",
+          "referenceRawValue": "base-bg-alt/secondary",
+          "actualRawValue": "neutral-translucent/100",
+          "referenceDisplayValue": "base-bg-alt/secondary",
+          "actualDisplayValue": "neutral-translucent/100",
+          "referenceResource": {
+            "name": "base-bg-alt/secondary",
+            "key": "8e2800951104c0afbc2ed28e5331d61aa4214a9a",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "neutral-translucent/100",
+            "key": "8981b6bfc89935b939b249245e60158b88ca252e",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": {
+            "id": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+            "key": "8e2800951104c0afbc2ed28e5331d61aa4214a9a",
+            "name": "base-bg-alt/secondary",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:8981b6bfc89935b939b249245e60158b88ca252e/3541:131",
+            "key": "8981b6bfc89935b939b249245e60158b88ca252e",
+            "name": "neutral-translucent/100",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "4f38c23d743bed97de0b14c39b4d4eaf5b511a2a",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+            "actualNestedOwnerPath": "[D] UniversalModalBody / BodyContent / BodyContent / PrizeWidget / [D] BackgroundPlate",
+            "actualNestedOwnerRelativePath": "[D] Style Level 1",
+            "nestedOwnerComponentKey": "4f38c23d743bed97de0b14c39b4d4eaf5b511a2a",
+            "nestedOwnerPath": "[D] UniversalModalBody / BodyContent / BodyContent / PrizeWidget / [D] BackgroundPlate / [D] Style Level 1",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|styles.fill|styles.stroke|fill|stroke|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства BackgroundPlate нужно сравнивать с effective baseline текущего component variant и nested owner context. Изменения layout.padding.* у BackgroundPlateSlot являются допустимыми дизайнерскими кастомизациями, если они нужны композиции и заданы через токены Spacing. Это правило не разрешает изменение radius: скругления BackgroundPlate и Style Level фиксируются компонентным baseline и не должны изменяться вручную.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.background-plate.primary-secondary-paint-is-fixed",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "fill|styles.fill|stroke|styles.stroke",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Внешний вид Type=Primary и Type=Secondary полностью определяется компонентом, уровнем поверхности и BackgroundColor. Ручные изменения fill или stroke запрещены, даже если новое значение привязано к токену. Производные paint-изменения при переключении Type или BackgroundColor не считаются отдельной кастомизацией.",
+              "remediation": "Сбросьте ручные изменения fill и stroke к effective baseline текущего Type, уровня и BackgroundColor."
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.background-plate.primary-secondary-paint-is-fixed",
+            "message": "Внешний вид Type=Primary и Type=Secondary полностью определяется компонентом, уровнем поверхности и BackgroundColor. Ручные изменения fill или stroke запрещены, даже если новое значение привязано к токену. Производные paint-изменения при переключении Type или BackgroundColor не считаются отдельной кастомизацией.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I10740:496277;50305:25087;10740:497694;1875:101653;100:3003",
+            "name": "Text",
+            "type": null,
+            "pageName": "Детализация лимита [23.07.2026 - ]",
+            "path": "[D] UniversalModalBody / BodyContent / BodyContent / PrizeWidget / Text Container / RowTitle / Text",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Paragraph/16–20 Component Primary → Paragraph/16–24 Primary Medium",
+          "referenceValue": "Paragraph/16–20 Component Primary",
+          "actualValue": "Paragraph/16–24 Primary Medium",
+          "referenceRawValue": "Paragraph/16–20 Component Primary",
+          "actualRawValue": "Paragraph/16–24 Primary Medium",
+          "referenceDisplayValue": "Paragraph/16–20 Component Primary",
+          "actualDisplayValue": "Paragraph/16–24 Primary Medium",
+          "referenceResource": {
+            "name": "Paragraph/16–20 Component Primary",
+            "key": "020582d780ac6ecbb4d8916c4b68099e42b09126",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": {
+            "name": "Paragraph/16–24 Primary Medium",
+            "key": "f0f0d59f9f92db92901605dd929cfa3b93540058",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "d1fd87b244efe14246d51ad5d5e720afa34d7ee2",
+            "actualNestedOwnerPath": "[D] UniversalModalBody / BodyContent / BodyContent / PrizeWidget / Text Container / RowTitle",
+            "actualNestedOwnerRelativePath": "Text",
+            "nestedOwnerComponentKey": "d1fd87b244efe14246d51ad5d5e720afa34d7ee2",
+            "nestedOwnerPath": "[D] UniversalModalBody / BodyContent / BodyContent / PrizeWidget / Text Container / RowTitle",
+            "nestedOwnerRelativePath": "Text"
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": "Стиль текст",
+            "priority": 30,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I10740:496277;50305:25087;10740:497694;1875:101130",
+            "name": "ImageContainer",
+            "type": null,
+            "pageName": "Детализация лимита [23.07.2026 - ]",
+            "path": "[D] UniversalModalBody / BodyContent / BodyContent / PrizeWidget / ImageContainer",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Size",
+          "message": "size: 348 → s",
+          "referenceValue": "348",
+          "actualValue": "S",
+          "referenceRawValue": "348",
+          "actualRawValue": "S",
+          "referenceDisplayValue": "348",
+          "actualDisplayValue": "S",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "b6fba88ea98a9ff0c3f2188f14edfb31d8f85e2c",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "b80160e42323da599d0d9936c7ab31c7c26eeb89",
+            "actualNestedOwnerPath": "[D] UniversalModalBody / BodyContent / BodyContent / PrizeWidget",
+            "actualNestedOwnerRelativePath": "ImageContainer",
+            "nestedOwnerComponentKey": "b6fba88ea98a9ff0c3f2188f14edfb31d8f85e2c",
+            "nestedOwnerPath": "[D] UniversalModalBody / BodyContent / BodyContent / PrizeWidget / ImageContainer",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I10740:496277;50305:25087;10742:524231;37705:55415",
+            "name": "Title",
+            "type": null,
+            "pageName": "Детализация лимита [23.07.2026 - ]",
+            "path": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / Title / [D] TitleView / MainContent / Heading / Title",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Headline–System/18–22 xSmall → Headline–System/22–26 Small",
+          "referenceValue": "Headline–System/18–22 xSmall",
+          "actualValue": "Headline–System/22–26 Small",
+          "referenceRawValue": "Headline–System/18–22 xSmall",
+          "actualRawValue": "Headline–System/22–26 Small",
+          "referenceDisplayValue": "Headline–System/18–22 xSmall",
+          "actualDisplayValue": "Headline–System/22–26 Small",
+          "referenceResource": {
+            "name": "Headline–System/18–22 xSmall",
+            "key": "69723bb178c1d1f9ec90e7b5670389dadb9de724",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": {
+            "name": "Headline–System/22–26 Small",
+            "key": "952e7df724ba0235d6d170ca152117522e48f11c",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "actualNestedOwnerPath": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / Title / [D] TitleView",
+            "actualNestedOwnerRelativePath": "MainContent / Heading / Title",
+            "nestedOwnerComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "nestedOwnerPath": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / Title / [D] TitleView",
+            "nestedOwnerRelativePath": "MainContent / Heading / Title"
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": "Стиль текст",
+            "priority": 30,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I10740:496277;50305:25087;10742:524233",
+            "name": "[D] PureCell",
+            "type": null,
+            "pageName": "Детализация лимита [23.07.2026 - ]",
+            "path": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] PureCell",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.top",
+          "message": "Паддинг top: 12 → 16",
+          "referenceValue": 12,
+          "actualValue": "16 (Spacing)",
+          "referenceRawValue": 12,
+          "actualRawValue": 16,
+          "referenceDisplayValue": 12,
+          "actualDisplayValue": "16 (Spacing)",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "16",
+            "key": "59ff0616087ba120b5ba63514ac2699c634960e4",
+            "library": "Spacing",
+            "sourceFile": "Spacing"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:59ff0616087ba120b5ba63514ac2699c634960e4/1:36",
+            "key": "59ff0616087ba120b5ba63514ac2699c634960e4",
+            "name": "16",
+            "collectionId": "VariableCollectionId:1:2",
+            "collectionName": "Spacing",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "13ae19489fc7e2a4535e9642485952083d72a81c",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "91428cc8a0e08451abb7c204605bb242e0b9a165",
+            "actualNestedOwnerPath": "[D] UniversalModalBody",
+            "actualNestedOwnerRelativePath": "BodyContent / BodyContent / Sub / [D] PureCell",
+            "nestedOwnerComponentKey": "13ae19489fc7e2a4535e9642485952083d72a81c",
+            "nestedOwnerPath": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] PureCell",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I10740:496277;50305:25087;10742:524233",
+            "name": "[D] PureCell",
+            "type": null,
+            "pageName": "Детализация лимита [23.07.2026 - ]",
+            "path": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] PureCell",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.right",
+          "message": "Переменная padding right: 0 → 16",
+          "referenceValue": 0,
+          "actualValue": 16,
+          "referenceRawValue": 0,
+          "actualRawValue": 16,
+          "referenceDisplayValue": 0,
+          "actualDisplayValue": 16,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": "unbound",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "13ae19489fc7e2a4535e9642485952083d72a81c",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "91428cc8a0e08451abb7c204605bb242e0b9a165",
+            "actualNestedOwnerPath": "[D] UniversalModalBody",
+            "actualNestedOwnerRelativePath": "BodyContent / BodyContent / Sub / [D] PureCell",
+            "nestedOwnerComponentKey": "13ae19489fc7e2a4535e9642485952083d72a81c",
+            "nestedOwnerPath": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] PureCell",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I10740:496277;50305:25087;10742:524233",
+            "name": "[D] PureCell",
+            "type": null,
+            "pageName": "Детализация лимита [23.07.2026 - ]",
+            "path": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] PureCell",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.bottom",
+          "message": "Паддинг bottom: 12 → 16",
+          "referenceValue": 12,
+          "actualValue": "16 (Spacing)",
+          "referenceRawValue": 12,
+          "actualRawValue": 16,
+          "referenceDisplayValue": 12,
+          "actualDisplayValue": "16 (Spacing)",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "16",
+            "key": "59ff0616087ba120b5ba63514ac2699c634960e4",
+            "library": "Spacing",
+            "sourceFile": "Spacing"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:59ff0616087ba120b5ba63514ac2699c634960e4/1:36",
+            "key": "59ff0616087ba120b5ba63514ac2699c634960e4",
+            "name": "16",
+            "collectionId": "VariableCollectionId:1:2",
+            "collectionName": "Spacing",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "13ae19489fc7e2a4535e9642485952083d72a81c",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "91428cc8a0e08451abb7c204605bb242e0b9a165",
+            "actualNestedOwnerPath": "[D] UniversalModalBody",
+            "actualNestedOwnerRelativePath": "BodyContent / BodyContent / Sub / [D] PureCell",
+            "nestedOwnerComponentKey": "13ae19489fc7e2a4535e9642485952083d72a81c",
+            "nestedOwnerPath": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] PureCell",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I10740:496277;50305:25087;10742:524233",
+            "name": "[D] PureCell",
+            "type": null,
+            "pageName": "Детализация лимита [23.07.2026 - ]",
+            "path": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] PureCell",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.left",
+          "message": "Переменная padding left: 0 → 16",
+          "referenceValue": 0,
+          "actualValue": 16,
+          "referenceRawValue": 0,
+          "actualRawValue": 16,
+          "referenceDisplayValue": 0,
+          "actualDisplayValue": 16,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": "unbound",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "13ae19489fc7e2a4535e9642485952083d72a81c",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "91428cc8a0e08451abb7c204605bb242e0b9a165",
+            "actualNestedOwnerPath": "[D] UniversalModalBody",
+            "actualNestedOwnerRelativePath": "BodyContent / BodyContent / Sub / [D] PureCell",
+            "nestedOwnerComponentKey": "13ae19489fc7e2a4535e9642485952083d72a81c",
+            "nestedOwnerPath": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] PureCell",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I10740:496277;50305:25087;10742:524233",
+            "name": "[D] PureCell",
+            "type": null,
+            "pageName": "Детализация лимита [23.07.2026 - ]",
+            "path": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] PureCell",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: — → neutral-translucent/0",
+          "referenceValue": null,
+          "actualValue": "neutral-translucent/0",
+          "referenceRawValue": null,
+          "actualRawValue": "neutral-translucent/0",
+          "referenceDisplayValue": null,
+          "actualDisplayValue": "neutral-translucent/0",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/0",
+            "key": "e1a55e6f9cfb9bd52f5ad0be76740f24731f6a43",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e1a55e6f9cfb9bd52f5ad0be76740f24731f6a43/3541:176",
+            "key": "e1a55e6f9cfb9bd52f5ad0be76740f24731f6a43",
+            "name": "neutral-translucent/0",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "13ae19489fc7e2a4535e9642485952083d72a81c",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "91428cc8a0e08451abb7c204605bb242e0b9a165",
+            "actualNestedOwnerPath": "[D] UniversalModalBody",
+            "actualNestedOwnerRelativePath": "BodyContent / BodyContent / Sub / [D] PureCell",
+            "nestedOwnerComponentKey": "13ae19489fc7e2a4535e9642485952083d72a81c",
+            "nestedOwnerPath": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] PureCell",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I10740:496277;50305:25087;10742:524233",
+            "name": "[D] PureCell",
+            "type": null,
+            "pageName": "Детализация лимита [23.07.2026 - ]",
+            "path": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] PureCell",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 0 → 16",
+          "referenceValue": 0,
+          "actualValue": "16",
+          "referenceRawValue": 0,
+          "actualRawValue": "16",
+          "referenceDisplayValue": 0,
+          "actualDisplayValue": "16",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "13ae19489fc7e2a4535e9642485952083d72a81c",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "91428cc8a0e08451abb7c204605bb242e0b9a165",
+            "actualNestedOwnerPath": "[D] UniversalModalBody",
+            "actualNestedOwnerRelativePath": "BodyContent / BodyContent / Sub / [D] PureCell",
+            "nestedOwnerComponentKey": "13ae19489fc7e2a4535e9642485952083d72a81c",
+            "nestedOwnerPath": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] PureCell",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I10740:496277;50305:25087;10742:524233;101:3890;100:3003",
+            "name": "Text",
+            "type": null,
+            "pageName": "Детализация лимита [23.07.2026 - ]",
+            "path": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] PureCell / Content / Body / Main / Row / RowTitle / Text",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Paragraph/16–20 Component Primary → Paragraph/16–24 Primary Medium",
+          "referenceValue": "Paragraph/16–20 Component Primary",
+          "actualValue": "Paragraph/16–24 Primary Medium",
+          "referenceRawValue": "Paragraph/16–20 Component Primary",
+          "actualRawValue": "Paragraph/16–24 Primary Medium",
+          "referenceDisplayValue": "Paragraph/16–20 Component Primary",
+          "actualDisplayValue": "Paragraph/16–24 Primary Medium",
+          "referenceResource": {
+            "name": "Paragraph/16–20 Component Primary",
+            "key": "020582d780ac6ecbb4d8916c4b68099e42b09126",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": {
+            "name": "Paragraph/16–24 Primary Medium",
+            "key": "f0f0d59f9f92db92901605dd929cfa3b93540058",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "d1fd87b244efe14246d51ad5d5e720afa34d7ee2",
+            "actualNestedOwnerPath": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] PureCell / Content / Body / Main / Row / RowTitle",
+            "actualNestedOwnerRelativePath": "Text",
+            "nestedOwnerComponentKey": "d1fd87b244efe14246d51ad5d5e720afa34d7ee2",
+            "nestedOwnerPath": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] PureCell / Content / Body / Main / Row / RowTitle",
+            "nestedOwnerRelativePath": "Text"
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": "Стиль текст",
+            "priority": 30,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I10740:496277;50305:25087;10742:524240;39:8327;66402:30700",
+            "name": "[D] Style Level 2",
+            "type": null,
+            "pageName": "Детализация лимита [23.07.2026 - ]",
+            "path": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] SubscriptionCard :: BottomAddon / [D] BackgroundPlate / [D] Style Level 2",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: status-muted/info → neutral-translucent/100",
+          "referenceValue": "status-muted/info",
+          "actualValue": "neutral-translucent/100",
+          "referenceRawValue": "status-muted/info",
+          "actualRawValue": "neutral-translucent/100",
+          "referenceDisplayValue": "status-muted/info",
+          "actualDisplayValue": "neutral-translucent/100",
+          "referenceResource": {
+            "name": "status-muted/info",
+            "key": "b637eaf33ef806563249441181a611f11f15cfb5",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "neutral-translucent/100",
+            "key": "8981b6bfc89935b939b249245e60158b88ca252e",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": {
+            "id": "VariableID:b637eaf33ef806563249441181a611f11f15cfb5/3541:183",
+            "key": "b637eaf33ef806563249441181a611f11f15cfb5",
+            "name": "status-muted/info",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:8981b6bfc89935b939b249245e60158b88ca252e/3541:131",
+            "key": "8981b6bfc89935b939b249245e60158b88ca252e",
+            "name": "neutral-translucent/100",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "eb7133d6d5722b13557bda90ca83fac99703a468",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "8a2632caec67f4422bf2fb78dc9da907369e9fd3",
+            "actualNestedOwnerPath": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] SubscriptionCard :: BottomAddon / [D] BackgroundPlate",
+            "actualNestedOwnerRelativePath": "[D] Style Level 2",
+            "nestedOwnerComponentKey": "eb7133d6d5722b13557bda90ca83fac99703a468",
+            "nestedOwnerPath": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] SubscriptionCard :: BottomAddon / [D] BackgroundPlate / [D] Style Level 2",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|styles.fill|styles.stroke|fill|stroke|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства BackgroundPlate нужно сравнивать с effective baseline текущего component variant и nested owner context. Изменения layout.padding.* у BackgroundPlateSlot являются допустимыми дизайнерскими кастомизациями, если они нужны композиции и заданы через токены Spacing. Это правило не разрешает изменение radius: скругления BackgroundPlate и Style Level фиксируются компонентным baseline и не должны изменяться вручную.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-corp.background-plate.colored-and-border-use-color-tokens",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "fill|stroke|variant.BackgroundColor",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Для Type=Colored цвет заливки должен быть задан через цветовой токен дизайн-системы. Для Type=Border через цветовой токен задаётся цвет обводки, а видимая заливка запрещена отдельным правилом. Конкретный цвет может отличаться по смыслу поверхности, но raw fill или raw stroke без требуемого token binding являются нарушением.",
+              "remediation": "Для Colored привяжите fill к цветовому токену. Для Border удалите fill и привяжите stroke к цветовому токену."
+            },
+            {
+              "ruleId": "component:web-corp.background-plate.colored-uses-fill-without-stroke",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "fill|styles.fill|stroke|styles.stroke",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Type=Colored формируется только видимой токенизированной заливкой. Любая видимая обводка, включая привязанную к цветовому токену, нарушает контракт.",
+              "remediation": "Удалите обводку и оставьте для Type=Colored только заливку, привязанную к цветовому токену."
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.background-plate.colored-and-border-use-color-tokens",
+            "message": "Для Type=Colored цвет заливки должен быть задан через цветовой токен дизайн-системы. Для Type=Border через цветовой токен задаётся цвет обводки, а видимая заливка запрещена отдельным правилом. Конкретный цвет может отличаться по смыслу поверхности, но raw fill или raw stroke без требуемого token binding являются нарушением.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I10740:496277;50305:25087;10742:524240;39:8328",
+            "name": "[D][Corporate] PureCell",
+            "type": null,
+            "pageName": "Детализация лимита [23.07.2026 - ]",
+            "path": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] SubscriptionCard :: BottomAddon / [D][Corporate] PureCell",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.top",
+          "message": "Паддинг top: 12 → 0",
+          "referenceValue": 12,
+          "actualValue": "0 (Spacing)",
+          "referenceRawValue": 12,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 12,
+          "actualDisplayValue": "0 (Spacing)",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "0",
+            "key": "72e2988d91d32bc45f988052a35513d3755e8c56",
+            "library": "Spacing",
+            "sourceFile": "Spacing"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:72e2988d91d32bc45f988052a35513d3755e8c56/1:7",
+            "key": "72e2988d91d32bc45f988052a35513d3755e8c56",
+            "name": "0",
+            "collectionId": "VariableCollectionId:1:2",
+            "collectionName": "Spacing",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "6caa1bbb70b1759b137f0831820bc4dedbddc956",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "14ecdc92b56ea37ce8ad18509fbf797375f5d0f2",
+            "actualNestedOwnerPath": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] SubscriptionCard :: BottomAddon",
+            "actualNestedOwnerRelativePath": "[D][Corporate] PureCell",
+            "nestedOwnerComponentKey": "6caa1bbb70b1759b137f0831820bc4dedbddc956",
+            "nestedOwnerPath": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] SubscriptionCard :: BottomAddon / [D][Corporate] PureCell",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I10740:496277;50305:25087;10742:524240;39:8328",
+            "name": "[D][Corporate] PureCell",
+            "type": null,
+            "pageName": "Детализация лимита [23.07.2026 - ]",
+            "path": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] SubscriptionCard :: BottomAddon / [D][Corporate] PureCell",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.paddingTokens.right",
+          "message": "Паддинг right (токен): 0 (Paddings) → 0 (Spacing)",
+          "referenceValue": "0 (Paddings)",
+          "actualValue": "0 (Spacing)",
+          "referenceRawValue": 0,
+          "actualRawValue": 0,
+          "referenceDisplayValue": "0 (Paddings)",
+          "actualDisplayValue": "0 (Spacing)",
+          "referenceResource": {
+            "name": "Horizontal Paddings/None",
+            "key": "e92e193060a47659d57660329b23585d1755efbd",
+            "library": "Paddings",
+            "sourceFile": "Web :: Core Wrappers"
+          },
+          "actualResource": {
+            "name": "0",
+            "key": "72e2988d91d32bc45f988052a35513d3755e8c56",
+            "library": "Spacing",
+            "sourceFile": "Spacing"
+          },
+          "referenceBinding": {
+            "id": "VariableID:89:3508",
+            "key": "e92e193060a47659d57660329b23585d1755efbd",
+            "name": "Horizontal Paddings/None",
+            "collectionId": "VariableCollectionId:88:5106",
+            "collectionName": "Paddings",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:72e2988d91d32bc45f988052a35513d3755e8c56/1:7",
+            "key": "72e2988d91d32bc45f988052a35513d3755e8c56",
+            "name": "0",
+            "collectionId": "VariableCollectionId:1:2",
+            "collectionName": "Spacing",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "6caa1bbb70b1759b137f0831820bc4dedbddc956",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "14ecdc92b56ea37ce8ad18509fbf797375f5d0f2",
+            "actualNestedOwnerPath": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] SubscriptionCard :: BottomAddon",
+            "actualNestedOwnerRelativePath": "[D][Corporate] PureCell",
+            "nestedOwnerComponentKey": "6caa1bbb70b1759b137f0831820bc4dedbddc956",
+            "nestedOwnerPath": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] SubscriptionCard :: BottomAddon / [D][Corporate] PureCell",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I10740:496277;50305:25087;10742:524240;39:8328",
+            "name": "[D][Corporate] PureCell",
+            "type": null,
+            "pageName": "Детализация лимита [23.07.2026 - ]",
+            "path": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] SubscriptionCard :: BottomAddon / [D][Corporate] PureCell",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.bottom",
+          "message": "Паддинг bottom: 12 → 0",
+          "referenceValue": 12,
+          "actualValue": "0 (Spacing)",
+          "referenceRawValue": 12,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 12,
+          "actualDisplayValue": "0 (Spacing)",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "0",
+            "key": "72e2988d91d32bc45f988052a35513d3755e8c56",
+            "library": "Spacing",
+            "sourceFile": "Spacing"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:72e2988d91d32bc45f988052a35513d3755e8c56/1:7",
+            "key": "72e2988d91d32bc45f988052a35513d3755e8c56",
+            "name": "0",
+            "collectionId": "VariableCollectionId:1:2",
+            "collectionName": "Spacing",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "6caa1bbb70b1759b137f0831820bc4dedbddc956",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "14ecdc92b56ea37ce8ad18509fbf797375f5d0f2",
+            "actualNestedOwnerPath": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] SubscriptionCard :: BottomAddon",
+            "actualNestedOwnerRelativePath": "[D][Corporate] PureCell",
+            "nestedOwnerComponentKey": "6caa1bbb70b1759b137f0831820bc4dedbddc956",
+            "nestedOwnerPath": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] SubscriptionCard :: BottomAddon / [D][Corporate] PureCell",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I10740:496277;50305:25087;10742:524240;39:8328",
+            "name": "[D][Corporate] PureCell",
+            "type": null,
+            "pageName": "Детализация лимита [23.07.2026 - ]",
+            "path": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] SubscriptionCard :: BottomAddon / [D][Corporate] PureCell",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.paddingTokens.left",
+          "message": "Паддинг left (токен): 0 (Paddings) → 0 (Spacing)",
+          "referenceValue": "0 (Paddings)",
+          "actualValue": "0 (Spacing)",
+          "referenceRawValue": 0,
+          "actualRawValue": 0,
+          "referenceDisplayValue": "0 (Paddings)",
+          "actualDisplayValue": "0 (Spacing)",
+          "referenceResource": {
+            "name": "Horizontal Paddings/None",
+            "key": "e92e193060a47659d57660329b23585d1755efbd",
+            "library": "Paddings",
+            "sourceFile": "Web :: Core Wrappers"
+          },
+          "actualResource": {
+            "name": "0",
+            "key": "72e2988d91d32bc45f988052a35513d3755e8c56",
+            "library": "Spacing",
+            "sourceFile": "Spacing"
+          },
+          "referenceBinding": {
+            "id": "VariableID:89:3508",
+            "key": "e92e193060a47659d57660329b23585d1755efbd",
+            "name": "Horizontal Paddings/None",
+            "collectionId": "VariableCollectionId:88:5106",
+            "collectionName": "Paddings",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:72e2988d91d32bc45f988052a35513d3755e8c56/1:7",
+            "key": "72e2988d91d32bc45f988052a35513d3755e8c56",
+            "name": "0",
+            "collectionId": "VariableCollectionId:1:2",
+            "collectionName": "Spacing",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "6caa1bbb70b1759b137f0831820bc4dedbddc956",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "14ecdc92b56ea37ce8ad18509fbf797375f5d0f2",
+            "actualNestedOwnerPath": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] SubscriptionCard :: BottomAddon",
+            "actualNestedOwnerRelativePath": "[D][Corporate] PureCell",
+            "nestedOwnerComponentKey": "6caa1bbb70b1759b137f0831820bc4dedbddc956",
+            "nestedOwnerPath": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] SubscriptionCard :: BottomAddon / [D][Corporate] PureCell",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I10740:496277;50305:25087;10742:524240;39:8328;215:15030;215:14982",
+            "name": "Text",
+            "type": null,
+            "pageName": "Детализация лимита [23.07.2026 - ]",
+            "path": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] SubscriptionCard :: BottomAddon / [D][Corporate] PureCell / Content / Body / Main / Row / RowTitle / Text",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Paragraph/16–20 Component Primary → Paragraph/16–24 Primary Medium",
+          "referenceValue": "Paragraph/16–20 Component Primary",
+          "actualValue": "Paragraph/16–24 Primary Medium",
+          "referenceRawValue": "Paragraph/16–20 Component Primary",
+          "actualRawValue": "Paragraph/16–24 Primary Medium",
+          "referenceDisplayValue": "Paragraph/16–20 Component Primary",
+          "actualDisplayValue": "Paragraph/16–24 Primary Medium",
+          "referenceResource": {
+            "name": "Paragraph/16–20 Component Primary",
+            "key": "020582d780ac6ecbb4d8916c4b68099e42b09126",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": {
+            "name": "Paragraph/16–24 Primary Medium",
+            "key": "f0f0d59f9f92db92901605dd929cfa3b93540058",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "31bf832dc500b119f05098d0c8c0dda90372e08f",
+            "actualNestedOwnerPath": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] SubscriptionCard :: BottomAddon / [D][Corporate] PureCell / Content / Body / Main / Row / RowTitle",
+            "actualNestedOwnerRelativePath": "Text",
+            "nestedOwnerComponentKey": "31bf832dc500b119f05098d0c8c0dda90372e08f",
+            "nestedOwnerPath": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] SubscriptionCard :: BottomAddon / [D][Corporate] PureCell / Content / Body / Main / Row / RowTitle",
+            "nestedOwnerRelativePath": "Text"
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": "Стиль текст",
+            "priority": 30,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I10740:496277;50305:25087;10742:524240;39:8328;215:15025;14:1904;14:1735",
+            "name": "Stroke",
+            "type": null,
+            "pageName": "Детализация лимита [23.07.2026 - ]",
+            "path": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] SubscriptionCard :: BottomAddon / [D][Corporate] PureCell / Graphics / Circle / Stroke",
+            "visible": true
+          },
+          "kind": "shape",
+          "property": "stroke.weight",
+          "message": "Толщина обводки: 4 → 6",
+          "referenceValue": 4,
+          "actualValue": 6,
+          "referenceRawValue": 4,
+          "actualRawValue": 6,
+          "referenceDisplayValue": 4,
+          "actualDisplayValue": 6,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "6037990453ad40585dda8dcaaefa9b721f01ea1e",
+            "actualNestedOwnerPath": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] SubscriptionCard :: BottomAddon / [D][Corporate] PureCell / Graphics / Circle",
+            "actualNestedOwnerRelativePath": "Stroke",
+            "nestedOwnerComponentKey": "5f5fe51379c6f854aa96f8742bff2056a5be53ba",
+            "nestedOwnerPath": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] SubscriptionCard :: BottomAddon / [D][Corporate] PureCell / Graphics",
+            "nestedOwnerRelativePath": "Circle / Stroke"
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 55,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I10740:496277;50305:25087;10742:524240;39:8328;215:15025;14:1904;14:1736",
+            "name": "Progress",
+            "type": null,
+            "pageName": "Детализация лимита [23.07.2026 - ]",
+            "path": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] SubscriptionCard :: BottomAddon / [D][Corporate] PureCell / Graphics / Circle / Progress",
+            "visible": true
+          },
+          "kind": "shape",
+          "property": "stroke.weight",
+          "message": "Толщина обводки: 4 → 6",
+          "referenceValue": 4,
+          "actualValue": 6,
+          "referenceRawValue": 4,
+          "actualRawValue": 6,
+          "referenceDisplayValue": 4,
+          "actualDisplayValue": 6,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "6037990453ad40585dda8dcaaefa9b721f01ea1e",
+            "actualNestedOwnerPath": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] SubscriptionCard :: BottomAddon / [D][Corporate] PureCell / Graphics / Circle",
+            "actualNestedOwnerRelativePath": "Progress",
+            "nestedOwnerComponentKey": "5f5fe51379c6f854aa96f8742bff2056a5be53ba",
+            "nestedOwnerPath": "[D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] SubscriptionCard :: BottomAddon / [D][Corporate] PureCell / Graphics",
+            "nestedOwnerRelativePath": "Circle / Progress"
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 55,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "10740:496278",
+        "name": "[D] UniversalModalFooter",
+        "type": "INSTANCE",
+        "pageName": "Детализация лимита [23.07.2026 - ]",
+        "path": "Все флоу / Кэшбэк / Выбран / [D] UniversalMoadal / [D] UniversalModalFooter",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] UniversalModalFooter",
+        "key": "9dc117bf5cbd78a515d86bcb5df4ca28bff29470",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- UniversalModal.json"
+      },
+      "variant": {
+        "name": "Content=True, Custom=False, FilledBg=True",
+        "key": "9dc117bf5cbd78a515d86bcb5df4ca28bff29470"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "10740:496278",
+            "name": "[D] UniversalModalFooter",
+            "type": null,
+            "pageName": "Детализация лимита [23.07.2026 - ]",
+            "path": "Content=True, Custom=False, FilledBg=True",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "fill: VariableID:224167a7a0d8a160932c76a7ef008143801aab08/3541:154 → modal-bg/secondary",
+          "referenceValue": "modal-bg/primary",
+          "actualValue": "modal-bg/secondary",
+          "referenceRawValue": "VariableID:224167a7a0d8a160932c76a7ef008143801aab08/3541:154",
+          "actualRawValue": "modal-bg/secondary",
+          "referenceDisplayValue": "modal-bg/primary",
+          "actualDisplayValue": "modal-bg/secondary",
+          "referenceResource": {
+            "name": "modal-bg/primary",
+            "key": "224167a7a0d8a160932c76a7ef008143801aab08",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "modal-bg/secondary",
+            "key": "1de385413d3a6777c4de3169721c03819f85923f",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": {
+            "id": "VariableID:224167a7a0d8a160932c76a7ef008143801aab08/3541:154",
+            "key": "224167a7a0d8a160932c76a7ef008143801aab08",
+            "name": "modal-bg/primary",
+            "collectionId": null,
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:1de385413d3a6777c4de3169721c03819f85923f/3541:145",
+            "key": "1de385413d3a6777c4de3169721c03819f85923f",
+            "name": "modal-bg/secondary",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "9dc117bf5cbd78a515d86bcb5df4ca28bff29470",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I10740:496278;50318:17238",
+            "name": "Presets",
+            "type": null,
+            "pageName": "Детализация лимита [23.07.2026 - ]",
+            "path": "Content=True, Custom=False, FilledBg=True / Presets",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.BigButtons",
+          "message": "bigButtons: false → true",
+          "referenceValue": "False",
+          "actualValue": "True",
+          "referenceRawValue": "False",
+          "actualRawValue": "True",
+          "referenceDisplayValue": "False",
+          "actualDisplayValue": "True",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "31d48c359faa9c33184eec721f97e21e0c5ce4e3",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I10740:496278;50318:17238",
+            "name": "Presets",
+            "type": null,
+            "pageName": "Детализация лимита [23.07.2026 - ]",
+            "path": "Content=True, Custom=False, FilledBg=True / Presets",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.SecondaryButton",
+          "message": "secondaryButton: true → false",
+          "referenceValue": "True",
+          "actualValue": "False",
+          "referenceRawValue": "True",
+          "actualRawValue": "False",
+          "referenceDisplayValue": "True",
+          "actualDisplayValue": "False",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "31d48c359faa9c33184eec721f97e21e0c5ce4e3",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I10740:496278;50318:17238;50318:17970",
+            "name": "[D] Button",
+            "type": null,
+            "pageName": "Детализация лимита [23.07.2026 - ]",
+            "path": "Content=True, Custom=False, FilledBg=True / Presets / [D] Button",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Size",
+          "message": "size: 48 → 56",
+          "referenceValue": "48",
+          "actualValue": "56",
+          "referenceRawValue": "48",
+          "actualRawValue": "56",
+          "referenceDisplayValue": "48",
+          "actualDisplayValue": "56",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "4ada6f8688b752d9452249fd8e8bc3545a76c708",
+            "referenceComponentKey": "f9979d6cc8598aec25f721e0a45b7eef2eeb0088",
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": "f9979d6cc8598aec25f721e0a45b7eef2eeb0088",
+            "nestedOwnerPath": "Content=True, Custom=False, FilledBg=True / Presets / [D] Button",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.button.variant-state-is-component-property",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": null,
+              "changeScope": null,
+              "ruleText": "Изменения View, Size, Shape, SingleIcon и DisabledState являются component property changes и должны показываться как самостоятельные customizations.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-core.button.desktop-safe-variants",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.View|variant.Size|variant.Shape",
+              "checkType": "deterministic",
+              "matchKind": null,
+              "changeScope": null,
+              "ruleText": "В desktop нельзя использовать Button variants и параметры, запрещённые button pattern.",
+              "remediation": null
+            }
+          ],
+          "presentation": {
+            "scope": "slot-property",
+            "groupTitle": "Параметры слота",
+            "displayName": null,
+            "priority": 15,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I10740:496278;50318:17238;50318:17970",
+            "name": "[D] Button",
+            "type": null,
+            "pageName": "Детализация лимита [23.07.2026 - ]",
+            "path": "Content=True, Custom=False, FilledBg=True / Presets / [D] Button",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.View",
+          "message": "view: primary → accent",
+          "referenceValue": "Primary",
+          "actualValue": "Accent",
+          "referenceRawValue": "Primary",
+          "actualRawValue": "Accent",
+          "referenceDisplayValue": "Primary",
+          "actualDisplayValue": "Accent",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "4ada6f8688b752d9452249fd8e8bc3545a76c708",
+            "referenceComponentKey": "f9979d6cc8598aec25f721e0a45b7eef2eeb0088",
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": "f9979d6cc8598aec25f721e0a45b7eef2eeb0088",
+            "nestedOwnerPath": "Content=True, Custom=False, FilledBg=True / Presets / [D] Button",
+            "nestedOwnerRelativePath": ""
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.button.variant-state-is-component-property",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": null,
+              "changeScope": null,
+              "ruleText": "Изменения View, Size, Shape, SingleIcon и DisabledState являются component property changes и должны показываться как самостоятельные customizations.",
+              "remediation": null
+            },
+            {
+              "ruleId": "component:web-core.button.desktop-safe-variants",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.View|variant.Size|variant.Shape",
+              "checkType": "deterministic",
+              "matchKind": null,
+              "changeScope": null,
+              "ruleText": "В desktop нельзя использовать Button variants и параметры, запрещённые button pattern.",
+              "remediation": null
+            }
+          ],
+          "presentation": {
+            "scope": "slot-property",
+            "groupTitle": "Параметры слота",
+            "displayName": null,
+            "priority": 15,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I10740:496277;50305:25087;10740:497694",
+        "name": "PrizeWidget",
+        "type": "INSTANCE",
+        "pageName": "Детализация лимита [23.07.2026 - ]",
+        "path": "Все флоу / Кэшбэк / Выбран / [D] UniversalMoadal / [D] UniversalModalBody / BodyContent / BodyContent / PrizeWidget",
+        "visible": true
+      },
+      "component": {
+        "name": "PrizeWidget",
+        "key": "b80160e42323da599d0d9936c7ab31c7c26eeb89",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I10740:496277;50305:25087;10742:524233;92:3605",
+        "name": "Product",
+        "type": "INSTANCE",
+        "pageName": "Детализация лимита [23.07.2026 - ]",
+        "path": "Все флоу / Кэшбэк / Выбран / [D] UniversalMoadal / [D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] PureCell / Product",
+        "visible": true
+      },
+      "component": {
+        "name": "Product",
+        "key": "036e81fd4ca7886c9f483d51f3ad2b9ca5bda979",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I10740:496277;50305:25087;10743:525353;92:3605",
+        "name": "Product",
+        "type": "INSTANCE",
+        "pageName": "Детализация лимита [23.07.2026 - ]",
+        "path": "Все флоу / Кэшбэк / Выбран / [D] UniversalMoadal / [D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] PureCell / Product",
+        "visible": true
+      },
+      "component": {
+        "name": "Product",
+        "key": "036e81fd4ca7886c9f483d51f3ad2b9ca5bda979",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I10740:496277;50305:25087;10742:524237;92:3605",
+        "name": "Product",
+        "type": "INSTANCE",
+        "pageName": "Детализация лимита [23.07.2026 - ]",
+        "path": "Все флоу / Кэшбэк / Выбран / [D] UniversalMoadal / [D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] PureCell / Product",
+        "visible": true
+      },
+      "component": {
+        "name": "Product",
+        "key": "036e81fd4ca7886c9f483d51f3ad2b9ca5bda979",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I10740:496277;50305:25087;10742:524238;92:3605",
+        "name": "Product",
+        "type": "INSTANCE",
+        "pageName": "Детализация лимита [23.07.2026 - ]",
+        "path": "Все флоу / Кэшбэк / Выбран / [D] UniversalMoadal / [D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] PureCell / Product",
+        "visible": true
+      },
+      "component": {
+        "name": "Product",
+        "key": "036e81fd4ca7886c9f483d51f3ad2b9ca5bda979",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I10740:496277;50305:25087;10742:524239;92:3605",
+        "name": "Product",
+        "type": "INSTANCE",
+        "pageName": "Детализация лимита [23.07.2026 - ]",
+        "path": "Все флоу / Кэшбэк / Выбран / [D] UniversalMoadal / [D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] PureCell / Product",
+        "visible": true
+      },
+      "component": {
+        "name": "Product",
+        "key": "036e81fd4ca7886c9f483d51f3ad2b9ca5bda979",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "10740:496275",
+        "name": "Страница: Детализация лимита [23.07.2026 - ]",
+        "type": "PAGE",
+        "pageName": "Детализация лимита [23.07.2026 - ]",
+        "path": "Детализация лимита [23.07.2026 - ]",
+        "visible": true
+      },
+      "kind": "missingThemeMode",
+      "recommendation": "Смени темизацию на Corp",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I10740:496277;50305:25087;10742:524240;39:8328",
+        "name": "[D][Corporate] PureCell",
+        "type": "INSTANCE",
+        "pageName": "Детализация лимита [23.07.2026 - ]",
+        "path": "Все флоу / Кэшбэк / Выбран / [D] UniversalMoadal / [D] UniversalModalBody / BodyContent / BodyContent / Sub / [D] SubscriptionCard :: BottomAddon / [D][Corporate] PureCell",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] PureCell",
+      "component": null
+    }
+  ],
+  "componentContexts": [
+    {
+      "componentKey": "web-core.button",
+      "summary": "Button — семейство action controls. Apollo должен трактовать изменения Button variant как component property changes, а ручные изменения style/token/layout как layer customizations.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] Button",
+        "[D] Button_Inverted",
+        "[M] Button",
+        "[M] Button_Inverted",
+        "🔄 [D][Corporate] Button",
+        "🔄 [D][Corporate] Button_Inverted",
+        "🔄 [M][Corporate] Button",
+        "🔄 [M][Corporate] Button_Inverted",
+        "🔩 Addon",
+        "🔩 Addon"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*",
+          "variant.View",
+          "variant.Size",
+          "variant.Shape",
+          "variant.SingleIcon",
+          "variant.DisabledState"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent",
+          "layout.padding",
+          "layout.itemSpacing"
+        ],
+        "baselinePolicy": "Если component property изменилась, сравнивай ручные layer overrides с baseline текущего actual-состояния компонента, а не с исходным reference baseline.",
+        "slotProperties": [
+          "LeftAddon.variant.Type",
+          "RightAddon.variant.Type"
+        ],
+        "ordering": [
+          "component-property",
+          "slot-property",
+          "layer-property"
+        ]
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.View",
+            "variant.Size",
+            "variant.Shape",
+            "variant.SingleIcon",
+            "variant.DisabledState"
+          ],
+          "layerProperties": [
+            "fills",
+            "strokes",
+            "strokeWeight",
+            "cornerRadius",
+            "opacity",
+            "layout.padding",
+            "layout.itemSpacing",
+            "styles.text",
+            "typography"
+          ],
+          "dependencyPolicy": "При reset component property layer differences, вызванные только этой property, могут исчезнуть автоматически. Ручные layer overrides должны оставаться независимо сбрасываемыми, пока reset родительской property не уберёт их target state."
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web-core.circular-progress-bar",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔄 [AO] CircularProgressBar",
+        "CircularProgressBar",
+        "🔄 🔩 [AO] Content",
+        "🔄 🔩 [AO] Content",
+        "🔄 🔩 [AO] Content",
+        "🔄 🔩 [AO] Content",
+        "🔄 🔩 [AO] Content",
+        "🔄 🔩 [AO] Content",
+        "🔄 🔩 [AO] Content",
+        "🔩 Content",
+        "🔩 Content",
+        "🔩 Content",
+        "🔩 Content",
+        "🔩 Content",
+        "🔩 Content",
+        "🔩 Content",
+        "🔩 Circle",
+        "🔩 Circle",
+        "🔩 Circle",
+        "🔩 Circle",
+        "🔩 Circle",
+        "🔩 Circle",
+        "🔩 Circle"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.pure-cell",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔄 [M][Corporate] PureCell",
+        "🔄 [D][Corporate] PureCell",
+        "[M] PureCell",
+        "[D] PureCell",
+        "🔄 🔩 [M][Corporate] RowValue",
+        "🔄 🔩 [D][Corporate] RowValue",
+        "🔄 🔩 [M][Corporate] RowTitle",
+        "🔄 🔩 [D][Corporate] RowTitle",
+        "🔄 🔩 [M][Corporate] Footer",
+        "🔄 🔩 [D][Corporate] Footer",
+        "🔄 🔩 [M][Corporate] Addon",
+        "🔄 🔩 [D][Corporate] Addon",
+        "🔄 🔩 [M][Corporate] Graphics",
+        "🔄 🔩 [D][Corporate] Graphics",
+        "🔩 [M] RowValue",
+        "🔩 [D] RowValue",
+        "🔩 [M] RowTitle",
+        "🔩 [D] RowTitle",
+        "🔩 [M] Footer",
+        "🔩 [D] Footer",
+        "🔩 [M] Addon",
+        "🔩 [D] Addon",
+        "🔩 [M] Graphics",
+        "🔩 [D] Graphics"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.universal-modal",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [
+        "Заголовок модального окна задаётся через активную конфигурацию [D] UniversalModalHeader и его declared title/MiddleSlot content. Не дублируй заголовок ручным Text-узлом в BodyContent.",
+        "BodyContent должен иметь width=Fill и height=Hug. Fixed height допустима только при фактическом overflow и явно выбранном scroll-сценарии.",
+        "Scrollbar в [D] UniversalModalBody выключен, когда body-content полностью помещается в доступную высоту. Его включают только при подтверждённом вертикальном overflow.",
+        "Overlap у [D] UniversalModalHeader и [D] UniversalModalFooter выключен в нескроллируемом modal. Он включается только когда scroll-content действительно заезжает под фиксированные header или footer."
+      ],
+      "agentInstructions": [
+        "Перед сборкой модального окна прочитай component properties Header, Body и Footer; при наличии системного title preset используй его вместо ручной типографики.",
+        "Не оставляй Scrollbar, Overlap или fixed height как значения по умолчанию: проверь фактическую высоту body-content после наполнения слотa.",
+        "Для confirm-flow проверяй три состояния: entry action, confirmation и result; все action controls и menu/popover должны быть активными библиотечными компонентами."
+      ],
+      "includedComponents": [
+        "[D] UniversalModalFooter",
+        "[D] UniversalModalHeader",
+        "[M] UniversalModalFooter",
+        "[M] UniversalModalHeader",
+        "🔄  🔩 [D][Corporate] Preset",
+        "🔄 [D][Corporate] UniversalModalFooter",
+        "🔄 [M][Corporate]  UniversalModalFooter",
+        "🔄 🔩 [M][Corporate] Preset",
+        "🔩 [D] LeftAddon",
+        "🔩 [D] MiddleSlot",
+        "🔩 [D] Navigation",
+        "🔩 [D] Preset",
+        "🔩 [D] Presets",
+        "🔩 [D] RightAddon",
+        "🔩 [M] Preset",
+        "🔩 [M] Preset",
+        ".ScrollContentExample",
+        "[D] UniversalModalBody",
+        "[M] UniversalModalBody",
+        "🔩 [D] BodyContent",
+        "🔩 [D] BottomAddon",
+        "🔩 [D] FooterContent",
+        "🔩 [M] FooterContent",
+        "🔩 [M] ModalBody"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.background-plate",
+      "summary": "BackgroundPlate — семейство variable-driven surface-компонентов. Для нового контента используется BackgroundPlateSlot: Level-0 задаётся главной поверхности, первый компонент получает Level-1, а опциональный Level-2 располагается только непосредственно внутри Level-1. Type, BackgroundColor, Skeleton и layer-свойства трактуются по exact component rules. BackgroundPlateView — кодовый alias этого же семейства.",
+      "criticalBaselines": [
+        "Для новых макетов основным контейнером является BackgroundPlateSlot; BackgroundPlate считается legacy для генерации, но его существующее использование не является нарушением само по себе.",
+        "Mode BackgroundPlate Level=Level-0 назначается главной поверхности страницы или модальной сущности. Первый вложенный BackgroundPlateSlot получает Level-1; Level-2 всегда располагается непосредственно внутри Level-1.",
+        "Обычный контент может лежать непосредственно в Slot Level-1. Level-2 является опциональной вложенной поверхностью; Level-0 и Level-1 внутри Slot запрещены.",
+        "Рекомендуемый padding: Spacing/32 для Level-1 и Spacing/24 для Level-2. Другие значения допустимы под контекст или паттерн только с Spacing token binding.",
+        "Axis, gap и alignment Slot определяются контекстом; width должен быть Fill, height — Hug. Clip content может быть true или false по контексту.",
+        "Primary и Secondary получают fill/stroke только из effective baseline. Colored использует только токенизированную заливку без stroke. Border используется без fill, с токенизированным stroke; strokeWeight контекстный, strokeAlign всегда INSIDE.",
+        "Radius, opacity и blend mode фиксируются effective baseline. Drop shadow и Inner shadow запрещены; Layer blur и Background blur разрешены по контексту.",
+        "Skeleton=True является штатным состоянием загрузки компонента или контента. Сложная skeleton-композиция допустима только при явном сценарии паттерна.",
+        "BackgroundPlateView в code/private usage маппится на BackgroundPlate и должен использовать те же правила, контракты и pattern links.",
+        "Для desktop рабочей поверхности Level 1 использует radius 16, Level 2 использует radius 12. Promo и mobile variants могут иметь другие baseline из каталога.",
+        "BackgroundColor зависит от surface context: для страниц используются base-bg/base-bg-alt, для модальных сущностей используются modal-bg/modal-bg-alt. Суффикс в скобках (gray)/(white) описывает визуальный фон, а часть имени до скобок соответствует цветовому токену поверхности.",
+        "В каталоге вариант обводочной поверхности называется Type=Border. В тексте рекомендаций можно пояснять его как bordered/обводочный, но в машинных фактах и таблицах используй точное значение Border.",
+        "Radius/cornerRadius у BackgroundPlate, BackgroundPlateSlot и вложенных Style Level фиксируется component effective baseline. Ручное изменение скруглений запрещено и должно трактоваться как нарушение, а не как допустимая композиционная настройка.",
+        "Для Table Wide [D] в BackgroundPlateSlot действует специальное правило: Slot padding top=Spacing/0, right/bottom/left=Spacing/16. [D] TopBar расположен рядом с плейтом в общем Level-0 контейнере, а не внутри Slot."
+      ],
+      "agentInstructions": [
+        "Не выводи нарушение из примера. Используй только exact rules, exact component contracts и явно найденные pattern rules.",
+        "Если во входном отчёте встречается BackgroundPlateView, трактуй его как code/private alias компонента BackgroundPlate, а не как отдельный компонент без правил.",
+        "Изменения variant/property показывай как component-property customizations; изменения fill, stroke, stroke geometry, radius, opacity, effects, blend mode, layout и style показывай как layer-property customizations.",
+        "Если nested diff принадлежит wrapper и actual совпадает с effective baseline, не показывай его как дизайнерскую кастомизацию.",
+        "Если actual отличается от effective baseline, показывай effectiveBaseline -> actual. Не подставляй standalone baseline вложенного Style Level вместо baseline выбранного BackgroundPlate variant.",
+        "Padding у BackgroundPlateSlot может быть осознанной настройкой композиции. Комментируй его как layer customization и проверяй Spacing token binding; не требуй вернуть 32 или 24 только из-за отличия от рекомендации.",
+        "Не требуй Level-2 для обычного контента Slot Level-1. Если внутри Slot найден BackgroundPlate Level-0 или Level-1, используй rule:components.background-plate.slot-content-levels.",
+        "Axis, gap, alignment и Clip content Slot трактуй как контекстные настройки. Width не должен отличаться от Fill, height — от Hug.",
+        "При анализе BackgroundColor сначала определи контекст поверхности: page или modal. Не рекомендуй modal-bg* для обычной страницы и не рекомендуй base-bg* для модальной сущности, если exact rule или отчёт указывают на противоположный surface context.",
+        "Для Primary и Secondary любое ручное изменение fill/stroke является нарушением, даже при token binding. Сравнивай с effective baseline текущего Type, уровня и BackgroundColor.",
+        "Для Colored разрешена только видимая заливка через color token; raw fill, отсутствие fill и любой stroke являются нарушением.",
+        "Для Border fill запрещён, stroke должен быть привязан к color token. StrokeWeight можно менять под контекст; strokeAlign должен оставаться INSIDE. Border не может быть кликабельным.",
+        "Если в отчёте есть изменение radius/cornerRadius, opacity или blend mode, используй соответствующее exact component rule и рекомендуй сброс к effective baseline.",
+        "Drop shadow и Inner shadow трактуй как нарушения. Layer blur и Background blur являются допустимыми контекстными кастомизациями и не должны попадать под запрет теней.",
+        "Переключение Skeleton=False → True само по себе разрешено. Ручную простую skeleton-композицию вместо component property считай нарушением; сложное исключение допускай только по явному паттерну.",
+        "Для Table Wide не разрешай дублировать table inset внутри плейта: HeadRow, BodyRow и ячейки используют собственные effective baseline без дополнительных padding."
+      ],
+      "includedComponents": [
+        "[D] BackgroundPlate",
+        "[D] BackgroundPlateSlot",
+        "[D] Style Level 1",
+        "[D] Style Level 2",
+        "[D][Promo] BackgroundPlate",
+        "[D][Promo] Style Level 1",
+        "[D][Promo] Style Level 2",
+        "[M] BackgroundPlate",
+        "[M] BackgroundPlateSlot",
+        "[M] Style Level 1",
+        "[M] Style Level 2",
+        "[M][Promo] BackgroundPlate",
+        "[M][Promo] Style Level 1",
+        "[M][Promo] Style Level 2"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.*"
+          ],
+          "layerProperties": [
+            "layout.*",
+            "styles.*",
+            "fill",
+            "stroke",
+            "radius",
+            "opacity",
+            "text.*"
+          ],
+          "dependencyPolicy": "Component-property reset и layer-property reset разделены. Layer reset должен использовать effective baseline после nested variant/materialization resolution. Для BackgroundPlateView применяй тот же reset model, что и для BackgroundPlate."
+        },
+        "publicApi": {
+          "components": [
+            {
+              "name": "[D] BackgroundPlate",
+              "key": "2c7332d281570f4d5af6d334f8df378d24a1f235",
+              "role": "legacy-surface",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "legacy",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D] BackgroundPlateSlot",
+              "key": "5b6c5ac720154aff36be2f8a883bd058faa663cf",
+              "role": "content-container",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "preferred",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[D] Style Level 1",
+              "key": "adb65a62cde9ebedc5d0d41d2d77cd63e71e0745",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D] Style Level 2",
+              "key": "c8735f4834a8b43fd2ab821ffc0a6e72a57c4b5b",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D][Promo] BackgroundPlate",
+              "key": "c49f08db71ab44ea64f0880730220de1d93ac263",
+              "role": "promo-surface",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "promo-only",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[D][Promo] Style Level 1",
+              "key": "2b46e94cdecdab7d4cb977055c0405b2f6204127",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D][Promo] Style Level 2",
+              "key": "a5a4240097211b28195291a593c567e9d7c62bd3",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M] BackgroundPlate",
+              "key": "4cfe3915785e5c37255190ae16314f6f2a1d05b3",
+              "role": "legacy-surface",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "legacy",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M] BackgroundPlateSlot",
+              "key": "1745af83255e324781c2fbadfe0ad8cc7f13e0d8",
+              "role": "content-container",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "preferred",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[M] Style Level 1",
+              "key": "efc528bd86582d96a824edeb2c257dc8b22a8f14",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M] Style Level 2",
+              "key": "74f025a02889239c3f6eed60d74ba85f292bdcb0",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M][Promo] BackgroundPlate",
+              "key": "a58fa7ae11989280fc24069f204ba617fdb1f93c",
+              "role": "promo-surface",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "promo-only",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[M][Promo] Style Level 1",
+              "key": "19b4b6ed5718d82888a6551b56e0c776f4993ccc",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M][Promo] Style Level 2",
+              "key": "b33f77cc56c5feffb4f24a5912d74e3af927140e",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            }
+          ],
+          "aliases": null,
+          "codeExports": [
+            {
+              "name": "BackgroundPlate",
+              "kind": "react-component-export",
+              "mapsTo": "[D] BackgroundPlate / [M] BackgroundPlate",
+              "usage": "Основной code/private export, который соответствует Figma-компонентам семейства BackgroundPlate."
+            },
+            {
+              "name": "BackgroundPlateView",
+              "kind": "react-view-export",
+              "mapsTo": "BackgroundPlate",
+              "usage": "Кодовая обёртка/представление BackgroundPlate. В Apollo и агентском анализе не является отдельным Figma-компонентом и должна использовать тот же componentKey web-corp.background-plate."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "componentKey": "web-corp.title-view",
+      "summary": "TitleView — составная обёртка заголовка для сценария с основным заголовком, статусом и действиями. Компонент объединяет Title, Status, TitleAddon, RightAddon, выбор компании, Subtitle, TitleStatus и Button group в готовую DS-композицию.",
+      "criticalBaselines": [
+        "Nested [D]/[M] Button instances внутри Button group являются частью TitleView baseline; изменения variant дизайнером нужно показывать относительно TitleView effective baseline.",
+        "StatusPreset и Status внутри MainContent / Status являются ожидаемыми nested structures; само использование preset нормально, если preset не изменён за пределами его variant API.",
+        "View и Skeleton являются public TitleView component properties.",
+        "На странице допускается только один TitleView с View=xLarge.",
+        "Внешние отступы 40 px, 32 px и 12 px, определённые правилами TitleView, обязательны для соответствующих соседних блоков.",
+        "Если одновременно используются Status и TitleStatus, значения Type должны совпадать: Type определяет статусный цвет.",
+        "В View=xLarge primary-действия размещаются в Button group. В View=Large, Medium и Small primary-действия размещаются вне TitleView.",
+        "Запрет primary-действия в RightAddon применяется ко всем значениям View.",
+        "Частичная загрузка отдельных слотов допустима при Skeleton=False у родительского TitleView.",
+        "Для View=Large, Medium и Small доступны только Title, Subtitle, TitleAddon и RightAddon.",
+        "Holding обязателен для одиночного выбора компании, когда пользователь работает от группы компаний, а страница доступна только в моно-режиме.",
+        "Ручные изменения layout, sizing, типографики, цвета, прозрачности и других стилей корня и всего внутреннего дерева TitleView запрещены.",
+        "Для корня TitleView рекомендуется ширина Fill container и высота Hug contents; правило одинаково для desktop и mobile-web.",
+        "Порядок слотов Status -> Heading -> Holding -> Subtitle -> TitleStatus -> Button group обязателен.",
+        "В предусмотренных слотах разрешён instance swap на произвольные компоненты, если сохраняются порядок слотов и структура TitleView.",
+        "Корень TitleView не оформляется вручную и не может быть единой кликабельной поверхностью."
+      ],
+      "agentInstructions": [
+        "Не выводи pattern violations из примеров. Используй только exact rules и exact component contracts.",
+        "Используй component-property facts для variant changes и layer-property facts для styles/layout/paint changes.",
+        "Если nested diff принадлежит host wrapper и actual совпадает с effective baseline, не показывай его как designer customization.",
+        "Если actual отличается от effective baseline, показывай effectiveBaseline -> actual.",
+        "Для сценария заголовка со статусом и действиями рекомендуй настройку встроенных slots TitleView, а не внешнюю ручную композицию из отдельных локальных компонентов.",
+        "Не считай отсутствие опциональных Status, TitleStatus, TitleAddon, RightAddon, Subtitle или Button group нарушением без отдельного правила.",
+        "Если загружается только отдельный вложенный элемент, не требуй переключать весь TitleView в Skeleton=True.",
+        "Для View=Large, Medium и Small рекомендуй primary-действие вне TitleView, а не в RightAddon.",
+        "Не считай изменение label у Status нарушением, если Type корректен и нет отдельного текстового правила.",
+        "Не придумывай ограничения параметров FilterCompanySelect_Single: используй его собственный компонентный контракт, когда он будет доступен.",
+        "Для настроек View, addons, hint и singleIcon вложенных Button используй паттерн «Кнопки и группы кнопок»; не создавай отдельные ограничения TitleView.",
+        "Применяй правила p_title-view-editable.md как часть правил TitleView, когда обнаружен editable-сценарий.",
+        "Не требуй Enter, Escape или отдельные кнопки подтверждения и отмены без точного правила для конкретной платформы и сценария.",
+        "Не считай сам факт instance swap внутри предусмотренного слота нарушением; оценивай выбранный компонент по его собственному контракту.",
+        "Проверяй обязательный порядок слотов отдельно от содержимого каждого слота.",
+        "Не разрешай ручное оформление корня или внутренних слоёв TitleView и не предлагай делать весь TitleView кликабельным."
+      ],
+      "includedComponents": [
+        "[D] RightAddon",
+        "[D] RightAddonXL",
+        "[D] TitleAddon",
+        "[D] TitleAddonXL",
+        "[D] TitleStatus",
+        "[D] TitleView",
+        "[M] RightAddon",
+        "[M] RightAddonXL",
+        "[M] TitleAddon",
+        "[M] TitleAddonXL",
+        "[M] TitleStatus",
+        "[M] TitleView"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.*"
+          ],
+          "layerProperties": [
+            "layout.*",
+            "styles.*",
+            "fill",
+            "stroke",
+            "radius",
+            "opacity",
+            "text.*"
+          ],
+          "dependencyPolicy": "Component-property reset и layer-property reset разделены. Layer reset должен использовать effective baseline после nested variant/materialization resolution."
+        },
+        "publicApi": {
+          "components": [
+            {
+              "name": "[D] RightAddon",
+              "key": "edd174301746415867bc998cd0c0322b68c6269c",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] RightAddonXL",
+              "key": "8edd3829b4b7091209299a5b5c838f0a159018aa",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleAddon",
+              "key": "f32313498fd345a1a41584c8d9edc61c3e2053bf",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleAddonXL",
+              "key": "b4cd3e21d108962a24b75aec2de71fba0672d63f",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleStatus",
+              "key": "6a8aa56ae7c8b57b9d9dfbbf23af14c348d83763",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleView",
+              "key": "fbc4ff889c9fe2db128bc76471f512271d4cc229",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] RightAddon",
+              "key": "b762143a2872257a497f9c3e0a012a9bed92f9ca",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] RightAddonXL",
+              "key": "c1092f678271e7de3291bb5699eeab4ad43c7710",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleAddon",
+              "key": "50d8b48cc1dcd4052efc7a151219578d1d993e2f",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleAddonXL",
+              "key": "a40e2549a5a23e645fb38c2af4c15df0f6813153",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleStatus",
+              "key": "e64c6d19cadc818b180b9176a51e3f65714b84b0",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleView",
+              "key": "227149bd55130d69d63e33cd3c8c52ae3f4e7e19",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            }
+          ],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web.subscription",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔒 [M] UniversalModal :: SubscriptionCard",
+        "🔒 [D] UniversalModal :: SubscriptionCard",
+        "[M] SubscriptionCard :: Info",
+        "[M] SubscriptionCard :: Header",
+        "[M] SubscriptionCard :: Content",
+        "[M] SubscriptionCard :: Footer",
+        "[D] SubscriptionCard :: BottomAddon",
+        "[D] SubscriptionCard :: Content",
+        "[D] SubscriptionCard :: TopAddon",
+        "[D] SubscriptionCard :: Info"
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    }
+  ]
+}
