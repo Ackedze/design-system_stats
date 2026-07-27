@@ -1,0 +1,4156 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1623983682034249875-1785165693267-deougu5b:agent",
+  "sourceReportId": "apollo-1623983682034249875-1785165693267-deougu5b",
+  "generatedAt": "2026-07-27T15:21:33.267Z",
+  "suggestedFileName": "Danila-Gonuzov_27-07-2026_18-21-33_agent.json",
+  "user": {
+    "id": "1623983682034249875",
+    "name": "Danila Gonuzov",
+    "slug": "Danila-Gonuzov"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.1.62"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "startedAt": "2026-07-27T15:21:23.085Z",
+    "finishedAt": "2026-07-27T15:21:33.267Z",
+    "durationMs": 10182,
+    "selection": [
+      {
+        "nodeId": "9583:12174",
+        "name": "[D] CorporatePage",
+        "nodeType": "FRAME",
+        "path": "[D] CorporatePage",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 39,
+    "problemOccurrenceCount": 111,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 92,
+      "updates": 0,
+      "customizations": 19,
+      "localComponents": 0,
+      "detachedComponents": 0,
+      "presets": 0,
+      "technicalComponents": 0,
+      "currentComponents": 24,
+      "wrongChannel": 0,
+      "themization": 0
+    },
+    "includedFindingCount": 111,
+    "omittedCurrentComponentCount": 24
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with severity=error and matchKind=exact_component_rule for the same property/change.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 92,
+      "includedCount": 92,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 19,
+      "includedCount": 19,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12175;172:5358;4423:110777",
+        "name": "Union",
+        "type": "BOOLEAN_OPERATION",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / 📍sideMenu / footer / cell / color correct box / gear / icon / Union",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12175;172:5358;4423:110778",
+        "name": "Ellipse 28",
+        "type": "ELLIPSE",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / 📍sideMenu / footer / cell / color correct box / gear / icon / Union / Ellipse 28",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12175;172:5358;4423:110779",
+        "name": "Rectangle 243",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / 📍sideMenu / footer / cell / color correct box / gear / icon / Union / Rectangle 243",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12175;172:5358;4423:110780",
+        "name": "Rectangle 246",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / 📍sideMenu / footer / cell / color correct box / gear / icon / Union / Rectangle 246",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12175;172:5358;4423:110781",
+        "name": "Rectangle 247",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / 📍sideMenu / footer / cell / color correct box / gear / icon / Union / Rectangle 247",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12175;172:5358;4423:110782",
+        "name": "Ellipse 4940",
+        "type": "ELLIPSE",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / 📍sideMenu / footer / cell / color correct box / gear / icon / Ellipse 4940",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12175;1:71433",
+        "name": "bg",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / 📍sideMenu / logoCell / logo / LogoCell / bg",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "9583:12180",
+        "name": "📍aiSearch",
+        "type": "INSTANCE",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 📍aiSearch",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "9583:12180",
+        "name": "📍aiSearch",
+        "type": "INSTANCE",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 📍aiSearch",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "9583:12180",
+        "name": "📍aiSearch",
+        "type": "INSTANCE",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 📍aiSearch",
+        "visible": true
+      },
+      "style": {
+        "name": "GLASS",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:GLASS"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "9583:12180",
+        "name": "📍aiSearch",
+        "type": "INSTANCE",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 📍aiSearch",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "9583:12180",
+        "name": "📍aiSearch",
+        "type": "INSTANCE",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 📍aiSearch",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "9583:12180",
+        "name": "📍aiSearch",
+        "type": "INSTANCE",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 📍aiSearch",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12180;10:55802",
+        "name": "vector",
+        "type": "ELLIPSE",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 📍aiSearch / vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12180;10:55802",
+        "name": "vector",
+        "type": "ELLIPSE",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 📍aiSearch / vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Слой (Layer blur)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Слой (Layer blur)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12180;10:55878",
+        "name": "button",
+        "type": "FRAME",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 📍aiSearch / body / button",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Inner shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Inner shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12180;10:55879",
+        "name": "bg",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 📍aiSearch / body / button / bg",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12180;10:55881",
+        "name": "Union",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 📍aiSearch / body / button / icon / Union",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12180;10:55883",
+        "name": "input",
+        "type": "FRAME",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 📍aiSearch / body / input",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12185;53:43575",
+        "name": "Shadow",
+        "type": "FRAME",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 1st line / 📍balance _ single account _ mmb / icon / Mask group / CardImage / Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12185;53:43576",
+        "name": "Image Container",
+        "type": "FRAME",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 1st line / 📍balance _ single account _ mmb / icon / Mask group / CardImage / Image Container",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12185;53:43644",
+        "name": "Ellipse 414",
+        "type": "ELLIPSE",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 1st line / 📍balance _ single account _ mmb / _ loyalty / circle-a-letter / Union / Ellipse 414",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12185;53:43645",
+        "name": "Subtract",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 1st line / 📍balance _ single account _ mmb / _ loyalty / circle-a-letter / Union / Subtract",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9235",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9237",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9238",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9239",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9240",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9241",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9242",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9243",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9244",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9246",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9247",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9248",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9249",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9250",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9251",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9252",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9253",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9254",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9255",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9256",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9257",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9258",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9259",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9260",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9261",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9262",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9263",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9264",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9265",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9266",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9267",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9268",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9269",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9270",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9271",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9272",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9273",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9274",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9275",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9276",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9277",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9278",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9279",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9280",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9281",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9282",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9283",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9284",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9285",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9286",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / USD / Group 4 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9033",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / EUR / Group 3 / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9035",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / EUR / Group 3 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9036",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / EUR / Group 3 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9037",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / EUR / Group 3 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9038",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / EUR / Group 3 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9039",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / EUR / Group 3 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9040",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / EUR / Group 3 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9041",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / EUR / Group 3 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9042",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / EUR / Group 3 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9043",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / EUR / Group 3 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9044",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / EUR / Group 3 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9045",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / EUR / Group 3 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:9046",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / EUR / Group 3 / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:8916",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / CNY / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:8918",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / CNY / Group / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:8919",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / CNY / Group / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:8920",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / CNY / Group / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:8921",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / CNY / Group / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9583:12192;233:8922",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 2nd line / 📍conversion / flag / CNY / Group / Group / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I9583:12175;1:71439",
+        "name": "all-services-products-sign-box",
+        "type": "INSTANCE",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / 📍sideMenu / cells / cell / all-services-products-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "all-services-products-sign-box",
+        "key": "d0edb82286cbe00de7a6853d8fd3156e91f3fe29",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=20, Style=Line, Color=False",
+        "key": "d0edb82286cbe00de7a6853d8fd3156e91f3fe29"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I9583:12175;1:71439;7094:2221",
+            "name": "logo",
+            "type": null,
+            "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+            "path": "Size=20, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → decorative/blue",
+          "referenceValue": "#FC41C0",
+          "actualValue": "decorative/blue",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "decorative/blue",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "decorative/blue",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "decorative/blue",
+            "key": "b2eeb3c4c02e5eab348bbc6434a62146cf735838",
+            "library": "Decorative Dynamic",
+            "sourceFile": "003 :: Decorative Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:b2eeb3c4c02e5eab348bbc6434a62146cf735838/1816:134",
+            "key": "b2eeb3c4c02e5eab348bbc6434a62146cf735838",
+            "name": "decorative/blue",
+            "collectionId": "VariableCollectionId:944:1243",
+            "collectionName": "Decorative Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "d0edb82286cbe00de7a6853d8fd3156e91f3fe29",
+            "actualNestedOwnerPath": "Size=20, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "20",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "9583:12175",
+              "nodeName": "📍sideMenu",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I9583:12175;1:71442",
+        "name": "bonuses-sign-box",
+        "type": "INSTANCE",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / 📍sideMenu / cells / cell / bonuses-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "bonuses-sign-box",
+        "key": "dbd9a939c788686e3092fa52486a3d55387f1195",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=20, Style=Line, Color=False",
+        "key": "dbd9a939c788686e3092fa52486a3d55387f1195"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I9583:12175;1:71442;7563:2203",
+            "name": "logo",
+            "type": null,
+            "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+            "path": "Size=20, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → decorative/indigo",
+          "referenceValue": "#FC41C0",
+          "actualValue": "decorative/indigo",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "decorative/indigo",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "decorative/indigo",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "decorative/indigo",
+            "key": "dacf2490f2a452b7a94b2c5ccdb983a124b47152",
+            "library": "Decorative Dynamic",
+            "sourceFile": "003 :: Decorative Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:dacf2490f2a452b7a94b2c5ccdb983a124b47152/1816:157",
+            "key": "dacf2490f2a452b7a94b2c5ccdb983a124b47152",
+            "name": "decorative/indigo",
+            "collectionId": "VariableCollectionId:944:1243",
+            "collectionName": "Decorative Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "dbd9a939c788686e3092fa52486a3d55387f1195",
+            "actualNestedOwnerPath": "Size=20, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "20",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "9583:12175",
+              "nodeName": "📍sideMenu",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I9583:12175;1:71442;7563:2204",
+            "name": "Ellipse 414",
+            "type": null,
+            "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+            "path": "Size=20, Style=Line, Color=False / logo / Ellipse 414",
+            "visible": true
+          },
+          "kind": "shape",
+          "property": "stroke.weight",
+          "message": "Толщина обводки: 2 → 2.5",
+          "referenceValue": 2,
+          "actualValue": 2.5,
+          "referenceRawValue": 2,
+          "actualRawValue": 2.5,
+          "referenceDisplayValue": 2,
+          "actualDisplayValue": 2.5,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "dbd9a939c788686e3092fa52486a3d55387f1195",
+            "actualNestedOwnerPath": "Size=20, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo / Ellipse 414",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "20",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "9583:12175",
+              "nodeName": "📍sideMenu",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I9583:12175;1:71442;7563:2205",
+            "name": "Subtract",
+            "type": null,
+            "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+            "path": "Size=20, Style=Line, Color=False / logo / Subtract",
+            "visible": true
+          },
+          "kind": "shape",
+          "property": "stroke.weight",
+          "message": "Толщина обводки: 0.11999999731779099 → 0.14999999105930328",
+          "referenceValue": 0.11999999731779099,
+          "actualValue": 0.14999999105930328,
+          "referenceRawValue": 0.11999999731779099,
+          "actualRawValue": 0.14999999105930328,
+          "referenceDisplayValue": 0.11999999731779099,
+          "actualDisplayValue": 0.14999999105930328,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "dbd9a939c788686e3092fa52486a3d55387f1195",
+            "actualNestedOwnerPath": "Size=20, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo / Subtract",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "20",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "9583:12175",
+              "nodeName": "📍sideMenu",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I9583:12175;1:71447",
+        "name": "new-payment-sign-box",
+        "type": "INSTANCE",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / 📍sideMenu / cells / cell / color correct box / new-payment-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "new-payment-sign-box",
+        "key": "36cefad1852d33e079d661e0543b793ba0778ed7",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=20, Style=Line, Color=False",
+        "key": "36cefad1852d33e079d661e0543b793ba0778ed7"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I9583:12175;1:71447;7095:2660",
+            "name": "logo",
+            "type": null,
+            "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+            "path": "Size=20, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "36cefad1852d33e079d661e0543b793ba0778ed7",
+            "actualNestedOwnerPath": "Size=20, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "20",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "9583:12175",
+              "nodeName": "📍sideMenu",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I9583:12175;1:71451",
+        "name": "transaction-feed-sign-box",
+        "type": "INSTANCE",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / 📍sideMenu / cells / cell / color correct box / transaction-feed-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "transaction-feed-sign-box",
+        "key": "910efed8705ae56ba84f147d7293e1ab74427758",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=20, Style=Line, Color=False",
+        "key": "910efed8705ae56ba84f147d7293e1ab74427758"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I9583:12175;1:71451;7095:2873",
+            "name": "logo",
+            "type": null,
+            "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+            "path": "Size=20, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "910efed8705ae56ba84f147d7293e1ab74427758",
+            "actualNestedOwnerPath": "Size=20, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "20",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "9583:12175",
+              "nodeName": "📍sideMenu",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I9583:12175;1:71455",
+        "name": "payments-in-progress-sign-box",
+        "type": "INSTANCE",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / 📍sideMenu / cells / cell / color correct box / payments-in-progress-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "payments-in-progress-sign-box",
+        "key": "bc33d2b4897659855d3f1deedc7d7e6be73d0a20",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=20, Style=Line, Color=False",
+        "key": "bc33d2b4897659855d3f1deedc7d7e6be73d0a20"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I9583:12175;1:71455;7095:2718",
+            "name": "logo",
+            "type": null,
+            "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+            "path": "Size=20, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "bc33d2b4897659855d3f1deedc7d7e6be73d0a20",
+            "actualNestedOwnerPath": "Size=20, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "20",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "9583:12175",
+              "nodeName": "📍sideMenu",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I9583:12175;1:71459",
+        "name": "import-payments-sign-box",
+        "type": "INSTANCE",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / 📍sideMenu / cells / cell / color correct box / import-payments-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "import-payments-sign-box",
+        "key": "be92b8b92a01e7421f948dda39669f618c3bd278",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=20, Style=Line, Color=False",
+        "key": "be92b8b92a01e7421f948dda39669f618c3bd278"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I9583:12175;1:71459;7095:2584",
+            "name": "logo",
+            "type": null,
+            "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+            "path": "Size=20, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "be92b8b92a01e7421f948dda39669f618c3bd278",
+            "actualNestedOwnerPath": "Size=20, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "20",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "9583:12175",
+              "nodeName": "📍sideMenu",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I9583:12175;1:71463",
+        "name": "statement-sign-box",
+        "type": "INSTANCE",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / 📍sideMenu / cells / cell / color correct box / statement-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "statement-sign-box",
+        "key": "64572b4d100677f505e7aceb5ec791d2f2ff698a",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=20, Style=Line, Color=False",
+        "key": "64572b4d100677f505e7aceb5ec791d2f2ff698a"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I9583:12175;1:71463;7095:2833",
+            "name": "logo",
+            "type": null,
+            "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+            "path": "Size=20, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "64572b4d100677f505e7aceb5ec791d2f2ff698a",
+            "actualNestedOwnerPath": "Size=20, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "20",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "9583:12175",
+              "nodeName": "📍sideMenu",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I9583:12175;1:71467",
+        "name": "accounts-sign-box",
+        "type": "INSTANCE",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / 📍sideMenu / cells / cell / color correct box / accounts-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "accounts-sign-box",
+        "key": "87f7b1e19878542d4a2e7b4fff149ef6b9fbf69a",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=20, Style=Line, Color=False",
+        "key": "87f7b1e19878542d4a2e7b4fff149ef6b9fbf69a"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I9583:12175;1:71467;7094:2171",
+            "name": "logo",
+            "type": null,
+            "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+            "path": "Size=20, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "87f7b1e19878542d4a2e7b4fff149ef6b9fbf69a",
+            "actualNestedOwnerPath": "Size=20, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "20",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "9583:12175",
+              "nodeName": "📍sideMenu",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I9583:12175;1:71471",
+        "name": "contragents-sign-box",
+        "type": "INSTANCE",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / 📍sideMenu / cells / cell / color correct box / contragents-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "contragents-sign-box",
+        "key": "231d762b74bacce2e8c131f86f07bf3bac166b2e",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=20, Style=Line, Color=False",
+        "key": "231d762b74bacce2e8c131f86f07bf3bac166b2e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I9583:12175;1:71471;7095:2355",
+            "name": "logo",
+            "type": null,
+            "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+            "path": "Size=20, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "231d762b74bacce2e8c131f86f07bf3bac166b2e",
+            "actualNestedOwnerPath": "Size=20, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "20",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "9583:12175",
+              "nodeName": "📍sideMenu",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I9583:12175;1:71475",
+        "name": "cards-sign-box",
+        "type": "INSTANCE",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / 📍sideMenu / cells / cell / color correct box / cards-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "cards-sign-box",
+        "key": "772240518b53eadb6c87dd663bd0c1d8343799cf",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=20, Style=Line, Color=False",
+        "key": "772240518b53eadb6c87dd663bd0c1d8343799cf"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I9583:12175;1:71475;7095:2347",
+            "name": "logo",
+            "type": null,
+            "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+            "path": "Size=20, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "772240518b53eadb6c87dd663bd0c1d8343799cf",
+            "actualNestedOwnerPath": "Size=20, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "20",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "9583:12175",
+              "nodeName": "📍sideMenu",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I9583:12175;1:71490",
+        "name": "procurement-sign-box",
+        "type": "INSTANCE",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / 📍sideMenu / cells / cell / color correct box / procurement-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "procurement-sign-box",
+        "key": "cecaa44733ca7085024457094b79e4019fba1fec",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=20, Style=Line, Color=False",
+        "key": "cecaa44733ca7085024457094b79e4019fba1fec"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I9583:12175;1:71490;7095:2714",
+            "name": "logo",
+            "type": null,
+            "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+            "path": "Size=20, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "cecaa44733ca7085024457094b79e4019fba1fec",
+            "actualNestedOwnerPath": "Size=20, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "20",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "9583:12175",
+              "nodeName": "📍sideMenu",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I9583:12177;2:1212",
+        "name": "letter-sign-box",
+        "type": "INSTANCE",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / 📍header / right / buttons / button / letter-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "letter-sign-box",
+        "key": "c7e939c6112042efe4b90ae198f0666b2aee804c",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=20, Style=Line, Color=False",
+        "key": "c7e939c6112042efe4b90ae198f0666b2aee804c"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I9583:12177;2:1212;7095:2612",
+            "name": "logo",
+            "type": null,
+            "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+            "path": "Size=20, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/700",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/700",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/700",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/700",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/700",
+            "key": "faac436b14cc199cfe97243b05af867af9ecb365",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:faac436b14cc199cfe97243b05af867af9ecb365/3541:130",
+            "key": "faac436b14cc199cfe97243b05af867af9ecb365",
+            "name": "neutral-translucent/700",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "c7e939c6112042efe4b90ae198f0666b2aee804c",
+            "actualNestedOwnerPath": "Size=20, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "20",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "9583:12177",
+              "nodeName": "📍header",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I9583:12177;2:1209",
+        "name": "notifications-sign-box",
+        "type": "INSTANCE",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / 📍header / right / buttons / button / notifications-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "notifications-sign-box",
+        "key": "b5408ae63c1395f65f6b7102a1896d4592becb57",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=20, Style=Line, Color=False",
+        "key": "b5408ae63c1395f65f6b7102a1896d4592becb57"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I9583:12177;2:1209;7095:2656",
+            "name": "logo",
+            "type": null,
+            "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+            "path": "Size=20, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/700",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/700",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/700",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/700",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/700",
+            "key": "faac436b14cc199cfe97243b05af867af9ecb365",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:faac436b14cc199cfe97243b05af867af9ecb365/3541:130",
+            "key": "faac436b14cc199cfe97243b05af867af9ecb365",
+            "name": "neutral-translucent/700",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "b5408ae63c1395f65f6b7102a1896d4592becb57",
+            "actualNestedOwnerPath": "Size=20, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "20",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "9583:12177",
+              "nodeName": "📍header",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I9583:12177;2:1175",
+        "name": "logout-sign-box",
+        "type": "INSTANCE",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / 📍header / right / button / logout-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "logout-sign-box",
+        "key": "1926c1dbb01cb0974662a7988b21ec50572a7ec3",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=20, Style=Line, Color=False",
+        "key": "1926c1dbb01cb0974662a7988b21ec50572a7ec3"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I9583:12177;2:1175;7095:2616",
+            "name": "logo",
+            "type": null,
+            "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+            "path": "Size=20, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/700",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/700",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/700",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/700",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/700",
+            "key": "faac436b14cc199cfe97243b05af867af9ecb365",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:faac436b14cc199cfe97243b05af867af9ecb365/3541:130",
+            "key": "faac436b14cc199cfe97243b05af867af9ecb365",
+            "name": "neutral-translucent/700",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "1926c1dbb01cb0974662a7988b21ec50572a7ec3",
+            "actualNestedOwnerPath": "Size=20, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "20",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "9583:12177",
+              "nodeName": "📍header",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I9583:12182;22:69852",
+        "name": "top-up-account-sign-box",
+        "type": "INSTANCE",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 📍quickActions _ mmb / button / top-up-account-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "top-up-account-sign-box",
+        "key": "62a5429245192bf10eaee70663f6c613914efe3d",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=20, Style=Line, Color=False",
+        "key": "62a5429245192bf10eaee70663f6c613914efe3d"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I9583:12182;22:69852;7484:3195",
+            "name": "logo",
+            "type": null,
+            "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+            "path": "Size=20, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "62a5429245192bf10eaee70663f6c613914efe3d",
+            "actualNestedOwnerPath": "Size=20, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "20",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "I9583:12182;22:69857",
+              "nodeName": "button",
+              "tokenId": "VariableID:1dbf4d56a942745335ed8230dfe5b594c0f71841/3541:167",
+              "tokenName": "neutral/0",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I9583:12182;22:69878",
+        "name": "get-statement-sign-box",
+        "type": "INSTANCE",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 📍quickActions _ mmb / button / get-statement-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "get-statement-sign-box",
+        "key": "8c4387a5910952440b91bdc78c4fd260e8a7e379",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=20, Style=Line, Color=False",
+        "key": "8c4387a5910952440b91bdc78c4fd260e8a7e379"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I9583:12182;22:69878;7095:2500",
+            "name": "logo",
+            "type": null,
+            "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+            "path": "Size=20, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "8c4387a5910952440b91bdc78c4fd260e8a7e379",
+            "actualNestedOwnerPath": "Size=20, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "20",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "I9583:12182;22:69858",
+              "nodeName": "button",
+              "tokenId": "VariableID:1dbf4d56a942745335ed8230dfe5b594c0f71841/3541:167",
+              "tokenName": "neutral/0",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I9583:12182;22:69881",
+        "name": "create-payment-sign-box",
+        "type": "INSTANCE",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 📍quickActions _ mmb / button / create-payment-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "create-payment-sign-box",
+        "key": "2d05a321499ced4ca3eabd270b50e697ee923816",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=20, Style=Line, Color=False",
+        "key": "2d05a321499ced4ca3eabd270b50e697ee923816"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I9583:12182;22:69881;7095:2375",
+            "name": "logo",
+            "type": null,
+            "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+            "path": "Size=20, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "2d05a321499ced4ca3eabd270b50e697ee923816",
+            "actualNestedOwnerPath": "Size=20, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "20",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "I9583:12182;22:69862",
+              "nodeName": "button",
+              "tokenId": "VariableID:1dbf4d56a942745335ed8230dfe5b594c0f71841/3541:167",
+              "tokenName": "neutral/0",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I9583:12182;22:69884",
+        "name": "import-payments-sign-box",
+        "type": "INSTANCE",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 📍quickActions _ mmb / button / import-payments-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "import-payments-sign-box",
+        "key": "be92b8b92a01e7421f948dda39669f618c3bd278",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=20, Style=Line, Color=False",
+        "key": "be92b8b92a01e7421f948dda39669f618c3bd278"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I9583:12182;22:69884;7095:2584",
+            "name": "logo",
+            "type": null,
+            "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+            "path": "Size=20, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "be92b8b92a01e7421f948dda39669f618c3bd278",
+            "actualNestedOwnerPath": "Size=20, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "20",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "I9583:12182;22:69866",
+              "nodeName": "button",
+              "tokenId": "VariableID:1dbf4d56a942745335ed8230dfe5b594c0f71841/3541:167",
+              "tokenName": "neutral/0",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I9583:12182;22:69887",
+        "name": "Issue-invoice-sign-box",
+        "type": "INSTANCE",
+        "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / 📍quickActions _ mmb / button / Issue-invoice-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "Issue-invoice-sign-box",
+        "key": "d7e74c1e393a59842988eb476d8cb8f3c5d130dd",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=20, Style=Line, Color=False",
+        "key": "d7e74c1e393a59842988eb476d8cb8f3c5d130dd"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I9583:12182;22:69887;7095:2556",
+            "name": "logo",
+            "type": null,
+            "pageName": "🚧 Пустые состояния :: Версия 4.0 :: 14.07.2026",
+            "path": "Size=20, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "d7e74c1e393a59842988eb476d8cb8f3c5d130dd",
+            "actualNestedOwnerPath": "Size=20, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "20",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "I9583:12182;22:69870",
+              "nodeName": "button",
+              "tokenId": "VariableID:1dbf4d56a942745335ed8230dfe5b594c0f71841/3541:167",
+              "tokenName": "neutral/0",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    }
+  ],
+  "componentContexts": []
+}
