@@ -1,0 +1,3382 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1623983682034249875-1785165321916-acbaedlu:agent",
+  "sourceReportId": "apollo-1623983682034249875-1785165321916-acbaedlu",
+  "generatedAt": "2026-07-27T15:15:21.916Z",
+  "suggestedFileName": "Danila-Gonuzov_27-07-2026_18-15-21_agent.json",
+  "user": {
+    "id": "1623983682034249875",
+    "name": "Danila Gonuzov",
+    "slug": "Danila-Gonuzov"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.1.62"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "iOS",
+    "startedAt": "2026-07-27T15:15:21.260Z",
+    "finishedAt": "2026-07-27T15:15:21.916Z",
+    "durationMs": 656,
+    "selection": [
+      {
+        "nodeId": "5037:13478",
+        "name": "0.0",
+        "nodeType": "FRAME",
+        "path": "Примеры / 0.0",
+        "componentKey": null
+      },
+      {
+        "nodeId": "5037:14089",
+        "name": "0.0",
+        "nodeType": "FRAME",
+        "path": "Примеры / 0.0",
+        "componentKey": null
+      },
+      {
+        "nodeId": "5054:14285",
+        "name": "0.0",
+        "nodeType": "FRAME",
+        "path": "Примеры / 0.0",
+        "componentKey": null
+      },
+      {
+        "nodeId": "5100:34956",
+        "name": "0.0",
+        "nodeType": "FRAME",
+        "path": "Примеры / 0.0",
+        "componentKey": null
+      },
+      {
+        "nodeId": "5163:53908",
+        "name": "0.0",
+        "nodeType": "FRAME",
+        "path": "Примеры / 0.0",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 178,
+    "problemOccurrenceCount": 95,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 80,
+      "updates": 0,
+      "customizations": 15,
+      "localComponents": 0,
+      "detachedComponents": 0,
+      "presets": 0,
+      "technicalComponents": 0,
+      "currentComponents": 20,
+      "wrongChannel": 0,
+      "themization": 0
+    },
+    "includedFindingCount": 95,
+    "omittedCurrentComponentCount": 20
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with severity=error and matchKind=exact_component_rule for the same property/change.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 80,
+      "includedCount": 80,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 15,
+      "includedCount": 15,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39803;9807:2542",
+        "name": "Background",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / Background",
+        "visible": true
+      },
+      "style": {
+        "name": "Фон (Background blur)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Фон (Background blur)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39803;9807:2544",
+        "name": "Blur",
+        "type": "RECTANGLE",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / Background / Blur",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39803;9807:2544",
+        "name": "Blur",
+        "type": "RECTANGLE",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / Background / Blur",
+        "visible": true
+      },
+      "style": {
+        "name": "Фон (Background blur)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Фон (Background blur)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39803;9776:2281",
+        "name": "Glass Effect",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Glass Effect",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39803;9776:2281",
+        "name": "Glass Effect",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Glass Effect",
+        "visible": true
+      },
+      "style": {
+        "name": "GLASS",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:GLASS"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39803;9776:2281",
+        "name": "Glass Effect",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Glass Effect",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Inner shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Inner shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39803;9776:2281",
+        "name": "Glass Effect",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Glass Effect",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Inner shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Inner shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39803;9776:2281",
+        "name": "Glass Effect",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Glass Effect",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Inner shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Inner shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39803;9776:2282",
+        "name": "Fill + Shadow",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Fill + Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "968635a9a41d71f3e0f68b27c169f7cc91b8e58c",
+        "key": "968635a9a41d71f3e0f68b27c169f7cc91b8e58c",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39803;9776:2282",
+        "name": "Fill + Shadow",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Fill + Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39803;9776:2282",
+        "name": "Fill + Shadow",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Fill + Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39803;9776:2282",
+        "name": "Fill + Shadow",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Fill + Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39803;9776:2282",
+        "name": "Fill + Shadow",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Fill + Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5037:13482;64810:733891;10218:144680",
+        "name": "Background",
+        "type": "RECTANGLE",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Content / ChipsView / ContentGroup / ChipsStack / ChipsElementView / ContentGroup / 👻 BackgroundView / Background",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39872;9807:2538",
+        "name": "Background",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / Background",
+        "visible": true
+      },
+      "style": {
+        "name": "Фон (Background blur)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Фон (Background blur)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39872;9807:2540",
+        "name": "Blur",
+        "type": "RECTANGLE",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / Background / Blur",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39872;9807:2540",
+        "name": "Blur",
+        "type": "RECTANGLE",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / Background / Blur",
+        "visible": true
+      },
+      "style": {
+        "name": "Фон (Background blur)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Фон (Background blur)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39872;9776:2275",
+        "name": "Glass Effect",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Glass Effect",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39872;9776:2275",
+        "name": "Glass Effect",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Glass Effect",
+        "visible": true
+      },
+      "style": {
+        "name": "GLASS",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:GLASS"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39872;9776:2275",
+        "name": "Glass Effect",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Glass Effect",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Inner shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Inner shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39872;9776:2275",
+        "name": "Glass Effect",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Glass Effect",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Inner shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Inner shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39872;9776:2275",
+        "name": "Glass Effect",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Glass Effect",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Inner shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Inner shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39872;9776:2276",
+        "name": "Fill + Shadow",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Fill + Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "968635a9a41d71f3e0f68b27c169f7cc91b8e58c",
+        "key": "968635a9a41d71f3e0f68b27c169f7cc91b8e58c",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39872;9776:2276",
+        "name": "Fill + Shadow",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Fill + Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39872;9776:2276",
+        "name": "Fill + Shadow",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Fill + Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39872;9776:2276",
+        "name": "Fill + Shadow",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Fill + Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39872;9776:2276",
+        "name": "Fill + Shadow",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Fill + Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39974;9807:2534",
+        "name": "Background",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / Background",
+        "visible": true
+      },
+      "style": {
+        "name": "Фон (Background blur)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Фон (Background blur)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39974;9807:2536",
+        "name": "Blur",
+        "type": "RECTANGLE",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / Background / Blur",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39974;9807:2536",
+        "name": "Blur",
+        "type": "RECTANGLE",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / Background / Blur",
+        "visible": true
+      },
+      "style": {
+        "name": "Фон (Background blur)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Фон (Background blur)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39974;9776:1383",
+        "name": "Glass Effect",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Glass Effect",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39974;9776:1383",
+        "name": "Glass Effect",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Glass Effect",
+        "visible": true
+      },
+      "style": {
+        "name": "GLASS",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:GLASS"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39974;9776:1383",
+        "name": "Glass Effect",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Glass Effect",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Inner shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Inner shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39974;9776:1383",
+        "name": "Glass Effect",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Glass Effect",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Inner shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Inner shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39974;9776:1383",
+        "name": "Glass Effect",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Glass Effect",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Inner shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Inner shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39974;9776:1384",
+        "name": "Fill + Shadow",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Fill + Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "968635a9a41d71f3e0f68b27c169f7cc91b8e58c",
+        "key": "968635a9a41d71f3e0f68b27c169f7cc91b8e58c",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39974;9776:1384",
+        "name": "Fill + Shadow",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Fill + Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39974;9776:1384",
+        "name": "Fill + Shadow",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Fill + Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39974;9776:1384",
+        "name": "Fill + Shadow",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Fill + Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39974;9776:1384",
+        "name": "Fill + Shadow",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Fill + Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39995;9807:2542",
+        "name": "Background",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / Background",
+        "visible": true
+      },
+      "style": {
+        "name": "Фон (Background blur)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Фон (Background blur)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39995;9807:2544",
+        "name": "Blur",
+        "type": "RECTANGLE",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / Background / Blur",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39995;9807:2544",
+        "name": "Blur",
+        "type": "RECTANGLE",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / Background / Blur",
+        "visible": true
+      },
+      "style": {
+        "name": "Фон (Background blur)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Фон (Background blur)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39995;9776:2281",
+        "name": "Glass Effect",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Glass Effect",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39995;9776:2281",
+        "name": "Glass Effect",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Glass Effect",
+        "visible": true
+      },
+      "style": {
+        "name": "GLASS",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:GLASS"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39995;9776:2281",
+        "name": "Glass Effect",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Glass Effect",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Inner shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Inner shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39995;9776:2281",
+        "name": "Glass Effect",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Glass Effect",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Inner shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Inner shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39995;9776:2281",
+        "name": "Glass Effect",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Glass Effect",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Inner shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Inner shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39995;9776:2282",
+        "name": "Fill + Shadow",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Fill + Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "968635a9a41d71f3e0f68b27c169f7cc91b8e58c",
+        "key": "968635a9a41d71f3e0f68b27c169f7cc91b8e58c",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39995;9776:2282",
+        "name": "Fill + Shadow",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Fill + Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39995;9776:2282",
+        "name": "Fill + Shadow",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Fill + Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39995;9776:2282",
+        "name": "Fill + Shadow",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Fill + Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39995;9776:2282",
+        "name": "Fill + Shadow",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Fill + Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39995;9057:5010;9776:1300",
+        "name": "Glass Effect",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / Buttons / Buttons / Glass Effect",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39995;9057:5010;9776:1300",
+        "name": "Glass Effect",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / Buttons / Buttons / Glass Effect",
+        "visible": true
+      },
+      "style": {
+        "name": "GLASS",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:GLASS"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39995;9057:5010;9776:1300",
+        "name": "Glass Effect",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / Buttons / Buttons / Glass Effect",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Inner shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Inner shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39995;9057:5010;9776:1300",
+        "name": "Glass Effect",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / Buttons / Buttons / Glass Effect",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Inner shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Inner shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39995;9057:5010;9776:1300",
+        "name": "Glass Effect",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / Buttons / Buttons / Glass Effect",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Inner shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Inner shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39995;9057:5010;9776:1301",
+        "name": "Fill + Shadow",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / Buttons / Buttons / Fill + Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "968635a9a41d71f3e0f68b27c169f7cc91b8e58c",
+        "key": "968635a9a41d71f3e0f68b27c169f7cc91b8e58c",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39995;9057:5010;9776:1301",
+        "name": "Fill + Shadow",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / Buttons / Buttons / Fill + Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39995;9057:5010;9776:1301",
+        "name": "Fill + Shadow",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / Buttons / Buttons / Fill + Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39995;9057:5010;9776:1301",
+        "name": "Fill + Shadow",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / Buttons / Buttons / Fill + Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5157:39995;9057:5010;9776:1301",
+        "name": "Fill + Shadow",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / Buttons / Buttons / Fill + Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "5100:34979",
+        "name": "BlurFooter",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / BlurFooter",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "5100:34979",
+        "name": "BlurFooter",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / BlurFooter",
+        "visible": true
+      },
+      "style": {
+        "name": "Material Blur",
+        "key": "a9ddc9ea703377fabf170f86830ab4a514c9033c",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Фон (Background blur)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5173:47975;9807:2542",
+        "name": "Background",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / Background",
+        "visible": true
+      },
+      "style": {
+        "name": "Фон (Background blur)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Фон (Background blur)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5173:47975;9807:2544",
+        "name": "Blur",
+        "type": "RECTANGLE",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / Background / Blur",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5173:47975;9807:2544",
+        "name": "Blur",
+        "type": "RECTANGLE",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / Background / Blur",
+        "visible": true
+      },
+      "style": {
+        "name": "Фон (Background blur)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Фон (Background blur)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5173:47975;9776:2281",
+        "name": "Glass Effect",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Glass Effect",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5173:47975;9776:2281",
+        "name": "Glass Effect",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Glass Effect",
+        "visible": true
+      },
+      "style": {
+        "name": "GLASS",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:GLASS"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5173:47975;9776:2281",
+        "name": "Glass Effect",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Glass Effect",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Inner shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Inner shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5173:47975;9776:2281",
+        "name": "Glass Effect",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Glass Effect",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Inner shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Inner shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5173:47975;9776:2281",
+        "name": "Glass Effect",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Glass Effect",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Inner shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Inner shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5173:47975;9776:2282",
+        "name": "Fill + Shadow",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Fill + Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "968635a9a41d71f3e0f68b27c169f7cc91b8e58c",
+        "key": "968635a9a41d71f3e0f68b27c169f7cc91b8e58c",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5173:47975;9776:2282",
+        "name": "Fill + Shadow",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Fill + Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5173:47975;9776:2282",
+        "name": "Fill + Shadow",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Fill + Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5173:47975;9776:2282",
+        "name": "Fill + Shadow",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Fill + Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I5173:47975;9776:2282",
+        "name": "Fill + Shadow",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / Fill + Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "5173:48050",
+        "name": "BlurFooter",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / BlurFooter",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "5173:48050",
+        "name": "BlurFooter",
+        "type": "FRAME",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / BlurFooter",
+        "visible": true
+      },
+      "style": {
+        "name": "Material Blur",
+        "key": "a9ddc9ea703377fabf170f86830ab4a514c9033c",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Фон (Background blur)"
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I5157:39803;9776:2283",
+        "name": "chevron-left",
+        "type": "INSTANCE",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / chevron-left",
+        "visible": true
+      },
+      "component": {
+        "name": "chevron-left",
+        "key": "8f82d07d1b989c5d50a61da7655cba5d51e5d374",
+        "library": "Icons",
+        "sourceFile": "icons/Icons -- ios.json"
+      },
+      "variant": {
+        "name": "Size=m",
+        "key": "8f82d07d1b989c5d50a61da7655cba5d51e5d374"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I5157:39803;9776:2283;27533:3",
+            "name": "Vector",
+            "type": null,
+            "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+            "path": "Size=m / Vector",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #3EA2FF → neutral-translucent/1300",
+          "referenceValue": "#3EA2FF",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#3EA2FF",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#3EA2FF",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "8f82d07d1b989c5d50a61da7655cba5d51e5d374",
+            "actualNestedOwnerPath": "Size=m",
+            "actualNestedOwnerRelativePath": "Vector",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "m"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "5037:13478",
+              "nodeName": "0.0",
+              "tokenId": "VariableID:14ac29210fc546f67acfa8e0dfd252c210d0c78b/3541:157",
+              "tokenName": "base-bg/primary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I5037:13482;64810:733891;10218:144683",
+        "name": "sliders-horizontal",
+        "type": "INSTANCE",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Content / ChipsView / ContentGroup / ChipsStack / ChipsElementView / ContentGroup / ImageView / sliders-horizontal",
+        "visible": true
+      },
+      "component": {
+        "name": "sliders-horizontal",
+        "key": "64c9f153e6607ad061f2a9cdd5e72800b4e76938",
+        "library": "Icons",
+        "sourceFile": "icons/Icons -- glyph-26.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "64c9f153e6607ad061f2a9cdd5e72800b4e76938"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I5037:13482;64810:733891;10218:144683;148617:19760",
+            "name": "icon",
+            "type": null,
+            "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+            "path": "Size=24, Style=Line, Color=False / icon",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #9032EE → neutral-translucent/1300",
+          "referenceValue": "#9032EE",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#9032EE",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#9032EE",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "64c9f153e6607ad061f2a9cdd5e72800b4e76938",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "icon",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "5037:13478",
+              "nodeName": "0.0",
+              "tokenId": "VariableID:14ac29210fc546f67acfa8e0dfd252c210d0c78b/3541:157",
+              "tokenName": "base-bg/primary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I5157:39872;9776:2277",
+        "name": "chevron-left",
+        "type": "INSTANCE",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / chevron-left",
+        "visible": true
+      },
+      "component": {
+        "name": "chevron-left",
+        "key": "8f82d07d1b989c5d50a61da7655cba5d51e5d374",
+        "library": "Icons",
+        "sourceFile": "icons/Icons -- ios.json"
+      },
+      "variant": {
+        "name": "Size=m",
+        "key": "8f82d07d1b989c5d50a61da7655cba5d51e5d374"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I5157:39872;9776:2277;27533:3",
+            "name": "Vector",
+            "type": null,
+            "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+            "path": "Size=m / Vector",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #3EA2FF → neutral-translucent/1300",
+          "referenceValue": "#3EA2FF",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#3EA2FF",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#3EA2FF",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "8f82d07d1b989c5d50a61da7655cba5d51e5d374",
+            "actualNestedOwnerPath": "Size=m",
+            "actualNestedOwnerRelativePath": "Vector",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "m"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "5037:14089",
+              "nodeName": "0.0",
+              "tokenId": "VariableID:14ac29210fc546f67acfa8e0dfd252c210d0c78b/3541:157",
+              "tokenName": "base-bg/primary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I5052:17213;132814:29739;5052:17208;70349:99013",
+        "name": "house",
+        "type": "INSTANCE",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Content / StackWrapper (🍏🔵 12.15) / 🎨 ContentGroup / IconViewV1 (🍏🟦 13.10) / ContentGroup / (n)UIImageView / house",
+        "visible": true
+      },
+      "component": {
+        "name": "house",
+        "key": "e87904ee3f761536ecbcb60ee114f1331ac6e7f5",
+        "library": "Icons",
+        "sourceFile": "icons/Icons -- glyph-26.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "e87904ee3f761536ecbcb60ee114f1331ac6e7f5"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I5052:17213;132814:29739;5052:17208;70349:99013;148606:16437",
+            "name": "icon",
+            "type": null,
+            "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+            "path": "Size=24, Style=Line, Color=False / icon",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #9032EE → neutral-translucent/1300",
+          "referenceValue": "#9032EE",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#9032EE",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#9032EE",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/2367:3",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "e87904ee3f761536ecbcb60ee114f1331ac6e7f5",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "icon",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "5037:14089",
+              "nodeName": "0.0",
+              "tokenId": "VariableID:14ac29210fc546f67acfa8e0dfd252c210d0c78b/3541:157",
+              "tokenName": "base-bg/primary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I5052:17290;132814:29739;5052:17556;70349:99168",
+        "name": "arrow-down-line-down",
+        "type": "INSTANCE",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Content / StackWrapper (🍏🔵 12.15) / 🎨 ContentGroup / IconViewV1 (🍏🟦 13.10) / ContentGroup / (n)UIImageView / arrow-down-line-down",
+        "visible": true
+      },
+      "component": {
+        "name": "arrow-down-line-down",
+        "key": "77a6bc17839d4cec6af078e33a310157f5f219be",
+        "library": "Icons",
+        "sourceFile": "icons/Icons -- glyph-26.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "77a6bc17839d4cec6af078e33a310157f5f219be"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I5052:17290;132814:29739;5052:17556;70349:99168;150844:116500",
+            "name": "icon",
+            "type": null,
+            "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+            "path": "Size=24, Style=Line, Color=False / icon",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #9032EE → neutral-translucent/700",
+          "referenceValue": "#9032EE",
+          "actualValue": "neutral-translucent/700",
+          "referenceRawValue": "#9032EE",
+          "actualRawValue": "neutral-translucent/700",
+          "referenceDisplayValue": "#9032EE",
+          "actualDisplayValue": "neutral-translucent/700",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/700",
+            "key": "faac436b14cc199cfe97243b05af867af9ecb365",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:faac436b14cc199cfe97243b05af867af9ecb365/3541:130",
+            "key": "faac436b14cc199cfe97243b05af867af9ecb365",
+            "name": "neutral-translucent/700",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "77a6bc17839d4cec6af078e33a310157f5f219be",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "icon",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "5037:14089",
+              "nodeName": "0.0",
+              "tokenId": "VariableID:14ac29210fc546f67acfa8e0dfd252c210d0c78b/3541:157",
+              "tokenName": "base-bg/primary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I5052:17594;132814:29739;5052:17598;70349:99168",
+        "name": "arrow-down-line-down",
+        "type": "INSTANCE",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Content / StackWrapper (🍏🔵 12.15) / 🎨 ContentGroup / IconViewV1 (🍏🟦 13.10) / ContentGroup / (n)UIImageView / arrow-down-line-down",
+        "visible": true
+      },
+      "component": {
+        "name": "arrow-down-line-down",
+        "key": "77a6bc17839d4cec6af078e33a310157f5f219be",
+        "library": "Icons",
+        "sourceFile": "icons/Icons -- glyph-26.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "77a6bc17839d4cec6af078e33a310157f5f219be"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I5052:17594;132814:29739;5052:17598;70349:99168;150844:116500",
+            "name": "icon",
+            "type": null,
+            "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+            "path": "Size=24, Style=Line, Color=False / icon",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #9032EE → neutral-translucent/700",
+          "referenceValue": "#9032EE",
+          "actualValue": "neutral-translucent/700",
+          "referenceRawValue": "#9032EE",
+          "actualRawValue": "neutral-translucent/700",
+          "referenceDisplayValue": "#9032EE",
+          "actualDisplayValue": "neutral-translucent/700",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/700",
+            "key": "faac436b14cc199cfe97243b05af867af9ecb365",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:faac436b14cc199cfe97243b05af867af9ecb365/3541:130",
+            "key": "faac436b14cc199cfe97243b05af867af9ecb365",
+            "name": "neutral-translucent/700",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "77a6bc17839d4cec6af078e33a310157f5f219be",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "icon",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "5037:14089",
+              "nodeName": "0.0",
+              "tokenId": "VariableID:14ac29210fc546f67acfa8e0dfd252c210d0c78b/3541:157",
+              "tokenName": "base-bg/primary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I5157:39974;9776:1385",
+        "name": "chevron-left",
+        "type": "INSTANCE",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / chevron-left",
+        "visible": true
+      },
+      "component": {
+        "name": "chevron-left",
+        "key": "8f82d07d1b989c5d50a61da7655cba5d51e5d374",
+        "library": "Icons",
+        "sourceFile": "icons/Icons -- ios.json"
+      },
+      "variant": {
+        "name": "Size=m",
+        "key": "8f82d07d1b989c5d50a61da7655cba5d51e5d374"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I5157:39974;9776:1385;27533:3",
+            "name": "Vector",
+            "type": null,
+            "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+            "path": "Size=m / Vector",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #3EA2FF → neutral-translucent/1300",
+          "referenceValue": "#3EA2FF",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#3EA2FF",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#3EA2FF",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "8f82d07d1b989c5d50a61da7655cba5d51e5d374",
+            "actualNestedOwnerPath": "Size=m",
+            "actualNestedOwnerRelativePath": "Vector",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "m"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "5054:14285",
+              "nodeName": "0.0",
+              "tokenId": "VariableID:14ac29210fc546f67acfa8e0dfd252c210d0c78b/3541:157",
+              "tokenName": "base-bg/primary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I5157:39995;9776:2283",
+        "name": "chevron-left",
+        "type": "INSTANCE",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / chevron-left",
+        "visible": true
+      },
+      "component": {
+        "name": "chevron-left",
+        "key": "8f82d07d1b989c5d50a61da7655cba5d51e5d374",
+        "library": "Icons",
+        "sourceFile": "icons/Icons -- ios.json"
+      },
+      "variant": {
+        "name": "Size=m",
+        "key": "8f82d07d1b989c5d50a61da7655cba5d51e5d374"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I5157:39995;9776:2283;27533:3",
+            "name": "Vector",
+            "type": null,
+            "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+            "path": "Size=m / Vector",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #3EA2FF → neutral-translucent/1300",
+          "referenceValue": "#3EA2FF",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#3EA2FF",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#3EA2FF",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "8f82d07d1b989c5d50a61da7655cba5d51e5d374",
+            "actualNestedOwnerPath": "Size=m",
+            "actualNestedOwnerRelativePath": "Vector",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "m"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "5100:34956",
+              "nodeName": "0.0",
+              "tokenId": "VariableID:14ac29210fc546f67acfa8e0dfd252c210d0c78b/3541:157",
+              "tokenName": "base-bg/primary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I5157:39995;9057:5010;9028:10891",
+        "name": "bubble-lines",
+        "type": "INSTANCE",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / Buttons / Buttons / bubble-lines",
+        "visible": true
+      },
+      "component": {
+        "name": "bubble-lines",
+        "key": "c6bde41e2840a3d188027052a92deb5d21e48469",
+        "library": "Icons",
+        "sourceFile": "icons/Icons -- glyph-26.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "c6bde41e2840a3d188027052a92deb5d21e48469"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I5157:39995;9057:5010;9028:10891;148564:18563",
+            "name": "icon",
+            "type": null,
+            "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+            "path": "Size=24, Style=Line, Color=False / icon",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #9032EE → neutral-translucent/1300",
+          "referenceValue": "#9032EE",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#9032EE",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#9032EE",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "c6bde41e2840a3d188027052a92deb5d21e48469",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "icon",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "5100:34956",
+              "nodeName": "0.0",
+              "tokenId": "VariableID:14ac29210fc546f67acfa8e0dfd252c210d0c78b/3541:157",
+              "tokenName": "base-bg/primary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I5100:34965;132814:29739;5100:34964;70349:99168",
+        "name": "chevron-right-shift-right",
+        "type": "INSTANCE",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / IconViewV1 (🍏🟦 13.10) / ContentGroup / (n)UIImageView / chevron-right-shift-right",
+        "visible": true
+      },
+      "component": {
+        "name": "chevron-right-shift-right",
+        "key": "3139049e4cfc6dc4d2f9f1104743ad0dbc15a805",
+        "library": "Icons",
+        "sourceFile": "icons/Icons -- glyph-26.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "3139049e4cfc6dc4d2f9f1104743ad0dbc15a805"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I5100:34965;132814:29739;5100:34964;70349:99168;150844:115874",
+            "name": "icon",
+            "type": null,
+            "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+            "path": "Size=24, Style=Line, Color=False / icon",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #9032EE → neutral-translucent/700",
+          "referenceValue": "#9032EE",
+          "actualValue": "neutral-translucent/700",
+          "referenceRawValue": "#9032EE",
+          "actualRawValue": "neutral-translucent/700",
+          "referenceDisplayValue": "#9032EE",
+          "actualDisplayValue": "neutral-translucent/700",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/700",
+            "key": "faac436b14cc199cfe97243b05af867af9ecb365",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:faac436b14cc199cfe97243b05af867af9ecb365/3541:130",
+            "key": "faac436b14cc199cfe97243b05af867af9ecb365",
+            "name": "neutral-translucent/700",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "3139049e4cfc6dc4d2f9f1104743ad0dbc15a805",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "icon",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "5100:34956",
+              "nodeName": "0.0",
+              "tokenId": "VariableID:14ac29210fc546f67acfa8e0dfd252c210d0c78b/3541:157",
+              "tokenName": "base-bg/primary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I5107:34465;132901:22980;132814:29739;5107:34463;70349:99013",
+        "name": "information-circle",
+        "type": "INSTANCE",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Content / BannerWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🔵 12.15) / 🎨 ContentGroup / IconViewV1 (🍏🟦 13.10) / ContentGroup / (n)UIImageView / information-circle",
+        "visible": true
+      },
+      "component": {
+        "name": "information-circle",
+        "key": "b93d172d52af7633dc7cf5c2217e09a578ff26a8",
+        "library": "Icons",
+        "sourceFile": "icons/Icons -- glyph-26.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "b93d172d52af7633dc7cf5c2217e09a578ff26a8"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I5107:34465;132901:22980;132814:29739;5107:34463;70349:99013;148606:16692",
+            "name": "icon",
+            "type": null,
+            "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+            "path": "Size=24, Style=Line, Color=False / icon",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #9032EE → neutral/0",
+          "referenceValue": "#9032EE",
+          "actualValue": "neutral/0",
+          "referenceRawValue": "#9032EE",
+          "actualRawValue": "neutral/0",
+          "referenceDisplayValue": "#9032EE",
+          "actualDisplayValue": "neutral/0",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral/0",
+            "key": "1dbf4d56a942745335ed8230dfe5b594c0f71841",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:1dbf4d56a942745335ed8230dfe5b594c0f71841/2522:12",
+            "key": "1dbf4d56a942745335ed8230dfe5b594c0f71841",
+            "name": "neutral/0",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "b93d172d52af7633dc7cf5c2217e09a578ff26a8",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "icon",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "contrast",
+              "source": "ancestor-fill-color",
+              "nodeId": "I5107:34465;132901:22979",
+              "nodeName": "🎨 ContentGroup",
+              "tokenId": "VariableID:0ef0441d39118d418935896864b39d922539ae93/1816:36",
+              "tokenName": "decorative-muted/orange",
+              "color": "#FFEFD9"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I5173:47975;9776:2283",
+        "name": "chevron-left",
+        "type": "INSTANCE",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Header / (n)NavBar / Item_Statable / NavBar / BackButton / chevron-left",
+        "visible": true
+      },
+      "component": {
+        "name": "chevron-left",
+        "key": "8f82d07d1b989c5d50a61da7655cba5d51e5d374",
+        "library": "Icons",
+        "sourceFile": "icons/Icons -- ios.json"
+      },
+      "variant": {
+        "name": "Size=m",
+        "key": "8f82d07d1b989c5d50a61da7655cba5d51e5d374"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I5173:47975;9776:2283;27533:3",
+            "name": "Vector",
+            "type": null,
+            "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+            "path": "Size=m / Vector",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #3EA2FF → neutral-translucent/1300",
+          "referenceValue": "#3EA2FF",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#3EA2FF",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#3EA2FF",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "8f82d07d1b989c5d50a61da7655cba5d51e5d374",
+            "actualNestedOwnerPath": "Size=m",
+            "actualNestedOwnerRelativePath": "Vector",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "m"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "5163:53908",
+              "nodeName": "0.0",
+              "tokenId": "VariableID:14ac29210fc546f67acfa8e0dfd252c210d0c78b/3541:157",
+              "tokenName": "base-bg/primary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I5174:47337;132814:29739;5174:47335;132814:29727;5174:47334;70349:99013",
+        "name": "route-line",
+        "type": "INSTANCE",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / IconViewV1 (🍏 13.10) / ContentGroup / (n)UIImageView / route-line",
+        "visible": true
+      },
+      "component": {
+        "name": "route-line",
+        "key": "5582e0435cf6bdebffd1b3736b493b9e8f48012b",
+        "library": "Icons",
+        "sourceFile": "icons/Icons -- glyph-26.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "5582e0435cf6bdebffd1b3736b493b9e8f48012b"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I5174:47337;132814:29739;5174:47335;132814:29727;5174:47334;70349:99013;148617:19360",
+            "name": "icon",
+            "type": null,
+            "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+            "path": "Size=24, Style=Line, Color=False / icon",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #9032EE → neutral-translucent/1300",
+          "referenceValue": "#9032EE",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#9032EE",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#9032EE",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/2367:3",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "5582e0435cf6bdebffd1b3736b493b9e8f48012b",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "icon",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "5163:53908",
+              "nodeName": "0.0",
+              "tokenId": "VariableID:14ac29210fc546f67acfa8e0dfd252c210d0c78b/3541:157",
+              "tokenName": "base-bg/primary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I5174:47362;132814:29739;5174:47360;70349:99013",
+        "name": "book-open-checkmark",
+        "type": "INSTANCE",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Content / StackWrapper (🍏🔵 12.15) / 🎨 ContentGroup / IconViewV1 (🍏🟦 13.10) / ContentGroup / (n)UIImageView / book-open-checkmark",
+        "visible": true
+      },
+      "component": {
+        "name": "book-open-checkmark",
+        "key": "77c08cb6714b79d8b9f8bee44eae5722d6f978aa",
+        "library": "Icons",
+        "sourceFile": "icons/Icons -- glyph-26.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "77c08cb6714b79d8b9f8bee44eae5722d6f978aa"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I5174:47362;132814:29739;5174:47360;70349:99013;148564:18608",
+            "name": "icon",
+            "type": null,
+            "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+            "path": "Size=24, Style=Line, Color=False / icon",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #9032EE → neutral-translucent/1300",
+          "referenceValue": "#9032EE",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#9032EE",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#9032EE",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "77c08cb6714b79d8b9f8bee44eae5722d6f978aa",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "icon",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "5163:53908",
+              "nodeName": "0.0",
+              "tokenId": "VariableID:14ac29210fc546f67acfa8e0dfd252c210d0c78b/3541:157",
+              "tokenName": "base-bg/primary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I5174:47251;132814:29739;5174:47246;70349:99013",
+        "name": "user",
+        "type": "INSTANCE",
+        "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+        "path": "Примеры / 0.0 / Content / StackWrapper (🍏🔵 12.15) / 🎨 ContentGroup / IconViewV1 (🍏🟦 13.10) / ContentGroup / (n)UIImageView / user",
+        "visible": true
+      },
+      "component": {
+        "name": "user",
+        "key": "fdeab7835e6106cc85483bd3a7b8458d58f64d03",
+        "library": "Icons",
+        "sourceFile": "icons/Icons -- glyph-26.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "fdeab7835e6106cc85483bd3a7b8458d58f64d03"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I5174:47251;132814:29739;5174:47246;70349:99013;150773:43294",
+            "name": "icon",
+            "type": null,
+            "pageName": "🚧  Статусная модель :: Версия 2.0 :: 14.07.26",
+            "path": "Size=24, Style=Line, Color=False / icon",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "fill: rgba(144,50,238,1) → neutral-translucent/1300",
+          "referenceValue": "rgba(144,50,238,1)",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "rgba(144,50,238,1)",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "rgba(144,50,238,1)",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "fdeab7835e6106cc85483bd3a7b8458d58f64d03",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "icon",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "5163:53908",
+              "nodeName": "0.0",
+              "tokenId": "VariableID:14ac29210fc546f67acfa8e0dfd252c210d0c78b/3541:157",
+              "tokenName": "base-bg/primary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    }
+  ],
+  "componentContexts": []
+}
