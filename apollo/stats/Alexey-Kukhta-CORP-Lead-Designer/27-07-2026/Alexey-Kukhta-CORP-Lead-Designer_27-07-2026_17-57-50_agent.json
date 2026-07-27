@@ -1,0 +1,1758 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1096330610570928879-1785164270695-85mvt78l:agent",
+  "sourceReportId": "apollo-1096330610570928879-1785164270695-85mvt78l",
+  "generatedAt": "2026-07-27T14:57:50.695Z",
+  "suggestedFileName": "Alexey-Kukhta-CORP-Lead-Designer_27-07-2026_17-57-50_agent.json",
+  "user": {
+    "id": "1096330610570928879",
+    "name": "Alexey Kukhta / CORP / Lead Designer",
+    "slug": "Alexey-Kukhta-CORP-Lead-Designer"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.1.62"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "❇️ Мастерская :: AI",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "startedAt": "2026-07-27T14:57:50.522Z",
+    "finishedAt": "2026-07-27T14:57:50.695Z",
+    "durationMs": 173,
+    "selection": [
+      {
+        "nodeId": "9185:18063",
+        "name": "apollo-main-compact",
+        "nodeType": "FRAME",
+        "path": "Section 2 / apollo-main-compact",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 40,
+    "problemOccurrenceCount": 43,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 8,
+      "updates": 0,
+      "customizations": 5,
+      "localComponents": 29,
+      "detachedComponents": 0,
+      "presets": 0,
+      "technicalComponents": 0,
+      "currentComponents": 11,
+      "wrongChannel": 0,
+      "themization": 1
+    },
+    "includedFindingCount": 43,
+    "omittedCurrentComponentCount": 11
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with severity=error and matchKind=exact_component_rule for the same property/change.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 8,
+      "includedCount": 8,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 5,
+      "includedCount": 5,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 29,
+      "includedCount": 29,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9185:18065;10459:30650",
+        "name": "Button",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / topSection / rightSide / Button",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9185:18065;10459:30650",
+        "name": "Button",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / topSection / rightSide / Button",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9185:18065;9185:18333",
+        "name": "Button",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / topSection / rightSide / Button",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9185:18065;9185:18333",
+        "name": "Button",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / topSection / rightSide / Button",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9185:18065;10478:29448",
+        "name": "SegmentedControl",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / topSection / SegmentedControl",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9185:18065;10478:29448",
+        "name": "SegmentedControl",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / topSection / SegmentedControl",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9185:18065;10478:29448;10486:25526",
+        "name": "segment",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / topSection / SegmentedControl / segments / segment",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9185:18065;10478:29448;10486:25526",
+        "name": "segment",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / topSection / SegmentedControl / segments / segment",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I9185:18065;10459:30650;10478:29339",
+        "name": "LeftAddon",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / topSection / rightSide / Button / LeftAddon",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Addon",
+        "key": "029c2506e2a659e706f08d848158f4177192db5e",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Button.json"
+      },
+      "variant": {
+        "name": "Type=Icon-20",
+        "key": "029c2506e2a659e706f08d848158f4177192db5e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I9185:18065;10459:30650;10478:29339;119275:29235",
+            "name": "PaintMe",
+            "type": null,
+            "pageName": "     UI",
+            "path": "Type=Icon-20 / Fixer / PaintMe",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "fill: VariableID:b10db1879590531b56541f549df1687fe4a23efb/3541:190 → text/primary",
+          "referenceValue": "status/info",
+          "actualValue": "text/primary",
+          "referenceRawValue": "VariableID:b10db1879590531b56541f549df1687fe4a23efb/3541:190",
+          "actualRawValue": "text/primary",
+          "referenceDisplayValue": "status/info",
+          "actualDisplayValue": "text/primary",
+          "referenceResource": {
+            "name": "status/info",
+            "key": "b10db1879590531b56541f549df1687fe4a23efb",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "text/primary",
+            "key": "53f842b1771349c5dca692351edfc422e8f081b5",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": {
+            "id": "VariableID:b10db1879590531b56541f549df1687fe4a23efb/3541:190",
+            "key": "b10db1879590531b56541f549df1687fe4a23efb",
+            "name": "status/info",
+            "collectionId": null,
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:53f842b1771349c5dca692351edfc422e8f081b5/3541:208",
+            "key": "53f842b1771349c5dca692351edfc422e8f081b5",
+            "name": "text/primary",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "029c2506e2a659e706f08d848158f4177192db5e",
+            "actualNestedOwnerPath": "Type=Icon-20",
+            "actualNestedOwnerRelativePath": "Fixer / PaintMe",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Type": "Icon-20"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "9185:18063",
+              "nodeName": "apollo-main-compact",
+              "tokenId": "VariableID:14ac29210fc546f67acfa8e0dfd252c210d0c78b/3541:157",
+              "tokenName": "base-bg/primary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.button.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I9185:18065;9185:18333;10478:29313",
+        "name": "LeftAddon",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / topSection / rightSide / Button / LeftAddon",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Addon",
+        "key": "029c2506e2a659e706f08d848158f4177192db5e",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Button.json"
+      },
+      "variant": {
+        "name": "Type=Icon-20",
+        "key": "029c2506e2a659e706f08d848158f4177192db5e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I9185:18065;9185:18333;10478:29313;119275:29235",
+            "name": "PaintMe",
+            "type": null,
+            "pageName": "     UI",
+            "path": "Type=Icon-20 / Fixer / PaintMe",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "fill: VariableID:b10db1879590531b56541f549df1687fe4a23efb/3541:190 → text_inverted/primary",
+          "referenceValue": "status/info",
+          "actualValue": "text_inverted/primary",
+          "referenceRawValue": "VariableID:b10db1879590531b56541f549df1687fe4a23efb/3541:190",
+          "actualRawValue": "text_inverted/primary",
+          "referenceDisplayValue": "status/info",
+          "actualDisplayValue": "text_inverted/primary",
+          "referenceResource": {
+            "name": "status/info",
+            "key": "b10db1879590531b56541f549df1687fe4a23efb",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "text_inverted/primary",
+            "key": "de53e1056e003a1b3aedbb9e81b2d767e4c85fa2",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": {
+            "id": "VariableID:b10db1879590531b56541f549df1687fe4a23efb/3541:190",
+            "key": "b10db1879590531b56541f549df1687fe4a23efb",
+            "name": "status/info",
+            "collectionId": null,
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:de53e1056e003a1b3aedbb9e81b2d767e4c85fa2/3541:135",
+            "key": "de53e1056e003a1b3aedbb9e81b2d767e4c85fa2",
+            "name": "text_inverted/primary",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "029c2506e2a659e706f08d848158f4177192db5e",
+            "actualNestedOwnerPath": "Type=Icon-20",
+            "actualNestedOwnerRelativePath": "Fixer / PaintMe",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Type": "Icon-20"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "contrast",
+              "source": "ancestor-fill-color",
+              "nodeId": "I9185:18065;9185:18333",
+              "nodeName": "Button",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#000000"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.button.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I9185:18065;10478:29448;10486:25526;10478:29284",
+        "name": "LeftAddon",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / topSection / SegmentedControl / segments / segment / LeftAddon",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Addon",
+        "key": "029c2506e2a659e706f08d848158f4177192db5e",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Button.json"
+      },
+      "variant": {
+        "name": "Type=Icon-20",
+        "key": "029c2506e2a659e706f08d848158f4177192db5e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I9185:18065;10478:29448;10486:25526;10478:29284;119275:29235",
+            "name": "PaintMe",
+            "type": null,
+            "pageName": "     UI",
+            "path": "Type=Icon-20 / Fixer / PaintMe",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "fill: VariableID:b10db1879590531b56541f549df1687fe4a23efb/3541:190 → text_inverted/primary",
+          "referenceValue": "status/info",
+          "actualValue": "text_inverted/primary",
+          "referenceRawValue": "VariableID:b10db1879590531b56541f549df1687fe4a23efb/3541:190",
+          "actualRawValue": "text_inverted/primary",
+          "referenceDisplayValue": "status/info",
+          "actualDisplayValue": "text_inverted/primary",
+          "referenceResource": {
+            "name": "status/info",
+            "key": "b10db1879590531b56541f549df1687fe4a23efb",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "text_inverted/primary",
+            "key": "de53e1056e003a1b3aedbb9e81b2d767e4c85fa2",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": {
+            "id": "VariableID:b10db1879590531b56541f549df1687fe4a23efb/3541:190",
+            "key": "b10db1879590531b56541f549df1687fe4a23efb",
+            "name": "status/info",
+            "collectionId": null,
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:de53e1056e003a1b3aedbb9e81b2d767e4c85fa2/3541:135",
+            "key": "de53e1056e003a1b3aedbb9e81b2d767e4c85fa2",
+            "name": "text_inverted/primary",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "029c2506e2a659e706f08d848158f4177192db5e",
+            "actualNestedOwnerPath": "Type=Icon-20",
+            "actualNestedOwnerRelativePath": "Fixer / PaintMe",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Type": "Icon-20"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "contrast",
+              "source": "ancestor-fill-color",
+              "nodeId": "I9185:18065;10478:29448;10486:25526",
+              "nodeName": "segment",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#000000"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.button.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I9185:18065;10478:29448;10486:25527;10478:29288",
+        "name": "LeftAddon",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / topSection / SegmentedControl / segments / segment / LeftAddon",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Addon",
+        "key": "029c2506e2a659e706f08d848158f4177192db5e",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Button.json"
+      },
+      "variant": {
+        "name": "Type=Icon-20",
+        "key": "029c2506e2a659e706f08d848158f4177192db5e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I9185:18065;10478:29448;10486:25527;10478:29288;119275:29235",
+            "name": "PaintMe",
+            "type": null,
+            "pageName": "     UI",
+            "path": "Type=Icon-20 / Fixer / PaintMe",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "fill: VariableID:b10db1879590531b56541f549df1687fe4a23efb/3541:190 → text/primary",
+          "referenceValue": "status/info",
+          "actualValue": "text/primary",
+          "referenceRawValue": "VariableID:b10db1879590531b56541f549df1687fe4a23efb/3541:190",
+          "actualRawValue": "text/primary",
+          "referenceDisplayValue": "status/info",
+          "actualDisplayValue": "text/primary",
+          "referenceResource": {
+            "name": "status/info",
+            "key": "b10db1879590531b56541f549df1687fe4a23efb",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "text/primary",
+            "key": "53f842b1771349c5dca692351edfc422e8f081b5",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": {
+            "id": "VariableID:b10db1879590531b56541f549df1687fe4a23efb/3541:190",
+            "key": "b10db1879590531b56541f549df1687fe4a23efb",
+            "name": "status/info",
+            "collectionId": null,
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:53f842b1771349c5dca692351edfc422e8f081b5/3541:208",
+            "key": "53f842b1771349c5dca692351edfc422e8f081b5",
+            "name": "text/primary",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "029c2506e2a659e706f08d848158f4177192db5e",
+            "actualNestedOwnerPath": "Type=Icon-20",
+            "actualNestedOwnerRelativePath": "Fixer / PaintMe",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Type": "Icon-20"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "9185:18063",
+              "nodeName": "apollo-main-compact",
+              "tokenId": "VariableID:14ac29210fc546f67acfa8e0dfd252c210d0c78b/3541:157",
+              "tokenName": "base-bg/primary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.button.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I9185:18065;10478:29448;11161:29100;10478:29288",
+        "name": "LeftAddon",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / topSection / SegmentedControl / segments / segment / LeftAddon",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Addon",
+        "key": "029c2506e2a659e706f08d848158f4177192db5e",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Button.json"
+      },
+      "variant": {
+        "name": "Type=Icon-20",
+        "key": "029c2506e2a659e706f08d848158f4177192db5e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I9185:18065;10478:29448;11161:29100;10478:29288;119275:29235",
+            "name": "PaintMe",
+            "type": null,
+            "pageName": "     UI",
+            "path": "Type=Icon-20 / Fixer / PaintMe",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "fill: VariableID:b10db1879590531b56541f549df1687fe4a23efb/3541:190 → text/primary",
+          "referenceValue": "status/info",
+          "actualValue": "text/primary",
+          "referenceRawValue": "VariableID:b10db1879590531b56541f549df1687fe4a23efb/3541:190",
+          "actualRawValue": "text/primary",
+          "referenceDisplayValue": "status/info",
+          "actualDisplayValue": "text/primary",
+          "referenceResource": {
+            "name": "status/info",
+            "key": "b10db1879590531b56541f549df1687fe4a23efb",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "text/primary",
+            "key": "53f842b1771349c5dca692351edfc422e8f081b5",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": {
+            "id": "VariableID:b10db1879590531b56541f549df1687fe4a23efb/3541:190",
+            "key": "b10db1879590531b56541f549df1687fe4a23efb",
+            "name": "status/info",
+            "collectionId": null,
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:53f842b1771349c5dca692351edfc422e8f081b5/3541:208",
+            "key": "53f842b1771349c5dca692351edfc422e8f081b5",
+            "name": "text/primary",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "029c2506e2a659e706f08d848158f4177192db5e",
+            "actualNestedOwnerPath": "Type=Icon-20",
+            "actualNestedOwnerRelativePath": "Fixer / PaintMe",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Type": "Icon-20"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "9185:18063",
+              "nodeName": "apollo-main-compact",
+              "tokenId": "VariableID:14ac29210fc546f67acfa8e0dfd252c210d0c78b/3541:157",
+              "tokenName": "base-bg/primary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.button.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "9185:18065",
+        "name": "topSection",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / topSection",
+        "visible": true
+      },
+      "component": {
+        "name": "topSection",
+        "key": "bb88a713ec638c6f2f2ebdf00ea144fb9818b577",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I9185:18065;9185:18327",
+        "name": "smallButton",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / topSection / leftSide / smallButton",
+        "visible": true
+      },
+      "component": {
+        "name": "smallButton",
+        "key": "e6a832d30adf12e33c7b5eec1a52291a126a0a85",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I9185:18065;10459:30650",
+        "name": "Button",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / topSection / rightSide / Button",
+        "visible": true
+      },
+      "component": {
+        "name": "Button",
+        "key": "0ba62b62bdac5e5efb7fbe3833d16feb9c7f1def",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I9185:18065;9185:18333",
+        "name": "Button",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / topSection / rightSide / Button",
+        "visible": true
+      },
+      "component": {
+        "name": "Button",
+        "key": "7dfe782ce9aa407c92b0b7059c817fba980e80d5",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I9185:18065;10478:29448",
+        "name": "SegmentedControl",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / topSection / SegmentedControl",
+        "visible": true
+      },
+      "component": {
+        "name": "SegmentedControl",
+        "key": "8f06b9f1615d8bb6def63d013af5ad4eb84f2137",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I9185:18065;10478:29448;10486:25526",
+        "name": "segment",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / topSection / SegmentedControl / segments / segment",
+        "visible": true
+      },
+      "component": {
+        "name": "segment",
+        "key": "158ab5128af73119e3dd033d3ae40b47f274fba8",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I9185:18065;10478:29448;10486:25527",
+        "name": "segment",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / topSection / SegmentedControl / segments / segment",
+        "visible": true
+      },
+      "component": {
+        "name": "segment",
+        "key": "2598056b613f70401165b7b0137416b6657f5fe8",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I9185:18065;10478:29448;11161:29100",
+        "name": "segment",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / topSection / SegmentedControl / segments / segment",
+        "visible": true
+      },
+      "component": {
+        "name": "segment",
+        "key": "2598056b613f70401165b7b0137416b6657f5fe8",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "9185:18066",
+        "name": "mainSection",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / mainSection",
+        "visible": true
+      },
+      "component": {
+        "name": "mainSection",
+        "key": "bf82089263ee9f3079aacbdc2581ed15aa7fe32c",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I9185:18066;9185:18343;9185:18079",
+        "name": "categoryCard",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / mainSection / leftSlot / categoryCard",
+        "visible": true
+      },
+      "component": {
+        "name": "categoryCard",
+        "key": "bd3e28b2f72c5e24df449ff3dffae0e6b3e948b0",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I9185:18066;9185:18343;9185:18079;8965:11532",
+        "name": "counter",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / mainSection / leftSlot / categoryCard / counter",
+        "visible": true
+      },
+      "component": {
+        "name": "counter",
+        "key": "12d421992f6c2d5b96aaa0a15e3923ceaf5f26f7",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I9185:18066;9185:18343;9185:18080",
+        "name": "categoryCard",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / mainSection / leftSlot / categoryCard",
+        "visible": true
+      },
+      "component": {
+        "name": "categoryCard",
+        "key": "ddfab20269871ef966fb25be77a120ab3be94b2c",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I9185:18066;9185:18343;9185:18080;8965:11524",
+        "name": "counter",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / mainSection / leftSlot / categoryCard / counter",
+        "visible": true
+      },
+      "component": {
+        "name": "counter",
+        "key": "0f0da22cf997cb6c3460f225e12714fa875ca1d5",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I9185:18066;9185:18343;9185:18081",
+        "name": "categoryCard",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / mainSection / leftSlot / categoryCard",
+        "visible": true
+      },
+      "component": {
+        "name": "categoryCard",
+        "key": "bd3e28b2f72c5e24df449ff3dffae0e6b3e948b0",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I9185:18066;9185:18343;9185:18081;8965:11532",
+        "name": "counter",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / mainSection / leftSlot / categoryCard / counter",
+        "visible": true
+      },
+      "component": {
+        "name": "counter",
+        "key": "12d421992f6c2d5b96aaa0a15e3923ceaf5f26f7",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I9185:18066;9185:18343;9185:18082",
+        "name": "categoryCard",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / mainSection / leftSlot / categoryCard",
+        "visible": true
+      },
+      "component": {
+        "name": "categoryCard",
+        "key": "ddfab20269871ef966fb25be77a120ab3be94b2c",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I9185:18066;9185:18343;9185:18082;8965:11524",
+        "name": "counter",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / mainSection / leftSlot / categoryCard / counter",
+        "visible": true
+      },
+      "component": {
+        "name": "counter",
+        "key": "0f0da22cf997cb6c3460f225e12714fa875ca1d5",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I9185:18066;9185:18343;9185:18083",
+        "name": "Divider",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / mainSection / leftSlot / Divider",
+        "visible": true
+      },
+      "component": {
+        "name": "Divider",
+        "key": "9a5d1da792f490a81195f2e2df0fc3f02dbd0ae9",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I9185:18066;9185:18343;9185:18084",
+        "name": "categoryCard",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / mainSection / leftSlot / categoryCard",
+        "visible": true
+      },
+      "component": {
+        "name": "categoryCard",
+        "key": "ddfab20269871ef966fb25be77a120ab3be94b2c",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I9185:18066;9185:18343;9185:18084;8965:11524",
+        "name": "counter",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / mainSection / leftSlot / categoryCard / counter",
+        "visible": true
+      },
+      "component": {
+        "name": "counter",
+        "key": "ed2c6525bbbe9ac7a17f1ec7c9322cc6aa8b08c6",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I9185:18066;9185:18343;9185:18085",
+        "name": "categoryCard",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / mainSection / leftSlot / categoryCard",
+        "visible": true
+      },
+      "component": {
+        "name": "categoryCard",
+        "key": "ddfab20269871ef966fb25be77a120ab3be94b2c",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I9185:18066;9185:18343;9185:18085;8965:11524",
+        "name": "counter",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / mainSection / leftSlot / categoryCard / counter",
+        "visible": true
+      },
+      "component": {
+        "name": "counter",
+        "key": "ed2c6525bbbe9ac7a17f1ec7c9322cc6aa8b08c6",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I9185:18066;9185:18343;9185:18086",
+        "name": "categoryCard",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / mainSection / leftSlot / categoryCard",
+        "visible": true
+      },
+      "component": {
+        "name": "categoryCard",
+        "key": "bd3e28b2f72c5e24df449ff3dffae0e6b3e948b0",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I9185:18066;9185:18343;9185:18086;8965:11532",
+        "name": "counter",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / mainSection / leftSlot / categoryCard / counter",
+        "visible": true
+      },
+      "component": {
+        "name": "counter",
+        "key": "12d421992f6c2d5b96aaa0a15e3923ceaf5f26f7",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I9185:18066;9185:18343;9185:18087",
+        "name": "Divider",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / mainSection / leftSlot / Divider",
+        "visible": true
+      },
+      "component": {
+        "name": "Divider",
+        "key": "9a5d1da792f490a81195f2e2df0fc3f02dbd0ae9",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I9185:18066;9185:18343;9185:18088",
+        "name": "categoryCard",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / mainSection / leftSlot / categoryCard",
+        "visible": true
+      },
+      "component": {
+        "name": "categoryCard",
+        "key": "ddfab20269871ef966fb25be77a120ab3be94b2c",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I9185:18066;9185:18343;9185:18088;8965:11524",
+        "name": "counter",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / mainSection / leftSlot / categoryCard / counter",
+        "visible": true
+      },
+      "component": {
+        "name": "counter",
+        "key": "c112ed76eb46ea95d2ac42caf1b0d8a311de9730",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I9185:18066;9185:18343;9185:18089",
+        "name": "categoryCard",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / mainSection / leftSlot / categoryCard",
+        "visible": true
+      },
+      "component": {
+        "name": "categoryCard",
+        "key": "bd3e28b2f72c5e24df449ff3dffae0e6b3e948b0",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I9185:18066;9185:18343;9185:18089;8965:11532",
+        "name": "counter",
+        "type": "INSTANCE",
+        "pageName": "     UI",
+        "path": "Section 2 / apollo-main-compact / mainSection / leftSlot / categoryCard / counter",
+        "visible": true
+      },
+      "component": {
+        "name": "counter",
+        "key": "12d421992f6c2d5b96aaa0a15e3923ceaf5f26f7",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "9185:18063",
+        "name": "Страница:      UI",
+        "type": "PAGE",
+        "pageName": "     UI",
+        "path": "     UI",
+        "visible": true
+      },
+      "kind": "missingThemeMode",
+      "recommendation": "Смени темизацию на Corp",
+      "component": null
+    }
+  ],
+  "componentContexts": [
+    {
+      "componentKey": "web-core.button",
+      "summary": "Button — семейство action controls. Apollo должен трактовать изменения Button variant как component property changes, а ручные изменения style/token/layout как layer customizations.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] Button",
+        "[D] Button_Inverted",
+        "[M] Button",
+        "[M] Button_Inverted",
+        "🔄 [D][Corporate] Button",
+        "🔄 [D][Corporate] Button_Inverted",
+        "🔄 [M][Corporate] Button",
+        "🔄 [M][Corporate] Button_Inverted",
+        "🔩 Addon",
+        "🔩 Addon"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*",
+          "variant.View",
+          "variant.Size",
+          "variant.Shape",
+          "variant.SingleIcon",
+          "variant.DisabledState"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent",
+          "layout.padding",
+          "layout.itemSpacing"
+        ],
+        "baselinePolicy": "Если component property изменилась, сравнивай ручные layer overrides с baseline текущего actual-состояния компонента, а не с исходным reference baseline.",
+        "slotProperties": [
+          "LeftAddon.variant.Type",
+          "RightAddon.variant.Type"
+        ],
+        "ordering": [
+          "component-property",
+          "slot-property",
+          "layer-property"
+        ]
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.View",
+            "variant.Size",
+            "variant.Shape",
+            "variant.SingleIcon",
+            "variant.DisabledState"
+          ],
+          "layerProperties": [
+            "fills",
+            "strokes",
+            "strokeWeight",
+            "cornerRadius",
+            "opacity",
+            "layout.padding",
+            "layout.itemSpacing",
+            "styles.text",
+            "typography"
+          ],
+          "dependencyPolicy": "При reset component property layer differences, вызванные только этой property, могут исчезнуть автоматически. Ручные layer overrides должны оставаться независимо сбрасываемыми, пока reset родительской property не уберёт их target state."
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    }
+  ]
+}
