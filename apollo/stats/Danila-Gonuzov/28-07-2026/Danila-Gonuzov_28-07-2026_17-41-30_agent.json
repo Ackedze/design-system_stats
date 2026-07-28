@@ -1,0 +1,564 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1623983682034249875-1785249690430-85p1ovgb:agent",
+  "sourceReportId": "apollo-1623983682034249875-1785249690430-85p1ovgb",
+  "generatedAt": "2026-07-28T14:41:30.430Z",
+  "suggestedFileName": "Danila-Gonuzov_28-07-2026_17-41-30_agent.json",
+  "user": {
+    "id": "1623983682034249875",
+    "name": "Danila Gonuzov",
+    "slug": "Danila-Gonuzov"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.1.62"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "🚧 Загрузка, скачивание, добавление :: Версия 4.0 :: 14.07.2026",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "iOS",
+    "startedAt": "2026-07-28T14:41:24.849Z",
+    "finishedAt": "2026-07-28T14:41:30.430Z",
+    "durationMs": 5581,
+    "selection": [
+      {
+        "nodeId": "4042:148797",
+        "name": "0.0",
+        "nodeType": "FRAME",
+        "path": "Загрузка файлов iOS (Light) / 0.0",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 218,
+    "problemOccurrenceCount": 16,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 6,
+      "customStyles": 9,
+      "updates": 0,
+      "customizations": 1,
+      "localComponents": 0,
+      "detachedComponents": 0,
+      "presets": 0,
+      "technicalComponents": 0,
+      "currentComponents": 15,
+      "wrongChannel": 0,
+      "themization": 0
+    },
+    "includedFindingCount": 16,
+    "omittedCurrentComponentCount": 15
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with severity=error and matchKind=exact_component_rule for the same property/change.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 6,
+      "includedCount": 6,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 9,
+      "includedCount": 9,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "deprecatedStyles",
+      "severityHint": "medium",
+      "title": "Устаревший стиль",
+      "node": {
+        "id": "I4042:148804;12387:9683",
+        "name": "value",
+        "type": "TEXT",
+        "pageName": "✅  Загрузка, скачивание и добавление ::  Версия 3.3 27.02.2025",
+        "path": "Загрузка файлов iOS (Light) / 0.0 / conetnt / TextField / ContentGroup / InputGroup / InputContentGroup / value",
+        "visible": true
+      },
+      "style": {
+        "name": "light/text/primary",
+        "key": "6313f5ef73de1fb787861cd6e0408c77214b7898",
+        "library": "020 :: Colors BlueTint Light",
+        "sourceFile": "styles/020 _ Colors BlueTint Light.json"
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "deprecatedStyles",
+      "severityHint": "medium",
+      "title": "Устаревший стиль",
+      "node": {
+        "id": "I4042:148808;12387:9683",
+        "name": "value",
+        "type": "TEXT",
+        "pageName": "✅  Загрузка, скачивание и добавление ::  Версия 3.3 27.02.2025",
+        "path": "Загрузка файлов iOS (Light) / 0.0 / conetnt / TextField / ContentGroup / InputGroup / InputContentGroup / value",
+        "visible": true
+      },
+      "style": {
+        "name": "light/text/primary",
+        "key": "6313f5ef73de1fb787861cd6e0408c77214b7898",
+        "library": "020 :: Colors BlueTint Light",
+        "sourceFile": "styles/020 _ Colors BlueTint Light.json"
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "deprecatedStyles",
+      "severityHint": "medium",
+      "title": "Устаревший стиль",
+      "node": {
+        "id": "I4042:148818;11:18862;124:123113;124:123450;16934:1090",
+        "name": "icon",
+        "type": "VECTOR",
+        "pageName": "✅  Загрузка, скачивание и добавление ::  Версия 3.3 27.02.2025",
+        "path": "Загрузка файлов iOS (Light) / 0.0 / conetnt / AttachmentView / .Attachment / AttachmentIconView / .AttachmentIcon / IconView / .icon / Icon / exclamation / icon",
+        "visible": true
+      },
+      "style": {
+        "name": "light/graphic/negative",
+        "key": "07e514fb6f6387b9be35f334c0451313c377d8b7",
+        "library": "020 :: Colors BlueTint Light",
+        "sourceFile": "styles/020 _ Colors BlueTint Light.json"
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "deprecatedStyles",
+      "severityHint": "medium",
+      "title": "Устаревший стиль",
+      "node": {
+        "id": "I4042:148818;11:18769;6021:581939",
+        "name": "subtitle",
+        "type": "TEXT",
+        "pageName": "✅  Загрузка, скачивание и добавление ::  Версия 3.3 27.02.2025",
+        "path": "Загрузка файлов iOS (Light) / 0.0 / conetnt / AttachmentView / .Attachment / DataContent/default/false/false/double/String / DataContentContentGroup / MiddleContentGroup / subtitle",
+        "visible": true
+      },
+      "style": {
+        "name": "light/text/negative",
+        "key": "7622d2c9766f357779d042dcfecec3dc2482b4e9",
+        "library": "020 :: Colors BlueTint Light",
+        "sourceFile": "styles/020 _ Colors BlueTint Light.json"
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "deprecatedStyles",
+      "severityHint": "medium",
+      "title": "Устаревший стиль",
+      "node": {
+        "id": "I4042:148819;11:18862;124:123113;124:123450;16934:1090",
+        "name": "icon",
+        "type": "VECTOR",
+        "pageName": "✅  Загрузка, скачивание и добавление ::  Версия 3.3 27.02.2025",
+        "path": "Загрузка файлов iOS (Light) / 0.0 / conetnt / AttachmentView / .Attachment / AttachmentIconView / .AttachmentIcon / IconView / .icon / Icon / exclamation / icon",
+        "visible": true
+      },
+      "style": {
+        "name": "light/graphic/negative",
+        "key": "07e514fb6f6387b9be35f334c0451313c377d8b7",
+        "library": "020 :: Colors BlueTint Light",
+        "sourceFile": "styles/020 _ Colors BlueTint Light.json"
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "deprecatedStyles",
+      "severityHint": "medium",
+      "title": "Устаревший стиль",
+      "node": {
+        "id": "I4042:148819;11:18769;6021:581939",
+        "name": "subtitle",
+        "type": "TEXT",
+        "pageName": "✅  Загрузка, скачивание и добавление ::  Версия 3.3 27.02.2025",
+        "path": "Загрузка файлов iOS (Light) / 0.0 / conetnt / AttachmentView / .Attachment / DataContent/default/false/false/double/String / DataContentContentGroup / MiddleContentGroup / subtitle",
+        "visible": true
+      },
+      "style": {
+        "name": "light/text/negative",
+        "key": "7622d2c9766f357779d042dcfecec3dc2482b4e9",
+        "library": "020 :: Colors BlueTint Light",
+        "sourceFile": "styles/020 _ Colors BlueTint Light.json"
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4042:148799;13:266554;1209:389",
+        "name": "Wifi-path",
+        "type": "VECTOR",
+        "pageName": "✅  Загрузка, скачивание и добавление ::  Версия 3.3 27.02.2025",
+        "path": "Загрузка файлов iOS (Light) / 0.0 / header / NavigationBar / Default / Status Bar / content / Wifi / Wifi-path",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4042:148799;13:266554;1209:390",
+        "name": "Wifi-path",
+        "type": "VECTOR",
+        "pageName": "✅  Загрузка, скачивание и добавление ::  Версия 3.3 27.02.2025",
+        "path": "Загрузка файлов iOS (Light) / 0.0 / header / NavigationBar / Default / Status Bar / content / Wifi / Wifi-path",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4042:148799;13:266554;1209:391",
+        "name": "Wifi-path",
+        "type": "VECTOR",
+        "pageName": "✅  Загрузка, скачивание и добавление ::  Версия 3.3 27.02.2025",
+        "path": "Загрузка файлов iOS (Light) / 0.0 / header / NavigationBar / Default / Status Bar / content / Wifi / Wifi-path",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4042:148799;13:266554;1209:393",
+        "name": "Cellular-Connection-path",
+        "type": "VECTOR",
+        "pageName": "✅  Загрузка, скачивание и добавление ::  Версия 3.3 27.02.2025",
+        "path": "Загрузка файлов iOS (Light) / 0.0 / header / NavigationBar / Default / Status Bar / content / Cellular Connection / Cellular-Connection-path",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4042:148799;13:266554;1209:394",
+        "name": "Cellular-Connection-path",
+        "type": "VECTOR",
+        "pageName": "✅  Загрузка, скачивание и добавление ::  Версия 3.3 27.02.2025",
+        "path": "Загрузка файлов iOS (Light) / 0.0 / header / NavigationBar / Default / Status Bar / content / Cellular Connection / Cellular-Connection-path",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4042:148799;13:266554;1209:395",
+        "name": "Cellular-Connection-path",
+        "type": "VECTOR",
+        "pageName": "✅  Загрузка, скачивание и добавление ::  Версия 3.3 27.02.2025",
+        "path": "Загрузка файлов iOS (Light) / 0.0 / header / NavigationBar / Default / Status Bar / content / Cellular Connection / Cellular-Connection-path",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4042:148799;13:266554;1209:396",
+        "name": "Cellular-Connection-path",
+        "type": "VECTOR",
+        "pageName": "✅  Загрузка, скачивание и добавление ::  Версия 3.3 27.02.2025",
+        "path": "Загрузка файлов iOS (Light) / 0.0 / header / NavigationBar / Default / Status Bar / content / Cellular Connection / Cellular-Connection-path",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4042:148803;108014:106955;90398:139650;13:243389;13:243383",
+        "name": "Knob_left",
+        "type": "VECTOR",
+        "pageName": "✅  Загрузка, скачивание и добавление ::  Версия 3.3 27.02.2025",
+        "path": "Загрузка файлов iOS (Light) / 0.0 / conetnt / SelectionWrapper / SelectionWrapper / VerticalPaddingsGroup / ContentGroup / ❌Switch / .❌Switch / Knob_left",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4042:148803;108014:106955;90398:139650;13:243389;13:243383",
+        "name": "Knob_left",
+        "type": "VECTOR",
+        "pageName": "✅  Загрузка, скачивание и добавление ::  Версия 3.3 27.02.2025",
+        "path": "Загрузка файлов iOS (Light) / 0.0 / conetnt / SelectionWrapper / SelectionWrapper / VerticalPaddingsGroup / ContentGroup / ❌Switch / .❌Switch / Knob_left",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I4042:148799;13:266558;13:270442",
+        "name": "chevron-left-shift-left",
+        "type": "INSTANCE",
+        "pageName": "✅  Загрузка, скачивание и добавление ::  Версия 3.3 27.02.2025",
+        "path": "Загрузка файлов iOS (Light) / 0.0 / header / NavigationBar / Default / .NavBar / .Accessory / Glyph / chevron-left-shift-left",
+        "visible": true
+      },
+      "component": {
+        "name": "chevron-left-shift-left",
+        "key": "21a5bd6b97986412959b36554720c67002083bc2",
+        "library": "Icons",
+        "sourceFile": "icons/Icons -- ios.json"
+      },
+      "variant": {
+        "name": "Size=m",
+        "key": "21a5bd6b97986412959b36554720c67002083bc2"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I4042:148799;13:266558;13:270442;18233:1152",
+            "name": "Vector",
+            "type": null,
+            "pageName": "✅  Загрузка, скачивание и добавление ::  Версия 3.3 27.02.2025",
+            "path": "Size=m / Vector",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #3EA2FF → neutral-translucent/1300",
+          "referenceValue": "#3EA2FF",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#3EA2FF",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#3EA2FF",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/2367:3",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "21a5bd6b97986412959b36554720c67002083bc2",
+            "actualNestedOwnerPath": "Size=m",
+            "actualNestedOwnerRelativePath": "Vector",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "m"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "4042:148799",
+              "nodeName": "NavigationBar / Default",
+              "tokenId": "VariableID:14ac29210fc546f67acfa8e0dfd252c210d0c78b/2522:13",
+              "tokenName": "base-bg/primary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    }
+  ],
+  "componentContexts": []
+}
