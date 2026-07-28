@@ -1,0 +1,1261 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1577609615361178639-1785244989230-dozanpxa:agent",
+  "sourceReportId": "apollo-1577609615361178639-1785244989230-dozanpxa",
+  "generatedAt": "2026-07-28T13:23:09.230Z",
+  "suggestedFileName": "Elena-Plevina_28-07-2026_16-23-09_agent.json",
+  "user": {
+    "id": "1577609615361178639",
+    "name": "Elena Plevina",
+    "slug": "Elena-Plevina"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.1.62"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "[W] Открытие счёта КИБ",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "startedAt": "2026-07-28T13:23:07.769Z",
+    "finishedAt": "2026-07-28T13:23:09.230Z",
+    "durationMs": 1461,
+    "selection": [
+      {
+        "nodeId": "10478:118302",
+        "name": "[D] CorporatePage",
+        "nodeType": "FRAME",
+        "path": "Выбрана одна компания / Заполнение заявки / [D] CorporatePage",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 30,
+    "problemOccurrenceCount": 13,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 5,
+      "updates": 0,
+      "customizations": 6,
+      "localComponents": 0,
+      "detachedComponents": 0,
+      "presets": 1,
+      "technicalComponents": 0,
+      "currentComponents": 25,
+      "wrongChannel": 0,
+      "themization": 1
+    },
+    "includedFindingCount": 13,
+    "omittedCurrentComponentCount": 25
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with severity=error and matchKind=exact_component_rule for the same property/change.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 5,
+      "includedCount": 5,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 6,
+      "includedCount": 6,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "10478:118302",
+        "name": "[D] CorporatePage",
+        "type": "FRAME",
+        "pageName": "↳ Юрик-Юрик 2026",
+        "path": "Выбрана одна компания / Заполнение заявки / [D] CorporatePage",
+        "visible": true
+      },
+      "style": {
+        "name": "dc20fcedbd330ee715c0a3f6c7d3089862a48cfb",
+        "key": "dc20fcedbd330ee715c0a3f6c7d3089862a48cfb",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "10478:118313",
+        "name": "🔒 [D] SpotlightBar",
+        "type": "INSTANCE",
+        "pageName": "↳ Юрик-Юрик 2026",
+        "path": "Выбрана одна компания / Заполнение заявки / [D] CorporatePage / 🔒 [D] SpotlightBar",
+        "visible": true
+      },
+      "style": {
+        "name": "Spotlight/Bar Up Shadow",
+        "key": "30aa972ba2d52e52fc7579e4a0300f44b86487e3",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Inner shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I10478:118313;80:27656;80:27143;79:26990;79:26974",
+        "name": "Spot",
+        "type": "ELLIPSE",
+        "pageName": "↳ Юрик-Юрик 2026",
+        "path": "Выбрана одна компания / Заполнение заявки / [D] CorporatePage / 🔒 [D] SpotlightBar / Left / SpotlightLogo / Icon 28 / 🔩 Shadow / Spot",
+        "visible": true
+      },
+      "style": {
+        "name": "Слой (Layer blur)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Слой (Layer blur)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I10478:118313;80:27656;80:27143;79:26950",
+        "name": "🔩 Shape",
+        "type": "INSTANCE",
+        "pageName": "↳ Юрик-Юрик 2026",
+        "path": "Выбрана одна компания / Заполнение заявки / [D] CorporatePage / 🔒 [D] SpotlightBar / Left / SpotlightLogo / Icon 28 / 🔩 Shape",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Inner shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Inner shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I10478:118313;80:27656;80:27143;79:26950;79:26775",
+        "name": "Mask",
+        "type": "VECTOR",
+        "pageName": "↳ Юрик-Юрик 2026",
+        "path": "Выбрана одна компания / Заполнение заявки / [D] CorporatePage / 🔒 [D] SpotlightBar / Left / SpotlightLogo / Icon 28 / 🔩 Shape / Mask",
+        "visible": true
+      },
+      "style": {
+        "name": "Spotlight/logo-bg",
+        "key": "03c3f9304ce99af99e5f761c9a6bb90cc7f46f65",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "10478:119552",
+        "name": "Skeleton",
+        "type": "INSTANCE",
+        "pageName": "↳ Юрик-Юрик 2026",
+        "path": "Выбрана одна компания / Заполнение заявки / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / content / content / Skeleton",
+        "visible": true
+      },
+      "component": {
+        "name": "Skeleton",
+        "key": "814d646b9eaa27ce5768d350ebb25a9122ec0550",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Skeleton.json"
+      },
+      "variant": {
+        "name": "Skeleton",
+        "key": "814d646b9eaa27ce5768d350ebb25a9122ec0550"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "10478:119552",
+            "name": "Skeleton",
+            "type": null,
+            "pageName": "↳ Юрик-Юрик 2026",
+            "path": "Skeleton",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 2 → 16",
+          "referenceValue": "2",
+          "actualValue": "16",
+          "referenceRawValue": "2",
+          "actualRawValue": "16",
+          "referenceDisplayValue": "2",
+          "actualDisplayValue": "16",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "814d646b9eaa27ce5768d350ebb25a9122ec0550",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": null,
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "10478:119546",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.skeleton.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "10478:123731",
+        "name": "Skeleton",
+        "type": "INSTANCE",
+        "pageName": "↳ Юрик-Юрик 2026",
+        "path": "Выбрана одна компания / Заполнение заявки / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / content / content / Skeleton",
+        "visible": true
+      },
+      "component": {
+        "name": "Skeleton",
+        "key": "814d646b9eaa27ce5768d350ebb25a9122ec0550",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Skeleton.json"
+      },
+      "variant": {
+        "name": "Skeleton",
+        "key": "814d646b9eaa27ce5768d350ebb25a9122ec0550"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "10478:123731",
+            "name": "Skeleton",
+            "type": null,
+            "pageName": "↳ Юрик-Юрик 2026",
+            "path": "Skeleton",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 2 → 16",
+          "referenceValue": "2",
+          "actualValue": "16",
+          "referenceRawValue": "2",
+          "actualRawValue": "16",
+          "referenceDisplayValue": "2",
+          "actualDisplayValue": "16",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "814d646b9eaa27ce5768d350ebb25a9122ec0550",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": null,
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "10478:119546",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.skeleton.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "10478:119554",
+        "name": "Skeleton",
+        "type": "INSTANCE",
+        "pageName": "↳ Юрик-Юрик 2026",
+        "path": "Выбрана одна компания / Заполнение заявки / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / content / content / Skeleton",
+        "visible": true
+      },
+      "component": {
+        "name": "Skeleton",
+        "key": "814d646b9eaa27ce5768d350ebb25a9122ec0550",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Skeleton.json"
+      },
+      "variant": {
+        "name": "Skeleton",
+        "key": "814d646b9eaa27ce5768d350ebb25a9122ec0550"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "10478:119554",
+            "name": "Skeleton",
+            "type": null,
+            "pageName": "↳ Юрик-Юрик 2026",
+            "path": "Skeleton",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 2 → 16",
+          "referenceValue": "2",
+          "actualValue": "16",
+          "referenceRawValue": "2",
+          "actualRawValue": "16",
+          "referenceDisplayValue": "2",
+          "actualDisplayValue": "16",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "814d646b9eaa27ce5768d350ebb25a9122ec0550",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": null,
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "10478:119546",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.skeleton.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "10478:119556",
+        "name": "Skeleton",
+        "type": "INSTANCE",
+        "pageName": "↳ Юрик-Юрик 2026",
+        "path": "Выбрана одна компания / Заполнение заявки / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / content / content / Skeleton",
+        "visible": true
+      },
+      "component": {
+        "name": "Skeleton",
+        "key": "814d646b9eaa27ce5768d350ebb25a9122ec0550",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Skeleton.json"
+      },
+      "variant": {
+        "name": "Skeleton",
+        "key": "814d646b9eaa27ce5768d350ebb25a9122ec0550"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "10478:119556",
+            "name": "Skeleton",
+            "type": null,
+            "pageName": "↳ Юрик-Юрик 2026",
+            "path": "Skeleton",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 2 → 16",
+          "referenceValue": "2",
+          "actualValue": "16",
+          "referenceRawValue": "2",
+          "actualRawValue": "16",
+          "referenceDisplayValue": "2",
+          "actualDisplayValue": "16",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "814d646b9eaa27ce5768d350ebb25a9122ec0550",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": null,
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "10478:119546",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.skeleton.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "10478:119558",
+        "name": "Skeleton",
+        "type": "INSTANCE",
+        "pageName": "↳ Юрик-Юрик 2026",
+        "path": "Выбрана одна компания / Заполнение заявки / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / content / content / Skeleton",
+        "visible": true
+      },
+      "component": {
+        "name": "Skeleton",
+        "key": "814d646b9eaa27ce5768d350ebb25a9122ec0550",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Skeleton.json"
+      },
+      "variant": {
+        "name": "Skeleton",
+        "key": "814d646b9eaa27ce5768d350ebb25a9122ec0550"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "10478:119558",
+            "name": "Skeleton",
+            "type": null,
+            "pageName": "↳ Юрик-Юрик 2026",
+            "path": "Skeleton",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 2 → 16",
+          "referenceValue": "2",
+          "actualValue": "16",
+          "referenceRawValue": "2",
+          "actualRawValue": "16",
+          "referenceDisplayValue": "2",
+          "actualDisplayValue": "16",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "814d646b9eaa27ce5768d350ebb25a9122ec0550",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": null,
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "10478:119546",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.skeleton.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "10478:118313",
+        "name": "🔒 [D] SpotlightBar",
+        "type": "INSTANCE",
+        "pageName": "↳ Юрик-Юрик 2026",
+        "path": "Выбрана одна компания / Заполнение заявки / [D] CorporatePage / 🔒 [D] SpotlightBar",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] SpotlightBar",
+        "key": "8e339a000bd5e9a39153afb381110d84e1bf193d",
+        "library": "Web _ Corp Limited Components (не подключать)",
+        "sourceFile": "web/components/web-corp-limited-components-не-подключать/Web _ Corp Limited Components (не подключать) -- SpotlightBar [D].json"
+      },
+      "variant": {
+        "name": "👽 Tablet=false",
+        "key": "8e339a000bd5e9a39153afb381110d84e1bf193d"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "10478:118313",
+            "name": "🔒 [D] SpotlightBar",
+            "type": null,
+            "pageName": "↳ Юрик-Юрик 2026",
+            "path": "👽 Tablet=false",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "styles.fill",
+          "message": "Стиль заливка: S:27ba925a81fd8c8a03755940253f21d1c9099141,3:5352 → S:27ba925a81fd8c8a03755940253f21d1c9099141,317:32",
+          "referenceValue": "S:27ba925a81fd8c8a03755940253f21d1c9099141,3:5352",
+          "actualValue": "S:27ba925a81fd8c8a03755940253f21d1c9099141,317:32",
+          "referenceRawValue": "S:27ba925a81fd8c8a03755940253f21d1c9099141,3:5352",
+          "actualRawValue": "S:27ba925a81fd8c8a03755940253f21d1c9099141,317:32",
+          "referenceDisplayValue": "S:27ba925a81fd8c8a03755940253f21d1c9099141,3:5352",
+          "actualDisplayValue": "S:27ba925a81fd8c8a03755940253f21d1c9099141,317:32",
+          "referenceResource": {
+            "name": "S:27ba925a81fd8c8a03755940253f21d1c9099141,3:5352",
+            "key": "27ba925a81fd8c8a03755940253f21d1c9099141",
+            "library": null,
+            "sourceFile": null
+          },
+          "actualResource": {
+            "name": "S:27ba925a81fd8c8a03755940253f21d1c9099141,317:32",
+            "key": "27ba925a81fd8c8a03755940253f21d1c9099141",
+            "library": null,
+            "sourceFile": null
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "8e339a000bd5e9a39153afb381110d84e1bf193d",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "👽 Tablet": "false"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "10478:118302",
+              "nodeName": "[D] CorporatePage",
+              "tokenId": "VariableID:dc20fcedbd330ee715c0a3f6c7d3089862a48cfb/6:31",
+              "tokenName": "VariableID:dc20fcedbd330ee715c0a3f6c7d3089862a48cfb/6:31",
+              "color": "#E7E8EB"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I10478:118313;80:27656;80:27143;79:26990;79:26974",
+            "name": "Spot",
+            "type": null,
+            "pageName": "↳ Юрик-Юрик 2026",
+            "path": "👽 Tablet=false / Left / SpotlightLogo / Icon 28 / 🔩 Shadow / Spot",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "styles.fill",
+          "message": "Стиль заливка: S:97ea4583f94ddf4e1b6c7e5470815fead9b7dcef,79:26976 → S:97ea4583f94ddf4e1b6c7e5470815fead9b7dcef,317:36",
+          "referenceValue": "S:97ea4583f94ddf4e1b6c7e5470815fead9b7dcef,79:26976",
+          "actualValue": "S:97ea4583f94ddf4e1b6c7e5470815fead9b7dcef,317:36",
+          "referenceRawValue": "S:97ea4583f94ddf4e1b6c7e5470815fead9b7dcef,79:26976",
+          "actualRawValue": "S:97ea4583f94ddf4e1b6c7e5470815fead9b7dcef,317:36",
+          "referenceDisplayValue": "S:97ea4583f94ddf4e1b6c7e5470815fead9b7dcef,79:26976",
+          "actualDisplayValue": "S:97ea4583f94ddf4e1b6c7e5470815fead9b7dcef,317:36",
+          "referenceResource": {
+            "name": "S:97ea4583f94ddf4e1b6c7e5470815fead9b7dcef,79:26976",
+            "key": "97ea4583f94ddf4e1b6c7e5470815fead9b7dcef",
+            "library": null,
+            "sourceFile": null
+          },
+          "actualResource": {
+            "name": "S:97ea4583f94ddf4e1b6c7e5470815fead9b7dcef,317:36",
+            "key": "97ea4583f94ddf4e1b6c7e5470815fead9b7dcef",
+            "library": null,
+            "sourceFile": null
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "3475bbb6551e690f148b27c38a7709c941a86517",
+            "actualNestedOwnerPath": "👽 Tablet=false / Left / SpotlightLogo / Icon 28 / 🔩 Shadow",
+            "actualNestedOwnerRelativePath": "Spot",
+            "nestedOwnerComponentKey": "3475bbb6551e690f148b27c38a7709c941a86517",
+            "nestedOwnerComponentRole": "Part",
+            "nestedOwnerPath": "👽 Tablet=false / Left / SpotlightLogo / Icon 28 / 🔩 Shadow",
+            "nestedOwnerRelativePath": "Spot",
+            "actualVariantProperties": null,
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "10478:118302",
+              "nodeName": "[D] CorporatePage",
+              "tokenId": "VariableID:dc20fcedbd330ee715c0a3f6c7d3089862a48cfb/6:31",
+              "tokenName": "VariableID:dc20fcedbd330ee715c0a3f6c7d3089862a48cfb/6:31",
+              "color": "#E7E8EB"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I10478:118313;80:27656;80:27143;79:26950;79:26775",
+            "name": "Mask",
+            "type": null,
+            "pageName": "↳ Юрик-Юрик 2026",
+            "path": "👽 Tablet=false / Left / SpotlightLogo / Icon 28 / 🔩 Shape / Mask",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "styles.fill",
+          "message": "Стиль заливка: S:03c3f9304ce99af99e5f761c9a6bb90cc7f46f65,79:26278 → S:03c3f9304ce99af99e5f761c9a6bb90cc7f46f65,318:41",
+          "referenceValue": "S:03c3f9304ce99af99e5f761c9a6bb90cc7f46f65,79:26278",
+          "actualValue": "S:03c3f9304ce99af99e5f761c9a6bb90cc7f46f65,318:41",
+          "referenceRawValue": "S:03c3f9304ce99af99e5f761c9a6bb90cc7f46f65,79:26278",
+          "actualRawValue": "S:03c3f9304ce99af99e5f761c9a6bb90cc7f46f65,318:41",
+          "referenceDisplayValue": "S:03c3f9304ce99af99e5f761c9a6bb90cc7f46f65,79:26278",
+          "actualDisplayValue": "S:03c3f9304ce99af99e5f761c9a6bb90cc7f46f65,318:41",
+          "referenceResource": {
+            "name": "S:03c3f9304ce99af99e5f761c9a6bb90cc7f46f65,79:26278",
+            "key": "03c3f9304ce99af99e5f761c9a6bb90cc7f46f65",
+            "library": null,
+            "sourceFile": null
+          },
+          "actualResource": {
+            "name": "S:03c3f9304ce99af99e5f761c9a6bb90cc7f46f65,318:41",
+            "key": "03c3f9304ce99af99e5f761c9a6bb90cc7f46f65",
+            "library": null,
+            "sourceFile": null
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "3a364d15f42d938b586fb099ca62d61655ed5ddc",
+            "actualNestedOwnerPath": "👽 Tablet=false / Left / SpotlightLogo / Icon 28 / 🔩 Shape",
+            "actualNestedOwnerRelativePath": "Mask",
+            "nestedOwnerComponentKey": "3a364d15f42d938b586fb099ca62d61655ed5ddc",
+            "nestedOwnerComponentRole": "Part",
+            "nestedOwnerPath": "👽 Tablet=false / Left / SpotlightLogo / Icon 28 / 🔩 Shape",
+            "nestedOwnerRelativePath": "Mask",
+            "actualVariantProperties": null,
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "10478:118302",
+              "nodeName": "[D] CorporatePage",
+              "tokenId": "VariableID:dc20fcedbd330ee715c0a3f6c7d3089862a48cfb/6:31",
+              "tokenName": "VariableID:dc20fcedbd330ee715c0a3f6c7d3089862a48cfb/6:31",
+              "color": "#E7E8EB"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I10478:118313;80:27656;80:27150",
+            "name": "Label",
+            "type": null,
+            "pageName": "↳ Юрик-Юрик 2026",
+            "path": "👽 Tablet=false / Left / SpotlightLogo / Label / Label",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "styles.fill",
+          "message": "Стиль заливка: S:33f6edfb0cad69840d6d898e3477c2f0c95529f7,80:27155 → S:33f6edfb0cad69840d6d898e3477c2f0c95529f7,318:43",
+          "referenceValue": "S:33f6edfb0cad69840d6d898e3477c2f0c95529f7,80:27155",
+          "actualValue": "S:33f6edfb0cad69840d6d898e3477c2f0c95529f7,318:43",
+          "referenceRawValue": "S:33f6edfb0cad69840d6d898e3477c2f0c95529f7,80:27155",
+          "actualRawValue": "S:33f6edfb0cad69840d6d898e3477c2f0c95529f7,318:43",
+          "referenceDisplayValue": "S:33f6edfb0cad69840d6d898e3477c2f0c95529f7,80:27155",
+          "actualDisplayValue": "S:33f6edfb0cad69840d6d898e3477c2f0c95529f7,318:43",
+          "referenceResource": {
+            "name": "S:33f6edfb0cad69840d6d898e3477c2f0c95529f7,80:27155",
+            "key": "33f6edfb0cad69840d6d898e3477c2f0c95529f7",
+            "library": null,
+            "sourceFile": null
+          },
+          "actualResource": {
+            "name": "S:33f6edfb0cad69840d6d898e3477c2f0c95529f7,318:43",
+            "key": "33f6edfb0cad69840d6d898e3477c2f0c95529f7",
+            "library": null,
+            "sourceFile": null
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "67b5851e52273dd47708e66194bfcbac0ca4e365",
+            "actualNestedOwnerPath": "👽 Tablet=false / Left / SpotlightLogo",
+            "actualNestedOwnerRelativePath": "Label / Label",
+            "nestedOwnerComponentKey": "67b5851e52273dd47708e66194bfcbac0ca4e365",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "👽 Tablet=false / Left / SpotlightLogo",
+            "nestedOwnerRelativePath": "Label / Label",
+            "actualVariantProperties": {
+              "Size": "28"
+            },
+            "referenceVariantProperties": {
+              "Size": "28"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "10478:118302",
+              "nodeName": "[D] CorporatePage",
+              "tokenId": "VariableID:dc20fcedbd330ee715c0a3f6c7d3089862a48cfb/6:31",
+              "tokenName": "VariableID:dc20fcedbd330ee715c0a3f6c7d3089862a48cfb/6:31",
+              "color": "#E7E8EB"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "10478:118313",
+        "name": "🔒 [D] SpotlightBar",
+        "type": "INSTANCE",
+        "pageName": "↳ Юрик-Юрик 2026",
+        "path": "Выбрана одна компания / Заполнение заявки / [D] CorporatePage / 🔒 [D] SpotlightBar",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] SpotlightBar",
+        "key": "8e339a000bd5e9a39153afb381110d84e1bf193d",
+        "library": "Web _ Corp Limited Components (не подключать)",
+        "sourceFile": "web/components/web-corp-limited-components-не-подключать/Web _ Corp Limited Components (не подключать) -- SpotlightBar [D].json"
+      },
+      "variant": {
+        "name": "👽 Tablet=false",
+        "key": "8e339a000bd5e9a39153afb381110d84e1bf193d"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "10478:118302",
+        "name": "Страница: ↳ Юрик-Юрик 2026",
+        "type": "PAGE",
+        "pageName": "↳ Юрик-Юрик 2026",
+        "path": "↳ Юрик-Юрик 2026",
+        "visible": true
+      },
+      "kind": "missingThemeMode",
+      "recommendation": "Смени темизацию на Corp",
+      "component": null
+    }
+  ],
+  "componentContexts": [
+    {
+      "componentKey": "web-core.skeleton",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] Skeleton_SystemTitle",
+        "[D] Skeleton_SystemTitle_Inverted",
+        "[M] Skeleton_SystemTitle",
+        "[M] Skeleton_SystemTitle_Inverted",
+        "Skeleton_Text",
+        "Skeleton_Text_Inverted",
+        "Skeleton",
+        "Skeleton_Inverted"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web.neuro-logo",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "Icon 28",
+        "Icon 32",
+        "Icon 36",
+        "Icon 40",
+        "NeuroLogo",
+        "🔩 Magnifier/20",
+        "🔩 Shadow",
+        "🔩 Shape"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web.spotlight-bar",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔒 [D] SpotlightBar"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "8bc7f3ef78fd020085203e9ba738d7e791208f32",
+          "name": "🔒 [D] SpotlightBar",
+          "purpose": "FigmaOnly – такого компонента в ДС не существует, это пресет для дизайна",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    }
+  ]
+}
