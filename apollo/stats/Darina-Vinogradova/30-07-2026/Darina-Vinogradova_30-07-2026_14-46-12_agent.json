@@ -1,0 +1,3948 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1524705623793347474-1785411972502-w9p86bkw:agent",
+  "sourceReportId": "apollo-1524705623793347474-1785411972502-w9p86bkw",
+  "generatedAt": "2026-07-30T11:46:12.502Z",
+  "suggestedFileName": "Darina-Vinogradova_30-07-2026_14-46-12_agent.json",
+  "user": {
+    "id": "1524705623793347474",
+    "name": "Darina Vinogradova",
+    "slug": "Darina-Vinogradova"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.1.62"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "[W] Альфа-Селлер Кредит",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "startedAt": "2026-07-30T11:45:43.197Z",
+    "finishedAt": "2026-07-30T11:46:12.502Z",
+    "durationMs": 29305,
+    "selection": [
+      {
+        "nodeId": "18904:471401",
+        "name": "[D] CorporatePage",
+        "nodeType": "FRAME",
+        "path": "[D] CorporatePage",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 184,
+    "problemOccurrenceCount": 39,
+    "categoryCounts": {
+      "deprecatedComponents": 3,
+      "deprecatedStyles": 0,
+      "customStyles": 0,
+      "updates": 15,
+      "customizations": 1,
+      "localComponents": 2,
+      "detachedComponents": 0,
+      "presets": 1,
+      "technicalComponents": 4,
+      "currentComponents": 140,
+      "wrongChannel": 0,
+      "themization": 13
+    },
+    "includedFindingCount": 39,
+    "omittedCurrentComponentCount": 140
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with severity=error and matchKind=exact_component_rule for the same property/change.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 3,
+      "includedCount": 3,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 15,
+      "includedCount": 15,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 2,
+      "includedCount": 2,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 4,
+      "includedCount": 4,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 13,
+      "includedCount": 13,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "deprecatedComponents",
+      "severityHint": "high",
+      "title": "Устаревший компонент",
+      "node": {
+        "id": "I18904:471406;135096:147276;18904:471421",
+        "name": "Spacers",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Spacers",
+        "visible": true
+      },
+      "component": {
+        "name": "Spacers",
+        "key": "a335143ef0c4196f0a68bb5f843a38aa1aecf86b",
+        "library": "Web :: DEPRECATED CORP (не подключать)",
+        "sourceFile": "web/components/web-deprecated-corp-не-подключать/Web _ DEPRECATED CORP (не подключать) -- Отступы и сетка.json"
+      },
+      "variant": {
+        "name": "Orientation=Horizontal, Size=2xl | 32px",
+        "key": "a335143ef0c4196f0a68bb5f843a38aa1aecf86b"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "deprecatedComponents",
+      "severityHint": "high",
+      "title": "Устаревший компонент",
+      "node": {
+        "id": "I18904:471406;135096:147276;19269:364876;19269:358135;1:8837",
+        "name": "XXS (32)",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / Forms / Content / nav-btn / XXS (32)",
+        "visible": true
+      },
+      "component": {
+        "name": "❌ [DEPRECATED] XXS (32)",
+        "key": "4bc6aae9abe644cc7eeb84f8b27e18d5851743c2",
+        "library": "Web :: DEPRECATED CORP (не подключать)",
+        "sourceFile": "web/components/web-deprecated-corp-не-подключать/Web _ DEPRECATED CORP (не подключать) -- Кнопка.json"
+      },
+      "variant": {
+        "name": "Type=Slider, State=Normal, Text=Off, Icon=On, Picker=Off",
+        "key": "4bc6aae9abe644cc7eeb84f8b27e18d5851743c2"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "deprecatedComponents",
+      "severityHint": "high",
+      "title": "Устаревший компонент",
+      "node": {
+        "id": "I18904:471406;135096:147276;18904:471456;16997:998520;16997:868395;4474:1516",
+        "name": "❌  Line",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical / Indicator / ❌  Line",
+        "visible": true
+      },
+      "component": {
+        "name": "❌  Line",
+        "key": "4c3ffbe377203a11636eab13a4cfc7fe556cdd89",
+        "library": "Web _ Core Misc",
+        "sourceFile": "web/components/web-core/misc/Web _ Core Misc -- Steps.json"
+      },
+      "variant": {
+        "name": "Filled=False",
+        "key": "4c3ffbe377203a11636eab13a4cfc7fe556cdd89"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I18904:471406;135096:147276;19269:364876;19269:358124",
+        "name": "🔄 [D][Corporate] SliderInput",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / Forms / Content / 🔄 [D][Corporate] SliderInput",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] SliderInput",
+        "key": "527bb65adbc5b5b9a029f6bdc5f3d58cb94ba14d",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- SliderInput.json"
+      },
+      "variant": {
+        "name": "Size=56, FilledState=True, ActiveState=False, DisabledState=False, ErrorState=False, OuterLabel=False",
+        "key": "527bb65adbc5b5b9a029f6bdc5f3d58cb94ba14d"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I18904:471406;135096:147276;19269:364876;19269:358140",
+        "name": "🔄 [D][Corporate] TagGroup",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / Forms / Content / 🔄 [D][Corporate] TagGroup",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] TagGroup",
+        "key": "6a389e294b72d33f64b97cfe74cdb749c54b28d8",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- TagGroup.json"
+      },
+      "variant": {
+        "name": "Size=32, ErrorState=False",
+        "key": "6a389e294b72d33f64b97cfe74cdb749c54b28d8"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I18904:471406;135096:147276;19269:364876;19269:358140;34205:27069",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / Forms / Content / 🔄 [D][Corporate] TagGroup / Items / 🔄 [D][Corporate] Tag",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Tag",
+        "key": "d698d03f5bbcc9bfbb2175da88abd0de89072639",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Tag.json"
+      },
+      "variant": {
+        "name": "View=Filled, Size=32, Shape=Rectangular, SelectedState=False, DisabledState=False",
+        "key": "d698d03f5bbcc9bfbb2175da88abd0de89072639"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I18904:471406;135096:147276;19269:364876;19269:358140;34205:27070",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / Forms / Content / 🔄 [D][Corporate] TagGroup / Items / 🔄 [D][Corporate] Tag",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Tag",
+        "key": "d698d03f5bbcc9bfbb2175da88abd0de89072639",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Tag.json"
+      },
+      "variant": {
+        "name": "View=Filled, Size=32, Shape=Rectangular, SelectedState=False, DisabledState=False",
+        "key": "d698d03f5bbcc9bfbb2175da88abd0de89072639"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I18904:471406;135096:147276;19269:364876;19269:358140;34205:27071",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / Forms / Content / 🔄 [D][Corporate] TagGroup / Items / 🔄 [D][Corporate] Tag",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Tag",
+        "key": "d698d03f5bbcc9bfbb2175da88abd0de89072639",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Tag.json"
+      },
+      "variant": {
+        "name": "View=Filled, Size=32, Shape=Rectangular, SelectedState=False, DisabledState=False",
+        "key": "d698d03f5bbcc9bfbb2175da88abd0de89072639"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I18904:471406;135096:147276;19269:364876;19269:358140;34205:27072",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / Forms / Content / 🔄 [D][Corporate] TagGroup / Items / 🔄 [D][Corporate] Tag",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Tag",
+        "key": "d698d03f5bbcc9bfbb2175da88abd0de89072639",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Tag.json"
+      },
+      "variant": {
+        "name": "View=Filled, Size=32, Shape=Rectangular, SelectedState=False, DisabledState=False",
+        "key": "d698d03f5bbcc9bfbb2175da88abd0de89072639"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I18904:471406;135096:147276;19269:364876;19269:358140;34205:27073",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / Forms / Content / 🔄 [D][Corporate] TagGroup / Items / 🔄 [D][Corporate] Tag",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Tag",
+        "key": "d698d03f5bbcc9bfbb2175da88abd0de89072639",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Tag.json"
+      },
+      "variant": {
+        "name": "View=Filled, Size=32, Shape=Rectangular, SelectedState=False, DisabledState=False",
+        "key": "d698d03f5bbcc9bfbb2175da88abd0de89072639"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I18904:471406;135096:147276;18904:471454;85781:50872",
+        "name": "🔄 [D][Corporate] Button",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / Forms / ButtonGroup / 🔄 [D][Corporate] Button",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Button",
+        "key": "829972babc6855a956b04663692d83d166082090",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Button.json"
+      },
+      "variant": {
+        "name": "View=Primary, Size=56, Shape=Rectangular, SingleIcon=False, DisabledState=False",
+        "key": "829972babc6855a956b04663692d83d166082090"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I18904:471406;135096:147276;18904:471454;85781:50873",
+        "name": "🔄 [D][Corporate] Button",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / Forms / ButtonGroup / 🔄 [D][Corporate] Button",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Button",
+        "key": "36e79c36f85125a0d9ea94726764a6a98f61a103",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Button.json"
+      },
+      "variant": {
+        "name": "View=Secondary, Size=56, Shape=Rectangular, SingleIcon=False, DisabledState=False",
+        "key": "36e79c36f85125a0d9ea94726764a6a98f61a103"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I18904:471406;135096:147276;18904:471456;16997:998520;16997:868395;4474:1645",
+        "name": "[D][Corporate] PureCell",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical / Content / [D][Corporate] PureCell",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] PureCell",
+        "key": "74efb09c57618b38759a89239de2605158cdc279",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- PureCell.json"
+      },
+      "variant": {
+        "name": "GraphicsSide=None",
+        "key": "74efb09c57618b38759a89239de2605158cdc279"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I18904:471406;135096:147276;18904:471456;16997:998520;16997:868395;4474:1645;215:15071",
+        "name": "RowTitle",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical / Content / [D][Corporate] PureCell / Content / Body / Main / Row / RowTitle",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 🔩 [D][Corporate] RowTitle",
+        "key": "31bf832dc500b119f05098d0c8c0dda90372e08f",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- PureCell.json"
+      },
+      "variant": {
+        "name": "Type=Text 16",
+        "key": "31bf832dc500b119f05098d0c8c0dda90372e08f"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I18904:471406;135096:147276;18904:471456;16997:998523;16997:868434;4474:1645",
+        "name": "🔄 [D][Corporate] PureCell",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical / Content / Content / 🔄 [D][Corporate] PureCell",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] PureCell",
+        "key": "74efb09c57618b38759a89239de2605158cdc279",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- PureCell.json"
+      },
+      "variant": {
+        "name": "GraphicsSide=None",
+        "key": "74efb09c57618b38759a89239de2605158cdc279"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I18904:471406;135096:147276;18904:471456;16997:998523;16997:868434;4474:1645;215:15071",
+        "name": "RowTitle",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical / Content / Content / 🔄 [D][Corporate] PureCell / Content / Body / Main / Row / RowTitle",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 🔩 [D][Corporate] RowTitle",
+        "key": "31bf832dc500b119f05098d0c8c0dda90372e08f",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- PureCell.json"
+      },
+      "variant": {
+        "name": "Type=Text 16",
+        "key": "31bf832dc500b119f05098d0c8c0dda90372e08f"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I18904:471406;135096:147276;18904:471456;16997:998524;16997:868434;4497:14417",
+        "name": "🔄 [D][Corporate] PureCell",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical / Content / 🔄 [D][Corporate] PureCell",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] PureCell",
+        "key": "74efb09c57618b38759a89239de2605158cdc279",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- PureCell.json"
+      },
+      "variant": {
+        "name": "GraphicsSide=None",
+        "key": "74efb09c57618b38759a89239de2605158cdc279"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I18904:471406;135096:147276;18904:471456;16997:998524;16997:868434;4497:14417;215:15071",
+        "name": "RowTitle",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical / Content / 🔄 [D][Corporate] PureCell / Content / Body / Main / Row / RowTitle",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 🔩 [D][Corporate] RowTitle",
+        "key": "31bf832dc500b119f05098d0c8c0dda90372e08f",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- PureCell.json"
+      },
+      "variant": {
+        "name": "Type=Text 16",
+        "key": "31bf832dc500b119f05098d0c8c0dda90372e08f"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "18904:471406",
+        "name": "[D] CorporateContent",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] CorporateContent",
+        "key": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateContent.json"
+      },
+      "variant": {
+        "name": "[D] CorporateContent",
+        "key": "a8d13cb6e1ae67a7296709f669238f41971c7197"
+      },
+      "comparisonIssues": [
+        "Нет данных для заливка в снапшоте для «[D] CorporateContent / [D] Body / Body / Forms / Content / Frame 2131328805 / [D] Card / Content / Head / Radio_20 / Content / Bg»",
+        "Нет данных для обводка в снапшоте для «[D] CorporateContent / [D] Body / Body / Forms / Content / Frame 2131328805 / [D] Card / Content / Head / Radio_20 / Content / Bg@@2»",
+        "Нет данных для толщины обводки в снапшоте для «[D] CorporateContent / [D] Body / Body / Forms / Content / Frame 2131328805 / [D] Card / Content / Head / Radio_20 / Content / Bg@@2»"
+      ],
+      "changes": [
+        {
+          "node": {
+            "id": "I18904:471406;135096:147276;19269:364876;19269:358123;406:281438",
+            "name": "💊Rulers / Side",
+            "type": null,
+            "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+            "path": "[D] CorporateContent / [D] Body / Body / Forms / Content / Spacers / 💊Rulers / Side",
+            "visible": true
+          },
+          "kind": "opacity",
+          "property": "opacity",
+          "message": "Прозрачность: 1 → 0",
+          "referenceValue": 1,
+          "actualValue": 0,
+          "referenceRawValue": 1,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 1,
+          "actualDisplayValue": 0,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "8d82004435ce6a515c9d78254202f9113210061f",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "0d07d91db245e10c616fadc04727d22a39127cba",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Body / Forms / Content / Spacers",
+            "actualNestedOwnerRelativePath": "💊Rulers / Side",
+            "nestedOwnerComponentKey": "8d82004435ce6a515c9d78254202f9113210061f",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Body / Forms / Content / Spacers / 💊Rulers / Side",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "Direction": "←"
+            },
+            "referenceVariantProperties": {
+              "Direction": "←"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "18904:471406",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web.documentation.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 70,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I18904:471406;135096:147276;19269:364876;19269:358123;406:281438;1:205;1:155",
+            "name": "_Value",
+            "type": null,
+            "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+            "path": "[D] CorporateContent / [D] Body / Body / Forms / Content / Spacers / 💊Rulers / Side / .Details / Body / _Value",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: rgba(244,82,82,1) → neutral_inverted/400",
+          "referenceValue": "rgba(244,82,82,1)",
+          "actualValue": "neutral_inverted/400",
+          "referenceRawValue": "rgba(244,82,82,1)",
+          "actualRawValue": "neutral_inverted/400",
+          "referenceDisplayValue": "rgba(244,82,82,1)",
+          "actualDisplayValue": "neutral_inverted/400",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral_inverted/400",
+            "key": "f589da42a8717db347d358f1c6eacd5bac01d03a",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:f589da42a8717db347d358f1c6eacd5bac01d03a/3541:150",
+            "key": "f589da42a8717db347d358f1c6eacd5bac01d03a",
+            "name": "neutral_inverted/400",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "97da616b91d664973b70f060b0c298addfd1dd45",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Body / Forms / Content / Spacers / 💊Rulers / Side / .Details / Body",
+            "actualNestedOwnerRelativePath": "_Value",
+            "nestedOwnerComponentKey": "97da616b91d664973b70f060b0c298addfd1dd45",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Body / Forms / Content / Spacers / 💊Rulers / Side / .Details / Body",
+            "nestedOwnerRelativePath": "_Value",
+            "actualVariantProperties": null,
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "18904:471406",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I18904:471406;135096:147276;19269:364876;19269:358123;406:281438;1:207;1:169",
+            "name": "Line",
+            "type": null,
+            "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+            "path": "[D] CorporateContent / [D] Body / Body / Forms / Content / Spacers / 💊Rulers / Side / .Details / Spacer_vert / Line",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: rgba(244,82,82,1) → neutral_inverted/400",
+          "referenceValue": "rgba(244,82,82,1)",
+          "actualValue": "neutral_inverted/400",
+          "referenceRawValue": "rgba(244,82,82,1)",
+          "actualRawValue": "neutral_inverted/400",
+          "referenceDisplayValue": "rgba(244,82,82,1)",
+          "actualDisplayValue": "neutral_inverted/400",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral_inverted/400",
+            "key": "f589da42a8717db347d358f1c6eacd5bac01d03a",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:f589da42a8717db347d358f1c6eacd5bac01d03a/3541:150",
+            "key": "f589da42a8717db347d358f1c6eacd5bac01d03a",
+            "name": "neutral_inverted/400",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "bc4d87d877c57dacdad405f8832d254a30ad6b18",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Body / Forms / Content / Spacers / 💊Rulers / Side / .Details / Spacer_vert",
+            "actualNestedOwnerRelativePath": "Line",
+            "nestedOwnerComponentKey": "bc4d87d877c57dacdad405f8832d254a30ad6b18",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Body / Forms / Content / Spacers / 💊Rulers / Side / .Details / Spacer_vert",
+            "nestedOwnerRelativePath": "Line",
+            "actualVariantProperties": null,
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "18904:471406",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I18904:471406;135096:147276;19269:364876;19269:358124;34298:121767;201:32229",
+            "name": "PinPosition",
+            "type": null,
+            "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+            "path": "[D] CorporateContent / [D] Body / Body / Forms / Content / 🔄 [D][Corporate] SliderInput / Slider / Fixer / Line / PinPosition",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.left",
+          "message": "Паддинг left: 80 → 370",
+          "referenceValue": 80,
+          "actualValue": 370,
+          "referenceRawValue": 80,
+          "actualRawValue": 370,
+          "referenceDisplayValue": 80,
+          "actualDisplayValue": 370,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "7a0280b70c172c642a319c726890d1360c3fba33",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Body / Forms / Content / 🔄 [D][Corporate] SliderInput / Slider",
+            "actualNestedOwnerRelativePath": "Fixer / Line / PinPosition",
+            "nestedOwnerComponentKey": "527bb65adbc5b5b9a029f6bdc5f3d58cb94ba14d",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Body / Forms / Content / 🔄 [D][Corporate] SliderInput",
+            "nestedOwnerRelativePath": "Slider / Fixer / Line / PinPosition",
+            "actualVariantProperties": null,
+            "referenceVariantProperties": {
+              "Size": "56",
+              "FilledState": "True",
+              "ActiveState": "False",
+              "DisabledState": "False",
+              "ErrorState": "False",
+              "OuterLabel": "False"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "18904:471406",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.slider-input.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I18904:471406;135096:147276;19269:364876;19269:358124;34298:121767;201:32230;190:35991",
+            "name": "pointer",
+            "type": null,
+            "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+            "path": "[D] CorporateContent / [D] Body / Body / Forms / Content / 🔄 [D][Corporate] SliderInput / Slider / Fixer / Line / PinPosition / 🔩 Pointer / pointer",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 0 → 30",
+          "referenceValue": 0,
+          "actualValue": "30",
+          "referenceRawValue": 0,
+          "actualRawValue": "30",
+          "referenceDisplayValue": 0,
+          "actualDisplayValue": "30",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "4bff6fea5856fb1ae27ab552e8fb2e50425dd72f",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Body / Forms / Content / 🔄 [D][Corporate] SliderInput / Slider / Fixer / Line / PinPosition / 🔩 Pointer",
+            "actualNestedOwnerRelativePath": "pointer",
+            "nestedOwnerComponentKey": "527bb65adbc5b5b9a029f6bdc5f3d58cb94ba14d",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Body / Forms / Content / 🔄 [D][Corporate] SliderInput",
+            "nestedOwnerRelativePath": "Slider / Fixer / Line / PinPosition / 🔩 Pointer / pointer",
+            "actualVariantProperties": null,
+            "referenceVariantProperties": {
+              "Size": "56",
+              "FilledState": "True",
+              "ActiveState": "False",
+              "DisabledState": "False",
+              "ErrorState": "False",
+              "OuterLabel": "False"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "18904:471406",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.slider.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I18904:471406;135096:147276;19269:364876;19269:358135;1:8837",
+            "name": "XXS (32)",
+            "type": null,
+            "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+            "path": "[D] CorporateContent / [D] Body / Body / Forms / Content / nav-btn / XXS (32)",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "styles.fill",
+          "message": "Стиль заливка: light/bg/primary → neutral-translucent/0",
+          "referenceValue": "light/bg/primary",
+          "actualValue": "neutral-translucent/0",
+          "referenceRawValue": "light/bg/primary",
+          "actualRawValue": "neutral-translucent/0",
+          "referenceDisplayValue": "light/bg/primary",
+          "actualDisplayValue": "neutral-translucent/0",
+          "referenceResource": {
+            "name": "light/bg/primary",
+            "key": "0dde0244163879ee5fbb5a859d45debb657ac76b",
+            "library": "010 :: Colors Indigo Light",
+            "sourceFile": "styles/010 _ Colors Indigo Light.json"
+          },
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "4bc6aae9abe644cc7eeb84f8b27e18d5851743c2",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "51fb82b1a58bcc8458e9b24ccb4dae393614d432",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Body / Forms / Content / nav-btn",
+            "actualNestedOwnerRelativePath": "XXS (32)",
+            "nestedOwnerComponentKey": "4bc6aae9abe644cc7eeb84f8b27e18d5851743c2",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Body / Forms / Content / nav-btn / XXS (32)",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "Type": "Slider",
+              "State": "Normal",
+              "Text": "Off",
+              "Icon": "On",
+              "Picker": "Off"
+            },
+            "referenceVariantProperties": {
+              "Type": "Slider",
+              "State": "Normal",
+              "Text": "Off",
+              "Icon": "On",
+              "Picker": "Off"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "18904:471406",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I18904:471406;135096:147276;19269:364876;19269:358135;1:8837",
+            "name": "XXS (32)",
+            "type": null,
+            "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+            "path": "[D] CorporateContent / [D] Body / Body / Forms / Content / nav-btn / XXS (32)",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "styles.stroke",
+          "message": "Стиль обводка: light/border/tertiary → neutral-translucent/100",
+          "referenceValue": "light/border/tertiary",
+          "actualValue": "neutral-translucent/100",
+          "referenceRawValue": "light/border/tertiary",
+          "actualRawValue": "neutral-translucent/100",
+          "referenceDisplayValue": "light/border/tertiary",
+          "actualDisplayValue": "neutral-translucent/100",
+          "referenceResource": {
+            "name": "light/border/tertiary",
+            "key": "a9f86f98ccca4076d61966719407dd40faf6f690",
+            "library": "010 :: Colors Indigo Light",
+            "sourceFile": "styles/010 _ Colors Indigo Light.json"
+          },
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "4bc6aae9abe644cc7eeb84f8b27e18d5851743c2",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "51fb82b1a58bcc8458e9b24ccb4dae393614d432",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Body / Forms / Content / nav-btn",
+            "actualNestedOwnerRelativePath": "XXS (32)",
+            "nestedOwnerComponentKey": "4bc6aae9abe644cc7eeb84f8b27e18d5851743c2",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Body / Forms / Content / nav-btn / XXS (32)",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "Type": "Slider",
+              "State": "Normal",
+              "Text": "Off",
+              "Icon": "On",
+              "Picker": "Off"
+            },
+            "referenceVariantProperties": {
+              "Type": "Slider",
+              "State": "Normal",
+              "Text": "Off",
+              "Icon": "On",
+              "Picker": "Off"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "18904:471406",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I18904:471406;135096:147276;19269:364876;19269:358135;1:8837;21638:146;18502:1370",
+            "name": "Wrapper",
+            "type": null,
+            "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+            "path": "[D] CorporateContent / [D] Body / Body / Forms / Content / nav-btn / XXS (32) / Icon=Scaled / Wrapper",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "styles.fill",
+          "message": "Стиль заливка: light/graphic/primary → neutral-translucent/1300",
+          "referenceValue": "light/graphic/primary",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "light/graphic/primary",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "light/graphic/primary",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": {
+            "name": "light/graphic/primary",
+            "key": "f25442d3297401a2a105284aafd5ca432022c2c7",
+            "library": "010 :: Colors Indigo Light",
+            "sourceFile": "styles/010 _ Colors Indigo Light.json"
+          },
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "6bd2fde3b4e5b5eb4fbd4180bfdd323df10e12c0",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Body / Forms / Content / nav-btn / XXS (32) / Icon=Scaled",
+            "actualNestedOwnerRelativePath": "Wrapper",
+            "nestedOwnerComponentKey": "4bc6aae9abe644cc7eeb84f8b27e18d5851743c2",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Body / Forms / Content / nav-btn / XXS (32)",
+            "nestedOwnerRelativePath": "Icon=Scaled / Wrapper",
+            "actualVariantProperties": null,
+            "referenceVariantProperties": {
+              "Type": "Slider",
+              "State": "Normal",
+              "Text": "Off",
+              "Icon": "On",
+              "Picker": "Off"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "18904:471406",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I18904:471406;135096:147276;19269:364876;19269:358147;60611:7540;60740:305600;74211:743845",
+            "name": "StatusBadge",
+            "type": null,
+            "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+            "path": "[D] CorporateContent / [D] Body / Body / Forms / Content / [D] TableView :: Horizontal / Row / Cells / Caption / Title / RightAddon / StatusBadge",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: neutral/700 → neutral/500",
+          "referenceValue": "neutral/700",
+          "actualValue": "neutral/500",
+          "referenceRawValue": "neutral/700",
+          "actualRawValue": "neutral/500",
+          "referenceDisplayValue": "neutral/700",
+          "actualDisplayValue": "neutral/500",
+          "referenceResource": {
+            "name": "neutral/700",
+            "key": "6d79dab22065d6235e925db28794e4ede838d304",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "neutral/500",
+            "key": "ab7b3e0d9a0b4c6f0688fd7a543bb91cf30c9295",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": {
+            "id": "VariableID:6d79dab22065d6235e925db28794e4ede838d304/3541:171",
+            "key": "6d79dab22065d6235e925db28794e4ede838d304",
+            "name": "neutral/700",
+            "collectionId": null,
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:ab7b3e0d9a0b4c6f0688fd7a543bb91cf30c9295/3541:151",
+            "key": "ab7b3e0d9a0b4c6f0688fd7a543bb91cf30c9295",
+            "name": "neutral/500",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "73946d8d0584f03d590e20fad1c9141382962bca",
+            "referenceComponentKey": "f0d694f44da5c0c7185fea0a02823049be4e8ef0",
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "f6b12c0e429f2e311b7ea9dad7ee99e06cfa52e5",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Body / Forms / Content / [D] TableView :: Horizontal / Row / Cells / Caption / Title / RightAddon",
+            "actualNestedOwnerRelativePath": "StatusBadge",
+            "nestedOwnerComponentKey": "f6b12c0e429f2e311b7ea9dad7ee99e06cfa52e5",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Body / Forms / Content / [D] TableView :: Horizontal / Row / Cells / Caption / Title / RightAddon",
+            "nestedOwnerRelativePath": "StatusBadge",
+            "actualVariantProperties": {
+              "View": "NeutralInformation",
+              "Size": "16"
+            },
+            "referenceVariantProperties": {
+              "Size": "16",
+              "View": "NeutralInformation"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "18904:471406",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.status-badge.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I18904:471406;135096:147276;19269:364876;19269:358143;60742:374808;60742:431238;60740:312553",
+            "name": "value",
+            "type": null,
+            "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+            "path": "[D] CorporateContent / [D] Body / Body / Forms / Content / [D] TableView :: Horizontal / Row / Cells / Column / Content / Title / container / value",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Action/16–24 Primary Medium → Paragraph/16–24 Primary Medium",
+          "referenceValue": "Action/16–24 Primary Medium",
+          "actualValue": "Paragraph/16–24 Primary Medium",
+          "referenceRawValue": "Action/16–24 Primary Medium",
+          "actualRawValue": "Paragraph/16–24 Primary Medium",
+          "referenceDisplayValue": "Action/16–24 Primary Medium",
+          "actualDisplayValue": "Paragraph/16–24 Primary Medium",
+          "referenceResource": {
+            "name": "Action/16–24 Primary Medium",
+            "key": "aae5de06136376c7653394d3648478f48372d63f",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": {
+            "name": "Paragraph/16–24 Primary Medium",
+            "key": "f0f0d59f9f92db92901605dd929cfa3b93540058",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "5ce1cffe9bf235dcc7b4902d2a77a315dca912ce",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Body / Forms / Content / [D] TableView :: Horizontal / Row / Cells / Column / Content / Title",
+            "actualNestedOwnerRelativePath": "container / value",
+            "nestedOwnerComponentKey": "425b9b73bf67eb5db9eefcb4c223d66a72451749",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Body / Forms / Content / [D] TableView :: Horizontal / Row",
+            "nestedOwnerRelativePath": "Cells / Column / Content / Title / container / value",
+            "actualVariantProperties": {
+              "Presets": "Text"
+            },
+            "referenceVariantProperties": {
+              "Presets": "Body",
+              "Compact": "False",
+              "Skeleton": "False"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "18904:471406",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-view.manual-visual-overrides-forbidden",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "styles.text|layout.padding|layout.itemSpacing|fill|stroke",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Работай с предусмотренными presets и штатными возможностями TableView. Ручное изменение текстовых стилей, отступов, заливок и обводок запрещено.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": "Стиль текст",
+            "priority": 30,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I18904:471406;135096:147276;19269:364876;19269:358143;60742:374808;60742:431238;60740:312553",
+            "name": "value",
+            "type": null,
+            "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+            "path": "[D] CorporateContent / [D] Body / Body / Forms / Content / [D] TableView :: Horizontal / Row / Cells / Column / Content / Title / container / value",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: text/primary → text/secondary",
+          "referenceValue": "text/primary",
+          "actualValue": "text/secondary",
+          "referenceRawValue": "text/primary",
+          "actualRawValue": "text/secondary",
+          "referenceDisplayValue": "text/primary",
+          "actualDisplayValue": "text/secondary",
+          "referenceResource": {
+            "name": "text/primary",
+            "key": "53f842b1771349c5dca692351edfc422e8f081b5",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "text/secondary",
+            "key": "d9d26239617e3ab9e69d7ed378d811a3c4561063",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": {
+            "id": "VariableID:53f842b1771349c5dca692351edfc422e8f081b5/3541:208",
+            "key": "53f842b1771349c5dca692351edfc422e8f081b5",
+            "name": "text/primary",
+            "collectionId": null,
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:d9d26239617e3ab9e69d7ed378d811a3c4561063/3541:205",
+            "key": "d9d26239617e3ab9e69d7ed378d811a3c4561063",
+            "name": "text/secondary",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "5ce1cffe9bf235dcc7b4902d2a77a315dca912ce",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Body / Forms / Content / [D] TableView :: Horizontal / Row / Cells / Column / Content / Title",
+            "actualNestedOwnerRelativePath": "container / value",
+            "nestedOwnerComponentKey": "425b9b73bf67eb5db9eefcb4c223d66a72451749",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Body / Forms / Content / [D] TableView :: Horizontal / Row",
+            "nestedOwnerRelativePath": "Cells / Column / Content / Title / container / value",
+            "actualVariantProperties": {
+              "Presets": "Text"
+            },
+            "referenceVariantProperties": {
+              "Presets": "Body",
+              "Compact": "False",
+              "Skeleton": "False"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "18904:471406",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-view.manual-visual-overrides-forbidden",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "styles.text|layout.padding|layout.itemSpacing|fill|stroke",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Работай с предусмотренными presets и штатными возможностями TableView. Ручное изменение текстовых стилей, отступов, заливок и обводок запрещено.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I18904:471406;135096:147276;19269:364876;19269:358143;60742:394469;60742:431238",
+            "name": "Title",
+            "type": null,
+            "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+            "path": "[D] CorporateContent / [D] Body / Body / Forms / Content / [D] TableView :: Horizontal / Row / Cells / Column / Content / Title@@2",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Presets",
+          "message": "presets: amount → text",
+          "referenceValue": "Amount",
+          "actualValue": "Text",
+          "referenceRawValue": "Amount",
+          "actualRawValue": "Text",
+          "referenceDisplayValue": "Amount",
+          "actualDisplayValue": "Text",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "5ce1cffe9bf235dcc7b4902d2a77a315dca912ce",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "af59b50bbe31bfad10b6f9fe6decb9798b465771",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Body / Forms / Content / [D] TableView :: Horizontal / Row / Cells / Column",
+            "actualNestedOwnerRelativePath": "Content / Title",
+            "nestedOwnerComponentKey": "d2127f583b3ad07b9865d18946415cbd8eecdeae",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Body / Forms / Content / [D] TableView :: Horizontal / Row / Cells / Column / Content / Title",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "Presets": "Text"
+            },
+            "referenceVariantProperties": {
+              "Presets": "Amount"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "18904:471406",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-view.component-properties-are-first-class",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения variant/property в этом семействе компонентов являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-view.title-subtitle-presets-are-contextual",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.Presets",
+              "checkType": "manual",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Дизайнер свободно выбирает предусмотренные presets у Title и Subtitle в зависимости от типа данных.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I18904:471406;135096:147276;18904:471456;16997:998520;16997:868395;4474:1645",
+            "name": "[D][Corporate] PureCell",
+            "type": null,
+            "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+            "path": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical / Content / [D][Corporate] PureCell",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.top",
+          "message": "Паддинг top: 12 → Vertical Paddings/None",
+          "referenceValue": 12,
+          "actualValue": "0 (Paddings)",
+          "referenceRawValue": 12,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 12,
+          "actualDisplayValue": "0 (Paddings)",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "Vertical Paddings/None",
+            "key": "1af0ef11f2cc1bf44852eca7fcf72848943668f6",
+            "library": "Paddings",
+            "sourceFile": "Web :: Core Wrappers"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:1af0ef11f2cc1bf44852eca7fcf72848943668f6/89:47",
+            "key": "1af0ef11f2cc1bf44852eca7fcf72848943668f6",
+            "name": "Vertical Paddings/None",
+            "collectionId": "VariableCollectionId:88:5106",
+            "collectionName": "Paddings",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "74efb09c57618b38759a89239de2605158cdc279",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "40f736b756c33be093841bcb07bf1cc97650ae9d",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical",
+            "actualNestedOwnerRelativePath": "Content / [D][Corporate] PureCell",
+            "nestedOwnerComponentKey": "74efb09c57618b38759a89239de2605158cdc279",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical / Content / [D][Corporate] PureCell",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "GraphicsSide": "None"
+            },
+            "referenceVariantProperties": {
+              "GraphicsSide": "None"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "18904:471406",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.pure-cell.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I18904:471406;135096:147276;18904:471456;16997:998520;16997:868395;4474:1645",
+            "name": "[D][Corporate] PureCell",
+            "type": null,
+            "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+            "path": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical / Content / [D][Corporate] PureCell",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.bottom",
+          "message": "Паддинг bottom: 12 → Vertical Paddings/None",
+          "referenceValue": 12,
+          "actualValue": "0 (Paddings)",
+          "referenceRawValue": 12,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 12,
+          "actualDisplayValue": "0 (Paddings)",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "Vertical Paddings/None",
+            "key": "1af0ef11f2cc1bf44852eca7fcf72848943668f6",
+            "library": "Paddings",
+            "sourceFile": "Web :: Core Wrappers"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:1af0ef11f2cc1bf44852eca7fcf72848943668f6/89:47",
+            "key": "1af0ef11f2cc1bf44852eca7fcf72848943668f6",
+            "name": "Vertical Paddings/None",
+            "collectionId": "VariableCollectionId:88:5106",
+            "collectionName": "Paddings",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "74efb09c57618b38759a89239de2605158cdc279",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "40f736b756c33be093841bcb07bf1cc97650ae9d",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical",
+            "actualNestedOwnerRelativePath": "Content / [D][Corporate] PureCell",
+            "nestedOwnerComponentKey": "74efb09c57618b38759a89239de2605158cdc279",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical / Content / [D][Corporate] PureCell",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "GraphicsSide": "None"
+            },
+            "referenceVariantProperties": {
+              "GraphicsSide": "None"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "18904:471406",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.pure-cell.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I18904:471406;135096:147276;18904:471456;16997:998523;16997:868434;4474:1645",
+            "name": "🔄 [D][Corporate] PureCell",
+            "type": null,
+            "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+            "path": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical / Content / Content / 🔄 [D][Corporate] PureCell",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.top",
+          "message": "Паддинг top: 12 → Vertical Paddings/None",
+          "referenceValue": 12,
+          "actualValue": "0 (Paddings)",
+          "referenceRawValue": 12,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 12,
+          "actualDisplayValue": "0 (Paddings)",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "Vertical Paddings/None",
+            "key": "1af0ef11f2cc1bf44852eca7fcf72848943668f6",
+            "library": "Paddings",
+            "sourceFile": "Web :: Core Wrappers"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:1af0ef11f2cc1bf44852eca7fcf72848943668f6/89:47",
+            "key": "1af0ef11f2cc1bf44852eca7fcf72848943668f6",
+            "name": "Vertical Paddings/None",
+            "collectionId": "VariableCollectionId:88:5106",
+            "collectionName": "Paddings",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "74efb09c57618b38759a89239de2605158cdc279",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "40f736b756c33be093841bcb07bf1cc97650ae9d",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical",
+            "actualNestedOwnerRelativePath": "Content / Content / 🔄 [D][Corporate] PureCell",
+            "nestedOwnerComponentKey": "74efb09c57618b38759a89239de2605158cdc279",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical / Content / Content / 🔄 [D][Corporate] PureCell",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "GraphicsSide": "None"
+            },
+            "referenceVariantProperties": {
+              "GraphicsSide": "None"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "18904:471406",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.pure-cell.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I18904:471406;135096:147276;18904:471456;16997:998523;16997:868434;4474:1645",
+            "name": "🔄 [D][Corporate] PureCell",
+            "type": null,
+            "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+            "path": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical / Content / Content / 🔄 [D][Corporate] PureCell",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.bottom",
+          "message": "Паддинг bottom: 12 → Vertical Paddings/None",
+          "referenceValue": 12,
+          "actualValue": "0 (Paddings)",
+          "referenceRawValue": 12,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 12,
+          "actualDisplayValue": "0 (Paddings)",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "Vertical Paddings/None",
+            "key": "1af0ef11f2cc1bf44852eca7fcf72848943668f6",
+            "library": "Paddings",
+            "sourceFile": "Web :: Core Wrappers"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:1af0ef11f2cc1bf44852eca7fcf72848943668f6/89:47",
+            "key": "1af0ef11f2cc1bf44852eca7fcf72848943668f6",
+            "name": "Vertical Paddings/None",
+            "collectionId": "VariableCollectionId:88:5106",
+            "collectionName": "Paddings",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "74efb09c57618b38759a89239de2605158cdc279",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "40f736b756c33be093841bcb07bf1cc97650ae9d",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical",
+            "actualNestedOwnerRelativePath": "Content / Content / 🔄 [D][Corporate] PureCell",
+            "nestedOwnerComponentKey": "74efb09c57618b38759a89239de2605158cdc279",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical / Content / Content / 🔄 [D][Corporate] PureCell",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "GraphicsSide": "None"
+            },
+            "referenceVariantProperties": {
+              "GraphicsSide": "None"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "18904:471406",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.pure-cell.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I18904:471406;135096:147276;18904:471456;16997:998523;16997:868434",
+            "name": "Steps_Vertical",
+            "type": null,
+            "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+            "path": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical@@2",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.LastStep",
+          "message": "lastStep: true → false",
+          "referenceValue": "True",
+          "actualValue": "False",
+          "referenceRawValue": "True",
+          "actualRawValue": "False",
+          "referenceDisplayValue": "True",
+          "actualDisplayValue": "False",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "40f736b756c33be093841bcb07bf1cc97650ae9d",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "d8c979e2375e3f9b3b89e367be576a38b782aad5",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical",
+            "actualNestedOwnerRelativePath": "Steps_Vertical",
+            "nestedOwnerComponentKey": "39f8620fc762b4625dfdffeec51abe7f3f7fb12f",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "LastStep": "False"
+            },
+            "referenceVariantProperties": {
+              "LastStep": "True"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "18904:471406",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I18904:471406;135096:147276;18904:471456;16997:998524;16997:868434;4474:1503",
+            "name": "🔩 IndicatorContent",
+            "type": null,
+            "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+            "path": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical / Indicator / 🔩 IndicatorContent@@2",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Custom",
+          "message": "custom: true → false",
+          "referenceValue": "True",
+          "actualValue": "False",
+          "referenceRawValue": "True",
+          "actualRawValue": "False",
+          "referenceDisplayValue": "True",
+          "actualDisplayValue": "False",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "2e1988c0f04b92aba65f9c732166d1f284883725",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "39f8620fc762b4625dfdffeec51abe7f3f7fb12f",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical",
+            "actualNestedOwnerRelativePath": "Indicator / 🔩 IndicatorContent",
+            "nestedOwnerComponentKey": "39f8620fc762b4625dfdffeec51abe7f3f7fb12f",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical",
+            "nestedOwnerRelativePath": "Indicator / 🔩 IndicatorContent",
+            "actualVariantProperties": {
+              "Active": "False",
+              "Ordered": "True",
+              "Positive": "False",
+              "Warning": "False",
+              "Error": "False",
+              "CriticalError": "False",
+              "Waiting": "False",
+              "Custom": "False"
+            },
+            "referenceVariantProperties": {
+              "Active": "False",
+              "CriticalError": "False",
+              "Custom": "True",
+              "Error": "False",
+              "Ordered": "False",
+              "Positive": "False",
+              "Waiting": "False",
+              "Warning": "False"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "18904:471406",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.steps.component-properties-are-first-class",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения variant/property в этом семействе компонентов являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I18904:471406;135096:147276;18904:471456;16997:998524;16997:868434;4474:1503",
+            "name": "🔩 IndicatorContent",
+            "type": null,
+            "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+            "path": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical / Indicator / 🔩 IndicatorContent@@2",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Ordered",
+          "message": "ordered: false → true",
+          "referenceValue": "False",
+          "actualValue": "True",
+          "referenceRawValue": "False",
+          "actualRawValue": "True",
+          "referenceDisplayValue": "False",
+          "actualDisplayValue": "True",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "2e1988c0f04b92aba65f9c732166d1f284883725",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "39f8620fc762b4625dfdffeec51abe7f3f7fb12f",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical",
+            "actualNestedOwnerRelativePath": "Indicator / 🔩 IndicatorContent",
+            "nestedOwnerComponentKey": "39f8620fc762b4625dfdffeec51abe7f3f7fb12f",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical",
+            "nestedOwnerRelativePath": "Indicator / 🔩 IndicatorContent",
+            "actualVariantProperties": {
+              "Active": "False",
+              "Ordered": "True",
+              "Positive": "False",
+              "Warning": "False",
+              "Error": "False",
+              "CriticalError": "False",
+              "Waiting": "False",
+              "Custom": "False"
+            },
+            "referenceVariantProperties": {
+              "Active": "False",
+              "CriticalError": "False",
+              "Custom": "True",
+              "Error": "False",
+              "Ordered": "False",
+              "Positive": "False",
+              "Waiting": "False",
+              "Warning": "False"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "18904:471406",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.steps.component-properties-are-first-class",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения variant/property в этом семействе компонентов являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I18904:471406;135096:147276;18904:471456;16997:998523;16997:868434;4530:3853",
+            "name": "Content",
+            "type": null,
+            "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+            "path": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical / Content@@2",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.top",
+          "message": "Паддинг top: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": 0,
+          "referenceRawValue": 8,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 0,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "40f736b756c33be093841bcb07bf1cc97650ae9d",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical",
+            "actualNestedOwnerRelativePath": "Content",
+            "nestedOwnerComponentKey": "39f8620fc762b4625dfdffeec51abe7f3f7fb12f",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical",
+            "nestedOwnerRelativePath": "Content",
+            "actualVariantProperties": {
+              "LastStep": "False"
+            },
+            "referenceVariantProperties": {
+              "LastStep": "True"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "18904:471406",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I18904:471406;135096:147276;18904:471456;16997:998523;16997:868434;4530:3853",
+            "name": "Content",
+            "type": null,
+            "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+            "path": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical / Content@@2",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.right",
+          "message": "Паддинг right: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": 0,
+          "referenceRawValue": 8,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 0,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "40f736b756c33be093841bcb07bf1cc97650ae9d",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical",
+            "actualNestedOwnerRelativePath": "Content",
+            "nestedOwnerComponentKey": "39f8620fc762b4625dfdffeec51abe7f3f7fb12f",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical",
+            "nestedOwnerRelativePath": "Content",
+            "actualVariantProperties": {
+              "LastStep": "False"
+            },
+            "referenceVariantProperties": {
+              "LastStep": "True"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "18904:471406",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I18904:471406;135096:147276;18904:471456;16997:998523;16997:868434;4530:3853",
+            "name": "Content",
+            "type": null,
+            "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+            "path": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical / Content@@2",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.bottom",
+          "message": "Паддинг bottom: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": 0,
+          "referenceRawValue": 8,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 0,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "40f736b756c33be093841bcb07bf1cc97650ae9d",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical",
+            "actualNestedOwnerRelativePath": "Content",
+            "nestedOwnerComponentKey": "39f8620fc762b4625dfdffeec51abe7f3f7fb12f",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical",
+            "nestedOwnerRelativePath": "Content",
+            "actualVariantProperties": {
+              "LastStep": "False"
+            },
+            "referenceVariantProperties": {
+              "LastStep": "True"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "18904:471406",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I18904:471406;135096:147276;18904:471456;16997:998523;16997:868434;4530:3853",
+            "name": "Content",
+            "type": null,
+            "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+            "path": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical / Content@@2",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.left",
+          "message": "Паддинг left: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": 0,
+          "referenceRawValue": 8,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 0,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "40f736b756c33be093841bcb07bf1cc97650ae9d",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical",
+            "actualNestedOwnerRelativePath": "Content",
+            "nestedOwnerComponentKey": "39f8620fc762b4625dfdffeec51abe7f3f7fb12f",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical",
+            "nestedOwnerRelativePath": "Content",
+            "actualVariantProperties": {
+              "LastStep": "False"
+            },
+            "referenceVariantProperties": {
+              "LastStep": "True"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "18904:471406",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I18904:471406;135096:147276;18904:471456;16997:998524;16997:868434;4497:14417",
+            "name": "🔄 [D][Corporate] PureCell",
+            "type": null,
+            "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+            "path": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical / Content / 🔄 [D][Corporate] PureCell",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.top",
+          "message": "Паддинг top: 12 → Vertical Paddings/None",
+          "referenceValue": 12,
+          "actualValue": "0 (Paddings)",
+          "referenceRawValue": 12,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 12,
+          "actualDisplayValue": "0 (Paddings)",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "Vertical Paddings/None",
+            "key": "1af0ef11f2cc1bf44852eca7fcf72848943668f6",
+            "library": "Paddings",
+            "sourceFile": "Web :: Core Wrappers"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:1af0ef11f2cc1bf44852eca7fcf72848943668f6/89:47",
+            "key": "1af0ef11f2cc1bf44852eca7fcf72848943668f6",
+            "name": "Vertical Paddings/None",
+            "collectionId": "VariableCollectionId:88:5106",
+            "collectionName": "Paddings",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "74efb09c57618b38759a89239de2605158cdc279",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "39f8620fc762b4625dfdffeec51abe7f3f7fb12f",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical",
+            "actualNestedOwnerRelativePath": "Content / 🔄 [D][Corporate] PureCell",
+            "nestedOwnerComponentKey": "74efb09c57618b38759a89239de2605158cdc279",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical / Content / 🔄 [D][Corporate] PureCell",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "GraphicsSide": "None"
+            },
+            "referenceVariantProperties": {
+              "GraphicsSide": "None"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "18904:471406",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.pure-cell.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I18904:471406;135096:147276;18904:471456;16997:998524;16997:868434;4497:14417",
+            "name": "🔄 [D][Corporate] PureCell",
+            "type": null,
+            "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+            "path": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical / Content / 🔄 [D][Corporate] PureCell",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.bottom",
+          "message": "Паддинг bottom: 12 → Vertical Paddings/None",
+          "referenceValue": 12,
+          "actualValue": "0 (Paddings)",
+          "referenceRawValue": 12,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 12,
+          "actualDisplayValue": "0 (Paddings)",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "Vertical Paddings/None",
+            "key": "1af0ef11f2cc1bf44852eca7fcf72848943668f6",
+            "library": "Paddings",
+            "sourceFile": "Web :: Core Wrappers"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:1af0ef11f2cc1bf44852eca7fcf72848943668f6/89:47",
+            "key": "1af0ef11f2cc1bf44852eca7fcf72848943668f6",
+            "name": "Vertical Paddings/None",
+            "collectionId": "VariableCollectionId:88:5106",
+            "collectionName": "Paddings",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "74efb09c57618b38759a89239de2605158cdc279",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "39f8620fc762b4625dfdffeec51abe7f3f7fb12f",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical",
+            "actualNestedOwnerRelativePath": "Content / 🔄 [D][Corporate] PureCell",
+            "nestedOwnerComponentKey": "74efb09c57618b38759a89239de2605158cdc279",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical / Content / 🔄 [D][Corporate] PureCell",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "GraphicsSide": "None"
+            },
+            "referenceVariantProperties": {
+              "GraphicsSide": "None"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "18904:471406",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.pure-cell.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I18904:471406;135096:147276;18904:471457;62722:160365",
+            "name": "IsleContent",
+            "type": null,
+            "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+            "path": "[D] CorporateContent / [D] Body / Body / IsleBlock / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": "0",
+          "referenceRawValue": 8,
+          "actualRawValue": "0",
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": "0",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "3e82252a063fd98479e3d6d8bde9c253c140c82c",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "9dd86bd040376734e605227c0d849d1328e62d76",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Body / IsleBlock / 🔒 [D] IsleBlock :: 1024+",
+            "actualNestedOwnerRelativePath": "body / content / IsleContent",
+            "nestedOwnerComponentKey": "3e82252a063fd98479e3d6d8bde9c253c140c82c",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Body / IsleBlock / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "Type": "List"
+            },
+            "referenceVariantProperties": {
+              "Type": "List"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "18904:471406",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.isle-block.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I18904:471406;135096:147276;19269:364876",
+        "name": "Content",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / Forms / Content",
+        "visible": true
+      },
+      "component": {
+        "name": "Content",
+        "key": "78f39a9ec3d38d969b52114b30d18a6340459fd2",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I18904:471406;135096:147276;19269:364876;19269:358138",
+        "name": "[D]_Content UniversalModal_Периодичность",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / Forms / Content / [D]_Content UniversalModal_Периодичность",
+        "visible": true
+      },
+      "component": {
+        "name": "[D]_Content UniversalModal_Периодичность",
+        "key": "d1c581910009df5071fa30b8cfcf5d7ed38ccaf8",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I18904:471406;135096:147276;18904:471457",
+        "name": "🔒 [D] IsleBlock :: 1024+",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / IsleBlock / 🔒 [D] IsleBlock :: 1024+",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] IsleBlock :: 1024+",
+        "key": "9dd86bd040376734e605227c0d849d1328e62d76",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- IsleBlock.json"
+      },
+      "variant": {
+        "name": "Type=Static",
+        "key": "9dd86bd040376734e605227c0d849d1328e62d76"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "technicalComponents",
+      "severityHint": "low",
+      "title": "Технический компонент",
+      "node": {
+        "id": "I18904:471406;135096:147276;19269:364876;19269:358123;406:281438",
+        "name": "💊Rulers / Side",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / Forms / Content / Spacers / 💊Rulers / Side",
+        "visible": true
+      },
+      "component": {
+        "name": "💊Rulers / Side",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f",
+        "library": "Web :: Core Helpers",
+        "sourceFile": "web/components/web-core-helpers/Web _ Core Helpers -- Documentation.json"
+      },
+      "variant": {
+        "name": "Direction=←",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "technicalComponents",
+      "severityHint": "low",
+      "title": "Технический компонент",
+      "node": {
+        "id": "I18904:471406;135096:147276;19269:364876;19269:358125;406:281438",
+        "name": "💊Rulers / Side",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / Forms / Content / Spacers / 💊Rulers / Side",
+        "visible": true
+      },
+      "component": {
+        "name": "💊Rulers / Side",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f",
+        "library": "Web :: Core Helpers",
+        "sourceFile": "web/components/web-core-helpers/Web _ Core Helpers -- Documentation.json"
+      },
+      "variant": {
+        "name": "Direction=←",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "technicalComponents",
+      "severityHint": "low",
+      "title": "Технический компонент",
+      "node": {
+        "id": "I18904:471406;135096:147276;19269:364876;19269:358127;406:281438",
+        "name": "💊Rulers / Side",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / Forms / Content / Spacers / 💊Rulers / Side",
+        "visible": true
+      },
+      "component": {
+        "name": "💊Rulers / Side",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f",
+        "library": "Web :: Core Helpers",
+        "sourceFile": "web/components/web-core-helpers/Web _ Core Helpers -- Documentation.json"
+      },
+      "variant": {
+        "name": "Direction=←",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "technicalComponents",
+      "severityHint": "low",
+      "title": "Технический компонент",
+      "node": {
+        "id": "I18904:471406;135096:147276;19269:364876;19269:358129;406:281428",
+        "name": "💊Rulers / Side",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / Forms / Content / Spacers / 💊Rulers / Side",
+        "visible": true
+      },
+      "component": {
+        "name": "💊Rulers / Side",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f",
+        "library": "Web :: Core Helpers",
+        "sourceFile": "web/components/web-core-helpers/Web _ Core Helpers -- Documentation.json"
+      },
+      "variant": {
+        "name": "Direction=←",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f"
+      },
+      "comparisonIssues": []
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "18904:471401",
+        "name": "Страница:      ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "type": "PAGE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "visible": true
+      },
+      "kind": "missingThemeMode",
+      "recommendation": "Смени темизацию на Corp",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I18904:471406;135096:147276;19269:364876;19269:358124",
+        "name": "🔄 [D][Corporate] SliderInput",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / Forms / Content / 🔄 [D][Corporate] SliderInput",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] SliderInput",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I18904:471406;135096:147276;19269:364876;19269:358140",
+        "name": "🔄 [D][Corporate] TagGroup",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / Forms / Content / 🔄 [D][Corporate] TagGroup",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] TagGroup",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I18904:471406;135096:147276;19269:364876;19269:358140;34205:27069",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / Forms / Content / 🔄 [D][Corporate] TagGroup / Items / 🔄 [D][Corporate] Tag",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Tag",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I18904:471406;135096:147276;19269:364876;19269:358140;34205:27070",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / Forms / Content / 🔄 [D][Corporate] TagGroup / Items / 🔄 [D][Corporate] Tag",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Tag",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I18904:471406;135096:147276;19269:364876;19269:358140;34205:27071",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / Forms / Content / 🔄 [D][Corporate] TagGroup / Items / 🔄 [D][Corporate] Tag",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Tag",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I18904:471406;135096:147276;19269:364876;19269:358140;34205:27072",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / Forms / Content / 🔄 [D][Corporate] TagGroup / Items / 🔄 [D][Corporate] Tag",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Tag",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I18904:471406;135096:147276;19269:364876;19269:358140;34205:27073",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / Forms / Content / 🔄 [D][Corporate] TagGroup / Items / 🔄 [D][Corporate] Tag",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Tag",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I18904:471406;135096:147276;18904:471454;85781:50872",
+        "name": "🔄 [D][Corporate] Button",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / Forms / ButtonGroup / 🔄 [D][Corporate] Button",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Button",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I18904:471406;135096:147276;18904:471454;85781:50873",
+        "name": "🔄 [D][Corporate] Button",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / Forms / ButtonGroup / 🔄 [D][Corporate] Button",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Button",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I18904:471406;135096:147276;18904:471456;16997:998520;16997:868395;4474:1645",
+        "name": "[D][Corporate] PureCell",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical / Content / [D][Corporate] PureCell",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] PureCell",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I18904:471406;135096:147276;18904:471456;16997:998523;16997:868434;4474:1645",
+        "name": "🔄 [D][Corporate] PureCell",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical / Content / Content / 🔄 [D][Corporate] PureCell",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] PureCell",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I18904:471406;135096:147276;18904:471456;16997:998524;16997:868434;4497:14417",
+        "name": "🔄 [D][Corporate] PureCell",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Добавление АСК в СУП [30.07.2026 - ]",
+        "path": "[D] CorporatePage / Body / [D] CorporateContent / [D] Body / Body / IsleBlock / [W] Steps_НИБ / VerticalExample / Steps_Vertical / Steps_Vertical / Content / 🔄 [D][Corporate] PureCell",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] PureCell",
+      "component": null
+    }
+  ],
+  "componentContexts": [
+    {
+      "componentKey": "web-core.button",
+      "summary": "Button — семейство action controls. Apollo должен трактовать изменения Button variant как component property changes, а ручные изменения style/token/layout как layer customizations.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] Button",
+        "[D] Button_Inverted",
+        "[M] Button",
+        "[M] Button_Inverted",
+        "🔄 [D][Corporate] Button",
+        "🔄 [D][Corporate] Button_Inverted",
+        "🔄 [M][Corporate] Button",
+        "🔄 [M][Corporate] Button_Inverted",
+        "🔩 Addon",
+        "🔩 Addon"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*",
+          "variant.View",
+          "variant.Size",
+          "variant.Shape",
+          "variant.SingleIcon",
+          "variant.DisabledState"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent",
+          "layout.padding",
+          "layout.itemSpacing"
+        ],
+        "baselinePolicy": "Если component property изменилась, сравнивай ручные layer overrides с baseline текущего actual-состояния компонента, а не с исходным reference baseline.",
+        "slotProperties": [
+          "LeftAddon.variant.Type",
+          "RightAddon.variant.Type"
+        ],
+        "ordering": [
+          "component-property",
+          "slot-property",
+          "layer-property"
+        ]
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.View",
+            "variant.Size",
+            "variant.Shape",
+            "variant.SingleIcon",
+            "variant.DisabledState"
+          ],
+          "layerProperties": [
+            "fills",
+            "strokes",
+            "strokeWeight",
+            "cornerRadius",
+            "opacity",
+            "layout.padding",
+            "layout.itemSpacing",
+            "styles.text",
+            "typography"
+          ],
+          "dependencyPolicy": "При reset component property layer differences, вызванные только этой property, могут исчезнуть автоматически. Ручные layer overrides должны оставаться независимо сбрасываемыми, пока reset родительской property не уберёт их target state."
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web-core.pure-cell",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔄 [M][Corporate] PureCell",
+        "🔄 [D][Corporate] PureCell",
+        "[M] PureCell",
+        "[D] PureCell",
+        "🔄 🔩 [M][Corporate] RowValue",
+        "🔄 🔩 [D][Corporate] RowValue",
+        "🔄 🔩 [M][Corporate] RowTitle",
+        "🔄 🔩 [D][Corporate] RowTitle",
+        "🔄 🔩 [M][Corporate] Footer",
+        "🔄 🔩 [D][Corporate] Footer",
+        "🔄 🔩 [M][Corporate] Addon",
+        "🔄 🔩 [D][Corporate] Addon",
+        "🔄 🔩 [M][Corporate] Graphics",
+        "🔄 🔩 [D][Corporate] Graphics",
+        "🔩 [M] RowValue",
+        "🔩 [D] RowValue",
+        "🔩 [M] RowTitle",
+        "🔩 [D] RowTitle",
+        "🔩 [M] Footer",
+        "🔩 [D] Footer",
+        "🔩 [M] Addon",
+        "🔩 [D] Addon",
+        "🔩 [M] Graphics",
+        "🔩 [D] Graphics"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.slider",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔩 Dot",
+        "🔩 Dot_Inverted",
+        "Slider",
+        "Slider_Inverted",
+        "🔩 Dots",
+        "🔩 Dots_Inverted",
+        "🔩 Pips",
+        "🔩 Pips_Inverted",
+        "🔩 Pointer",
+        "🔩 Pointer_Inverted"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.slider-input",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] SliderInput",
+        "[D] SliderInput_Inverted",
+        "[M] SliderInput",
+        "[M] SliderInput_Inverted",
+        "🔄 [D][Corporate] SliderInput",
+        "🔄 [D][Corporate] SliderInput_Inverted",
+        "🔄 [M][AO] SliderInput",
+        "🔄 [M][AO] SliderInput_Inverted",
+        "🔩 Slider",
+        "🔩 Slider_Inverted"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.status-badge",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "StatusBadge",
+        "StatusBadge_Inverted"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.steps",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "❌  Indicator",
+        "❌  Line",
+        "❌ Steps_Vertical",
+        "🔩 IndicatorContent",
+        "🔩 Line",
+        "🔩 Line",
+        "🔩 MinSpace",
+        "Steps_Horizontal",
+        "Steps_Vertical",
+        "❌   HorizontalLabel",
+        "❌  Steps_Horizontal",
+        "❌  SwapMe",
+        "🔩 HorizontalLabel",
+        "🔩 SwapMe"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.tag",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] Tag_Filled",
+        "[D] Tag_Filled_Inverted",
+        "[D] Tag_Muted",
+        "[D] Tag_Transparent",
+        "[D] Tag_Transparent_Inverted",
+        "[M] Tag_Filled",
+        "[M] Tag_Filled_Inverted",
+        "[M] Tag_Muted",
+        "[M] Tag_Transparent",
+        "[M] Tag_Transparent_Inverted",
+        "🔄 [D][Corporate] Tag",
+        "🔄 [D][Corporate] Tag_Inverted",
+        "🔄 [M][Corporate] Tag",
+        "🔄 [M][Corporate] Tag_Inverted",
+        "🔄[D] Tag_Outlined",
+        "🔄[D] Tag_Outlined_Inverted",
+        "🔄[M] Tag_Outlined",
+        "🔄[M] Tag_Outlined_Inverted"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.tag-group",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] TagGroup",
+        "[M] TagGroup",
+        "🔄 [D][Corporate] TagGroup",
+        "🔄 [M][AO] TagGroup",
+        "🔄 [M][Corporate]  TagGroup"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.corporate-content",
+      "summary": "CorporateContent — обязательная контентная область продуктовой страницы. Используй [D] CorporateContent для desktop и [M] CorporateContent для mobile-web.",
+      "criticalBaselines": [],
+      "agentInstructions": [
+        "Не считай произвольный контент или несколько дочерних элементов внутри Body нарушением сами по себе.",
+        "Проверяй содержимое Body по собственным компонентным контрактам и паттернам.",
+        "Считай использование переходного [T] CorporateContent явным нарушением.",
+        "Не рекомендуй ручную правку fill, grid style или padding корня CorporateContent; рекомендуй правильный mode переменных.",
+        "Не требуй наличия родительского компонента CorporatePage в Figma: такого компонента нет, самостоятельное использование CorporateContent допустимо.",
+        "Не применяй Gutter как обязательный itemSpacing внутри Body; он допустим в любой горизонтальной композиции без обязательного Section.",
+        "На ширине 768 требуй [D] CorporateContent и mode 768 коллекции [D] Grid & Cols.",
+        "Не придумывай условия выбора между base-bg-alt и base-bg до появления отдельного паттерна; default — base-bg-alt (grey).",
+        "Не разрешай кликабельность корня или detach CorporateContent и Body.",
+        "Не разрешай вкладывать CorporateContent внутрь CorporateContent и не оставляй SwapMe после добавления реального содержимого.",
+        "Требуй Header или HeaderMenu непосредственно над CorporateContent в общем вертикальном контейнере с gap 0.",
+        "Не разрешай менять вертикальное направление, itemSpacing=0 или clipsContent=false корня CorporateContent."
+      ],
+      "includedComponents": [
+        "[D] Section",
+        "[D] CorporateContent",
+        "[M] CorporateContent",
+        "❌ [D] Body",
+        "❌ [M} Body",
+        "❌ [T] Body",
+        "❌ [T] CorporateContent"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+          "name": "[D] CorporateContent",
+          "purpose": "Основная desktop-контентная область корпоративной продуктовой страницы с системной сеткой, фоном и адаптивными отступами.",
+          "useWhen": [
+            "Собирается содержимое корпоративной страницы на ширине 768 px и выше."
+          ],
+          "doNotUseWhen": [
+            "Нужен вложенный контейнер внутри другого CorporateContent."
+          ],
+          "relationship": "Единственный корневой контентный контейнер CorporatePage на desktop; принимает произвольную композицию в Body.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.isle-block",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] IsleContent :: 768",
+        "[D] IsleFooter :: 1024+",
+        "[D] IsleFooter :: 768",
+        "[D] IsleHeader :: 1024+",
+        "[D] IsleHeader :: 768",
+        "[D] Status",
+        "[D] Status :: 1024+",
+        "[D] TopAddon",
+        "[D] TopAddon :: 1024+",
+        "[M] IsleContent",
+        "[M] IsleFooter",
+        "[M] IsleHeader",
+        "[M] TopAddon",
+        "❌ IsleCustomContent",
+        "🔒 [D] IsleBlock :: 1024+",
+        "🔒 [D] IsleBlock :: 768",
+        "🔒 [M] IsleBlock",
+        "🔩 StatusCompact",
+        "IsleContent"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.table-view",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] TableView :: Horizontal",
+        "Caption",
+        "Caption",
+        "Column",
+        "Column",
+        "RightAddon",
+        "Row",
+        "Row",
+        "Row :: SidePanel",
+        "ShowMore",
+        "ShowMore",
+        "Subtitle",
+        "TableView :: Vertical",
+        "Title",
+        "[D] TableView :: Horizontal SidePanel"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.*"
+          ],
+          "layerProperties": [
+            "styles.text",
+            "layout.padding",
+            "layout.itemSpacing",
+            "fills",
+            "strokes"
+          ],
+          "dependencyPolicy": "Nested diffs TableView должны использовать effective baseline выбранного root variant и значения Compact."
+        },
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web.documentation",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        ".x / PropertyValue",
+        "💊Rulers / Corner radius",
+        "💊Rulers / Inline",
+        "💊Rulers / Side",
+        ".Details / Triangle",
+        ".Details / Body",
+        ".Details / Spacer_hor",
+        ".Details / Spacer_vert",
+        "💊Documentations / Plates / Bottom",
+        "💊Documentations / Inline / Plates",
+        ".Details / Plate / Icon",
+        "💊Documentations / Inline / Code",
+        ".Details / Plate / Master",
+        "💊Documentations / Inline / Good and Bad",
+        "💊Documentations / Plates / Cell",
+        "💊Documentations / Plates / Head"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    }
+  ]
+}
