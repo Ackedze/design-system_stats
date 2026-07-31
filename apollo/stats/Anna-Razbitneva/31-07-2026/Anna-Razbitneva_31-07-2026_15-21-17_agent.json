@@ -1,0 +1,4170 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1096320301135139074-1785500477102-gob97voo:agent",
+  "sourceReportId": "apollo-1096320301135139074-1785500477102-gob97voo",
+  "generatedAt": "2026-07-31T12:21:17.102Z",
+  "suggestedFileName": "Anna-Razbitneva_31-07-2026_15-21-17_agent.json",
+  "user": {
+    "id": "1096320301135139074",
+    "name": "Anna Razbitneva",
+    "slug": "Anna-Razbitneva"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.1.62"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "[W] Альфа-кредит",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "startedAt": "2026-07-31T12:20:46.168Z",
+    "finishedAt": "2026-07-31T12:21:17.102Z",
+    "durationMs": 30934,
+    "selection": [
+      {
+        "nodeId": "29320:344174",
+        "name": "LOCAL_Tablenotif",
+        "nodeType": "INSTANCE",
+        "path": "Старый FilterBlock / Альфа-кредит / АК :: Договоры - Уведомления /   / [D] CorporatePage / Page / Body / [D] CorporateContent / ContentBody / LOCAL_Tablenotif",
+        "componentKey": "af12ac4b01d8f86fb09a0b08a785fd43475bef86"
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 224,
+    "problemOccurrenceCount": 27,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 0,
+      "updates": 0,
+      "customizations": 14,
+      "localComponents": 12,
+      "detachedComponents": 0,
+      "presets": 0,
+      "technicalComponents": 0,
+      "currentComponents": 212,
+      "wrongChannel": 0,
+      "themization": 1
+    },
+    "includedFindingCount": 27,
+    "omittedCurrentComponentCount": 212
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with severity=error and matchKind=exact_component_rule for the same property/change.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 14,
+      "includedCount": 14,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 12,
+      "includedCount": 12,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I29320:344174;29061:124823",
+        "name": "[D] TopBar",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Односторонние уведомления",
+        "path": "Старый FilterBlock / Альфа-кредит / АК :: Договоры - Уведомления /   / [D] CorporatePage / Page / Body / [D] CorporateContent / ContentBody / LOCAL_Tablenotif / [D] TopBar",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] TopBar",
+        "key": "274552223e94bb856c4d1ee3dbec489a8a2a303d",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateTopbar [D].json"
+      },
+      "variant": {
+        "name": "Filtered=false, Skeleton=false",
+        "key": "274552223e94bb856c4d1ee3dbec489a8a2a303d"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I29320:344174;29061:124823;80390:51819;31003:10303;48:100893",
+            "name": "LeftAddon",
+            "type": null,
+            "pageName": "     ↳ Односторонние уведомления",
+            "path": "Filtered=false, Skeleton=false / Content / Button Group / [D] Settings / [D] Button / LeftAddon / LeftAddon",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Type",
+          "message": "type: icon-16 → icon-20",
+          "referenceValue": "Icon-16",
+          "actualValue": "Icon-20",
+          "referenceRawValue": "Icon-16",
+          "actualRawValue": "Icon-20",
+          "referenceDisplayValue": "Icon-16",
+          "actualDisplayValue": "Icon-20",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "029c2506e2a659e706f08d848158f4177192db5e",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "0973a407e778adad7ba475e4c023e3947409a768",
+            "actualNestedOwnerPath": "Filtered=false, Skeleton=false / Content / Button Group / [D] Settings / [D] Button",
+            "actualNestedOwnerRelativePath": "LeftAddon / LeftAddon",
+            "nestedOwnerComponentKey": "0973a407e778adad7ba475e4c023e3947409a768",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Filtered=false, Skeleton=false / Content / Button Group / [D] Settings / [D] Button",
+            "nestedOwnerRelativePath": "LeftAddon / LeftAddon",
+            "actualVariantProperties": {
+              "Type": "Icon-20"
+            },
+            "referenceVariantProperties": {
+              "Type": "Icon-16"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "29320:338438",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.button.component-properties-are-first-class",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения variant/property в этом семействе компонентов являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-core.button.variant-state-is-component-property",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": null,
+              "changeScope": null,
+              "ruleText": "Изменения View, Size, Shape, SingleIcon и DisabledState являются component property changes и должны показываться как самостоятельные customizations.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "slot-property",
+            "groupTitle": "Параметры слота",
+            "displayName": null,
+            "priority": 15,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I29320:344174;29063:130837;29063:127125",
+        "name": "[D] BodyControlCell :: Wide",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Односторонние уведомления",
+        "path": "Старый FilterBlock / Альфа-кредит / АК :: Договоры - Уведомления /   / [D] CorporatePage / Page / Body / [D] CorporateContent / ContentBody / LOCAL_Tablenotif / Table / Header / LOCAL_AK_Table_Nots / Cells / [D] BodyControlCell :: Wide",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyControlCell :: Wide",
+        "key": "1006a79aa14571e14b43af411da0b3f84825b2df",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Presets=Controls, Skeleton=false",
+        "key": "1006a79aa14571e14b43af411da0b3f84825b2df"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I29320:344174;29063:130837;29063:127125",
+            "name": "[D] BodyControlCell :: Wide",
+            "type": null,
+            "pageName": "     ↳ Односторонние уведомления",
+            "path": "Presets=Controls, Skeleton=false",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.right",
+          "message": "Паддинг right: 12 → 4",
+          "referenceValue": 12,
+          "actualValue": 4,
+          "referenceRawValue": 12,
+          "actualRawValue": 4,
+          "referenceDisplayValue": 12,
+          "actualDisplayValue": 4,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "1006a79aa14571e14b43af411da0b3f84825b2df",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Presets": "Controls",
+              "Skeleton": "false"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "I29320:344174;29063:130837;29063:127125",
+              "nodeName": "[D] BodyControlCell :: Wide",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-wide.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29320:344174;29063:130837;29063:127125",
+            "name": "[D] BodyControlCell :: Wide",
+            "type": null,
+            "pageName": "     ↳ Односторонние уведомления",
+            "path": "Presets=Controls, Skeleton=false",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.left",
+          "message": "Паддинг left: 16 → 4",
+          "referenceValue": 16,
+          "actualValue": 4,
+          "referenceRawValue": 16,
+          "actualRawValue": 4,
+          "referenceDisplayValue": 16,
+          "actualDisplayValue": 4,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "1006a79aa14571e14b43af411da0b3f84825b2df",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Presets": "Controls",
+              "Skeleton": "false"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "I29320:344174;29063:130837;29063:127125",
+              "nodeName": "[D] BodyControlCell :: Wide",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-wide.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I29320:344174;29063:130837;29063:126976",
+        "name": "[D] HeadCell",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Односторонние уведомления",
+        "path": "Старый FilterBlock / Альфа-кредит / АК :: Договоры - Уведомления /   / [D] CorporatePage / Page / Body / [D] CorporateContent / ContentBody / LOCAL_Tablenotif / Table / Header / LOCAL_AK_Table_Nots / Cells / [D] HeadCell",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] HeadCell",
+        "key": "71f33dcf941775172bfc1a61ea62829b34f0dc02",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=false",
+        "key": "71f33dcf941775172bfc1a61ea62829b34f0dc02"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I29320:344174;29063:130837;29063:126976;74661:67660",
+            "name": "Sorting",
+            "type": null,
+            "pageName": "     ↳ Односторонние уведомления",
+            "path": "Skeleton=false / TitleBlock / Title + Addon / Sorting / Sorting",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Presets",
+          "message": "presets: not selected → max -> min",
+          "referenceValue": "Not selected",
+          "actualValue": "Max -> Min",
+          "referenceRawValue": "Not selected",
+          "actualRawValue": "Max -> Min",
+          "referenceDisplayValue": "Not selected",
+          "actualDisplayValue": "Max -> Min",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "54ea35d04e6591b800211edb0d0043c9662498fc",
+            "referenceComponentKey": "d3ed88174e41587d0ba04eb491d3006d0ab9d1e8",
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "71f33dcf941775172bfc1a61ea62829b34f0dc02",
+            "actualNestedOwnerPath": "Skeleton=false",
+            "actualNestedOwnerRelativePath": "TitleBlock / Title + Addon / Sorting / Sorting",
+            "nestedOwnerComponentKey": "d3ed88174e41587d0ba04eb491d3006d0ab9d1e8",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "Skeleton=false / TitleBlock / Title + Addon / Sorting / Sorting",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "Presets": "Max -> Min",
+              "Active": "false"
+            },
+            "referenceVariantProperties": {
+              "Active": "false",
+              "Presets": "Not selected"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "29320:338438",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-wide-d.supported-presets-allowed",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.Presets",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Дизайнер может выбирать предусмотренные компонентом presets ячеек и addons. Это не является произвольным instance swap.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I29320:344174;29063:127365;29063:127056",
+        "name": "[D] BodyControlCell :: Wide",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Односторонние уведомления",
+        "path": "Старый FilterBlock / Альфа-кредит / АК :: Договоры - Уведомления /   / [D] CorporatePage / Page / Body / [D] CorporateContent / ContentBody / LOCAL_Tablenotif / Table / Content / LOCAL_AK_Table_Nots / Cells / [D] BodyControlCell :: Wide",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyControlCell :: Wide",
+        "key": "1006a79aa14571e14b43af411da0b3f84825b2df",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Presets=Controls, Skeleton=false",
+        "key": "1006a79aa14571e14b43af411da0b3f84825b2df"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I29320:344174;29063:127365;29063:127056",
+            "name": "[D] BodyControlCell :: Wide",
+            "type": null,
+            "pageName": "     ↳ Односторонние уведомления",
+            "path": "Presets=Controls, Skeleton=false",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.right",
+          "message": "Паддинг right: 12 → 4",
+          "referenceValue": 12,
+          "actualValue": 4,
+          "referenceRawValue": 12,
+          "actualRawValue": 4,
+          "referenceDisplayValue": 12,
+          "actualDisplayValue": 4,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "1006a79aa14571e14b43af411da0b3f84825b2df",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Presets": "Controls",
+              "Skeleton": "false"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "I29320:344174;29063:127365;29063:127056",
+              "nodeName": "[D] BodyControlCell :: Wide",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-wide.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29320:344174;29063:127365;29063:127056",
+            "name": "[D] BodyControlCell :: Wide",
+            "type": null,
+            "pageName": "     ↳ Односторонние уведомления",
+            "path": "Presets=Controls, Skeleton=false",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.left",
+          "message": "Паддинг left: 16 → 4",
+          "referenceValue": 16,
+          "actualValue": 4,
+          "referenceRawValue": 16,
+          "actualRawValue": 4,
+          "referenceDisplayValue": 16,
+          "actualDisplayValue": 4,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "1006a79aa14571e14b43af411da0b3f84825b2df",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Presets": "Controls",
+              "Skeleton": "false"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "I29320:344174;29063:127365;29063:127056",
+              "nodeName": "[D] BodyControlCell :: Wide",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-wide.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29320:344174;29063:127365;29063:127056;74661:67571",
+            "name": "LeftAddon",
+            "type": null,
+            "pageName": "     ↳ Односторонние уведомления",
+            "path": "Presets=Controls, Skeleton=false / Addon / LeftAddon",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.right",
+          "message": "Паддинг right: 6 → 0",
+          "referenceValue": 6,
+          "actualValue": "0 (Spacing)",
+          "referenceRawValue": 6,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 6,
+          "actualDisplayValue": "0 (Spacing)",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "0",
+            "key": "72e2988d91d32bc45f988052a35513d3755e8c56",
+            "library": "Spacing",
+            "sourceFile": "Spacing"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:72e2988d91d32bc45f988052a35513d3755e8c56/1:7",
+            "key": "72e2988d91d32bc45f988052a35513d3755e8c56",
+            "name": "0",
+            "collectionId": "VariableCollectionId:1:2",
+            "collectionName": "Spacing",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "42994c20bdb339c3d9bb88824624bb7e2e10fbda",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "1006a79aa14571e14b43af411da0b3f84825b2df",
+            "actualNestedOwnerPath": "Presets=Controls, Skeleton=false",
+            "actualNestedOwnerRelativePath": "Addon / LeftAddon",
+            "nestedOwnerComponentKey": "42994c20bdb339c3d9bb88824624bb7e2e10fbda",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Presets=Controls, Skeleton=false / Addon / LeftAddon",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "Presets": "IconView"
+            },
+            "referenceVariantProperties": {
+              "Presets": "IconView"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "I29320:344174;29063:127365;29063:127056",
+              "nodeName": "[D] BodyControlCell :: Wide",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-wide.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I29320:344174;29063:127285;29063:127056",
+        "name": "[D] BodyControlCell :: Wide",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Односторонние уведомления",
+        "path": "Старый FilterBlock / Альфа-кредит / АК :: Договоры - Уведомления /   / [D] CorporatePage / Page / Body / [D] CorporateContent / ContentBody / LOCAL_Tablenotif / Table / Content / LOCAL_AK_Table_Nots / Cells / [D] BodyControlCell :: Wide",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyControlCell :: Wide",
+        "key": "1006a79aa14571e14b43af411da0b3f84825b2df",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Presets=Controls, Skeleton=false",
+        "key": "1006a79aa14571e14b43af411da0b3f84825b2df"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I29320:344174;29063:127285;29063:127056",
+            "name": "[D] BodyControlCell :: Wide",
+            "type": null,
+            "pageName": "     ↳ Односторонние уведомления",
+            "path": "Presets=Controls, Skeleton=false",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.right",
+          "message": "Паддинг right: 12 → 4",
+          "referenceValue": 12,
+          "actualValue": 4,
+          "referenceRawValue": 12,
+          "actualRawValue": 4,
+          "referenceDisplayValue": 12,
+          "actualDisplayValue": 4,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "1006a79aa14571e14b43af411da0b3f84825b2df",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Presets": "Controls",
+              "Skeleton": "false"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "I29320:344174;29063:127285;29063:127056",
+              "nodeName": "[D] BodyControlCell :: Wide",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-wide.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29320:344174;29063:127285;29063:127056",
+            "name": "[D] BodyControlCell :: Wide",
+            "type": null,
+            "pageName": "     ↳ Односторонние уведомления",
+            "path": "Presets=Controls, Skeleton=false",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.left",
+          "message": "Паддинг left: 16 → 4",
+          "referenceValue": 16,
+          "actualValue": 4,
+          "referenceRawValue": 16,
+          "actualRawValue": 4,
+          "referenceDisplayValue": 16,
+          "actualDisplayValue": 4,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "1006a79aa14571e14b43af411da0b3f84825b2df",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Presets": "Controls",
+              "Skeleton": "false"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "I29320:344174;29063:127285;29063:127056",
+              "nodeName": "[D] BodyControlCell :: Wide",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-wide.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29320:344174;29063:127285;29063:127056;74661:67571",
+            "name": "LeftAddon",
+            "type": null,
+            "pageName": "     ↳ Односторонние уведомления",
+            "path": "Presets=Controls, Skeleton=false / Addon / LeftAddon",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.right",
+          "message": "Паддинг right: 6 → 0",
+          "referenceValue": 6,
+          "actualValue": "0 (Spacing)",
+          "referenceRawValue": 6,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 6,
+          "actualDisplayValue": "0 (Spacing)",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "0",
+            "key": "72e2988d91d32bc45f988052a35513d3755e8c56",
+            "library": "Spacing",
+            "sourceFile": "Spacing"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:72e2988d91d32bc45f988052a35513d3755e8c56/1:7",
+            "key": "72e2988d91d32bc45f988052a35513d3755e8c56",
+            "name": "0",
+            "collectionId": "VariableCollectionId:1:2",
+            "collectionName": "Spacing",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "42994c20bdb339c3d9bb88824624bb7e2e10fbda",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "1006a79aa14571e14b43af411da0b3f84825b2df",
+            "actualNestedOwnerPath": "Presets=Controls, Skeleton=false",
+            "actualNestedOwnerRelativePath": "Addon / LeftAddon",
+            "nestedOwnerComponentKey": "42994c20bdb339c3d9bb88824624bb7e2e10fbda",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Presets=Controls, Skeleton=false / Addon / LeftAddon",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "Presets": "IconView"
+            },
+            "referenceVariantProperties": {
+              "Presets": "IconView"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "I29320:344174;29063:127285;29063:127056",
+              "nodeName": "[D] BodyControlCell :: Wide",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-wide.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I29320:344174;29302:316882;29063:127056",
+        "name": "[D] BodyControlCell :: Wide",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Односторонние уведомления",
+        "path": "Старый FilterBlock / Альфа-кредит / АК :: Договоры - Уведомления /   / [D] CorporatePage / Page / Body / [D] CorporateContent / ContentBody / LOCAL_Tablenotif / Table / Content / LOCAL_AK_Table_Nots / Cells / [D] BodyControlCell :: Wide",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyControlCell :: Wide",
+        "key": "1006a79aa14571e14b43af411da0b3f84825b2df",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Presets=Controls, Skeleton=false",
+        "key": "1006a79aa14571e14b43af411da0b3f84825b2df"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I29320:344174;29302:316882;29063:127056",
+            "name": "[D] BodyControlCell :: Wide",
+            "type": null,
+            "pageName": "     ↳ Односторонние уведомления",
+            "path": "Presets=Controls, Skeleton=false",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.right",
+          "message": "Паддинг right: 12 → 4",
+          "referenceValue": 12,
+          "actualValue": 4,
+          "referenceRawValue": 12,
+          "actualRawValue": 4,
+          "referenceDisplayValue": 12,
+          "actualDisplayValue": 4,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "1006a79aa14571e14b43af411da0b3f84825b2df",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Presets": "Controls",
+              "Skeleton": "false"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "I29320:344174;29302:316882;29063:127056",
+              "nodeName": "[D] BodyControlCell :: Wide",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-wide.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29320:344174;29302:316882;29063:127056",
+            "name": "[D] BodyControlCell :: Wide",
+            "type": null,
+            "pageName": "     ↳ Односторонние уведомления",
+            "path": "Presets=Controls, Skeleton=false",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.left",
+          "message": "Паддинг left: 16 → 4",
+          "referenceValue": 16,
+          "actualValue": 4,
+          "referenceRawValue": 16,
+          "actualRawValue": 4,
+          "referenceDisplayValue": 16,
+          "actualDisplayValue": 4,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "1006a79aa14571e14b43af411da0b3f84825b2df",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Presets": "Controls",
+              "Skeleton": "false"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "I29320:344174;29302:316882;29063:127056",
+              "nodeName": "[D] BodyControlCell :: Wide",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-wide.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29320:344174;29302:316882;29063:127056;74661:67571",
+            "name": "LeftAddon",
+            "type": null,
+            "pageName": "     ↳ Односторонние уведомления",
+            "path": "Presets=Controls, Skeleton=false / Addon / LeftAddon",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.right",
+          "message": "Паддинг right: 6 → 0",
+          "referenceValue": 6,
+          "actualValue": "0 (Spacing)",
+          "referenceRawValue": 6,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 6,
+          "actualDisplayValue": "0 (Spacing)",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "0",
+            "key": "72e2988d91d32bc45f988052a35513d3755e8c56",
+            "library": "Spacing",
+            "sourceFile": "Spacing"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:72e2988d91d32bc45f988052a35513d3755e8c56/1:7",
+            "key": "72e2988d91d32bc45f988052a35513d3755e8c56",
+            "name": "0",
+            "collectionId": "VariableCollectionId:1:2",
+            "collectionName": "Spacing",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "42994c20bdb339c3d9bb88824624bb7e2e10fbda",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "1006a79aa14571e14b43af411da0b3f84825b2df",
+            "actualNestedOwnerPath": "Presets=Controls, Skeleton=false",
+            "actualNestedOwnerRelativePath": "Addon / LeftAddon",
+            "nestedOwnerComponentKey": "42994c20bdb339c3d9bb88824624bb7e2e10fbda",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Presets=Controls, Skeleton=false / Addon / LeftAddon",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "Presets": "IconView"
+            },
+            "referenceVariantProperties": {
+              "Presets": "IconView"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "I29320:344174;29302:316882;29063:127056",
+              "nodeName": "[D] BodyControlCell :: Wide",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-wide.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I29320:344174;29063:128132;29063:127056",
+        "name": "[D] BodyControlCell :: Wide",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Односторонние уведомления",
+        "path": "Старый FilterBlock / Альфа-кредит / АК :: Договоры - Уведомления /   / [D] CorporatePage / Page / Body / [D] CorporateContent / ContentBody / LOCAL_Tablenotif / Table / Content / Component 4 / Cells / [D] BodyControlCell :: Wide",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyControlCell :: Wide",
+        "key": "1006a79aa14571e14b43af411da0b3f84825b2df",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Presets=Controls, Skeleton=false",
+        "key": "1006a79aa14571e14b43af411da0b3f84825b2df"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I29320:344174;29063:128132;29063:127056",
+            "name": "[D] BodyControlCell :: Wide",
+            "type": null,
+            "pageName": "     ↳ Односторонние уведомления",
+            "path": "Presets=Controls, Skeleton=false",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.right",
+          "message": "Паддинг right: 12 → 4",
+          "referenceValue": 12,
+          "actualValue": 4,
+          "referenceRawValue": 12,
+          "actualRawValue": 4,
+          "referenceDisplayValue": 12,
+          "actualDisplayValue": 4,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "1006a79aa14571e14b43af411da0b3f84825b2df",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Presets": "Controls",
+              "Skeleton": "false"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "I29320:344174;29063:128132;29063:127056",
+              "nodeName": "[D] BodyControlCell :: Wide",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-wide.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29320:344174;29063:128132;29063:127056",
+            "name": "[D] BodyControlCell :: Wide",
+            "type": null,
+            "pageName": "     ↳ Односторонние уведомления",
+            "path": "Presets=Controls, Skeleton=false",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.left",
+          "message": "Паддинг left: 16 → 4",
+          "referenceValue": 16,
+          "actualValue": 4,
+          "referenceRawValue": 16,
+          "actualRawValue": 4,
+          "referenceDisplayValue": 16,
+          "actualDisplayValue": 4,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "1006a79aa14571e14b43af411da0b3f84825b2df",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Presets": "Controls",
+              "Skeleton": "false"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "I29320:344174;29063:128132;29063:127056",
+              "nodeName": "[D] BodyControlCell :: Wide",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-wide.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I29320:344174;29063:128659;29063:127056",
+        "name": "[D] BodyControlCell :: Wide",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Односторонние уведомления",
+        "path": "Старый FilterBlock / Альфа-кредит / АК :: Договоры - Уведомления /   / [D] CorporatePage / Page / Body / [D] CorporateContent / ContentBody / LOCAL_Tablenotif / Table / Content / Component 6 / Cells / [D] BodyControlCell :: Wide",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyControlCell :: Wide",
+        "key": "1006a79aa14571e14b43af411da0b3f84825b2df",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Presets=Controls, Skeleton=false",
+        "key": "1006a79aa14571e14b43af411da0b3f84825b2df"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I29320:344174;29063:128659;29063:127056",
+            "name": "[D] BodyControlCell :: Wide",
+            "type": null,
+            "pageName": "     ↳ Односторонние уведомления",
+            "path": "Presets=Controls, Skeleton=false",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.right",
+          "message": "Паддинг right: 12 → 4",
+          "referenceValue": 12,
+          "actualValue": 4,
+          "referenceRawValue": 12,
+          "actualRawValue": 4,
+          "referenceDisplayValue": 12,
+          "actualDisplayValue": 4,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "1006a79aa14571e14b43af411da0b3f84825b2df",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Presets": "Controls",
+              "Skeleton": "false"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "I29320:344174;29063:128659;29063:127056",
+              "nodeName": "[D] BodyControlCell :: Wide",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-wide.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29320:344174;29063:128659;29063:127056",
+            "name": "[D] BodyControlCell :: Wide",
+            "type": null,
+            "pageName": "     ↳ Односторонние уведомления",
+            "path": "Presets=Controls, Skeleton=false",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.left",
+          "message": "Паддинг left: 16 → 4",
+          "referenceValue": 16,
+          "actualValue": 4,
+          "referenceRawValue": 16,
+          "actualRawValue": 4,
+          "referenceDisplayValue": 16,
+          "actualDisplayValue": 4,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "1006a79aa14571e14b43af411da0b3f84825b2df",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Presets": "Controls",
+              "Skeleton": "false"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "I29320:344174;29063:128659;29063:127056",
+              "nodeName": "[D] BodyControlCell :: Wide",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-wide.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I29320:344174;29063:128696;29063:127056",
+        "name": "[D] BodyControlCell :: Wide",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Односторонние уведомления",
+        "path": "Старый FilterBlock / Альфа-кредит / АК :: Договоры - Уведомления /   / [D] CorporatePage / Page / Body / [D] CorporateContent / ContentBody / LOCAL_Tablenotif / Table / Content / Component 7 / Cells / [D] BodyControlCell :: Wide",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyControlCell :: Wide",
+        "key": "1006a79aa14571e14b43af411da0b3f84825b2df",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Presets=Controls, Skeleton=false",
+        "key": "1006a79aa14571e14b43af411da0b3f84825b2df"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I29320:344174;29063:128696;29063:127056",
+            "name": "[D] BodyControlCell :: Wide",
+            "type": null,
+            "pageName": "     ↳ Односторонние уведомления",
+            "path": "Presets=Controls, Skeleton=false",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.right",
+          "message": "Паддинг right: 12 → 4",
+          "referenceValue": 12,
+          "actualValue": 4,
+          "referenceRawValue": 12,
+          "actualRawValue": 4,
+          "referenceDisplayValue": 12,
+          "actualDisplayValue": 4,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "1006a79aa14571e14b43af411da0b3f84825b2df",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Presets": "Controls",
+              "Skeleton": "false"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "I29320:344174;29063:128696;29063:127056",
+              "nodeName": "[D] BodyControlCell :: Wide",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-wide.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29320:344174;29063:128696;29063:127056",
+            "name": "[D] BodyControlCell :: Wide",
+            "type": null,
+            "pageName": "     ↳ Односторонние уведомления",
+            "path": "Presets=Controls, Skeleton=false",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.left",
+          "message": "Паддинг left: 16 → 4",
+          "referenceValue": 16,
+          "actualValue": 4,
+          "referenceRawValue": 16,
+          "actualRawValue": 4,
+          "referenceDisplayValue": 16,
+          "actualDisplayValue": 4,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "1006a79aa14571e14b43af411da0b3f84825b2df",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Presets": "Controls",
+              "Skeleton": "false"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "I29320:344174;29063:128696;29063:127056",
+              "nodeName": "[D] BodyControlCell :: Wide",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-wide.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I29320:344174;29063:128622;29063:127056",
+        "name": "[D] BodyControlCell :: Wide",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Односторонние уведомления",
+        "path": "Старый FilterBlock / Альфа-кредит / АК :: Договоры - Уведомления /   / [D] CorporatePage / Page / Body / [D] CorporateContent / ContentBody / LOCAL_Tablenotif / Table / Content / Component 5 / Cells / [D] BodyControlCell :: Wide",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyControlCell :: Wide",
+        "key": "1006a79aa14571e14b43af411da0b3f84825b2df",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Presets=Controls, Skeleton=false",
+        "key": "1006a79aa14571e14b43af411da0b3f84825b2df"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I29320:344174;29063:128622;29063:127056",
+            "name": "[D] BodyControlCell :: Wide",
+            "type": null,
+            "pageName": "     ↳ Односторонние уведомления",
+            "path": "Presets=Controls, Skeleton=false",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.right",
+          "message": "Паддинг right: 12 → 4",
+          "referenceValue": 12,
+          "actualValue": 4,
+          "referenceRawValue": 12,
+          "actualRawValue": 4,
+          "referenceDisplayValue": 12,
+          "actualDisplayValue": 4,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "1006a79aa14571e14b43af411da0b3f84825b2df",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Presets": "Controls",
+              "Skeleton": "false"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "I29320:344174;29063:128622;29063:127056",
+              "nodeName": "[D] BodyControlCell :: Wide",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-wide.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29320:344174;29063:128622;29063:127056",
+            "name": "[D] BodyControlCell :: Wide",
+            "type": null,
+            "pageName": "     ↳ Односторонние уведомления",
+            "path": "Presets=Controls, Skeleton=false",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.left",
+          "message": "Паддинг left: 16 → 4",
+          "referenceValue": 16,
+          "actualValue": 4,
+          "referenceRawValue": 16,
+          "actualRawValue": 4,
+          "referenceDisplayValue": 16,
+          "actualDisplayValue": 4,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "1006a79aa14571e14b43af411da0b3f84825b2df",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Presets": "Controls",
+              "Skeleton": "false"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "I29320:344174;29063:128622;29063:127056",
+              "nodeName": "[D] BodyControlCell :: Wide",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-wide.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I29320:344174;29063:128733;29063:127056",
+        "name": "[D] BodyControlCell :: Wide",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Односторонние уведомления",
+        "path": "Старый FilterBlock / Альфа-кредит / АК :: Договоры - Уведомления /   / [D] CorporatePage / Page / Body / [D] CorporateContent / ContentBody / LOCAL_Tablenotif / Table / Content / Component 8 / Cells / [D] BodyControlCell :: Wide",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyControlCell :: Wide",
+        "key": "1006a79aa14571e14b43af411da0b3f84825b2df",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Presets=Controls, Skeleton=false",
+        "key": "1006a79aa14571e14b43af411da0b3f84825b2df"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I29320:344174;29063:128733;29063:127056",
+            "name": "[D] BodyControlCell :: Wide",
+            "type": null,
+            "pageName": "     ↳ Односторонние уведомления",
+            "path": "Presets=Controls, Skeleton=false",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.right",
+          "message": "Паддинг right: 12 → 4",
+          "referenceValue": 12,
+          "actualValue": 4,
+          "referenceRawValue": 12,
+          "actualRawValue": 4,
+          "referenceDisplayValue": 12,
+          "actualDisplayValue": 4,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "1006a79aa14571e14b43af411da0b3f84825b2df",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Presets": "Controls",
+              "Skeleton": "false"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "I29320:344174;29063:128733;29063:127056",
+              "nodeName": "[D] BodyControlCell :: Wide",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-wide.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29320:344174;29063:128733;29063:127056",
+            "name": "[D] BodyControlCell :: Wide",
+            "type": null,
+            "pageName": "     ↳ Односторонние уведомления",
+            "path": "Presets=Controls, Skeleton=false",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.left",
+          "message": "Паддинг left: 16 → 4",
+          "referenceValue": 16,
+          "actualValue": 4,
+          "referenceRawValue": 16,
+          "actualRawValue": 4,
+          "referenceDisplayValue": 16,
+          "actualDisplayValue": 4,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "1006a79aa14571e14b43af411da0b3f84825b2df",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Presets": "Controls",
+              "Skeleton": "false"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "I29320:344174;29063:128733;29063:127056",
+              "nodeName": "[D] BodyControlCell :: Wide",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-wide.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I29320:344174;29063:128770;29063:127056",
+        "name": "[D] BodyControlCell :: Wide",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Односторонние уведомления",
+        "path": "Старый FilterBlock / Альфа-кредит / АК :: Договоры - Уведомления /   / [D] CorporatePage / Page / Body / [D] CorporateContent / ContentBody / LOCAL_Tablenotif / Table / Content / Component 9 / Cells / [D] BodyControlCell :: Wide",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyControlCell :: Wide",
+        "key": "1006a79aa14571e14b43af411da0b3f84825b2df",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Presets=Controls, Skeleton=false",
+        "key": "1006a79aa14571e14b43af411da0b3f84825b2df"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I29320:344174;29063:128770;29063:127056",
+            "name": "[D] BodyControlCell :: Wide",
+            "type": null,
+            "pageName": "     ↳ Односторонние уведомления",
+            "path": "Presets=Controls, Skeleton=false",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.right",
+          "message": "Паддинг right: 12 → 4",
+          "referenceValue": 12,
+          "actualValue": 4,
+          "referenceRawValue": 12,
+          "actualRawValue": 4,
+          "referenceDisplayValue": 12,
+          "actualDisplayValue": 4,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "1006a79aa14571e14b43af411da0b3f84825b2df",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Presets": "Controls",
+              "Skeleton": "false"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "I29320:344174;29063:128770;29063:127056",
+              "nodeName": "[D] BodyControlCell :: Wide",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-wide.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29320:344174;29063:128770;29063:127056",
+            "name": "[D] BodyControlCell :: Wide",
+            "type": null,
+            "pageName": "     ↳ Односторонние уведомления",
+            "path": "Presets=Controls, Skeleton=false",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.left",
+          "message": "Паддинг left: 16 → 4",
+          "referenceValue": 16,
+          "actualValue": 4,
+          "referenceRawValue": 16,
+          "actualRawValue": 4,
+          "referenceDisplayValue": 16,
+          "actualDisplayValue": 4,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "1006a79aa14571e14b43af411da0b3f84825b2df",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Presets": "Controls",
+              "Skeleton": "false"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "I29320:344174;29063:128770;29063:127056",
+              "nodeName": "[D] BodyControlCell :: Wide",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-wide.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I29320:344174;29295:314217;29063:127056",
+        "name": "[D] BodyControlCell :: Wide",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Односторонние уведомления",
+        "path": "Старый FilterBlock / Альфа-кредит / АК :: Договоры - Уведомления /   / [D] CorporatePage / Page / Body / [D] CorporateContent / ContentBody / LOCAL_Tablenotif / Table / Content / Component 10 / Cells / [D] BodyControlCell :: Wide",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyControlCell :: Wide",
+        "key": "1006a79aa14571e14b43af411da0b3f84825b2df",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Presets=Controls, Skeleton=false",
+        "key": "1006a79aa14571e14b43af411da0b3f84825b2df"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I29320:344174;29295:314217;29063:127056",
+            "name": "[D] BodyControlCell :: Wide",
+            "type": null,
+            "pageName": "     ↳ Односторонние уведомления",
+            "path": "Presets=Controls, Skeleton=false",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.right",
+          "message": "Паддинг right: 12 → 4",
+          "referenceValue": 12,
+          "actualValue": 4,
+          "referenceRawValue": 12,
+          "actualRawValue": 4,
+          "referenceDisplayValue": 12,
+          "actualDisplayValue": 4,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "1006a79aa14571e14b43af411da0b3f84825b2df",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Presets": "Controls",
+              "Skeleton": "false"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "29320:338438",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-wide.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29320:344174;29295:314217;29063:127056",
+            "name": "[D] BodyControlCell :: Wide",
+            "type": null,
+            "pageName": "     ↳ Односторонние уведомления",
+            "path": "Presets=Controls, Skeleton=false",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.left",
+          "message": "Паддинг left: 16 → 4",
+          "referenceValue": 16,
+          "actualValue": 4,
+          "referenceRawValue": 16,
+          "actualRawValue": 4,
+          "referenceDisplayValue": 16,
+          "actualDisplayValue": 4,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "1006a79aa14571e14b43af411da0b3f84825b2df",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Presets": "Controls",
+              "Skeleton": "false"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "29320:338438",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-wide.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I29320:344174;29061:124838",
+        "name": "[D] StickyPagination",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Односторонние уведомления",
+        "path": "Старый FilterBlock / Альфа-кредит / АК :: Договоры - Уведомления /   / [D] CorporatePage / Page / Body / [D] CorporateContent / ContentBody / LOCAL_Tablenotif / Table / [D] StickyPagination",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] StickyPagination",
+        "key": "247493c2a998da351244a910b337df8cdd50b736",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Pagination [D].json"
+      },
+      "variant": {
+        "name": "Presets=Pagination",
+        "key": "247493c2a998da351244a910b337df8cdd50b736"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I29320:344174;29061:124838;87899:25452",
+            "name": "Pagination",
+            "type": null,
+            "pageName": "     ↳ Односторонние уведомления",
+            "path": "Presets=Pagination / Content / Pagination",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.top",
+          "message": "Паддинг top: 0 → 1",
+          "referenceValue": 0,
+          "actualValue": 1,
+          "referenceRawValue": 0,
+          "actualRawValue": 1,
+          "referenceDisplayValue": 0,
+          "actualDisplayValue": 1,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "012268dbcf4631b62cf02a2e443568ef738b770c",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "247493c2a998da351244a910b337df8cdd50b736",
+            "actualNestedOwnerPath": "Presets=Pagination",
+            "actualNestedOwnerRelativePath": "Content / Pagination",
+            "nestedOwnerComponentKey": "012268dbcf4631b62cf02a2e443568ef738b770c",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Presets=Pagination / Content / Pagination",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "Skeleton": "false"
+            },
+            "referenceVariantProperties": {
+              "Skeleton": "false"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "I29320:344174;29061:124838",
+              "nodeName": "[D] StickyPagination",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.pagination.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29320:344174;29061:124838;87899:25452",
+            "name": "Pagination",
+            "type": null,
+            "pageName": "     ↳ Односторонние уведомления",
+            "path": "Presets=Pagination / Content / Pagination",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.bottom",
+          "message": "Паддинг bottom: 0 → 1",
+          "referenceValue": 0,
+          "actualValue": 1,
+          "referenceRawValue": 0,
+          "actualRawValue": 1,
+          "referenceDisplayValue": 0,
+          "actualDisplayValue": 1,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "012268dbcf4631b62cf02a2e443568ef738b770c",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "247493c2a998da351244a910b337df8cdd50b736",
+            "actualNestedOwnerPath": "Presets=Pagination",
+            "actualNestedOwnerRelativePath": "Content / Pagination",
+            "nestedOwnerComponentKey": "012268dbcf4631b62cf02a2e443568ef738b770c",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Presets=Pagination / Content / Pagination",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "Skeleton": "false"
+            },
+            "referenceVariantProperties": {
+              "Skeleton": "false"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "I29320:344174;29061:124838",
+              "nodeName": "[D] StickyPagination",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.pagination.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29320:344174;29061:124838;81998:242953",
+            "name": "BorderLine",
+            "type": null,
+            "pageName": "     ↳ Односторонние уведомления",
+            "path": "Presets=Pagination / BorderLine",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.right",
+          "message": "Паддинг right: 0 → 16",
+          "referenceValue": 0,
+          "actualValue": "16 (Spacing)",
+          "referenceRawValue": 0,
+          "actualRawValue": 16,
+          "referenceDisplayValue": 0,
+          "actualDisplayValue": "16 (Spacing)",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "16",
+            "key": "59ff0616087ba120b5ba63514ac2699c634960e4",
+            "library": "Spacing",
+            "sourceFile": "Spacing"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:59ff0616087ba120b5ba63514ac2699c634960e4/1:36",
+            "key": "59ff0616087ba120b5ba63514ac2699c634960e4",
+            "name": "16",
+            "collectionId": "VariableCollectionId:1:2",
+            "collectionName": "Spacing",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "2ab590bd24f07ebe4915d9ae8d86f6eb843f0ca9",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "247493c2a998da351244a910b337df8cdd50b736",
+            "actualNestedOwnerPath": "Presets=Pagination",
+            "actualNestedOwnerRelativePath": "BorderLine",
+            "nestedOwnerComponentKey": "2ab590bd24f07ebe4915d9ae8d86f6eb843f0ca9",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Presets=Pagination / BorderLine",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "Skeleton": "false"
+            },
+            "referenceVariantProperties": {
+              "Skeleton": "false"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "I29320:344174;29061:124838",
+              "nodeName": "[D] StickyPagination",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-wide.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I29320:344174;29061:124838;81998:242953",
+            "name": "BorderLine",
+            "type": null,
+            "pageName": "     ↳ Односторонние уведомления",
+            "path": "Presets=Pagination / BorderLine",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.left",
+          "message": "Паддинг left: 0 → 16",
+          "referenceValue": 0,
+          "actualValue": "16 (Spacing)",
+          "referenceRawValue": 0,
+          "actualRawValue": 16,
+          "referenceDisplayValue": 0,
+          "actualDisplayValue": "16 (Spacing)",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "16",
+            "key": "59ff0616087ba120b5ba63514ac2699c634960e4",
+            "library": "Spacing",
+            "sourceFile": "Spacing"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:59ff0616087ba120b5ba63514ac2699c634960e4/1:36",
+            "key": "59ff0616087ba120b5ba63514ac2699c634960e4",
+            "name": "16",
+            "collectionId": "VariableCollectionId:1:2",
+            "collectionName": "Spacing",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "2ab590bd24f07ebe4915d9ae8d86f6eb843f0ca9",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "247493c2a998da351244a910b337df8cdd50b736",
+            "actualNestedOwnerPath": "Presets=Pagination",
+            "actualNestedOwnerRelativePath": "BorderLine",
+            "nestedOwnerComponentKey": "2ab590bd24f07ebe4915d9ae8d86f6eb843f0ca9",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Presets=Pagination / BorderLine",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "Skeleton": "false"
+            },
+            "referenceVariantProperties": {
+              "Skeleton": "false"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "I29320:344174;29061:124838",
+              "nodeName": "[D] StickyPagination",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-wide.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "29320:344174",
+        "name": "LOCAL_Tablenotif",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Односторонние уведомления",
+        "path": "Старый FilterBlock / Альфа-кредит / АК :: Договоры - Уведомления /   / [D] CorporatePage / Page / Body / [D] CorporateContent / ContentBody / LOCAL_Tablenotif",
+        "visible": true
+      },
+      "component": {
+        "name": "LOCAL_Tablenotif",
+        "key": "af12ac4b01d8f86fb09a0b08a785fd43475bef86",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I29320:344174;29063:130837",
+        "name": "LOCAL_AK_Table_Nots",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Односторонние уведомления",
+        "path": "Старый FilterBlock / Альфа-кредит / АК :: Договоры - Уведомления /   / [D] CorporatePage / Page / Body / [D] CorporateContent / ContentBody / LOCAL_Tablenotif / Table / Header / LOCAL_AK_Table_Nots",
+        "visible": true
+      },
+      "component": {
+        "name": "LOCAL_AK_Table_Nots",
+        "key": "5fa16ae22db2a3e446112d5d39942968d58f99ee",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I29320:344174;29063:127365",
+        "name": "LOCAL_AK_Table_Nots",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Односторонние уведомления",
+        "path": "Старый FilterBlock / Альфа-кредит / АК :: Договоры - Уведомления /   / [D] CorporatePage / Page / Body / [D] CorporateContent / ContentBody / LOCAL_Tablenotif / Table / Content / LOCAL_AK_Table_Nots",
+        "visible": true
+      },
+      "component": {
+        "name": "LOCAL_AK_Table_Nots",
+        "key": "55a0824f2cc6124ff5bc2c7a82dc7486087203b5",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I29320:344174;29063:127285",
+        "name": "LOCAL_AK_Table_Nots",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Односторонние уведомления",
+        "path": "Старый FilterBlock / Альфа-кредит / АК :: Договоры - Уведомления /   / [D] CorporatePage / Page / Body / [D] CorporateContent / ContentBody / LOCAL_Tablenotif / Table / Content / LOCAL_AK_Table_Nots",
+        "visible": true
+      },
+      "component": {
+        "name": "LOCAL_AK_Table_Nots",
+        "key": "55a0824f2cc6124ff5bc2c7a82dc7486087203b5",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I29320:344174;29302:316882",
+        "name": "LOCAL_AK_Table_Nots",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Односторонние уведомления",
+        "path": "Старый FilterBlock / Альфа-кредит / АК :: Договоры - Уведомления /   / [D] CorporatePage / Page / Body / [D] CorporateContent / ContentBody / LOCAL_Tablenotif / Table / Content / LOCAL_AK_Table_Nots",
+        "visible": true
+      },
+      "component": {
+        "name": "LOCAL_AK_Table_Nots",
+        "key": "55a0824f2cc6124ff5bc2c7a82dc7486087203b5",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I29320:344174;29063:128132",
+        "name": "Component 4",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Односторонние уведомления",
+        "path": "Старый FilterBlock / Альфа-кредит / АК :: Договоры - Уведомления /   / [D] CorporatePage / Page / Body / [D] CorporateContent / ContentBody / LOCAL_Tablenotif / Table / Content / Component 4",
+        "visible": true
+      },
+      "component": {
+        "name": "Component 4",
+        "key": "55a0824f2cc6124ff5bc2c7a82dc7486087203b5",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I29320:344174;29063:128659",
+        "name": "Component 6",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Односторонние уведомления",
+        "path": "Старый FilterBlock / Альфа-кредит / АК :: Договоры - Уведомления /   / [D] CorporatePage / Page / Body / [D] CorporateContent / ContentBody / LOCAL_Tablenotif / Table / Content / Component 6",
+        "visible": true
+      },
+      "component": {
+        "name": "Component 6",
+        "key": "55a0824f2cc6124ff5bc2c7a82dc7486087203b5",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I29320:344174;29063:128696",
+        "name": "Component 7",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Односторонние уведомления",
+        "path": "Старый FilterBlock / Альфа-кредит / АК :: Договоры - Уведомления /   / [D] CorporatePage / Page / Body / [D] CorporateContent / ContentBody / LOCAL_Tablenotif / Table / Content / Component 7",
+        "visible": true
+      },
+      "component": {
+        "name": "Component 7",
+        "key": "55a0824f2cc6124ff5bc2c7a82dc7486087203b5",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I29320:344174;29063:128622",
+        "name": "Component 5",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Односторонние уведомления",
+        "path": "Старый FilterBlock / Альфа-кредит / АК :: Договоры - Уведомления /   / [D] CorporatePage / Page / Body / [D] CorporateContent / ContentBody / LOCAL_Tablenotif / Table / Content / Component 5",
+        "visible": true
+      },
+      "component": {
+        "name": "Component 5",
+        "key": "55a0824f2cc6124ff5bc2c7a82dc7486087203b5",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I29320:344174;29063:128733",
+        "name": "Component 8",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Односторонние уведомления",
+        "path": "Старый FilterBlock / Альфа-кредит / АК :: Договоры - Уведомления /   / [D] CorporatePage / Page / Body / [D] CorporateContent / ContentBody / LOCAL_Tablenotif / Table / Content / Component 8",
+        "visible": true
+      },
+      "component": {
+        "name": "Component 8",
+        "key": "55a0824f2cc6124ff5bc2c7a82dc7486087203b5",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I29320:344174;29063:128770",
+        "name": "Component 9",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Односторонние уведомления",
+        "path": "Старый FilterBlock / Альфа-кредит / АК :: Договоры - Уведомления /   / [D] CorporatePage / Page / Body / [D] CorporateContent / ContentBody / LOCAL_Tablenotif / Table / Content / Component 9",
+        "visible": true
+      },
+      "component": {
+        "name": "Component 9",
+        "key": "55a0824f2cc6124ff5bc2c7a82dc7486087203b5",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I29320:344174;29295:314217",
+        "name": "Component 10",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Односторонние уведомления",
+        "path": "Старый FilterBlock / Альфа-кредит / АК :: Договоры - Уведомления /   / [D] CorporatePage / Page / Body / [D] CorporateContent / ContentBody / LOCAL_Tablenotif / Table / Content / Component 10",
+        "visible": true
+      },
+      "component": {
+        "name": "Component 10",
+        "key": "55a0824f2cc6124ff5bc2c7a82dc7486087203b5",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": []
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "29320:344174",
+        "name": "Страница:      ↳ Односторонние уведомления",
+        "type": "PAGE",
+        "pageName": "     ↳ Односторонние уведомления",
+        "path": "     ↳ Односторонние уведомления",
+        "visible": true
+      },
+      "kind": "missingThemeMode",
+      "recommendation": "Смени темизацию на Corp",
+      "component": null
+    }
+  ],
+  "componentContexts": [
+    {
+      "componentKey": "web-core.button",
+      "summary": "Button — семейство action controls. Apollo должен трактовать изменения Button variant как component property changes, а ручные изменения style/token/layout как layer customizations.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] Button",
+        "[D] Button_Inverted",
+        "[M] Button",
+        "[M] Button_Inverted",
+        "🔄 [D][Corporate] Button",
+        "🔄 [D][Corporate] Button_Inverted",
+        "🔄 [M][Corporate] Button",
+        "🔄 [M][Corporate] Button_Inverted",
+        "🔩 Addon",
+        "🔩 Addon"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*",
+          "variant.View",
+          "variant.Size",
+          "variant.Shape",
+          "variant.SingleIcon",
+          "variant.DisabledState"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent",
+          "layout.padding",
+          "layout.itemSpacing"
+        ],
+        "baselinePolicy": "Если component property изменилась, сравнивай ручные layer overrides с baseline текущего actual-состояния компонента, а не с исходным reference baseline.",
+        "slotProperties": [
+          "LeftAddon.variant.Type",
+          "RightAddon.variant.Type"
+        ],
+        "ordering": [
+          "component-property",
+          "slot-property",
+          "layer-property"
+        ]
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.View",
+            "variant.Size",
+            "variant.Shape",
+            "variant.SingleIcon",
+            "variant.DisabledState"
+          ],
+          "layerProperties": [
+            "fills",
+            "strokes",
+            "strokeWeight",
+            "cornerRadius",
+            "opacity",
+            "layout.padding",
+            "layout.itemSpacing",
+            "styles.text",
+            "typography"
+          ],
+          "dependencyPolicy": "При reset component property layer differences, вызванные только этой property, могут исчезнуть автоматически. Ручные layer overrides должны оставаться независимо сбрасываемыми, пока reset родительской property не уберёт их target state."
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web-corp.corporate-topbar",
+      "summary": "[D] TopBar — desktop-панель управления табличным, списочным или карточным представлением данных. Она показывает обязательный Counter, поддерживает контекстные массовые и дополнительные действия и открывает настройки вида данных.",
+      "criticalBaselines": [
+        "Публичным корнем является только [D] TopBar; остальные компоненты пакета являются внутренними.",
+        "Filtered=false использует подпись «Всего», Filtered=true — «Найдено»; Counter обязателен и считает весь набор данных.",
+        "Skeleton=true блокирует взаимодействие и сохраняет состояние Filtered после загрузки.",
+        "OptionList Mode должен соответствовать Table Basic, Table Wide или Core-представлению.",
+        "Корень использует Fill по ширине и Hug по высоте; геометрия и визуальные стили защищены effective baseline.",
+        "TopBar применяется только на desktop от 768 px и всегда связан с таблицей, списком или карточками.",
+        "Для Table Wide [D] TopBar является sibling [D] BackgroundPlateSlot в общем Level-0 контейнере. Его нельзя размещать внутри Slot плейта."
+      ],
+      "agentInstructions": [
+        "Не объявляй служебные компоненты пакета самостоятельными публичными компонентами.",
+        "Не считай контекстное содержимое Control или Custom StartAddon нарушением само по себе.",
+        "Проверяй максимум одну дополнительную Button с Size=32 и View=Primary или Secondary.",
+        "Проверяй минимум одну видимую колонку и мгновенное применение настроек.",
+        "Не предлагай переход Basic ↔ Core: допустимы только Basic ↔ Wide и Core ↔ Wide.",
+        "Не разрешай переименование фиксированных служебных подписей.",
+        "При проверке Table Wide отклоняй композицию, где [D] TopBar вложен в BackgroundPlateSlot, даже если визуально отступы совпадают."
+      ],
+      "includedComponents": [
+        "[D] OptionList",
+        "[D] Settings",
+        "[D] StartAddon",
+        "[D] TopBar",
+        "[D] OptionListHeader",
+        "[D] SortableListItem",
+        "Control",
+        "Divider"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "636e6d4474770d65d5b077757a9c1c62c08a8f8c",
+          "name": "[D] TopBar",
+          "purpose": "Desktop-панель управления представлением данных: показывает количество объектов, массовые и контекстные действия и настройки вида.",
+          "useWhen": [
+            "Над таблицей, списком или карточками нужны счётчик, действия или переключение настроек представления."
+          ],
+          "doNotUseWhen": [
+            "Под панелью нет связанного представления данных."
+          ],
+          "relationship": "Публичный корень CorporateTopbar; остальные компоненты пакета являются его внутренними областями и контролами.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сначала разреши Filtered, Skeleton и состояния вложенных компонентов, затем сравнивай layer properties с effective baseline.",
+        "allowedSlotChanges": [
+          "Control content and count",
+          "StartAddon Custom content",
+          "OptionList column labels, row count and row order",
+          "additional Button label and RightAddon"
+        ]
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.pagination",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] StickyPagination",
+        "🔄 AmountRow",
+        "ButtonsGroup",
+        "OptionSelect",
+        "Pagination",
+        "[D] AmountListCell",
+        "AmountOptionList",
+        "AmountRow",
+        "Counter"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.table-wide-d",
+      "summary": "Table Wide [D] — семейство для таблиц с одним текстовым слотом в ячейке, большим количеством столбцов, группировкой и горизонтальным скроллом.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] BodyActionCell :: Wide",
+        "[D] BodyCell :: Wide",
+        "[D] BodyControlCell :: Wide",
+        "[D] HeadActionCell",
+        "[D] HeadCell",
+        "[D] HeadControlCell",
+        "ActionButton",
+        "BorderLine",
+        "Chevron",
+        "ColumnControl",
+        "ColumnControl :: OptionList",
+        "ControlAddon",
+        "HeaderAddon",
+        "LeftAddon",
+        "RightAddon",
+        "Sorting",
+        "Text",
+        "[D] BodyGroupRow :: Wide",
+        "[D] BodyRow :: Wide",
+        "[D] HeadRow :: Universal",
+        "GroupBorderLine",
+        "HeadDivider"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "6968c89343b210b7e5071d4d6ac6e7bd29576dc6",
+          "name": "[D] HeadCell",
+          "purpose": "Обычная ячейка заголовка таблицы для названия колонки и предусмотренного состояния сортировки.",
+          "useWhen": [
+            "В HeadRow нужна колонка с текстовым заголовком."
+          ],
+          "doNotUseWhen": [
+            "Колонка предназначена только для выбора строк или действий."
+          ],
+          "relationship": "Контентная ячейка внутри [D] HeadRow :: Universal; её ширина согласуется с BodyCell.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        },
+        {
+          "componentKey": "77958a2a05ac45ffda72746179f5fdfabab0a720",
+          "name": "[D] BodyControlCell :: Wide",
+          "purpose": "Фиксированная ячейка строки Table Wide для выбора строки или другого предусмотренного контролла.",
+          "useWhen": [
+            "Wide-таблице нужен control-столбец."
+          ],
+          "doNotUseWhen": [
+            "В колонке отображаются данные или действия над строкой."
+          ],
+          "relationship": "Body-пара HeadControlCell; ширина контролируется таблицей и не меняется вручную.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.*"
+          ],
+          "layerProperties": [
+            "fills",
+            "strokes",
+            "strokeWeight",
+            "cornerRadius",
+            "opacity",
+            "layout.padding",
+            "layout.itemSpacing",
+            "styles.text",
+            "typography"
+          ],
+          "dependencyPolicy": "Nested diffs семейства таблиц должны использовать effective baseline выбранного table component перед fallback к standalone baselines вложенных компонентов."
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    }
+  ]
+}
