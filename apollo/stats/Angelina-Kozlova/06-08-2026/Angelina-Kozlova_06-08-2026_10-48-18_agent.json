@@ -1,0 +1,4458 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1366021694733413760-1786002498753-kd0wohwe:agent",
+  "sourceReportId": "apollo-1366021694733413760-1786002498753-kd0wohwe",
+  "generatedAt": "2026-08-06T07:48:18.753Z",
+  "suggestedFileName": "Angelina-Kozlova_06-08-2026_10-48-18_agent.json",
+  "user": {
+    "id": "1366021694733413760",
+    "name": "Angelina Kozlova",
+    "slug": "Angelina-Kozlova"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.1.62"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "🚧 Песочница ДС АБМ (Ангелина)",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "startedAt": "2026-08-06T07:47:57.454Z",
+    "finishedAt": "2026-08-06T07:48:18.753Z",
+    "durationMs": 21299,
+    "selection": [
+      {
+        "nodeId": "4171:25298",
+        "name": "Content",
+        "nodeType": "FRAME",
+        "path": "iOS__Профиль / Content",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 113,
+    "problemOccurrenceCount": 139,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 28,
+      "updates": 14,
+      "customizations": 0,
+      "localComponents": 6,
+      "detachedComponents": 0,
+      "presets": 0,
+      "technicalComponents": 0,
+      "currentComponents": 16,
+      "wrongChannel": 91,
+      "themization": 0
+    },
+    "includedFindingCount": 139,
+    "omittedCurrentComponentCount": 16
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with severity=error and matchKind=exact_component_rule for the same property/change.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 28,
+      "includedCount": 28,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 14,
+      "includedCount": 14,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 6,
+      "includedCount": 6,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 91,
+      "includedCount": 91,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4171:25299;107357:4999;114733:77580;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / BannerWrapper / VerticalPddingsGroup / 🎨 ContentGroup / ContentView / VerticalPaddingsGroup / ContentGroup / ContentViewB / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17 px · Regular",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4171:25316;134346:45599;4171:25310;134346:45599;4171:25308;134346:45608;4171:25307;134346:45599;4171:25305;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17 px · Regular",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4171:25316;134346:45599;4171:25310;134346:45599;4171:25308;134346:45608;4171:25307;134346:45599;4171:25306;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15 px · Regular",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4171:25316;134346:45599;4171:25310;134346:45599;4171:25309;40273:13152;102:204159",
+        "name": "label",
+        "type": "TEXT",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / BurronViewV1 (🍏 13.10) / Primary / ButtonView / VerticalPaddingsGroup / ContentGroup / LabelsStack / label",
+        "visible": true
+      },
+      "style": {
+        "name": "15 px · Semibold",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4171:25316;134346:45599;4171:25315;134346:45608;4171:25313;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15 px · Regular",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4171:25319;133075:28715;132848:28858;64810:734271;64810:734624;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / BannerWrapper (🍏🟦 13.10) / DataView / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / DataView / 🎨 ContentGroup / DataContentV2 (🍏 14.6) / 🎨 ContentGroup / FirstLine / Title / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17 px · Medium",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4171:25319;133075:28715;132848:28858;64810:734272;64810:734624;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / BannerWrapper (🍏🟦 13.10) / DataView / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / DataView / 🎨 ContentGroup / DataContentV2 (🍏 14.6) / 🎨 ContentGroup / SecondLine / Title / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15 px · Regular",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4171:25320;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "22 px · Medium",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4171:25327;134346:45611;4171:25326;134346:45602;4171:25324;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17 px · Regular",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4171:25327;134346:45611;4171:25326;134346:45602;4171:25325;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15 px · Regular",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4171:25334;134346:45611;4171:25333;134346:45602;4171:25331;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17 px · Regular",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4171:25334;134346:45611;4171:25333;134346:45602;4171:25332;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15 px · Regular",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4171:25341;134346:45611;4171:25340;134346:45602;4171:25338;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17 px · Regular",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4171:25341;134346:45611;4171:25340;134346:45602;4171:25339;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15 px · Regular",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4171:25342;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "22 px · Medium",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4171:25349;134346:45611;4171:25348;134346:45602;4171:25346;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17 px · Regular",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4171:25349;134346:45611;4171:25348;134346:45602;4171:25347;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15 px · Regular",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4171:25356;134346:45611;4171:25355;134346:45602;4171:25353;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17 px · Regular",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4171:25356;134346:45611;4171:25355;134346:45602;4171:25354;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15 px · Regular",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4171:25363;134346:45611;4171:25362;134346:45602;4171:25360;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17 px · Regular",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4171:25363;134346:45611;4171:25362;134346:45602;4171:25361;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15 px · Regular",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4171:25364;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "22 px · Medium",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4171:25371;134346:45611;4171:25370;134346:45602;4171:25368;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17 px · Regular",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4171:25371;134346:45611;4171:25370;134346:45602;4171:25369;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15 px · Regular",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4171:25378;134346:45611;4171:25377;134346:45602;4171:25375;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17 px · Regular",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4171:25378;134346:45611;4171:25377;134346:45602;4171:25376;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15 px · Regular",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4171:25385;134346:45611;4171:25384;134346:45602;4171:25382;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17 px · Regular",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I4171:25385;134346:45611;4171:25384;134346:45602;4171:25383;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15 px · Regular",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "92:85748",
+        "name": "LeftPadding",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "BannerWrapper / 👻 Style=fill, isEnabled=true, isHighlighted=false / LeftPadding",
+        "visible": true
+      },
+      "component": {
+        "name": "normal [20]",
+        "key": "aa9b786fe9b48a4050cda7f0ba234e6f7808e4c1",
+        "library": "iOS _ Basic",
+        "sourceFile": "abm/ios/Basic/iOS _ Basic -- HorizontalPadding.json"
+      },
+      "variant": {
+        "name": "normal [20]",
+        "key": "aa9b786fe9b48a4050cda7f0ba234e6f7808e4c1"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "aa9b786fe9b48a4050cda7f0ba234e6f7808e4c1",
+        "currentComponentId": "7:7274",
+        "latestComponentId": "3804:2454"
+      },
+      "localComponentOwner": {
+        "id": "92:85747",
+        "name": "👻 Style=fill, isEnabled=true, isHighlighted=false",
+        "type": "COMPONENT",
+        "pageName": "23. Скролл LG",
+        "path": "BannerWrapper / 👻 Style=fill, isEnabled=true, isHighlighted=false",
+        "visible": true
+      }
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "92:85750",
+        "name": "TopPadding",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "BannerWrapper / 👻 Style=fill, isEnabled=true, isHighlighted=false / VerticalPddingsGroup / TopPadding",
+        "visible": true
+      },
+      "component": {
+        "name": "m [16]",
+        "key": "b2784183baf84720a98376375651bc3d1cc5049c",
+        "library": "iOS _ Basic",
+        "sourceFile": "abm/ios/Basic/iOS _ Basic -- Spacing.json"
+      },
+      "variant": {
+        "name": "m [16]",
+        "key": "b2784183baf84720a98376375651bc3d1cc5049c"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "b2784183baf84720a98376375651bc3d1cc5049c",
+        "currentComponentId": "8:40721",
+        "latestComponentId": "3804:2448"
+      },
+      "localComponentOwner": {
+        "id": "92:85747",
+        "name": "👻 Style=fill, isEnabled=true, isHighlighted=false",
+        "type": "COMPONENT",
+        "pageName": "23. Скролл LG",
+        "path": "BannerWrapper / 👻 Style=fill, isEnabled=true, isHighlighted=false",
+        "visible": true
+      }
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "92:85753",
+        "name": "BottomPadding",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "BannerWrapper / 👻 Style=fill, isEnabled=true, isHighlighted=false / VerticalPddingsGroup / BottomPadding",
+        "visible": true
+      },
+      "component": {
+        "name": "m [16]",
+        "key": "b2784183baf84720a98376375651bc3d1cc5049c",
+        "library": "iOS _ Basic",
+        "sourceFile": "abm/ios/Basic/iOS _ Basic -- Spacing.json"
+      },
+      "variant": {
+        "name": "m [16]",
+        "key": "b2784183baf84720a98376375651bc3d1cc5049c"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "b2784183baf84720a98376375651bc3d1cc5049c",
+        "currentComponentId": "8:40721",
+        "latestComponentId": "3804:2448"
+      },
+      "localComponentOwner": {
+        "id": "92:85747",
+        "name": "👻 Style=fill, isEnabled=true, isHighlighted=false",
+        "type": "COMPONENT",
+        "pageName": "23. Скролл LG",
+        "path": "BannerWrapper / 👻 Style=fill, isEnabled=true, isHighlighted=false",
+        "visible": true
+      }
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "92:85754",
+        "name": "RightPadding",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "BannerWrapper / 👻 Style=fill, isEnabled=true, isHighlighted=false / RightPadding",
+        "visible": true
+      },
+      "component": {
+        "name": "normal [20]",
+        "key": "aa9b786fe9b48a4050cda7f0ba234e6f7808e4c1",
+        "library": "iOS _ Basic",
+        "sourceFile": "abm/ios/Basic/iOS _ Basic -- HorizontalPadding.json"
+      },
+      "variant": {
+        "name": "normal [20]",
+        "key": "aa9b786fe9b48a4050cda7f0ba234e6f7808e4c1"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "aa9b786fe9b48a4050cda7f0ba234e6f7808e4c1",
+        "currentComponentId": "7:7274",
+        "latestComponentId": "3804:2454"
+      },
+      "localComponentOwner": {
+        "id": "92:85747",
+        "name": "👻 Style=fill, isEnabled=true, isHighlighted=false",
+        "type": "COMPONENT",
+        "pageName": "23. Скролл LG",
+        "path": "BannerWrapper / 👻 Style=fill, isEnabled=true, isHighlighted=false",
+        "visible": true
+      }
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "53:34278",
+        "name": "LeftPadding",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "StackWrapper / Axis=horizontal, Alignment=center, 👻 countOfContentViews=3 / LeftPadding",
+        "visible": true
+      },
+      "component": {
+        "name": "normal [20]",
+        "key": "aa9b786fe9b48a4050cda7f0ba234e6f7808e4c1",
+        "library": "iOS _ Basic",
+        "sourceFile": "abm/ios/Basic/iOS _ Basic -- HorizontalPadding.json"
+      },
+      "variant": {
+        "name": "normal [20]",
+        "key": "aa9b786fe9b48a4050cda7f0ba234e6f7808e4c1"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "aa9b786fe9b48a4050cda7f0ba234e6f7808e4c1",
+        "currentComponentId": "7:7274",
+        "latestComponentId": "3804:2454"
+      },
+      "localComponentOwner": {
+        "id": "53:34277",
+        "name": "Axis=horizontal, Alignment=center, 👻 countOfContentViews=3",
+        "type": "COMPONENT",
+        "pageName": "23. Скролл LG",
+        "path": "StackWrapper / Axis=horizontal, Alignment=center, 👻 countOfContentViews=3",
+        "visible": true
+      }
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "53:34280",
+        "name": "TopPadding",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "StackWrapper / Axis=horizontal, Alignment=center, 👻 countOfContentViews=3 / VerticalPaddingsGroup / TopPadding",
+        "visible": true
+      },
+      "component": {
+        "name": "m [16]",
+        "key": "b2784183baf84720a98376375651bc3d1cc5049c",
+        "library": "iOS _ Basic",
+        "sourceFile": "abm/ios/Basic/iOS _ Basic -- Spacing.json"
+      },
+      "variant": {
+        "name": "m [16]",
+        "key": "b2784183baf84720a98376375651bc3d1cc5049c"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "b2784183baf84720a98376375651bc3d1cc5049c",
+        "currentComponentId": "8:40721",
+        "latestComponentId": "3804:2448"
+      },
+      "localComponentOwner": {
+        "id": "53:34277",
+        "name": "Axis=horizontal, Alignment=center, 👻 countOfContentViews=3",
+        "type": "COMPONENT",
+        "pageName": "23. Скролл LG",
+        "path": "StackWrapper / Axis=horizontal, Alignment=center, 👻 countOfContentViews=3",
+        "visible": true
+      }
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "53:34283",
+        "name": "GapA",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "StackWrapper / Axis=horizontal, Alignment=center, 👻 countOfContentViews=3 / VerticalPaddingsGroup / ContentGroup / GapA",
+        "visible": true
+      },
+      "component": {
+        "name": "m [16]",
+        "key": "b2784183baf84720a98376375651bc3d1cc5049c",
+        "library": "iOS _ Basic",
+        "sourceFile": "abm/ios/Basic/iOS _ Basic -- Spacing.json"
+      },
+      "variant": {
+        "name": "m [16]",
+        "key": "b2784183baf84720a98376375651bc3d1cc5049c"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "b2784183baf84720a98376375651bc3d1cc5049c",
+        "currentComponentId": "8:40721",
+        "latestComponentId": "3804:2448"
+      },
+      "localComponentOwner": {
+        "id": "53:34277",
+        "name": "Axis=horizontal, Alignment=center, 👻 countOfContentViews=3",
+        "type": "COMPONENT",
+        "pageName": "23. Скролл LG",
+        "path": "StackWrapper / Axis=horizontal, Alignment=center, 👻 countOfContentViews=3",
+        "visible": true
+      }
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "53:34285",
+        "name": "GapB",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "StackWrapper / Axis=horizontal, Alignment=center, 👻 countOfContentViews=3 / VerticalPaddingsGroup / ContentGroup / GapB",
+        "visible": true
+      },
+      "component": {
+        "name": "m [16]",
+        "key": "b2784183baf84720a98376375651bc3d1cc5049c",
+        "library": "iOS _ Basic",
+        "sourceFile": "abm/ios/Basic/iOS _ Basic -- Spacing.json"
+      },
+      "variant": {
+        "name": "m [16]",
+        "key": "b2784183baf84720a98376375651bc3d1cc5049c"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "b2784183baf84720a98376375651bc3d1cc5049c",
+        "currentComponentId": "8:40721",
+        "latestComponentId": "3804:2448"
+      },
+      "localComponentOwner": {
+        "id": "53:34277",
+        "name": "Axis=horizontal, Alignment=center, 👻 countOfContentViews=3",
+        "type": "COMPONENT",
+        "pageName": "23. Скролл LG",
+        "path": "StackWrapper / Axis=horizontal, Alignment=center, 👻 countOfContentViews=3",
+        "visible": true
+      }
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "53:34287",
+        "name": "BottomPadding",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "StackWrapper / Axis=horizontal, Alignment=center, 👻 countOfContentViews=3 / VerticalPaddingsGroup / BottomPadding",
+        "visible": true
+      },
+      "component": {
+        "name": "m [16]",
+        "key": "b2784183baf84720a98376375651bc3d1cc5049c",
+        "library": "iOS _ Basic",
+        "sourceFile": "abm/ios/Basic/iOS _ Basic -- Spacing.json"
+      },
+      "variant": {
+        "name": "m [16]",
+        "key": "b2784183baf84720a98376375651bc3d1cc5049c"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "b2784183baf84720a98376375651bc3d1cc5049c",
+        "currentComponentId": "8:40721",
+        "latestComponentId": "3804:2448"
+      },
+      "localComponentOwner": {
+        "id": "53:34277",
+        "name": "Axis=horizontal, Alignment=center, 👻 countOfContentViews=3",
+        "type": "COMPONENT",
+        "pageName": "23. Скролл LG",
+        "path": "StackWrapper / Axis=horizontal, Alignment=center, 👻 countOfContentViews=3",
+        "visible": true
+      }
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "53:34288",
+        "name": "RightPadding",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "StackWrapper / Axis=horizontal, Alignment=center, 👻 countOfContentViews=3 / RightPadding",
+        "visible": true
+      },
+      "component": {
+        "name": "normal [20]",
+        "key": "aa9b786fe9b48a4050cda7f0ba234e6f7808e4c1",
+        "library": "iOS _ Basic",
+        "sourceFile": "abm/ios/Basic/iOS _ Basic -- HorizontalPadding.json"
+      },
+      "variant": {
+        "name": "normal [20]",
+        "key": "aa9b786fe9b48a4050cda7f0ba234e6f7808e4c1"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "aa9b786fe9b48a4050cda7f0ba234e6f7808e4c1",
+        "currentComponentId": "7:7274",
+        "latestComponentId": "3804:2454"
+      },
+      "localComponentOwner": {
+        "id": "53:34277",
+        "name": "Axis=horizontal, Alignment=center, 👻 countOfContentViews=3",
+        "type": "COMPONENT",
+        "pageName": "23. Скролл LG",
+        "path": "StackWrapper / Axis=horizontal, Alignment=center, 👻 countOfContentViews=3",
+        "visible": true
+      }
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "40:15059",
+        "name": "LeftPadding",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "ButtonView / Size=m [size40], 🔒 isEnabled=true, 🔒 isLoading=false, 🔒 isSelected=false, 🔒 isHighlighted=false, 👻 RightAddonType=Icon / LeftPadding",
+        "visible": true
+      },
+      "component": {
+        "name": "normal [20]",
+        "key": "aa9b786fe9b48a4050cda7f0ba234e6f7808e4c1",
+        "library": "iOS _ Basic",
+        "sourceFile": "abm/ios/Basic/iOS _ Basic -- HorizontalPadding.json"
+      },
+      "variant": {
+        "name": "normal [20]",
+        "key": "aa9b786fe9b48a4050cda7f0ba234e6f7808e4c1"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "aa9b786fe9b48a4050cda7f0ba234e6f7808e4c1",
+        "currentComponentId": "7:7274",
+        "latestComponentId": "3804:2454"
+      },
+      "localComponentOwner": {
+        "id": "40:15023",
+        "name": "Size=m [size40], 🔒 isEnabled=true, 🔒 isLoading=false, 🔒 isSelected=false, 🔒 isHighlighted=false, 👻 RightAddonType=Icon",
+        "type": "COMPONENT",
+        "pageName": "23. Скролл LG",
+        "path": "ButtonView / Size=m [size40], 🔒 isEnabled=true, 🔒 isLoading=false, 🔒 isSelected=false, 🔒 isHighlighted=false, 👻 RightAddonType=Icon",
+        "visible": true
+      }
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "40:15061",
+        "name": "TopPadding",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "ButtonView / Size=m [size40], 🔒 isEnabled=true, 🔒 isLoading=false, 🔒 isSelected=false, 🔒 isHighlighted=false, 👻 RightAddonType=Icon / VerticalPaddingsGroup / TopPadding",
+        "visible": true
+      },
+      "component": {
+        "name": "xs [8]",
+        "key": "60bf5d4ee5845f33f98026d04b61531becfb40ed",
+        "library": "iOS _ Basic",
+        "sourceFile": "abm/ios/Basic/iOS _ Basic -- Spacing.json"
+      },
+      "variant": {
+        "name": "xs [8]",
+        "key": "60bf5d4ee5845f33f98026d04b61531becfb40ed"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "60bf5d4ee5845f33f98026d04b61531becfb40ed",
+        "currentComponentId": "8:42053",
+        "latestComponentId": "1964:14932"
+      },
+      "localComponentOwner": {
+        "id": "40:15023",
+        "name": "Size=m [size40], 🔒 isEnabled=true, 🔒 isLoading=false, 🔒 isSelected=false, 🔒 isHighlighted=false, 👻 RightAddonType=Icon",
+        "type": "COMPONENT",
+        "pageName": "23. Скролл LG",
+        "path": "ButtonView / Size=m [size40], 🔒 isEnabled=true, 🔒 isLoading=false, 🔒 isSelected=false, 🔒 isHighlighted=false, 👻 RightAddonType=Icon",
+        "visible": true
+      }
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "40:15071",
+        "name": "BottomPadding",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "ButtonView / Size=m [size40], 🔒 isEnabled=true, 🔒 isLoading=false, 🔒 isSelected=false, 🔒 isHighlighted=false, 👻 RightAddonType=Icon / VerticalPaddingsGroup / BottomPadding",
+        "visible": true
+      },
+      "component": {
+        "name": "xs [8]",
+        "key": "60bf5d4ee5845f33f98026d04b61531becfb40ed",
+        "library": "iOS _ Basic",
+        "sourceFile": "abm/ios/Basic/iOS _ Basic -- Spacing.json"
+      },
+      "variant": {
+        "name": "xs [8]",
+        "key": "60bf5d4ee5845f33f98026d04b61531becfb40ed"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "60bf5d4ee5845f33f98026d04b61531becfb40ed",
+        "currentComponentId": "8:42053",
+        "latestComponentId": "1964:14932"
+      },
+      "localComponentOwner": {
+        "id": "40:15023",
+        "name": "Size=m [size40], 🔒 isEnabled=true, 🔒 isLoading=false, 🔒 isSelected=false, 🔒 isHighlighted=false, 👻 RightAddonType=Icon",
+        "type": "COMPONENT",
+        "pageName": "23. Скролл LG",
+        "path": "ButtonView / Size=m [size40], 🔒 isEnabled=true, 🔒 isLoading=false, 🔒 isSelected=false, 🔒 isHighlighted=false, 👻 RightAddonType=Icon",
+        "visible": true
+      }
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "40:15072",
+        "name": "RightPadding",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "ButtonView / Size=m [size40], 🔒 isEnabled=true, 🔒 isLoading=false, 🔒 isSelected=false, 🔒 isHighlighted=false, 👻 RightAddonType=Icon / RightPadding",
+        "visible": true
+      },
+      "component": {
+        "name": "normal [20]",
+        "key": "aa9b786fe9b48a4050cda7f0ba234e6f7808e4c1",
+        "library": "iOS _ Basic",
+        "sourceFile": "abm/ios/Basic/iOS _ Basic -- HorizontalPadding.json"
+      },
+      "variant": {
+        "name": "normal [20]",
+        "key": "aa9b786fe9b48a4050cda7f0ba234e6f7808e4c1"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "aa9b786fe9b48a4050cda7f0ba234e6f7808e4c1",
+        "currentComponentId": "7:7274",
+        "latestComponentId": "3804:2454"
+      },
+      "localComponentOwner": {
+        "id": "40:15023",
+        "name": "Size=m [size40], 🔒 isEnabled=true, 🔒 isLoading=false, 🔒 isSelected=false, 🔒 isHighlighted=false, 👻 RightAddonType=Icon",
+        "type": "COMPONENT",
+        "pageName": "23. Скролл LG",
+        "path": "ButtonView / Size=m [size40], 🔒 isEnabled=true, 🔒 isLoading=false, 🔒 isSelected=false, 🔒 isHighlighted=false, 👻 RightAddonType=Icon",
+        "visible": true
+      }
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "4171:25299",
+        "name": "BannerWrapper",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / BannerWrapper",
+        "visible": true
+      },
+      "component": {
+        "name": "BannerWrapper",
+        "key": "cb0247bb996963b0169181f2d3b707bc58260385",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I4171:25299;107357:4999",
+        "name": "ContentView",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / BannerWrapper / VerticalPddingsGroup / 🎨 ContentGroup / ContentView",
+        "visible": true
+      },
+      "component": {
+        "name": "ContentView",
+        "key": "32192a4a772ccce0608306fbc3aabb559c41d606",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I4171:25316;134346:45599;4171:25310;134346:45599;4171:25309",
+        "name": "BurronViewV1 (🍏 13.10) / Primary",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / BurronViewV1 (🍏 13.10) / Primary",
+        "visible": true
+      },
+      "component": {
+        "name": "BurronViewV1 (🍏 13.10) / Primary",
+        "key": "01804673cdf1feead73aa22b069bf7d97a8cbb65",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I4171:25316;134346:45599;4171:25310;134346:45599;4171:25309;40273:13152",
+        "name": "ButtonView",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / BurronViewV1 (🍏 13.10) / Primary / ButtonView",
+        "visible": true
+      },
+      "component": {
+        "name": "ButtonView",
+        "key": "b93c2d15cb3e8021f1fd6d9d9187d445d8bfa432",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I4171:25316;134346:45599;4171:25310;134346:45599;4171:25309;40273:13152;102:204157",
+        "name": "RightPadding",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / BurronViewV1 (🍏 13.10) / Primary / ButtonView / VerticalPaddingsGroup / ContentGroup / LeftAddon / RightPadding",
+        "visible": true
+      },
+      "component": {
+        "name": "RightPadding",
+        "key": "8bf0af0f756fd28b7aa3d3dc5d25b4c2c2501da1",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I4171:25316;134346:45599;4171:25310;134346:45599;4171:25309;40273:13152;102:204157;2251:299764",
+        "name": ".Accessory / Spacing",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / BurronViewV1 (🍏 13.10) / Primary / ButtonView / VerticalPaddingsGroup / ContentGroup / LeftAddon / RightPadding / .Accessory / Spacing",
+        "visible": true
+      },
+      "component": {
+        "name": ".Accessory / Spacing",
+        "key": "62e8f46e4a6d49e352bb0a5273b514eb66368398",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25299;107360:22741",
+        "name": "LeftPadding",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / BannerWrapper / LeftPadding",
+        "visible": true
+      },
+      "component": {
+        "name": "normal [20]",
+        "key": "aa9b786fe9b48a4050cda7f0ba234e6f7808e4c1",
+        "library": "iOS _ Basic",
+        "sourceFile": "abm/ios/Basic/iOS _ Basic -- HorizontalPadding.json"
+      },
+      "variant": {
+        "name": "normal [20]",
+        "key": "aa9b786fe9b48a4050cda7f0ba234e6f7808e4c1"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25299;107360:22741;1781:5864",
+        "name": "l [20]",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / BannerWrapper / LeftPadding / l [20]",
+        "visible": true
+      },
+      "component": {
+        "name": "l [20]",
+        "key": "b4b175373e196f25e247d6be3a0984ea4dade06f",
+        "library": "iOS _ Basic",
+        "sourceFile": "abm/ios/Basic/iOS _ Basic -- Spacing.json"
+      },
+      "variant": {
+        "name": "l [20]",
+        "key": "b4b175373e196f25e247d6be3a0984ea4dade06f"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25299;107360:22791",
+        "name": "TopPadding",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / BannerWrapper / VerticalPddingsGroup / TopPadding",
+        "visible": true
+      },
+      "component": {
+        "name": "m [16]",
+        "key": "b2784183baf84720a98376375651bc3d1cc5049c",
+        "library": "iOS _ Basic",
+        "sourceFile": "abm/ios/Basic/iOS _ Basic -- Spacing.json"
+      },
+      "variant": {
+        "name": "m [16]",
+        "key": "b2784183baf84720a98376375651bc3d1cc5049c"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25299;107357:4999;114733:77574",
+        "name": "LeftPadding",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / BannerWrapper / VerticalPddingsGroup / 🎨 ContentGroup / ContentView / LeftPadding",
+        "visible": true
+      },
+      "component": {
+        "name": "custom [16]",
+        "key": "e3fa7d920f07f1b606a7d99f8f692b468e9011a4",
+        "library": "iOS _ Basic",
+        "sourceFile": "abm/ios/Basic/iOS _ Basic -- HorizontalPadding.json"
+      },
+      "variant": {
+        "name": "custom [16]",
+        "key": "e3fa7d920f07f1b606a7d99f8f692b468e9011a4"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25299;107357:4999;114733:77574;1781:5873",
+        "name": "m [16]",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / BannerWrapper / VerticalPddingsGroup / 🎨 ContentGroup / ContentView / LeftPadding / m [16]",
+        "visible": true
+      },
+      "component": {
+        "name": "m [16]",
+        "key": "b2784183baf84720a98376375651bc3d1cc5049c",
+        "library": "iOS _ Basic",
+        "sourceFile": "abm/ios/Basic/iOS _ Basic -- Spacing.json"
+      },
+      "variant": {
+        "name": "m [16]",
+        "key": "b2784183baf84720a98376375651bc3d1cc5049c"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25299;107357:4999;114733:77576",
+        "name": "TopPadding",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / BannerWrapper / VerticalPddingsGroup / 🎨 ContentGroup / ContentView / VerticalPaddingsGroup / TopPadding",
+        "visible": true
+      },
+      "component": {
+        "name": "m [16]",
+        "key": "b2784183baf84720a98376375651bc3d1cc5049c",
+        "library": "iOS _ Basic",
+        "sourceFile": "abm/ios/Basic/iOS _ Basic -- Spacing.json"
+      },
+      "variant": {
+        "name": "m [16]",
+        "key": "b2784183baf84720a98376375651bc3d1cc5049c"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25299;107357:4999;114733:77578",
+        "name": "ContentViewA",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / BannerWrapper / VerticalPddingsGroup / 🎨 ContentGroup / ContentView / VerticalPaddingsGroup / ContentGroup / ContentViewA",
+        "visible": true
+      },
+      "component": {
+        "name": "IconViewV1 (🍏🟦 13.10)",
+        "key": "05637c2818a9f30da5b3dc0b904b010012ece8f0",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=Small, Shape=NoShape, Inner=Icon",
+        "key": "05637c2818a9f30da5b3dc0b904b010012ece8f0"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25299;107357:4999;114733:77579",
+        "name": "GapA",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / BannerWrapper / VerticalPddingsGroup / 🎨 ContentGroup / ContentView / VerticalPaddingsGroup / ContentGroup / GapA",
+        "visible": true
+      },
+      "component": {
+        "name": "m [16]",
+        "key": "b2784183baf84720a98376375651bc3d1cc5049c",
+        "library": "iOS _ Basic",
+        "sourceFile": "abm/ios/Basic/iOS _ Basic -- Spacing.json"
+      },
+      "variant": {
+        "name": "m [16]",
+        "key": "b2784183baf84720a98376375651bc3d1cc5049c"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25299;107357:4999;114733:77580",
+        "name": "ContentViewB",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / BannerWrapper / VerticalPddingsGroup / 🎨 ContentGroup / ContentView / VerticalPaddingsGroup / ContentGroup / ContentViewB",
+        "visible": true
+      },
+      "component": {
+        "name": "TextLabel (🍏🟦 13.10)",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- TextLabel.json"
+      },
+      "variant": {
+        "name": "👻 Skeleton=False, TextAlignment=Left, 👻 HorizontalSize=Fixed/Fill",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25299;107357:4999;114733:77581",
+        "name": "GapB",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / BannerWrapper / VerticalPddingsGroup / 🎨 ContentGroup / ContentView / VerticalPaddingsGroup / ContentGroup / GapB",
+        "visible": true
+      },
+      "component": {
+        "name": "m [16]",
+        "key": "b2784183baf84720a98376375651bc3d1cc5049c",
+        "library": "iOS _ Basic",
+        "sourceFile": "abm/ios/Basic/iOS _ Basic -- Spacing.json"
+      },
+      "variant": {
+        "name": "m [16]",
+        "key": "b2784183baf84720a98376375651bc3d1cc5049c"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25299;107357:4999;114733:77582",
+        "name": "ContentViewC",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / BannerWrapper / VerticalPddingsGroup / 🎨 ContentGroup / ContentView / VerticalPaddingsGroup / ContentGroup / ContentViewC",
+        "visible": true
+      },
+      "component": {
+        "name": "IconViewV1 (🍏🟦 13.10)",
+        "key": "c55a84ef640a9b63dfe7212762e82850be3284df",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=XSmall, Shape=NoShape, Inner=Icon",
+        "key": "c55a84ef640a9b63dfe7212762e82850be3284df"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25299;107357:4999;114733:77583",
+        "name": "BottomPadding",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / BannerWrapper / VerticalPddingsGroup / 🎨 ContentGroup / ContentView / VerticalPaddingsGroup / BottomPadding",
+        "visible": true
+      },
+      "component": {
+        "name": "m [16]",
+        "key": "b2784183baf84720a98376375651bc3d1cc5049c",
+        "library": "iOS _ Basic",
+        "sourceFile": "abm/ios/Basic/iOS _ Basic -- Spacing.json"
+      },
+      "variant": {
+        "name": "m [16]",
+        "key": "b2784183baf84720a98376375651bc3d1cc5049c"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25299;107357:4999;114733:77584",
+        "name": "RightPadding",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / BannerWrapper / VerticalPddingsGroup / 🎨 ContentGroup / ContentView / RightPadding",
+        "visible": true
+      },
+      "component": {
+        "name": "custom [16]",
+        "key": "e3fa7d920f07f1b606a7d99f8f692b468e9011a4",
+        "library": "iOS _ Basic",
+        "sourceFile": "abm/ios/Basic/iOS _ Basic -- HorizontalPadding.json"
+      },
+      "variant": {
+        "name": "custom [16]",
+        "key": "e3fa7d920f07f1b606a7d99f8f692b468e9011a4"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25299;107357:4999;114733:77584;1781:5873",
+        "name": "m [16]",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / BannerWrapper / VerticalPddingsGroup / 🎨 ContentGroup / ContentView / RightPadding / m [16]",
+        "visible": true
+      },
+      "component": {
+        "name": "m [16]",
+        "key": "b2784183baf84720a98376375651bc3d1cc5049c",
+        "library": "iOS _ Basic",
+        "sourceFile": "abm/ios/Basic/iOS _ Basic -- Spacing.json"
+      },
+      "variant": {
+        "name": "m [16]",
+        "key": "b2784183baf84720a98376375651bc3d1cc5049c"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25299;107360:22809",
+        "name": "BottomPadding",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / BannerWrapper / VerticalPddingsGroup / BottomPadding",
+        "visible": true
+      },
+      "component": {
+        "name": "m [16]",
+        "key": "b2784183baf84720a98376375651bc3d1cc5049c",
+        "library": "iOS _ Basic",
+        "sourceFile": "abm/ios/Basic/iOS _ Basic -- Spacing.json"
+      },
+      "variant": {
+        "name": "m [16]",
+        "key": "b2784183baf84720a98376375651bc3d1cc5049c"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25299;107360:22773",
+        "name": "RightPadding",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / BannerWrapper / RightPadding",
+        "visible": true
+      },
+      "component": {
+        "name": "normal [20]",
+        "key": "aa9b786fe9b48a4050cda7f0ba234e6f7808e4c1",
+        "library": "iOS _ Basic",
+        "sourceFile": "abm/ios/Basic/iOS _ Basic -- HorizontalPadding.json"
+      },
+      "variant": {
+        "name": "normal [20]",
+        "key": "aa9b786fe9b48a4050cda7f0ba234e6f7808e4c1"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25299;107360:22773;1781:5864",
+        "name": "l [20]",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / BannerWrapper / RightPadding / l [20]",
+        "visible": true
+      },
+      "component": {
+        "name": "l [20]",
+        "key": "b4b175373e196f25e247d6be3a0984ea4dade06f",
+        "library": "iOS _ Basic",
+        "sourceFile": "abm/ios/Basic/iOS _ Basic -- Spacing.json"
+      },
+      "variant": {
+        "name": "l [20]",
+        "key": "b4b175373e196f25e247d6be3a0984ea4dade06f"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "4171:25316",
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / StackWrapper (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "key": "e880943d214652e2771d9eac2b199f85a0e964a4",
+        "library": "iOS _ Wrappers",
+        "sourceFile": "abm/ios/Wrappers/iOS _ Wrappers -- StackWrapper (StackView).json"
+      },
+      "variant": {
+        "name": "Axis=Vertical, Alignment=Leading",
+        "key": "e880943d214652e2771d9eac2b199f85a0e964a4"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "e880943d214652e2771d9eac2b199f85a0e964a4",
+        "currentComponentId": "3643:31391",
+        "latestComponentId": "3643:31391"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25316;134346:45599;4171:25310",
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "key": "e880943d214652e2771d9eac2b199f85a0e964a4",
+        "library": "iOS _ Wrappers",
+        "sourceFile": "abm/ios/Wrappers/iOS _ Wrappers -- StackWrapper (StackView).json"
+      },
+      "variant": {
+        "name": "Axis=Vertical, Alignment=Leading",
+        "key": "e880943d214652e2771d9eac2b199f85a0e964a4"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25316;134346:45599;4171:25310;134346:45599;4171:25308",
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "key": "19a9252381592709cdf718d0a88bdb481ef0bcf6",
+        "library": "iOS _ Wrappers",
+        "sourceFile": "abm/ios/Wrappers/iOS _ Wrappers -- StackWrapper (StackView).json"
+      },
+      "variant": {
+        "name": "Axis=Horizontal, Alignment=Leading",
+        "key": "19a9252381592709cdf718d0a88bdb481ef0bcf6"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25316;134346:45599;4171:25310;134346:45599;4171:25308;134346:45608;4171:25303",
+        "name": "IconViewV1 (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / IconViewV1 (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "IconViewV1 (🍏🟦 13.10)",
+        "key": "2f381fa7e6f7595f92a5ab719ce260627ececd31",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=Small, Shape=Superellipse, Inner=Icon",
+        "key": "2f381fa7e6f7595f92a5ab719ce260627ececd31"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25316;134346:45599;4171:25310;134346:45599;4171:25308;134346:45608;4171:25307",
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "key": "e880943d214652e2771d9eac2b199f85a0e964a4",
+        "library": "iOS _ Wrappers",
+        "sourceFile": "abm/ios/Wrappers/iOS _ Wrappers -- StackWrapper (StackView).json"
+      },
+      "variant": {
+        "name": "Axis=Vertical, Alignment=Leading",
+        "key": "e880943d214652e2771d9eac2b199f85a0e964a4"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25316;134346:45599;4171:25310;134346:45599;4171:25308;134346:45608;4171:25307;134346:45599;4171:25305",
+        "name": "TextLabel",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel",
+        "visible": true
+      },
+      "component": {
+        "name": "TextLabel (🍏🟦 13.10)",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- TextLabel.json"
+      },
+      "variant": {
+        "name": "👻 Skeleton=False, TextAlignment=Left, 👻 HorizontalSize=Fixed/Fill",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25316;134346:45599;4171:25310;134346:45599;4171:25308;134346:45608;4171:25307;134346:45599;4171:25306",
+        "name": "TextLabel",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel",
+        "visible": true
+      },
+      "component": {
+        "name": "TextLabel (🍏🟦 13.10)",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- TextLabel.json"
+      },
+      "variant": {
+        "name": "👻 Skeleton=False, TextAlignment=Left, 👻 HorizontalSize=Fixed/Fill",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25316;134346:45599;4171:25310;134346:45599;4171:25309;40273:13152;102:204151",
+        "name": "LeftPadding",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / BurronViewV1 (🍏 13.10) / Primary / ButtonView / LeftPadding",
+        "visible": true
+      },
+      "component": {
+        "name": "none [0]",
+        "key": "cfaebf2f0ed98ba97352d7785ea479ee36556190",
+        "library": "iOS _ Basic",
+        "sourceFile": "abm/ios/Basic/iOS _ Basic -- HorizontalPadding.json"
+      },
+      "variant": {
+        "name": "none [0]",
+        "key": "cfaebf2f0ed98ba97352d7785ea479ee36556190"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25316;134346:45599;4171:25310;134346:45599;4171:25309;40273:13152;102:204151;1781:5885",
+        "name": "none [0]",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / BurronViewV1 (🍏 13.10) / Primary / ButtonView / LeftPadding / none [0]",
+        "visible": true
+      },
+      "component": {
+        "name": "none [0]",
+        "key": "c8591d6d7bb258df3c6b344861808e1ae395f622",
+        "library": "iOS _ Basic",
+        "sourceFile": "abm/ios/Basic/iOS _ Basic -- Spacing.json"
+      },
+      "variant": {
+        "name": "none [0]",
+        "key": "c8591d6d7bb258df3c6b344861808e1ae395f622"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25316;134346:45599;4171:25310;134346:45599;4171:25309;40273:13152;102:204153",
+        "name": "TopPadding",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / BurronViewV1 (🍏 13.10) / Primary / ButtonView / VerticalPaddingsGroup / TopPadding",
+        "visible": true
+      },
+      "component": {
+        "name": "none [0]",
+        "key": "c8591d6d7bb258df3c6b344861808e1ae395f622",
+        "library": "iOS _ Basic",
+        "sourceFile": "abm/ios/Basic/iOS _ Basic -- Spacing.json"
+      },
+      "variant": {
+        "name": "none [0]",
+        "key": "c8591d6d7bb258df3c6b344861808e1ae395f622"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25316;134346:45599;4171:25310;134346:45599;4171:25309;40273:13152;102:204156",
+        "name": "Icon",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / BurronViewV1 (🍏 13.10) / Primary / ButtonView / VerticalPaddingsGroup / ContentGroup / LeftAddon / Icon",
+        "visible": true
+      },
+      "component": {
+        "name": "IconViewV1 (🍏🟦 13.10)",
+        "key": "c55a84ef640a9b63dfe7212762e82850be3284df",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=XSmall, Shape=NoShape, Inner=Icon",
+        "key": "c55a84ef640a9b63dfe7212762e82850be3284df"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25316;134346:45599;4171:25310;134346:45599;4171:25309;40273:13152;102:204163",
+        "name": "BottomPadding",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / BurronViewV1 (🍏 13.10) / Primary / ButtonView / VerticalPaddingsGroup / BottomPadding",
+        "visible": true
+      },
+      "component": {
+        "name": "none [0]",
+        "key": "c8591d6d7bb258df3c6b344861808e1ae395f622",
+        "library": "iOS _ Basic",
+        "sourceFile": "abm/ios/Basic/iOS _ Basic -- Spacing.json"
+      },
+      "variant": {
+        "name": "none [0]",
+        "key": "c8591d6d7bb258df3c6b344861808e1ae395f622"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25316;134346:45599;4171:25310;134346:45599;4171:25309;40273:13152;102:204164",
+        "name": "RightPadding",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / BurronViewV1 (🍏 13.10) / Primary / ButtonView / RightPadding",
+        "visible": true
+      },
+      "component": {
+        "name": "none [0]",
+        "key": "cfaebf2f0ed98ba97352d7785ea479ee36556190",
+        "library": "iOS _ Basic",
+        "sourceFile": "abm/ios/Basic/iOS _ Basic -- HorizontalPadding.json"
+      },
+      "variant": {
+        "name": "none [0]",
+        "key": "cfaebf2f0ed98ba97352d7785ea479ee36556190"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25316;134346:45599;4171:25310;134346:45599;4171:25309;40273:13152;102:204164;1781:5885",
+        "name": "none [0]",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / BurronViewV1 (🍏 13.10) / Primary / ButtonView / RightPadding / none [0]",
+        "visible": true
+      },
+      "component": {
+        "name": "none [0]",
+        "key": "c8591d6d7bb258df3c6b344861808e1ae395f622",
+        "library": "iOS _ Basic",
+        "sourceFile": "abm/ios/Basic/iOS _ Basic -- Spacing.json"
+      },
+      "variant": {
+        "name": "none [0]",
+        "key": "c8591d6d7bb258df3c6b344861808e1ae395f622"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25316;134346:45599;4171:25315",
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "key": "19a9252381592709cdf718d0a88bdb481ef0bcf6",
+        "library": "iOS _ Wrappers",
+        "sourceFile": "abm/ios/Wrappers/iOS _ Wrappers -- StackWrapper (StackView).json"
+      },
+      "variant": {
+        "name": "Axis=Horizontal, Alignment=Leading",
+        "key": "19a9252381592709cdf718d0a88bdb481ef0bcf6"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25316;134346:45599;4171:25315;134346:45608;4171:25312",
+        "name": "IconViewV1 (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / IconViewV1 (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "IconViewV1 (🍏🟦 13.10)",
+        "key": "c55a84ef640a9b63dfe7212762e82850be3284df",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=XSmall, Shape=NoShape, Inner=Icon",
+        "key": "c55a84ef640a9b63dfe7212762e82850be3284df"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25316;134346:45599;4171:25315;134346:45608;4171:25313",
+        "name": "TextLabel",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel",
+        "visible": true
+      },
+      "component": {
+        "name": "TextLabel (🍏🟦 13.10)",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- TextLabel.json"
+      },
+      "variant": {
+        "name": "👻 Skeleton=False, TextAlignment=Left, 👻 HorizontalSize=Fixed/Fill",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25316;134346:45599;4171:25315;134346:45608;4171:25314",
+        "name": "IconViewV1 (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / IconViewV1 (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "IconViewV1 (🍏🟦 13.10)",
+        "key": "c55a84ef640a9b63dfe7212762e82850be3284df",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=XSmall, Shape=NoShape, Inner=Icon",
+        "key": "c55a84ef640a9b63dfe7212762e82850be3284df"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "4171:25319",
+        "name": "BannerWrapper (🍏🟦 13.10) / DataView",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / BannerWrapper (🍏🟦 13.10) / DataView",
+        "visible": true
+      },
+      "component": {
+        "name": "BannerWrapper (🍏🟦 13.10) / DataView",
+        "key": "2d47972af14cb3396bcb8cfb7f551ce4f582c915",
+        "library": "iOS _ Wrappers",
+        "sourceFile": "abm/ios/Wrappers/iOS _ Wrappers -- BannerWrapper.json"
+      },
+      "variant": {
+        "name": "👻 Style=Fill, IsEnabled=True, IsHighlighted=False",
+        "key": "2d47972af14cb3396bcb8cfb7f551ce4f582c915"
+      },
+      "comparisonIssues": [
+        "Нет данных для заливка в снапшоте для «👻 Style=Fill, IsEnabled=True, IsHighlighted=False / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / DataView / 🎨 ContentGroup / DataContentV2 (🍏 14.6) / 🎨 ContentGroup»",
+        "Нет данных для обводка в снапшоте для «👻 Style=Fill, IsEnabled=True, IsHighlighted=False / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / DataView / 🎨 ContentGroup / DataContentV2 (🍏 14.6) / 🎨 ContentGroup»",
+        "Нет данных для толщины обводки в снапшоте для «👻 Style=Fill, IsEnabled=True, IsHighlighted=False / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / DataView / 🎨 ContentGroup / DataContentV2 (🍏 14.6) / 🎨 ContentGroup»"
+      ],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "2d47972af14cb3396bcb8cfb7f551ce4f582c915",
+        "currentComponentId": "4171:24964",
+        "latestComponentId": "4171:24964"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25319;133075:28715",
+        "name": "StackWrapper (🍏🟦 13.10) / DataView",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / BannerWrapper (🍏🟦 13.10) / DataView / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / DataView",
+        "visible": true
+      },
+      "component": {
+        "name": "StackWrapper (🍏🟦 13.10) / DataView",
+        "key": "4c028f2b3a5efce099773477874455f0a5104532",
+        "library": "iOS _ Wrappers",
+        "sourceFile": "abm/ios/Wrappers/iOS _ Wrappers -- StackWrapper (StackView).json"
+      },
+      "variant": {
+        "name": "AddonSide=Start, Alignment=Leading, Axis=Horizontal",
+        "key": "4c028f2b3a5efce099773477874455f0a5104532"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25319;133075:28715;132848:28857",
+        "name": "IconViewV1 (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / BannerWrapper (🍏🟦 13.10) / DataView / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / DataView / 🎨 ContentGroup / IconViewV1 (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "IconViewV1 (🍏🟦 13.10)",
+        "key": "2f381fa7e6f7595f92a5ab719ce260627ececd31",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=Small, Shape=Superellipse, Inner=Icon",
+        "key": "2f381fa7e6f7595f92a5ab719ce260627ececd31"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25319;133075:28715;132848:28858",
+        "name": "DataContentV2 (🍏 14.6)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / BannerWrapper (🍏🟦 13.10) / DataView / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / DataView / 🎨 ContentGroup / DataContentV2 (🍏 14.6)",
+        "visible": true
+      },
+      "component": {
+        "name": "DataContentV2 (🍏🟦 14.6)",
+        "key": "e15a331b7fdeaacf44a0d31413a269e17fc9a72c",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- DataContent.json"
+      },
+      "variant": {
+        "name": "👻 Skeleton=False",
+        "key": "e15a331b7fdeaacf44a0d31413a269e17fc9a72c"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25319;133075:28715;132848:28858;64810:734271",
+        "name": "FirstLine",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / BannerWrapper (🍏🟦 13.10) / DataView / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / DataView / 🎨 ContentGroup / DataContentV2 (🍏 14.6) / 🎨 ContentGroup / FirstLine",
+        "visible": true
+      },
+      "component": {
+        "name": "DataContentV2Line (🍏🟦 14.6)",
+        "key": "42555e3255a3f3d71b8f392b172f59a5eac69bd5",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- DataContent.json"
+      },
+      "variant": {
+        "name": "LinePriority=RightSide",
+        "key": "42555e3255a3f3d71b8f392b172f59a5eac69bd5"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25319;133075:28715;132848:28858;64810:734271;64810:734624",
+        "name": "Title",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / BannerWrapper (🍏🟦 13.10) / DataView / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / DataView / 🎨 ContentGroup / DataContentV2 (🍏 14.6) / 🎨 ContentGroup / FirstLine / Title",
+        "visible": true
+      },
+      "component": {
+        "name": "TextLabel (🍏🟦 13.10)",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- TextLabel.json"
+      },
+      "variant": {
+        "name": "👻 Skeleton=False, TextAlignment=Left, 👻 HorizontalSize=Fixed/Fill",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25319;133075:28715;132848:28858;64810:734272",
+        "name": "SecondLine",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / BannerWrapper (🍏🟦 13.10) / DataView / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / DataView / 🎨 ContentGroup / DataContentV2 (🍏 14.6) / 🎨 ContentGroup / SecondLine",
+        "visible": true
+      },
+      "component": {
+        "name": "DataContentV2Line (🍏🟦 14.6)",
+        "key": "42555e3255a3f3d71b8f392b172f59a5eac69bd5",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- DataContent.json"
+      },
+      "variant": {
+        "name": "LinePriority=RightSide",
+        "key": "42555e3255a3f3d71b8f392b172f59a5eac69bd5"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25319;133075:28715;132848:28858;64810:734272;64810:734624",
+        "name": "Title",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / BannerWrapper (🍏🟦 13.10) / DataView / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / DataView / 🎨 ContentGroup / DataContentV2 (🍏 14.6) / 🎨 ContentGroup / SecondLine / Title",
+        "visible": true
+      },
+      "component": {
+        "name": "TextLabel (🍏🟦 13.10)",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- TextLabel.json"
+      },
+      "variant": {
+        "name": "👻 Skeleton=False, TextAlignment=Left, 👻 HorizontalSize=Fixed/Fill",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "4171:25320",
+        "name": "TextLabel",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / TextLabel",
+        "visible": true
+      },
+      "component": {
+        "name": "TextLabel (🍏🟦 13.10)",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- TextLabel.json"
+      },
+      "variant": {
+        "name": "👻 Skeleton=False, TextAlignment=Left, 👻 HorizontalSize=Fixed/Fill",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "ddf191558502c98dc139abd10eba44682e17f8fc",
+        "currentComponentId": "3415:16374",
+        "latestComponentId": "3415:16374"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "4171:25327",
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "key": "0fc6e162cda7721596de830df1ef341a3e18ef8a",
+        "library": "iOS _ Wrappers",
+        "sourceFile": "abm/ios/Wrappers/iOS _ Wrappers -- StackWrapper (StackView).json"
+      },
+      "variant": {
+        "name": "Axis=Horizontal, Alignment=Center",
+        "key": "0fc6e162cda7721596de830df1ef341a3e18ef8a"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "0fc6e162cda7721596de830df1ef341a3e18ef8a",
+        "currentComponentId": "3643:31403",
+        "latestComponentId": "3643:31403"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25327;134346:45611;4171:25322",
+        "name": "IconViewV1 (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / IconViewV1 (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "IconViewV1 (🍏🟦 13.10)",
+        "key": "2f381fa7e6f7595f92a5ab719ce260627ececd31",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=Small, Shape=Superellipse, Inner=Icon",
+        "key": "2f381fa7e6f7595f92a5ab719ce260627ececd31"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25327;134346:45611;4171:25326",
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "key": "393e11d411b11afeb531ca4068bcff763e194768",
+        "library": "iOS _ Wrappers",
+        "sourceFile": "abm/ios/Wrappers/iOS _ Wrappers -- StackWrapper (StackView).json"
+      },
+      "variant": {
+        "name": "Axis=Vertical, Alignment=Center",
+        "key": "393e11d411b11afeb531ca4068bcff763e194768"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25327;134346:45611;4171:25326;134346:45602;4171:25324",
+        "name": "TextLabel",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel",
+        "visible": true
+      },
+      "component": {
+        "name": "TextLabel (🍏🟦 13.10)",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- TextLabel.json"
+      },
+      "variant": {
+        "name": "👻 Skeleton=False, TextAlignment=Left, 👻 HorizontalSize=Fixed/Fill",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25327;134346:45611;4171:25326;134346:45602;4171:25325",
+        "name": "TextLabel",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel",
+        "visible": true
+      },
+      "component": {
+        "name": "TextLabel (🍏🟦 13.10)",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- TextLabel.json"
+      },
+      "variant": {
+        "name": "👻 Skeleton=False, TextAlignment=Left, 👻 HorizontalSize=Fixed/Fill",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "4171:25334",
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "key": "0fc6e162cda7721596de830df1ef341a3e18ef8a",
+        "library": "iOS _ Wrappers",
+        "sourceFile": "abm/ios/Wrappers/iOS _ Wrappers -- StackWrapper (StackView).json"
+      },
+      "variant": {
+        "name": "Axis=Horizontal, Alignment=Center",
+        "key": "0fc6e162cda7721596de830df1ef341a3e18ef8a"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "0fc6e162cda7721596de830df1ef341a3e18ef8a",
+        "currentComponentId": "3643:31403",
+        "latestComponentId": "3643:31403"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25334;134346:45611;4171:25329",
+        "name": "IconViewV1 (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / IconViewV1 (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "IconViewV1 (🍏🟦 13.10)",
+        "key": "2f381fa7e6f7595f92a5ab719ce260627ececd31",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=Small, Shape=Superellipse, Inner=Icon",
+        "key": "2f381fa7e6f7595f92a5ab719ce260627ececd31"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25334;134346:45611;4171:25333",
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "key": "393e11d411b11afeb531ca4068bcff763e194768",
+        "library": "iOS _ Wrappers",
+        "sourceFile": "abm/ios/Wrappers/iOS _ Wrappers -- StackWrapper (StackView).json"
+      },
+      "variant": {
+        "name": "Axis=Vertical, Alignment=Center",
+        "key": "393e11d411b11afeb531ca4068bcff763e194768"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25334;134346:45611;4171:25333;134346:45602;4171:25331",
+        "name": "TextLabel",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel",
+        "visible": true
+      },
+      "component": {
+        "name": "TextLabel (🍏🟦 13.10)",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- TextLabel.json"
+      },
+      "variant": {
+        "name": "👻 Skeleton=False, TextAlignment=Left, 👻 HorizontalSize=Fixed/Fill",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25334;134346:45611;4171:25333;134346:45602;4171:25332",
+        "name": "TextLabel",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel",
+        "visible": true
+      },
+      "component": {
+        "name": "TextLabel (🍏🟦 13.10)",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- TextLabel.json"
+      },
+      "variant": {
+        "name": "👻 Skeleton=False, TextAlignment=Left, 👻 HorizontalSize=Fixed/Fill",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "4171:25341",
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "key": "0fc6e162cda7721596de830df1ef341a3e18ef8a",
+        "library": "iOS _ Wrappers",
+        "sourceFile": "abm/ios/Wrappers/iOS _ Wrappers -- StackWrapper (StackView).json"
+      },
+      "variant": {
+        "name": "Axis=Horizontal, Alignment=Center",
+        "key": "0fc6e162cda7721596de830df1ef341a3e18ef8a"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "0fc6e162cda7721596de830df1ef341a3e18ef8a",
+        "currentComponentId": "3643:31403",
+        "latestComponentId": "3643:31403"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25341;134346:45611;4171:25336",
+        "name": "IconViewV1 (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / IconViewV1 (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "IconViewV1 (🍏🟦 13.10)",
+        "key": "2f381fa7e6f7595f92a5ab719ce260627ececd31",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=Small, Shape=Superellipse, Inner=Icon",
+        "key": "2f381fa7e6f7595f92a5ab719ce260627ececd31"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25341;134346:45611;4171:25340",
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "key": "393e11d411b11afeb531ca4068bcff763e194768",
+        "library": "iOS _ Wrappers",
+        "sourceFile": "abm/ios/Wrappers/iOS _ Wrappers -- StackWrapper (StackView).json"
+      },
+      "variant": {
+        "name": "Axis=Vertical, Alignment=Center",
+        "key": "393e11d411b11afeb531ca4068bcff763e194768"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25341;134346:45611;4171:25340;134346:45602;4171:25338",
+        "name": "TextLabel",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel",
+        "visible": true
+      },
+      "component": {
+        "name": "TextLabel (🍏🟦 13.10)",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- TextLabel.json"
+      },
+      "variant": {
+        "name": "👻 Skeleton=False, TextAlignment=Left, 👻 HorizontalSize=Fixed/Fill",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25341;134346:45611;4171:25340;134346:45602;4171:25339",
+        "name": "TextLabel",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel",
+        "visible": true
+      },
+      "component": {
+        "name": "TextLabel (🍏🟦 13.10)",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- TextLabel.json"
+      },
+      "variant": {
+        "name": "👻 Skeleton=False, TextAlignment=Left, 👻 HorizontalSize=Fixed/Fill",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "4171:25342",
+        "name": "TextLabel",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / TextLabel",
+        "visible": true
+      },
+      "component": {
+        "name": "TextLabel (🍏🟦 13.10)",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- TextLabel.json"
+      },
+      "variant": {
+        "name": "👻 Skeleton=False, TextAlignment=Left, 👻 HorizontalSize=Fixed/Fill",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "ddf191558502c98dc139abd10eba44682e17f8fc",
+        "currentComponentId": "3415:16374",
+        "latestComponentId": "3415:16374"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "4171:25349",
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "key": "0fc6e162cda7721596de830df1ef341a3e18ef8a",
+        "library": "iOS _ Wrappers",
+        "sourceFile": "abm/ios/Wrappers/iOS _ Wrappers -- StackWrapper (StackView).json"
+      },
+      "variant": {
+        "name": "Axis=Horizontal, Alignment=Center",
+        "key": "0fc6e162cda7721596de830df1ef341a3e18ef8a"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "0fc6e162cda7721596de830df1ef341a3e18ef8a",
+        "currentComponentId": "3643:31403",
+        "latestComponentId": "3643:31403"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25349;134346:45611;4171:25344",
+        "name": "IconViewV1 (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / IconViewV1 (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "IconViewV1 (🍏🟦 13.10)",
+        "key": "2f381fa7e6f7595f92a5ab719ce260627ececd31",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=Small, Shape=Superellipse, Inner=Icon",
+        "key": "2f381fa7e6f7595f92a5ab719ce260627ececd31"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25349;134346:45611;4171:25348",
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "key": "393e11d411b11afeb531ca4068bcff763e194768",
+        "library": "iOS _ Wrappers",
+        "sourceFile": "abm/ios/Wrappers/iOS _ Wrappers -- StackWrapper (StackView).json"
+      },
+      "variant": {
+        "name": "Axis=Vertical, Alignment=Center",
+        "key": "393e11d411b11afeb531ca4068bcff763e194768"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25349;134346:45611;4171:25348;134346:45602;4171:25346",
+        "name": "TextLabel",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel",
+        "visible": true
+      },
+      "component": {
+        "name": "TextLabel (🍏🟦 13.10)",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- TextLabel.json"
+      },
+      "variant": {
+        "name": "👻 Skeleton=False, TextAlignment=Left, 👻 HorizontalSize=Fixed/Fill",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25349;134346:45611;4171:25348;134346:45602;4171:25347",
+        "name": "TextLabel",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel",
+        "visible": true
+      },
+      "component": {
+        "name": "TextLabel (🍏🟦 13.10)",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- TextLabel.json"
+      },
+      "variant": {
+        "name": "👻 Skeleton=False, TextAlignment=Left, 👻 HorizontalSize=Fixed/Fill",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "4171:25356",
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "key": "0fc6e162cda7721596de830df1ef341a3e18ef8a",
+        "library": "iOS _ Wrappers",
+        "sourceFile": "abm/ios/Wrappers/iOS _ Wrappers -- StackWrapper (StackView).json"
+      },
+      "variant": {
+        "name": "Axis=Horizontal, Alignment=Center",
+        "key": "0fc6e162cda7721596de830df1ef341a3e18ef8a"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "0fc6e162cda7721596de830df1ef341a3e18ef8a",
+        "currentComponentId": "3643:31403",
+        "latestComponentId": "3643:31403"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25356;134346:45611;4171:25351",
+        "name": "IconViewV1 (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / IconViewV1 (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "IconViewV1 (🍏🟦 13.10)",
+        "key": "2f381fa7e6f7595f92a5ab719ce260627ececd31",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=Small, Shape=Superellipse, Inner=Icon",
+        "key": "2f381fa7e6f7595f92a5ab719ce260627ececd31"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25356;134346:45611;4171:25355",
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "key": "393e11d411b11afeb531ca4068bcff763e194768",
+        "library": "iOS _ Wrappers",
+        "sourceFile": "abm/ios/Wrappers/iOS _ Wrappers -- StackWrapper (StackView).json"
+      },
+      "variant": {
+        "name": "Axis=Vertical, Alignment=Center",
+        "key": "393e11d411b11afeb531ca4068bcff763e194768"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25356;134346:45611;4171:25355;134346:45602;4171:25353",
+        "name": "TextLabel",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel",
+        "visible": true
+      },
+      "component": {
+        "name": "TextLabel (🍏🟦 13.10)",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- TextLabel.json"
+      },
+      "variant": {
+        "name": "👻 Skeleton=False, TextAlignment=Left, 👻 HorizontalSize=Fixed/Fill",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25356;134346:45611;4171:25355;134346:45602;4171:25354",
+        "name": "TextLabel",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel",
+        "visible": true
+      },
+      "component": {
+        "name": "TextLabel (🍏🟦 13.10)",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- TextLabel.json"
+      },
+      "variant": {
+        "name": "👻 Skeleton=False, TextAlignment=Left, 👻 HorizontalSize=Fixed/Fill",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "4171:25363",
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "key": "0fc6e162cda7721596de830df1ef341a3e18ef8a",
+        "library": "iOS _ Wrappers",
+        "sourceFile": "abm/ios/Wrappers/iOS _ Wrappers -- StackWrapper (StackView).json"
+      },
+      "variant": {
+        "name": "Axis=Horizontal, Alignment=Center",
+        "key": "0fc6e162cda7721596de830df1ef341a3e18ef8a"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "0fc6e162cda7721596de830df1ef341a3e18ef8a",
+        "currentComponentId": "3643:31403",
+        "latestComponentId": "3643:31403"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25363;134346:45611;4171:25358",
+        "name": "IconViewV1 (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / IconViewV1 (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "IconViewV1 (🍏🟦 13.10)",
+        "key": "2f381fa7e6f7595f92a5ab719ce260627ececd31",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=Small, Shape=Superellipse, Inner=Icon",
+        "key": "2f381fa7e6f7595f92a5ab719ce260627ececd31"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25363;134346:45611;4171:25362",
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "key": "393e11d411b11afeb531ca4068bcff763e194768",
+        "library": "iOS _ Wrappers",
+        "sourceFile": "abm/ios/Wrappers/iOS _ Wrappers -- StackWrapper (StackView).json"
+      },
+      "variant": {
+        "name": "Axis=Vertical, Alignment=Center",
+        "key": "393e11d411b11afeb531ca4068bcff763e194768"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25363;134346:45611;4171:25362;134346:45602;4171:25360",
+        "name": "TextLabel",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel",
+        "visible": true
+      },
+      "component": {
+        "name": "TextLabel (🍏🟦 13.10)",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- TextLabel.json"
+      },
+      "variant": {
+        "name": "👻 Skeleton=False, TextAlignment=Left, 👻 HorizontalSize=Fixed/Fill",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25363;134346:45611;4171:25362;134346:45602;4171:25361",
+        "name": "TextLabel",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel",
+        "visible": true
+      },
+      "component": {
+        "name": "TextLabel (🍏🟦 13.10)",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- TextLabel.json"
+      },
+      "variant": {
+        "name": "👻 Skeleton=False, TextAlignment=Left, 👻 HorizontalSize=Fixed/Fill",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "4171:25364",
+        "name": "TextLabel",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / TextLabel",
+        "visible": true
+      },
+      "component": {
+        "name": "TextLabel (🍏🟦 13.10)",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- TextLabel.json"
+      },
+      "variant": {
+        "name": "👻 Skeleton=False, TextAlignment=Left, 👻 HorizontalSize=Fixed/Fill",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "ddf191558502c98dc139abd10eba44682e17f8fc",
+        "currentComponentId": "3415:16374",
+        "latestComponentId": "3415:16374"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "4171:25371",
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "key": "0fc6e162cda7721596de830df1ef341a3e18ef8a",
+        "library": "iOS _ Wrappers",
+        "sourceFile": "abm/ios/Wrappers/iOS _ Wrappers -- StackWrapper (StackView).json"
+      },
+      "variant": {
+        "name": "Axis=Horizontal, Alignment=Center",
+        "key": "0fc6e162cda7721596de830df1ef341a3e18ef8a"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "0fc6e162cda7721596de830df1ef341a3e18ef8a",
+        "currentComponentId": "3643:31403",
+        "latestComponentId": "3643:31403"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25371;134346:45611;4171:25366",
+        "name": "IconViewV1 (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / IconViewV1 (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "IconViewV1 (🍏🟦 13.10)",
+        "key": "2f381fa7e6f7595f92a5ab719ce260627ececd31",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=Small, Shape=Superellipse, Inner=Icon",
+        "key": "2f381fa7e6f7595f92a5ab719ce260627ececd31"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25371;134346:45611;4171:25370",
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "key": "393e11d411b11afeb531ca4068bcff763e194768",
+        "library": "iOS _ Wrappers",
+        "sourceFile": "abm/ios/Wrappers/iOS _ Wrappers -- StackWrapper (StackView).json"
+      },
+      "variant": {
+        "name": "Axis=Vertical, Alignment=Center",
+        "key": "393e11d411b11afeb531ca4068bcff763e194768"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25371;134346:45611;4171:25370;134346:45602;4171:25368",
+        "name": "TextLabel",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel",
+        "visible": true
+      },
+      "component": {
+        "name": "TextLabel (🍏🟦 13.10)",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- TextLabel.json"
+      },
+      "variant": {
+        "name": "👻 Skeleton=False, TextAlignment=Left, 👻 HorizontalSize=Fixed/Fill",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25371;134346:45611;4171:25370;134346:45602;4171:25369",
+        "name": "TextLabel",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel",
+        "visible": true
+      },
+      "component": {
+        "name": "TextLabel (🍏🟦 13.10)",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- TextLabel.json"
+      },
+      "variant": {
+        "name": "👻 Skeleton=False, TextAlignment=Left, 👻 HorizontalSize=Fixed/Fill",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "4171:25378",
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "key": "0fc6e162cda7721596de830df1ef341a3e18ef8a",
+        "library": "iOS _ Wrappers",
+        "sourceFile": "abm/ios/Wrappers/iOS _ Wrappers -- StackWrapper (StackView).json"
+      },
+      "variant": {
+        "name": "Axis=Horizontal, Alignment=Center",
+        "key": "0fc6e162cda7721596de830df1ef341a3e18ef8a"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "0fc6e162cda7721596de830df1ef341a3e18ef8a",
+        "currentComponentId": "3643:31403",
+        "latestComponentId": "3643:31403"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25378;134346:45611;4171:25373",
+        "name": "IconViewV1 (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / IconViewV1 (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "IconViewV1 (🍏🟦 13.10)",
+        "key": "2f381fa7e6f7595f92a5ab719ce260627ececd31",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=Small, Shape=Superellipse, Inner=Icon",
+        "key": "2f381fa7e6f7595f92a5ab719ce260627ececd31"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25378;134346:45611;4171:25377",
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "key": "393e11d411b11afeb531ca4068bcff763e194768",
+        "library": "iOS _ Wrappers",
+        "sourceFile": "abm/ios/Wrappers/iOS _ Wrappers -- StackWrapper (StackView).json"
+      },
+      "variant": {
+        "name": "Axis=Vertical, Alignment=Center",
+        "key": "393e11d411b11afeb531ca4068bcff763e194768"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25378;134346:45611;4171:25377;134346:45602;4171:25375",
+        "name": "TextLabel",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel",
+        "visible": true
+      },
+      "component": {
+        "name": "TextLabel (🍏🟦 13.10)",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- TextLabel.json"
+      },
+      "variant": {
+        "name": "👻 Skeleton=False, TextAlignment=Left, 👻 HorizontalSize=Fixed/Fill",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25378;134346:45611;4171:25377;134346:45602;4171:25376",
+        "name": "TextLabel",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel",
+        "visible": true
+      },
+      "component": {
+        "name": "TextLabel (🍏🟦 13.10)",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- TextLabel.json"
+      },
+      "variant": {
+        "name": "👻 Skeleton=False, TextAlignment=Left, 👻 HorizontalSize=Fixed/Fill",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "4171:25385",
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "key": "0fc6e162cda7721596de830df1ef341a3e18ef8a",
+        "library": "iOS _ Wrappers",
+        "sourceFile": "abm/ios/Wrappers/iOS _ Wrappers -- StackWrapper (StackView).json"
+      },
+      "variant": {
+        "name": "Axis=Horizontal, Alignment=Center",
+        "key": "0fc6e162cda7721596de830df1ef341a3e18ef8a"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "0fc6e162cda7721596de830df1ef341a3e18ef8a",
+        "currentComponentId": "3643:31403",
+        "latestComponentId": "3643:31403"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25385;134346:45611;4171:25380",
+        "name": "IconViewV1 (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / IconViewV1 (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "IconViewV1 (🍏🟦 13.10)",
+        "key": "2f381fa7e6f7595f92a5ab719ce260627ececd31",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=Small, Shape=Superellipse, Inner=Icon",
+        "key": "2f381fa7e6f7595f92a5ab719ce260627ececd31"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25385;134346:45611;4171:25384",
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10)",
+        "visible": true
+      },
+      "component": {
+        "name": "StackWrapper (🍏🟦 13.10)",
+        "key": "393e11d411b11afeb531ca4068bcff763e194768",
+        "library": "iOS _ Wrappers",
+        "sourceFile": "abm/ios/Wrappers/iOS _ Wrappers -- StackWrapper (StackView).json"
+      },
+      "variant": {
+        "name": "Axis=Vertical, Alignment=Center",
+        "key": "393e11d411b11afeb531ca4068bcff763e194768"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25385;134346:45611;4171:25384;134346:45602;4171:25382",
+        "name": "TextLabel",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel",
+        "visible": true
+      },
+      "component": {
+        "name": "TextLabel (🍏🟦 13.10)",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- TextLabel.json"
+      },
+      "variant": {
+        "name": "👻 Skeleton=False, TextAlignment=Left, 👻 HorizontalSize=Fixed/Fill",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I4171:25385;134346:45611;4171:25384;134346:45602;4171:25383",
+        "name": "TextLabel",
+        "type": "INSTANCE",
+        "pageName": "23. Скролл LG",
+        "path": "iOS__Профиль / Content / Content / Content / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / StackWrapper (🍏🟦 13.10) / 🎨 ContentGroup / TextLabel",
+        "visible": true
+      },
+      "component": {
+        "name": "TextLabel (🍏🟦 13.10)",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- TextLabel.json"
+      },
+      "variant": {
+        "name": "👻 Skeleton=False, TextAlignment=Left, 👻 HorizontalSize=Fixed/Fill",
+        "key": "ddf191558502c98dc139abd10eba44682e17f8fc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    }
+  ],
+  "componentContexts": []
+}
