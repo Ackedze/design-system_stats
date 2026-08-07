@@ -1,0 +1,1460 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1534219656993111263-1786092218336-2ubigqbd:agent",
+  "sourceReportId": "apollo-1534219656993111263-1786092218336-2ubigqbd",
+  "generatedAt": "2026-08-07T08:43:38.336Z",
+  "suggestedFileName": "Ekaterina-Goretskaya_07-08-2026_11-43-38_agent.json",
+  "user": {
+    "id": "1534219656993111263",
+    "name": "Ekaterina Goretskaya",
+    "slug": "Ekaterina-Goretskaya"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.1.62"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "🏠 Эскроу счета (ФЗ-214)",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "startedAt": "2026-08-07T08:43:31.252Z",
+    "finishedAt": "2026-08-07T08:43:38.336Z",
+    "durationMs": 7084,
+    "selection": [
+      {
+        "nodeId": "102614:50394",
+        "name": "Отображение выбранного счета",
+        "nodeType": "FRAME",
+        "path": "Измение данных счёта застройщиком / Отображение выбранного счета",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 153,
+    "problemOccurrenceCount": 23,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 4,
+      "updates": 8,
+      "customizations": 1,
+      "localComponents": 4,
+      "detachedComponents": 0,
+      "presets": 2,
+      "technicalComponents": 0,
+      "currentComponents": 141,
+      "wrongChannel": 0,
+      "themization": 4
+    },
+    "includedFindingCount": 23,
+    "omittedCurrentComponentCount": 141
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with severity=error and matchKind=exact_component_rule for the same property/change.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 4,
+      "includedCount": 4,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 8,
+      "includedCount": 8,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 4,
+      "includedCount": 4,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 2,
+      "includedCount": 2,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 4,
+      "includedCount": 4,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "102614:50400",
+        "name": "🔒 [D] SpotlightBar",
+        "type": "INSTANCE",
+        "pageName": "Изменение эскроу-счёта [9.06.2026 - 16.06.2026]",
+        "path": "Измение данных счёта застройщиком / Отображение выбранного счета / 🔒 [D] SpotlightBar",
+        "visible": true
+      },
+      "style": {
+        "name": "Spotlight/Bar Up Shadow",
+        "key": "30aa972ba2d52e52fc7579e4a0300f44b86487e3",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Inner shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I102614:50400;80:27656;80:27143;79:26990;79:26974",
+        "name": "Spot",
+        "type": "ELLIPSE",
+        "pageName": "Изменение эскроу-счёта [9.06.2026 - 16.06.2026]",
+        "path": "Измение данных счёта застройщиком / Отображение выбранного счета / 🔒 [D] SpotlightBar / Left / SpotlightLogo / Icon 28 / 🔩 Shadow / Spot",
+        "visible": true
+      },
+      "style": {
+        "name": "Слой (Layer blur)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Слой (Layer blur)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I102614:50400;80:27656;80:27143;79:26950",
+        "name": "🔩 Shape",
+        "type": "INSTANCE",
+        "pageName": "Изменение эскроу-счёта [9.06.2026 - 16.06.2026]",
+        "path": "Измение данных счёта застройщиком / Отображение выбранного счета / 🔒 [D] SpotlightBar / Left / SpotlightLogo / Icon 28 / 🔩 Shape",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Inner shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Inner shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I102614:50400;80:27656;80:27143;79:26950;79:26775",
+        "name": "Mask",
+        "type": "VECTOR",
+        "pageName": "Изменение эскроу-счёта [9.06.2026 - 16.06.2026]",
+        "path": "Измение данных счёта застройщиком / Отображение выбранного счета / 🔒 [D] SpotlightBar / Left / SpotlightLogo / Icon 28 / 🔩 Shape / Mask",
+        "visible": true
+      },
+      "style": {
+        "name": "Spotlight/logo-bg",
+        "key": "03c3f9304ce99af99e5f761c9a6bb90cc7f46f65",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "102614:50399",
+        "name": "Content",
+        "type": "INSTANCE",
+        "pageName": "Изменение эскроу-счёта [9.06.2026 - 16.06.2026]",
+        "path": "Измение данных счёта застройщиком / Отображение выбранного счета / Page / Body / Content",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] CorporateContent",
+        "key": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateContent.json"
+      },
+      "variant": {
+        "name": "[D] CorporateContent",
+        "key": "a8d13cb6e1ae67a7296709f669238f41971c7197"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+        "currentComponentId": "102354:52549",
+        "latestComponentId": "104723:796697"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I102614:50399;135096:147276;102614:50428;62722:160365;84613:100551;4474:1645",
+        "name": "🔄 [D][Corporate] PureCell",
+        "type": "INSTANCE",
+        "pageName": "Изменение эскроу-счёта [9.06.2026 - 16.06.2026]",
+        "path": "Измение данных счёта застройщиком / Отображение выбранного счета / Page / Body / Content / [D] Body / Frame / Sidebar / body / content / IsleContent / First / Content / Content / 🔄 [D][Corporate] PureCell",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] PureCell",
+        "key": "74efb09c57618b38759a89239de2605158cdc279",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- PureCell.json"
+      },
+      "variant": {
+        "name": "GraphicsSide=None",
+        "key": "74efb09c57618b38759a89239de2605158cdc279"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I102614:50399;135096:147276;102614:50428;62722:160365;84613:100551;4474:1645;215:15071",
+        "name": "RowTitle",
+        "type": "INSTANCE",
+        "pageName": "Изменение эскроу-счёта [9.06.2026 - 16.06.2026]",
+        "path": "Измение данных счёта застройщиком / Отображение выбранного счета / Page / Body / Content / [D] Body / Frame / Sidebar / body / content / IsleContent / First / Content / Content / 🔄 [D][Corporate] PureCell / Content / Body / Main / Row / RowTitle",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 🔩 [D][Corporate] RowTitle",
+        "key": "31bf832dc500b119f05098d0c8c0dda90372e08f",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- PureCell.json"
+      },
+      "variant": {
+        "name": "Type=Text 16",
+        "key": "31bf832dc500b119f05098d0c8c0dda90372e08f"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I102614:50399;135096:147276;102614:50428;62722:160365;84613:100552;4474:1645",
+        "name": "🔄 [D][Corporate] PureCell",
+        "type": "INSTANCE",
+        "pageName": "Изменение эскроу-счёта [9.06.2026 - 16.06.2026]",
+        "path": "Измение данных счёта застройщиком / Отображение выбранного счета / Page / Body / Content / [D] Body / Frame / Sidebar / body / content / IsleContent / Steps_Vertical / Content / Content / 🔄 [D][Corporate] PureCell",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] PureCell",
+        "key": "74efb09c57618b38759a89239de2605158cdc279",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- PureCell.json"
+      },
+      "variant": {
+        "name": "GraphicsSide=None",
+        "key": "74efb09c57618b38759a89239de2605158cdc279"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I102614:50399;135096:147276;102614:50428;62722:160365;84613:100552;4474:1645;215:15071",
+        "name": "RowTitle",
+        "type": "INSTANCE",
+        "pageName": "Изменение эскроу-счёта [9.06.2026 - 16.06.2026]",
+        "path": "Измение данных счёта застройщиком / Отображение выбранного счета / Page / Body / Content / [D] Body / Frame / Sidebar / body / content / IsleContent / Steps_Vertical / Content / Content / 🔄 [D][Corporate] PureCell / Content / Body / Main / Row / RowTitle",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 🔩 [D][Corporate] RowTitle",
+        "key": "31bf832dc500b119f05098d0c8c0dda90372e08f",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- PureCell.json"
+      },
+      "variant": {
+        "name": "Type=Text 16",
+        "key": "31bf832dc500b119f05098d0c8c0dda90372e08f"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I102614:50399;135096:147276;102614:50428;62722:160365;84613:100553;4474:1645",
+        "name": "🔄 [D][Corporate] PureCell",
+        "type": "INSTANCE",
+        "pageName": "Изменение эскроу-счёта [9.06.2026 - 16.06.2026]",
+        "path": "Измение данных счёта застройщиком / Отображение выбранного счета / Page / Body / Content / [D] Body / Frame / Sidebar / body / content / IsleContent / Steps_Vertical / Content / Content / 🔄 [D][Corporate] PureCell",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] PureCell",
+        "key": "74efb09c57618b38759a89239de2605158cdc279",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- PureCell.json"
+      },
+      "variant": {
+        "name": "GraphicsSide=None",
+        "key": "74efb09c57618b38759a89239de2605158cdc279"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I102614:50399;135096:147276;102614:50428;62722:160365;84613:100553;4474:1645;215:15071",
+        "name": "RowTitle",
+        "type": "INSTANCE",
+        "pageName": "Изменение эскроу-счёта [9.06.2026 - 16.06.2026]",
+        "path": "Измение данных счёта застройщиком / Отображение выбранного счета / Page / Body / Content / [D] Body / Frame / Sidebar / body / content / IsleContent / Steps_Vertical / Content / Content / 🔄 [D][Corporate] PureCell / Content / Body / Main / Row / RowTitle",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 🔩 [D][Corporate] RowTitle",
+        "key": "31bf832dc500b119f05098d0c8c0dda90372e08f",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- PureCell.json"
+      },
+      "variant": {
+        "name": "Type=Text 16",
+        "key": "31bf832dc500b119f05098d0c8c0dda90372e08f"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "102352:36448",
+        "name": "RightAddon1",
+        "type": "INSTANCE",
+        "pageName": "Изменение эскроу-счёта [9.06.2026 - 16.06.2026]",
+        "path": "[D][Corporate] Input / Active=False, Filled=False, Size=48, State=Normal / Field / RightAddons / RightAddon1",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 Addon",
+        "key": "aed4c2993452251cf0ea38aeb98a16d334495e16",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- _ _ MasterInput.json"
+      },
+      "variant": {
+        "name": "Type=IconSecondary",
+        "key": "aed4c2993452251cf0ea38aeb98a16d334495e16"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "aed4c2993452251cf0ea38aeb98a16d334495e16",
+        "currentComponentId": "101129:41381",
+        "latestComponentId": "104723:795011"
+      },
+      "localComponentOwner": {
+        "id": "102352:36439",
+        "name": "Active=False, Filled=False, Size=48, State=Normal",
+        "type": "COMPONENT",
+        "pageName": "Изменение эскроу-счёта [9.06.2026 - 16.06.2026]",
+        "path": "[D][Corporate] Input / Active=False, Filled=False, Size=48, State=Normal",
+        "visible": true
+      }
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "102614:50400",
+        "name": "🔒 [D] SpotlightBar",
+        "type": "INSTANCE",
+        "pageName": "Изменение эскроу-счёта [9.06.2026 - 16.06.2026]",
+        "path": "Измение данных счёта застройщиком / Отображение выбранного счета / 🔒 [D] SpotlightBar",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] SpotlightBar",
+        "key": "8e339a000bd5e9a39153afb381110d84e1bf193d",
+        "library": "Web _ Corp Limited Components (не подключать)",
+        "sourceFile": "web/components/web-corp-limited-components-не-подключать/Web _ Corp Limited Components (не подключать) -- SpotlightBar [D].json"
+      },
+      "variant": {
+        "name": "👽 Tablet=false",
+        "key": "8e339a000bd5e9a39153afb381110d84e1bf193d"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "102614:50400",
+            "name": "🔒 [D] SpotlightBar",
+            "type": null,
+            "pageName": "Изменение эскроу-счёта [9.06.2026 - 16.06.2026]",
+            "path": "👽 Tablet=false",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: decorative-muted-alt/indigo → S:27ba925a81fd8c8a03755940253f21d1c9099141,317:32",
+          "referenceValue": "decorative-muted-alt/indigo",
+          "actualValue": "S:27ba925a81fd8c8a03755940253f21d1c9099141,317:32",
+          "referenceRawValue": "decorative-muted-alt/indigo",
+          "actualRawValue": "S:27ba925a81fd8c8a03755940253f21d1c9099141,317:32",
+          "referenceDisplayValue": "decorative-muted-alt/indigo",
+          "actualDisplayValue": "S:27ba925a81fd8c8a03755940253f21d1c9099141,317:32",
+          "referenceResource": {
+            "name": "decorative-muted-alt/indigo",
+            "key": "546c89f3ab23c26a4beea3ccdd61cc7f22fff31d",
+            "library": "Decorative Dynamic",
+            "sourceFile": "003 :: Decarative Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "S:27ba925a81fd8c8a03755940253f21d1c9099141,317:32",
+            "key": "27ba925a81fd8c8a03755940253f21d1c9099141",
+            "library": null,
+            "sourceFile": null
+          },
+          "referenceBinding": {
+            "id": "VariableID:546c89f3ab23c26a4beea3ccdd61cc7f22fff31d/1816:89",
+            "key": "546c89f3ab23c26a4beea3ccdd61cc7f22fff31d",
+            "name": "decorative-muted-alt/indigo",
+            "collectionId": "VariableCollectionId:944:1243",
+            "collectionName": "Decorative Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": null,
+          "bindingStatus": "unbound",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "8e339a000bd5e9a39153afb381110d84e1bf193d",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "👽 Tablet": "false"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "102614:50394",
+              "nodeName": "Отображение выбранного счета",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web.spotlight-bar.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I102614:50400;3:5308;1209:29761",
+            "name": "RightAddon1",
+            "type": null,
+            "pageName": "Изменение эскроу-счёта [9.06.2026 - 16.06.2026]",
+            "path": "👽 Tablet=false / Right / [D][Corporate] Input / Field / RightAddons / RightAddon1",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 4 → 0",
+          "referenceValue": 4,
+          "actualValue": "0",
+          "referenceRawValue": 4,
+          "actualRawValue": "0",
+          "referenceDisplayValue": 4,
+          "actualDisplayValue": "0",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "aed4c2993452251cf0ea38aeb98a16d334495e16",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "5e2f9b5a7c345b0f853179f9ae137439b8563cc3",
+            "actualNestedOwnerPath": "👽 Tablet=false / Right / [D][Corporate] Input",
+            "actualNestedOwnerRelativePath": "Field / RightAddons / RightAddon1",
+            "nestedOwnerComponentKey": "aed4c2993452251cf0ea38aeb98a16d334495e16",
+            "nestedOwnerComponentRole": "Part",
+            "nestedOwnerPath": "👽 Tablet=false / Right / [D][Corporate] Input / Field / RightAddons / RightAddon1",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "Type": "IconSecondary"
+            },
+            "referenceVariantProperties": {
+              "Type": "IconSecondary"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "102614:50394",
+              "nodeName": "Отображение выбранного счета",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.master-input.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I102614:50400;80:27656;80:27143;79:26950;79:26775",
+            "name": "Mask",
+            "type": null,
+            "pageName": "Изменение эскроу-счёта [9.06.2026 - 16.06.2026]",
+            "path": "👽 Tablet=false / Left / SpotlightLogo / Icon 28 / 🔩 Shape / Mask",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: sequential-indigo/4 → VariableID:b34621fc7d402e6b5a14d572d3716dffec1babf0/317:30",
+          "referenceValue": "sequential-indigo/4",
+          "actualValue": "VariableID:b34621fc7d402e6b5a14d572d3716dffec1babf0/317:30",
+          "referenceRawValue": "sequential-indigo/4",
+          "actualRawValue": "VariableID:b34621fc7d402e6b5a14d572d3716dffec1babf0/317:30",
+          "referenceDisplayValue": "sequential-indigo/4",
+          "actualDisplayValue": "VariableID:b34621fc7d402e6b5a14d572d3716dffec1babf0/317:30",
+          "referenceResource": {
+            "name": "sequential-indigo/4",
+            "key": "d16ea6fb03c97c28f90e873c4b8ff01e0135569b",
+            "library": "Sequential Charts Dynamic",
+            "sourceFile": "005 :: Sequential Charts Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "VariableID:b34621fc7d402e6b5a14d572d3716dffec1babf0/317:30",
+            "key": "b34621fc7d402e6b5a14d572d3716dffec1babf0",
+            "library": null,
+            "sourceFile": null
+          },
+          "referenceBinding": {
+            "id": "VariableID:d16ea6fb03c97c28f90e873c4b8ff01e0135569b/2391:122",
+            "key": "d16ea6fb03c97c28f90e873c4b8ff01e0135569b",
+            "name": "sequential-indigo/4",
+            "collectionId": null,
+            "collectionName": "Sequential Charts Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:b34621fc7d402e6b5a14d572d3716dffec1babf0/317:30",
+            "key": null,
+            "name": null,
+            "collectionId": null,
+            "collectionName": null,
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "unresolved-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "3a364d15f42d938b586fb099ca62d61655ed5ddc",
+            "actualNestedOwnerPath": "👽 Tablet=false / Left / SpotlightLogo / Icon 28 / 🔩 Shape",
+            "actualNestedOwnerRelativePath": "Mask",
+            "nestedOwnerComponentKey": "3a364d15f42d938b586fb099ca62d61655ed5ddc",
+            "nestedOwnerComponentRole": "Part",
+            "nestedOwnerPath": "👽 Tablet=false / Left / SpotlightLogo / Icon 28 / 🔩 Shape",
+            "nestedOwnerRelativePath": "Mask",
+            "actualVariantProperties": null,
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "102614:50394",
+              "nodeName": "Отображение выбранного счета",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I102614:50400;3:5308",
+        "name": "[D][Corporate] Input",
+        "type": "INSTANCE",
+        "pageName": "Изменение эскроу-счёта [9.06.2026 - 16.06.2026]",
+        "path": "Измение данных счёта застройщиком / Отображение выбранного счета / 🔒 [D] SpotlightBar / Right / [D][Corporate] Input",
+        "visible": true
+      },
+      "component": {
+        "name": "[D][Corporate] Input",
+        "key": "5e2f9b5a7c345b0f853179f9ae137439b8563cc3",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I102614:50400;3:5308;425:19261",
+        "name": "[D] Placeholder :: Local",
+        "type": "INSTANCE",
+        "pageName": "Изменение эскроу-счёта [9.06.2026 - 16.06.2026]",
+        "path": "Измение данных счёта застройщиком / Отображение выбранного счета / 🔒 [D] SpotlightBar / Right / [D][Corporate] Input / Field / Content / [D] Placeholder :: Local",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] Placeholder :: Local",
+        "key": "6213ffb60a300741cf3ed20f647b3fa915cd776c",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I102614:50400;3:5308;425:19261;31:17304",
+        "name": "Анимация подсказок",
+        "type": "INSTANCE",
+        "pageName": "Изменение эскроу-счёта [9.06.2026 - 16.06.2026]",
+        "path": "Измение данных счёта застройщиком / Отображение выбранного счета / 🔒 [D] SpotlightBar / Right / [D][Corporate] Input / Field / Content / [D] Placeholder :: Local / Анимация подсказок",
+        "visible": true
+      },
+      "component": {
+        "name": "Анимация подсказок",
+        "key": "651559c4134425974ecdf20c81ec3426ae92871d",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I102614:50400;3:5308;1209:29761;29:32755",
+        "name": "arrows-out-alt",
+        "type": "INSTANCE",
+        "pageName": "Изменение эскроу-счёта [9.06.2026 - 16.06.2026]",
+        "path": "Измение данных счёта застройщиком / Отображение выбранного счета / 🔒 [D] SpotlightBar / Right / [D][Corporate] Input / Field / RightAddons / RightAddon1 / Fixer / PaintMe / arrows-out-alt",
+        "visible": true
+      },
+      "component": {
+        "name": "arrows-out-alt",
+        "key": "5dfc1ac9794ce43b266c3f3945e8f7092a806f8e",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I102614:50399;135096:147276;102614:50428",
+        "name": "Sidebar",
+        "type": "INSTANCE",
+        "pageName": "Изменение эскроу-счёта [9.06.2026 - 16.06.2026]",
+        "path": "Измение данных счёта застройщиком / Отображение выбранного счета / Page / Body / Content / [D] Body / Frame / Sidebar",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] IsleBlock :: 1024+",
+        "key": "9dd86bd040376734e605227c0d849d1328e62d76",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- IsleBlock.json"
+      },
+      "variant": {
+        "name": "Type=Static",
+        "key": "9dd86bd040376734e605227c0d849d1328e62d76"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "102614:50400",
+        "name": "🔒 [D] SpotlightBar",
+        "type": "INSTANCE",
+        "pageName": "Изменение эскроу-счёта [9.06.2026 - 16.06.2026]",
+        "path": "Измение данных счёта застройщиком / Отображение выбранного счета / 🔒 [D] SpotlightBar",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] SpotlightBar",
+        "key": "8e339a000bd5e9a39153afb381110d84e1bf193d",
+        "library": "Web _ Corp Limited Components (не подключать)",
+        "sourceFile": "web/components/web-corp-limited-components-не-подключать/Web _ Corp Limited Components (не подключать) -- SpotlightBar [D].json"
+      },
+      "variant": {
+        "name": "👽 Tablet=false",
+        "key": "8e339a000bd5e9a39153afb381110d84e1bf193d"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "8e339a000bd5e9a39153afb381110d84e1bf193d",
+        "currentComponentId": "102862:207346",
+        "latestComponentId": "102862:207346"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "102614:50394",
+        "name": "Страница: Изменение эскроу-счёта [9.06.2026 - 16.06.2026]",
+        "type": "PAGE",
+        "pageName": "Изменение эскроу-счёта [9.06.2026 - 16.06.2026]",
+        "path": "Изменение эскроу-счёта [9.06.2026 - 16.06.2026]",
+        "visible": true
+      },
+      "kind": "missingThemeMode",
+      "recommendation": "Смени темизацию на Corp",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I102614:50399;135096:147276;102614:50428;62722:160365;84613:100551;4474:1645",
+        "name": "🔄 [D][Corporate] PureCell",
+        "type": "INSTANCE",
+        "pageName": "Изменение эскроу-счёта [9.06.2026 - 16.06.2026]",
+        "path": "Измение данных счёта застройщиком / Отображение выбранного счета / Page / Body / Content / [D] Body / Frame / Sidebar / body / content / IsleContent / First / Content / Content / 🔄 [D][Corporate] PureCell",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] PureCell",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I102614:50399;135096:147276;102614:50428;62722:160365;84613:100552;4474:1645",
+        "name": "🔄 [D][Corporate] PureCell",
+        "type": "INSTANCE",
+        "pageName": "Изменение эскроу-счёта [9.06.2026 - 16.06.2026]",
+        "path": "Измение данных счёта застройщиком / Отображение выбранного счета / Page / Body / Content / [D] Body / Frame / Sidebar / body / content / IsleContent / Steps_Vertical / Content / Content / 🔄 [D][Corporate] PureCell",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] PureCell",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I102614:50399;135096:147276;102614:50428;62722:160365;84613:100553;4474:1645",
+        "name": "🔄 [D][Corporate] PureCell",
+        "type": "INSTANCE",
+        "pageName": "Изменение эскроу-счёта [9.06.2026 - 16.06.2026]",
+        "path": "Измение данных счёта застройщиком / Отображение выбранного счета / Page / Body / Content / [D] Body / Frame / Sidebar / body / content / IsleContent / Steps_Vertical / Content / Content / 🔄 [D][Corporate] PureCell",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] PureCell",
+      "component": null
+    }
+  ],
+  "componentContexts": [
+    {
+      "componentKey": "web-core.master-input",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔩 Addon",
+        "🔩 Addon",
+        "🔩 Addon",
+        "🔩 Addon",
+        "🔩 Placeholder",
+        "🔩 Placeholder",
+        "🔩 Placeholder",
+        "🔩 Placeholder",
+        "🔩 Placeholder",
+        "🔩 Placeholder",
+        "🔩 Placeholder",
+        "🔩 Placeholder",
+        "🔩 Placeholder",
+        "🔩 Placeholder",
+        "🔩 Placeholder",
+        "🔩 Placeholder",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "3f7776ef49fac652200db185237d50ec96ef6253",
+          "name": "🔩 Addon",
+          "purpose": "Inverted=False, 24",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        },
+        {
+          "componentKey": "1a9f02292268e04f4551162957e06d2c1a0d379d",
+          "name": "🔩 Addon",
+          "purpose": "Inverted=True, 24",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        },
+        {
+          "componentKey": "68d307caaf69aa2a45da323122de300c5e46753b",
+          "name": "🔩 Addon",
+          "purpose": "Inverted=False, 16",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        },
+        {
+          "componentKey": "37e8c38f7b23fc112990c8680d13c71b59f70c6f",
+          "name": "🔩 Addon",
+          "purpose": "Inverted=True, 16",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.pure-cell",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔄 [M][Corporate] PureCell",
+        "🔄 [D][Corporate] PureCell",
+        "[M] PureCell",
+        "[D] PureCell",
+        "🔄 🔩 [M][Corporate] RowValue",
+        "🔄 🔩 [D][Corporate] RowValue",
+        "🔄 🔩 [M][Corporate] RowTitle",
+        "🔄 🔩 [D][Corporate] RowTitle",
+        "🔄 🔩 [M][Corporate] Footer",
+        "🔄 🔩 [D][Corporate] Footer",
+        "🔄 🔩 [M][Corporate] Addon",
+        "🔄 🔩 [D][Corporate] Addon",
+        "🔄 🔩 [M][Corporate] Graphics",
+        "🔄 🔩 [D][Corporate] Graphics",
+        "🔩 [M] RowValue",
+        "🔩 [D] RowValue",
+        "🔩 [M] RowTitle",
+        "🔩 [D] RowTitle",
+        "🔩 [M] Footer",
+        "🔩 [D] Footer",
+        "🔩 [M] Addon",
+        "🔩 [D] Addon",
+        "🔩 [M] Graphics",
+        "🔩 [D] Graphics"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "35ac63e4ca504a3da402f04f044109c11682c1eb",
+          "name": "🔄 [D][Corporate] PureCell",
+          "purpose": "🔄 Замени на актуальный",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.corporate-content",
+      "summary": "CorporateContent — обязательная контентная область продуктовой страницы. Используй [D] CorporateContent для desktop и [M] CorporateContent для mobile-web.",
+      "criticalBaselines": [],
+      "agentInstructions": [
+        "Не считай произвольный контент или несколько дочерних элементов внутри Body нарушением сами по себе.",
+        "Проверяй содержимое Body по собственным компонентным контрактам и паттернам.",
+        "Считай использование переходного [T] CorporateContent явным нарушением.",
+        "Не рекомендуй ручную правку fill, grid style или padding корня CorporateContent; рекомендуй правильный mode переменных.",
+        "Не требуй наличия родительского компонента CorporatePage в Figma: такого компонента нет, самостоятельное использование CorporateContent допустимо.",
+        "Не применяй Gutter как обязательный itemSpacing внутри Body; он допустим в любой горизонтальной композиции без обязательного Section.",
+        "На ширине 768 требуй [D] CorporateContent и mode 768 коллекции [D] Grid & Cols.",
+        "Не придумывай условия выбора между base-bg-alt и base-bg до появления отдельного паттерна; default — base-bg-alt (grey).",
+        "Не разрешай кликабельность корня или detach CorporateContent и Body.",
+        "Не разрешай вкладывать CorporateContent внутрь CorporateContent и не оставляй SwapMe после добавления реального содержимого.",
+        "Требуй Header или HeaderMenu непосредственно над CorporateContent в общем вертикальном контейнере с gap 0.",
+        "Не разрешай менять вертикальное направление, itemSpacing=0 или clipsContent=false корня CorporateContent."
+      ],
+      "includedComponents": [
+        "[D] Section",
+        "[D] CorporateContent",
+        "[M] CorporateContent",
+        "❌ [D] Body",
+        "❌ [M} Body",
+        "❌ [T] Body",
+        "❌ [T] CorporateContent"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+          "name": "[D] CorporateContent",
+          "purpose": "Основная desktop-контентная область корпоративной продуктовой страницы с системной сеткой, фоном и адаптивными отступами.",
+          "useWhen": [
+            "Собирается содержимое корпоративной страницы на ширине 768 px и выше."
+          ],
+          "doNotUseWhen": [
+            "Нужен вложенный контейнер внутри другого CorporateContent."
+          ],
+          "relationship": "Единственный корневой контентный контейнер CorporatePage на desktop; принимает произвольную композицию в Body.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.isle-block",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] IsleContent :: 768",
+        "[D] IsleFooter :: 1024+",
+        "[D] IsleFooter :: 768",
+        "[D] IsleHeader :: 1024+",
+        "[D] IsleHeader :: 768",
+        "[D] Status",
+        "[D] Status :: 1024+",
+        "[D] TopAddon",
+        "[D] TopAddon :: 1024+",
+        "[M] IsleContent",
+        "[M] IsleFooter",
+        "[M] IsleHeader",
+        "[M] TopAddon",
+        "❌ IsleCustomContent",
+        "🔒 [D] IsleBlock :: 1024+",
+        "🔒 [D] IsleBlock :: 768",
+        "🔒 [M] IsleBlock",
+        "🔩 StatusCompact",
+        "IsleContent"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web.neuro-logo",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "Icon 28",
+        "Icon 32",
+        "Icon 36",
+        "Icon 40",
+        "NeuroLogo",
+        "🔩 Magnifier/20",
+        "🔩 Shadow",
+        "🔩 Shape"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web.spotlight-bar",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔒 [D] SpotlightBar"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "8bc7f3ef78fd020085203e9ba738d7e791208f32",
+          "name": "🔒 [D] SpotlightBar",
+          "purpose": "FigmaOnly – такого компонента в ДС не существует, это пресет для дизайна",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    }
+  ]
+}
