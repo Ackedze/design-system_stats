@@ -1,0 +1,355 @@
+{
+  "schemaVersion": 1,
+  "reportId": "apollo-1096330610570928879-1786112003907-bfin4vby",
+  "generatedAt": "2026-08-07T14:13:23.907Z",
+  "suggestedFileName": "Alexey-Kukhta-CORP-Lead-Designer_07-08-2026_17-13-23.json",
+  "user": {
+    "id": "1096330610570928879",
+    "name": "Alexey Kukhta / CORP / Lead Designer",
+    "slug": "Alexey-Kukhta-CORP-Lead-Designer"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.1.62"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "❇️ Мастерская :: AI",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "startedAt": "2026-08-07T14:13:23.624Z",
+    "finishedAt": "2026-08-07T14:13:23.907Z",
+    "durationMs": 283,
+    "selection": [
+      {
+        "nodeId": "10055:30328",
+        "name": "StatusPreset",
+        "nodeType": "INSTANCE",
+        "path": "Section 13 / StatusPreset",
+        "componentKey": "469b9235568ef40a7c4e3894e214edbecf4f5f64"
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": true
+    }
+  },
+  "summary": {
+    "scannedComponents": 3,
+    "problemOccurrenceCount": 2,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 0,
+      "updates": 0,
+      "customizations": 1,
+      "localComponents": 0,
+      "detachedComponents": 0,
+      "presets": 1,
+      "technicalComponents": 0,
+      "currentComponents": 3,
+      "wrongChannel": 0,
+      "themization": 0
+    }
+  },
+  "categories": {
+    "deprecatedComponents": {
+      "count": 0,
+      "items": []
+    },
+    "deprecatedStyles": {
+      "count": 0,
+      "items": []
+    },
+    "customStyles": {
+      "count": 0,
+      "items": []
+    },
+    "updates": {
+      "count": 0,
+      "items": []
+    },
+    "customizations": {
+      "count": 1,
+      "items": [
+        {
+          "node": {
+            "id": "10055:30328",
+            "name": "StatusPreset",
+            "type": "INSTANCE",
+            "pageName": "     Лаборатория",
+            "path": "Section 13 / StatusPreset",
+            "visible": true
+          },
+          "component": {
+            "type": "component",
+            "name": "🔒 [D] StatusPreset",
+            "key": "469b9235568ef40a7c4e3894e214edbecf4f5f64",
+            "id": null,
+            "library": "Web _ Corp Components",
+            "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+          },
+          "variant": {
+            "type": "component-variant",
+            "name": "Type=Approved, Style=Muted, Size=24",
+            "key": "469b9235568ef40a7c4e3894e214edbecf4f5f64",
+            "id": null,
+            "library": "Web _ Corp Components",
+            "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+          },
+          "comparisonIssues": [],
+          "updateReasons": [],
+          "libraryFreshness": {
+            "status": "current",
+            "reason": "remote-component-current",
+            "componentKey": "469b9235568ef40a7c4e3894e214edbecf4f5f64",
+            "currentComponentId": "11188:14138",
+            "latestComponentId": "11188:14138"
+          },
+          "localComponentOwner": null,
+          "changes": [
+            {
+              "node": {
+                "id": "I10055:30328;60798:623945",
+                "name": "Status",
+                "type": null,
+                "pageName": "     Лаборатория",
+                "path": "Type=Approved, Style=Muted, Size=24 / Status",
+                "visible": true
+              },
+              "kind": "other",
+              "property": "variant.Size",
+              "message": "Size: 24 → 40",
+              "reference": {
+                "value": "24",
+                "resource": null,
+                "binding": null
+              },
+              "actual": {
+                "value": "40",
+                "resource": null,
+                "binding": null
+              },
+              "bindingStatus": null,
+              "variableMode": null,
+              "signature": "component:469b9235568ef40a7c4e3894e214edbecf4f5f64:other:variant.Size:24->40",
+              "context": {
+                "actualComponentKey": "e225ee56f4486414029710c5c6f4b396cadec1ef",
+                "referenceComponentKey": null,
+                "referenceOrigin": "host",
+                "actualNestedOwnerComponentKey": null,
+                "actualNestedOwnerPath": null,
+                "actualNestedOwnerRelativePath": null,
+                "nestedOwnerComponentKey": null,
+                "nestedOwnerComponentRole": null,
+                "nestedOwnerPath": null,
+                "nestedOwnerRelativePath": null,
+                "actualVariantProperties": {
+                  "Size": "40",
+                  "Shape": "Rounded",
+                  "LeftAddon": "False",
+                  "RightAddon": "False"
+                },
+                "referenceVariantProperties": null,
+                "surfaceContext": null
+              },
+              "componentRules": [],
+              "presentation": null,
+              "assessment": {
+                "verdict": "violation",
+                "source": "component-contract",
+                "reasonCode": "experimental-component-contract-v2-violation",
+                "ruleId": "rule-ir:web-corp.status-property.nested-status-size-matches-preset",
+                "contractId": "rule-ir:web-corp.status-property",
+                "constraintId": "rule-ir:web-corp.status-property.nested-status-size-matches-preset",
+                "evidence": {
+                  "runtime": "component-contract-v2-experimental",
+                  "expected": "24",
+                  "actual": "40"
+                },
+                "message": "Размер вложенного Status должен совпадать с Size родительского StatusPreset или PropertyPreset. Менять Size вложенного Status независимо от preset-компонента запрещено.",
+                "remediation": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "localComponents": {
+      "count": 0,
+      "items": []
+    },
+    "detachedComponents": {
+      "count": 0,
+      "items": []
+    },
+    "presets": {
+      "count": 1,
+      "items": [
+        {
+          "node": {
+            "id": "10055:30328",
+            "name": "StatusPreset",
+            "type": "INSTANCE",
+            "pageName": "     Лаборатория",
+            "path": "Section 13 / StatusPreset",
+            "visible": true
+          },
+          "component": {
+            "type": "component",
+            "name": "🔒 [D] StatusPreset",
+            "key": "469b9235568ef40a7c4e3894e214edbecf4f5f64",
+            "id": null,
+            "library": "Web _ Corp Components",
+            "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+          },
+          "variant": {
+            "type": "component-variant",
+            "name": "Type=Approved, Style=Muted, Size=24",
+            "key": "469b9235568ef40a7c4e3894e214edbecf4f5f64",
+            "id": null,
+            "library": "Web _ Corp Components",
+            "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+          },
+          "comparisonIssues": [],
+          "updateReasons": [],
+          "libraryFreshness": {
+            "status": "current",
+            "reason": "remote-component-current",
+            "componentKey": "469b9235568ef40a7c4e3894e214edbecf4f5f64",
+            "currentComponentId": "11188:14138",
+            "latestComponentId": "11188:14138"
+          },
+          "localComponentOwner": null
+        }
+      ]
+    },
+    "technicalComponents": {
+      "count": 0,
+      "items": []
+    },
+    "currentComponents": {
+      "count": 3,
+      "items": [
+        {
+          "node": {
+            "id": "10055:30328",
+            "name": "StatusPreset",
+            "type": "INSTANCE",
+            "pageName": "     Лаборатория",
+            "path": "Section 13 / StatusPreset",
+            "visible": true
+          },
+          "component": {
+            "type": "component",
+            "name": "🔒 [D] StatusPreset",
+            "key": "469b9235568ef40a7c4e3894e214edbecf4f5f64",
+            "id": null,
+            "library": "Web _ Corp Components",
+            "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+          },
+          "variant": {
+            "type": "component-variant",
+            "name": "Type=Approved, Style=Muted, Size=24",
+            "key": "469b9235568ef40a7c4e3894e214edbecf4f5f64",
+            "id": null,
+            "library": "Web _ Corp Components",
+            "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+          },
+          "comparisonIssues": [],
+          "updateReasons": [],
+          "libraryFreshness": {
+            "status": "current",
+            "reason": "remote-component-current",
+            "componentKey": "469b9235568ef40a7c4e3894e214edbecf4f5f64",
+            "currentComponentId": "11188:14138",
+            "latestComponentId": "11188:14138"
+          },
+          "localComponentOwner": null
+        },
+        {
+          "node": {
+            "id": "I10055:30328;60798:623945",
+            "name": "Status",
+            "type": "INSTANCE",
+            "pageName": "     Лаборатория",
+            "path": "Section 13 / StatusPreset / Status",
+            "visible": true
+          },
+          "component": {
+            "type": "component",
+            "name": "Status",
+            "key": "e225ee56f4486414029710c5c6f4b396cadec1ef",
+            "id": null,
+            "library": "Web _ Core",
+            "sourceFile": "web/components/web-core/core/Web _ Core -- Status.json"
+          },
+          "variant": {
+            "type": "component-variant",
+            "name": "Size=40, Shape=Rounded, LeftAddon=False, RightAddon=False",
+            "key": "e225ee56f4486414029710c5c6f4b396cadec1ef",
+            "id": null,
+            "library": "Web _ Core",
+            "sourceFile": "web/components/web-core/core/Web _ Core -- Status.json"
+          },
+          "comparisonIssues": [],
+          "updateReasons": [],
+          "libraryFreshness": {
+            "status": "not-applicable",
+            "reason": "instance-sublayer",
+            "componentKey": null,
+            "currentComponentId": null,
+            "latestComponentId": null
+          },
+          "localComponentOwner": null
+        },
+        {
+          "node": {
+            "id": "I10055:30328;60798:623945;34498:5784",
+            "name": "Label",
+            "type": "INSTANCE",
+            "pageName": "     Лаборатория",
+            "path": "Section 13 / StatusPreset / Status / Label",
+            "visible": true
+          },
+          "component": {
+            "type": "component",
+            "name": "🔩 Label",
+            "key": "c5720bd66618dd78c6bb30ebbe438fb3c75e354f",
+            "id": null,
+            "library": "Web _ Core",
+            "sourceFile": "web/components/web-core/core/Web _ Core -- Status.json"
+          },
+          "variant": {
+            "type": "component-variant",
+            "name": "Uppercase=True",
+            "key": "c5720bd66618dd78c6bb30ebbe438fb3c75e354f",
+            "id": null,
+            "library": "Web _ Core",
+            "sourceFile": "web/components/web-core/core/Web _ Core -- Status.json"
+          },
+          "comparisonIssues": [],
+          "updateReasons": [],
+          "libraryFreshness": {
+            "status": "not-applicable",
+            "reason": "instance-sublayer",
+            "componentKey": null,
+            "currentComponentId": null,
+            "latestComponentId": null
+          },
+          "localComponentOwner": null
+        }
+      ]
+    },
+    "wrongChannel": {
+      "count": 0,
+      "items": []
+    },
+    "themization": {
+      "count": 0,
+      "items": []
+    }
+  }
+}
