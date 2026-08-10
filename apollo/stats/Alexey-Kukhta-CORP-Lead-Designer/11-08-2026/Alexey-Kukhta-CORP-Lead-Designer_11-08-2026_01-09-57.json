@@ -1,0 +1,393 @@
+{
+  "schemaVersion": 1,
+  "reportId": "apollo-1096330610570928879-1786399797023-9p44year",
+  "generatedAt": "2026-08-10T22:09:57.023Z",
+  "suggestedFileName": "Alexey-Kukhta-CORP-Lead-Designer_11-08-2026_01-09-57.json",
+  "user": {
+    "id": "1096330610570928879",
+    "name": "Alexey Kukhta / CORP / Lead Designer",
+    "slug": "Alexey-Kukhta-CORP-Lead-Designer"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.1.62"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "❇️ Мастерская :: AI",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "startedAt": "2026-08-10T22:09:56.944Z",
+    "finishedAt": "2026-08-10T22:09:57.023Z",
+    "durationMs": 79,
+    "selection": [
+      {
+        "nodeId": "I11568:53962;74661:67583",
+        "name": "Text",
+        "nodeType": "INSTANCE",
+        "path": "Section 13 / [D] BodyRow :: Wide / Cells / [D] BodyCell :: Wide / Text",
+        "componentKey": "7bd146b0de6c963268e6b325cf54e019b917df63"
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": true
+    }
+  },
+  "summary": {
+    "scannedComponents": 5,
+    "problemOccurrenceCount": 1,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 0,
+      "updates": 0,
+      "customizations": 1,
+      "localComponents": 0,
+      "detachedComponents": 0,
+      "presets": 0,
+      "technicalComponents": 0,
+      "currentComponents": 5,
+      "wrongChannel": 0,
+      "themization": 0
+    }
+  },
+  "categories": {
+    "deprecatedComponents": {
+      "count": 0,
+      "items": []
+    },
+    "deprecatedStyles": {
+      "count": 0,
+      "items": []
+    },
+    "customStyles": {
+      "count": 0,
+      "items": []
+    },
+    "updates": {
+      "count": 0,
+      "items": []
+    },
+    "customizations": {
+      "count": 1,
+      "items": [
+        {
+          "node": {
+            "id": "I11568:53962;74661:67583",
+            "name": "Text",
+            "type": "INSTANCE",
+            "pageName": "     Лаборатория",
+            "path": "Section 13 / [D] BodyRow :: Wide / Cells / [D] BodyCell :: Wide / Text",
+            "visible": true
+          },
+          "component": {
+            "type": "component",
+            "name": "Text",
+            "key": "7bd146b0de6c963268e6b325cf54e019b917df63",
+            "id": null,
+            "library": "Web _ Corp Components",
+            "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+          },
+          "variant": {
+            "type": "component-variant",
+            "name": "Presets=Amount",
+            "key": "7bd146b0de6c963268e6b325cf54e019b917df63",
+            "id": null,
+            "library": "Web _ Corp Components",
+            "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+          },
+          "comparisonIssues": [],
+          "updateReasons": [],
+          "libraryFreshness": {
+            "status": "not-applicable",
+            "reason": "instance-sublayer",
+            "componentKey": null,
+            "currentComponentId": null,
+            "latestComponentId": null
+          },
+          "localComponentOwner": null,
+          "changes": [
+            {
+              "node": {
+                "id": "I11568:53962;74661:67583;78541:161252;485:67103",
+                "name": "Minor",
+                "type": null,
+                "pageName": "     Лаборатория",
+                "path": "Presets=Amount / AmountParagraph / Amount / Minor",
+                "visible": true
+              },
+              "kind": "other",
+              "property": "variant.Opacity",
+              "message": "variant.Opacity: False → True",
+              "reference": {
+                "value": "False",
+                "resource": null,
+                "binding": null
+              },
+              "actual": {
+                "value": "True",
+                "resource": null,
+                "binding": null
+              },
+              "bindingStatus": null,
+              "variableMode": null,
+              "signature": "component:7bd146b0de6c963268e6b325cf54e019b917df63:other:variant.Opacity:False->True",
+              "context": {
+                "actualComponentKey": "befbce9afb22a1dfc58bf9daeb72cfb1375bec43",
+                "referenceComponentKey": null,
+                "referenceOrigin": "host",
+                "actualNestedOwnerComponentKey": null,
+                "actualNestedOwnerPath": null,
+                "actualNestedOwnerRelativePath": null,
+                "nestedOwnerComponentKey": null,
+                "nestedOwnerComponentRole": null,
+                "nestedOwnerPath": null,
+                "nestedOwnerRelativePath": null,
+                "actualVariantProperties": {
+                  "Opacity": "True"
+                },
+                "referenceVariantProperties": null,
+                "surfaceContext": null
+              },
+              "componentRules": [],
+              "presentation": null,
+              "assessment": {
+                "verdict": "violation",
+                "source": "component-contract",
+                "reasonCode": "experimental-component-contract-v2-violation",
+                "ruleId": "rule-ir:web-core.amount.opacity-property-is-forbidden",
+                "contractId": "rule-ir:web-core.amount",
+                "constraintId": "rule-ir:web-core.amount.opacity-property-is-forbidden",
+                "evidence": {
+                  "runtime": "component-contract-v2-experimental",
+                  "expected": "False",
+                  "actual": "True"
+                },
+                "message": "В Альфа-Бизнес включать component property Opacity у Minor и Currency запрещено. Штатное значение — Opacity=False.",
+                "remediation": {
+                  "kind": "set-variant-properties",
+                  "nodeId": "I11568:53962;74661:67583;78541:161252;485:67103",
+                  "properties": {
+                    "Opacity": "False"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "localComponents": {
+      "count": 0,
+      "items": []
+    },
+    "detachedComponents": {
+      "count": 0,
+      "items": []
+    },
+    "presets": {
+      "count": 0,
+      "items": []
+    },
+    "technicalComponents": {
+      "count": 0,
+      "items": []
+    },
+    "currentComponents": {
+      "count": 5,
+      "items": [
+        {
+          "node": {
+            "id": "I11568:53962;74661:67583",
+            "name": "Text",
+            "type": "INSTANCE",
+            "pageName": "     Лаборатория",
+            "path": "Section 13 / [D] BodyRow :: Wide / Cells / [D] BodyCell :: Wide / Text",
+            "visible": true
+          },
+          "component": {
+            "type": "component",
+            "name": "Text",
+            "key": "7bd146b0de6c963268e6b325cf54e019b917df63",
+            "id": null,
+            "library": "Web _ Corp Components",
+            "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+          },
+          "variant": {
+            "type": "component-variant",
+            "name": "Presets=Amount",
+            "key": "7bd146b0de6c963268e6b325cf54e019b917df63",
+            "id": null,
+            "library": "Web _ Corp Components",
+            "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+          },
+          "comparisonIssues": [],
+          "updateReasons": [],
+          "libraryFreshness": {
+            "status": "not-applicable",
+            "reason": "instance-sublayer",
+            "componentKey": null,
+            "currentComponentId": null,
+            "latestComponentId": null
+          },
+          "localComponentOwner": null
+        },
+        {
+          "node": {
+            "id": "I11568:53962;74661:67583;78541:161252",
+            "name": "Amount",
+            "type": "INSTANCE",
+            "pageName": "     Лаборатория",
+            "path": "Section 13 / [D] BodyRow :: Wide / Cells / [D] BodyCell :: Wide / Text / AmountParagraph / Amount",
+            "visible": true
+          },
+          "component": {
+            "type": "component",
+            "name": "Amount",
+            "key": "fe3399f71c9e0971646821d935b64657e462c28e",
+            "id": null,
+            "library": "Web _ Core",
+            "sourceFile": "web/components/web-core/core/Web _ Core -- Amount.json"
+          },
+          "variant": {
+            "type": "component-variant",
+            "name": "Amount",
+            "key": "fe3399f71c9e0971646821d935b64657e462c28e",
+            "id": null,
+            "library": "Web _ Core",
+            "sourceFile": "web/components/web-core/core/Web _ Core -- Amount.json"
+          },
+          "comparisonIssues": [],
+          "updateReasons": [],
+          "libraryFreshness": {
+            "status": "not-applicable",
+            "reason": "instance-sublayer",
+            "componentKey": null,
+            "currentComponentId": null,
+            "latestComponentId": null
+          },
+          "localComponentOwner": null
+        },
+        {
+          "node": {
+            "id": "I11568:53962;74661:67583;78541:161252;485:67102",
+            "name": "Major",
+            "type": "INSTANCE",
+            "pageName": "     Лаборатория",
+            "path": "Section 13 / [D] BodyRow :: Wide / Cells / [D] BodyCell :: Wide / Text / AmountParagraph / Amount / Major",
+            "visible": true
+          },
+          "component": {
+            "type": "component",
+            "name": "🔩 Major",
+            "key": "a833c02e4fcb75fea1a89bf786912e108b8f93ba",
+            "id": null,
+            "library": "Web _ Core",
+            "sourceFile": "web/components/web-core/core/Web _ Core -- Amount.json"
+          },
+          "variant": {
+            "type": "component-variant",
+            "name": "🔩 Major",
+            "key": "a833c02e4fcb75fea1a89bf786912e108b8f93ba",
+            "id": null,
+            "library": "Web _ Core",
+            "sourceFile": "web/components/web-core/core/Web _ Core -- Amount.json"
+          },
+          "comparisonIssues": [],
+          "updateReasons": [],
+          "libraryFreshness": {
+            "status": "not-applicable",
+            "reason": "instance-sublayer",
+            "componentKey": null,
+            "currentComponentId": null,
+            "latestComponentId": null
+          },
+          "localComponentOwner": null
+        },
+        {
+          "node": {
+            "id": "I11568:53962;74661:67583;78541:161252;485:67103",
+            "name": "Minor",
+            "type": "INSTANCE",
+            "pageName": "     Лаборатория",
+            "path": "Section 13 / [D] BodyRow :: Wide / Cells / [D] BodyCell :: Wide / Text / AmountParagraph / Amount / Minor",
+            "visible": true
+          },
+          "component": {
+            "type": "component",
+            "name": "🔩 Minor",
+            "key": "befbce9afb22a1dfc58bf9daeb72cfb1375bec43",
+            "id": null,
+            "library": "Web _ Core",
+            "sourceFile": "web/components/web-core/core/Web _ Core -- Amount.json"
+          },
+          "variant": {
+            "type": "component-variant",
+            "name": "Opacity=True",
+            "key": "befbce9afb22a1dfc58bf9daeb72cfb1375bec43",
+            "id": null,
+            "library": "Web _ Core",
+            "sourceFile": "web/components/web-core/core/Web _ Core -- Amount.json"
+          },
+          "comparisonIssues": [],
+          "updateReasons": [],
+          "libraryFreshness": {
+            "status": "not-applicable",
+            "reason": "instance-sublayer",
+            "componentKey": null,
+            "currentComponentId": null,
+            "latestComponentId": null
+          },
+          "localComponentOwner": null
+        },
+        {
+          "node": {
+            "id": "I11568:53962;74661:67583;78541:161252;485:67104",
+            "name": "Currency",
+            "type": "INSTANCE",
+            "pageName": "     Лаборатория",
+            "path": "Section 13 / [D] BodyRow :: Wide / Cells / [D] BodyCell :: Wide / Text / AmountParagraph / Amount / Currency",
+            "visible": true
+          },
+          "component": {
+            "type": "component",
+            "name": "🔩 Currency",
+            "key": "5bef50328b151427bf28c514c2266233e2bfbf6c",
+            "id": null,
+            "library": "Web _ Core",
+            "sourceFile": "web/components/web-core/core/Web _ Core -- Amount.json"
+          },
+          "variant": {
+            "type": "component-variant",
+            "name": "Opacity=False, Type=₽",
+            "key": "5bef50328b151427bf28c514c2266233e2bfbf6c",
+            "id": null,
+            "library": "Web _ Core",
+            "sourceFile": "web/components/web-core/core/Web _ Core -- Amount.json"
+          },
+          "comparisonIssues": [],
+          "updateReasons": [],
+          "libraryFreshness": {
+            "status": "not-applicable",
+            "reason": "instance-sublayer",
+            "componentKey": null,
+            "currentComponentId": null,
+            "latestComponentId": null
+          },
+          "localComponentOwner": null
+        }
+      ]
+    },
+    "wrongChannel": {
+      "count": 0,
+      "items": []
+    },
+    "themization": {
+      "count": 0,
+      "items": []
+    }
+  }
+}
