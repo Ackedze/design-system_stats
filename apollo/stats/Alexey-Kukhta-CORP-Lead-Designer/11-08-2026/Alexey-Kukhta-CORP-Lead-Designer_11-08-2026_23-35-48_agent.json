@@ -1,0 +1,2476 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1096330610570928879-1786480548787-t2xqh6aj:agent",
+  "sourceReportId": "apollo-1096330610570928879-1786480548787-t2xqh6aj",
+  "generatedAt": "2026-08-11T20:35:48.787Z",
+  "suggestedFileName": "Alexey-Kukhta-CORP-Lead-Designer_11-08-2026_23-35-48_agent.json",
+  "user": {
+    "id": "1096330610570928879",
+    "name": "Alexey Kukhta / CORP / Lead Designer",
+    "slug": "Alexey-Kukhta-CORP-Lead-Designer"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.1.62"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "❇️ Мастерская :: AI",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "startedAt": "2026-08-11T20:35:43.215Z",
+    "finishedAt": "2026-08-11T20:35:48.787Z",
+    "durationMs": 5572,
+    "selection": [
+      {
+        "nodeId": "11188:16471",
+        "name": "История операций / Альфа-Бизнес / 1600 / generated",
+        "nodeType": "FRAME",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": true
+    }
+  },
+  "summary": {
+    "scannedComponents": 177,
+    "problemOccurrenceCount": 57,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 0,
+      "updates": 49,
+      "customizations": 1,
+      "localComponents": 0,
+      "detachedComponents": 0,
+      "presets": 6,
+      "technicalComponents": 0,
+      "currentComponents": 128,
+      "wrongChannel": 0,
+      "themization": 1
+    },
+    "includedFindingCount": 57,
+    "omittedCurrentComponentCount": 128
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with severity=error and matchKind=exact_component_rule for the same property/change.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 49,
+      "includedCount": 49,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 6,
+      "includedCount": 6,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15077;37705:55361",
+        "name": "🔄 [D][Corporate] Button",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / [D] TitleView / История операций / MainContent / Button group / 🔄 [D][Corporate] Button",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Button",
+        "key": "36e79c36f85125a0d9ea94726764a6a98f61a103",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Button.json"
+      },
+      "variant": {
+        "name": "View=Secondary, Size=56, Shape=Rectangular, SingleIcon=False, DisabledState=False",
+        "key": "36e79c36f85125a0d9ea94726764a6a98f61a103"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50491",
+        "name": "[D] HeadCell / Контрагент",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / [D] HeadRow / Операции / Frame 1 / [D] HeadCell / Контрагент",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] HeadCell",
+        "key": "71f33dcf941775172bfc1a61ea62829b34f0dc02",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=false",
+        "key": "71f33dcf941775172bfc1a61ea62829b34f0dc02"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "71f33dcf941775172bfc1a61ea62829b34f0dc02",
+        "currentComponentId": "11189:17397",
+        "latestComponentId": "11663:50474"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50492",
+        "name": "[D] HeadCell / Дата",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / [D] HeadRow / Операции / Frame 1 / [D] HeadCell / Дата",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] HeadCell",
+        "key": "71f33dcf941775172bfc1a61ea62829b34f0dc02",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=false",
+        "key": "71f33dcf941775172bfc1a61ea62829b34f0dc02"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "71f33dcf941775172bfc1a61ea62829b34f0dc02",
+        "currentComponentId": "11189:17397",
+        "latestComponentId": "11663:50474"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50493",
+        "name": "[D] HeadCell / Сумма, ₽",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / [D] HeadRow / Операции / Frame 1 / [D] HeadCell / Сумма, ₽",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] HeadCell",
+        "key": "71f33dcf941775172bfc1a61ea62829b34f0dc02",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=false",
+        "key": "71f33dcf941775172bfc1a61ea62829b34f0dc02"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "71f33dcf941775172bfc1a61ea62829b34f0dc02",
+        "currentComponentId": "11189:17397",
+        "latestComponentId": "11663:50474"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50494",
+        "name": "[D] HeadCell / Статус",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / [D] HeadRow / Операции / Frame 1 / [D] HeadCell / Статус",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] HeadCell",
+        "key": "71f33dcf941775172bfc1a61ea62829b34f0dc02",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=false",
+        "key": "71f33dcf941775172bfc1a61ea62829b34f0dc02"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "71f33dcf941775172bfc1a61ea62829b34f0dc02",
+        "currentComponentId": "11189:17397",
+        "latestComponentId": "11663:50474"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50495",
+        "name": "[D] HeadCell / Счёт",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / [D] HeadRow / Операции / Frame 1 / [D] HeadCell / Счёт",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] HeadCell",
+        "key": "71f33dcf941775172bfc1a61ea62829b34f0dc02",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=false",
+        "key": "71f33dcf941775172bfc1a61ea62829b34f0dc02"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "71f33dcf941775172bfc1a61ea62829b34f0dc02",
+        "currentComponentId": "11189:17397",
+        "latestComponentId": "11663:50474"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50496",
+        "name": "[D] HeadCell / Компания",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / [D] HeadRow / Операции / Frame 1 / [D] HeadCell / Компания",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] HeadCell",
+        "key": "71f33dcf941775172bfc1a61ea62829b34f0dc02",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=false",
+        "key": "71f33dcf941775172bfc1a61ea62829b34f0dc02"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "71f33dcf941775172bfc1a61ea62829b34f0dc02",
+        "currentComponentId": "11189:17397",
+        "latestComponentId": "11663:50474"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50497",
+        "name": "BorderLine",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / [D] HeadRow / Операции / BorderLine",
+        "visible": true
+      },
+      "component": {
+        "name": "BorderLine",
+        "key": "2ab590bd24f07ebe4915d9ae8d86f6eb843f0ca9",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=false",
+        "key": "2ab590bd24f07ebe4915d9ae8d86f6eb843f0ca9"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "2ab590bd24f07ebe4915d9ae8d86f6eb843f0ca9",
+        "currentComponentId": "10744:15383",
+        "latestComponentId": "7597:51299"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50500",
+        "name": "BodyCell / 1",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 01 / Cells / BodyCell / 1",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50501",
+        "name": "BodyCell / 2",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 01 / Cells / BodyCell / 2",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50502",
+        "name": "BodyCell / 3",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 01 / Cells / BodyCell / 3",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50503",
+        "name": "BodyCell / 4",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 01 / Cells / BodyCell / 4",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50504",
+        "name": "BodyCell / 5",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 01 / Cells / BodyCell / 5",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50505",
+        "name": "BodyCell / 6",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 01 / Cells / BodyCell / 6",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50506",
+        "name": "BorderLine",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 01 / BorderLine",
+        "visible": true
+      },
+      "component": {
+        "name": "BorderLine",
+        "key": "2ab590bd24f07ebe4915d9ae8d86f6eb843f0ca9",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=false",
+        "key": "2ab590bd24f07ebe4915d9ae8d86f6eb843f0ca9"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "2ab590bd24f07ebe4915d9ae8d86f6eb843f0ca9",
+        "currentComponentId": "10744:15383",
+        "latestComponentId": "7597:51299"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50509",
+        "name": "BodyCell / 1",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 02 / Cells / BodyCell / 1",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50510",
+        "name": "BodyCell / 2",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 02 / Cells / BodyCell / 2",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50511",
+        "name": "BodyCell / 3",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 02 / Cells / BodyCell / 3",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50512",
+        "name": "BodyCell / 4",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 02 / Cells / BodyCell / 4",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50513",
+        "name": "BodyCell / 5",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 02 / Cells / BodyCell / 5",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50514",
+        "name": "BodyCell / 6",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 02 / Cells / BodyCell / 6",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50515",
+        "name": "BorderLine",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 02 / BorderLine",
+        "visible": true
+      },
+      "component": {
+        "name": "BorderLine",
+        "key": "2ab590bd24f07ebe4915d9ae8d86f6eb843f0ca9",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=false",
+        "key": "2ab590bd24f07ebe4915d9ae8d86f6eb843f0ca9"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "2ab590bd24f07ebe4915d9ae8d86f6eb843f0ca9",
+        "currentComponentId": "10744:15383",
+        "latestComponentId": "7597:51299"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50518",
+        "name": "BodyCell / 1",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 03 / Cells / BodyCell / 1",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50519",
+        "name": "BodyCell / 2",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 03 / Cells / BodyCell / 2",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50520",
+        "name": "BodyCell / 3",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 03 / Cells / BodyCell / 3",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50521",
+        "name": "BodyCell / 4",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 03 / Cells / BodyCell / 4",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50522",
+        "name": "BodyCell / 5",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 03 / Cells / BodyCell / 5",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50523",
+        "name": "BodyCell / 6",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 03 / Cells / BodyCell / 6",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50524",
+        "name": "BorderLine",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 03 / BorderLine",
+        "visible": true
+      },
+      "component": {
+        "name": "BorderLine",
+        "key": "2ab590bd24f07ebe4915d9ae8d86f6eb843f0ca9",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=false",
+        "key": "2ab590bd24f07ebe4915d9ae8d86f6eb843f0ca9"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "2ab590bd24f07ebe4915d9ae8d86f6eb843f0ca9",
+        "currentComponentId": "10744:15383",
+        "latestComponentId": "7597:51299"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50527",
+        "name": "BodyCell / 1",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 04 / Cells / BodyCell / 1",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50528",
+        "name": "BodyCell / 2",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 04 / Cells / BodyCell / 2",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50529",
+        "name": "BodyCell / 3",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 04 / Cells / BodyCell / 3",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50530",
+        "name": "BodyCell / 4",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 04 / Cells / BodyCell / 4",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50531",
+        "name": "BodyCell / 5",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 04 / Cells / BodyCell / 5",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50532",
+        "name": "BodyCell / 6",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 04 / Cells / BodyCell / 6",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50533",
+        "name": "BorderLine",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 04 / BorderLine",
+        "visible": true
+      },
+      "component": {
+        "name": "BorderLine",
+        "key": "2ab590bd24f07ebe4915d9ae8d86f6eb843f0ca9",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=false",
+        "key": "2ab590bd24f07ebe4915d9ae8d86f6eb843f0ca9"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "2ab590bd24f07ebe4915d9ae8d86f6eb843f0ca9",
+        "currentComponentId": "10744:15383",
+        "latestComponentId": "7597:51299"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50536",
+        "name": "BodyCell / 1",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 05 / Cells / BodyCell / 1",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50537",
+        "name": "BodyCell / 2",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 05 / Cells / BodyCell / 2",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50538",
+        "name": "BodyCell / 3",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 05 / Cells / BodyCell / 3",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50539",
+        "name": "BodyCell / 4",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 05 / Cells / BodyCell / 4",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50540",
+        "name": "BodyCell / 5",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 05 / Cells / BodyCell / 5",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50541",
+        "name": "BodyCell / 6",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 05 / Cells / BodyCell / 6",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50542",
+        "name": "BorderLine",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 05 / BorderLine",
+        "visible": true
+      },
+      "component": {
+        "name": "BorderLine",
+        "key": "2ab590bd24f07ebe4915d9ae8d86f6eb843f0ca9",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=false",
+        "key": "2ab590bd24f07ebe4915d9ae8d86f6eb843f0ca9"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "2ab590bd24f07ebe4915d9ae8d86f6eb843f0ca9",
+        "currentComponentId": "10744:15383",
+        "latestComponentId": "7597:51299"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50545",
+        "name": "BodyCell / 1",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 06 / Cells / BodyCell / 1",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50546",
+        "name": "BodyCell / 2",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 06 / Cells / BodyCell / 2",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50547",
+        "name": "BodyCell / 3",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 06 / Cells / BodyCell / 3",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50548",
+        "name": "BodyCell / 4",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 06 / Cells / BodyCell / 4",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50549",
+        "name": "BodyCell / 5",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 06 / Cells / BodyCell / 5",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50550",
+        "name": "BodyCell / 6",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 06 / Cells / BodyCell / 6",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "11192:14976",
+        "latestComponentId": "11547:32636"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "11188:19427",
+        "name": "[D] CorporateContent / История операций",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] CorporateContent",
+        "key": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateContent.json"
+      },
+      "variant": {
+        "name": "[D] CorporateContent",
+        "key": "a8d13cb6e1ae67a7296709f669238f41971c7197"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I11188:19427;135096:147276;11189:15077;37705:55360",
+            "name": "[D] Button",
+            "type": null,
+            "pageName": "     DS AI HUB :: Генерация",
+            "path": "[D] CorporateContent / [D] Body / Контент / История операций / [D] TitleView / История операций / MainContent / Button group / [D] Button",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.View",
+          "message": "View: Primary или Secondary → Accent",
+          "referenceValue": "Primary или Secondary",
+          "actualValue": "Accent",
+          "referenceRawValue": "Primary или Secondary",
+          "actualRawValue": "Accent",
+          "referenceDisplayValue": "Primary или Secondary",
+          "actualDisplayValue": "Accent",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "4ada6f8688b752d9452249fd8e8bc3545a76c708",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Accent",
+              "Size": "56",
+              "Shape": "Rectangular",
+              "SingleIcon": "False",
+              "DisabledState": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": null
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "experimental-component-contract-v2-violation",
+            "ruleId": "rule-ir:title-view.button-group.composition.allowed-views",
+            "contractId": "rule-ir:title-view.button-group",
+            "constraintId": "rule-ir:title-view.button-group.composition.allowed-views",
+            "evidence": {
+              "runtime": "component-contract-v2-experimental",
+              "expected": [
+                "Primary",
+                "Secondary"
+              ],
+              "actual": "Accent"
+            },
+            "message": "В Button group внутри TitleView допускаются только View=Primary и View=Secondary",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50511;74661:67583",
+            "name": "Text",
+            "type": null,
+            "pageName": "     DS AI HUB :: Генерация",
+            "path": "[D] CorporateContent / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 02 / Cells / BodyCell / 3 / Text",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "layout.counterAxisAlignItems",
+          "message": "layout.counterAxisAlignItems: MAX → MIN",
+          "referenceValue": "MAX",
+          "actualValue": "MIN",
+          "referenceRawValue": "MAX",
+          "actualRawValue": "MIN",
+          "referenceDisplayValue": "MAX",
+          "actualDisplayValue": "MIN",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "7bd146b0de6c963268e6b325cf54e019b917df63",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Presets": "Amount"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": null
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "experimental-component-contract-v2-violation",
+            "ruleId": "rule-ir:web-corp.table-wide.amount-preset-aligns-top-right",
+            "contractId": "rule-ir:web-corp.table-wide",
+            "constraintId": "rule-ir:web-corp.table-wide.amount-preset-aligns-top-right",
+            "evidence": {
+              "runtime": "component-contract-v2-experimental",
+              "expected": "MAX",
+              "actual": "MIN"
+            },
+            "message": "Text с Presets=Amount внутри BodyCell :: Wide использует вертикальный auto-layout и должен быть выровнен по верхнему правому краю: primaryAxisAlignItems=MIN и counterAxisAlignItems=MAX.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50520;74661:67583",
+            "name": "Text",
+            "type": null,
+            "pageName": "     DS AI HUB :: Генерация",
+            "path": "[D] CorporateContent / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 03 / Cells / BodyCell / 3 / Text",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "layout.counterAxisAlignItems",
+          "message": "layout.counterAxisAlignItems: MAX → MIN",
+          "referenceValue": "MAX",
+          "actualValue": "MIN",
+          "referenceRawValue": "MAX",
+          "actualRawValue": "MIN",
+          "referenceDisplayValue": "MAX",
+          "actualDisplayValue": "MIN",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "7bd146b0de6c963268e6b325cf54e019b917df63",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Presets": "Amount"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": null
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "experimental-component-contract-v2-violation",
+            "ruleId": "rule-ir:web-corp.table-wide.amount-preset-aligns-top-right",
+            "contractId": "rule-ir:web-corp.table-wide",
+            "constraintId": "rule-ir:web-corp.table-wide.amount-preset-aligns-top-right",
+            "evidence": {
+              "runtime": "component-contract-v2-experimental",
+              "expected": "MAX",
+              "actual": "MIN"
+            },
+            "message": "Text с Presets=Amount внутри BodyCell :: Wide использует вертикальный auto-layout и должен быть выровнен по верхнему правому краю: primaryAxisAlignItems=MIN и counterAxisAlignItems=MAX.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50529;74661:67583",
+            "name": "Text",
+            "type": null,
+            "pageName": "     DS AI HUB :: Генерация",
+            "path": "[D] CorporateContent / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 04 / Cells / BodyCell / 3 / Text",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "layout.counterAxisAlignItems",
+          "message": "layout.counterAxisAlignItems: MAX → MIN",
+          "referenceValue": "MAX",
+          "actualValue": "MIN",
+          "referenceRawValue": "MAX",
+          "actualRawValue": "MIN",
+          "referenceDisplayValue": "MAX",
+          "actualDisplayValue": "MIN",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "7bd146b0de6c963268e6b325cf54e019b917df63",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Presets": "Amount"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": null
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "experimental-component-contract-v2-violation",
+            "ruleId": "rule-ir:web-corp.table-wide.amount-preset-aligns-top-right",
+            "contractId": "rule-ir:web-corp.table-wide",
+            "constraintId": "rule-ir:web-corp.table-wide.amount-preset-aligns-top-right",
+            "evidence": {
+              "runtime": "component-contract-v2-experimental",
+              "expected": "MAX",
+              "actual": "MIN"
+            },
+            "message": "Text с Presets=Amount внутри BodyCell :: Wide использует вертикальный auto-layout и должен быть выровнен по верхнему правому краю: primaryAxisAlignItems=MIN и counterAxisAlignItems=MAX.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50538;74661:67583",
+            "name": "Text",
+            "type": null,
+            "pageName": "     DS AI HUB :: Генерация",
+            "path": "[D] CorporateContent / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 05 / Cells / BodyCell / 3 / Text",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "layout.counterAxisAlignItems",
+          "message": "layout.counterAxisAlignItems: MAX → MIN",
+          "referenceValue": "MAX",
+          "actualValue": "MIN",
+          "referenceRawValue": "MAX",
+          "actualRawValue": "MIN",
+          "referenceDisplayValue": "MAX",
+          "actualDisplayValue": "MIN",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "7bd146b0de6c963268e6b325cf54e019b917df63",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Presets": "Amount"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": null
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "experimental-component-contract-v2-violation",
+            "ruleId": "rule-ir:web-corp.table-wide.amount-preset-aligns-top-right",
+            "contractId": "rule-ir:web-corp.table-wide",
+            "constraintId": "rule-ir:web-corp.table-wide.amount-preset-aligns-top-right",
+            "evidence": {
+              "runtime": "component-contract-v2-experimental",
+              "expected": "MAX",
+              "actual": "MIN"
+            },
+            "message": "Text с Presets=Amount внутри BodyCell :: Wide использует вертикальный auto-layout и должен быть выровнен по верхнему правому краю: primaryAxisAlignItems=MIN и counterAxisAlignItems=MAX.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50547;74661:67583",
+            "name": "Text",
+            "type": null,
+            "pageName": "     DS AI HUB :: Генерация",
+            "path": "[D] CorporateContent / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 06 / Cells / BodyCell / 3 / Text",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "layout.counterAxisAlignItems",
+          "message": "layout.counterAxisAlignItems: MAX → MIN",
+          "referenceValue": "MAX",
+          "actualValue": "MIN",
+          "referenceRawValue": "MAX",
+          "actualRawValue": "MIN",
+          "referenceDisplayValue": "MAX",
+          "actualDisplayValue": "MIN",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "7bd146b0de6c963268e6b325cf54e019b917df63",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Presets": "Amount"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": null
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "experimental-component-contract-v2-violation",
+            "ruleId": "rule-ir:web-corp.table-wide.amount-preset-aligns-top-right",
+            "contractId": "rule-ir:web-corp.table-wide",
+            "constraintId": "rule-ir:web-corp.table-wide.amount-preset-aligns-top-right",
+            "evidence": {
+              "runtime": "component-contract-v2-experimental",
+              "expected": "MAX",
+              "actual": "MIN"
+            },
+            "message": "Text с Presets=Amount внутри BodyCell :: Wide использует вертикальный auto-layout и должен быть выровнен по верхнему правому краю: primaryAxisAlignItems=MIN и counterAxisAlignItems=MAX.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50503;74661:67583;74661:67482",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 01 / Cells / BodyCell / 4 / Text / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Approved, Style=Muted, Size=20",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50512;74661:67583;74661:67482",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 02 / Cells / BodyCell / 4 / Text / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "ae2effd2c3826917be0af4b689b5f17598ee80b2",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Processing, Style=Muted, Size=20",
+        "key": "ae2effd2c3826917be0af4b689b5f17598ee80b2"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50521;74661:67583;74661:67482",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 03 / Cells / BodyCell / 4 / Text / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "19285e102ff78415287602f8da731e0884aca960",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Action, Style=Muted, Size=20",
+        "key": "19285e102ff78415287602f8da731e0884aca960"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50530;74661:67583;74661:67482",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 04 / Cells / BodyCell / 4 / Text / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "9dba4ba7b0121b6beed8b2b9bbc317a0302a0c29",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Error / Risk, Style=Muted, Size=20",
+        "key": "9dba4ba7b0121b6beed8b2b9bbc317a0302a0c29"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50539;74661:67583;74661:67482",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 05 / Cells / BodyCell / 4 / Text / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Approved, Style=Muted, Size=20",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15157;136846:8891;11663:50548;74661:67583;74661:67482",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / Page table stack / История операций / [D] BackgroundPlateSlot / История операций / Slot / Table Wide / История операций / Operation row / 06 / Cells / BodyCell / 4 / Text / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "190cf8e4e07e55603201d3a06a2538af3cc78c51",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Neutral, Style=Muted, Size=20",
+        "key": "190cf8e4e07e55603201d3a06a2538af3cc78c51"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I11188:19427;135096:147276;11189:15077;37705:55361",
+        "name": "🔄 [D][Corporate] Button",
+        "type": "INSTANCE",
+        "pageName": "     DS AI HUB :: Генерация",
+        "path": "История операций / Альфа-Бизнес / 1600 / generated / Рабочая область / [D] CorporateContent / История операций / [D] Body / Контент / История операций / [D] TitleView / История операций / MainContent / Button group / 🔄 [D][Corporate] Button",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Button",
+      "component": null
+    }
+  ],
+  "componentContexts": []
+}
