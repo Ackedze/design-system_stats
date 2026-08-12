@@ -1,0 +1,2367 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1096330610570928879-1786535471867-gax40i02:agent",
+  "sourceReportId": "apollo-1096330610570928879-1786535471867-gax40i02",
+  "generatedAt": "2026-08-12T11:51:11.867Z",
+  "suggestedFileName": "Alexey-Kukhta-CORP-Lead-Designer_12-08-2026_14-51-11_agent.json",
+  "user": {
+    "id": "1096330610570928879",
+    "name": "Alexey Kukhta / CORP / Lead Designer",
+    "slug": "Alexey-Kukhta-CORP-Lead-Designer"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.1.63"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "❇️ Мастерская :: AI",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "startedAt": "2026-08-12T11:50:59.744Z",
+    "finishedAt": "2026-08-12T11:51:11.867Z",
+    "durationMs": 12123,
+    "selection": [
+      {
+        "nodeId": "11620:33815",
+        "name": "[D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide",
+        "nodeType": "SECTION",
+        "path": "Section 13 / [D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": true
+    }
+  },
+  "summary": {
+    "scannedComponents": 192,
+    "problemOccurrenceCount": 28,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 0,
+      "updates": 0,
+      "customizations": 18,
+      "localComponents": 0,
+      "detachedComponents": 4,
+      "presets": 6,
+      "technicalComponents": 0,
+      "currentComponents": 192,
+      "wrongChannel": 0,
+      "themization": 0
+    },
+    "includedFindingCount": 28,
+    "omittedCurrentComponentCount": 192
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with severity=error and matchKind=exact_component_rule for the same property/change.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 18,
+      "includedCount": 18,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 4,
+      "includedCount": 4,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 6,
+      "includedCount": 6,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "11568:53960",
+        "name": "[D] BodyCell :: Wide",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide / [D] BodyRow :: Wide / Cells / [D] BodyCell :: Wide",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I11568:53960;74661:67583",
+            "name": "Text",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Skeleton=False, Group=False / Text",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Presets",
+          "message": "presets: Text → Account",
+          "referenceValue": "Text",
+          "actualValue": "Account",
+          "referenceRawValue": "Text",
+          "actualRawValue": "Account",
+          "referenceDisplayValue": "Text",
+          "actualDisplayValue": "Account",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "9492b0a748f5d0732c1e8d4a1063a5986fc9fe9f",
+            "referenceComponentKey": "432af18a5d6c061a97952e6d37a01715eabc43e2",
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+            "actualNestedOwnerPath": "Skeleton=False, Group=False",
+            "actualNestedOwnerRelativePath": "Text",
+            "nestedOwnerComponentKey": "432af18a5d6c061a97952e6d37a01715eabc43e2",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "Skeleton=False, Group=False / Text",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "Presets": "Account"
+            },
+            "referenceVariantProperties": {
+              "Presets": "Text"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11620:33815",
+              "nodeName": "[D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "experimental-component-contract-v2-violation",
+            "ruleId": "rule-ir:web-corp.table-wide.component-properties-are-first-class.d001774717",
+            "contractId": "rule-ir:web-corp.table-wide",
+            "constraintId": "rule-ir:web-corp.table-wide.component-properties-are-first-class.d001774717",
+            "evidence": {
+              "runtime": "component-contract-v2-experimental",
+              "expected": "Text",
+              "actual": "Account"
+            },
+            "message": "Изменения variant/property в компонентах семейства таблиц являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "11568:53962",
+        "name": "[D] BodyCell :: Wide",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide / [D] BodyRow :: Wide / Cells / [D] BodyCell :: Wide",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I11568:53962;74661:67583;78541:161252;485:67102;485:67038",
+            "name": "Major",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Amount / Major / Major",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Paragraph/16–20 Component Primary → Accent/14–20 Primary Small",
+          "referenceValue": "Paragraph/16–20 Component Primary",
+          "actualValue": "Accent/14–20 Primary Small",
+          "referenceRawValue": "Paragraph/16–20 Component Primary",
+          "actualRawValue": "Accent/14–20 Primary Small",
+          "referenceDisplayValue": "Paragraph/16–20 Component Primary",
+          "actualDisplayValue": "Accent/14–20 Primary Small",
+          "referenceResource": {
+            "name": "Paragraph/16–20 Component Primary",
+            "key": "020582d780ac6ecbb4d8916c4b68099e42b09126",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": {
+            "name": "Accent/14–20 Primary Small",
+            "key": "b657c53719573a5b414a97d0b5d3d69739579de2",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "a833c02e4fcb75fea1a89bf786912e108b8f93ba",
+            "actualNestedOwnerPath": "Amount / Major",
+            "actualNestedOwnerRelativePath": "Major",
+            "nestedOwnerComponentKey": "fe3399f71c9e0971646821d935b64657e462c28e",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "Amount",
+            "nestedOwnerRelativePath": "Major / Major",
+            "actualVariantProperties": null,
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11620:33815",
+              "nodeName": "[D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "experimental-component-contract-v2-violation",
+            "ruleId": "rule-ir:web-core.amount.layer-properties-use-effective-baseline",
+            "contractId": "rule-ir:web-core.amount",
+            "constraintId": "rule-ir:web-core.amount.layer-properties-use-effective-baseline",
+            "evidence": {
+              "runtime": "component-contract-v2-experimental",
+              "expected": "Paragraph/16–20 Component Primary",
+              "actual": "Accent/14–20 Primary Small"
+            },
+            "message": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "11619:33158",
+        "name": "[D] BodyControlCell :: Wide",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide / [D] BodyRow :: Wide / Cells / [D] BodyControlCell :: Wide",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyControlCell :: Wide",
+        "key": "1006a79aa14571e14b43af411da0b3f84825b2df",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Presets=Controls, Skeleton=false",
+        "key": "1006a79aa14571e14b43af411da0b3f84825b2df"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "11619:33158",
+            "name": "[D] BodyControlCell :: Wide",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Presets=Controls, Skeleton=false",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.bottom",
+          "message": "Паддинг bottom: 16 → 32",
+          "referenceValue": 16,
+          "actualValue": 32,
+          "referenceRawValue": 16,
+          "actualRawValue": 32,
+          "referenceDisplayValue": 16,
+          "actualDisplayValue": 32,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "1006a79aa14571e14b43af411da0b3f84825b2df",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Presets": "Controls",
+              "Skeleton": "false"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "11619:33158",
+              "nodeName": "[D] BodyControlCell :: Wide",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "experimental-component-contract-v2-violation",
+            "ruleId": "rule-ir:web-corp.table-wide.layer-properties-use-effective-baseline.acdecaa019",
+            "contractId": "rule-ir:web-corp.table-wide",
+            "constraintId": "rule-ir:web-corp.table-wide.layer-properties-use-effective-baseline.acdecaa019",
+            "evidence": {
+              "runtime": "component-contract-v2-experimental",
+              "expected": 16,
+              "actual": 32
+            },
+            "message": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "11619:33161",
+        "name": "[D] BodyCell :: Wide",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide / [D] BodyRow :: Wide / Cells / [D] BodyCell :: Wide",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I11619:33161;74661:67583",
+            "name": "Text",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Skeleton=False, Group=False / Text",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Presets",
+          "message": "presets: Text → Account",
+          "referenceValue": "Text",
+          "actualValue": "Account",
+          "referenceRawValue": "Text",
+          "actualRawValue": "Account",
+          "referenceDisplayValue": "Text",
+          "actualDisplayValue": "Account",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "9492b0a748f5d0732c1e8d4a1063a5986fc9fe9f",
+            "referenceComponentKey": "432af18a5d6c061a97952e6d37a01715eabc43e2",
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+            "actualNestedOwnerPath": "Skeleton=False, Group=False",
+            "actualNestedOwnerRelativePath": "Text",
+            "nestedOwnerComponentKey": "432af18a5d6c061a97952e6d37a01715eabc43e2",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "Skeleton=False, Group=False / Text",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "Presets": "Account"
+            },
+            "referenceVariantProperties": {
+              "Presets": "Text"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11620:33815",
+              "nodeName": "[D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "experimental-component-contract-v2-violation",
+            "ruleId": "rule-ir:web-corp.table-wide.component-properties-are-first-class.d001774717",
+            "contractId": "rule-ir:web-corp.table-wide",
+            "constraintId": "rule-ir:web-corp.table-wide.component-properties-are-first-class.d001774717",
+            "evidence": {
+              "runtime": "component-contract-v2-experimental",
+              "expected": "Text",
+              "actual": "Account"
+            },
+            "message": "Изменения variant/property в компонентах семейства таблиц являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "11619:33163",
+        "name": "[D] BodyCell :: Wide",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide / [D] BodyRow :: Wide / Cells / [D] BodyCell :: Wide",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I11619:33163;74661:67583;78541:161252;485:67102;485:67038",
+            "name": "Major",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Amount / Major / Major",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Paragraph/16–20 Component Primary → Accent/14–20 Primary Small",
+          "referenceValue": "Paragraph/16–20 Component Primary",
+          "actualValue": "Accent/14–20 Primary Small",
+          "referenceRawValue": "Paragraph/16–20 Component Primary",
+          "actualRawValue": "Accent/14–20 Primary Small",
+          "referenceDisplayValue": "Paragraph/16–20 Component Primary",
+          "actualDisplayValue": "Accent/14–20 Primary Small",
+          "referenceResource": {
+            "name": "Paragraph/16–20 Component Primary",
+            "key": "020582d780ac6ecbb4d8916c4b68099e42b09126",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": {
+            "name": "Accent/14–20 Primary Small",
+            "key": "b657c53719573a5b414a97d0b5d3d69739579de2",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "a833c02e4fcb75fea1a89bf786912e108b8f93ba",
+            "actualNestedOwnerPath": "Amount / Major",
+            "actualNestedOwnerRelativePath": "Major",
+            "nestedOwnerComponentKey": "fe3399f71c9e0971646821d935b64657e462c28e",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "Amount",
+            "nestedOwnerRelativePath": "Major / Major",
+            "actualVariantProperties": null,
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11620:33815",
+              "nodeName": "[D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "experimental-component-contract-v2-violation",
+            "ruleId": "rule-ir:web-core.amount.layer-properties-use-effective-baseline",
+            "contractId": "rule-ir:web-core.amount",
+            "constraintId": "rule-ir:web-core.amount.layer-properties-use-effective-baseline",
+            "evidence": {
+              "runtime": "component-contract-v2-experimental",
+              "expected": "Paragraph/16–20 Component Primary",
+              "actual": "Accent/14–20 Primary Small"
+            },
+            "message": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "11619:33318",
+        "name": "[D] BodyCell :: Wide",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide / [D] BodyRow :: Wide / Cells / [D] BodyCell :: Wide",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I11619:33318;74661:67583;74661:67474",
+            "name": "RightAddon",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Skeleton=False, Group=False / Text / RightAddon / RightAddon@@hidden1",
+            "visible": false
+          },
+          "kind": "other",
+          "property": "component.identity",
+          "message": "Компонент: RightAddon → RightAddon",
+          "referenceValue": "RightAddon",
+          "actualValue": "RightAddon",
+          "referenceRawValue": "RightAddon",
+          "actualRawValue": "RightAddon",
+          "referenceDisplayValue": "RightAddon",
+          "actualDisplayValue": "RightAddon",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "11c52e0a3175f93cb8e49485c7087da62acfb328",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "31515679735130e1a8940cd827964859690628e9",
+            "actualNestedOwnerPath": "Skeleton=False, Group=False / Text",
+            "actualNestedOwnerRelativePath": "RightAddon / RightAddon",
+            "nestedOwnerComponentKey": "432af18a5d6c061a97952e6d37a01715eabc43e2",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "Skeleton=False, Group=False / Text",
+            "nestedOwnerRelativePath": "RightAddon / RightAddon",
+            "actualVariantProperties": {
+              "Presets": "StatusBadge"
+            },
+            "referenceVariantProperties": {
+              "Presets": "StatusBadge"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11620:33815",
+              "nodeName": "[D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "experimental-component-contract-v2-violation",
+            "ruleId": "rule-ir:web-corp.table-wide.component-properties-are-first-class.d001774717",
+            "contractId": "rule-ir:web-corp.table-wide",
+            "constraintId": "rule-ir:web-corp.table-wide.component-properties-are-first-class.d001774717",
+            "evidence": {
+              "runtime": "component-contract-v2-experimental",
+              "expected": "RightAddon",
+              "actual": "RightAddon"
+            },
+            "message": "Изменения variant/property в компонентах семейства таблиц являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I11619:33318;74661:67583;74661:67472",
+            "name": "Label",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Skeleton=False, Group=False / Text / Text / Label",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Paragraph/14–20 Primary Small → Paragraph/16–24 Primary Medium",
+          "referenceValue": "Paragraph/14–20 Primary Small",
+          "actualValue": "Paragraph/16–24 Primary Medium",
+          "referenceRawValue": "Paragraph/14–20 Primary Small",
+          "actualRawValue": "Paragraph/16–24 Primary Medium",
+          "referenceDisplayValue": "Paragraph/14–20 Primary Small",
+          "actualDisplayValue": "Paragraph/16–24 Primary Medium",
+          "referenceResource": {
+            "name": "Paragraph/14–20 Primary Small",
+            "key": "6fb5ab6969beee7da9e23dfcbab2f4864b30b665",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": {
+            "name": "Paragraph/16–24 Primary Medium",
+            "key": "f0f0d59f9f92db92901605dd929cfa3b93540058",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "31515679735130e1a8940cd827964859690628e9",
+            "actualNestedOwnerPath": "Skeleton=False, Group=False / Text",
+            "actualNestedOwnerRelativePath": "Text / Label",
+            "nestedOwnerComponentKey": "432af18a5d6c061a97952e6d37a01715eabc43e2",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "Skeleton=False, Group=False / Text",
+            "nestedOwnerRelativePath": "Text / Label",
+            "actualVariantProperties": {
+              "Presets": "Text"
+            },
+            "referenceVariantProperties": {
+              "Presets": "Text"
+            },
+            "surfaceContext": null
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "experimental-component-contract-v2-violation",
+            "ruleId": "rule-ir:web-corp.table-wide.layer-properties-use-effective-baseline.acdecaa019",
+            "contractId": "rule-ir:web-corp.table-wide",
+            "constraintId": "rule-ir:web-corp.table-wide.layer-properties-use-effective-baseline.acdecaa019",
+            "evidence": {
+              "runtime": "component-contract-v2-experimental",
+              "expected": "Paragraph/14–20 Primary Small",
+              "actual": "Paragraph/16–24 Primary Medium"
+            },
+            "message": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "11619:33320",
+        "name": "[D] BodyCell :: Wide",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide / [D] BodyRow :: Wide / Cells / [D] BodyCell :: Wide",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I11619:33320;74661:67583",
+            "name": "Text",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Skeleton=False, Group=False / Text",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Presets",
+          "message": "presets: Text → Account",
+          "referenceValue": "Text",
+          "actualValue": "Account",
+          "referenceRawValue": "Text",
+          "actualRawValue": "Account",
+          "referenceDisplayValue": "Text",
+          "actualDisplayValue": "Account",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "9492b0a748f5d0732c1e8d4a1063a5986fc9fe9f",
+            "referenceComponentKey": "432af18a5d6c061a97952e6d37a01715eabc43e2",
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+            "actualNestedOwnerPath": "Skeleton=False, Group=False",
+            "actualNestedOwnerRelativePath": "Text",
+            "nestedOwnerComponentKey": "432af18a5d6c061a97952e6d37a01715eabc43e2",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "Skeleton=False, Group=False / Text",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "Presets": "Account"
+            },
+            "referenceVariantProperties": {
+              "Presets": "Text"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11620:33815",
+              "nodeName": "[D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "experimental-component-contract-v2-violation",
+            "ruleId": "rule-ir:web-corp.table-wide.component-properties-are-first-class.d001774717",
+            "contractId": "rule-ir:web-corp.table-wide",
+            "constraintId": "rule-ir:web-corp.table-wide.component-properties-are-first-class.d001774717",
+            "evidence": {
+              "runtime": "component-contract-v2-experimental",
+              "expected": "Text",
+              "actual": "Account"
+            },
+            "message": "Изменения variant/property в компонентах семейства таблиц являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "11619:33322",
+        "name": "[D] BodyCell :: Wide",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide / [D] BodyRow :: Wide / Cells / [D] BodyCell :: Wide",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I11619:33322;74661:67583;78541:161252;485:67102;485:67038",
+            "name": "Major",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Amount / Major / Major",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Paragraph/16–20 Component Primary → Accent/14–20 Primary Small",
+          "referenceValue": "Paragraph/16–20 Component Primary",
+          "actualValue": "Accent/14–20 Primary Small",
+          "referenceRawValue": "Paragraph/16–20 Component Primary",
+          "actualRawValue": "Accent/14–20 Primary Small",
+          "referenceDisplayValue": "Paragraph/16–20 Component Primary",
+          "actualDisplayValue": "Accent/14–20 Primary Small",
+          "referenceResource": {
+            "name": "Paragraph/16–20 Component Primary",
+            "key": "020582d780ac6ecbb4d8916c4b68099e42b09126",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": {
+            "name": "Accent/14–20 Primary Small",
+            "key": "b657c53719573a5b414a97d0b5d3d69739579de2",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "a833c02e4fcb75fea1a89bf786912e108b8f93ba",
+            "actualNestedOwnerPath": "Amount / Major",
+            "actualNestedOwnerRelativePath": "Major",
+            "nestedOwnerComponentKey": "fe3399f71c9e0971646821d935b64657e462c28e",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "Amount",
+            "nestedOwnerRelativePath": "Major / Major",
+            "actualVariantProperties": null,
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11620:33815",
+              "nodeName": "[D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "experimental-component-contract-v2-violation",
+            "ruleId": "rule-ir:web-core.amount.layer-properties-use-effective-baseline",
+            "contractId": "rule-ir:web-core.amount",
+            "constraintId": "rule-ir:web-core.amount.layer-properties-use-effective-baseline",
+            "evidence": {
+              "runtime": "component-contract-v2-experimental",
+              "expected": "Paragraph/16–20 Component Primary",
+              "actual": "Accent/14–20 Primary Small"
+            },
+            "message": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "11619:33323",
+        "name": "[D] BodyActionCell :: Wide",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide / [D] BodyRow :: Wide / Cells / [D] BodyActionCell :: Wide",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyActionCell :: Wide",
+        "key": "9ff55b757e5cb99fcc948d58b9427911ff1b8850",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Presets=Button, Skeleton=False",
+        "key": "9ff55b757e5cb99fcc948d58b9427911ff1b8850"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "11619:33323",
+            "name": "[D] BodyActionCell :: Wide",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Presets=Button, Skeleton=False",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.bottom",
+          "message": "Паддинг bottom: 16 → 32",
+          "referenceValue": 16,
+          "actualValue": 32,
+          "referenceRawValue": 16,
+          "actualRawValue": 32,
+          "referenceDisplayValue": 16,
+          "actualDisplayValue": 32,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "9ff55b757e5cb99fcc948d58b9427911ff1b8850",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Presets": "Button",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "11619:33323",
+              "nodeName": "[D] BodyActionCell :: Wide",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "experimental-component-contract-v2-violation",
+            "ruleId": "rule-ir:web-corp.table-wide.layer-properties-use-effective-baseline.acdecaa019",
+            "contractId": "rule-ir:web-corp.table-wide",
+            "constraintId": "rule-ir:web-corp.table-wide.layer-properties-use-effective-baseline.acdecaa019",
+            "evidence": {
+              "runtime": "component-contract-v2-experimental",
+              "expected": 16,
+              "actual": 32
+            },
+            "message": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "11619:33323",
+            "name": "[D] BodyActionCell :: Wide",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Presets=Button, Skeleton=False",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.left",
+          "message": "Паддинг left: 12 → 16",
+          "referenceValue": 12,
+          "actualValue": 16,
+          "referenceRawValue": 12,
+          "actualRawValue": 16,
+          "referenceDisplayValue": 12,
+          "actualDisplayValue": 16,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "9ff55b757e5cb99fcc948d58b9427911ff1b8850",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Presets": "Button",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "11619:33323",
+              "nodeName": "[D] BodyActionCell :: Wide",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "experimental-component-contract-v2-violation",
+            "ruleId": "rule-ir:web-corp.table-wide.layer-properties-use-effective-baseline.acdecaa019",
+            "contractId": "rule-ir:web-corp.table-wide",
+            "constraintId": "rule-ir:web-corp.table-wide.layer-properties-use-effective-baseline.acdecaa019",
+            "evidence": {
+              "runtime": "component-contract-v2-experimental",
+              "expected": 12,
+              "actual": 16
+            },
+            "message": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "11619:33478",
+        "name": "[D] BodyCell :: Wide",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide / Cells / [D] BodyCell :: Wide",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I11619:33478;74661:67583",
+            "name": "Text",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Skeleton=False, Group=False / Text",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Presets",
+          "message": "presets: Text → Account",
+          "referenceValue": "Text",
+          "actualValue": "Account",
+          "referenceRawValue": "Text",
+          "actualRawValue": "Account",
+          "referenceDisplayValue": "Text",
+          "actualDisplayValue": "Account",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "9492b0a748f5d0732c1e8d4a1063a5986fc9fe9f",
+            "referenceComponentKey": "432af18a5d6c061a97952e6d37a01715eabc43e2",
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+            "actualNestedOwnerPath": "Skeleton=False, Group=False",
+            "actualNestedOwnerRelativePath": "Text",
+            "nestedOwnerComponentKey": "432af18a5d6c061a97952e6d37a01715eabc43e2",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "Skeleton=False, Group=False / Text",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "Presets": "Account"
+            },
+            "referenceVariantProperties": {
+              "Presets": "Text"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11620:33815",
+              "nodeName": "[D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "experimental-component-contract-v2-violation",
+            "ruleId": "rule-ir:web-corp.table-wide.component-properties-are-first-class.d001774717",
+            "contractId": "rule-ir:web-corp.table-wide",
+            "constraintId": "rule-ir:web-corp.table-wide.component-properties-are-first-class.d001774717",
+            "evidence": {
+              "runtime": "component-contract-v2-experimental",
+              "expected": "Text",
+              "actual": "Account"
+            },
+            "message": "Изменения variant/property в компонентах семейства таблиц являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "11619:33480",
+        "name": "[D] BodyCell :: Wide",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide / Cells / [D] BodyCell :: Wide",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I11619:33480;74661:67583;78541:161252;485:67102;485:67038",
+            "name": "Major",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Amount / Major / Major",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Paragraph/16–20 Component Primary → Accent/14–20 Primary Small",
+          "referenceValue": "Paragraph/16–20 Component Primary",
+          "actualValue": "Accent/14–20 Primary Small",
+          "referenceRawValue": "Paragraph/16–20 Component Primary",
+          "actualRawValue": "Accent/14–20 Primary Small",
+          "referenceDisplayValue": "Paragraph/16–20 Component Primary",
+          "actualDisplayValue": "Accent/14–20 Primary Small",
+          "referenceResource": {
+            "name": "Paragraph/16–20 Component Primary",
+            "key": "020582d780ac6ecbb4d8916c4b68099e42b09126",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": {
+            "name": "Accent/14–20 Primary Small",
+            "key": "b657c53719573a5b414a97d0b5d3d69739579de2",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "a833c02e4fcb75fea1a89bf786912e108b8f93ba",
+            "actualNestedOwnerPath": "Amount / Major",
+            "actualNestedOwnerRelativePath": "Major",
+            "nestedOwnerComponentKey": "fe3399f71c9e0971646821d935b64657e462c28e",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "Amount",
+            "nestedOwnerRelativePath": "Major / Major",
+            "actualVariantProperties": null,
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11620:33815",
+              "nodeName": "[D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "experimental-component-contract-v2-violation",
+            "ruleId": "rule-ir:web-core.amount.layer-properties-use-effective-baseline",
+            "contractId": "rule-ir:web-core.amount",
+            "constraintId": "rule-ir:web-core.amount.layer-properties-use-effective-baseline",
+            "evidence": {
+              "runtime": "component-contract-v2-experimental",
+              "expected": "Paragraph/16–20 Component Primary",
+              "actual": "Accent/14–20 Primary Small"
+            },
+            "message": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "11619:33481",
+        "name": "[D] BodyActionCell :: Wide",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide / Cells / [D] BodyActionCell :: Wide",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyActionCell :: Wide",
+        "key": "9ff55b757e5cb99fcc948d58b9427911ff1b8850",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Presets=Button, Skeleton=False",
+        "key": "9ff55b757e5cb99fcc948d58b9427911ff1b8850"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I11619:33481;147071:171628;147071:171583",
+            "name": "[D] IconButton",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Presets=Button, Skeleton=False / ActionButton / [D] IconButton",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.View",
+          "message": "view: Primary → Secondary",
+          "referenceValue": "Primary",
+          "actualValue": "Secondary",
+          "referenceRawValue": "Primary",
+          "actualRawValue": "Secondary",
+          "referenceDisplayValue": "Primary",
+          "actualDisplayValue": "Secondary",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "ae253030add578f6d247a9915952eacc8791d8b1",
+            "referenceComponentKey": "28e69a0b209fb9f1346327ea411878405efdb226",
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "b5a8d997c19ce9c598b0d1642782a32329eea6ba",
+            "actualNestedOwnerPath": "Presets=Button, Skeleton=False / ActionButton",
+            "actualNestedOwnerRelativePath": "[D] IconButton",
+            "nestedOwnerComponentKey": "0e2dea47756d449f7b1c293415dd40c07f38c577",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "Presets=Button, Skeleton=False / ActionButton",
+            "nestedOwnerRelativePath": "[D] IconButton",
+            "actualVariantProperties": {
+              "Size": "24",
+              "View": "Secondary",
+              "TransparentBg": "False"
+            },
+            "referenceVariantProperties": {
+              "Size": "24",
+              "TransparentBg": "False",
+              "View": "Primary"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "11619:33481",
+              "nodeName": "[D] BodyActionCell :: Wide",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "experimental-component-contract-v2-violation",
+            "ruleId": "rule-ir:web-corp.table-wide.action-cell-control-uses-effective-baseline",
+            "contractId": "rule-ir:web-corp.table-wide",
+            "constraintId": "rule-ir:web-corp.table-wide.action-cell-control-uses-effective-baseline",
+            "evidence": {
+              "runtime": "component-contract-v2-experimental",
+              "expected": "Primary",
+              "actual": "Secondary"
+            },
+            "message": "Вложенный control-компонент BodyActionCell должен сохранять предусмотренные компонентом identity и variant properties. Произвольный variant switch или instance swap запрещён.",
+            "remediation": {
+              "kind": "set-variant-properties",
+              "nodeId": "I11619:33481;147071:171628;147071:171583",
+              "properties": {
+                "View": "Primary"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "11619:33654",
+        "name": "[D] BodyCell :: Wide",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide / Cells / [D] BodyCell :: Wide",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I11619:33654;74661:67583",
+            "name": "Text",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Skeleton=False, Group=False / Text",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Presets",
+          "message": "presets: Text → Account",
+          "referenceValue": "Text",
+          "actualValue": "Account",
+          "referenceRawValue": "Text",
+          "actualRawValue": "Account",
+          "referenceDisplayValue": "Text",
+          "actualDisplayValue": "Account",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "9492b0a748f5d0732c1e8d4a1063a5986fc9fe9f",
+            "referenceComponentKey": "432af18a5d6c061a97952e6d37a01715eabc43e2",
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+            "actualNestedOwnerPath": "Skeleton=False, Group=False",
+            "actualNestedOwnerRelativePath": "Text",
+            "nestedOwnerComponentKey": "432af18a5d6c061a97952e6d37a01715eabc43e2",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "Skeleton=False, Group=False / Text",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "Presets": "Account"
+            },
+            "referenceVariantProperties": {
+              "Presets": "Text"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11620:33815",
+              "nodeName": "[D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "experimental-component-contract-v2-violation",
+            "ruleId": "rule-ir:web-corp.table-wide.component-properties-are-first-class.d001774717",
+            "contractId": "rule-ir:web-corp.table-wide",
+            "constraintId": "rule-ir:web-corp.table-wide.component-properties-are-first-class.d001774717",
+            "evidence": {
+              "runtime": "component-contract-v2-experimental",
+              "expected": "Text",
+              "actual": "Account"
+            },
+            "message": "Изменения variant/property в компонентах семейства таблиц являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "11619:33656",
+        "name": "[D] BodyCell :: Wide",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide / Cells / [D] BodyCell :: Wide",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I11619:33656;74661:67583;78541:161252;485:67102;485:67038",
+            "name": "Major",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Amount / Major / Major",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Paragraph/16–20 Component Primary → Accent/14–20 Primary Small",
+          "referenceValue": "Paragraph/16–20 Component Primary",
+          "actualValue": "Accent/14–20 Primary Small",
+          "referenceRawValue": "Paragraph/16–20 Component Primary",
+          "actualRawValue": "Accent/14–20 Primary Small",
+          "referenceDisplayValue": "Paragraph/16–20 Component Primary",
+          "actualDisplayValue": "Accent/14–20 Primary Small",
+          "referenceResource": {
+            "name": "Paragraph/16–20 Component Primary",
+            "key": "020582d780ac6ecbb4d8916c4b68099e42b09126",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": {
+            "name": "Accent/14–20 Primary Small",
+            "key": "b657c53719573a5b414a97d0b5d3d69739579de2",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "a833c02e4fcb75fea1a89bf786912e108b8f93ba",
+            "actualNestedOwnerPath": "Amount / Major",
+            "actualNestedOwnerRelativePath": "Major",
+            "nestedOwnerComponentKey": "fe3399f71c9e0971646821d935b64657e462c28e",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "Amount",
+            "nestedOwnerRelativePath": "Major / Major",
+            "actualVariantProperties": null,
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11620:33815",
+              "nodeName": "[D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "experimental-component-contract-v2-violation",
+            "ruleId": "rule-ir:web-core.amount.layer-properties-use-effective-baseline",
+            "contractId": "rule-ir:web-core.amount",
+            "constraintId": "rule-ir:web-core.amount.layer-properties-use-effective-baseline",
+            "evidence": {
+              "runtime": "component-contract-v2-experimental",
+              "expected": "Paragraph/16–20 Component Primary",
+              "actual": "Accent/14–20 Primary Small"
+            },
+            "message": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "11619:33657",
+        "name": "[D] BodyActionCell :: Wide",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide / Cells / [D] BodyActionCell :: Wide",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyActionCell :: Wide",
+        "key": "9ff55b757e5cb99fcc948d58b9427911ff1b8850",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Presets=Button, Skeleton=False",
+        "key": "9ff55b757e5cb99fcc948d58b9427911ff1b8850"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I11619:33657;147071:171628;147071:171583",
+            "name": "[D] IconButton_Inverted",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Presets=Button, Skeleton=False / ActionButton / [D] IconButton_Inverted",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "component.identity",
+          "message": "Компонент: [D] IconButton → [D] IconButton_Inverted",
+          "referenceValue": "[D] IconButton",
+          "actualValue": "[D] IconButton_Inverted",
+          "referenceRawValue": "[D] IconButton",
+          "actualRawValue": "[D] IconButton_Inverted",
+          "referenceDisplayValue": "[D] IconButton",
+          "actualDisplayValue": "[D] IconButton_Inverted",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "cae90615fbdf54afb1499fa561aa376a26f738bd",
+            "referenceComponentKey": "28e69a0b209fb9f1346327ea411878405efdb226",
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "b5a8d997c19ce9c598b0d1642782a32329eea6ba",
+            "actualNestedOwnerPath": "Presets=Button, Skeleton=False / ActionButton",
+            "actualNestedOwnerRelativePath": "[D] IconButton_Inverted",
+            "nestedOwnerComponentKey": "0e2dea47756d449f7b1c293415dd40c07f38c577",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "Presets=Button, Skeleton=False / ActionButton",
+            "nestedOwnerRelativePath": "[D] IconButton",
+            "actualVariantProperties": {
+              "Size": "24",
+              "View": "Negative",
+              "TransparentBg": "False"
+            },
+            "referenceVariantProperties": {
+              "Size": "24",
+              "TransparentBg": "False",
+              "View": "Primary"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "11619:33657",
+              "nodeName": "[D] BodyActionCell :: Wide",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "experimental-component-contract-v2-violation",
+            "ruleId": "rule-ir:web-corp.table-wide.action-cell-control-uses-effective-baseline",
+            "contractId": "rule-ir:web-corp.table-wide",
+            "constraintId": "rule-ir:web-corp.table-wide.action-cell-control-uses-effective-baseline",
+            "evidence": {
+              "runtime": "component-contract-v2-experimental",
+              "expected": "[D] IconButton",
+              "actual": "[D] IconButton_Inverted"
+            },
+            "message": "Вложенный control-компонент BodyActionCell должен сохранять предусмотренные компонентом identity и variant properties. Произвольный variant switch или instance swap запрещён.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "11619:32997",
+        "name": "[D] BodyCell :: Wide",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide / [D] BodyRow :: Wide / Cells / [D] BodyCell :: Wide",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I11619:32997;74661:67583",
+            "name": "Text",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Skeleton=False, Group=False / Text",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Presets",
+          "message": "presets: Text → Account",
+          "referenceValue": "Text",
+          "actualValue": "Account",
+          "referenceRawValue": "Text",
+          "actualRawValue": "Account",
+          "referenceDisplayValue": "Text",
+          "actualDisplayValue": "Account",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "9492b0a748f5d0732c1e8d4a1063a5986fc9fe9f",
+            "referenceComponentKey": "432af18a5d6c061a97952e6d37a01715eabc43e2",
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+            "actualNestedOwnerPath": "Skeleton=False, Group=False",
+            "actualNestedOwnerRelativePath": "Text",
+            "nestedOwnerComponentKey": "432af18a5d6c061a97952e6d37a01715eabc43e2",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "Skeleton=False, Group=False / Text",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "Presets": "Account"
+            },
+            "referenceVariantProperties": {
+              "Presets": "Text"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11620:33815",
+              "nodeName": "[D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "experimental-component-contract-v2-violation",
+            "ruleId": "rule-ir:web-corp.table-wide.component-properties-are-first-class.d001774717",
+            "contractId": "rule-ir:web-corp.table-wide",
+            "constraintId": "rule-ir:web-corp.table-wide.component-properties-are-first-class.d001774717",
+            "evidence": {
+              "runtime": "component-contract-v2-experimental",
+              "expected": "Text",
+              "actual": "Account"
+            },
+            "message": "Изменения variant/property в компонентах семейства таблиц являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "11619:32998",
+        "name": "[D] BodyCell :: Wide",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide / [D] BodyRow :: Wide / Cells / [D] BodyCell :: Wide",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I11619:32998;74661:67583;74661:67482;60798:623839;34498:5778;34498:5738",
+            "name": "Label",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Type=Attention, Style=Muted, Size=20 / Status / 🔩 Label / Label",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: decorative-text/orange → decorative-text/indigo",
+          "referenceValue": "decorative-text/orange",
+          "actualValue": "decorative-text/indigo",
+          "referenceRawValue": "decorative-text/orange",
+          "actualRawValue": "decorative-text/indigo",
+          "referenceDisplayValue": "decorative-text/orange",
+          "actualDisplayValue": "decorative-text/indigo",
+          "referenceResource": {
+            "name": "decorative-text/orange",
+            "key": "68157b3c5775b9ab5ff75b17a1fe3c385be0150e",
+            "library": "Decorative Dynamic",
+            "sourceFile": "003 :: Decarative Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "decorative-text/indigo",
+            "key": "0274c1566804833e847449b4c8b2ec411fef2744",
+            "library": "Decorative Dynamic",
+            "sourceFile": "003 :: Decarative Dynamic Colors"
+          },
+          "referenceBinding": {
+            "id": "VariableID:68157b3c5775b9ab5ff75b17a1fe3c385be0150e/1816:58",
+            "key": "68157b3c5775b9ab5ff75b17a1fe3c385be0150e",
+            "name": "decorative-text/orange",
+            "collectionId": "VariableCollectionId:944:1243",
+            "collectionName": "Decorative Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:0274c1566804833e847449b4c8b2ec411fef2744/1816:71",
+            "key": "0274c1566804833e847449b4c8b2ec411fef2744",
+            "name": "decorative-text/indigo",
+            "collectionId": "VariableCollectionId:944:1243",
+            "collectionName": "Decorative Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "5979648b15fed7f52e8d9ae9ab6f4c27fe8fcc6e",
+            "actualNestedOwnerPath": "Type=Attention, Style=Muted, Size=20 / Status / 🔩 Label",
+            "actualNestedOwnerRelativePath": "Label",
+            "nestedOwnerComponentKey": "7e5ea33a45d0ca278c5e46190af24f2e0aa3aabc",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "Type=Attention, Style=Muted, Size=20",
+            "nestedOwnerRelativePath": "Status / 🔩 Label / Label",
+            "actualVariantProperties": {
+              "Uppercase": "True"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11620:33815",
+              "nodeName": "[D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "experimental-component-contract-v2-violation",
+            "ruleId": "rule-ir:web-corp.status-property.fill-follows-effective-baseline",
+            "contractId": "rule-ir:web-corp.status-property",
+            "constraintId": "rule-ir:web-corp.status-property.fill-follows-effective-baseline",
+            "evidence": {
+              "runtime": "component-contract-v2-experimental",
+              "expected": "decorative-text/orange",
+              "actual": "decorative-text/indigo"
+            },
+            "message": "Ручное изменение заливки текста или поверхности запрещено для StatusPreset и штатных Color у PropertyPreset. Цвет должен соответствовать effective baseline. Исключение — PropertyPreset с Color=Custom.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "11619:32999",
+        "name": "[D] BodyCell :: Wide",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide / [D] BodyRow :: Wide / Cells / [D] BodyCell :: Wide",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I11619:32999;74661:67583;78541:161252;485:67102;485:67038",
+            "name": "Major",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Amount / Major / Major",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Paragraph/16–20 Component Primary → Accent/14–20 Primary Small",
+          "referenceValue": "Paragraph/16–20 Component Primary",
+          "actualValue": "Accent/14–20 Primary Small",
+          "referenceRawValue": "Paragraph/16–20 Component Primary",
+          "actualRawValue": "Accent/14–20 Primary Small",
+          "referenceDisplayValue": "Paragraph/16–20 Component Primary",
+          "actualDisplayValue": "Accent/14–20 Primary Small",
+          "referenceResource": {
+            "name": "Paragraph/16–20 Component Primary",
+            "key": "020582d780ac6ecbb4d8916c4b68099e42b09126",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": {
+            "name": "Accent/14–20 Primary Small",
+            "key": "b657c53719573a5b414a97d0b5d3d69739579de2",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "a833c02e4fcb75fea1a89bf786912e108b8f93ba",
+            "actualNestedOwnerPath": "Amount / Major",
+            "actualNestedOwnerRelativePath": "Major",
+            "nestedOwnerComponentKey": "fe3399f71c9e0971646821d935b64657e462c28e",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "Amount",
+            "nestedOwnerRelativePath": "Major / Major",
+            "actualVariantProperties": null,
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11620:33815",
+              "nodeName": "[D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "experimental-component-contract-v2-violation",
+            "ruleId": "rule-ir:web-core.amount.layer-properties-use-effective-baseline",
+            "contractId": "rule-ir:web-core.amount",
+            "constraintId": "rule-ir:web-core.amount.layer-properties-use-effective-baseline",
+            "evidence": {
+              "runtime": "component-contract-v2-experimental",
+              "expected": "Paragraph/16–20 Component Primary",
+              "actual": "Accent/14–20 Primary Small"
+            },
+            "message": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "detachedComponents",
+      "severityHint": "high",
+      "title": "Detach компонента",
+      "node": {
+        "id": "11568:53955",
+        "name": "[D] BodyRow :: Wide",
+        "type": "FRAME_OR_GROUP",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide / [D] BodyRow :: Wide",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyRow :: Wide",
+        "key": "4ebc8002c21ea12d0e149fb782cdf0b219769a8a",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      }
+    },
+    {
+      "category": "detachedComponents",
+      "severityHint": "high",
+      "title": "Detach компонента",
+      "node": {
+        "id": "11619:33156",
+        "name": "[D] BodyRow :: Wide",
+        "type": "FRAME_OR_GROUP",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide / [D] BodyRow :: Wide",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyRow :: Wide",
+        "key": "4ebc8002c21ea12d0e149fb782cdf0b219769a8a",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      }
+    },
+    {
+      "category": "detachedComponents",
+      "severityHint": "high",
+      "title": "Detach компонента",
+      "node": {
+        "id": "11619:33315",
+        "name": "[D] BodyRow :: Wide",
+        "type": "FRAME_OR_GROUP",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide / [D] BodyRow :: Wide",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyRow :: Wide",
+        "key": "4ebc8002c21ea12d0e149fb782cdf0b219769a8a",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      }
+    },
+    {
+      "category": "detachedComponents",
+      "severityHint": "high",
+      "title": "Detach компонента",
+      "node": {
+        "id": "11619:32992",
+        "name": "[D] BodyRow :: Wide",
+        "type": "FRAME_OR_GROUP",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide / [D] BodyRow :: Wide",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyRow :: Wide",
+        "key": "4ebc8002c21ea12d0e149fb782cdf0b219769a8a",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      }
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I11568:53961;74661:67583;74661:67482",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide / [D] BodyRow :: Wide / Cells / [D] BodyCell :: Wide / Text / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "7e5ea33a45d0ca278c5e46190af24f2e0aa3aabc",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Attention, Style=Muted, Size=20",
+        "key": "7e5ea33a45d0ca278c5e46190af24f2e0aa3aabc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I11619:33162;74661:67583;74661:67482",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide / [D] BodyRow :: Wide / Cells / [D] BodyCell :: Wide / Text / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "7e5ea33a45d0ca278c5e46190af24f2e0aa3aabc",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Attention, Style=Muted, Size=20",
+        "key": "7e5ea33a45d0ca278c5e46190af24f2e0aa3aabc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I11619:33321;74661:67583;74661:67482",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide / [D] BodyRow :: Wide / Cells / [D] BodyCell :: Wide / Text / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "7e5ea33a45d0ca278c5e46190af24f2e0aa3aabc",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Attention, Style=Muted, Size=20",
+        "key": "7e5ea33a45d0ca278c5e46190af24f2e0aa3aabc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I11619:33479;74661:67583;74661:67482",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide / Cells / [D] BodyCell :: Wide / Text / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "7e5ea33a45d0ca278c5e46190af24f2e0aa3aabc",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Attention, Style=Muted, Size=20",
+        "key": "7e5ea33a45d0ca278c5e46190af24f2e0aa3aabc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I11619:33655;74661:67583;74661:67482",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide / Cells / [D] BodyCell :: Wide / Text / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "7e5ea33a45d0ca278c5e46190af24f2e0aa3aabc",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Attention, Style=Muted, Size=20",
+        "key": "7e5ea33a45d0ca278c5e46190af24f2e0aa3aabc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I11619:32998;74661:67583;74661:67482",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BodyControlCell :: Wide / [D] BodyCell :: Wide / [D] BodyActionCell :: Wide / [D] BodyRow :: Wide / Cells / [D] BodyCell :: Wide / Text / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "7e5ea33a45d0ca278c5e46190af24f2e0aa3aabc",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Attention, Style=Muted, Size=20",
+        "key": "7e5ea33a45d0ca278c5e46190af24f2e0aa3aabc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    }
+  ],
+  "componentContexts": []
+}
