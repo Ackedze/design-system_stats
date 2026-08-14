@@ -1,0 +1,4089 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1096330610570928879-1786724539106-ixgereay:agent",
+  "sourceReportId": "apollo-1096330610570928879-1786724539106-ixgereay",
+  "generatedAt": "2026-08-14T16:22:19.106Z",
+  "suggestedFileName": "Alexey-Kukhta-CORP-Lead-Designer_14-08-2026_19-22-19_agent.json",
+  "user": {
+    "id": "1096330610570928879",
+    "name": "Alexey Kukhta / CORP / Lead Designer",
+    "slug": "Alexey-Kukhta-CORP-Lead-Designer"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.3.0"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "❇️ Мастерская :: AI",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "startedAt": "2026-08-14T16:22:18.478Z",
+    "finishedAt": "2026-08-14T16:22:19.106Z",
+    "durationMs": 628,
+    "selection": [
+      {
+        "nodeId": "11785:53424",
+        "name": "[D] BackgroundPlate",
+        "nodeType": "SECTION",
+        "path": "Section 13 / [D] BackgroundPlate",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 40,
+    "problemOccurrenceCount": 23,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 8,
+      "updates": 0,
+      "customizations": 21,
+      "localComponents": 0,
+      "detachedComponents": 0,
+      "presets": 0,
+      "technicalComponents": 0,
+      "currentComponents": 40,
+      "wrongChannel": 0,
+      "themization": 0
+    },
+    "includedFindingCount": 23,
+    "omittedCurrentComponentCount": 40
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with severity=error and matchKind=exact_component_rule for the same property/change.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 8,
+      "includedCount": 8,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 21,
+      "includedCount": 15,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "11785:53493",
+        "name": "[D] BackgroundPlateSlot",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BackgroundPlate / [D] BackgroundPlateSlot",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "11785:53494",
+        "name": "[D] BackgroundPlateSlot",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BackgroundPlate / [D] BackgroundPlateSlot",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "11785:53495",
+        "name": "[D] BackgroundPlateSlot",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BackgroundPlate / [D] BackgroundPlateSlot",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I11785:53436;66402:30698",
+        "name": "[D] Style Level 1",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BackgroundPlate / [D] BackgroundPlate / [D] Style Level 1",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I11785:53456;102592:139628",
+        "name": "[D][Promo] Style Level 1",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BackgroundPlate / [D][Promo] BackgroundPlate / [D][Promo] Style Level 1",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "11785:53496",
+        "name": "[D] BackgroundPlateSlot",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BackgroundPlate / [D] BackgroundPlateSlot",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I11785:53437;66402:30698",
+        "name": "[D] Style Level 1",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BackgroundPlate / [D] BackgroundPlate / [D] Style Level 1",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I11785:53458;102592:139628",
+        "name": "[D][Promo] Style Level 1",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BackgroundPlate / [D][Promo] BackgroundPlate / [D][Promo] Style Level 1",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "11785:53493",
+        "name": "[D] BackgroundPlateSlot",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BackgroundPlate / [D] BackgroundPlateSlot",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BackgroundPlateSlot",
+        "key": "6d5d4dda10be00621991e9b5a0152db4e47f4e2f",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Type=Primary, Skeleton=False",
+        "key": "6d5d4dda10be00621991e9b5a0152db4e47f4e2f"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "11785:53493",
+            "name": "[D] BackgroundPlateSlot",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Type=Primary, Skeleton=False",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: BackgroundColor → base-bg/secondary",
+          "referenceValue": "BackgroundColor",
+          "actualValue": "base-bg/secondary",
+          "referenceRawValue": "BackgroundColor",
+          "actualRawValue": "base-bg/secondary",
+          "referenceDisplayValue": "BackgroundColor",
+          "actualDisplayValue": "base-bg/secondary",
+          "referenceResource": {
+            "name": "BackgroundColor",
+            "key": "db84ea8cdc3ae910e107478f4b4b3fad114302a0",
+            "library": "BackgroundPlate Level",
+            "sourceFile": "Web :: Corp Components"
+          },
+          "actualResource": {
+            "name": "base-bg/secondary",
+            "key": "be3bf2c65d1f3fd8c66b5d74e95d79a608ee8f72",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": {
+            "id": "VariableID:136853:7710",
+            "key": "db84ea8cdc3ae910e107478f4b4b3fad114302a0",
+            "name": "BackgroundColor",
+            "collectionId": "VariableCollectionId:136846:8873",
+            "collectionName": "BackgroundPlate Level",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:be3bf2c65d1f3fd8c66b5d74e95d79a608ee8f72/3541:152",
+            "key": "be3bf2c65d1f3fd8c66b5d74e95d79a608ee8f72",
+            "name": "base-bg/secondary",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "6d5d4dda10be00621991e9b5a0152db4e47f4e2f",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Type": "Primary",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "11785:53493",
+              "nodeName": "[D] BackgroundPlateSlot",
+              "tokenId": "VariableID:be3bf2c65d1f3fd8c66b5d74e95d79a608ee8f72/3541:152",
+              "tokenName": "base-bg/secondary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.primary-secondary-paint-is-fixed",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "fill|styles.fill|stroke|styles.stroke",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Внешний вид Type=Primary и Type=Secondary полностью определяется компонентом, уровнем поверхности и BackgroundColor. Ручные изменения fill или stroke запрещены, даже если новое значение привязано к токену. Производные paint-изменения при переключении Type или BackgroundColor не считаются отдельной кастомизацией.",
+              "remediation": "Сбросьте ручные изменения fill и stroke к effective baseline текущего Type, уровня и BackgroundColor.",
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.background-plate.primary-secondary-paint-is-fixed",
+            "contractId": null,
+            "constraintId": null,
+            "evidence": {
+              "resetSurface": "layer"
+            },
+            "message": "Внешний вид Type=Primary и Type=Secondary полностью определяется компонентом, уровнем поверхности и BackgroundColor. Ручные изменения fill или stroke запрещены, даже если новое значение привязано к токену. Производные paint-изменения при переключении Type или BackgroundColor не считаются отдельной кастомизацией.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "11785:53493",
+            "name": "[D] BackgroundPlateSlot",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Type=Primary, Skeleton=False",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "stroke",
+          "message": "Обводка: — → #000000",
+          "referenceValue": null,
+          "actualValue": "#000000",
+          "referenceRawValue": null,
+          "actualRawValue": "#000000",
+          "referenceDisplayValue": null,
+          "actualDisplayValue": "#000000",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "6d5d4dda10be00621991e9b5a0152db4e47f4e2f",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Type": "Primary",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "11785:53493",
+              "nodeName": "[D] BackgroundPlateSlot",
+              "tokenId": "VariableID:be3bf2c65d1f3fd8c66b5d74e95d79a608ee8f72/3541:152",
+              "tokenName": "base-bg/secondary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.primary-secondary-paint-is-fixed",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "fill|styles.fill|stroke|styles.stroke",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Внешний вид Type=Primary и Type=Secondary полностью определяется компонентом, уровнем поверхности и BackgroundColor. Ручные изменения fill или stroke запрещены, даже если новое значение привязано к токену. Производные paint-изменения при переключении Type или BackgroundColor не считаются отдельной кастомизацией.",
+              "remediation": "Сбросьте ручные изменения fill и stroke к effective baseline текущего Type, уровня и BackgroundColor.",
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 50,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.background-plate.primary-secondary-paint-is-fixed",
+            "contractId": null,
+            "constraintId": null,
+            "evidence": {
+              "resetSurface": "layer"
+            },
+            "message": "Внешний вид Type=Primary и Type=Secondary полностью определяется компонентом, уровнем поверхности и BackgroundColor. Ручные изменения fill или stroke запрещены, даже если новое значение привязано к токену. Производные paint-изменения при переключении Type или BackgroundColor не считаются отдельной кастомизацией.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "11785:53493",
+            "name": "[D] BackgroundPlateSlot",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Type=Primary, Skeleton=False",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 16 → 20",
+          "referenceValue": "16",
+          "actualValue": "20",
+          "referenceRawValue": "16",
+          "actualRawValue": "20",
+          "referenceDisplayValue": "16",
+          "actualDisplayValue": "20",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "6d5d4dda10be00621991e9b5a0152db4e47f4e2f",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Type": "Primary",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "11785:53493",
+              "nodeName": "[D] BackgroundPlateSlot",
+              "tokenId": "VariableID:be3bf2c65d1f3fd8c66b5d74e95d79a608ee8f72/3541:152",
+              "tokenName": "base-bg/secondary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "11785:53434",
+        "name": "[D] BackgroundPlate",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BackgroundPlate / [D] BackgroundPlate",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BackgroundPlate",
+        "key": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Position=Level 1 (outer)",
+        "key": "34e9064066253fb2f2d7bc056bb36a2580fd860e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I11785:53434;66402:30698",
+            "name": "[D] Style Level 1",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Position=Level 1 (outer) / [D] Style Level 1",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: base-bg-alt/secondary → base-bg/secondary",
+          "referenceValue": "base-bg-alt/secondary",
+          "actualValue": "base-bg/secondary",
+          "referenceRawValue": "base-bg-alt/secondary",
+          "actualRawValue": "base-bg/secondary",
+          "referenceDisplayValue": "base-bg-alt/secondary",
+          "actualDisplayValue": "base-bg/secondary",
+          "referenceResource": {
+            "name": "base-bg-alt/secondary",
+            "key": "8e2800951104c0afbc2ed28e5331d61aa4214a9a",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "base-bg/secondary",
+            "key": "be3bf2c65d1f3fd8c66b5d74e95d79a608ee8f72",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": {
+            "id": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+            "key": "8e2800951104c0afbc2ed28e5331d61aa4214a9a",
+            "name": "base-bg-alt/secondary",
+            "collectionId": null,
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:be3bf2c65d1f3fd8c66b5d74e95d79a608ee8f72/3541:152",
+            "key": "be3bf2c65d1f3fd8c66b5d74e95d79a608ee8f72",
+            "name": "base-bg/secondary",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "4f38c23d743bed97de0b14c39b4d4eaf5b511a2a",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+            "actualNestedOwnerPath": "Position=Level 1 (outer)",
+            "actualNestedOwnerRelativePath": "[D] Style Level 1",
+            "nestedOwnerComponentKey": "4f38c23d743bed97de0b14c39b4d4eaf5b511a2a",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Position=Level 1 (outer) / [D] Style Level 1",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "BackgroundColor": "base-bg-alt (gray)",
+              "Type": "Primary",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": {
+              "BackgroundColor": "base-bg-alt (gray)",
+              "Type": "Primary",
+              "Skeleton": "False"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11785:53424",
+              "nodeName": "[D] BackgroundPlate",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.primary-secondary-paint-is-fixed",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "fill|styles.fill|stroke|styles.stroke",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Внешний вид Type=Primary и Type=Secondary полностью определяется компонентом, уровнем поверхности и BackgroundColor. Ручные изменения fill или stroke запрещены, даже если новое значение привязано к токену. Производные paint-изменения при переключении Type или BackgroundColor не считаются отдельной кастомизацией.",
+              "remediation": "Сбросьте ручные изменения fill и stroke к effective baseline текущего Type, уровня и BackgroundColor.",
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "composition-contract-violation",
+            "ruleId": "background-plate.composition.surface-paint",
+            "contractId": "background-plate.composition",
+            "constraintId": "surface-paint",
+            "evidence": {
+              "variantProperty": "Type",
+              "variantValue": "Primary",
+              "controlledProperty": "fill",
+              "allowedProperties": []
+            },
+            "message": "Выбранный Type BackgroundPlate не разрешает это изменение поверхности",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I11785:53434;66402:30698",
+            "name": "[D] Style Level 1",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Position=Level 1 (outer) / [D] Style Level 1",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 16 → 24",
+          "referenceValue": 16,
+          "actualValue": "24",
+          "referenceRawValue": 16,
+          "actualRawValue": "24",
+          "referenceDisplayValue": 16,
+          "actualDisplayValue": "24",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "4f38c23d743bed97de0b14c39b4d4eaf5b511a2a",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+            "actualNestedOwnerPath": "Position=Level 1 (outer)",
+            "actualNestedOwnerRelativePath": "[D] Style Level 1",
+            "nestedOwnerComponentKey": "4f38c23d743bed97de0b14c39b4d4eaf5b511a2a",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Position=Level 1 (outer) / [D] Style Level 1",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "BackgroundColor": "base-bg-alt (gray)",
+              "Type": "Primary",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": {
+              "BackgroundColor": "base-bg-alt (gray)",
+              "Type": "Primary",
+              "Skeleton": "False"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11785:53424",
+              "nodeName": "[D] BackgroundPlate",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.radius-is-fixed-by-component-baseline",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "radius|layout.radius|cornerRadius|cornerRadius.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Скругления BackgroundPlate, BackgroundPlateSlot и вложенных Style Level задаются компонентом и его effective baseline. Дизайнер не должен вручную изменять radius/cornerRadius у root-layer BackgroundPlate, BackgroundPlateSlot или Style Level. Любое отличие radius от effective baseline является нарушением, а не допустимой композиционной настройкой.",
+              "remediation": "Сбросьте radius к effective baseline выбранного варианта BackgroundPlate. Не задавайте скругления BackgroundPlate и Style Level вручную.",
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.background-plate.radius-is-fixed-by-component-baseline",
+            "message": "Скругления BackgroundPlate, BackgroundPlateSlot и вложенных Style Level задаются компонентом и его effective baseline. Дизайнер не должен вручную изменять radius/cornerRadius у root-layer BackgroundPlate, BackgroundPlateSlot или Style Level. Любое отличие radius от effective baseline является нарушением, а не допустимой композиционной настройкой.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "11785:53452",
+        "name": "[D][Promo] BackgroundPlate",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BackgroundPlate / [D][Promo] BackgroundPlate",
+        "visible": true
+      },
+      "component": {
+        "name": "[D][Promo] BackgroundPlate",
+        "key": "708600a70f0a11849aec35592e2c6c72d4bad7a1",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Position=Level 1 (outer)",
+        "key": "708600a70f0a11849aec35592e2c6c72d4bad7a1"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I11785:53452;102592:139628",
+            "name": "[D][Promo] Style Level 1",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Position=Level 1 (outer) / [D][Promo] Style Level 1",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: base-bg-alt/secondary → base-bg/secondary",
+          "referenceValue": "base-bg-alt/secondary",
+          "actualValue": "base-bg/secondary",
+          "referenceRawValue": "base-bg-alt/secondary",
+          "actualRawValue": "base-bg/secondary",
+          "referenceDisplayValue": "base-bg-alt/secondary",
+          "actualDisplayValue": "base-bg/secondary",
+          "referenceResource": {
+            "name": "base-bg-alt/secondary",
+            "key": "8e2800951104c0afbc2ed28e5331d61aa4214a9a",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "base-bg/secondary",
+            "key": "be3bf2c65d1f3fd8c66b5d74e95d79a608ee8f72",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": {
+            "id": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+            "key": "8e2800951104c0afbc2ed28e5331d61aa4214a9a",
+            "name": "base-bg-alt/secondary",
+            "collectionId": null,
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:be3bf2c65d1f3fd8c66b5d74e95d79a608ee8f72/3541:152",
+            "key": "be3bf2c65d1f3fd8c66b5d74e95d79a608ee8f72",
+            "name": "base-bg/secondary",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "bac32c5171ecc91da2430f70fba7005199159716",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "708600a70f0a11849aec35592e2c6c72d4bad7a1",
+            "actualNestedOwnerPath": "Position=Level 1 (outer)",
+            "actualNestedOwnerRelativePath": "[D][Promo] Style Level 1",
+            "nestedOwnerComponentKey": "bac32c5171ecc91da2430f70fba7005199159716",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Position=Level 1 (outer) / [D][Promo] Style Level 1",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "BackgroundColor": "base-bg-alt (gray)",
+              "Type": "Primary",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": {
+              "BackgroundColor": "base-bg-alt (gray)",
+              "Type": "Primary",
+              "Skeleton": "False"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11785:53424",
+              "nodeName": "[D] BackgroundPlate",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.primary-secondary-paint-is-fixed",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "fill|styles.fill|stroke|styles.stroke",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Внешний вид Type=Primary и Type=Secondary полностью определяется компонентом, уровнем поверхности и BackgroundColor. Ручные изменения fill или stroke запрещены, даже если новое значение привязано к токену. Производные paint-изменения при переключении Type или BackgroundColor не считаются отдельной кастомизацией.",
+              "remediation": "Сбросьте ручные изменения fill и stroke к effective baseline текущего Type, уровня и BackgroundColor.",
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "composition-contract-violation",
+            "ruleId": "background-plate.composition.surface-paint",
+            "contractId": "background-plate.composition",
+            "constraintId": "surface-paint",
+            "evidence": {
+              "variantProperty": "Type",
+              "variantValue": "Primary",
+              "controlledProperty": "fill",
+              "allowedProperties": []
+            },
+            "message": "Выбранный Type BackgroundPlate не разрешает это изменение поверхности",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I11785:53452;102592:139628",
+            "name": "[D][Promo] Style Level 1",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Position=Level 1 (outer) / [D][Promo] Style Level 1",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 24 → 20",
+          "referenceValue": 24,
+          "actualValue": "20",
+          "referenceRawValue": 24,
+          "actualRawValue": "20",
+          "referenceDisplayValue": 24,
+          "actualDisplayValue": "20",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "bac32c5171ecc91da2430f70fba7005199159716",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "708600a70f0a11849aec35592e2c6c72d4bad7a1",
+            "actualNestedOwnerPath": "Position=Level 1 (outer)",
+            "actualNestedOwnerRelativePath": "[D][Promo] Style Level 1",
+            "nestedOwnerComponentKey": "bac32c5171ecc91da2430f70fba7005199159716",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Position=Level 1 (outer) / [D][Promo] Style Level 1",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "BackgroundColor": "base-bg-alt (gray)",
+              "Type": "Primary",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": {
+              "BackgroundColor": "base-bg-alt (gray)",
+              "Type": "Primary",
+              "Skeleton": "False"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11785:53424",
+              "nodeName": "[D] BackgroundPlate",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.radius-is-fixed-by-component-baseline",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "radius|layout.radius|cornerRadius|cornerRadius.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Скругления BackgroundPlate, BackgroundPlateSlot и вложенных Style Level задаются компонентом и его effective baseline. Дизайнер не должен вручную изменять radius/cornerRadius у root-layer BackgroundPlate, BackgroundPlateSlot или Style Level. Любое отличие radius от effective baseline является нарушением, а не допустимой композиционной настройкой.",
+              "remediation": "Сбросьте radius к effective baseline выбранного варианта BackgroundPlate. Не задавайте скругления BackgroundPlate и Style Level вручную.",
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.background-plate.radius-is-fixed-by-component-baseline",
+            "message": "Скругления BackgroundPlate, BackgroundPlateSlot и вложенных Style Level задаются компонентом и его effective baseline. Дизайнер не должен вручную изменять radius/cornerRadius у root-layer BackgroundPlate, BackgroundPlateSlot или Style Level. Любое отличие radius от effective baseline является нарушением, а не допустимой композиционной настройкой.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "11785:53478",
+        "name": "[D] BackgroundPlateSlot",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BackgroundPlate / [D] BackgroundPlateSlot",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BackgroundPlateSlot",
+        "key": "c9a0f1b41aec77e1c825515aa0a9a2743028b541",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Type=Secondary, Skeleton=False",
+        "key": "c9a0f1b41aec77e1c825515aa0a9a2743028b541"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I11785:53478;136846:8893",
+            "name": "Slot",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Type=Secondary, Skeleton=False / Slot",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 12 → 0",
+          "referenceValue": "12",
+          "actualValue": "0",
+          "referenceRawValue": "12",
+          "actualRawValue": "0",
+          "referenceDisplayValue": "12",
+          "actualDisplayValue": "0",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "c9a0f1b41aec77e1c825515aa0a9a2743028b541",
+            "actualNestedOwnerPath": "Type=Secondary, Skeleton=False",
+            "actualNestedOwnerRelativePath": "Slot",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Type": "Secondary",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11785:53424",
+              "nodeName": "[D] BackgroundPlate",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "11785:53494",
+        "name": "[D] BackgroundPlateSlot",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BackgroundPlate / [D] BackgroundPlateSlot",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BackgroundPlateSlot",
+        "key": "c9a0f1b41aec77e1c825515aa0a9a2743028b541",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Type=Secondary, Skeleton=False",
+        "key": "c9a0f1b41aec77e1c825515aa0a9a2743028b541"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "11785:53494",
+            "name": "[D] BackgroundPlateSlot",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Type=Secondary, Skeleton=False",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: neutral-translucent/100 → neutral-translucent/700",
+          "referenceValue": "neutral-translucent/100",
+          "actualValue": "neutral-translucent/700",
+          "referenceRawValue": "neutral-translucent/100",
+          "actualRawValue": "neutral-translucent/700",
+          "referenceDisplayValue": "neutral-translucent/100",
+          "actualDisplayValue": "neutral-translucent/700",
+          "referenceResource": {
+            "name": "neutral-translucent/100",
+            "key": "8981b6bfc89935b939b249245e60158b88ca252e",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "neutral-translucent/700",
+            "key": "faac436b14cc199cfe97243b05af867af9ecb365",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": {
+            "id": "VariableID:8981b6bfc89935b939b249245e60158b88ca252e/3541:131",
+            "key": "8981b6bfc89935b939b249245e60158b88ca252e",
+            "name": "neutral-translucent/100",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:faac436b14cc199cfe97243b05af867af9ecb365/3541:130",
+            "key": "faac436b14cc199cfe97243b05af867af9ecb365",
+            "name": "neutral-translucent/700",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "c9a0f1b41aec77e1c825515aa0a9a2743028b541",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Type": "Secondary",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11785:53424",
+              "nodeName": "[D] BackgroundPlate",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.primary-secondary-paint-is-fixed",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "fill|styles.fill|stroke|styles.stroke",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Внешний вид Type=Primary и Type=Secondary полностью определяется компонентом, уровнем поверхности и BackgroundColor. Ручные изменения fill или stroke запрещены, даже если новое значение привязано к токену. Производные paint-изменения при переключении Type или BackgroundColor не считаются отдельной кастомизацией.",
+              "remediation": "Сбросьте ручные изменения fill и stroke к effective baseline текущего Type, уровня и BackgroundColor.",
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.background-plate.primary-secondary-paint-is-fixed",
+            "contractId": null,
+            "constraintId": null,
+            "evidence": {
+              "resetSurface": "layer"
+            },
+            "message": "Внешний вид Type=Primary и Type=Secondary полностью определяется компонентом, уровнем поверхности и BackgroundColor. Ручные изменения fill или stroke запрещены, даже если новое значение привязано к токену. Производные paint-изменения при переключении Type или BackgroundColor не считаются отдельной кастомизацией.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "11785:53494",
+            "name": "[D] BackgroundPlateSlot",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Type=Secondary, Skeleton=False",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "stroke",
+          "message": "Обводка: — → #000000",
+          "referenceValue": null,
+          "actualValue": "#000000",
+          "referenceRawValue": null,
+          "actualRawValue": "#000000",
+          "referenceDisplayValue": null,
+          "actualDisplayValue": "#000000",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "c9a0f1b41aec77e1c825515aa0a9a2743028b541",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Type": "Secondary",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11785:53424",
+              "nodeName": "[D] BackgroundPlate",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.primary-secondary-paint-is-fixed",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "fill|styles.fill|stroke|styles.stroke",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Внешний вид Type=Primary и Type=Secondary полностью определяется компонентом, уровнем поверхности и BackgroundColor. Ручные изменения fill или stroke запрещены, даже если новое значение привязано к токену. Производные paint-изменения при переключении Type или BackgroundColor не считаются отдельной кастомизацией.",
+              "remediation": "Сбросьте ручные изменения fill и stroke к effective baseline текущего Type, уровня и BackgroundColor.",
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 50,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.background-plate.primary-secondary-paint-is-fixed",
+            "contractId": null,
+            "constraintId": null,
+            "evidence": {
+              "resetSurface": "layer"
+            },
+            "message": "Внешний вид Type=Primary и Type=Secondary полностью определяется компонентом, уровнем поверхности и BackgroundColor. Ручные изменения fill или stroke запрещены, даже если новое значение привязано к токену. Производные paint-изменения при переключении Type или BackgroundColor не считаются отдельной кастомизацией.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "11785:53494",
+            "name": "[D] BackgroundPlateSlot",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Type=Secondary, Skeleton=False",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 16 → 20",
+          "referenceValue": "16",
+          "actualValue": "20",
+          "referenceRawValue": "16",
+          "actualRawValue": "20",
+          "referenceDisplayValue": "16",
+          "actualDisplayValue": "20",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "c9a0f1b41aec77e1c825515aa0a9a2743028b541",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Type": "Secondary",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11785:53424",
+              "nodeName": "[D] BackgroundPlate",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I11785:53494;136846:8893",
+            "name": "Slot",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Type=Secondary, Skeleton=False / Slot",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 12 → 0",
+          "referenceValue": "12",
+          "actualValue": "0",
+          "referenceRawValue": "12",
+          "actualRawValue": "0",
+          "referenceDisplayValue": "12",
+          "actualDisplayValue": "0",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "c9a0f1b41aec77e1c825515aa0a9a2743028b541",
+            "actualNestedOwnerPath": "Type=Secondary, Skeleton=False",
+            "actualNestedOwnerRelativePath": "Slot",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Type": "Secondary",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11785:53424",
+              "nodeName": "[D] BackgroundPlate",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "11785:53435",
+        "name": "[D] BackgroundPlate",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BackgroundPlate / [D] BackgroundPlate",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BackgroundPlate",
+        "key": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Position=Level 1 (outer)",
+        "key": "34e9064066253fb2f2d7bc056bb36a2580fd860e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I11785:53435;66402:30698",
+            "name": "[D] Style Level 1",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Position=Level 1 (outer) / [D] Style Level 1",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: neutral-translucent/100 → neutral_inverted/700",
+          "referenceValue": "neutral-translucent/100",
+          "actualValue": "neutral_inverted/700",
+          "referenceRawValue": "neutral-translucent/100",
+          "actualRawValue": "neutral_inverted/700",
+          "referenceDisplayValue": "neutral-translucent/100",
+          "actualDisplayValue": "neutral_inverted/700",
+          "referenceResource": {
+            "name": "neutral-translucent/100",
+            "key": "8981b6bfc89935b939b249245e60158b88ca252e",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "neutral_inverted/700",
+            "key": "4bf262579530751578646e0e52eb155cd40d0cd4",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": {
+            "id": "VariableID:8981b6bfc89935b939b249245e60158b88ca252e/3541:131",
+            "key": "8981b6bfc89935b939b249245e60158b88ca252e",
+            "name": "neutral-translucent/100",
+            "collectionId": null,
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:4bf262579530751578646e0e52eb155cd40d0cd4/3541:161",
+            "key": "4bf262579530751578646e0e52eb155cd40d0cd4",
+            "name": "neutral_inverted/700",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "d47f9b1b979c1a5ab90bfbba6a2ace9becc368d1",
+            "referenceComponentKey": "adb65a62cde9ebedc5d0d41d2d77cd63e71e0745",
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+            "actualNestedOwnerPath": "Position=Level 1 (outer)",
+            "actualNestedOwnerRelativePath": "[D] Style Level 1",
+            "nestedOwnerComponentKey": "adb65a62cde9ebedc5d0d41d2d77cd63e71e0745",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "Position=Level 1 (outer) / [D] Style Level 1",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "BackgroundColor": "base-bg-alt (gray)",
+              "Type": "Secondary",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": {
+              "BackgroundColor": "base-bg-alt (gray)",
+              "Skeleton": "False",
+              "Type": "Primary"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11785:53424",
+              "nodeName": "[D] BackgroundPlate",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.primary-secondary-paint-is-fixed",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "fill|styles.fill|stroke|styles.stroke",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Внешний вид Type=Primary и Type=Secondary полностью определяется компонентом, уровнем поверхности и BackgroundColor. Ручные изменения fill или stroke запрещены, даже если новое значение привязано к токену. Производные paint-изменения при переключении Type или BackgroundColor не считаются отдельной кастомизацией.",
+              "remediation": "Сбросьте ручные изменения fill и stroke к effective baseline текущего Type, уровня и BackgroundColor.",
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "composition-contract-violation",
+            "ruleId": "background-plate.composition.surface-paint",
+            "contractId": "background-plate.composition",
+            "constraintId": "surface-paint",
+            "evidence": {
+              "variantProperty": "Type",
+              "variantValue": "Secondary",
+              "controlledProperty": "fill",
+              "allowedProperties": []
+            },
+            "message": "Выбранный Type BackgroundPlate не разрешает это изменение поверхности",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I11785:53435;66402:30698",
+            "name": "[D] Style Level 1",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Position=Level 1 (outer) / [D] Style Level 1",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 16 → 24",
+          "referenceValue": 16,
+          "actualValue": "24",
+          "referenceRawValue": 16,
+          "actualRawValue": "24",
+          "referenceDisplayValue": 16,
+          "actualDisplayValue": "24",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "d47f9b1b979c1a5ab90bfbba6a2ace9becc368d1",
+            "referenceComponentKey": "adb65a62cde9ebedc5d0d41d2d77cd63e71e0745",
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+            "actualNestedOwnerPath": "Position=Level 1 (outer)",
+            "actualNestedOwnerRelativePath": "[D] Style Level 1",
+            "nestedOwnerComponentKey": "adb65a62cde9ebedc5d0d41d2d77cd63e71e0745",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "Position=Level 1 (outer) / [D] Style Level 1",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "BackgroundColor": "base-bg-alt (gray)",
+              "Type": "Secondary",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": {
+              "BackgroundColor": "base-bg-alt (gray)",
+              "Skeleton": "False",
+              "Type": "Primary"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11785:53424",
+              "nodeName": "[D] BackgroundPlate",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.radius-is-fixed-by-component-baseline",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "radius|layout.radius|cornerRadius|cornerRadius.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Скругления BackgroundPlate, BackgroundPlateSlot и вложенных Style Level задаются компонентом и его effective baseline. Дизайнер не должен вручную изменять radius/cornerRadius у root-layer BackgroundPlate, BackgroundPlateSlot или Style Level. Любое отличие radius от effective baseline является нарушением, а не допустимой композиционной настройкой.",
+              "remediation": "Сбросьте radius к effective baseline выбранного варианта BackgroundPlate. Не задавайте скругления BackgroundPlate и Style Level вручную.",
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "catalog-host",
+            "reasonCode": "differs-from-materialized-host-value",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Значение не соответствует структуре родительского компонента",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "11785:53454",
+        "name": "[D][Promo] BackgroundPlate",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BackgroundPlate / [D][Promo] BackgroundPlate",
+        "visible": true
+      },
+      "component": {
+        "name": "[D][Promo] BackgroundPlate",
+        "key": "708600a70f0a11849aec35592e2c6c72d4bad7a1",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Position=Level 1 (outer)",
+        "key": "708600a70f0a11849aec35592e2c6c72d4bad7a1"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I11785:53454;102592:139628",
+            "name": "[D][Promo] Style Level 1",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Position=Level 1 (outer) / [D][Promo] Style Level 1",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: neutral-translucent/100 → neutral-translucent/400",
+          "referenceValue": "neutral-translucent/100",
+          "actualValue": "neutral-translucent/400",
+          "referenceRawValue": "neutral-translucent/100",
+          "actualRawValue": "neutral-translucent/400",
+          "referenceDisplayValue": "neutral-translucent/100",
+          "actualDisplayValue": "neutral-translucent/400",
+          "referenceResource": {
+            "name": "neutral-translucent/100",
+            "key": "8981b6bfc89935b939b249245e60158b88ca252e",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "neutral-translucent/400",
+            "key": "87bb2e45a3a8802ee00fa824bdafe8d088f1f94f",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": {
+            "id": "VariableID:8981b6bfc89935b939b249245e60158b88ca252e/3541:131",
+            "key": "8981b6bfc89935b939b249245e60158b88ca252e",
+            "name": "neutral-translucent/100",
+            "collectionId": null,
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:87bb2e45a3a8802ee00fa824bdafe8d088f1f94f/3541:174",
+            "key": "87bb2e45a3a8802ee00fa824bdafe8d088f1f94f",
+            "name": "neutral-translucent/400",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "d6f3213be3aba875706dd61c0935360358f1010e",
+            "referenceComponentKey": "2b46e94cdecdab7d4cb977055c0405b2f6204127",
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "708600a70f0a11849aec35592e2c6c72d4bad7a1",
+            "actualNestedOwnerPath": "Position=Level 1 (outer)",
+            "actualNestedOwnerRelativePath": "[D][Promo] Style Level 1",
+            "nestedOwnerComponentKey": "2b46e94cdecdab7d4cb977055c0405b2f6204127",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "Position=Level 1 (outer) / [D][Promo] Style Level 1",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "BackgroundColor": "base-bg-alt (gray)",
+              "Type": "Secondary",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": {
+              "BackgroundColor": "base-bg-alt (gray)",
+              "Skeleton": "False",
+              "Type": "Primary"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11785:53424",
+              "nodeName": "[D] BackgroundPlate",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.primary-secondary-paint-is-fixed",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "fill|styles.fill|stroke|styles.stroke",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Внешний вид Type=Primary и Type=Secondary полностью определяется компонентом, уровнем поверхности и BackgroundColor. Ручные изменения fill или stroke запрещены, даже если новое значение привязано к токену. Производные paint-изменения при переключении Type или BackgroundColor не считаются отдельной кастомизацией.",
+              "remediation": "Сбросьте ручные изменения fill и stroke к effective baseline текущего Type, уровня и BackgroundColor.",
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "composition-contract-violation",
+            "ruleId": "background-plate.composition.surface-paint",
+            "contractId": "background-plate.composition",
+            "constraintId": "surface-paint",
+            "evidence": {
+              "variantProperty": "Type",
+              "variantValue": "Secondary",
+              "controlledProperty": "fill",
+              "allowedProperties": []
+            },
+            "message": "Выбранный Type BackgroundPlate не разрешает это изменение поверхности",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I11785:53454;102592:139628",
+            "name": "[D][Promo] Style Level 1",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Position=Level 1 (outer) / [D][Promo] Style Level 1",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 24 → 20",
+          "referenceValue": 24,
+          "actualValue": "20",
+          "referenceRawValue": 24,
+          "actualRawValue": "20",
+          "referenceDisplayValue": 24,
+          "actualDisplayValue": "20",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "d6f3213be3aba875706dd61c0935360358f1010e",
+            "referenceComponentKey": "2b46e94cdecdab7d4cb977055c0405b2f6204127",
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "708600a70f0a11849aec35592e2c6c72d4bad7a1",
+            "actualNestedOwnerPath": "Position=Level 1 (outer)",
+            "actualNestedOwnerRelativePath": "[D][Promo] Style Level 1",
+            "nestedOwnerComponentKey": "2b46e94cdecdab7d4cb977055c0405b2f6204127",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "Position=Level 1 (outer) / [D][Promo] Style Level 1",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "BackgroundColor": "base-bg-alt (gray)",
+              "Type": "Secondary",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": {
+              "BackgroundColor": "base-bg-alt (gray)",
+              "Skeleton": "False",
+              "Type": "Primary"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11785:53424",
+              "nodeName": "[D] BackgroundPlate",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.radius-is-fixed-by-component-baseline",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "radius|layout.radius|cornerRadius|cornerRadius.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Скругления BackgroundPlate, BackgroundPlateSlot и вложенных Style Level задаются компонентом и его effective baseline. Дизайнер не должен вручную изменять radius/cornerRadius у root-layer BackgroundPlate, BackgroundPlateSlot или Style Level. Любое отличие radius от effective baseline является нарушением, а не допустимой композиционной настройкой.",
+              "remediation": "Сбросьте radius к effective baseline выбранного варианта BackgroundPlate. Не задавайте скругления BackgroundPlate и Style Level вручную.",
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "catalog-host",
+            "reasonCode": "differs-from-materialized-host-value",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Значение не соответствует структуре родительского компонента",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "11785:53479",
+        "name": "[D] BackgroundPlateSlot",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BackgroundPlate / [D] BackgroundPlateSlot",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BackgroundPlateSlot",
+        "key": "e62c163c65ef9a3cf2ea2fd22b230e23dddf97b9",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Type=Colored, Skeleton=False",
+        "key": "e62c163c65ef9a3cf2ea2fd22b230e23dddf97b9"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I11785:53479;136846:8895",
+            "name": "Slot",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Type=Colored, Skeleton=False / Slot",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 12 → 0",
+          "referenceValue": "12",
+          "actualValue": "0",
+          "referenceRawValue": "12",
+          "actualRawValue": "0",
+          "referenceDisplayValue": "12",
+          "actualDisplayValue": "0",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "e62c163c65ef9a3cf2ea2fd22b230e23dddf97b9",
+            "actualNestedOwnerPath": "Type=Colored, Skeleton=False",
+            "actualNestedOwnerRelativePath": "Slot",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Type": "Colored",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "contrast",
+              "source": "ancestor-fill-color",
+              "nodeId": "11785:53479",
+              "nodeName": "[D] BackgroundPlateSlot",
+              "tokenId": "VariableID:c1c4bc13ded482f172aa2eee8a5e3d28d6179ff3/3541:106",
+              "tokenName": "status/attention",
+              "color": "#FA9313"
+            }
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "11785:53495",
+        "name": "[D] BackgroundPlateSlot",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BackgroundPlate / [D] BackgroundPlateSlot",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BackgroundPlateSlot",
+        "key": "e62c163c65ef9a3cf2ea2fd22b230e23dddf97b9",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Type=Colored, Skeleton=False",
+        "key": "e62c163c65ef9a3cf2ea2fd22b230e23dddf97b9"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "11785:53495",
+            "name": "[D] BackgroundPlateSlot",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Type=Colored, Skeleton=False",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "stroke",
+          "message": "Обводка: — → #000000",
+          "referenceValue": null,
+          "actualValue": "#000000",
+          "referenceRawValue": null,
+          "actualRawValue": "#000000",
+          "referenceDisplayValue": null,
+          "actualDisplayValue": "#000000",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "e62c163c65ef9a3cf2ea2fd22b230e23dddf97b9",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Type": "Colored",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "contrast",
+              "source": "ancestor-fill-color",
+              "nodeId": "11785:53495",
+              "nodeName": "[D] BackgroundPlateSlot",
+              "tokenId": "VariableID:c1c4bc13ded482f172aa2eee8a5e3d28d6179ff3/3541:106",
+              "tokenName": "status/attention",
+              "color": "#FA9313"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.colored-uses-fill-without-stroke",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "fill|styles.fill|stroke|styles.stroke",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Type=Colored формируется только видимой токенизированной заливкой. Любая видимая обводка, включая привязанную к цветовому токену, нарушает контракт.",
+              "remediation": "Удалите обводку и оставьте для Type=Colored только заливку, привязанную к цветовому токену.",
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 50,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-required-paint-state",
+            "ruleId": "component:web-corp.background-plate.colored-uses-fill-without-stroke",
+            "contractId": null,
+            "constraintId": null,
+            "evidence": {
+              "resetSurface": "layer",
+              "property": "stroke",
+              "requiredPaintState": "none-or-not-visible"
+            },
+            "message": "Type=Colored формируется только видимой токенизированной заливкой. Любая видимая обводка, включая привязанную к цветовому токену, нарушает контракт.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I11785:53495;136846:8895",
+            "name": "Slot",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Type=Colored, Skeleton=False / Slot",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 12 → 0",
+          "referenceValue": "12",
+          "actualValue": "0",
+          "referenceRawValue": "12",
+          "actualRawValue": "0",
+          "referenceDisplayValue": "12",
+          "actualDisplayValue": "0",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "e62c163c65ef9a3cf2ea2fd22b230e23dddf97b9",
+            "actualNestedOwnerPath": "Type=Colored, Skeleton=False",
+            "actualNestedOwnerRelativePath": "Slot",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Type": "Colored",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "contrast",
+              "source": "ancestor-fill-color",
+              "nodeId": "11785:53495",
+              "nodeName": "[D] BackgroundPlateSlot",
+              "tokenId": "VariableID:c1c4bc13ded482f172aa2eee8a5e3d28d6179ff3/3541:106",
+              "tokenName": "status/attention",
+              "color": "#FA9313"
+            }
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "11785:53436",
+        "name": "[D] BackgroundPlate",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BackgroundPlate / [D] BackgroundPlate",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BackgroundPlate",
+        "key": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Position=Level 1 (outer)",
+        "key": "34e9064066253fb2f2d7bc056bb36a2580fd860e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I11785:53436;66402:30698",
+            "name": "[D] Style Level 1",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Position=Level 1 (outer) / [D] Style Level 1",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "stroke",
+          "message": "Обводка: — → #000000",
+          "referenceValue": null,
+          "actualValue": "#000000",
+          "referenceRawValue": null,
+          "actualRawValue": "#000000",
+          "referenceDisplayValue": null,
+          "actualDisplayValue": "#000000",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "86fe66bc39733dc333904e6428c2cb1698f3ad96",
+            "referenceComponentKey": "adb65a62cde9ebedc5d0d41d2d77cd63e71e0745",
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+            "actualNestedOwnerPath": "Position=Level 1 (outer)",
+            "actualNestedOwnerRelativePath": "[D] Style Level 1",
+            "nestedOwnerComponentKey": "adb65a62cde9ebedc5d0d41d2d77cd63e71e0745",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "Position=Level 1 (outer) / [D] Style Level 1",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "BackgroundColor": "base-bg-alt (gray)",
+              "Type": "Colored",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": {
+              "BackgroundColor": "base-bg-alt (gray)",
+              "Skeleton": "False",
+              "Type": "Primary"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11785:53424",
+              "nodeName": "[D] BackgroundPlate",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.colored-and-border-use-color-tokens",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "fill|stroke|variant.BackgroundColor",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Для Type=Colored цвет заливки должен быть задан через цветовой токен дизайн-системы. Для Type=Border через цветовой токен задаётся цвет обводки, а видимая заливка запрещена отдельным правилом. Конкретный цвет может отличаться по смыслу поверхности, но raw fill или raw stroke без требуемого token binding являются нарушением.",
+              "remediation": "Для Colored привяжите fill к цветовому токену. Для Border удалите fill и привяжите stroke к цветовому токену.",
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.background-plate.colored-uses-fill-without-stroke",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "fill|styles.fill|stroke|styles.stroke",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Type=Colored формируется только видимой токенизированной заливкой. Любая видимая обводка, включая привязанную к цветовому токену, нарушает контракт.",
+              "remediation": "Удалите обводку и оставьте для Type=Colored только заливку, привязанную к цветовому токену.",
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 50,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-required-paint-state",
+            "ruleId": "component:web-corp.background-plate.colored-uses-fill-without-stroke",
+            "contractId": null,
+            "constraintId": null,
+            "evidence": {
+              "resetSurface": "layer",
+              "property": "stroke",
+              "requiredPaintState": "none-or-not-visible"
+            },
+            "message": "Type=Colored формируется только видимой токенизированной заливкой. Любая видимая обводка, включая привязанную к цветовому токену, нарушает контракт.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I11785:53436;66402:30698",
+            "name": "[D] Style Level 1",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Position=Level 1 (outer) / [D] Style Level 1",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 16 → 24",
+          "referenceValue": 16,
+          "actualValue": "24",
+          "referenceRawValue": 16,
+          "actualRawValue": "24",
+          "referenceDisplayValue": 16,
+          "actualDisplayValue": "24",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "86fe66bc39733dc333904e6428c2cb1698f3ad96",
+            "referenceComponentKey": "adb65a62cde9ebedc5d0d41d2d77cd63e71e0745",
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+            "actualNestedOwnerPath": "Position=Level 1 (outer)",
+            "actualNestedOwnerRelativePath": "[D] Style Level 1",
+            "nestedOwnerComponentKey": "adb65a62cde9ebedc5d0d41d2d77cd63e71e0745",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "Position=Level 1 (outer) / [D] Style Level 1",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "BackgroundColor": "base-bg-alt (gray)",
+              "Type": "Colored",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": {
+              "BackgroundColor": "base-bg-alt (gray)",
+              "Skeleton": "False",
+              "Type": "Primary"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11785:53424",
+              "nodeName": "[D] BackgroundPlate",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.radius-is-fixed-by-component-baseline",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "radius|layout.radius|cornerRadius|cornerRadius.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Скругления BackgroundPlate, BackgroundPlateSlot и вложенных Style Level задаются компонентом и его effective baseline. Дизайнер не должен вручную изменять radius/cornerRadius у root-layer BackgroundPlate, BackgroundPlateSlot или Style Level. Любое отличие radius от effective baseline является нарушением, а не допустимой композиционной настройкой.",
+              "remediation": "Сбросьте radius к effective baseline выбранного варианта BackgroundPlate. Не задавайте скругления BackgroundPlate и Style Level вручную.",
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "catalog-host",
+            "reasonCode": "differs-from-materialized-host-value",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Значение не соответствует структуре родительского компонента",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "11785:53456",
+        "name": "[D][Promo] BackgroundPlate",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BackgroundPlate / [D][Promo] BackgroundPlate",
+        "visible": true
+      },
+      "component": {
+        "name": "[D][Promo] BackgroundPlate",
+        "key": "708600a70f0a11849aec35592e2c6c72d4bad7a1",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Position=Level 1 (outer)",
+        "key": "708600a70f0a11849aec35592e2c6c72d4bad7a1"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I11785:53456;102592:139628",
+            "name": "[D][Promo] Style Level 1",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Position=Level 1 (outer) / [D][Promo] Style Level 1",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "stroke",
+          "message": "Обводка: — → #000000",
+          "referenceValue": null,
+          "actualValue": "#000000",
+          "referenceRawValue": null,
+          "actualRawValue": "#000000",
+          "referenceDisplayValue": null,
+          "actualDisplayValue": "#000000",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "bac32c5171ecc91da2430f70fba7005199159716",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "708600a70f0a11849aec35592e2c6c72d4bad7a1",
+            "actualNestedOwnerPath": "Position=Level 1 (outer)",
+            "actualNestedOwnerRelativePath": "[D][Promo] Style Level 1",
+            "nestedOwnerComponentKey": "bac32c5171ecc91da2430f70fba7005199159716",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Position=Level 1 (outer) / [D][Promo] Style Level 1",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "BackgroundColor": "base-bg-alt (gray)",
+              "Type": "Primary",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": {
+              "BackgroundColor": "base-bg-alt (gray)",
+              "Type": "Primary",
+              "Skeleton": "False"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11785:53424",
+              "nodeName": "[D] BackgroundPlate",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.primary-secondary-paint-is-fixed",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "fill|styles.fill|stroke|styles.stroke",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Внешний вид Type=Primary и Type=Secondary полностью определяется компонентом, уровнем поверхности и BackgroundColor. Ручные изменения fill или stroke запрещены, даже если новое значение привязано к токену. Производные paint-изменения при переключении Type или BackgroundColor не считаются отдельной кастомизацией.",
+              "remediation": "Сбросьте ручные изменения fill и stroke к effective baseline текущего Type, уровня и BackgroundColor.",
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 50,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "composition-contract-violation",
+            "ruleId": "background-plate.composition.surface-paint",
+            "contractId": "background-plate.composition",
+            "constraintId": "surface-paint",
+            "evidence": {
+              "variantProperty": "Type",
+              "variantValue": "Primary",
+              "controlledProperty": "stroke",
+              "allowedProperties": []
+            },
+            "message": "Выбранный Type BackgroundPlate не разрешает это изменение поверхности",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I11785:53456;102592:139628",
+            "name": "[D][Promo] Style Level 1",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Position=Level 1 (outer) / [D][Promo] Style Level 1",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 24 → 20",
+          "referenceValue": 24,
+          "actualValue": "20",
+          "referenceRawValue": 24,
+          "actualRawValue": "20",
+          "referenceDisplayValue": 24,
+          "actualDisplayValue": "20",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "bac32c5171ecc91da2430f70fba7005199159716",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "708600a70f0a11849aec35592e2c6c72d4bad7a1",
+            "actualNestedOwnerPath": "Position=Level 1 (outer)",
+            "actualNestedOwnerRelativePath": "[D][Promo] Style Level 1",
+            "nestedOwnerComponentKey": "bac32c5171ecc91da2430f70fba7005199159716",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Position=Level 1 (outer) / [D][Promo] Style Level 1",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "BackgroundColor": "base-bg-alt (gray)",
+              "Type": "Primary",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": {
+              "BackgroundColor": "base-bg-alt (gray)",
+              "Type": "Primary",
+              "Skeleton": "False"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11785:53424",
+              "nodeName": "[D] BackgroundPlate",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.radius-is-fixed-by-component-baseline",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "radius|layout.radius|cornerRadius|cornerRadius.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Скругления BackgroundPlate, BackgroundPlateSlot и вложенных Style Level задаются компонентом и его effective baseline. Дизайнер не должен вручную изменять radius/cornerRadius у root-layer BackgroundPlate, BackgroundPlateSlot или Style Level. Любое отличие radius от effective baseline является нарушением, а не допустимой композиционной настройкой.",
+              "remediation": "Сбросьте radius к effective baseline выбранного варианта BackgroundPlate. Не задавайте скругления BackgroundPlate и Style Level вручную.",
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.background-plate.radius-is-fixed-by-component-baseline",
+            "message": "Скругления BackgroundPlate, BackgroundPlateSlot и вложенных Style Level задаются компонентом и его effective baseline. Дизайнер не должен вручную изменять radius/cornerRadius у root-layer BackgroundPlate, BackgroundPlateSlot или Style Level. Любое отличие radius от effective baseline является нарушением, а не допустимой композиционной настройкой.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "11785:53480",
+        "name": "[D] BackgroundPlateSlot",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BackgroundPlate / [D] BackgroundPlateSlot",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BackgroundPlateSlot",
+        "key": "657d2443aa657aa3448b45937511f8f12ac5fd1d",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Type=Border, Skeleton=False",
+        "key": "657d2443aa657aa3448b45937511f8f12ac5fd1d"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "11785:53480",
+            "name": "[D] BackgroundPlateSlot",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Type=Border, Skeleton=False",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "stroke",
+          "message": "обводка: neutral-translucent/300 → neutral-translucent/1300",
+          "referenceValue": "neutral-translucent/300",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "neutral-translucent/300",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "neutral-translucent/300",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": {
+            "name": "neutral-translucent/300",
+            "key": "d344a6475fd206b89cf76bef3272e63e04bdf26d",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": {
+            "id": "VariableID:d344a6475fd206b89cf76bef3272e63e04bdf26d/3541:122",
+            "key": "d344a6475fd206b89cf76bef3272e63e04bdf26d",
+            "name": "neutral-translucent/300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "657d2443aa657aa3448b45937511f8f12ac5fd1d",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Type": "Border",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11785:53424",
+              "nodeName": "[D] BackgroundPlate",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.border-stroke-is-designer-controlled",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "stroke|styles.stroke|stroke.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Для Type=Border дизайнер может изменять цвет, толщину, положение и другие параметры обводки. Отличие stroke от baseline не является нарушением.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 50,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I11785:53480;136846:8897",
+            "name": "Slot",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Type=Border, Skeleton=False / Slot",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 12 → 0",
+          "referenceValue": "12",
+          "actualValue": "0",
+          "referenceRawValue": "12",
+          "actualRawValue": "0",
+          "referenceDisplayValue": "12",
+          "actualDisplayValue": "0",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "657d2443aa657aa3448b45937511f8f12ac5fd1d",
+            "actualNestedOwnerPath": "Type=Border, Skeleton=False",
+            "actualNestedOwnerRelativePath": "Slot",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Type": "Border",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11785:53424",
+              "nodeName": "[D] BackgroundPlate",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "11785:53496",
+        "name": "[D] BackgroundPlateSlot",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BackgroundPlate / [D] BackgroundPlateSlot",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BackgroundPlateSlot",
+        "key": "657d2443aa657aa3448b45937511f8f12ac5fd1d",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Type=Border, Skeleton=False",
+        "key": "657d2443aa657aa3448b45937511f8f12ac5fd1d"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "11785:53496",
+            "name": "[D] BackgroundPlateSlot",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Type=Border, Skeleton=False",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: — → #FFFFFF",
+          "referenceValue": null,
+          "actualValue": "#FFFFFF",
+          "referenceRawValue": null,
+          "actualRawValue": "#FFFFFF",
+          "referenceDisplayValue": null,
+          "actualDisplayValue": "#FFFFFF",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "657d2443aa657aa3448b45937511f8f12ac5fd1d",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Type": "Border",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11785:53496",
+              "nodeName": "[D] BackgroundPlateSlot",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.border-has-no-visible-fill",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "fill|styles.fill",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Type=Border всегда используется без видимой заливки. Любая заливка, включая привязанную к цветовому токену, нарушает контракт. Визуальная поверхность Border формируется только обводкой.",
+              "remediation": "Удалите заливку у Type=Border и оставьте только токенизированную обводку.",
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-required-paint-state",
+            "ruleId": "component:web-corp.background-plate.border-has-no-visible-fill",
+            "contractId": null,
+            "constraintId": null,
+            "evidence": {
+              "resetSurface": "layer",
+              "property": "fill",
+              "requiredPaintState": "none-or-not-visible"
+            },
+            "message": "Type=Border всегда используется без видимой заливки. Любая заливка, включая привязанную к цветовому токену, нарушает контракт. Визуальная поверхность Border формируется только обводкой.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "11785:53496",
+            "name": "[D] BackgroundPlateSlot",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Type=Border, Skeleton=False",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "stroke",
+          "message": "обводка: neutral-translucent/300 → neutral-translucent/1300",
+          "referenceValue": "neutral-translucent/300",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "neutral-translucent/300",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "neutral-translucent/300",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": {
+            "name": "neutral-translucent/300",
+            "key": "d344a6475fd206b89cf76bef3272e63e04bdf26d",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": {
+            "id": "VariableID:d344a6475fd206b89cf76bef3272e63e04bdf26d/3541:122",
+            "key": "d344a6475fd206b89cf76bef3272e63e04bdf26d",
+            "name": "neutral-translucent/300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "657d2443aa657aa3448b45937511f8f12ac5fd1d",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Type": "Border",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11785:53496",
+              "nodeName": "[D] BackgroundPlateSlot",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.border-stroke-is-designer-controlled",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "stroke|styles.stroke|stroke.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Для Type=Border дизайнер может изменять цвет, толщину, положение и другие параметры обводки. Отличие stroke от baseline не является нарушением.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 50,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I11785:53496;136846:8897",
+            "name": "Slot",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Type=Border, Skeleton=False / Slot",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 12 → 0",
+          "referenceValue": "12",
+          "actualValue": "0",
+          "referenceRawValue": "12",
+          "actualRawValue": "0",
+          "referenceDisplayValue": "12",
+          "actualDisplayValue": "0",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "657d2443aa657aa3448b45937511f8f12ac5fd1d",
+            "actualNestedOwnerPath": "Type=Border, Skeleton=False",
+            "actualNestedOwnerRelativePath": "Slot",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Type": "Border",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11785:53496",
+              "nodeName": "[D] BackgroundPlateSlot",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "11785:53437",
+        "name": "[D] BackgroundPlate",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BackgroundPlate / [D] BackgroundPlate",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BackgroundPlate",
+        "key": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Position=Level 1 (outer)",
+        "key": "34e9064066253fb2f2d7bc056bb36a2580fd860e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I11785:53437;66402:30698",
+            "name": "[D] Style Level 1",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Position=Level 1 (outer) / [D] Style Level 1",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: — → #FFFFFF",
+          "referenceValue": null,
+          "actualValue": "#FFFFFF",
+          "referenceRawValue": null,
+          "actualRawValue": "#FFFFFF",
+          "referenceDisplayValue": null,
+          "actualDisplayValue": "#FFFFFF",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "dc4d6280389d1c6ba7d835b2cd693c113c6d79d1",
+            "referenceComponentKey": "adb65a62cde9ebedc5d0d41d2d77cd63e71e0745",
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+            "actualNestedOwnerPath": "Position=Level 1 (outer)",
+            "actualNestedOwnerRelativePath": "[D] Style Level 1",
+            "nestedOwnerComponentKey": "adb65a62cde9ebedc5d0d41d2d77cd63e71e0745",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "Position=Level 1 (outer) / [D] Style Level 1",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "BackgroundColor": "base-bg-alt (gray)",
+              "Type": "Border",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": {
+              "BackgroundColor": "base-bg-alt (gray)",
+              "Skeleton": "False",
+              "Type": "Primary"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11785:53424",
+              "nodeName": "[D] BackgroundPlate",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.colored-and-border-use-color-tokens",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "fill|stroke|variant.BackgroundColor",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Для Type=Colored цвет заливки должен быть задан через цветовой токен дизайн-системы. Для Type=Border через цветовой токен задаётся цвет обводки, а видимая заливка запрещена отдельным правилом. Конкретный цвет может отличаться по смыслу поверхности, но raw fill или raw stroke без требуемого token binding являются нарушением.",
+              "remediation": "Для Colored привяжите fill к цветовому токену. Для Border удалите fill и привяжите stroke к цветовому токену.",
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.background-plate.border-has-no-visible-fill",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "fill|styles.fill",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Type=Border всегда используется без видимой заливки. Любая заливка, включая привязанную к цветовому токену, нарушает контракт. Визуальная поверхность Border формируется только обводкой.",
+              "remediation": "Удалите заливку у Type=Border и оставьте только токенизированную обводку.",
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-required-paint-state",
+            "ruleId": "component:web-corp.background-plate.border-has-no-visible-fill",
+            "contractId": null,
+            "constraintId": null,
+            "evidence": {
+              "resetSurface": "layer",
+              "property": "fill",
+              "requiredPaintState": "none-or-not-visible"
+            },
+            "message": "Type=Border всегда используется без видимой заливки. Любая заливка, включая привязанную к цветовому токену, нарушает контракт. Визуальная поверхность Border формируется только обводкой.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I11785:53437;66402:30698",
+            "name": "[D] Style Level 1",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Position=Level 1 (outer) / [D] Style Level 1",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 16 → 24",
+          "referenceValue": 16,
+          "actualValue": "24",
+          "referenceRawValue": 16,
+          "actualRawValue": "24",
+          "referenceDisplayValue": 16,
+          "actualDisplayValue": "24",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "dc4d6280389d1c6ba7d835b2cd693c113c6d79d1",
+            "referenceComponentKey": "adb65a62cde9ebedc5d0d41d2d77cd63e71e0745",
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+            "actualNestedOwnerPath": "Position=Level 1 (outer)",
+            "actualNestedOwnerRelativePath": "[D] Style Level 1",
+            "nestedOwnerComponentKey": "adb65a62cde9ebedc5d0d41d2d77cd63e71e0745",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "Position=Level 1 (outer) / [D] Style Level 1",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "BackgroundColor": "base-bg-alt (gray)",
+              "Type": "Border",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": {
+              "BackgroundColor": "base-bg-alt (gray)",
+              "Skeleton": "False",
+              "Type": "Primary"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11785:53424",
+              "nodeName": "[D] BackgroundPlate",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.radius-is-fixed-by-component-baseline",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "radius|layout.radius|cornerRadius|cornerRadius.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Скругления BackgroundPlate, BackgroundPlateSlot и вложенных Style Level задаются компонентом и его effective baseline. Дизайнер не должен вручную изменять radius/cornerRadius у root-layer BackgroundPlate, BackgroundPlateSlot или Style Level. Любое отличие radius от effective baseline является нарушением, а не допустимой композиционной настройкой.",
+              "remediation": "Сбросьте radius к effective baseline выбранного варианта BackgroundPlate. Не задавайте скругления BackgroundPlate и Style Level вручную.",
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "catalog-host",
+            "reasonCode": "differs-from-materialized-host-value",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Значение не соответствует структуре родительского компонента",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "11785:53458",
+        "name": "[D][Promo] BackgroundPlate",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 13 / [D] BackgroundPlate / [D][Promo] BackgroundPlate",
+        "visible": true
+      },
+      "component": {
+        "name": "[D][Promo] BackgroundPlate",
+        "key": "708600a70f0a11849aec35592e2c6c72d4bad7a1",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Position=Level 1 (outer)",
+        "key": "708600a70f0a11849aec35592e2c6c72d4bad7a1"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I11785:53458;102592:139628",
+            "name": "[D][Promo] Style Level 1",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Position=Level 1 (outer) / [D][Promo] Style Level 1",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: — → #FFFFFF",
+          "referenceValue": null,
+          "actualValue": "#FFFFFF",
+          "referenceRawValue": null,
+          "actualRawValue": "#FFFFFF",
+          "referenceDisplayValue": null,
+          "actualDisplayValue": "#FFFFFF",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "cb29302091975b0d9c2159c1cc5c09a11fcb3d0a",
+            "referenceComponentKey": "2b46e94cdecdab7d4cb977055c0405b2f6204127",
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "708600a70f0a11849aec35592e2c6c72d4bad7a1",
+            "actualNestedOwnerPath": "Position=Level 1 (outer)",
+            "actualNestedOwnerRelativePath": "[D][Promo] Style Level 1",
+            "nestedOwnerComponentKey": "2b46e94cdecdab7d4cb977055c0405b2f6204127",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "Position=Level 1 (outer) / [D][Promo] Style Level 1",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "BackgroundColor": "base-bg-alt (gray)",
+              "Type": "Border",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": {
+              "BackgroundColor": "base-bg-alt (gray)",
+              "Skeleton": "False",
+              "Type": "Primary"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11785:53424",
+              "nodeName": "[D] BackgroundPlate",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.colored-and-border-use-color-tokens",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "fill|stroke|variant.BackgroundColor",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Для Type=Colored цвет заливки должен быть задан через цветовой токен дизайн-системы. Для Type=Border через цветовой токен задаётся цвет обводки, а видимая заливка запрещена отдельным правилом. Конкретный цвет может отличаться по смыслу поверхности, но raw fill или raw stroke без требуемого token binding являются нарушением.",
+              "remediation": "Для Colored привяжите fill к цветовому токену. Для Border удалите fill и привяжите stroke к цветовому токену.",
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.background-plate.border-has-no-visible-fill",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "fill|styles.fill",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Type=Border всегда используется без видимой заливки. Любая заливка, включая привязанную к цветовому токену, нарушает контракт. Визуальная поверхность Border формируется только обводкой.",
+              "remediation": "Удалите заливку у Type=Border и оставьте только токенизированную обводку.",
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-required-paint-state",
+            "ruleId": "component:web-corp.background-plate.border-has-no-visible-fill",
+            "contractId": null,
+            "constraintId": null,
+            "evidence": {
+              "resetSurface": "layer",
+              "property": "fill",
+              "requiredPaintState": "none-or-not-visible"
+            },
+            "message": "Type=Border всегда используется без видимой заливки. Любая заливка, включая привязанную к цветовому токену, нарушает контракт. Визуальная поверхность Border формируется только обводкой.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I11785:53458;102592:139628",
+            "name": "[D][Promo] Style Level 1",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Position=Level 1 (outer) / [D][Promo] Style Level 1",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 24 → 20",
+          "referenceValue": 24,
+          "actualValue": "20",
+          "referenceRawValue": 24,
+          "actualRawValue": "20",
+          "referenceDisplayValue": 24,
+          "actualDisplayValue": "20",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "cb29302091975b0d9c2159c1cc5c09a11fcb3d0a",
+            "referenceComponentKey": "2b46e94cdecdab7d4cb977055c0405b2f6204127",
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "708600a70f0a11849aec35592e2c6c72d4bad7a1",
+            "actualNestedOwnerPath": "Position=Level 1 (outer)",
+            "actualNestedOwnerRelativePath": "[D][Promo] Style Level 1",
+            "nestedOwnerComponentKey": "2b46e94cdecdab7d4cb977055c0405b2f6204127",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "Position=Level 1 (outer) / [D][Promo] Style Level 1",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "BackgroundColor": "base-bg-alt (gray)",
+              "Type": "Border",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": {
+              "BackgroundColor": "base-bg-alt (gray)",
+              "Skeleton": "False",
+              "Type": "Primary"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "11785:53424",
+              "nodeName": "[D] BackgroundPlate",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.radius-is-fixed-by-component-baseline",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "radius|layout.radius|cornerRadius|cornerRadius.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Скругления BackgroundPlate, BackgroundPlateSlot и вложенных Style Level задаются компонентом и его effective baseline. Дизайнер не должен вручную изменять radius/cornerRadius у root-layer BackgroundPlate, BackgroundPlateSlot или Style Level. Любое отличие radius от effective baseline является нарушением, а не допустимой композиционной настройкой.",
+              "remediation": "Сбросьте radius к effective baseline выбранного варианта BackgroundPlate. Не задавайте скругления BackgroundPlate и Style Level вручную.",
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "catalog-host",
+            "reasonCode": "differs-from-materialized-host-value",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Значение не соответствует структуре родительского компонента",
+            "remediation": null
+          }
+        }
+      ]
+    }
+  ],
+  "componentContexts": [
+    {
+      "componentKey": "web-corp.background-plate",
+      "summary": "BackgroundPlate — семейство variable-driven surface-компонентов. Для нового контента используется BackgroundPlateSlot: Level-0 задаётся главной поверхности, первый компонент получает Level-1, а опциональный Level-2 располагается только непосредственно внутри Level-1. Type, BackgroundColor, Skeleton и layer-свойства трактуются по exact component rules. BackgroundPlateView — кодовый alias этого же семейства.",
+      "criticalBaselines": [
+        "Для новых макетов основным контейнером является BackgroundPlateSlot; BackgroundPlate считается legacy для генерации, но его существующее использование не является нарушением само по себе.",
+        "Mode BackgroundPlate Level=Level-0 назначается главной поверхности страницы или модальной сущности. Первый вложенный BackgroundPlateSlot получает Level-1; Level-2 всегда располагается непосредственно внутри Level-1.",
+        "Обычный контент может лежать непосредственно в Slot Level-1. Level-2 является опциональной вложенной поверхностью; Level-0 и Level-1 внутри Slot запрещены.",
+        "Рекомендуемый padding: Spacing/32 для Level-1 и Spacing/24 для Level-2. Другие значения допустимы под контекст или паттерн только с Spacing token binding.",
+        "Axis, gap и alignment Slot определяются контекстом; width должен быть Fill, height — Hug. Clip content может быть true или false по контексту.",
+        "Primary и Secondary получают fill/stroke только из effective baseline. Colored использует только токенизированную заливку без stroke. Border используется без fill, с токенизированным stroke; strokeWeight контекстный, strokeAlign всегда INSIDE.",
+        "Radius, opacity и blend mode фиксируются effective baseline. Drop shadow и Inner shadow запрещены; Layer blur и Background blur разрешены по контексту.",
+        "Skeleton=True является штатным состоянием загрузки компонента или контента. Сложная skeleton-композиция допустима только при явном сценарии паттерна.",
+        "BackgroundPlateView в code/private usage маппится на BackgroundPlate и должен использовать те же правила, контракты и pattern links.",
+        "Для desktop рабочей поверхности Level 1 использует radius 16, Level 2 использует radius 12. Promo и mobile variants могут иметь другие baseline из каталога.",
+        "BackgroundColor зависит от surface context: для страниц используются base-bg/base-bg-alt, для модальных сущностей используются modal-bg/modal-bg-alt. Суффикс в скобках (gray)/(white) описывает визуальный фон, а часть имени до скобок соответствует цветовому токену поверхности.",
+        "В каталоге вариант обводочной поверхности называется Type=Border. В тексте рекомендаций можно пояснять его как bordered/обводочный, но в машинных фактах и таблицах используй точное значение Border.",
+        "Radius/cornerRadius у BackgroundPlate, BackgroundPlateSlot и вложенных Style Level фиксируется component effective baseline. Ручное изменение скруглений запрещено и должно трактоваться как нарушение, а не как допустимая композиционная настройка.",
+        "Для Table Wide [D] в BackgroundPlateSlot действует специальное правило: Slot padding top=Spacing/0, right/bottom/left=Spacing/16. [D] TopBar расположен рядом с плейтом в общем Level-0 контейнере, а не внутри Slot."
+      ],
+      "agentInstructions": [
+        "Не выводи нарушение из примера. Используй только exact rules, exact component contracts и явно найденные pattern rules.",
+        "Если во входном отчёте встречается BackgroundPlateView, трактуй его как code/private alias компонента BackgroundPlate, а не как отдельный компонент без правил.",
+        "Изменения variant/property показывай как component-property customizations; изменения fill, stroke, stroke geometry, radius, opacity, effects, blend mode, layout и style показывай как layer-property customizations.",
+        "Если nested diff принадлежит wrapper и actual совпадает с effective baseline, не показывай его как дизайнерскую кастомизацию.",
+        "Если actual отличается от effective baseline, показывай effectiveBaseline -> actual. Не подставляй standalone baseline вложенного Style Level вместо baseline выбранного BackgroundPlate variant.",
+        "Padding у BackgroundPlateSlot может быть осознанной настройкой композиции. Комментируй его как layer customization и проверяй Spacing token binding; не требуй вернуть 32 или 24 только из-за отличия от рекомендации.",
+        "Не требуй Level-2 для обычного контента Slot Level-1. Если внутри Slot найден BackgroundPlate Level-0 или Level-1, используй rule:components.background-plate.slot-content-levels.",
+        "Axis, gap, alignment и Clip content Slot трактуй как контекстные настройки. Width не должен отличаться от Fill, height — от Hug.",
+        "При анализе BackgroundColor сначала определи контекст поверхности: page или modal. Не рекомендуй modal-bg* для обычной страницы и не рекомендуй base-bg* для модальной сущности, если exact rule или отчёт указывают на противоположный surface context.",
+        "Для Primary и Secondary любое ручное изменение fill/stroke является нарушением, даже при token binding. Сравнивай с effective baseline текущего Type, уровня и BackgroundColor.",
+        "Для Colored разрешена только видимая заливка через color token; raw fill, отсутствие fill и любой stroke являются нарушением.",
+        "Для Border fill запрещён, stroke должен быть привязан к color token. StrokeWeight можно менять под контекст; strokeAlign должен оставаться INSIDE. Border не может быть кликабельным.",
+        "Если в отчёте есть изменение radius/cornerRadius, opacity или blend mode, используй соответствующее exact component rule и рекомендуй сброс к effective baseline.",
+        "Drop shadow и Inner shadow трактуй как нарушения. Layer blur и Background blur являются допустимыми контекстными кастомизациями и не должны попадать под запрет теней.",
+        "Переключение Skeleton=False → True само по себе разрешено. Ручную простую skeleton-композицию вместо component property считай нарушением; сложное исключение допускай только по явному паттерну.",
+        "Для Table Wide не разрешай дублировать table inset внутри плейта: HeadRow, BodyRow и ячейки используют собственные effective baseline без дополнительных padding."
+      ],
+      "includedComponents": [
+        "[D] BackgroundPlate",
+        "[D] BackgroundPlateSlot",
+        "[D] Style Level 1",
+        "[D] Style Level 2",
+        "[D][Promo] BackgroundPlate",
+        "[D][Promo] Style Level 1",
+        "[D][Promo] Style Level 2",
+        "[M] BackgroundPlate",
+        "[M] BackgroundPlateSlot",
+        "[M] Style Level 1",
+        "[M] Style Level 2",
+        "[M][Promo] BackgroundPlate",
+        "[M][Promo] Style Level 1",
+        "[M][Promo] Style Level 2"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "c49f08db71ab44ea64f0880730220de1d93ac263",
+          "name": "[D][Promo] BackgroundPlate",
+          "purpose": "Desktop-подложка для промо-композиций, которым нужна отдельная брендированная поверхность и два уровня вложенности.",
+          "useWhen": [
+            "Собирается desktop-промо блок из компонентов промо-библиотеки."
+          ],
+          "doNotUseWhen": [
+            "Собирается обычный продуктовый интерфейс без промо-сценария."
+          ],
+          "relationship": "Promo-only ветка семейства BackgroundPlate; внешний компонент делегирует визуальный baseline вложенным Style Level.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        },
+        {
+          "componentKey": "2b46e94cdecdab7d4cb977055c0405b2f6204127",
+          "name": "[D][Promo] Style Level 1",
+          "purpose": "💅🏻 For Promo page only",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        },
+        {
+          "componentKey": "5b6c5ac720154aff36be2f8a883bd058faa663cf",
+          "name": "[D] BackgroundPlateSlot",
+          "purpose": "Контейнер-подложка для самостоятельного desktop-блока контента с системной поверхностью, внутренними отступами и состоянием загрузки.",
+          "useWhen": [
+            "Нужно визуально отделить блок контента внутри desktop-страницы или крупной композиции."
+          ],
+          "doNotUseWhen": [
+            "Нужен фон всей страницы или внутренний Style Level без собственного контента."
+          ],
+          "relationship": "Предпочтительный desktop-контейнер семейства BackgroundPlate; внешний Level и визуальный Type определяют effective surface.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.*"
+          ],
+          "layerProperties": [
+            "layout.*",
+            "styles.*",
+            "fill",
+            "stroke",
+            "radius",
+            "opacity",
+            "text.*"
+          ],
+          "dependencyPolicy": "Component-property reset и layer-property reset разделены. Layer reset должен использовать effective baseline после nested variant/materialization resolution. Для BackgroundPlateView применяй тот же reset model, что и для BackgroundPlate."
+        },
+        "publicApi": {
+          "components": [
+            {
+              "name": "[D] BackgroundPlate",
+              "key": "2c7332d281570f4d5af6d334f8df378d24a1f235",
+              "role": "legacy-surface",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "legacy",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D] BackgroundPlateSlot",
+              "key": "5b6c5ac720154aff36be2f8a883bd058faa663cf",
+              "role": "content-container",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "preferred",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[D] Style Level 1",
+              "key": "adb65a62cde9ebedc5d0d41d2d77cd63e71e0745",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D] Style Level 2",
+              "key": "c8735f4834a8b43fd2ab821ffc0a6e72a57c4b5b",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D][Promo] BackgroundPlate",
+              "key": "c49f08db71ab44ea64f0880730220de1d93ac263",
+              "role": "promo-surface",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "promo-only",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[D][Promo] Style Level 1",
+              "key": "2b46e94cdecdab7d4cb977055c0405b2f6204127",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D][Promo] Style Level 2",
+              "key": "a5a4240097211b28195291a593c567e9d7c62bd3",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M] BackgroundPlate",
+              "key": "4cfe3915785e5c37255190ae16314f6f2a1d05b3",
+              "role": "legacy-surface",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "legacy",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M] BackgroundPlateSlot",
+              "key": "1745af83255e324781c2fbadfe0ad8cc7f13e0d8",
+              "role": "content-container",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "preferred",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[M] Style Level 1",
+              "key": "efc528bd86582d96a824edeb2c257dc8b22a8f14",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M] Style Level 2",
+              "key": "74f025a02889239c3f6eed60d74ba85f292bdcb0",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M][Promo] BackgroundPlate",
+              "key": "a58fa7ae11989280fc24069f204ba617fdb1f93c",
+              "role": "promo-surface",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "promo-only",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[M][Promo] Style Level 1",
+              "key": "19b4b6ed5718d82888a6551b56e0c776f4993ccc",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M][Promo] Style Level 2",
+              "key": "b33f77cc56c5feffb4f24a5912d74e3af927140e",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            }
+          ],
+          "aliases": null,
+          "codeExports": [
+            {
+              "name": "BackgroundPlate",
+              "kind": "react-component-export",
+              "mapsTo": "[D] BackgroundPlate / [M] BackgroundPlate",
+              "usage": "Основной code/private export, который соответствует Figma-компонентам семейства BackgroundPlate."
+            },
+            {
+              "name": "BackgroundPlateView",
+              "kind": "react-view-export",
+              "mapsTo": "BackgroundPlate",
+              "usage": "Кодовая обёртка/представление BackgroundPlate. В Apollo и агентском анализе не является отдельным Figma-компонентом и должна использовать тот же componentKey web-corp.background-plate."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
