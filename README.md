@@ -15,12 +15,15 @@ apollo/
       dd-mm-yyyy/
         <figma-user>_dd-mm-yyyy_hh-mm-ss.json
         <figma-user>_dd-mm-yyyy_hh-mm-ss_agent.json
+        <figma-user>_dd-mm-yyyy_hh-mm-ss_customizations-wip.json
 ```
 
 ## Типы отчётов
 
 - `*.json` — полный технический отчёт Apollo для отладки аудита.
 - `*_agent.json` — компактный отчёт для отправки в корпоративного агента.
+- `*_customizations-wip.json` — необработанные факты `effective baseline → actual`
+  для отладки агентской интерпретации кастомизаций.
 
 ## Публикация
 
@@ -42,4 +45,3 @@ Production-сборка Apollo не пишет в репозиторий нап�
 - `agent-context.json`, `rules.json`, `contract.generated.json` и другие
   agentic-файлы компонентов;
 - markdown-паттерны дизайн-системы.
-
