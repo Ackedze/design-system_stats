@@ -1,0 +1,1265 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-customizations-wip-report",
+  "reportId": "apollo-1096330610570928879-1786898380833-lt1d6v2f:customizations-wip",
+  "sourceReportId": "apollo-1096330610570928879-1786898380833-lt1d6v2f",
+  "generatedAt": "2026-08-16T16:39:40.833Z",
+  "suggestedFileName": "Alexey-Kukhta-CORP-Lead-Designer_16-08-2026_19-39-40_customizations-wip.json",
+  "user": {
+    "id": "1096330610570928879",
+    "name": "Alexey Kukhta / CORP / Lead Designer",
+    "slug": "Alexey-Kukhta-CORP-Lead-Designer"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.3.0"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "❇️ Мастерская :: AI",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "startedAt": "2026-08-16T16:39:21.280Z",
+    "finishedAt": "2026-08-16T16:39:40.833Z",
+    "durationMs": 19553,
+    "selection": [
+      {
+        "nodeId": "10560:28613",
+        "name": "[D](1024+) Content",
+        "nodeType": "FRAME",
+        "path": "[D](1440) Page / Body / [D](1024+) Content",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 109,
+    "componentCount": 3,
+    "changeCount": 10
+  },
+  "category": {
+    "id": "customizationsWip",
+    "title": "Кастомизации [WIP]",
+    "count": 3,
+    "changeCount": 10,
+    "items": [
+      {
+        "node": {
+          "id": "10560:28621",
+          "name": "[D] BackgroundPlateSlot",
+          "type": "INSTANCE",
+          "pageName": "     Лаборатория",
+          "path": "[D](1440) Page / Body / [D](1024+) Content / ContentBody / Body / 8 Cols / Frame / [D] BackgroundPlateSlot",
+          "visible": true
+        },
+        "component": {
+          "type": "component",
+          "name": "[D] BackgroundPlateSlot",
+          "key": "6d5d4dda10be00621991e9b5a0152db4e47f4e2f",
+          "id": null,
+          "library": "Web _ Corp Components",
+          "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+        },
+        "variant": {
+          "type": "component-variant",
+          "name": "Type=Primary, Skeleton=False",
+          "key": "6d5d4dda10be00621991e9b5a0152db4e47f4e2f",
+          "id": null,
+          "library": "Web _ Corp Components",
+          "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+        },
+        "comparisonIssues": [],
+        "updateReasons": [],
+        "libraryFreshness": {
+          "status": "current",
+          "reason": "remote-component-current",
+          "componentKey": "6d5d4dda10be00621991e9b5a0152db4e47f4e2f",
+          "currentComponentId": "10470:17642",
+          "latestComponentId": "10470:17642"
+        },
+        "localComponentOwner": null,
+        "changes": [
+          {
+            "node": {
+              "id": "10560:28621",
+              "name": "[D] BackgroundPlateSlot",
+              "type": null,
+              "pageName": "     Лаборатория",
+              "path": "Type=Primary, Skeleton=False",
+              "visible": true
+            },
+            "kind": "layout",
+            "property": "layout.padding.bottom",
+            "message": "Паддинг bottom: 24 → 32",
+            "reference": {
+              "value": 24,
+              "resource": null,
+              "binding": null
+            },
+            "actual": {
+              "value": 32,
+              "resource": null,
+              "binding": null
+            },
+            "bindingStatus": null,
+            "variableMode": null,
+            "signature": "component:6d5d4dda10be00621991e9b5a0152db4e47f4e2f:layout:layout.padding.bottom:24->32",
+            "context": {
+              "actualComponentKey": "6d5d4dda10be00621991e9b5a0152db4e47f4e2f",
+              "referenceComponentKey": null,
+              "referenceOrigin": "host",
+              "actualNestedOwnerComponentKey": null,
+              "actualNestedOwnerPath": null,
+              "actualNestedOwnerRelativePath": null,
+              "nestedOwnerComponentKey": null,
+              "nestedOwnerComponentRole": null,
+              "nestedOwnerPath": null,
+              "nestedOwnerRelativePath": null,
+              "actualVariantProperties": {
+                "Type": "Primary",
+                "Skeleton": "False"
+              },
+              "referenceVariantProperties": null,
+              "surfaceContext": null
+            },
+            "componentRules": [
+              {
+                "ruleId": "component:web-corp.background-plate.padding-is-designer-controlled",
+                "severity": "info",
+                "source": "component-contract",
+                "ruleKind": null,
+                "severityScope": null,
+                "appliesTo": "layout.padding.*",
+                "checkType": "deterministic",
+                "matchKind": "exact_component_rule",
+                "changeScope": null,
+                "ruleText": "Рекомендуемый стартовый padding BackgroundPlateSlot: Spacing/32 для Level-1 (outer) и Spacing/24 для Level-2 (inner). Дизайнер может свободно изменить padding под контекст композиции или применимый паттерн. Само отличие от рекомендуемого значения не является нарушением и не требует сброса. Показывай изменение как layer customization и проверяй только обязательную привязку каждого layout.padding.* к токену Spacing.",
+                "remediation": null,
+                "numericConstraint": null,
+                "requiredTokenSource": null
+              },
+              {
+                "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens",
+                "severity": "error",
+                "source": "pattern-link",
+                "ruleKind": "design-rule",
+                "severityScope": "design",
+                "appliesTo": "layout.padding.*",
+                "checkType": "deterministic",
+                "matchKind": "exact_component_rule",
+                "changeScope": null,
+                "ruleText": "Базовые padding у BackgroundPlate могут быть любыми по значению, но каждое layout.padding.* должно быть задано через токен из коллекции Spacing. Ручные px-значения без token binding являются нарушением, даже если число совпадает со spacing-шкалой.",
+                "remediation": "Привяжите каждое значение padding к соответствующему токену коллекции Spacing; не оставляйте raw px.",
+                "numericConstraint": null,
+                "requiredTokenSource": {
+                  "path": "shared/design-system_ab/JSONS/tokens/Spacing.json",
+                  "collection": "Spacing",
+                  "tokenNames": [
+                    "0",
+                    "1",
+                    "2",
+                    "4",
+                    "6",
+                    "8",
+                    "12",
+                    "16",
+                    "20",
+                    "24",
+                    "32",
+                    "40",
+                    "48",
+                    "56",
+                    "64",
+                    "72",
+                    "80",
+                    "96",
+                    "128",
+                    "256"
+                  ]
+                }
+              }
+            ],
+            "presentation": {
+              "scope": "layer-property",
+              "groupTitle": "Параметры слоя",
+              "displayName": null,
+              "priority": 20,
+              "resetAction": "reset-layer-properties",
+              "effectiveBaseline": "composition-contract"
+            },
+            "assessment": {
+              "verdict": "violation",
+              "source": "component-contract",
+              "reasonCode": "component-contract-violation",
+              "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens",
+              "message": "Базовые padding у BackgroundPlate могут быть любыми по значению, но каждое layout.padding.* должно быть задано через токен из коллекции Spacing. Ручные px-значения без token binding являются нарушением, даже если число совпадает со spacing-шкалой.",
+              "remediation": null
+            }
+          },
+          {
+            "node": {
+              "id": "10560:28621",
+              "name": "[D] BackgroundPlateSlot",
+              "type": null,
+              "pageName": "     Лаборатория",
+              "path": "Type=Primary, Skeleton=False",
+              "visible": true
+            },
+            "kind": "layout",
+            "property": "layout.padding.left",
+            "message": "Паддинг left: 24 → 32",
+            "reference": {
+              "value": 24,
+              "resource": null,
+              "binding": null
+            },
+            "actual": {
+              "value": 32,
+              "resource": null,
+              "binding": null
+            },
+            "bindingStatus": null,
+            "variableMode": null,
+            "signature": "component:6d5d4dda10be00621991e9b5a0152db4e47f4e2f:layout:layout.padding.left:24->32",
+            "context": {
+              "actualComponentKey": "6d5d4dda10be00621991e9b5a0152db4e47f4e2f",
+              "referenceComponentKey": null,
+              "referenceOrigin": "host",
+              "actualNestedOwnerComponentKey": null,
+              "actualNestedOwnerPath": null,
+              "actualNestedOwnerRelativePath": null,
+              "nestedOwnerComponentKey": null,
+              "nestedOwnerComponentRole": null,
+              "nestedOwnerPath": null,
+              "nestedOwnerRelativePath": null,
+              "actualVariantProperties": {
+                "Type": "Primary",
+                "Skeleton": "False"
+              },
+              "referenceVariantProperties": null,
+              "surfaceContext": null
+            },
+            "componentRules": [
+              {
+                "ruleId": "component:web-corp.background-plate.padding-is-designer-controlled",
+                "severity": "info",
+                "source": "component-contract",
+                "ruleKind": null,
+                "severityScope": null,
+                "appliesTo": "layout.padding.*",
+                "checkType": "deterministic",
+                "matchKind": "exact_component_rule",
+                "changeScope": null,
+                "ruleText": "Рекомендуемый стартовый padding BackgroundPlateSlot: Spacing/32 для Level-1 (outer) и Spacing/24 для Level-2 (inner). Дизайнер может свободно изменить padding под контекст композиции или применимый паттерн. Само отличие от рекомендуемого значения не является нарушением и не требует сброса. Показывай изменение как layer customization и проверяй только обязательную привязку каждого layout.padding.* к токену Spacing.",
+                "remediation": null,
+                "numericConstraint": null,
+                "requiredTokenSource": null
+              },
+              {
+                "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens",
+                "severity": "error",
+                "source": "pattern-link",
+                "ruleKind": "design-rule",
+                "severityScope": "design",
+                "appliesTo": "layout.padding.*",
+                "checkType": "deterministic",
+                "matchKind": "exact_component_rule",
+                "changeScope": null,
+                "ruleText": "Базовые padding у BackgroundPlate могут быть любыми по значению, но каждое layout.padding.* должно быть задано через токен из коллекции Spacing. Ручные px-значения без token binding являются нарушением, даже если число совпадает со spacing-шкалой.",
+                "remediation": "Привяжите каждое значение padding к соответствующему токену коллекции Spacing; не оставляйте raw px.",
+                "numericConstraint": null,
+                "requiredTokenSource": {
+                  "path": "shared/design-system_ab/JSONS/tokens/Spacing.json",
+                  "collection": "Spacing",
+                  "tokenNames": [
+                    "0",
+                    "1",
+                    "2",
+                    "4",
+                    "6",
+                    "8",
+                    "12",
+                    "16",
+                    "20",
+                    "24",
+                    "32",
+                    "40",
+                    "48",
+                    "56",
+                    "64",
+                    "72",
+                    "80",
+                    "96",
+                    "128",
+                    "256"
+                  ]
+                }
+              }
+            ],
+            "presentation": {
+              "scope": "layer-property",
+              "groupTitle": "Параметры слоя",
+              "displayName": null,
+              "priority": 20,
+              "resetAction": "reset-layer-properties",
+              "effectiveBaseline": "composition-contract"
+            },
+            "assessment": {
+              "verdict": "violation",
+              "source": "component-contract",
+              "reasonCode": "component-contract-violation",
+              "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens",
+              "message": "Базовые padding у BackgroundPlate могут быть любыми по значению, но каждое layout.padding.* должно быть задано через токен из коллекции Spacing. Ручные px-значения без token binding являются нарушением, даже если число совпадает со spacing-шкалой.",
+              "remediation": null
+            }
+          },
+          {
+            "node": {
+              "id": "10560:28621",
+              "name": "[D] BackgroundPlateSlot",
+              "type": null,
+              "pageName": "     Лаборатория",
+              "path": "Type=Primary, Skeleton=False",
+              "visible": true
+            },
+            "kind": "paint",
+            "property": "fill",
+            "message": "заливка: BackgroundColor → base-bg/primary",
+            "reference": {
+              "value": "BackgroundColor",
+              "resource": {
+                "type": "token",
+                "name": "BackgroundColor",
+                "key": "db84ea8cdc3ae910e107478f4b4b3fad114302a0",
+                "id": "VariableID:136853:7710",
+                "library": "BackgroundPlate Level",
+                "sourceFile": "Web :: Corp Components"
+              },
+              "binding": {
+                "id": "VariableID:136853:7710",
+                "key": "db84ea8cdc3ae910e107478f4b4b3fad114302a0",
+                "name": "BackgroundColor",
+                "collectionId": "VariableCollectionId:136846:8873",
+                "collectionName": "BackgroundPlate Level",
+                "resolvedModeId": null,
+                "resolvedModeName": null,
+                "explicitModeId": null,
+                "explicitModeName": null,
+                "modeSource": "unknown",
+                "modeOwnerNodeId": null,
+                "modeOwnerName": null,
+                "modeOwnerPath": null
+              }
+            },
+            "actual": {
+              "value": "base-bg/primary",
+              "resource": {
+                "type": "token",
+                "name": "base-bg/primary",
+                "key": "14ac29210fc546f67acfa8e0dfd252c210d0c78b",
+                "id": "VariableID:14ac29210fc546f67acfa8e0dfd252c210d0c78b/3541:157",
+                "library": "Interface Dynamic",
+                "sourceFile": "001 :: Interface Dynamic Colors"
+              },
+              "binding": {
+                "id": "VariableID:14ac29210fc546f67acfa8e0dfd252c210d0c78b/3541:157",
+                "key": "14ac29210fc546f67acfa8e0dfd252c210d0c78b",
+                "name": "base-bg/primary",
+                "collectionId": "VariableCollectionId:868:9636",
+                "collectionName": "Interface Dynamic",
+                "resolvedModeId": null,
+                "resolvedModeName": null,
+                "explicitModeId": null,
+                "explicitModeName": null,
+                "modeSource": "unknown",
+                "modeOwnerNodeId": null,
+                "modeOwnerName": null,
+                "modeOwnerPath": null
+              }
+            },
+            "bindingStatus": "different-binding",
+            "variableMode": null,
+            "signature": "component:6d5d4dda10be00621991e9b5a0152db4e47f4e2f:paint:fill:db84ea8cdc3ae910e107478f4b4b3fad114302a0->14ac29210fc546f67acfa8e0dfd252c210d0c78b",
+            "context": {
+              "actualComponentKey": "6d5d4dda10be00621991e9b5a0152db4e47f4e2f",
+              "referenceComponentKey": null,
+              "referenceOrigin": "host",
+              "actualNestedOwnerComponentKey": null,
+              "actualNestedOwnerPath": null,
+              "actualNestedOwnerRelativePath": null,
+              "nestedOwnerComponentKey": null,
+              "nestedOwnerComponentRole": null,
+              "nestedOwnerPath": null,
+              "nestedOwnerRelativePath": null,
+              "actualVariantProperties": {
+                "Type": "Primary",
+                "Skeleton": "False"
+              },
+              "referenceVariantProperties": null,
+              "surfaceContext": null
+            },
+            "componentRules": [
+              {
+                "ruleId": "component:web-corp.background-plate.primary-secondary-paint-is-fixed",
+                "severity": "error",
+                "source": "pattern-link",
+                "ruleKind": "design-rule",
+                "severityScope": "design",
+                "appliesTo": "fill|styles.fill|stroke|styles.stroke",
+                "checkType": "deterministic",
+                "matchKind": "exact_component_rule",
+                "changeScope": null,
+                "ruleText": "Внешний вид Type=Primary и Type=Secondary полностью определяется компонентом, уровнем поверхности и BackgroundColor. Ручные изменения fill или stroke запрещены, даже если новое значение привязано к токену. Производные paint-изменения при переключении Type или BackgroundColor не считаются отдельной кастомизацией.",
+                "remediation": "Сбросьте ручные изменения fill и stroke к effective baseline текущего Type, уровня и BackgroundColor.",
+                "numericConstraint": null,
+                "requiredTokenSource": null
+              }
+            ],
+            "presentation": {
+              "scope": "layer-property",
+              "groupTitle": "Параметры слоя",
+              "displayName": null,
+              "priority": 40,
+              "resetAction": "reset-layer-properties",
+              "effectiveBaseline": "composition-contract"
+            },
+            "assessment": {
+              "verdict": "violation",
+              "source": "component-contract",
+              "reasonCode": "component-contract-violation",
+              "ruleId": "component:web-corp.background-plate.primary-secondary-paint-is-fixed",
+              "contractId": null,
+              "constraintId": null,
+              "evidence": {
+                "resetSurface": "layer"
+              },
+              "message": "Внешний вид Type=Primary и Type=Secondary полностью определяется компонентом, уровнем поверхности и BackgroundColor. Ручные изменения fill или stroke запрещены, даже если новое значение привязано к токену. Производные paint-изменения при переключении Type или BackgroundColor не считаются отдельной кастомизацией.",
+              "remediation": null
+            }
+          }
+        ]
+      },
+      {
+        "node": {
+          "id": "10560:28629",
+          "name": "[D] BackgroundPlateSlot",
+          "type": "INSTANCE",
+          "pageName": "     Лаборатория",
+          "path": "[D](1440) Page / Body / [D](1024+) Content / ContentBody / Body / 8 Cols / Frame / [D] BackgroundPlateSlot",
+          "visible": true
+        },
+        "component": {
+          "type": "component",
+          "name": "[D] BackgroundPlateSlot",
+          "key": "6d5d4dda10be00621991e9b5a0152db4e47f4e2f",
+          "id": null,
+          "library": "Web _ Corp Components",
+          "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+        },
+        "variant": {
+          "type": "component-variant",
+          "name": "Type=Primary, Skeleton=False",
+          "key": "6d5d4dda10be00621991e9b5a0152db4e47f4e2f",
+          "id": null,
+          "library": "Web _ Corp Components",
+          "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+        },
+        "comparisonIssues": [],
+        "updateReasons": [],
+        "libraryFreshness": {
+          "status": "current",
+          "reason": "remote-component-current",
+          "componentKey": "6d5d4dda10be00621991e9b5a0152db4e47f4e2f",
+          "currentComponentId": "10470:17642",
+          "latestComponentId": "10470:17642"
+        },
+        "localComponentOwner": null,
+        "changes": [
+          {
+            "node": {
+              "id": "10560:28629",
+              "name": "[D] BackgroundPlateSlot",
+              "type": null,
+              "pageName": "     Лаборатория",
+              "path": "Type=Primary, Skeleton=False",
+              "visible": true
+            },
+            "kind": "layout",
+            "property": "layout.padding.top",
+            "message": "Паддинг top: 24 → 32",
+            "reference": {
+              "value": 24,
+              "resource": null,
+              "binding": null
+            },
+            "actual": {
+              "value": 32,
+              "resource": null,
+              "binding": null
+            },
+            "bindingStatus": null,
+            "variableMode": null,
+            "signature": "component:6d5d4dda10be00621991e9b5a0152db4e47f4e2f:layout:layout.padding.top:24->32",
+            "context": {
+              "actualComponentKey": "6d5d4dda10be00621991e9b5a0152db4e47f4e2f",
+              "referenceComponentKey": null,
+              "referenceOrigin": "host",
+              "actualNestedOwnerComponentKey": null,
+              "actualNestedOwnerPath": null,
+              "actualNestedOwnerRelativePath": null,
+              "nestedOwnerComponentKey": null,
+              "nestedOwnerComponentRole": null,
+              "nestedOwnerPath": null,
+              "nestedOwnerRelativePath": null,
+              "actualVariantProperties": {
+                "Type": "Primary",
+                "Skeleton": "False"
+              },
+              "referenceVariantProperties": null,
+              "surfaceContext": null
+            },
+            "componentRules": [
+              {
+                "ruleId": "component:web-corp.background-plate.padding-is-designer-controlled",
+                "severity": "info",
+                "source": "component-contract",
+                "ruleKind": null,
+                "severityScope": null,
+                "appliesTo": "layout.padding.*",
+                "checkType": "deterministic",
+                "matchKind": "exact_component_rule",
+                "changeScope": null,
+                "ruleText": "Рекомендуемый стартовый padding BackgroundPlateSlot: Spacing/32 для Level-1 (outer) и Spacing/24 для Level-2 (inner). Дизайнер может свободно изменить padding под контекст композиции или применимый паттерн. Само отличие от рекомендуемого значения не является нарушением и не требует сброса. Показывай изменение как layer customization и проверяй только обязательную привязку каждого layout.padding.* к токену Spacing.",
+                "remediation": null,
+                "numericConstraint": null,
+                "requiredTokenSource": null
+              },
+              {
+                "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens",
+                "severity": "error",
+                "source": "pattern-link",
+                "ruleKind": "design-rule",
+                "severityScope": "design",
+                "appliesTo": "layout.padding.*",
+                "checkType": "deterministic",
+                "matchKind": "exact_component_rule",
+                "changeScope": null,
+                "ruleText": "Базовые padding у BackgroundPlate могут быть любыми по значению, но каждое layout.padding.* должно быть задано через токен из коллекции Spacing. Ручные px-значения без token binding являются нарушением, даже если число совпадает со spacing-шкалой.",
+                "remediation": "Привяжите каждое значение padding к соответствующему токену коллекции Spacing; не оставляйте raw px.",
+                "numericConstraint": null,
+                "requiredTokenSource": {
+                  "path": "shared/design-system_ab/JSONS/tokens/Spacing.json",
+                  "collection": "Spacing",
+                  "tokenNames": [
+                    "0",
+                    "1",
+                    "2",
+                    "4",
+                    "6",
+                    "8",
+                    "12",
+                    "16",
+                    "20",
+                    "24",
+                    "32",
+                    "40",
+                    "48",
+                    "56",
+                    "64",
+                    "72",
+                    "80",
+                    "96",
+                    "128",
+                    "256"
+                  ]
+                }
+              }
+            ],
+            "presentation": {
+              "scope": "layer-property",
+              "groupTitle": "Параметры слоя",
+              "displayName": null,
+              "priority": 20,
+              "resetAction": "reset-layer-properties",
+              "effectiveBaseline": "composition-contract"
+            },
+            "assessment": {
+              "verdict": "violation",
+              "source": "component-contract",
+              "reasonCode": "component-contract-violation",
+              "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens",
+              "message": "Базовые padding у BackgroundPlate могут быть любыми по значению, но каждое layout.padding.* должно быть задано через токен из коллекции Spacing. Ручные px-значения без token binding являются нарушением, даже если число совпадает со spacing-шкалой.",
+              "remediation": null
+            }
+          },
+          {
+            "node": {
+              "id": "10560:28629",
+              "name": "[D] BackgroundPlateSlot",
+              "type": null,
+              "pageName": "     Лаборатория",
+              "path": "Type=Primary, Skeleton=False",
+              "visible": true
+            },
+            "kind": "layout",
+            "property": "layout.padding.right",
+            "message": "Паддинг right: 24 → 32",
+            "reference": {
+              "value": 24,
+              "resource": null,
+              "binding": null
+            },
+            "actual": {
+              "value": 32,
+              "resource": null,
+              "binding": null
+            },
+            "bindingStatus": null,
+            "variableMode": null,
+            "signature": "component:6d5d4dda10be00621991e9b5a0152db4e47f4e2f:layout:layout.padding.right:24->32",
+            "context": {
+              "actualComponentKey": "6d5d4dda10be00621991e9b5a0152db4e47f4e2f",
+              "referenceComponentKey": null,
+              "referenceOrigin": "host",
+              "actualNestedOwnerComponentKey": null,
+              "actualNestedOwnerPath": null,
+              "actualNestedOwnerRelativePath": null,
+              "nestedOwnerComponentKey": null,
+              "nestedOwnerComponentRole": null,
+              "nestedOwnerPath": null,
+              "nestedOwnerRelativePath": null,
+              "actualVariantProperties": {
+                "Type": "Primary",
+                "Skeleton": "False"
+              },
+              "referenceVariantProperties": null,
+              "surfaceContext": null
+            },
+            "componentRules": [
+              {
+                "ruleId": "component:web-corp.background-plate.padding-is-designer-controlled",
+                "severity": "info",
+                "source": "component-contract",
+                "ruleKind": null,
+                "severityScope": null,
+                "appliesTo": "layout.padding.*",
+                "checkType": "deterministic",
+                "matchKind": "exact_component_rule",
+                "changeScope": null,
+                "ruleText": "Рекомендуемый стартовый padding BackgroundPlateSlot: Spacing/32 для Level-1 (outer) и Spacing/24 для Level-2 (inner). Дизайнер может свободно изменить padding под контекст композиции или применимый паттерн. Само отличие от рекомендуемого значения не является нарушением и не требует сброса. Показывай изменение как layer customization и проверяй только обязательную привязку каждого layout.padding.* к токену Spacing.",
+                "remediation": null,
+                "numericConstraint": null,
+                "requiredTokenSource": null
+              },
+              {
+                "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens",
+                "severity": "error",
+                "source": "pattern-link",
+                "ruleKind": "design-rule",
+                "severityScope": "design",
+                "appliesTo": "layout.padding.*",
+                "checkType": "deterministic",
+                "matchKind": "exact_component_rule",
+                "changeScope": null,
+                "ruleText": "Базовые padding у BackgroundPlate могут быть любыми по значению, но каждое layout.padding.* должно быть задано через токен из коллекции Spacing. Ручные px-значения без token binding являются нарушением, даже если число совпадает со spacing-шкалой.",
+                "remediation": "Привяжите каждое значение padding к соответствующему токену коллекции Spacing; не оставляйте raw px.",
+                "numericConstraint": null,
+                "requiredTokenSource": {
+                  "path": "shared/design-system_ab/JSONS/tokens/Spacing.json",
+                  "collection": "Spacing",
+                  "tokenNames": [
+                    "0",
+                    "1",
+                    "2",
+                    "4",
+                    "6",
+                    "8",
+                    "12",
+                    "16",
+                    "20",
+                    "24",
+                    "32",
+                    "40",
+                    "48",
+                    "56",
+                    "64",
+                    "72",
+                    "80",
+                    "96",
+                    "128",
+                    "256"
+                  ]
+                }
+              }
+            ],
+            "presentation": {
+              "scope": "layer-property",
+              "groupTitle": "Параметры слоя",
+              "displayName": null,
+              "priority": 20,
+              "resetAction": "reset-layer-properties",
+              "effectiveBaseline": "composition-contract"
+            },
+            "assessment": {
+              "verdict": "violation",
+              "source": "component-contract",
+              "reasonCode": "component-contract-violation",
+              "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens",
+              "message": "Базовые padding у BackgroundPlate могут быть любыми по значению, но каждое layout.padding.* должно быть задано через токен из коллекции Spacing. Ручные px-значения без token binding являются нарушением, даже если число совпадает со spacing-шкалой.",
+              "remediation": null
+            }
+          },
+          {
+            "node": {
+              "id": "10560:28629",
+              "name": "[D] BackgroundPlateSlot",
+              "type": null,
+              "pageName": "     Лаборатория",
+              "path": "Type=Primary, Skeleton=False",
+              "visible": true
+            },
+            "kind": "layout",
+            "property": "layout.padding.bottom",
+            "message": "Паддинг bottom: 24 → 32",
+            "reference": {
+              "value": 24,
+              "resource": null,
+              "binding": null
+            },
+            "actual": {
+              "value": 32,
+              "resource": null,
+              "binding": null
+            },
+            "bindingStatus": null,
+            "variableMode": null,
+            "signature": "component:6d5d4dda10be00621991e9b5a0152db4e47f4e2f:layout:layout.padding.bottom:24->32",
+            "context": {
+              "actualComponentKey": "6d5d4dda10be00621991e9b5a0152db4e47f4e2f",
+              "referenceComponentKey": null,
+              "referenceOrigin": "host",
+              "actualNestedOwnerComponentKey": null,
+              "actualNestedOwnerPath": null,
+              "actualNestedOwnerRelativePath": null,
+              "nestedOwnerComponentKey": null,
+              "nestedOwnerComponentRole": null,
+              "nestedOwnerPath": null,
+              "nestedOwnerRelativePath": null,
+              "actualVariantProperties": {
+                "Type": "Primary",
+                "Skeleton": "False"
+              },
+              "referenceVariantProperties": null,
+              "surfaceContext": null
+            },
+            "componentRules": [
+              {
+                "ruleId": "component:web-corp.background-plate.padding-is-designer-controlled",
+                "severity": "info",
+                "source": "component-contract",
+                "ruleKind": null,
+                "severityScope": null,
+                "appliesTo": "layout.padding.*",
+                "checkType": "deterministic",
+                "matchKind": "exact_component_rule",
+                "changeScope": null,
+                "ruleText": "Рекомендуемый стартовый padding BackgroundPlateSlot: Spacing/32 для Level-1 (outer) и Spacing/24 для Level-2 (inner). Дизайнер может свободно изменить padding под контекст композиции или применимый паттерн. Само отличие от рекомендуемого значения не является нарушением и не требует сброса. Показывай изменение как layer customization и проверяй только обязательную привязку каждого layout.padding.* к токену Spacing.",
+                "remediation": null,
+                "numericConstraint": null,
+                "requiredTokenSource": null
+              },
+              {
+                "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens",
+                "severity": "error",
+                "source": "pattern-link",
+                "ruleKind": "design-rule",
+                "severityScope": "design",
+                "appliesTo": "layout.padding.*",
+                "checkType": "deterministic",
+                "matchKind": "exact_component_rule",
+                "changeScope": null,
+                "ruleText": "Базовые padding у BackgroundPlate могут быть любыми по значению, но каждое layout.padding.* должно быть задано через токен из коллекции Spacing. Ручные px-значения без token binding являются нарушением, даже если число совпадает со spacing-шкалой.",
+                "remediation": "Привяжите каждое значение padding к соответствующему токену коллекции Spacing; не оставляйте raw px.",
+                "numericConstraint": null,
+                "requiredTokenSource": {
+                  "path": "shared/design-system_ab/JSONS/tokens/Spacing.json",
+                  "collection": "Spacing",
+                  "tokenNames": [
+                    "0",
+                    "1",
+                    "2",
+                    "4",
+                    "6",
+                    "8",
+                    "12",
+                    "16",
+                    "20",
+                    "24",
+                    "32",
+                    "40",
+                    "48",
+                    "56",
+                    "64",
+                    "72",
+                    "80",
+                    "96",
+                    "128",
+                    "256"
+                  ]
+                }
+              }
+            ],
+            "presentation": {
+              "scope": "layer-property",
+              "groupTitle": "Параметры слоя",
+              "displayName": null,
+              "priority": 20,
+              "resetAction": "reset-layer-properties",
+              "effectiveBaseline": "composition-contract"
+            },
+            "assessment": {
+              "verdict": "violation",
+              "source": "component-contract",
+              "reasonCode": "component-contract-violation",
+              "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens",
+              "message": "Базовые padding у BackgroundPlate могут быть любыми по значению, но каждое layout.padding.* должно быть задано через токен из коллекции Spacing. Ручные px-значения без token binding являются нарушением, даже если число совпадает со spacing-шкалой.",
+              "remediation": null
+            }
+          },
+          {
+            "node": {
+              "id": "10560:28629",
+              "name": "[D] BackgroundPlateSlot",
+              "type": null,
+              "pageName": "     Лаборатория",
+              "path": "Type=Primary, Skeleton=False",
+              "visible": true
+            },
+            "kind": "layout",
+            "property": "layout.padding.left",
+            "message": "Паддинг left: 24 → 32",
+            "reference": {
+              "value": 24,
+              "resource": null,
+              "binding": null
+            },
+            "actual": {
+              "value": 32,
+              "resource": null,
+              "binding": null
+            },
+            "bindingStatus": null,
+            "variableMode": null,
+            "signature": "component:6d5d4dda10be00621991e9b5a0152db4e47f4e2f:layout:layout.padding.left:24->32",
+            "context": {
+              "actualComponentKey": "6d5d4dda10be00621991e9b5a0152db4e47f4e2f",
+              "referenceComponentKey": null,
+              "referenceOrigin": "host",
+              "actualNestedOwnerComponentKey": null,
+              "actualNestedOwnerPath": null,
+              "actualNestedOwnerRelativePath": null,
+              "nestedOwnerComponentKey": null,
+              "nestedOwnerComponentRole": null,
+              "nestedOwnerPath": null,
+              "nestedOwnerRelativePath": null,
+              "actualVariantProperties": {
+                "Type": "Primary",
+                "Skeleton": "False"
+              },
+              "referenceVariantProperties": null,
+              "surfaceContext": null
+            },
+            "componentRules": [
+              {
+                "ruleId": "component:web-corp.background-plate.padding-is-designer-controlled",
+                "severity": "info",
+                "source": "component-contract",
+                "ruleKind": null,
+                "severityScope": null,
+                "appliesTo": "layout.padding.*",
+                "checkType": "deterministic",
+                "matchKind": "exact_component_rule",
+                "changeScope": null,
+                "ruleText": "Рекомендуемый стартовый padding BackgroundPlateSlot: Spacing/32 для Level-1 (outer) и Spacing/24 для Level-2 (inner). Дизайнер может свободно изменить padding под контекст композиции или применимый паттерн. Само отличие от рекомендуемого значения не является нарушением и не требует сброса. Показывай изменение как layer customization и проверяй только обязательную привязку каждого layout.padding.* к токену Spacing.",
+                "remediation": null,
+                "numericConstraint": null,
+                "requiredTokenSource": null
+              },
+              {
+                "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens",
+                "severity": "error",
+                "source": "pattern-link",
+                "ruleKind": "design-rule",
+                "severityScope": "design",
+                "appliesTo": "layout.padding.*",
+                "checkType": "deterministic",
+                "matchKind": "exact_component_rule",
+                "changeScope": null,
+                "ruleText": "Базовые padding у BackgroundPlate могут быть любыми по значению, но каждое layout.padding.* должно быть задано через токен из коллекции Spacing. Ручные px-значения без token binding являются нарушением, даже если число совпадает со spacing-шкалой.",
+                "remediation": "Привяжите каждое значение padding к соответствующему токену коллекции Spacing; не оставляйте raw px.",
+                "numericConstraint": null,
+                "requiredTokenSource": {
+                  "path": "shared/design-system_ab/JSONS/tokens/Spacing.json",
+                  "collection": "Spacing",
+                  "tokenNames": [
+                    "0",
+                    "1",
+                    "2",
+                    "4",
+                    "6",
+                    "8",
+                    "12",
+                    "16",
+                    "20",
+                    "24",
+                    "32",
+                    "40",
+                    "48",
+                    "56",
+                    "64",
+                    "72",
+                    "80",
+                    "96",
+                    "128",
+                    "256"
+                  ]
+                }
+              }
+            ],
+            "presentation": {
+              "scope": "layer-property",
+              "groupTitle": "Параметры слоя",
+              "displayName": null,
+              "priority": 20,
+              "resetAction": "reset-layer-properties",
+              "effectiveBaseline": "composition-contract"
+            },
+            "assessment": {
+              "verdict": "violation",
+              "source": "component-contract",
+              "reasonCode": "component-contract-violation",
+              "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens",
+              "message": "Базовые padding у BackgroundPlate могут быть любыми по значению, но каждое layout.padding.* должно быть задано через токен из коллекции Spacing. Ручные px-значения без token binding являются нарушением, даже если число совпадает со spacing-шкалой.",
+              "remediation": null
+            }
+          },
+          {
+            "node": {
+              "id": "10560:28629",
+              "name": "[D] BackgroundPlateSlot",
+              "type": null,
+              "pageName": "     Лаборатория",
+              "path": "Type=Primary, Skeleton=False",
+              "visible": true
+            },
+            "kind": "paint",
+            "property": "fill",
+            "message": "заливка: BackgroundColor → base-bg/primary",
+            "reference": {
+              "value": "BackgroundColor",
+              "resource": {
+                "type": "token",
+                "name": "BackgroundColor",
+                "key": "db84ea8cdc3ae910e107478f4b4b3fad114302a0",
+                "id": "VariableID:136853:7710",
+                "library": "BackgroundPlate Level",
+                "sourceFile": "Web :: Corp Components"
+              },
+              "binding": {
+                "id": "VariableID:136853:7710",
+                "key": "db84ea8cdc3ae910e107478f4b4b3fad114302a0",
+                "name": "BackgroundColor",
+                "collectionId": "VariableCollectionId:136846:8873",
+                "collectionName": "BackgroundPlate Level",
+                "resolvedModeId": null,
+                "resolvedModeName": null,
+                "explicitModeId": null,
+                "explicitModeName": null,
+                "modeSource": "unknown",
+                "modeOwnerNodeId": null,
+                "modeOwnerName": null,
+                "modeOwnerPath": null
+              }
+            },
+            "actual": {
+              "value": "base-bg/primary",
+              "resource": {
+                "type": "token",
+                "name": "base-bg/primary",
+                "key": "14ac29210fc546f67acfa8e0dfd252c210d0c78b",
+                "id": "VariableID:14ac29210fc546f67acfa8e0dfd252c210d0c78b/3541:157",
+                "library": "Interface Dynamic",
+                "sourceFile": "001 :: Interface Dynamic Colors"
+              },
+              "binding": {
+                "id": "VariableID:14ac29210fc546f67acfa8e0dfd252c210d0c78b/3541:157",
+                "key": "14ac29210fc546f67acfa8e0dfd252c210d0c78b",
+                "name": "base-bg/primary",
+                "collectionId": "VariableCollectionId:868:9636",
+                "collectionName": "Interface Dynamic",
+                "resolvedModeId": null,
+                "resolvedModeName": null,
+                "explicitModeId": null,
+                "explicitModeName": null,
+                "modeSource": "unknown",
+                "modeOwnerNodeId": null,
+                "modeOwnerName": null,
+                "modeOwnerPath": null
+              }
+            },
+            "bindingStatus": "different-binding",
+            "variableMode": null,
+            "signature": "component:6d5d4dda10be00621991e9b5a0152db4e47f4e2f:paint:fill:db84ea8cdc3ae910e107478f4b4b3fad114302a0->14ac29210fc546f67acfa8e0dfd252c210d0c78b",
+            "context": {
+              "actualComponentKey": "6d5d4dda10be00621991e9b5a0152db4e47f4e2f",
+              "referenceComponentKey": null,
+              "referenceOrigin": "host",
+              "actualNestedOwnerComponentKey": null,
+              "actualNestedOwnerPath": null,
+              "actualNestedOwnerRelativePath": null,
+              "nestedOwnerComponentKey": null,
+              "nestedOwnerComponentRole": null,
+              "nestedOwnerPath": null,
+              "nestedOwnerRelativePath": null,
+              "actualVariantProperties": {
+                "Type": "Primary",
+                "Skeleton": "False"
+              },
+              "referenceVariantProperties": null,
+              "surfaceContext": null
+            },
+            "componentRules": [
+              {
+                "ruleId": "component:web-corp.background-plate.primary-secondary-paint-is-fixed",
+                "severity": "error",
+                "source": "pattern-link",
+                "ruleKind": "design-rule",
+                "severityScope": "design",
+                "appliesTo": "fill|styles.fill|stroke|styles.stroke",
+                "checkType": "deterministic",
+                "matchKind": "exact_component_rule",
+                "changeScope": null,
+                "ruleText": "Внешний вид Type=Primary и Type=Secondary полностью определяется компонентом, уровнем поверхности и BackgroundColor. Ручные изменения fill или stroke запрещены, даже если новое значение привязано к токену. Производные paint-изменения при переключении Type или BackgroundColor не считаются отдельной кастомизацией.",
+                "remediation": "Сбросьте ручные изменения fill и stroke к effective baseline текущего Type, уровня и BackgroundColor.",
+                "numericConstraint": null,
+                "requiredTokenSource": null
+              }
+            ],
+            "presentation": {
+              "scope": "layer-property",
+              "groupTitle": "Параметры слоя",
+              "displayName": null,
+              "priority": 40,
+              "resetAction": "reset-layer-properties",
+              "effectiveBaseline": "composition-contract"
+            },
+            "assessment": {
+              "verdict": "violation",
+              "source": "component-contract",
+              "reasonCode": "component-contract-violation",
+              "ruleId": "component:web-corp.background-plate.primary-secondary-paint-is-fixed",
+              "contractId": null,
+              "constraintId": null,
+              "evidence": {
+                "resetSurface": "layer"
+              },
+              "message": "Внешний вид Type=Primary и Type=Secondary полностью определяется компонентом, уровнем поверхности и BackgroundColor. Ручные изменения fill или stroke запрещены, даже если новое значение привязано к токену. Производные paint-изменения при переключении Type или BackgroundColor не считаются отдельной кастомизацией.",
+              "remediation": null
+            }
+          },
+          {
+            "node": {
+              "id": "I10560:28629;136846:8891",
+              "name": "Slot",
+              "type": null,
+              "pageName": "     Лаборатория",
+              "path": "Type=Primary, Skeleton=False / Slot",
+              "visible": true
+            },
+            "kind": "layout",
+            "property": "layout.itemSpacing",
+            "message": "Отступ между элементами: 0 → 32",
+            "reference": {
+              "value": 0,
+              "resource": null,
+              "binding": null
+            },
+            "actual": {
+              "value": 32,
+              "resource": null,
+              "binding": null
+            },
+            "bindingStatus": null,
+            "variableMode": null,
+            "signature": "component:6d5d4dda10be00621991e9b5a0152db4e47f4e2f:layout:layout.itemSpacing:0->32",
+            "context": {
+              "actualComponentKey": null,
+              "referenceComponentKey": null,
+              "referenceOrigin": "host",
+              "actualNestedOwnerComponentKey": "6d5d4dda10be00621991e9b5a0152db4e47f4e2f",
+              "actualNestedOwnerPath": "Type=Primary, Skeleton=False",
+              "actualNestedOwnerRelativePath": "Slot",
+              "nestedOwnerComponentKey": null,
+              "nestedOwnerComponentRole": null,
+              "nestedOwnerPath": null,
+              "nestedOwnerRelativePath": null,
+              "actualVariantProperties": {
+                "Type": "Primary",
+                "Skeleton": "False"
+              },
+              "referenceVariantProperties": null,
+              "surfaceContext": null
+            },
+            "componentRules": [
+              {
+                "ruleId": "component:web-corp.background-plate.slot-auto-layout-is-context-controlled",
+                "severity": "info",
+                "source": "pattern-link",
+                "ruleKind": null,
+                "severityScope": null,
+                "appliesTo": "layout.axis|layout.itemSpacing|layout.primaryAxisAlignItems|layout.counterAxisAlignItems",
+                "checkType": "deterministic",
+                "matchKind": "exact_component_rule",
+                "changeScope": null,
+                "ruleText": "Axis, gap/itemSpacing и alignment внутри Slot полностью определяются контекстом композиции и вложенным контентом. Отличие этих свойств от standalone baseline не является нарушением и не требует рекомендации сбросить auto-layout. Padding проверяется отдельно на соответствие Spacing tokens.",
+                "remediation": null,
+                "numericConstraint": null,
+                "requiredTokenSource": null
+              }
+            ],
+            "presentation": {
+              "scope": "layer-property",
+              "groupTitle": "Параметры слоя",
+              "displayName": null,
+              "priority": 20,
+              "resetAction": "reset-layer-properties",
+              "effectiveBaseline": "composition-contract"
+            },
+            "assessment": {
+              "verdict": "unknown",
+              "source": "standalone-reference",
+              "reasonCode": "no-contextual-expectation",
+              "ruleId": null,
+              "contractId": null,
+              "constraintId": null,
+              "evidence": null,
+              "message": "Контекстное правило не найдено",
+              "remediation": null
+            }
+          }
+        ]
+      },
+      {
+        "node": {
+          "id": "I10560:28652;57587:188198",
+          "name": "headset_mic_m",
+          "type": "INSTANCE",
+          "pageName": "     Лаборатория",
+          "path": "[D](1440) Page / Body / [D](1024+) Content / ContentBody / Body / ChatIcon/Chat / headset_mic_m",
+          "visible": true
+        },
+        "component": {
+          "type": "component",
+          "name": "headset-mic",
+          "key": "abfa6dddd0935027c17ec4fc4c4c68f2be5af443",
+          "id": null,
+          "library": "Icons",
+          "sourceFile": "icons/Icons -- general (glyph).json"
+        },
+        "variant": {
+          "type": "component-variant",
+          "name": "Size=m",
+          "key": "abfa6dddd0935027c17ec4fc4c4c68f2be5af443",
+          "id": null,
+          "library": "Icons",
+          "sourceFile": "icons/Icons -- general (glyph).json"
+        },
+        "comparisonIssues": [],
+        "updateReasons": [],
+        "libraryFreshness": {
+          "status": "not-applicable",
+          "reason": "instance-sublayer",
+          "componentKey": null,
+          "currentComponentId": null,
+          "latestComponentId": null
+        },
+        "localComponentOwner": null,
+        "changes": [
+          {
+            "node": {
+              "id": "I10560:28652;57587:188198;20830:1238",
+              "name": "icon",
+              "type": null,
+              "pageName": "     Лаборатория",
+              "path": "Size=m / icon",
+              "visible": true
+            },
+            "kind": "paint",
+            "property": "fill",
+            "message": "заливка: #747474 → text_inverted/primary",
+            "reference": {
+              "value": "#747474",
+              "resource": null,
+              "binding": null
+            },
+            "actual": {
+              "value": "text_inverted/primary",
+              "resource": {
+                "type": "token",
+                "name": "text_inverted/primary",
+                "key": "de53e1056e003a1b3aedbb9e81b2d767e4c85fa2",
+                "id": "VariableID:de53e1056e003a1b3aedbb9e81b2d767e4c85fa2/3541:135",
+                "library": "Interface Dynamic",
+                "sourceFile": "001 :: Interface Dynamic Colors"
+              },
+              "binding": {
+                "id": "VariableID:de53e1056e003a1b3aedbb9e81b2d767e4c85fa2/3541:135",
+                "key": "de53e1056e003a1b3aedbb9e81b2d767e4c85fa2",
+                "name": "text_inverted/primary",
+                "collectionId": "VariableCollectionId:868:9636",
+                "collectionName": "Interface Dynamic",
+                "resolvedModeId": null,
+                "resolvedModeName": null,
+                "explicitModeId": null,
+                "explicitModeName": null,
+                "modeSource": "unknown",
+                "modeOwnerNodeId": null,
+                "modeOwnerName": null,
+                "modeOwnerPath": null
+              }
+            },
+            "bindingStatus": "missing-reference-binding",
+            "variableMode": null,
+            "signature": "component:abfa6dddd0935027c17ec4fc4c4c68f2be5af443:paint:fill:#747474->de53e1056e003a1b3aedbb9e81b2d767e4c85fa2",
+            "context": {
+              "actualComponentKey": null,
+              "referenceComponentKey": null,
+              "referenceOrigin": "host",
+              "actualNestedOwnerComponentKey": "abfa6dddd0935027c17ec4fc4c4c68f2be5af443",
+              "actualNestedOwnerPath": "Size=m",
+              "actualNestedOwnerRelativePath": "icon",
+              "nestedOwnerComponentKey": null,
+              "nestedOwnerComponentRole": null,
+              "nestedOwnerPath": null,
+              "nestedOwnerRelativePath": null,
+              "actualVariantProperties": {
+                "Size": "m"
+              },
+              "referenceVariantProperties": null,
+              "surfaceContext": null
+            },
+            "componentRules": [],
+            "presentation": null,
+            "assessment": null
+          }
+        ]
+      }
+    ]
+  }
+}
