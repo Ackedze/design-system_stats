@@ -1,0 +1,3414 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1096330610570928879-1787057709113-z17gqcxg:agent",
+  "sourceReportId": "apollo-1096330610570928879-1787057709113-z17gqcxg",
+  "generatedAt": "2026-08-18T12:55:09.113Z",
+  "suggestedFileName": "Alexey-Kukhta-CORP-Lead-Designer_18-08-2026_15-55-09_agent.json",
+  "user": {
+    "id": "1096330610570928879",
+    "name": "Alexey Kukhta / CORP / Lead Designer",
+    "slug": "Alexey-Kukhta-CORP-Lead-Designer"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.3.0"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "❇️ Мастерская :: AI",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "pageType": null,
+    "startedAt": "2026-08-18T12:54:47.016Z",
+    "finishedAt": "2026-08-18T12:55:09.113Z",
+    "durationMs": 22097,
+    "selection": [
+      {
+        "nodeId": "9172:48250",
+        "name": "[D](1024+) Content",
+        "nodeType": "FRAME",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 126,
+    "problemOccurrenceCount": 44,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 2,
+      "updates": 13,
+      "customizations": 7,
+      "localComponents": 0,
+      "detachedComponents": 0,
+      "presets": 1,
+      "technicalComponents": 11,
+      "currentComponents": 91,
+      "wrongChannel": 0,
+      "themization": 12
+    },
+    "includedFindingCount": 44,
+    "omittedCurrentComponentCount": 91
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, authority.status=active, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with authority.status=active, severity=error, and matchKind=exact_component_rule for the same property/change. Missing, draft, or malformed authority never confirms a violation.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 2,
+      "includedCount": 2,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 13,
+      "includedCount": 13,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 7,
+      "includedCount": 5,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 11,
+      "includedCount": 11,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 12,
+      "includedCount": 12,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9172:48252;37705:55353",
+        "name": "Title",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / [D] TitleView / MainContent / Heading / Title",
+        "visible": true
+      },
+      "style": {
+        "name": "40/48 px · Bold · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I9184:33341;20005:49704",
+        "name": "Shadow",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Card preview / Detailed / CardImage / Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "9172:48281",
+        "name": "🔄 [D][Corporate] TagGroup",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / К какому счёту привязать / 🔄 [D][Corporate] TagGroup",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9172:48246",
+          "9172:48248",
+          "9172:48250",
+          "9172:48251",
+          "9172:48253",
+          "9172:48254",
+          "9172:48277"
+        ]
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] TagGroup",
+        "key": "ade089aebc12195ec10337c7deda55df36e2c169",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- TagGroup.json"
+      },
+      "variant": {
+        "name": "Size=40, ErrorState=False",
+        "key": "ade089aebc12195ec10337c7deda55df36e2c169"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "ade089aebc12195ec10337c7deda55df36e2c169",
+        "currentComponentId": "11683:69888",
+        "latestComponentId": "11683:69888"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I9172:48281;34205:27037",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / К какому счёту привязать / 🔄 [D][Corporate] TagGroup / Items / 🔄 [D][Corporate] Tag",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9172:48246",
+          "9172:48248",
+          "9172:48250",
+          "9172:48251",
+          "9172:48253",
+          "9172:48254",
+          "9172:48277",
+          "9172:48281",
+          "I9172:48281;34205:27036"
+        ]
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Tag",
+        "key": "f36bc1a91cc17e826a0408bba18b28fc30320b0d",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Tag.json"
+      },
+      "variant": {
+        "name": "View=Filled, Size=40, Shape=Rectangular, SelectedState=True, DisabledState=False",
+        "key": "f36bc1a91cc17e826a0408bba18b28fc30320b0d"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I9172:48281;34205:27038",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / К какому счёту привязать / 🔄 [D][Corporate] TagGroup / Items / 🔄 [D][Corporate] Tag",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9172:48246",
+          "9172:48248",
+          "9172:48250",
+          "9172:48251",
+          "9172:48253",
+          "9172:48254",
+          "9172:48277",
+          "9172:48281",
+          "I9172:48281;34205:27036"
+        ]
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Tag",
+        "key": "6078a172f8d28df6398c44e821549e53552e097d",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Tag.json"
+      },
+      "variant": {
+        "name": "View=Filled, Size=40, Shape=Rectangular, SelectedState=False, DisabledState=False",
+        "key": "6078a172f8d28df6398c44e821549e53552e097d"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I9172:48281;34205:27039",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / К какому счёту привязать / 🔄 [D][Corporate] TagGroup / Items / 🔄 [D][Corporate] Tag",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9172:48246",
+          "9172:48248",
+          "9172:48250",
+          "9172:48251",
+          "9172:48253",
+          "9172:48254",
+          "9172:48277",
+          "9172:48281",
+          "I9172:48281;34205:27036"
+        ]
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Tag",
+        "key": "6078a172f8d28df6398c44e821549e53552e097d",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Tag.json"
+      },
+      "variant": {
+        "name": "View=Filled, Size=40, Shape=Rectangular, SelectedState=False, DisabledState=False",
+        "key": "6078a172f8d28df6398c44e821549e53552e097d"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I9172:48281;34205:27040",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / К какому счёту привязать / 🔄 [D][Corporate] TagGroup / Items / 🔄 [D][Corporate] Tag",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9172:48246",
+          "9172:48248",
+          "9172:48250",
+          "9172:48251",
+          "9172:48253",
+          "9172:48254",
+          "9172:48277",
+          "9172:48281",
+          "I9172:48281;34205:27036"
+        ]
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Tag",
+        "key": "6078a172f8d28df6398c44e821549e53552e097d",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Tag.json"
+      },
+      "variant": {
+        "name": "View=Filled, Size=40, Shape=Rectangular, SelectedState=False, DisabledState=False",
+        "key": "6078a172f8d28df6398c44e821549e53552e097d"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I9172:48281;34205:27042",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / К какому счёту привязать / 🔄 [D][Corporate] TagGroup / Items / 🔄 [D][Corporate] Tag",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9172:48246",
+          "9172:48248",
+          "9172:48250",
+          "9172:48251",
+          "9172:48253",
+          "9172:48254",
+          "9172:48277",
+          "9172:48281",
+          "I9172:48281;34205:27036"
+        ]
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Tag",
+        "key": "6078a172f8d28df6398c44e821549e53552e097d",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Tag.json"
+      },
+      "variant": {
+        "name": "View=Filled, Size=40, Shape=Rectangular, SelectedState=False, DisabledState=False",
+        "key": "6078a172f8d28df6398c44e821549e53552e097d"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "9172:48283",
+        "name": "🔄 [D][Corporate] TagGroup",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / К какому счёту привязать / 🔄 [D][Corporate] TagGroup",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9172:48246",
+          "9172:48248",
+          "9172:48250",
+          "9172:48251",
+          "9172:48253",
+          "9172:48254",
+          "9172:48277"
+        ]
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] TagGroup",
+        "key": "ade089aebc12195ec10337c7deda55df36e2c169",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- TagGroup.json"
+      },
+      "variant": {
+        "name": "Size=40, ErrorState=False",
+        "key": "ade089aebc12195ec10337c7deda55df36e2c169"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "ade089aebc12195ec10337c7deda55df36e2c169",
+        "currentComponentId": "11683:69888",
+        "latestComponentId": "11683:69888"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I9172:48283;34205:27037",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / К какому счёту привязать / 🔄 [D][Corporate] TagGroup / Items / 🔄 [D][Corporate] Tag",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9172:48246",
+          "9172:48248",
+          "9172:48250",
+          "9172:48251",
+          "9172:48253",
+          "9172:48254",
+          "9172:48277",
+          "9172:48283",
+          "I9172:48283;34205:27036"
+        ]
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Tag",
+        "key": "f36bc1a91cc17e826a0408bba18b28fc30320b0d",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Tag.json"
+      },
+      "variant": {
+        "name": "View=Filled, Size=40, Shape=Rectangular, SelectedState=True, DisabledState=False",
+        "key": "f36bc1a91cc17e826a0408bba18b28fc30320b0d"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I9172:48283;34205:27038",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / К какому счёту привязать / 🔄 [D][Corporate] TagGroup / Items / 🔄 [D][Corporate] Tag",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9172:48246",
+          "9172:48248",
+          "9172:48250",
+          "9172:48251",
+          "9172:48253",
+          "9172:48254",
+          "9172:48277",
+          "9172:48283",
+          "I9172:48283;34205:27036"
+        ]
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Tag",
+        "key": "6078a172f8d28df6398c44e821549e53552e097d",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Tag.json"
+      },
+      "variant": {
+        "name": "View=Filled, Size=40, Shape=Rectangular, SelectedState=False, DisabledState=False",
+        "key": "6078a172f8d28df6398c44e821549e53552e097d"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I9172:48283;34205:27039",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / К какому счёту привязать / 🔄 [D][Corporate] TagGroup / Items / 🔄 [D][Corporate] Tag",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9172:48246",
+          "9172:48248",
+          "9172:48250",
+          "9172:48251",
+          "9172:48253",
+          "9172:48254",
+          "9172:48277",
+          "9172:48283",
+          "I9172:48283;34205:27036"
+        ]
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Tag",
+        "key": "6078a172f8d28df6398c44e821549e53552e097d",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Tag.json"
+      },
+      "variant": {
+        "name": "View=Filled, Size=40, Shape=Rectangular, SelectedState=False, DisabledState=False",
+        "key": "6078a172f8d28df6398c44e821549e53552e097d"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I9172:48283;34205:27040",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / К какому счёту привязать / 🔄 [D][Corporate] TagGroup / Items / 🔄 [D][Corporate] Tag",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9172:48246",
+          "9172:48248",
+          "9172:48250",
+          "9172:48251",
+          "9172:48253",
+          "9172:48254",
+          "9172:48277",
+          "9172:48283",
+          "I9172:48283;34205:27036"
+        ]
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Tag",
+        "key": "6078a172f8d28df6398c44e821549e53552e097d",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Tag.json"
+      },
+      "variant": {
+        "name": "View=Filled, Size=40, Shape=Rectangular, SelectedState=False, DisabledState=False",
+        "key": "6078a172f8d28df6398c44e821549e53552e097d"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "9172:48290",
+        "name": "🔄 [D][Corporate] Input",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / К какому счёту привязать / 🔄 [D][Corporate] Input",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9172:48246",
+          "9172:48248",
+          "9172:48250",
+          "9172:48251",
+          "9172:48253",
+          "9172:48254",
+          "9172:48286"
+        ]
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Input",
+        "key": "0c7b1cf7c8773ee48e57dfeaf7fb1e42727cb4fd",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Input.json"
+      },
+      "variant": {
+        "name": "Size=56, FilledState=False, ActiveState=False, DisabledState=False, ErrorState=False, OuterLabel=False",
+        "key": "0c7b1cf7c8773ee48e57dfeaf7fb1e42727cb4fd"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle",
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "0c7b1cf7c8773ee48e57dfeaf7fb1e42727cb4fd",
+        "currentComponentId": "11298:135758",
+        "latestComponentId": "12024:76713"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "9172:48293",
+        "name": "[D] Button",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / [D] Button",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9172:48246",
+          "9172:48248",
+          "9172:48250",
+          "9172:48251",
+          "9172:48253",
+          "9172:48254"
+        ]
+      },
+      "component": {
+        "name": "[D] Button",
+        "key": "4ada6f8688b752d9452249fd8e8bc3545a76c708",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Button.json"
+      },
+      "variant": {
+        "name": "View=Accent, Size=56, Shape=Rectangular, SingleIcon=False, DisabledState=False",
+        "key": "4ada6f8688b752d9452249fd8e8bc3545a76c708"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "4ada6f8688b752d9452249fd8e8bc3545a76c708",
+        "currentComponentId": "10746:19348",
+        "latestComponentId": "11400:32298"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "9172:48252",
+        "name": "[D] TitleView",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / [D] TitleView",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9172:48246",
+          "9172:48248",
+          "9172:48250",
+          "9172:48251"
+        ]
+      },
+      "component": {
+        "name": "[D] TitleView",
+        "key": "3bfd179dc3b4c996f58db4cbcd26687a356fb3b7",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "View=xLarge, Skeleton=False",
+        "key": "3bfd179dc3b4c996f58db4cbcd26687a356fb3b7"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I9172:48252;37705:55353",
+            "name": "Title",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "View=xLarge, Skeleton=False / MainContent / Heading / Title",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Headline–System/40–48 Large → —",
+          "referenceValue": "Headline–System/40–48 Large",
+          "actualValue": "—",
+          "referenceRawValue": "Headline–System/40–48 Large",
+          "actualRawValue": "—",
+          "referenceDisplayValue": "Headline–System/40–48 Large",
+          "actualDisplayValue": "—",
+          "referenceResource": {
+            "name": "Headline–System/40–48 Large",
+            "key": "e451446afce66cddd400f39abc5837a829b5a6c2",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "3bfd179dc3b4c996f58db4cbcd26687a356fb3b7",
+            "actualNestedOwnerPath": "View=xLarge, Skeleton=False",
+            "actualNestedOwnerRelativePath": "MainContent / Heading / Title",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "xLarge",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "9172:48250",
+              "nodeName": "[D](1024+) Content",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "design-system-author",
+                "revision": 1
+              },
+              "severityScope": null,
+              "appliesTo": "styles.text",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Типографика Title и Subtitle фиксируется выбранным View компонента TitleView. Менять текстовый стиль заголовка или подзаголовка вручную запрещено.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": "Стиль текст",
+            "priority": 30,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+            "message": "Типографика Title и Subtitle фиксируется выбранным View компонента TitleView. Менять текстовый стиль заголовка или подзаголовка вручную запрещено.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "9172:48270",
+        "name": "[D] TitleView",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / К какому счёту привязать / [D] TitleView",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9172:48246",
+          "9172:48248",
+          "9172:48250",
+          "9172:48251",
+          "9172:48253",
+          "9172:48254",
+          "9172:48268"
+        ]
+      },
+      "component": {
+        "name": "[D] TitleView",
+        "key": "22c9df3a231be047e827af4f1625eca22ad9c26d",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "View=Medium, Skeleton=False",
+        "key": "22c9df3a231be047e827af4f1625eca22ad9c26d"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I9172:48270;37705:55399",
+            "name": "Title",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "View=Medium, Skeleton=False / MainContent / Heading / Title",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: text/primary → text/secondary",
+          "referenceValue": "text/primary",
+          "actualValue": "text/secondary",
+          "referenceRawValue": "text/primary",
+          "actualRawValue": "text/secondary",
+          "referenceDisplayValue": "text/primary",
+          "actualDisplayValue": "text/secondary",
+          "referenceResource": {
+            "name": "text/primary",
+            "key": "53f842b1771349c5dca692351edfc422e8f081b5",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "text/secondary",
+            "key": "d9d26239617e3ab9e69d7ed378d811a3c4561063",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": {
+            "id": "VariableID:53f842b1771349c5dca692351edfc422e8f081b5/3541:208",
+            "key": "53f842b1771349c5dca692351edfc422e8f081b5",
+            "name": "text/primary",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:d9d26239617e3ab9e69d7ed378d811a3c4561063/3541:205",
+            "key": "d9d26239617e3ab9e69d7ed378d811a3c4561063",
+            "name": "text/secondary",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "22c9df3a231be047e827af4f1625eca22ad9c26d",
+            "actualNestedOwnerPath": "View=Medium, Skeleton=False",
+            "actualNestedOwnerRelativePath": "MainContent / Heading / Title",
+            "nestedOwnerComponentKey": "f32313498fd345a1a41584c8d9edc61c3e2053bf",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "View=Medium, Skeleton=False / MainContent / Heading / [D] TitleAddon",
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Medium",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": {
+              "Type": "StatusBadge"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "9172:48268",
+              "nodeName": "К какому счёту привязать",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.title-and-subtitle-color-is-fixed",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "design-system-author",
+                "revision": 1
+              },
+              "severityScope": null,
+              "appliesTo": "fill|styles.fill",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Цвет текста Title и Subtitle определяется компонентом TitleView и его вложенными статусными блоками. Менять токен заливки текста вручную запрещено.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.title-view.title-and-subtitle-color-is-fixed",
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Цвет текста Title и Subtitle определяется компонентом TitleView и его вложенными статусными блоками. Менять токен заливки текста вручную запрещено.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "9172:48295",
+        "name": "[D] BackgroundPlate",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Card preview / [D] BackgroundPlate",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9172:48246",
+          "9172:48248",
+          "9172:48250",
+          "9172:48251",
+          "9172:48253",
+          "9172:48294"
+        ]
+      },
+      "component": {
+        "name": "[D] BackgroundPlate",
+        "key": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Position=Level 1 (outer)",
+        "key": "34e9064066253fb2f2d7bc056bb36a2580fd860e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I9172:48295;66402:30698",
+            "name": "[D] Style Level 1",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Position=Level 1 (outer) / [D] Style Level 1",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: — → base-bg-alt/secondary",
+          "referenceValue": null,
+          "actualValue": "base-bg-alt/secondary",
+          "referenceRawValue": null,
+          "actualRawValue": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+          "referenceDisplayValue": null,
+          "actualDisplayValue": "base-bg-alt/secondary",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "base-bg-alt/secondary",
+            "key": "8e2800951104c0afbc2ed28e5331d61aa4214a9a",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+            "key": "8e2800951104c0afbc2ed28e5331d61aa4214a9a",
+            "name": "base-bg-alt/secondary",
+            "collectionId": null,
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "dc4d6280389d1c6ba7d835b2cd693c113c6d79d1",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "BackgroundColor": "base-bg-alt (gray)",
+              "Type": "Border",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "9172:48250",
+              "nodeName": "[D](1024+) Content",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.colored-and-border-use-color-tokens",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "design-system-author",
+                "revision": 1
+              },
+              "severityScope": "design",
+              "appliesTo": "fill|stroke|variant.BackgroundColor",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Для Type=Colored цвет заливки должен быть задан через цветовой токен дизайн-системы. Для Type=Border через цветовой токен задаётся цвет обводки, а видимая заливка запрещена отдельным правилом. Конкретный цвет может отличаться по смыслу поверхности, но raw fill или raw stroke без требуемого token binding являются нарушением.",
+              "remediation": "Для Colored привяжите fill к цветовому токену. Для Border удалите fill и привяжите stroke к цветовому токену.",
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            },
+            {
+              "ruleId": "component:web-corp.background-plate.border-has-no-visible-fill",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "design-system-author",
+                "revision": 1
+              },
+              "severityScope": "design",
+              "appliesTo": "fill|styles.fill",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Type=Border всегда используется без видимой заливки. Любая заливка, включая привязанную к цветовому токену, нарушает контракт. Визуальная поверхность Border формируется только обводкой.",
+              "remediation": "Удалите заливку у Type=Border и оставьте только токенизированную обводку.",
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-required-paint-state",
+            "ruleId": "component:web-corp.background-plate.border-has-no-visible-fill",
+            "contractId": null,
+            "constraintId": null,
+            "evidence": {
+              "resetSurface": "layer",
+              "property": "fill",
+              "requiredPaintState": "none-or-not-visible"
+            },
+            "message": "Type=Border всегда используется без видимой заливки. Любая заливка, включая привязанную к цветовому токену, нарушает контракт. Визуальная поверхность Border формируется только обводкой.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "9184:33341",
+        "name": "CardImage",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Card preview / Detailed / CardImage",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9172:48246",
+          "9172:48248",
+          "9172:48250",
+          "9172:48251",
+          "9172:48253",
+          "9172:48294",
+          "9172:48296"
+        ]
+      },
+      "component": {
+        "name": "CardImage",
+        "key": "f2cbe75d38171b748403312eb38380ac3868b7f7",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- CardImage.json"
+      },
+      "variant": {
+        "name": "Cover=Alfa Business, Size=264x164, State=Active, Stack=false",
+        "key": "f2cbe75d38171b748403312eb38380ac3868b7f7"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I9184:33341;20005:49705;20005:49723;20005:49819",
+            "name": "Image Container",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Cover=Alfa Business, Size=264x164, State=Active, Stack=false / CardItem / Cover / Image Container",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: — → Изображение",
+          "referenceValue": null,
+          "actualValue": "Изображение",
+          "referenceRawValue": null,
+          "actualRawValue": "Изображение",
+          "referenceDisplayValue": null,
+          "actualDisplayValue": "Изображение",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "2a02bc513486ebced9152bb6e1b6a352326c8a05",
+            "actualNestedOwnerPath": "Cover=Alfa Business, Size=264x164, State=Active, Stack=false / CardItem / Cover",
+            "actualNestedOwnerRelativePath": "Image Container",
+            "nestedOwnerComponentKey": "e71d93b680cb4b3314e43adf22415ef7a8ec837e",
+            "nestedOwnerComponentRole": "Part",
+            "nestedOwnerPath": "Cover=Alfa Business, Size=264x164, State=Active, Stack=false / CardItem",
+            "nestedOwnerRelativePath": "Cover / Image Container",
+            "actualVariantProperties": {
+              "Product Type": "AB",
+              "Size": "264x164"
+            },
+            "referenceVariantProperties": {
+              "Size": "264x164"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "9172:48250",
+              "nodeName": "[D](1024+) Content",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.card-image.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            },
+            {
+              "ruleId": "component:web-corp.card-image.visuals-follow-effective-baseline",
+              "severity": "error",
+              "source": "owner-confirmed",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "design-system-author",
+                "revision": 1
+              },
+              "severityScope": null,
+              "appliesTo": "component.identity|layout.*|styles.text|fill|stroke|radius|opacity|effects.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Не меняйте вручную структуру, размеры, пропорции, отступы, типографику, цвета, радиусы, opacity и эффекты CardImage. Разрешены только контент имени/последних четырёх цифр, Show Shadow, рубашка при Cover=None и условное скрытие SilverLine по их точным правилам.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.card-image.visuals-follow-effective-baseline",
+            "message": "Не меняйте вручную структуру, размеры, пропорции, отступы, типографику, цвета, радиусы, opacity и эффекты CardImage. Разрешены только контент имени/последних четырёх цифр, Show Shadow, рубашка при Cover=None и условное скрытие SilverLine по их точным правилам.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I9184:33341;20005:49705;20005:49723;20005:49820;20005:49720",
+            "name": "Vector",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Cover=Alfa Business, Size=264x164, State=Active, Stack=false / CardItem / Cover / Image Container / SilverLine / Vector",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: — → paint:GRADIENT_LINEAR",
+          "referenceValue": null,
+          "actualValue": "paint:GRADIENT_LINEAR",
+          "referenceRawValue": null,
+          "actualRawValue": "paint:GRADIENT_LINEAR",
+          "referenceDisplayValue": null,
+          "actualDisplayValue": "paint:GRADIENT_LINEAR",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "b822a4df9fee56a50bae59c49b8890af962f2595",
+            "actualNestedOwnerPath": "Cover=Alfa Business, Size=264x164, State=Active, Stack=false / CardItem / Cover / Image Container / SilverLine",
+            "actualNestedOwnerRelativePath": "Vector",
+            "nestedOwnerComponentKey": "e71d93b680cb4b3314e43adf22415ef7a8ec837e",
+            "nestedOwnerComponentRole": "Part",
+            "nestedOwnerPath": "Cover=Alfa Business, Size=264x164, State=Active, Stack=false / CardItem",
+            "nestedOwnerRelativePath": "Cover / Image Container / SilverLine / Vector",
+            "actualVariantProperties": {
+              "Type": "complex"
+            },
+            "referenceVariantProperties": {
+              "Size": "264x164"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "9172:48250",
+              "nodeName": "[D](1024+) Content",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.card-image.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            },
+            {
+              "ruleId": "component:web-corp.card-image.visuals-follow-effective-baseline",
+              "severity": "error",
+              "source": "owner-confirmed",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "design-system-author",
+                "revision": 1
+              },
+              "severityScope": null,
+              "appliesTo": "component.identity|layout.*|styles.text|fill|stroke|radius|opacity|effects.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Не меняйте вручную структуру, размеры, пропорции, отступы, типографику, цвета, радиусы, opacity и эффекты CardImage. Разрешены только контент имени/последних четырёх цифр, Show Shadow, рубашка при Cover=None и условное скрытие SilverLine по их точным правилам.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.card-image.visuals-follow-effective-baseline",
+            "message": "Не меняйте вручную структуру, размеры, пропорции, отступы, типографику, цвета, радиусы, opacity и эффекты CardImage. Разрешены только контент имени/последних четырёх цифр, Show Shadow, рубашка при Cover=None и условное скрытие SilverLine по их точным правилам.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "9172:48300",
+        "name": "🔒 [D] IsleBlock :: 1024+",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Card preview / Detailed / info / 🔒 [D] IsleBlock :: 1024+",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9172:48246",
+          "9172:48248",
+          "9172:48250",
+          "9172:48251",
+          "9172:48253",
+          "9172:48294",
+          "9172:48296",
+          "9172:48298"
+        ]
+      },
+      "component": {
+        "name": "🔒 [D] IsleBlock :: 1024+",
+        "key": "9dd86bd040376734e605227c0d849d1328e62d76",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- IsleBlock.json"
+      },
+      "variant": {
+        "name": "Type=Static",
+        "key": "9dd86bd040376734e605227c0d849d1328e62d76"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I9172:48300;62722:160365",
+            "name": "IsleContent",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Type=Static / body / content / IsleContent",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": "0",
+          "referenceRawValue": 8,
+          "actualRawValue": "0",
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": "0",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "1e6ab2188ee0565cee147cf7a4e64c32a0ccb883",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "9dd86bd040376734e605227c0d849d1328e62d76",
+            "actualNestedOwnerPath": "Type=Static",
+            "actualNestedOwnerRelativePath": "body / content / IsleContent",
+            "nestedOwnerComponentKey": "1e6ab2188ee0565cee147cf7a4e64c32a0ccb883",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Type=Static / body / content / IsleContent",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "Type": "TableContent"
+            },
+            "referenceVariantProperties": {
+              "Type": "TableContent"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "9172:48250",
+              "nodeName": "[D](1024+) Content",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.isle-block.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "9172:48300",
+        "name": "🔒 [D] IsleBlock :: 1024+",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Card preview / Detailed / info / 🔒 [D] IsleBlock :: 1024+",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9172:48246",
+          "9172:48248",
+          "9172:48250",
+          "9172:48251",
+          "9172:48253",
+          "9172:48294",
+          "9172:48296",
+          "9172:48298"
+        ]
+      },
+      "component": {
+        "name": "🔒 [D] IsleBlock :: 1024+",
+        "key": "9dd86bd040376734e605227c0d849d1328e62d76",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- IsleBlock.json"
+      },
+      "variant": {
+        "name": "Type=Static",
+        "key": "9dd86bd040376734e605227c0d849d1328e62d76"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "9dd86bd040376734e605227c0d849d1328e62d76",
+        "currentComponentId": "11298:111416",
+        "latestComponentId": "11298:111416"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "technicalComponents",
+      "severityHint": "low",
+      "title": "Технический компонент",
+      "node": {
+        "id": "I9172:48258;406:281428",
+        "name": "💊Rulers / Side",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / К какому счёту привязать / Spacers / 💊Rulers / Side",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9172:48246",
+          "9172:48248",
+          "9172:48250",
+          "9172:48251",
+          "9172:48253",
+          "9172:48254",
+          "9172:48255",
+          "9172:48258"
+        ]
+      },
+      "component": {
+        "name": "💊Rulers / Side",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f",
+        "library": "Web :: Core Helpers",
+        "sourceFile": "web/components/web-core-helpers/Web _ Core Helpers -- Documentation.json"
+      },
+      "variant": {
+        "name": "Direction=←",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "technicalComponents",
+      "severityHint": "low",
+      "title": "Технический компонент",
+      "node": {
+        "id": "I9172:48260;406:281438",
+        "name": "💊Rulers / Side",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / К какому счёту привязать / Spacers / 💊Rulers / Side",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9172:48246",
+          "9172:48248",
+          "9172:48250",
+          "9172:48251",
+          "9172:48253",
+          "9172:48254",
+          "9172:48255",
+          "9172:48260"
+        ]
+      },
+      "component": {
+        "name": "💊Rulers / Side",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f",
+        "library": "Web :: Core Helpers",
+        "sourceFile": "web/components/web-core-helpers/Web _ Core Helpers -- Documentation.json"
+      },
+      "variant": {
+        "name": "Direction=←",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "technicalComponents",
+      "severityHint": "low",
+      "title": "Технический компонент",
+      "node": {
+        "id": "I9172:48267;406:281438",
+        "name": "💊Rulers / Side",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / Spacers / 💊Rulers / Side",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9172:48246",
+          "9172:48248",
+          "9172:48250",
+          "9172:48251",
+          "9172:48253",
+          "9172:48254",
+          "9172:48267"
+        ]
+      },
+      "component": {
+        "name": "💊Rulers / Side",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f",
+        "library": "Web :: Core Helpers",
+        "sourceFile": "web/components/web-core-helpers/Web _ Core Helpers -- Documentation.json"
+      },
+      "variant": {
+        "name": "Direction=←",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "technicalComponents",
+      "severityHint": "low",
+      "title": "Технический компонент",
+      "node": {
+        "id": "I9172:48271;406:281428",
+        "name": "💊Rulers / Side",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / К какому счёту привязать / Spacers / 💊Rulers / Side",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9172:48246",
+          "9172:48248",
+          "9172:48250",
+          "9172:48251",
+          "9172:48253",
+          "9172:48254",
+          "9172:48268",
+          "9172:48271"
+        ]
+      },
+      "component": {
+        "name": "💊Rulers / Side",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f",
+        "library": "Web :: Core Helpers",
+        "sourceFile": "web/components/web-core-helpers/Web _ Core Helpers -- Documentation.json"
+      },
+      "variant": {
+        "name": "Direction=←",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "technicalComponents",
+      "severityHint": "low",
+      "title": "Технический компонент",
+      "node": {
+        "id": "I9172:48273;406:281411",
+        "name": "💊Rulers / Side",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / К какому счёту привязать / Spacers / 💊Rulers / Side",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9172:48246",
+          "9172:48248",
+          "9172:48250",
+          "9172:48251",
+          "9172:48253",
+          "9172:48254",
+          "9172:48268",
+          "9172:48273"
+        ]
+      },
+      "component": {
+        "name": "💊Rulers / Side",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f",
+        "library": "Web :: Core Helpers",
+        "sourceFile": "web/components/web-core-helpers/Web _ Core Helpers -- Documentation.json"
+      },
+      "variant": {
+        "name": "Direction=←",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "technicalComponents",
+      "severityHint": "low",
+      "title": "Технический компонент",
+      "node": {
+        "id": "I9172:48276;406:281438",
+        "name": "💊Rulers / Side",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / Spacers / 💊Rulers / Side",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9172:48246",
+          "9172:48248",
+          "9172:48250",
+          "9172:48251",
+          "9172:48253",
+          "9172:48254",
+          "9172:48276"
+        ]
+      },
+      "component": {
+        "name": "💊Rulers / Side",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f",
+        "library": "Web :: Core Helpers",
+        "sourceFile": "web/components/web-core-helpers/Web _ Core Helpers -- Documentation.json"
+      },
+      "variant": {
+        "name": "Direction=←",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "technicalComponents",
+      "severityHint": "low",
+      "title": "Технический компонент",
+      "node": {
+        "id": "I9172:48280;406:281428",
+        "name": "💊Rulers / Side",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / К какому счёту привязать / Spacers / 💊Rulers / Side",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9172:48246",
+          "9172:48248",
+          "9172:48250",
+          "9172:48251",
+          "9172:48253",
+          "9172:48254",
+          "9172:48277",
+          "9172:48280"
+        ]
+      },
+      "component": {
+        "name": "💊Rulers / Side",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f",
+        "library": "Web :: Core Helpers",
+        "sourceFile": "web/components/web-core-helpers/Web _ Core Helpers -- Documentation.json"
+      },
+      "variant": {
+        "name": "Direction=←",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "technicalComponents",
+      "severityHint": "low",
+      "title": "Технический компонент",
+      "node": {
+        "id": "I9172:48282;406:281411",
+        "name": "💊Rulers / Side",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / К какому счёту привязать / Spacers / 💊Rulers / Side",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9172:48246",
+          "9172:48248",
+          "9172:48250",
+          "9172:48251",
+          "9172:48253",
+          "9172:48254",
+          "9172:48277",
+          "9172:48282"
+        ]
+      },
+      "component": {
+        "name": "💊Rulers / Side",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f",
+        "library": "Web :: Core Helpers",
+        "sourceFile": "web/components/web-core-helpers/Web _ Core Helpers -- Documentation.json"
+      },
+      "variant": {
+        "name": "Direction=←",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "technicalComponents",
+      "severityHint": "low",
+      "title": "Технический компонент",
+      "node": {
+        "id": "I9172:48285;406:281438",
+        "name": "💊Rulers / Side",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / Spacers / 💊Rulers / Side",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9172:48246",
+          "9172:48248",
+          "9172:48250",
+          "9172:48251",
+          "9172:48253",
+          "9172:48254",
+          "9172:48285"
+        ]
+      },
+      "component": {
+        "name": "💊Rulers / Side",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f",
+        "library": "Web :: Core Helpers",
+        "sourceFile": "web/components/web-core-helpers/Web _ Core Helpers -- Documentation.json"
+      },
+      "variant": {
+        "name": "Direction=←",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "technicalComponents",
+      "severityHint": "low",
+      "title": "Технический компонент",
+      "node": {
+        "id": "I9172:48289;406:281438",
+        "name": "💊Rulers / Side",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / К какому счёту привязать / Spacers / 💊Rulers / Side",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9172:48246",
+          "9172:48248",
+          "9172:48250",
+          "9172:48251",
+          "9172:48253",
+          "9172:48254",
+          "9172:48286",
+          "9172:48289"
+        ]
+      },
+      "component": {
+        "name": "💊Rulers / Side",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f",
+        "library": "Web :: Core Helpers",
+        "sourceFile": "web/components/web-core-helpers/Web _ Core Helpers -- Documentation.json"
+      },
+      "variant": {
+        "name": "Direction=←",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "technicalComponents",
+      "severityHint": "low",
+      "title": "Технический компонент",
+      "node": {
+        "id": "I9172:48292;406:281438",
+        "name": "💊Rulers / Side",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / Spacers / 💊Rulers / Side",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9172:48246",
+          "9172:48248",
+          "9172:48250",
+          "9172:48251",
+          "9172:48253",
+          "9172:48254",
+          "9172:48292"
+        ]
+      },
+      "component": {
+        "name": "💊Rulers / Side",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f",
+        "library": "Web :: Core Helpers",
+        "sourceFile": "web/components/web-core-helpers/Web _ Core Helpers -- Documentation.json"
+      },
+      "variant": {
+        "name": "Direction=←",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "9172:48281",
+        "name": "🔄 [D][Corporate] TagGroup",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / К какому счёту привязать / 🔄 [D][Corporate] TagGroup",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] TagGroup",
+      "component": {
+        "name": "🔄 [D][Corporate] TagGroup",
+        "key": "a3dc186947232ebf1978ba767c8d46fc355e3b3e",
+        "library": "Web _ Core",
+        "sourceFile": null
+      }
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I9172:48281;34205:27037",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / К какому счёту привязать / 🔄 [D][Corporate] TagGroup / Items / 🔄 [D][Corporate] Tag",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Tag",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I9172:48281;34205:27038",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / К какому счёту привязать / 🔄 [D][Corporate] TagGroup / Items / 🔄 [D][Corporate] Tag",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Tag",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I9172:48281;34205:27039",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / К какому счёту привязать / 🔄 [D][Corporate] TagGroup / Items / 🔄 [D][Corporate] Tag",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Tag",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I9172:48281;34205:27040",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / К какому счёту привязать / 🔄 [D][Corporate] TagGroup / Items / 🔄 [D][Corporate] Tag",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Tag",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I9172:48281;34205:27042",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / К какому счёту привязать / 🔄 [D][Corporate] TagGroup / Items / 🔄 [D][Corporate] Tag",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Tag",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "9172:48283",
+        "name": "🔄 [D][Corporate] TagGroup",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / К какому счёту привязать / 🔄 [D][Corporate] TagGroup",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] TagGroup",
+      "component": {
+        "name": "🔄 [D][Corporate] TagGroup",
+        "key": "a3dc186947232ebf1978ba767c8d46fc355e3b3e",
+        "library": "Web _ Core",
+        "sourceFile": null
+      }
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I9172:48283;34205:27037",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / К какому счёту привязать / 🔄 [D][Corporate] TagGroup / Items / 🔄 [D][Corporate] Tag",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Tag",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I9172:48283;34205:27038",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / К какому счёту привязать / 🔄 [D][Corporate] TagGroup / Items / 🔄 [D][Corporate] Tag",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Tag",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I9172:48283;34205:27039",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / К какому счёту привязать / 🔄 [D][Corporate] TagGroup / Items / 🔄 [D][Corporate] Tag",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Tag",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I9172:48283;34205:27040",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / К какому счёту привязать / 🔄 [D][Corporate] TagGroup / Items / 🔄 [D][Corporate] Tag",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Tag",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "9172:48290",
+        "name": "🔄 [D][Corporate] Input",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "Section 12 / [D] Заказ карты / Body / [D](1024+) Content / ContentBody / ContentBody/1/Physical / Frame 1948754510 / К какому счёту привязать / 🔄 [D][Corporate] Input",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Input",
+      "component": {
+        "name": "🔄 [D][Corporate] Input",
+        "key": "ef458e5f86b2e18e6f2ff21e21018f6c4ae85b0d",
+        "library": "Web _ Core",
+        "sourceFile": null
+      }
+    }
+  ],
+  "componentContexts": [
+    {
+      "componentKey": "web-core.button",
+      "summary": "Button — семейство action controls. Apollo должен трактовать изменения Button variant как component property changes, а ручные изменения style/token/layout как layer customizations.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] Button",
+        "[D] Button_Inverted",
+        "[M] Button",
+        "[M] Button_Inverted",
+        "🔄 [D][Corporate] Button",
+        "🔄 [D][Corporate] Button_Inverted",
+        "🔄 [M][Corporate] Button",
+        "🔄 [M][Corporate] Button_Inverted",
+        "🔩 Addon",
+        "🔩 Addon"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*",
+          "variant.View",
+          "variant.Size",
+          "variant.Shape",
+          "variant.SingleIcon",
+          "variant.DisabledState"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent",
+          "layout.padding",
+          "layout.itemSpacing"
+        ],
+        "baselinePolicy": "Если component property изменилась, сравнивай ручные layer overrides с baseline текущего actual-состояния компонента, а не с исходным reference baseline.",
+        "slotProperties": [
+          "LeftAddon.variant.Type",
+          "RightAddon.variant.Type"
+        ],
+        "ordering": [
+          "component-property",
+          "slot-property",
+          "layer-property"
+        ]
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.View",
+            "variant.Size",
+            "variant.Shape",
+            "variant.SingleIcon",
+            "variant.DisabledState"
+          ],
+          "layerProperties": [
+            "fills",
+            "strokes",
+            "strokeWeight",
+            "cornerRadius",
+            "opacity",
+            "layout.padding",
+            "layout.itemSpacing",
+            "styles.text",
+            "typography"
+          ],
+          "dependencyPolicy": "При reset component property layer differences, вызванные только этой property, могут исчезнуть автоматически. Ручные layer overrides должны оставаться независимо сбрасываемыми, пока reset родительской property не уберёт их target state."
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web-core.input",
+      "summary": "Input — семейство text fields. Apollo должен трактовать изменения состояния Input как component property changes, а ручные изменения style/token/layout как layer customizations. Text content может требовать редакторской проверки по pattern.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] Input",
+        "[D] Input_Inverted",
+        "[M] Input",
+        "[M] Input_Inverted",
+        "🔄 [D][Corporate] Input",
+        "🔄 [D][Corporate] Input_Inverted",
+        "🔄 [M][AO] Input",
+        "🔄 [M][AO] Input_Inverted"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "aacaefcbd8c36b5985609691edecccf170067aa6",
+          "name": "🔄 [D][Corporate] Input",
+          "purpose": "🔄 Замени на актуальный",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*",
+          "variant.Size",
+          "variant.FilledState",
+          "variant.ActiveState",
+          "variant.DisabledState",
+          "variant.ErrorState",
+          "variant.OuterLabel"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent",
+          "strokeWeight",
+          "layout.padding",
+          "layout.itemSpacing"
+        ],
+        "baselinePolicy": "Если component property изменилась, сравнивай ручные layer overrides с baseline текущего actual-состояния компонента, а не с исходным reference baseline.",
+        "slotProperties": [
+          "LeftAddon1.variant.Type",
+          "LeftAddon2.variant.Type",
+          "RightAddon1.variant.Type",
+          "RightAddon2.variant.Type",
+          "Placeholder.variant.Accent"
+        ],
+        "contentProperties": [
+          "Label.characters",
+          "Placeholder.characters",
+          "HintMessage.characters"
+        ],
+        "ordering": [
+          "component-property",
+          "slot-property",
+          "layer-property",
+          "content-property"
+        ]
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.Size",
+            "variant.FilledState",
+            "variant.ActiveState",
+            "variant.DisabledState",
+            "variant.ErrorState",
+            "variant.OuterLabel"
+          ],
+          "layerProperties": [
+            "fills",
+            "strokes",
+            "strokeWeight",
+            "cornerRadius",
+            "opacity",
+            "layout.padding",
+            "layout.itemSpacing",
+            "styles.text",
+            "typography"
+          ],
+          "dependencyPolicy": "При reset состояния компонента layer differences, вызванные только этим состоянием, могут исчезнуть автоматически. Ручные layer overrides должны оставаться независимо сбрасываемыми, пока reset родительского состояния не уберёт их target state."
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web-core.switch",
+      "summary": "Switch — семейство бинарных on/off controls. Apollo должен трактовать SelectedState, DisabledState, Reverse и Hint как component property changes, а ручные area/oval/label visual changes как layer customizations.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "Switch_20",
+        "Switch_20_Inverted",
+        "Switch_24",
+        "Switch_24_Inverted",
+        "SwitchLabel_20",
+        "SwitchLabel_20_Inverted",
+        "SwitchLabel_20_Reverse",
+        "SwitchLabel_20_Reverse_Inverted",
+        "SwitchLabel_24",
+        "SwitchLabel_24_Inverted",
+        "SwitchLabel_24_Reverse",
+        "SwitchLabel_24_Reverse_Inverted"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*",
+          "variant.SelectedState",
+          "variant.DisabledState",
+          "variant.Reverse",
+          "variant.Hint"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent",
+          "strokeWeight",
+          "layout.padding",
+          "layout.itemSpacing"
+        ],
+        "baselinePolicy": "Если component property изменилась, сравнивай ручные layer overrides с baseline текущего actual-состояния компонента, а не с исходным reference baseline.",
+        "slotProperties": [
+          "Switch.variant.SelectedState",
+          "Switch.variant.DisabledState"
+        ],
+        "contentProperties": [
+          "Label.characters"
+        ],
+        "ordering": [
+          "component-property",
+          "slot-property",
+          "layer-property",
+          "content-property"
+        ]
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.SelectedState",
+            "variant.DisabledState",
+            "variant.Reverse",
+            "variant.Hint"
+          ],
+          "layerProperties": [
+            "fills",
+            "strokes",
+            "strokeWeight",
+            "cornerRadius",
+            "opacity",
+            "layout.padding",
+            "layout.itemSpacing",
+            "styles.text",
+            "typography"
+          ],
+          "dependencyPolicy": "При reset состояния компонента layer differences, вызванные только этим состоянием, могут исчезнуть автоматически. Ручные layer overrides должны оставаться независимо сбрасываемыми, пока reset родительского состояния не уберёт их target state."
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web-core.tag",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] Tag_Filled",
+        "[D] Tag_Filled_Inverted",
+        "[D] Tag_Muted",
+        "[D] Tag_Transparent",
+        "[D] Tag_Transparent_Inverted",
+        "[M] Tag_Filled",
+        "[M] Tag_Filled_Inverted",
+        "[M] Tag_Muted",
+        "[M] Tag_Transparent",
+        "[M] Tag_Transparent_Inverted",
+        "🔄 [D][Corporate] Tag",
+        "🔄 [D][Corporate] Tag_Inverted",
+        "🔄 [M][Corporate] Tag",
+        "🔄 [M][Corporate] Tag_Inverted",
+        "🔄[D] Tag_Outlined",
+        "🔄[D] Tag_Outlined_Inverted",
+        "🔄[M] Tag_Outlined",
+        "🔄[M] Tag_Outlined_Inverted"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "093b16209b63162a22e199536fcf1e433ac96dbb",
+          "name": "🔄 [D][Corporate] Tag",
+          "purpose": "🔄 Замени на актуальный",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.tag-group",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] TagGroup",
+        "[M] TagGroup",
+        "🔄 [D][Corporate] TagGroup",
+        "🔄 [M][AO] TagGroup",
+        "🔄 [M][Corporate]  TagGroup"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "cb7d4d3b2bf2ae02ec698b190fb04e11ba0efe1c",
+          "name": "🔄 [D][Corporate] TagGroup",
+          "purpose": "🔄 Замени на актуальный",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.background-plate",
+      "summary": "BackgroundPlate — семейство variable-driven surface-компонентов. Для нового контента используется BackgroundPlateSlot: Level-0 задаётся главной поверхности, первый компонент получает Level-1, а опциональный Level-2 располагается только непосредственно внутри Level-1. Type, BackgroundColor, Skeleton и layer-свойства трактуются по exact component rules. BackgroundPlateView — кодовый alias этого же семейства.",
+      "criticalBaselines": [
+        "Для новых макетов основным контейнером является BackgroundPlateSlot; BackgroundPlate считается legacy для генерации, но его существующее использование не является нарушением само по себе.",
+        "Mode BackgroundPlate Level=Level-0 назначается главной поверхности страницы или модальной сущности. Первый вложенный BackgroundPlateSlot получает Level-1; Level-2 всегда располагается непосредственно внутри Level-1.",
+        "Обычный контент может лежать непосредственно в Slot Level-1. Level-2 является опциональной вложенной поверхностью; Level-0 и Level-1 внутри Slot запрещены.",
+        "Рекомендуемый padding: Spacing/32 для Level-1 и Spacing/24 для Level-2. Другие значения допустимы под контекст или паттерн только с Spacing token binding.",
+        "Axis, gap и alignment Slot определяются контекстом; width должен быть Fill, height — Hug. Clip content может быть true или false по контексту.",
+        "Primary и Secondary получают fill/stroke только из effective baseline. Colored использует только токенизированную заливку без stroke. Border используется без fill, с токенизированным stroke; strokeWeight контекстный, strokeAlign всегда INSIDE.",
+        "Radius, opacity и blend mode фиксируются effective baseline. Drop shadow и Inner shadow запрещены; Layer blur и Background blur разрешены по контексту.",
+        "Skeleton=True является штатным состоянием загрузки компонента или контента. Сложная skeleton-композиция допустима только при явном сценарии паттерна.",
+        "BackgroundPlateView в code/private usage маппится на BackgroundPlate и должен использовать те же правила, контракты и pattern links.",
+        "Для desktop рабочей поверхности Level 1 использует radius 16, Level 2 использует radius 12. Promo и mobile variants могут иметь другие baseline из каталога.",
+        "BackgroundColor зависит от surface context: для страниц используются base-bg/base-bg-alt, для модальных сущностей используются modal-bg/modal-bg-alt. Суффикс в скобках (gray)/(white) описывает визуальный фон, а часть имени до скобок соответствует цветовому токену поверхности.",
+        "В каталоге вариант обводочной поверхности называется Type=Border. В тексте рекомендаций можно пояснять его как bordered/обводочный, но в машинных фактах и таблицах используй точное значение Border.",
+        "Radius/cornerRadius у BackgroundPlate, BackgroundPlateSlot и вложенных Style Level фиксируется component effective baseline. Ручное изменение скруглений запрещено и должно трактоваться как нарушение, а не как допустимая композиционная настройка.",
+        "Для Table Wide [D] в BackgroundPlateSlot действует специальное правило: Slot padding top=Spacing/0, right/bottom/left=Spacing/16. [D] TopBar расположен рядом с плейтом в общем Level-0 контейнере, а не внутри Slot."
+      ],
+      "agentInstructions": [
+        "Не выводи нарушение из примера. Используй только exact rules, exact component contracts и явно найденные pattern rules.",
+        "Если во входном отчёте встречается BackgroundPlateView, трактуй его как code/private alias компонента BackgroundPlate, а не как отдельный компонент без правил.",
+        "Изменения variant/property показывай как component-property customizations; изменения fill, stroke, stroke geometry, radius, opacity, effects, blend mode, layout и style показывай как layer-property customizations.",
+        "Если nested diff принадлежит wrapper и actual совпадает с effective baseline, не показывай его как дизайнерскую кастомизацию.",
+        "Если actual отличается от effective baseline, показывай effectiveBaseline -> actual. Не подставляй standalone baseline вложенного Style Level вместо baseline выбранного BackgroundPlate variant.",
+        "Padding у BackgroundPlateSlot может быть осознанной настройкой композиции. Комментируй его как layer customization и проверяй Spacing token binding; не требуй вернуть 32 или 24 только из-за отличия от рекомендации.",
+        "Не требуй Level-2 для обычного контента Slot Level-1. Если внутри Slot найден BackgroundPlate Level-0 или Level-1, используй rule:components.background-plate.slot-content-levels.",
+        "Axis, gap, alignment и Clip content Slot трактуй как контекстные настройки. Width не должен отличаться от Fill, height — от Hug.",
+        "При анализе BackgroundColor сначала определи контекст поверхности: page или modal. Не рекомендуй modal-bg* для обычной страницы и не рекомендуй base-bg* для модальной сущности, если exact rule или отчёт указывают на противоположный surface context.",
+        "Для Primary и Secondary любое ручное изменение fill/stroke является нарушением, даже при token binding. Сравнивай с effective baseline текущего Type, уровня и BackgroundColor.",
+        "Для Colored разрешена только видимая заливка через color token; raw fill, отсутствие fill и любой stroke являются нарушением.",
+        "Для Border fill запрещён, stroke должен быть привязан к color token. StrokeWeight можно менять под контекст; strokeAlign должен оставаться INSIDE. Border не может быть кликабельным.",
+        "Если в отчёте есть изменение radius/cornerRadius, opacity или blend mode, используй соответствующее exact component rule и рекомендуй сброс к effective baseline.",
+        "Drop shadow и Inner shadow трактуй как нарушения. Layer blur и Background blur являются допустимыми контекстными кастомизациями и не должны попадать под запрет теней.",
+        "Переключение Skeleton=False → True само по себе разрешено. Ручную простую skeleton-композицию вместо component property считай нарушением; сложное исключение допускай только по явному паттерну.",
+        "Для Table Wide не разрешай дублировать table inset внутри плейта: HeadRow, BodyRow и ячейки используют собственные effective baseline без дополнительных padding."
+      ],
+      "includedComponents": [
+        "[D] BackgroundPlate",
+        "[D] BackgroundPlateSlot",
+        "[D] Style Level 1",
+        "[D] Style Level 2",
+        "[D][Promo] BackgroundPlate",
+        "[D][Promo] Style Level 1",
+        "[D][Promo] Style Level 2",
+        "[M] BackgroundPlate",
+        "[M] BackgroundPlateSlot",
+        "[M] Style Level 1",
+        "[M] Style Level 2",
+        "[M][Promo] BackgroundPlate",
+        "[M][Promo] Style Level 1",
+        "[M][Promo] Style Level 2"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.*"
+          ],
+          "layerProperties": [
+            "layout.*",
+            "styles.*",
+            "fill",
+            "stroke",
+            "radius",
+            "opacity",
+            "text.*"
+          ],
+          "dependencyPolicy": "Component-property reset и layer-property reset разделены. Layer reset должен использовать effective baseline после nested variant/materialization resolution. Для BackgroundPlateView применяй тот же reset model, что и для BackgroundPlate."
+        },
+        "publicApi": {
+          "components": [
+            {
+              "name": "[D] BackgroundPlate",
+              "key": "2c7332d281570f4d5af6d334f8df378d24a1f235",
+              "role": "legacy-surface",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "legacy",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D] BackgroundPlateSlot",
+              "key": "5b6c5ac720154aff36be2f8a883bd058faa663cf",
+              "role": "content-container",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "preferred",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[D] Style Level 1",
+              "key": "adb65a62cde9ebedc5d0d41d2d77cd63e71e0745",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D] Style Level 2",
+              "key": "c8735f4834a8b43fd2ab821ffc0a6e72a57c4b5b",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D][Promo] BackgroundPlate",
+              "key": "c49f08db71ab44ea64f0880730220de1d93ac263",
+              "role": "promo-surface",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "promo-only",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[D][Promo] Style Level 1",
+              "key": "2b46e94cdecdab7d4cb977055c0405b2f6204127",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D][Promo] Style Level 2",
+              "key": "a5a4240097211b28195291a593c567e9d7c62bd3",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M] BackgroundPlate",
+              "key": "4cfe3915785e5c37255190ae16314f6f2a1d05b3",
+              "role": "legacy-surface",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "legacy",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M] BackgroundPlateSlot",
+              "key": "1745af83255e324781c2fbadfe0ad8cc7f13e0d8",
+              "role": "content-container",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "preferred",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[M] Style Level 1",
+              "key": "efc528bd86582d96a824edeb2c257dc8b22a8f14",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M] Style Level 2",
+              "key": "74f025a02889239c3f6eed60d74ba85f292bdcb0",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M][Promo] BackgroundPlate",
+              "key": "a58fa7ae11989280fc24069f204ba617fdb1f93c",
+              "role": "promo-surface",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "promo-only",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[M][Promo] Style Level 1",
+              "key": "19b4b6ed5718d82888a6551b56e0c776f4993ccc",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M][Promo] Style Level 2",
+              "key": "b33f77cc56c5feffb4f24a5912d74e3af927140e",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            }
+          ],
+          "aliases": null,
+          "codeExports": [
+            {
+              "name": "BackgroundPlate",
+              "kind": "react-component-export",
+              "mapsTo": "[D] BackgroundPlate / [M] BackgroundPlate",
+              "usage": "Основной code/private export, который соответствует Figma-компонентам семейства BackgroundPlate."
+            },
+            {
+              "name": "BackgroundPlateView",
+              "kind": "react-view-export",
+              "mapsTo": "BackgroundPlate",
+              "usage": "Кодовая обёртка/представление BackgroundPlate. В Apollo и агентском анализе не является отдельным Figma-компонентом и должна использовать тот же componentKey web-corp.background-plate."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "componentKey": "web-corp.card-image",
+      "summary": "Активный универсальный компонент для визуального представления банковской карты самостоятельно или внутри продуктового host-компонента.",
+      "criticalBaselines": [],
+      "agentInstructions": [
+        "Не трактуй компоненты 🔩 как доступные пользователю: это внутренние части CardImage.",
+        "Не считай все observed raw combinations допустимыми: 24x16 Inactive/Locked являются неканоническими.",
+        "Не предлагай detach или ручную пересборку CardImage.",
+        "Не запрещай собственную рубашку: она разрешена только при Cover=None как первый Image fill существующего Image Container.",
+        "Не разрешай собственной рубашке изменять геометрию, радиусы, логотип, платёжную систему, state overlay или структуру Cover.",
+        "Не требуй SilverLine для карты другого банка; он должен быть скрыт.",
+        "Не показывай полный номер карты и не убирай штатную маску.",
+        "Не считай Show Shadow=False нарушением у одиночной XL/L/M/S карты.",
+        "Не придумывай Delivery, Add new card, Loading, Error или Empty как состояния CardImage.",
+        "Не требуй отдельные desktop/mobile roots: CardImage универсален.",
+        "Не объявляй runtime API verified: Figma-документация подтверждает cardId, но package/import и Code Connect не подтверждены.",
+        "Повышай severity только по exact component rule или применимому pattern rule; пример сам по себе не является evidence."
+      ],
+      "includedComponents": [
+        "🔩 CardItem",
+        "🔩 Cover",
+        "🔩 Shadow",
+        "🔩 SilverLine",
+        "🔩 State",
+        "🔩 UserData",
+        "CardImage"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*",
+          "variant.Cover",
+          "variant.Size",
+          "variant.Stack",
+          "variant.State",
+          "boolean.Show Shadow"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сначала разреши Size, Cover, State, Stack и Show Shadow, затем примени разрешённые content и custom-cover overrides. Остальные layer changes сравнивай с effective CardImage baseline.",
+        "contentProperties": [
+          "content.cardholderName",
+          "content.lastFourDigits",
+          "content.stackCount"
+        ],
+        "allowedLayerOverrides": [
+          "Details/CardCover / Image Container first Image fill when Cover=None",
+          "SilverLine visibility for an approved custom cover"
+        ]
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [],
+          "layerProperties": [],
+          "dependencyPolicy": null
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web-corp.isle-block",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] IsleContent :: 768",
+        "[D] IsleFooter :: 1024+",
+        "[D] IsleFooter :: 768",
+        "[D] IsleHeader :: 1024+",
+        "[D] IsleHeader :: 768",
+        "[D] Status",
+        "[D] Status :: 1024+",
+        "[D] TopAddon",
+        "[D] TopAddon :: 1024+",
+        "[M] IsleContent",
+        "[M] IsleFooter",
+        "[M] IsleHeader",
+        "[M] TopAddon",
+        "❌ IsleCustomContent",
+        "🔒 [D] IsleBlock :: 1024+",
+        "🔒 [D] IsleBlock :: 768",
+        "🔒 [M] IsleBlock",
+        "🔩 StatusCompact",
+        "IsleContent"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.title-view",
+      "summary": "TitleView — составная обёртка заголовка для сценария с основным заголовком, статусом и действиями. Компонент объединяет Title, Status, TitleAddon, RightAddon, выбор компании, Subtitle, TitleStatus и Button group в готовую DS-композицию.",
+      "criticalBaselines": [
+        "Nested [D]/[M] Button instances внутри Button group являются частью TitleView baseline; изменения variant дизайнером нужно показывать относительно TitleView effective baseline.",
+        "StatusPreset и Status внутри MainContent / Status являются ожидаемыми nested structures; само использование preset нормально, если preset не изменён за пределами его variant API.",
+        "View и Skeleton являются public TitleView component properties.",
+        "На странице допускается только один TitleView с View=xLarge.",
+        "Внешние отступы 40 px, 32 px и 12 px, определённые правилами TitleView, обязательны для соответствующих соседних блоков.",
+        "Если одновременно используются Status и TitleStatus, значения Type должны совпадать: Type определяет статусный цвет.",
+        "В View=xLarge primary-действия размещаются в Button group. В View=Large, Medium и Small primary-действия размещаются вне TitleView.",
+        "Запрет primary-действия в RightAddon применяется ко всем значениям View.",
+        "Частичная загрузка отдельных слотов допустима при Skeleton=False у родительского TitleView.",
+        "Для View=Large, Medium и Small доступны только Title, Subtitle, TitleAddon и RightAddon.",
+        "Holding обязателен для одиночного выбора компании, когда пользователь работает от группы компаний, а страница доступна только в моно-режиме.",
+        "Ручные изменения layout, sizing, типографики, цвета, прозрачности и других стилей корня и всего внутреннего дерева TitleView запрещены.",
+        "Для корня TitleView рекомендуется ширина Fill container и высота Hug contents; правило одинаково для desktop и mobile-web.",
+        "Порядок слотов Status -> Heading -> Holding -> Subtitle -> TitleStatus -> Button group обязателен.",
+        "В предусмотренных слотах разрешён instance swap на произвольные компоненты, если сохраняются порядок слотов и структура TitleView.",
+        "Корень TitleView не оформляется вручную и не может быть единой кликабельной поверхностью."
+      ],
+      "agentInstructions": [
+        "Не выводи pattern violations из примеров. Используй только exact rules и exact component contracts.",
+        "Используй component-property facts для variant changes и layer-property facts для styles/layout/paint changes.",
+        "Если nested diff принадлежит host wrapper и actual совпадает с effective baseline, не показывай его как designer customization.",
+        "Если actual отличается от effective baseline, показывай effectiveBaseline -> actual.",
+        "Для сценария заголовка со статусом и действиями рекомендуй настройку встроенных slots TitleView, а не внешнюю ручную композицию из отдельных локальных компонентов.",
+        "Не считай отсутствие опциональных Status, TitleStatus, TitleAddon, RightAddon, Subtitle или Button group нарушением без отдельного правила.",
+        "Если загружается только отдельный вложенный элемент, не требуй переключать весь TitleView в Skeleton=True.",
+        "Для View=Large, Medium и Small рекомендуй primary-действие вне TitleView, а не в RightAddon.",
+        "Не считай изменение label у Status нарушением, если Type корректен и нет отдельного текстового правила.",
+        "Не придумывай ограничения параметров FilterCompanySelect_Single: используй его собственный компонентный контракт, когда он будет доступен.",
+        "Для настроек View, addons, hint и singleIcon вложенных Button используй паттерн «Кнопки и группы кнопок»; не создавай отдельные ограничения TitleView.",
+        "Применяй правила p_title-view-editable.md как часть правил TitleView, когда обнаружен editable-сценарий.",
+        "Не требуй Enter, Escape или отдельные кнопки подтверждения и отмены без точного правила для конкретной платформы и сценария.",
+        "Не считай сам факт instance swap внутри предусмотренного слота нарушением; оценивай выбранный компонент по его собственному контракту.",
+        "Проверяй обязательный порядок слотов отдельно от содержимого каждого слота.",
+        "Не разрешай ручное оформление корня или внутренних слоёв TitleView и не предлагай делать весь TitleView кликабельным."
+      ],
+      "includedComponents": [
+        "[D] RightAddon",
+        "[D] RightAddonXL",
+        "[D] TitleAddon",
+        "[D] TitleAddonXL",
+        "[D] TitleStatus",
+        "[D] TitleView",
+        "[M] RightAddon",
+        "[M] RightAddonXL",
+        "[M] TitleAddon",
+        "[M] TitleAddonXL",
+        "[M] TitleStatus",
+        "[M] TitleView"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "fbc4ff889c9fe2db128bc76471f512271d4cc229",
+          "name": "[D] TitleView",
+          "purpose": "Готовая desktop-композиция заголовка страницы или секции с обязательным Title, статусами, дополнениями и контекстными действиями.",
+          "useWhen": [
+            "Нужно собрать заголовочную область продукта из системных слотов TitleView вместо ручной композиции."
+          ],
+          "doNotUseWhen": [
+            "Нужен простой текстовый заголовок без структуры, статусов и действий TitleView."
+          ],
+          "relationship": "Публичный desktop-корень семейства TitleView; вложенные TitleAddon, RightAddon, TitleStatus и Button group настраиваются через его slots.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.*"
+          ],
+          "layerProperties": [
+            "layout.*",
+            "styles.*",
+            "fill",
+            "stroke",
+            "radius",
+            "opacity",
+            "text.*"
+          ],
+          "dependencyPolicy": "Component-property reset и layer-property reset разделены. Layer reset должен использовать effective baseline после nested variant/materialization resolution."
+        },
+        "publicApi": {
+          "components": [
+            {
+              "name": "[D] RightAddon",
+              "key": "edd174301746415867bc998cd0c0322b68c6269c",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] RightAddonXL",
+              "key": "8edd3829b4b7091209299a5b5c838f0a159018aa",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleAddon",
+              "key": "f32313498fd345a1a41584c8d9edc61c3e2053bf",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleAddonXL",
+              "key": "b4cd3e21d108962a24b75aec2de71fba0672d63f",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleStatus",
+              "key": "6a8aa56ae7c8b57b9d9dfbbf23af14c348d83763",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleView",
+              "key": "fbc4ff889c9fe2db128bc76471f512271d4cc229",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] RightAddon",
+              "key": "b762143a2872257a497f9c3e0a012a9bed92f9ca",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] RightAddonXL",
+              "key": "c1092f678271e7de3291bb5699eeab4ad43c7710",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleAddon",
+              "key": "50d8b48cc1dcd4052efc7a151219578d1d993e2f",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleAddonXL",
+              "key": "a40e2549a5a23e645fb38c2af4c15df0f6813153",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleStatus",
+              "key": "e64c6d19cadc818b180b9176a51e3f65714b84b0",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleView",
+              "key": "227149bd55130d69d63e33cd3c8c52ae3f4e7e19",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            }
+          ],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web.documentation",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        ".x / PropertyValue",
+        "💊Rulers / Corner radius",
+        "💊Rulers / Inline",
+        "💊Rulers / Side",
+        ".Details / Triangle",
+        ".Details / Body",
+        ".Details / Spacer_hor",
+        ".Details / Spacer_vert",
+        "💊Documentations / Plates / Bottom",
+        "💊Documentations / Inline / Plates",
+        ".Details / Plate / Icon",
+        "💊Documentations / Inline / Code",
+        ".Details / Plate / Master",
+        "💊Documentations / Inline / Good and Bad",
+        "💊Documentations / Plates / Cell",
+        "💊Documentations / Plates / Head"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web.spacing-component",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "↔ SpacingHorizontal",
+        "↕ SpacingVertical",
+        ".SpacerСell"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "2038eba49b808faf3f35b4c9e57166f366e2660b",
+          "name": "↕ SpacingVertical",
+          "purpose": "Shift+ctrl+4 чтобы увидеть заливку. Можно тянуть влево и вправо.",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    }
+  ]
+}
