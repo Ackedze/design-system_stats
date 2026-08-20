@@ -1,0 +1,4400 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1648685907025106442-1787219477486-ac2pl34l:agent",
+  "sourceReportId": "apollo-1648685907025106442-1787219477486-ac2pl34l",
+  "generatedAt": "2026-08-20T09:51:17.486Z",
+  "suggestedFileName": "Aleksey-Ermakov_20-08-2026_12-51-17_agent.json",
+  "user": {
+    "id": "1648685907025106442",
+    "name": "Aleksey Ermakov",
+    "slug": "Aleksey-Ermakov"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.1.63"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "[M] Витрина АБМ редизайн",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "startedAt": "2026-08-20T09:51:03.823Z",
+    "finishedAt": "2026-08-20T09:51:17.486Z",
+    "durationMs": 13663,
+    "selection": [
+      {
+        "nodeId": "2821:166767",
+        "name": "Content",
+        "nodeType": "FRAME",
+        "path": "Новая витрина / Content / Content",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 244,
+    "problemOccurrenceCount": 95,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 2,
+      "customStyles": 67,
+      "updates": 0,
+      "customizations": 26,
+      "localComponents": 0,
+      "detachedComponents": 0,
+      "presets": 0,
+      "technicalComponents": 0,
+      "currentComponents": 33,
+      "wrongChannel": 0,
+      "themization": 0
+    },
+    "includedFindingCount": 95,
+    "omittedCurrentComponentCount": 33
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with severity=error and matchKind=exact_component_rule for the same property/change.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 2,
+      "includedCount": 2,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 67,
+      "includedCount": 67,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 26,
+      "includedCount": 26,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "deprecatedStyles",
+      "severityHint": "medium",
+      "title": "Устаревший стиль",
+      "node": {
+        "id": "I2821:166768;11739:16979;7262:30489",
+        "name": "ChipElementViewContentGroup",
+        "type": "FRAME",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / ChipsView / VerticalPaddingsGroup / ContentGroup / ChipsStack / ChipsElementView / ChipElementViewContentGroup",
+        "visible": true
+      },
+      "style": {
+        "name": "light/bg/secondary",
+        "key": "005ccc3dbfacc14b33cca9d819568715b908500b",
+        "library": "020 :: Colors BlueTint Light",
+        "sourceFile": "styles/020 _ Colors BlueTint Light.json"
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "deprecatedStyles",
+      "severityHint": "medium",
+      "title": "Устаревший стиль",
+      "node": {
+        "id": "I2821:166768;11739:16979;7262:30492",
+        "name": "title",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / ChipsView / VerticalPaddingsGroup / ContentGroup / ChipsStack / ChipsElementView / ChipElementViewContentGroup / title",
+        "visible": true
+      },
+      "style": {
+        "name": "light/text/primary",
+        "key": "6313f5ef73de1fb787861cd6e0408c77214b7898",
+        "library": "020 :: Colors BlueTint Light",
+        "sourceFile": "styles/020 _ Colors BlueTint Light.json"
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:166768;11739:16977;7262:30492",
+        "name": "title",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / ChipsView / VerticalPaddingsGroup / ContentGroup / ChipsStack / ChipsElementView / ContentGroup / title",
+        "visible": true
+      },
+      "style": {
+        "name": "15/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:166768;11739:16978;7262:30492",
+        "name": "title",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / ChipsView / VerticalPaddingsGroup / ContentGroup / ChipsStack / ChipsElementView / ContentGroup / title",
+        "visible": true
+      },
+      "style": {
+        "name": "15/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:166768;11739:16979;7262:30492",
+        "name": "title",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / ChipsView / VerticalPaddingsGroup / ContentGroup / ChipsStack / ChipsElementView / ChipElementViewContentGroup / title",
+        "visible": true
+      },
+      "style": {
+        "name": "15/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171147;132814:29739;2821:171145;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏🔵 12.15) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "22/28 px · Medium · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171206;132814:29727;2821:171191;132814:29731;2821:171190;132814:29727;2821:171188;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171206;132814:29727;2821:171191;132814:29731;2821:171190;132814:29727;2821:171189;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171206;132814:29727;2821:171198;132814:29731;2821:171197;132814:29727;2821:171195;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171206;132814:29727;2821:171198;132814:29731;2821:171197;132814:29727;2821:171196;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171206;132814:29727;2821:171205;132814:29731;2821:171204;132814:29727;2821:171202;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171206;132814:29727;2821:171205;132814:29731;2821:171204;132814:29727;2821:172659;69270:53904;58274:32695",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TagView / 🎨 / Title / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "12/16 px · Medium · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171287;132814:29739;2821:171286;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏🔵 12.15) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "22/28 px · Medium · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171316;132814:29727;2821:171301;132814:29731;2821:171300;132814:29727;2821:171298;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171316;132814:29727;2821:171301;132814:29731;2821:171300;132814:29727;2821:171299;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171316;132814:29727;2821:171413;132814:29731;2821:171403;132814:29727;2821:171401;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171316;132814:29727;2821:171413;132814:29731;2821:171403;132814:29727;2821:171402;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171316;132814:29727;2821:171308;132814:29731;2821:171307;132814:29727;2821:171305;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171316;132814:29727;2821:171308;132814:29731;2821:171307;132814:29727;2821:171306;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171316;132814:29727;2821:171315;132814:29731;2821:171314;132814:29727;2821:171312;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171316;132814:29727;2821:171315;132814:29731;2821:171314;132814:29727;2821:171313;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171316;132814:29727;2821:171414;132814:29731;2821:171410;132814:29727;2821:171408;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171316;132814:29727;2821:171414;132814:29731;2821:171410;132814:29727;2821:171511;69270:53904;58274:32695",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TagView / 🎨 / Title / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "12/16 px · Medium · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2824:172694;12067:1310;1055:72993;2151:74587;723:59558",
+        "name": "title",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / 🚧 AdviceBannerViewV2 / VerticalPaddingsGroup / ContentGroup / MainContentStack / MainText / VerticalPaddingsLayoutGroup / DataContentContentGroup / FirstLine / Title / VerticalPaddingsGroup / ContentGroup / Title / title",
+        "visible": true
+      },
+      "style": {
+        "name": "17/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171526;132814:29739;2821:171525;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏🔵 12.15) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "22/28 px · Medium · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171555;132814:29727;2821:171540;132814:29731;2821:171539;132814:29727;2821:171537;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171555;132814:29727;2821:171540;132814:29731;2821:171539;132814:29727;2821:171538;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171555;132814:29727;2821:171547;132814:29731;2821:171546;132814:29727;2821:171544;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171555;132814:29727;2821:171547;132814:29731;2821:171546;132814:29727;2821:172533;69270:53904;58274:32695",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TagView / 🎨 / Title / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "12/16 px · Medium · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171555;132814:29727;2821:171554;132814:29731;2821:171553;132814:29727;2821:171551;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171555;132814:29727;2821:171554;132814:29731;2821:171553;132814:29727;2821:171552;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171555;132814:29727;2821:171641;132814:29731;2821:171638;132814:29727;2821:171636;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171555;132814:29727;2821:171641;132814:29731;2821:171638;132814:29727;2821:171637;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171668;132814:29739;2821:171667;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏🔵 12.15) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "22/28 px · Medium · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171697;132814:29727;2821:171682;132814:29731;2821:171681;132814:29727;2821:171679;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171697;132814:29727;2821:171682;132814:29731;2821:171681;132814:29727;2821:171680;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171697;132814:29727;2821:171689;132814:29731;2821:171688;132814:29727;2821:171686;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171697;132814:29727;2821:171689;132814:29731;2821:171688;132814:29727;2821:171687;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171697;132814:29727;2821:171696;132814:29731;2821:171695;132814:29727;2821:171693;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171697;132814:29727;2821:171696;132814:29731;2821:171695;132814:29727;2821:171694;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171778;132814:29739;2821:171776;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏🔵 12.15) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "22/28 px · Medium · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171826;132814:29727;2821:171811;132814:29731;2821:171810;132814:29727;2821:171808;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171826;132814:29727;2821:171811;132814:29731;2821:171810;132814:29727;2821:171809;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171826;132814:29727;2821:171818;132814:29731;2821:171817;132814:29727;2821:171815;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171826;132814:29727;2821:171818;132814:29731;2821:171817;132814:29727;2821:171816;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171826;132814:29727;2821:171825;132814:29731;2821:171824;132814:29727;2821:171822;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171826;132814:29727;2821:171825;132814:29731;2821:171824;132814:29727;2821:171823;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171826;132814:29727;2821:171919;132814:29731;2821:171909;132814:29727;2821:171907;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171826;132814:29727;2821:171919;132814:29731;2821:171909;132814:29727;2821:171908;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171826;132814:29727;2821:171920;132814:29731;2821:171916;132814:29727;2821:171914;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171826;132814:29727;2821:171920;132814:29731;2821:171916;132814:29727;2821:171915;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171969;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "22/28 px · Medium · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171976;132814:29731;2821:171975;132814:29727;2821:171973;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:171976;132814:29731;2821:171975;132814:29727;2821:171974;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:172008;132814:29739;2821:172006;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "22/28 px · Medium · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:172039;132814:29727;2821:172024;132814:29731;2821:172023;132814:29727;2821:172021;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:172039;132814:29727;2821:172024;132814:29731;2821:172023;132814:29727;2821:172022;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:172039;132814:29727;2821:172031;132814:29731;2821:172030;132814:29727;2821:172028;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:172039;132814:29727;2821:172031;132814:29731;2821:172030;132814:29727;2821:172029;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:172039;132814:29727;2821:172038;132814:29731;2821:172037;132814:29727;2821:172035;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:172039;132814:29727;2821:172038;132814:29731;2821:172037;132814:29727;2821:172036;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:172039;132814:29727;2821:172157;132814:29731;2821:172154;132814:29727;2821:172152;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:172039;132814:29727;2821:172157;132814:29731;2821:172154;132814:29727;2821:172153;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:172182;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "22/28 px · Medium · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:172189;132814:29731;2821:172188;132814:29727;2821:172186;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:172189;132814:29731;2821:172188;132814:29727;2821:172187;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:172190;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "22/28 px · Medium · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:172197;132814:29731;2821:172196;132814:29727;2821:172194;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I2821:172197;132814:29731;2821:172196;132814:29727;2821:172195;58274:32647",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / TextLabel / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "15/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I2821:171206;132814:29727;2821:171191;132814:29731;2821:171186;70349:99013",
+        "name": "credit-showcase-sign-box",
+        "type": "INSTANCE",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / IconViewV1 (🍏🟦 13.10) / ContentGroup / (n)UIImageView / credit-showcase-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "credit-showcase-sign-box",
+        "key": "710ed26264ffb41a028574b37d89725d4755aca8",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "710ed26264ffb41a028574b37d89725d4755aca8"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I2821:171206;132814:29727;2821:171191;132814:29731;2821:171186;70349:99013;7095:2288",
+            "name": "logo",
+            "type": null,
+            "pageName": "«Сервисы» редизайн",
+            "path": "Size=24, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "710ed26264ffb41a028574b37d89725d4755aca8",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "2821:166767",
+              "nodeName": "Content",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I2821:171206;132814:29727;2821:171198;132814:29731;2821:171193;70349:99013",
+        "name": "overdraft-sign-box",
+        "type": "INSTANCE",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / IconViewV1 (🍏🟦 13.10) / ContentGroup / (n)UIImageView / overdraft-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "overdraft-sign-box",
+        "key": "a68bf7937a8bfe9c64d1e1dc7d8a5704423bc0f2",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "a68bf7937a8bfe9c64d1e1dc7d8a5704423bc0f2"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I2821:171206;132814:29727;2821:171198;132814:29731;2821:171193;70349:99013;7095:2663",
+            "name": "logo",
+            "type": null,
+            "pageName": "«Сервисы» редизайн",
+            "path": "Size=24, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "a68bf7937a8bfe9c64d1e1dc7d8a5704423bc0f2",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "2821:166767",
+              "nodeName": "Content",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I2821:171206;132814:29727;2821:171205;132814:29731;2821:171200;70349:99013",
+        "name": "invest-application-sign-box",
+        "type": "INSTANCE",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / IconViewV1 (🍏 13.10) / ContentGroup / (n)UIImageView / invest-application-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "invest-application-sign-box",
+        "key": "a100dac4608782f72d800cce12c0dd45356e2e8e",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "a100dac4608782f72d800cce12c0dd45356e2e8e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I2821:171206;132814:29727;2821:171205;132814:29731;2821:171200;70349:99013;7095:2520",
+            "name": "logo",
+            "type": null,
+            "pageName": "«Сервисы» редизайн",
+            "path": "Size=24, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "a100dac4608782f72d800cce12c0dd45356e2e8e",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "2821:166767",
+              "nodeName": "Content",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I2821:171316;132814:29727;2821:171301;132814:29731;2821:172499;70349:99013",
+        "name": "credit-showcase-sign-box",
+        "type": "INSTANCE",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / IconViewV1 (🍏🟦 13.10) / ContentGroup / (n)UIImageView / credit-showcase-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "credit-showcase-sign-box",
+        "key": "710ed26264ffb41a028574b37d89725d4755aca8",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "710ed26264ffb41a028574b37d89725d4755aca8"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I2821:171316;132814:29727;2821:171301;132814:29731;2821:172499;70349:99013;7095:2288",
+            "name": "logo",
+            "type": null,
+            "pageName": "«Сервисы» редизайн",
+            "path": "Size=24, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "710ed26264ffb41a028574b37d89725d4755aca8",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "2821:166767",
+              "nodeName": "Content",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I2821:171316;132814:29727;2821:171413;132814:29731;2821:171399;70349:99013",
+        "name": "procurement-sign-box",
+        "type": "INSTANCE",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / IconViewV1 (🍏 13.10) / ContentGroup / (n)UIImageView / procurement-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "procurement-sign-box",
+        "key": "6afe435f38a205215fc682ba73779b72daf75414",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "6afe435f38a205215fc682ba73779b72daf75414"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I2821:171316;132814:29727;2821:171413;132814:29731;2821:171399;70349:99013;7095:2681",
+            "name": "logo",
+            "type": null,
+            "pageName": "«Сервисы» редизайн",
+            "path": "Size=24, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "6afe435f38a205215fc682ba73779b72daf75414",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "2821:166767",
+              "nodeName": "Content",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I2821:171316;132814:29727;2821:171308;132814:29731;2821:172516;70349:99013",
+        "name": "overdraft-sign-box",
+        "type": "INSTANCE",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / IconViewV1 (🍏🟦 13.10) / ContentGroup / (n)UIImageView / overdraft-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "overdraft-sign-box",
+        "key": "a68bf7937a8bfe9c64d1e1dc7d8a5704423bc0f2",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "a68bf7937a8bfe9c64d1e1dc7d8a5704423bc0f2"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I2821:171316;132814:29727;2821:171308;132814:29731;2821:172516;70349:99013;7095:2663",
+            "name": "logo",
+            "type": null,
+            "pageName": "«Сервисы» редизайн",
+            "path": "Size=24, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "a68bf7937a8bfe9c64d1e1dc7d8a5704423bc0f2",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "2821:166767",
+              "nodeName": "Content",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I2821:171316;132814:29727;2821:171315;132814:29731;2821:171310;70349:99013",
+        "name": "invest-application-sign-box",
+        "type": "INSTANCE",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / IconViewV1 (🍏 13.10) / ContentGroup / (n)UIImageView / invest-application-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "invest-application-sign-box",
+        "key": "a100dac4608782f72d800cce12c0dd45356e2e8e",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "a100dac4608782f72d800cce12c0dd45356e2e8e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I2821:171316;132814:29727;2821:171315;132814:29731;2821:171310;70349:99013;7095:2520",
+            "name": "logo",
+            "type": null,
+            "pageName": "«Сервисы» редизайн",
+            "path": "Size=24, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "a100dac4608782f72d800cce12c0dd45356e2e8e",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "2821:166767",
+              "nodeName": "Content",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I2821:171316;132814:29727;2821:171414;132814:29731;2821:171406;70349:99013",
+        "name": "ausn-sign-box",
+        "type": "INSTANCE",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / IconViewV1 (🍏 13.10) / ContentGroup / (n)UIImageView / ausn-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "ausn-sign-box",
+        "key": "a589a722ea82fd8a60cd07489011f83876265237",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "a589a722ea82fd8a60cd07489011f83876265237"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I2821:171316;132814:29727;2821:171414;132814:29731;2821:171406;70349:99013;7094:2230",
+            "name": "logo",
+            "type": null,
+            "pageName": "«Сервисы» редизайн",
+            "path": "Size=24, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "a589a722ea82fd8a60cd07489011f83876265237",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "2821:166767",
+              "nodeName": "Content",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I2821:171555;132814:29727;2821:171540;132814:29731;2821:171535;70349:99013",
+        "name": "foreign-trade-exchange-sign-box",
+        "type": "INSTANCE",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / IconViewV1 (🍏 13.10) / ContentGroup / (n)UIImageView / foreign-trade-exchange-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "foreign-trade-exchange-sign-box",
+        "key": "24ee035405f741d5b924dcdf31fbcfb5bd024944",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "24ee035405f741d5b924dcdf31fbcfb5bd024944"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I2821:171555;132814:29727;2821:171540;132814:29731;2821:171535;70349:99013;7095:2451",
+            "name": "logo",
+            "type": null,
+            "pageName": "«Сервисы» редизайн",
+            "path": "Size=24, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "24ee035405f741d5b924dcdf31fbcfb5bd024944",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "2821:166767",
+              "nodeName": "Content",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I2821:171555;132814:29727;2821:171547;132814:29731;2821:171542;70349:99013",
+        "name": "foreign-trade-documents-sign-box",
+        "type": "INSTANCE",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / IconViewV1 (🍏 13.10) / ContentGroup / (n)UIImageView / foreign-trade-documents-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "foreign-trade-documents-sign-box",
+        "key": "54bb5425e2e6cc5633ff86a055effefcf52ba65d",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "54bb5425e2e6cc5633ff86a055effefcf52ba65d"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I2821:171555;132814:29727;2821:171547;132814:29731;2821:171542;70349:99013;7095:2452",
+            "name": "logo",
+            "type": null,
+            "pageName": "«Сервисы» редизайн",
+            "path": "Size=24, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "54bb5425e2e6cc5633ff86a055effefcf52ba65d",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "2821:166767",
+              "nodeName": "Content",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I2821:171555;132814:29727;2821:171554;132814:29731;2821:171549;70349:99013",
+        "name": "foreign-trade-sign-box",
+        "type": "INSTANCE",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / IconViewV1 (🍏🟦 13.10) / ContentGroup / (n)UIImageView / foreign-trade-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "foreign-trade-sign-box",
+        "key": "b5a9b5586a58d0ac5667ed4fc932a968ebc2e7a6",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "b5a9b5586a58d0ac5667ed4fc932a968ebc2e7a6"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I2821:171555;132814:29727;2821:171554;132814:29731;2821:171549;70349:99013;7095:2453",
+            "name": "logo",
+            "type": null,
+            "pageName": "«Сервисы» редизайн",
+            "path": "Size=24, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "b5a9b5586a58d0ac5667ed4fc932a968ebc2e7a6",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "2821:166767",
+              "nodeName": "Content",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I2821:171555;132814:29727;2821:171641;132814:29731;2821:171634;70349:99013",
+        "name": "invest-application-sign-box",
+        "type": "INSTANCE",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / IconViewV1 (🍏 13.10) / ContentGroup / (n)UIImageView / invest-application-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "invest-application-sign-box",
+        "key": "a100dac4608782f72d800cce12c0dd45356e2e8e",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "a100dac4608782f72d800cce12c0dd45356e2e8e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I2821:171555;132814:29727;2821:171641;132814:29731;2821:171634;70349:99013;7095:2520",
+            "name": "logo",
+            "type": null,
+            "pageName": "«Сервисы» редизайн",
+            "path": "Size=24, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "a100dac4608782f72d800cce12c0dd45356e2e8e",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "2821:166767",
+              "nodeName": "Content",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I2821:171697;132814:29727;2821:171682;132814:29731;2821:171677;70349:99013",
+        "name": "edo-sign-box",
+        "type": "INSTANCE",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / IconViewV1 (🍏 13.10) / ContentGroup / (n)UIImageView / edo-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "edo-sign-box",
+        "key": "47ef5aa8b522984ab81b38ac3aeb2c7215c84f79",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "47ef5aa8b522984ab81b38ac3aeb2c7215c84f79"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I2821:171697;132814:29727;2821:171682;132814:29731;2821:171677;70349:99013;7095:2429",
+            "name": "logo",
+            "type": null,
+            "pageName": "«Сервисы» редизайн",
+            "path": "Size=24, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "47ef5aa8b522984ab81b38ac3aeb2c7215c84f79",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "2821:166767",
+              "nodeName": "Content",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I2821:171697;132814:29727;2821:171689;132814:29731;2821:171684;70349:99013",
+        "name": "leasing-sign-box",
+        "type": "INSTANCE",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / IconViewV1 (🍏 13.10) / ContentGroup / (n)UIImageView / leasing-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "leasing-sign-box",
+        "key": "fafe5bc8400faae865c96fcc39e3fa339ba2ab57",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "fafe5bc8400faae865c96fcc39e3fa339ba2ab57"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I2821:171697;132814:29727;2821:171689;132814:29731;2821:171684;70349:99013;7095:2604",
+            "name": "logo",
+            "type": null,
+            "pageName": "«Сервисы» редизайн",
+            "path": "Size=24, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "fafe5bc8400faae865c96fcc39e3fa339ba2ab57",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "2821:166767",
+              "nodeName": "Content",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I2821:171697;132814:29727;2821:171696;132814:29731;2821:171691;70349:99013",
+        "name": "digital-financial-assets-sign-box",
+        "type": "INSTANCE",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / IconViewV1 (🍏 13.10) / ContentGroup / (n)UIImageView / digital-financial-assets-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "digital-financial-assets-sign-box",
+        "key": "483be6c81d61457090b483735816ab85da0917dd",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "483be6c81d61457090b483735816ab85da0917dd"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I2821:171697;132814:29727;2821:171696;132814:29731;2821:171691;70349:99013;7095:2409",
+            "name": "logo",
+            "type": null,
+            "pageName": "«Сервисы» редизайн",
+            "path": "Size=24, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "483be6c81d61457090b483735816ab85da0917dd",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "2821:166767",
+              "nodeName": "Content",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I2821:171826;132814:29727;2821:171811;132814:29731;2821:171806;70349:99013",
+        "name": "deposit-sign-box",
+        "type": "INSTANCE",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / IconViewV1 (🍏🟦 13.10) / ContentGroup / (n)UIImageView / deposit-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "deposit-sign-box",
+        "key": "91f8b46cb18e618f4fa78955eaa2dd1aa70105a2",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "91f8b46cb18e618f4fa78955eaa2dd1aa70105a2"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I2821:171826;132814:29727;2821:171811;132814:29731;2821:171806;70349:99013;7095:2405",
+            "name": "logo",
+            "type": null,
+            "pageName": "«Сервисы» редизайн",
+            "path": "Size=24, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "91f8b46cb18e618f4fa78955eaa2dd1aa70105a2",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "2821:166767",
+              "nodeName": "Content",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I2821:171826;132814:29727;2821:171818;132814:29731;2821:171813;70349:99013",
+        "name": "foreign-trade-documents-sign-box",
+        "type": "INSTANCE",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / IconViewV1 (🍏 13.10) / ContentGroup / (n)UIImageView / foreign-trade-documents-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "foreign-trade-documents-sign-box",
+        "key": "54bb5425e2e6cc5633ff86a055effefcf52ba65d",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "54bb5425e2e6cc5633ff86a055effefcf52ba65d"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I2821:171826;132814:29727;2821:171818;132814:29731;2821:171813;70349:99013;7095:2452",
+            "name": "logo",
+            "type": null,
+            "pageName": "«Сервисы» редизайн",
+            "path": "Size=24, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "54bb5425e2e6cc5633ff86a055effefcf52ba65d",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "2821:166767",
+              "nodeName": "Content",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I2821:171826;132814:29727;2821:171825;132814:29731;2821:171820;70349:99013",
+        "name": "Interest-balance-sign-box",
+        "type": "INSTANCE",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / IconViewV1 (🍏 13.10) / ContentGroup / (n)UIImageView / Interest-balance-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "Interest-balance-sign-box",
+        "key": "ab17f01156554fa97952e00828e74cc052115aa4",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "ab17f01156554fa97952e00828e74cc052115aa4"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I2821:171826;132814:29727;2821:171825;132814:29731;2821:171820;70349:99013;7095:2521",
+            "name": "logo",
+            "type": null,
+            "pageName": "«Сервисы» редизайн",
+            "path": "Size=24, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "ab17f01156554fa97952e00828e74cc052115aa4",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "2821:166767",
+              "nodeName": "Content",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I2821:171826;132814:29727;2821:171919;132814:29731;2821:171905;70349:99013",
+        "name": "bi-currency-deposits-sign-box",
+        "type": "INSTANCE",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / IconViewV1 (🍏 13.10) / ContentGroup / (n)UIImageView / bi-currency-deposits-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "bi-currency-deposits-sign-box",
+        "key": "15109bd2f9306e9adc5e7fa45d8ff33e04cc7b0f",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "15109bd2f9306e9adc5e7fa45d8ff33e04cc7b0f"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I2821:171826;132814:29727;2821:171919;132814:29731;2821:171905;70349:99013;7095:2245",
+            "name": "logo",
+            "type": null,
+            "pageName": "«Сервисы» редизайн",
+            "path": "Size=24, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "15109bd2f9306e9adc5e7fa45d8ff33e04cc7b0f",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "2821:166767",
+              "nodeName": "Content",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I2821:171826;132814:29727;2821:171920;132814:29731;2821:171912;70349:99013",
+        "name": "digital-financial-assets-sign-box",
+        "type": "INSTANCE",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / IconViewV1 (🍏 13.10) / ContentGroup / (n)UIImageView / digital-financial-assets-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "digital-financial-assets-sign-box",
+        "key": "483be6c81d61457090b483735816ab85da0917dd",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "483be6c81d61457090b483735816ab85da0917dd"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I2821:171826;132814:29727;2821:171920;132814:29731;2821:171912;70349:99013;7095:2409",
+            "name": "logo",
+            "type": null,
+            "pageName": "«Сервисы» редизайн",
+            "path": "Size=24, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "483be6c81d61457090b483735816ab85da0917dd",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "2821:166767",
+              "nodeName": "Content",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I2821:171976;132814:29731;2821:171971;70349:99013",
+        "name": "salary-project-sign-box",
+        "type": "INSTANCE",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / IconViewV1 (🍏 13.10) / ContentGroup / (n)UIImageView / salary-project-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "salary-project-sign-box",
+        "key": "2ec8cce165efc4d1364dd8ba80fb87014caaf2ab",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "2ec8cce165efc4d1364dd8ba80fb87014caaf2ab"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I2821:171976;132814:29731;2821:171971;70349:99013;7095:2812",
+            "name": "logo",
+            "type": null,
+            "pageName": "«Сервисы» редизайн",
+            "path": "Size=24, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "2ec8cce165efc4d1364dd8ba80fb87014caaf2ab",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "2821:166767",
+              "nodeName": "Content",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I2821:172039;132814:29727;2821:172024;132814:29731;2821:172019;70349:99013",
+        "name": "get-trade-sign-box",
+        "type": "INSTANCE",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / IconViewV1 (🍏 13.10) / ContentGroup / (n)UIImageView / get-trade-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "get-trade-sign-box",
+        "key": "72f8d7a902955182c4e6e7e65fad0525bfba72e9",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "72f8d7a902955182c4e6e7e65fad0525bfba72e9"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I2821:172039;132814:29727;2821:172024;132814:29731;2821:172019;70349:99013;7095:2484",
+            "name": "logo",
+            "type": null,
+            "pageName": "«Сервисы» редизайн",
+            "path": "Size=24, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "72f8d7a902955182c4e6e7e65fad0525bfba72e9",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "2821:166767",
+              "nodeName": "Content",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I2821:172039;132814:29727;2821:172031;132814:29731;2821:172026;70349:99013",
+        "name": "get-internet-sign-box",
+        "type": "INSTANCE",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / IconViewV1 (🍏 13.10) / ContentGroup / (n)UIImageView / get-internet-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "get-internet-sign-box",
+        "key": "f65a5e270b1696a90029074a661cbc9d8bdb0659",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "f65a5e270b1696a90029074a661cbc9d8bdb0659"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I2821:172039;132814:29727;2821:172031;132814:29731;2821:172026;70349:99013;7095:2486",
+            "name": "logo",
+            "type": null,
+            "pageName": "«Сервисы» редизайн",
+            "path": "Size=24, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "f65a5e270b1696a90029074a661cbc9d8bdb0659",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "2821:166767",
+              "nodeName": "Content",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I2821:172039;132814:29727;2821:172157;132814:29731;2821:172150;70349:99013",
+        "name": "accreditives-sign-box",
+        "type": "INSTANCE",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / IconViewV1 (🍏 13.10) / ContentGroup / (n)UIImageView / accreditives-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "accreditives-sign-box",
+        "key": "66fa6e59b7e7733945b3a8d3f2b4454e9a0cbb81",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "66fa6e59b7e7733945b3a8d3f2b4454e9a0cbb81"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I2821:172039;132814:29727;2821:172157;132814:29731;2821:172150;70349:99013;7094:2158",
+            "name": "logo",
+            "type": null,
+            "pageName": "«Сервисы» редизайн",
+            "path": "Size=24, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "66fa6e59b7e7733945b3a8d3f2b4454e9a0cbb81",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "2821:166767",
+              "nodeName": "Content",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I2821:172189;132814:29731;2821:172184;70349:99013",
+        "name": "cards-sign-box",
+        "type": "INSTANCE",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / IconViewV1 (🍏 13.10) / ContentGroup / (n)UIImageView / cards-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "cards-sign-box",
+        "key": "f093d5a7024c7ce79fb442f86aba0a0d2f79ea2b",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "f093d5a7024c7ce79fb442f86aba0a0d2f79ea2b"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I2821:172189;132814:29731;2821:172184;70349:99013;7095:2285",
+            "name": "logo",
+            "type": null,
+            "pageName": "«Сервисы» редизайн",
+            "path": "Size=24, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "f093d5a7024c7ce79fb442f86aba0a0d2f79ea2b",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "2821:166767",
+              "nodeName": "Content",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I2821:172197;132814:29731;2821:172192;70349:99013",
+        "name": "alfa-security-sign-box",
+        "type": "INSTANCE",
+        "pageName": "«Сервисы» редизайн",
+        "path": "Новая витрина / Content / Content / StackWrapper (🍏 12.15) (Slots) / 🎨 ContentGroup / IconViewV1 (🍏 13.10) / ContentGroup / (n)UIImageView / alfa-security-sign-box",
+        "visible": true
+      },
+      "component": {
+        "name": "alfa-security-sign-box",
+        "key": "ef73617dd531849eeab3a339855a1edcf3fbf88d",
+        "library": "Logotypes",
+        "sourceFile": "logotypes/Logotypes -- logo-corp.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "ef73617dd531849eeab3a339855a1edcf3fbf88d"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I2821:172197;132814:29731;2821:172192;70349:99013;7094:2210",
+            "name": "logo",
+            "type": null,
+            "pageName": "«Сервисы» редизайн",
+            "path": "Size=24, Style=Line, Color=False / logo",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #FC41C0 → neutral-translucent/1300",
+          "referenceValue": "#FC41C0",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#FC41C0",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#FC41C0",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "ef73617dd531849eeab3a339855a1edcf3fbf88d",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "logo",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "2821:166767",
+              "nodeName": "Content",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    }
+  ],
+  "componentContexts": []
+}
