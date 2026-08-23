@@ -1,0 +1,963 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-customizations-wip-report",
+  "reportId": "apollo-1096330610570928879-1787472399972-esu9howw:customizations-wip",
+  "sourceReportId": "apollo-1096330610570928879-1787472399972-esu9howw",
+  "generatedAt": "2026-08-23T08:06:39.972Z",
+  "suggestedFileName": "Alexey-Kukhta-CORP-Lead-Designer_23-08-2026_11-06-39_customizations-wip.json",
+  "user": {
+    "id": "1096330610570928879",
+    "name": "Alexey Kukhta / CORP / Lead Designer",
+    "slug": "Alexey-Kukhta-CORP-Lead-Designer"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.3.0"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "❇️ Мастерская :: AI",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "pageType": null,
+    "startedAt": "2026-08-23T08:06:14.318Z",
+    "finishedAt": "2026-08-23T08:06:39.972Z",
+    "durationMs": 25654,
+    "selection": [
+      {
+        "nodeId": "12164:14353",
+        "name": "Predicate Engine MVP / Component predicates",
+        "nodeType": "FRAME",
+        "path": "тестовая секция / Predicate Engine MVP / Component predicates",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 52,
+    "componentCount": 4,
+    "changeCount": 5
+  },
+  "category": {
+    "id": "customizationsWip",
+    "title": "Кастомизации [WIP]",
+    "count": 4,
+    "changeCount": 5,
+    "items": [
+      {
+        "node": {
+          "id": "12164:48531",
+          "name": "P01 / FAIL / Accent view / [D] ButtonsGroup",
+          "type": "INSTANCE",
+          "pageName": "     Лаборатория",
+          "path": "тестовая секция / Predicate Engine MVP / Component predicates / P01 / FAIL / Accent view / P01 / FAIL / Accent view / [D] ButtonsGroup",
+          "visible": true,
+          "ancestorNodeIds": [
+            "12164:14353",
+            "12164:14356"
+          ]
+        },
+        "component": {
+          "type": "component",
+          "name": "[D] ButtonsGroup",
+          "key": "a9277df1027c31dc94cd15bd70a45af22ecbf48e",
+          "id": null,
+          "library": "Web _ Corp Components",
+          "sourceFile": "web/components/web-corp/Web _ Corp Components -- ButtonGroup [D].json"
+        },
+        "variant": {
+          "type": "component-variant",
+          "name": "Size=56, Overflow=false",
+          "key": "a9277df1027c31dc94cd15bd70a45af22ecbf48e",
+          "id": null,
+          "library": "Web _ Corp Components",
+          "sourceFile": "web/components/web-corp/Web _ Corp Components -- ButtonGroup [D].json"
+        },
+        "comparisonIssues": [],
+        "updateReasons": [],
+        "libraryFreshness": {
+          "status": "current",
+          "reason": "remote-component-current",
+          "componentKey": "a9277df1027c31dc94cd15bd70a45af22ecbf48e",
+          "currentComponentId": "11298:121273",
+          "latestComponentId": "11298:121273"
+        },
+        "localComponentOwner": null,
+        "changes": [
+          {
+            "node": {
+              "id": "I12164:48531;62786:48896",
+              "name": "[D] Button",
+              "type": null,
+              "pageName": "     Лаборатория",
+              "path": "Size=56, Overflow=false / [D] Button@@2",
+              "visible": true
+            },
+            "kind": "other",
+            "property": "variant.View",
+            "message": "view: Secondary → Accent",
+            "reference": {
+              "value": "Secondary",
+              "resource": null,
+              "binding": null
+            },
+            "actual": {
+              "value": "Accent",
+              "resource": null,
+              "binding": null
+            },
+            "bindingStatus": null,
+            "variableMode": null,
+            "signature": "component:a9277df1027c31dc94cd15bd70a45af22ecbf48e:other:variant.View:Secondary->Accent",
+            "context": {
+              "actualComponentKey": "4ada6f8688b752d9452249fd8e8bc3545a76c708",
+              "referenceComponentKey": "c6b3cdefe718e2002a6fd42395ed3bfba219e46e",
+              "referenceOrigin": "host",
+              "actualNestedOwnerComponentKey": "a9277df1027c31dc94cd15bd70a45af22ecbf48e",
+              "actualNestedOwnerPath": "Size=56, Overflow=false",
+              "actualNestedOwnerRelativePath": "[D] Button",
+              "nestedOwnerComponentKey": "c6b3cdefe718e2002a6fd42395ed3bfba219e46e",
+              "nestedOwnerComponentRole": null,
+              "nestedOwnerPath": "Size=56, Overflow=false / [D] Button@@2",
+              "nestedOwnerRelativePath": "",
+              "actualVariantProperties": {
+                "View": "Accent",
+                "Size": "56",
+                "Shape": "Rectangular",
+                "SingleIcon": "False",
+                "DisabledState": "False"
+              },
+              "referenceVariantProperties": {
+                "DisabledState": "False",
+                "Shape": "Rectangular",
+                "SingleIcon": "False",
+                "Size": "56",
+                "View": "Secondary"
+              },
+              "surfaceContext": null
+            },
+            "componentRules": [
+              {
+                "ruleId": "component:web-core.button.component-properties-are-first-class",
+                "severity": "info",
+                "source": "component-contract",
+                "ruleKind": null,
+                "authority": null,
+                "severityScope": null,
+                "appliesTo": "variant.*",
+                "checkType": "deterministic",
+                "matchKind": "exact_component_rule",
+                "changeScope": null,
+                "ruleText": "Изменения variant/property в этом семействе компонентов являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+                "remediation": null,
+                "numericConstraint": null,
+                "requiredTokenSource": null
+              },
+              {
+                "ruleId": "component:web-core.button.variant-state-is-component-property",
+                "severity": "info",
+                "source": "component-contract",
+                "ruleKind": null,
+                "authority": null,
+                "severityScope": null,
+                "appliesTo": "variant.*",
+                "checkType": "deterministic",
+                "matchKind": null,
+                "changeScope": null,
+                "ruleText": "Изменения View, Size, Shape, SingleIcon и DisabledState являются component property changes и должны показываться как самостоятельные customizations.",
+                "remediation": null,
+                "numericConstraint": null,
+                "requiredTokenSource": null
+              },
+              {
+                "ruleId": "component:web-core.button.desktop-safe-variants",
+                "severity": "error",
+                "source": "pattern-link",
+                "ruleKind": null,
+                "authority": null,
+                "severityScope": null,
+                "appliesTo": "variant.View|variant.Size|variant.Shape",
+                "checkType": "deterministic",
+                "matchKind": null,
+                "changeScope": null,
+                "ruleText": "В desktop нельзя использовать Button variants и параметры, запрещённые button pattern.",
+                "remediation": null,
+                "numericConstraint": null,
+                "requiredTokenSource": null
+              },
+              {
+                "ruleId": "component:web-corp.buttons-group.primary-is-first-and-unique",
+                "severity": "error",
+                "source": "pattern-link",
+                "ruleKind": "design-rule",
+                "authority": {
+                  "status": "active",
+                  "provenance": "design-system-author",
+                  "revision": 1
+                },
+                "severityScope": null,
+                "appliesTo": "variant.View",
+                "checkType": "deterministic",
+                "matchKind": "exact_component_rule",
+                "changeScope": null,
+                "ruleText": "Primary в ButtonsGroup необязателен. Если Primary используется, он должен быть единственным и располагаться первым.",
+                "remediation": null,
+                "numericConstraint": null,
+                "requiredTokenSource": null
+              },
+              {
+                "ruleId": "component:web-corp.buttons-group.nested-buttons-follow-button-contract",
+                "severity": "info",
+                "source": "component-contract",
+                "ruleKind": null,
+                "authority": null,
+                "severityScope": null,
+                "appliesTo": "variant.*|text.content|component.addon",
+                "checkType": "manual",
+                "matchKind": "exact_component_rule",
+                "changeScope": null,
+                "ruleText": "View, DisabledState, addons и Label вложенных кнопок настраиваются по правилам соответствующего компонента Button, если точное правило ButtonsGroup не задаёт более узкое ограничение.",
+                "remediation": null,
+                "numericConstraint": null,
+                "requiredTokenSource": null
+              }
+            ],
+            "presentation": {
+              "scope": "slot-property",
+              "groupTitle": "Параметры слота",
+              "displayName": null,
+              "priority": 15,
+              "resetAction": "reset-component-properties",
+              "effectiveBaseline": null
+            },
+            "assessment": {
+              "verdict": "violation",
+              "source": "component-contract",
+              "reasonCode": "composition-contract-violation",
+              "ruleId": "buttons-group.composition.allowed-views",
+              "contractId": "buttons-group.composition",
+              "constraintId": "allowed-views",
+              "evidence": {
+                "allowedValues": [
+                  "Primary",
+                  "Secondary"
+                ]
+              },
+              "message": "В ButtonsGroup допускаются только View=Primary и View=Secondary",
+              "remediation": null
+            }
+          }
+        ]
+      },
+      {
+        "node": {
+          "id": "12164:48599",
+          "name": "P02 / FAIL / nested Size=40 / [D] ButtonsGroup",
+          "type": "INSTANCE",
+          "pageName": "     Лаборатория",
+          "path": "тестовая секция / Predicate Engine MVP / Component predicates / P02 / FAIL / nested Size=40 / P02 / FAIL / nested Size=40 / [D] ButtonsGroup",
+          "visible": true,
+          "ancestorNodeIds": [
+            "12164:14353",
+            "12164:14360"
+          ]
+        },
+        "component": {
+          "type": "component",
+          "name": "[D] ButtonsGroup",
+          "key": "a9277df1027c31dc94cd15bd70a45af22ecbf48e",
+          "id": null,
+          "library": "Web _ Corp Components",
+          "sourceFile": "web/components/web-corp/Web _ Corp Components -- ButtonGroup [D].json"
+        },
+        "variant": {
+          "type": "component-variant",
+          "name": "Size=56, Overflow=false",
+          "key": "a9277df1027c31dc94cd15bd70a45af22ecbf48e",
+          "id": null,
+          "library": "Web _ Corp Components",
+          "sourceFile": "web/components/web-corp/Web _ Corp Components -- ButtonGroup [D].json"
+        },
+        "comparisonIssues": [],
+        "updateReasons": [],
+        "libraryFreshness": {
+          "status": "current",
+          "reason": "remote-component-current",
+          "componentKey": "a9277df1027c31dc94cd15bd70a45af22ecbf48e",
+          "currentComponentId": "11298:121273",
+          "latestComponentId": "11298:121273"
+        },
+        "localComponentOwner": null,
+        "changes": [
+          {
+            "node": {
+              "id": "I12164:48599;62786:48896",
+              "name": "[D] Button",
+              "type": null,
+              "pageName": "     Лаборатория",
+              "path": "Size=56, Overflow=false / [D] Button@@2",
+              "visible": true
+            },
+            "kind": "other",
+            "property": "variant.Size",
+            "message": "size: 56 → 40",
+            "reference": {
+              "value": "56",
+              "resource": null,
+              "binding": null
+            },
+            "actual": {
+              "value": "40",
+              "resource": null,
+              "binding": null
+            },
+            "bindingStatus": null,
+            "variableMode": null,
+            "signature": "component:a9277df1027c31dc94cd15bd70a45af22ecbf48e:other:variant.Size:56->40",
+            "context": {
+              "actualComponentKey": "31f2ee6f9abd90f582f914d77f10e5a18ceaf708",
+              "referenceComponentKey": "c6b3cdefe718e2002a6fd42395ed3bfba219e46e",
+              "referenceOrigin": "host",
+              "actualNestedOwnerComponentKey": "a9277df1027c31dc94cd15bd70a45af22ecbf48e",
+              "actualNestedOwnerPath": "Size=56, Overflow=false",
+              "actualNestedOwnerRelativePath": "[D] Button",
+              "nestedOwnerComponentKey": "c6b3cdefe718e2002a6fd42395ed3bfba219e46e",
+              "nestedOwnerComponentRole": null,
+              "nestedOwnerPath": "Size=56, Overflow=false / [D] Button@@2",
+              "nestedOwnerRelativePath": "",
+              "actualVariantProperties": {
+                "View": "Secondary",
+                "Size": "40",
+                "Shape": "Rectangular",
+                "SingleIcon": "False",
+                "DisabledState": "False"
+              },
+              "referenceVariantProperties": {
+                "DisabledState": "False",
+                "Shape": "Rectangular",
+                "SingleIcon": "False",
+                "Size": "56",
+                "View": "Secondary"
+              },
+              "surfaceContext": null
+            },
+            "componentRules": [
+              {
+                "ruleId": "component:web-core.button.component-properties-are-first-class",
+                "severity": "info",
+                "source": "component-contract",
+                "ruleKind": null,
+                "authority": null,
+                "severityScope": null,
+                "appliesTo": "variant.*",
+                "checkType": "deterministic",
+                "matchKind": "exact_component_rule",
+                "changeScope": null,
+                "ruleText": "Изменения variant/property в этом семействе компонентов являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+                "remediation": null,
+                "numericConstraint": null,
+                "requiredTokenSource": null
+              },
+              {
+                "ruleId": "component:web-core.button.variant-state-is-component-property",
+                "severity": "info",
+                "source": "component-contract",
+                "ruleKind": null,
+                "authority": null,
+                "severityScope": null,
+                "appliesTo": "variant.*",
+                "checkType": "deterministic",
+                "matchKind": null,
+                "changeScope": null,
+                "ruleText": "Изменения View, Size, Shape, SingleIcon и DisabledState являются component property changes и должны показываться как самостоятельные customizations.",
+                "remediation": null,
+                "numericConstraint": null,
+                "requiredTokenSource": null
+              },
+              {
+                "ruleId": "component:web-core.button.desktop-safe-variants",
+                "severity": "error",
+                "source": "pattern-link",
+                "ruleKind": null,
+                "authority": null,
+                "severityScope": null,
+                "appliesTo": "variant.View|variant.Size|variant.Shape",
+                "checkType": "deterministic",
+                "matchKind": null,
+                "changeScope": null,
+                "ruleText": "В desktop нельзя использовать Button variants и параметры, запрещённые button pattern.",
+                "remediation": null,
+                "numericConstraint": null,
+                "requiredTokenSource": null
+              },
+              {
+                "ruleId": "component:web-corp.buttons-group.uniform-size",
+                "severity": "error",
+                "source": "component-contract",
+                "ruleKind": "design-rule",
+                "authority": {
+                  "status": "active",
+                  "provenance": "design-system-author",
+                  "revision": 1
+                },
+                "severityScope": null,
+                "appliesTo": "variant.Size",
+                "checkType": "deterministic",
+                "matchKind": "exact_component_rule",
+                "changeScope": null,
+                "ruleText": "Все вложенные кнопки используют Size группы. Для [D] и [M] разрешены штатные значения 32, 40, 48 и 56.",
+                "remediation": null,
+                "numericConstraint": null,
+                "requiredTokenSource": null
+              },
+              {
+                "ruleId": "component:web-corp.buttons-group.nested-buttons-follow-button-contract",
+                "severity": "info",
+                "source": "component-contract",
+                "ruleKind": null,
+                "authority": null,
+                "severityScope": null,
+                "appliesTo": "variant.*|text.content|component.addon",
+                "checkType": "manual",
+                "matchKind": "exact_component_rule",
+                "changeScope": null,
+                "ruleText": "View, DisabledState, addons и Label вложенных кнопок настраиваются по правилам соответствующего компонента Button, если точное правило ButtonsGroup не задаёт более узкое ограничение.",
+                "remediation": null,
+                "numericConstraint": null,
+                "requiredTokenSource": null
+              }
+            ],
+            "presentation": {
+              "scope": "slot-property",
+              "groupTitle": "Параметры слота",
+              "displayName": null,
+              "priority": 15,
+              "resetAction": "reset-component-properties",
+              "effectiveBaseline": null
+            },
+            "assessment": {
+              "verdict": "violation",
+              "source": "component-contract",
+              "reasonCode": "composition-contract-violation",
+              "ruleId": "buttons-group.composition.uniform-size",
+              "contractId": "buttons-group.composition",
+              "constraintId": "uniform-size",
+              "evidence": {
+                "hostProperty": "Size",
+                "hostValue": "56",
+                "memberProperty": "Size"
+              },
+              "message": "Размер каждой кнопки должен совпадать с Size группы",
+              "remediation": {
+                "kind": "set-variant-properties",
+                "nodeId": "I12164:48599;62786:48896",
+                "properties": {
+                  "Size": "56"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "node": {
+          "id": "12169:11443",
+          "name": "P03 / FAIL / SingleIcon middle / [D] ButtonsGroup",
+          "type": "INSTANCE",
+          "pageName": "     Лаборатория",
+          "path": "тестовая секция / Predicate Engine MVP / Component predicates / P03 / FAIL / SingleIcon middle / P03 / FAIL / SingleIcon middle / [D] ButtonsGroup",
+          "visible": true,
+          "ancestorNodeIds": [
+            "12164:14353",
+            "12169:11441"
+          ]
+        },
+        "component": {
+          "type": "component",
+          "name": "[D] ButtonsGroup",
+          "key": "580dd1eb8a889ea04774fb0a92a1a588716babd8",
+          "id": null,
+          "library": "Web _ Corp Components",
+          "sourceFile": "web/components/web-corp/Web _ Corp Components -- ButtonGroup [D].json"
+        },
+        "variant": {
+          "type": "component-variant",
+          "name": "Size=56, Overflow=true",
+          "key": "580dd1eb8a889ea04774fb0a92a1a588716babd8",
+          "id": null,
+          "library": "Web _ Corp Components",
+          "sourceFile": "web/components/web-corp/Web _ Corp Components -- ButtonGroup [D].json"
+        },
+        "comparisonIssues": [],
+        "updateReasons": [],
+        "libraryFreshness": {
+          "status": "current",
+          "reason": "remote-component-current",
+          "componentKey": "580dd1eb8a889ea04774fb0a92a1a588716babd8",
+          "currentComponentId": "11298:121274",
+          "latestComponentId": "11298:121274"
+        },
+        "localComponentOwner": null,
+        "changes": [
+          {
+            "node": {
+              "id": "I12169:11443;62786:48901",
+              "name": "[D] Button",
+              "type": null,
+              "pageName": "     Лаборатория",
+              "path": "Size=56, Overflow=true / [D] Button@@2",
+              "visible": true
+            },
+            "kind": "other",
+            "property": "variant.SingleIcon",
+            "message": "singleIcon: False → True",
+            "reference": {
+              "value": "False",
+              "resource": null,
+              "binding": null
+            },
+            "actual": {
+              "value": "True",
+              "resource": null,
+              "binding": null
+            },
+            "bindingStatus": null,
+            "variableMode": null,
+            "signature": "component:580dd1eb8a889ea04774fb0a92a1a588716babd8:other:variant.SingleIcon:False->True",
+            "context": {
+              "actualComponentKey": "7d57ad9de87734e46ae393dafceb6b7565ca6168",
+              "referenceComponentKey": "c6b3cdefe718e2002a6fd42395ed3bfba219e46e",
+              "referenceOrigin": "host",
+              "actualNestedOwnerComponentKey": "580dd1eb8a889ea04774fb0a92a1a588716babd8",
+              "actualNestedOwnerPath": "Size=56, Overflow=true",
+              "actualNestedOwnerRelativePath": "[D] Button",
+              "nestedOwnerComponentKey": "c6b3cdefe718e2002a6fd42395ed3bfba219e46e",
+              "nestedOwnerComponentRole": null,
+              "nestedOwnerPath": "Size=56, Overflow=true / [D] Button@@2",
+              "nestedOwnerRelativePath": "",
+              "actualVariantProperties": {
+                "View": "Secondary",
+                "Size": "56",
+                "Shape": "Rectangular",
+                "SingleIcon": "True",
+                "DisabledState": "False"
+              },
+              "referenceVariantProperties": {
+                "DisabledState": "False",
+                "Shape": "Rectangular",
+                "SingleIcon": "False",
+                "Size": "56",
+                "View": "Secondary"
+              },
+              "surfaceContext": {
+                "kind": "gray",
+                "source": "ancestor-fill-color",
+                "nodeId": "12164:14353",
+                "nodeName": "Predicate Engine MVP / Component predicates",
+                "tokenId": null,
+                "tokenName": null,
+                "color": "#F5F5F7"
+              }
+            },
+            "componentRules": [
+              {
+                "ruleId": "component:web-core.button.component-properties-are-first-class",
+                "severity": "info",
+                "source": "component-contract",
+                "ruleKind": null,
+                "authority": null,
+                "severityScope": null,
+                "appliesTo": "variant.*",
+                "checkType": "deterministic",
+                "matchKind": "exact_component_rule",
+                "changeScope": null,
+                "ruleText": "Изменения variant/property в этом семействе компонентов являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+                "remediation": null,
+                "numericConstraint": null,
+                "requiredTokenSource": null
+              },
+              {
+                "ruleId": "component:web-core.button.variant-state-is-component-property",
+                "severity": "info",
+                "source": "component-contract",
+                "ruleKind": null,
+                "authority": null,
+                "severityScope": null,
+                "appliesTo": "variant.*",
+                "checkType": "deterministic",
+                "matchKind": null,
+                "changeScope": null,
+                "ruleText": "Изменения View, Size, Shape, SingleIcon и DisabledState являются component property changes и должны показываться как самостоятельные customizations.",
+                "remediation": null,
+                "numericConstraint": null,
+                "requiredTokenSource": null
+              },
+              {
+                "ruleId": "component:web-corp.buttons-group.nested-buttons-follow-button-contract",
+                "severity": "info",
+                "source": "component-contract",
+                "ruleKind": null,
+                "authority": null,
+                "severityScope": null,
+                "appliesTo": "variant.*|text.content|component.addon",
+                "checkType": "manual",
+                "matchKind": "exact_component_rule",
+                "changeScope": null,
+                "ruleText": "View, DisabledState, addons и Label вложенных кнопок настраиваются по правилам соответствующего компонента Button, если точное правило ButtonsGroup не задаёт более узкое ограничение.",
+                "remediation": null,
+                "numericConstraint": null,
+                "requiredTokenSource": null
+              },
+              {
+                "ruleId": "component:web-corp.buttons-group.single-icon-is-last",
+                "severity": "error",
+                "source": "pattern-link",
+                "ruleKind": "design-rule",
+                "authority": {
+                  "status": "active",
+                  "provenance": "design-system-author",
+                  "revision": 1
+                },
+                "severityScope": null,
+                "appliesTo": "variant.SingleIcon|component.order",
+                "checkType": "deterministic",
+                "matchKind": "exact_component_rule",
+                "changeScope": null,
+                "ruleText": "Кнопка с SingleIcon=true всегда располагается последней в ButtonsGroup.",
+                "remediation": null,
+                "numericConstraint": null,
+                "requiredTokenSource": null
+              }
+            ],
+            "presentation": {
+              "scope": "slot-property",
+              "groupTitle": "Параметры слота",
+              "displayName": null,
+              "priority": 15,
+              "resetAction": "reset-component-properties",
+              "effectiveBaseline": null
+            },
+            "assessment": {
+              "verdict": "violation",
+              "source": "component-contract",
+              "reasonCode": "composition-contract-violation",
+              "ruleId": "buttons-group.composition.single-icon-position",
+              "contractId": "buttons-group.composition",
+              "constraintId": "single-icon-position",
+              "evidence": {
+                "actualPosition": 2,
+                "allowedPositions": [
+                  "last"
+                ],
+                "matchingCount": 1,
+                "maxCount": 1
+              },
+              "message": "При Overflow=true последняя кнопка должна оставаться штатным PickerButton (SingleIcon=true с системной иконкой); SingleIcon допускается только у последней кнопки и только один раз",
+              "remediation": {
+                "kind": "set-variant-properties",
+                "nodeId": "I12169:11443;62786:48901",
+                "properties": {
+                  "SingleIcon": "False"
+                }
+              }
+            }
+          },
+          {
+            "node": {
+              "id": "I12169:11443;62786:48903",
+              "name": "[D] Button",
+              "type": null,
+              "pageName": "     Лаборатория",
+              "path": "Size=56, Overflow=true / [D] Button@@4",
+              "visible": true
+            },
+            "kind": "other",
+            "property": "variant.SingleIcon",
+            "message": "singleIcon: True → False",
+            "reference": {
+              "value": "True",
+              "resource": null,
+              "binding": null
+            },
+            "actual": {
+              "value": "False",
+              "resource": null,
+              "binding": null
+            },
+            "bindingStatus": null,
+            "variableMode": null,
+            "signature": "component:580dd1eb8a889ea04774fb0a92a1a588716babd8:other:variant.SingleIcon:True->False",
+            "context": {
+              "actualComponentKey": "c6b3cdefe718e2002a6fd42395ed3bfba219e46e",
+              "referenceComponentKey": "7d57ad9de87734e46ae393dafceb6b7565ca6168",
+              "referenceOrigin": "host",
+              "actualNestedOwnerComponentKey": "580dd1eb8a889ea04774fb0a92a1a588716babd8",
+              "actualNestedOwnerPath": "Size=56, Overflow=true",
+              "actualNestedOwnerRelativePath": "[D] Button",
+              "nestedOwnerComponentKey": "7d57ad9de87734e46ae393dafceb6b7565ca6168",
+              "nestedOwnerComponentRole": null,
+              "nestedOwnerPath": "Size=56, Overflow=true / [D] Button@@4",
+              "nestedOwnerRelativePath": "",
+              "actualVariantProperties": {
+                "View": "Secondary",
+                "Size": "56",
+                "Shape": "Rectangular",
+                "SingleIcon": "False",
+                "DisabledState": "False"
+              },
+              "referenceVariantProperties": {
+                "DisabledState": "False",
+                "Shape": "Rectangular",
+                "SingleIcon": "True",
+                "Size": "56",
+                "View": "Secondary"
+              },
+              "surfaceContext": null
+            },
+            "componentRules": [
+              {
+                "ruleId": "component:web-core.button.component-properties-are-first-class",
+                "severity": "info",
+                "source": "component-contract",
+                "ruleKind": null,
+                "authority": null,
+                "severityScope": null,
+                "appliesTo": "variant.*",
+                "checkType": "deterministic",
+                "matchKind": "exact_component_rule",
+                "changeScope": null,
+                "ruleText": "Изменения variant/property в этом семействе компонентов являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+                "remediation": null,
+                "numericConstraint": null,
+                "requiredTokenSource": null
+              },
+              {
+                "ruleId": "component:web-core.button.variant-state-is-component-property",
+                "severity": "info",
+                "source": "component-contract",
+                "ruleKind": null,
+                "authority": null,
+                "severityScope": null,
+                "appliesTo": "variant.*",
+                "checkType": "deterministic",
+                "matchKind": null,
+                "changeScope": null,
+                "ruleText": "Изменения View, Size, Shape, SingleIcon и DisabledState являются component property changes и должны показываться как самостоятельные customizations.",
+                "remediation": null,
+                "numericConstraint": null,
+                "requiredTokenSource": null
+              },
+              {
+                "ruleId": "component:web-corp.buttons-group.nested-buttons-follow-button-contract",
+                "severity": "info",
+                "source": "component-contract",
+                "ruleKind": null,
+                "authority": null,
+                "severityScope": null,
+                "appliesTo": "variant.*|text.content|component.addon",
+                "checkType": "manual",
+                "matchKind": "exact_component_rule",
+                "changeScope": null,
+                "ruleText": "View, DisabledState, addons и Label вложенных кнопок настраиваются по правилам соответствующего компонента Button, если точное правило ButtonsGroup не задаёт более узкое ограничение.",
+                "remediation": null,
+                "numericConstraint": null,
+                "requiredTokenSource": null
+              },
+              {
+                "ruleId": "component:web-corp.buttons-group.single-icon-is-last",
+                "severity": "error",
+                "source": "pattern-link",
+                "ruleKind": "design-rule",
+                "authority": {
+                  "status": "active",
+                  "provenance": "design-system-author",
+                  "revision": 1
+                },
+                "severityScope": null,
+                "appliesTo": "variant.SingleIcon|component.order",
+                "checkType": "deterministic",
+                "matchKind": "exact_component_rule",
+                "changeScope": null,
+                "ruleText": "Кнопка с SingleIcon=true всегда располагается последней в ButtonsGroup.",
+                "remediation": null,
+                "numericConstraint": null,
+                "requiredTokenSource": null
+              }
+            ],
+            "presentation": {
+              "scope": "slot-property",
+              "groupTitle": "Параметры слота",
+              "displayName": null,
+              "priority": 15,
+              "resetAction": "reset-component-properties",
+              "effectiveBaseline": null
+            },
+            "assessment": {
+              "verdict": "expected",
+              "source": "catalog-host",
+              "reasonCode": "matches-selected-nested-context",
+              "ruleId": null,
+              "contractId": null,
+              "constraintId": null,
+              "evidence": null,
+              "message": "Значение задано выбранной конфигурацией вложенного компонента",
+              "remediation": null
+            }
+          }
+        ]
+      },
+      {
+        "node": {
+          "id": "12175:11328",
+          "name": "P04 / FAIL / overridden Title style / [D] TitleView",
+          "type": "INSTANCE",
+          "pageName": "     Лаборатория",
+          "path": "тестовая секция / Predicate Engine MVP / Component predicates / P04 / FAIL / overridden Title style / P04 / FAIL / overridden Title style / [D] TitleView",
+          "visible": true,
+          "ancestorNodeIds": [
+            "12164:14353",
+            "12175:11301"
+          ]
+        },
+        "component": {
+          "type": "component",
+          "name": "[D] TitleView",
+          "key": "3bfd179dc3b4c996f58db4cbcd26687a356fb3b7",
+          "id": null,
+          "library": "Web _ Corp Components",
+          "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+        },
+        "variant": {
+          "type": "component-variant",
+          "name": "View=xLarge, Skeleton=False",
+          "key": "3bfd179dc3b4c996f58db4cbcd26687a356fb3b7",
+          "id": null,
+          "library": "Web _ Corp Components",
+          "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+        },
+        "comparisonIssues": [],
+        "updateReasons": [],
+        "libraryFreshness": {
+          "status": "current",
+          "reason": "remote-component-current",
+          "componentKey": "3bfd179dc3b4c996f58db4cbcd26687a356fb3b7",
+          "currentComponentId": "11188:16164",
+          "latestComponentId": "11188:16164"
+        },
+        "localComponentOwner": null,
+        "changes": [
+          {
+            "node": {
+              "id": "I12175:11328;37705:55353",
+              "name": "Title",
+              "type": null,
+              "pageName": "     Лаборатория",
+              "path": "View=xLarge, Skeleton=False / MainContent / Heading / Title",
+              "visible": true
+            },
+            "kind": "text-style",
+            "property": "styles.text",
+            "message": "Стиль текст: Headline–System/40–48 Large → Paragraph/16–24 Primary Medium",
+            "reference": {
+              "value": "Headline–System/40–48 Large",
+              "resource": {
+                "type": "style",
+                "name": "Headline–System/40–48 Large",
+                "key": "e451446afce66cddd400f39abc5837a829b5a6c2",
+                "id": "S:e451446afce66cddd400f39abc5837a829b5a6c2,134161:112586",
+                "library": "Web :: Typography",
+                "sourceFile": "styles/Web _ Typography.json"
+              },
+              "binding": null
+            },
+            "actual": {
+              "value": "Paragraph/16–24 Primary Medium",
+              "resource": {
+                "type": "style",
+                "name": "Paragraph/16–24 Primary Medium",
+                "key": "f0f0d59f9f92db92901605dd929cfa3b93540058",
+                "id": "S:f0f0d59f9f92db92901605dd929cfa3b93540058,9221:110",
+                "library": "Web :: Typography",
+                "sourceFile": "styles/Web _ Typography.json"
+              },
+              "binding": null
+            },
+            "bindingStatus": null,
+            "variableMode": null,
+            "signature": "component:3bfd179dc3b4c996f58db4cbcd26687a356fb3b7:text-style:styles.text:e451446afce66cddd400f39abc5837a829b5a6c2->f0f0d59f9f92db92901605dd929cfa3b93540058",
+            "context": {
+              "actualComponentKey": null,
+              "referenceComponentKey": null,
+              "referenceOrigin": "host",
+              "actualNestedOwnerComponentKey": "3bfd179dc3b4c996f58db4cbcd26687a356fb3b7",
+              "actualNestedOwnerPath": "View=xLarge, Skeleton=False",
+              "actualNestedOwnerRelativePath": "MainContent / Heading / Title",
+              "nestedOwnerComponentKey": null,
+              "nestedOwnerComponentRole": null,
+              "nestedOwnerPath": null,
+              "nestedOwnerRelativePath": null,
+              "actualVariantProperties": {
+                "View": "xLarge",
+                "Skeleton": "False"
+              },
+              "referenceVariantProperties": null,
+              "surfaceContext": {
+                "kind": "gray",
+                "source": "ancestor-fill-color",
+                "nodeId": "12164:14353",
+                "nodeName": "Predicate Engine MVP / Component predicates",
+                "tokenId": null,
+                "tokenName": null,
+                "color": "#F5F5F7"
+              }
+            },
+            "componentRules": [
+              {
+                "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+                "severity": "error",
+                "source": "component-contract",
+                "ruleKind": "design-rule",
+                "authority": {
+                  "status": "active",
+                  "provenance": "design-system-author",
+                  "revision": 1
+                },
+                "severityScope": null,
+                "appliesTo": "styles.text",
+                "checkType": "deterministic",
+                "matchKind": "exact_component_rule",
+                "changeScope": null,
+                "ruleText": "Типографика Title и Subtitle фиксируется выбранным View компонента TitleView. Менять текстовый стиль заголовка или подзаголовка вручную запрещено.",
+                "remediation": null,
+                "numericConstraint": null,
+                "requiredTokenSource": null
+              }
+            ],
+            "presentation": {
+              "scope": "layer-property",
+              "groupTitle": "Параметры слоя",
+              "displayName": "Стиль текст",
+              "priority": 30,
+              "resetAction": "reset-layer-properties",
+              "effectiveBaseline": "composition-contract"
+            },
+            "assessment": {
+              "verdict": "violation",
+              "source": "component-contract",
+              "reasonCode": "component-contract-violation",
+              "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+              "message": "Типографика Title и Subtitle фиксируется выбранным View компонента TitleView. Менять текстовый стиль заголовка или подзаголовка вручную запрещено.",
+              "remediation": null
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
