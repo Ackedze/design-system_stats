@@ -1,0 +1,1533 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-predicate-report",
+  "reportId": "apollo-1096330610570928879-1787670169842-4l9cgoxs:predicates:7da0e229bfd1c0c529fd5a61414b43249feea874f813dee17eb88775544d165a",
+  "sourceReportId": "apollo-1096330610570928879-1787670169842-4l9cgoxs",
+  "generatedAt": "2026-08-25T15:02:50.028Z",
+  "suggestedFileName": "Alexey-Kukhta-CORP-Lead-Designer_25-08-2026_18-02-49_predicates.json",
+  "user": {
+    "id": "1096330610570928879",
+    "name": "Alexey Kukhta / CORP / Lead Designer",
+    "slug": "Alexey-Kukhta-CORP-Lead-Designer"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.3.0"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "❇️ Мастерская :: AI",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "pageType": "form",
+    "startedAt": "2026-08-25T15:02:49.742Z",
+    "finishedAt": "2026-08-25T15:02:49.842Z",
+    "durationMs": 100,
+    "selection": [
+      {
+        "nodeId": "12186:11163",
+        "name": "P05 / PASS / padding bound to Spacing",
+        "nodeType": "FRAME",
+        "path": "тестовая секция / Predicate Engine MVP / Component predicates / P05 / PASS / padding bound to Spacing",
+        "componentKey": null
+      },
+      {
+        "nodeId": "12186:11179",
+        "name": "P05 / FAIL / right padding is raw 24",
+        "nodeType": "FRAME",
+        "path": "тестовая секция / Predicate Engine MVP / Component predicates / P05 / FAIL / right padding is raw 24",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": false
+    }
+  },
+  "summary": {
+    "ruleCount": 25,
+    "evaluationCount": 30,
+    "findingCount": 1,
+    "byClassification": {
+      "not-applicable": 22,
+      "compliant": 7,
+      "violation": 1
+    },
+    "unclassified": 0,
+    "duplicateEvaluationIds": 0
+  },
+  "validation": {
+    "snapshot": {
+      "schemaVersion": "apollo.predicate-snapshot.v2",
+      "auditId": "apollo-1096330610570928879-1787670169842-4l9cgoxs",
+      "snapshotHash": "7da0e229bfd1c0c529fd5a61414b43249feea874f813dee17eb88775544d165a",
+      "context": {
+        "fileKey": null,
+        "pageId": "8701:32684",
+        "platform": "desktop",
+        "pageType": "form",
+        "viewportWidth": null,
+        "surface": null,
+        "modalRootNodeId": null,
+        "unknownFacts": [
+          "fileKey",
+          "viewportWidth"
+        ]
+      },
+      "release": {
+        "knowledgeSource": "design-system_ab",
+        "revision": "2026-07-06T18:47:40.739Z",
+        "checksum": "a185fe3457c8241e4e50b607bc955e2e857fea889b033715f839810831cf25b1"
+      },
+      "selection": [
+        "12186:11163",
+        "12186:11179"
+      ],
+      "nodeCount": 8,
+      "contourDiagnostics": [
+        {
+          "nodeId": "12186:11177",
+          "parentNodeId": "12186:11163",
+          "component": {
+            "identity": "web-corp.background-plate",
+            "family": "background-plate-slot"
+          },
+          "owner": null,
+          "contour": {
+            "identity": "web-corp.background-plate",
+            "rootNodeId": "12186:11177",
+            "isRoot": true,
+            "isResolvedRoot": true,
+            "root": {
+              "component": {
+                "key": "6d5d4dda10be00621991e9b5a0152db4e47f4e2f",
+                "identity": "web-corp.background-plate",
+                "family": "background-plate-slot",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Type": "Primary",
+                  "Skeleton": "False",
+                  "Slot": null
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12186:11177",
+                    "fields": [
+                      "boundVariables",
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": []
+          }
+        },
+        {
+          "nodeId": "12186:11193",
+          "parentNodeId": "12186:11179",
+          "component": {
+            "identity": "web-corp.background-plate",
+            "family": "background-plate-slot"
+          },
+          "owner": null,
+          "contour": {
+            "identity": "web-corp.background-plate",
+            "rootNodeId": "12186:11193",
+            "isRoot": true,
+            "isResolvedRoot": true,
+            "root": {
+              "component": {
+                "key": "6d5d4dda10be00621991e9b5a0152db4e47f4e2f",
+                "identity": "web-corp.background-plate",
+                "family": "background-plate-slot",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Type": "Primary",
+                  "Skeleton": "False",
+                  "Slot": null
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12186:11193",
+                    "fields": [
+                      "boundVariables",
+                      "name",
+                      "paddingRight"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": []
+          }
+        }
+      ]
+    },
+    "rules": [
+      {
+        "ruleId": "component:web-corp.buttons-group.button-count",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/ButtonGroup [D]/composition-contract.json",
+          "checksum": "3a6c2463f144da77f440576da16390efb7061ba7a71db30e37e86e74ce7fe3d9",
+          "anchor": "manual/contracts/buttons-group.composition/constraints/button-count"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        },
+        "presentation": null
+      },
+      {
+        "ruleId": "component:web-corp.buttons-group.allowed-views",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/ButtonGroup [D]/composition-contract.json",
+          "checksum": "3a6c2463f144da77f440576da16390efb7061ba7a71db30e37e86e74ce7fe3d9",
+          "anchor": "manual/contracts/buttons-group.composition/constraints/allowed-views"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        },
+        "presentation": null
+      },
+      {
+        "ruleId": "component:web-corp.buttons-group.uniform-size",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/ButtonGroup [D]/composition-contract.json",
+          "checksum": "3a6c2463f144da77f440576da16390efb7061ba7a71db30e37e86e74ce7fe3d9",
+          "anchor": "manual/contracts/buttons-group.composition/constraints/uniform-size"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        },
+        "presentation": null
+      },
+      {
+        "ruleId": "component:web-corp.buttons-group.primary-position",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/ButtonGroup [D]/composition-contract.json",
+          "checksum": "3a6c2463f144da77f440576da16390efb7061ba7a71db30e37e86e74ce7fe3d9",
+          "anchor": "manual/contracts/buttons-group.composition/constraints/primary-position"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        },
+        "presentation": {
+          "schemaVersion": "apollo.predicate-presentation.v1",
+          "title": "Primary-кнопка находится не на первом месте",
+          "observed": "В группе Primary-кнопка расположена не первой или используется несколько раз.",
+          "expectation": "Primary-кнопка необязательна, но может быть только одной и только первой.",
+          "action": "Переместить Primary-кнопку на первое место или изменить лишние Primary-кнопки на Secondary."
+        }
+      },
+      {
+        "ruleId": "component:web-corp.buttons-group.single-icon-position",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/ButtonGroup [D]/composition-contract.json",
+          "checksum": "3a6c2463f144da77f440576da16390efb7061ba7a71db30e37e86e74ce7fe3d9",
+          "anchor": "manual/contracts/buttons-group.composition/constraints/single-icon-position"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        },
+        "presentation": null
+      },
+      {
+        "ruleId": "component:web-corp.title-view.visible-slots-follow-required-order",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/TitleView/composition-contract.json",
+          "checksum": "245a7f862a3afdef140500cabfe08d386f45a7d07fa2916bda122f86db546bdb",
+          "anchor": "manual/slotOrderPolicy"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        },
+        "presentation": {
+          "schemaVersion": "apollo.predicate-presentation.v1",
+          "title": "Нарушен порядок элементов TitleView",
+          "observed": "Элемент {{actual}} расположен раньше обязательного предыдущего элемента {{expected}}.",
+          "expectation": "Видимые элементы TitleView должны сохранять порядок, заданный контрактом компонента.",
+          "action": "Восстановить порядок элементов через свойства опубликованного TitleView."
+        }
+      },
+      {
+        "ruleId": "component:web-corp.title-view.status-and-title-status-color-match",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/TitleView/rules.json",
+          "checksum": "c2e6047f4fdbef0bbac49049554a1a2dd524e41d013ad768a7d09dc610d98739",
+          "anchor": "rules/component:web-corp.title-view.status-and-title-status-color-match"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        }
+      },
+      {
+        "ruleId": "rule:controls.buttons-and-button-groups.desktop-safe-variants",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/patterns/p_buttons-and-buttons-group.md",
+          "checksum": "9aa0b263fa31318eee6ddcc8940ab386f918ed6567cc119ecee5e2ac2200e0cc",
+          "anchor": "rule:controls.buttons-and-button-groups.desktop-safe-variants"
+        },
+        "scope": {
+          "platform": [
+            "desktop"
+          ]
+        }
+      },
+      {
+        "ruleId": "component:web-corp.background-plate.level-2-requires-level-1",
+        "revision": 4,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/BackgroundPlate/rules.json",
+          "checksum": "f522685a1a11c95713727d4fdc35967db93345d835c1e13a9bc782a33e5220ed",
+          "anchor": "rules/component:web-corp.background-plate.level-2-requires-level-1"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        }
+      },
+      {
+        "ruleId": "component:web.benefits.capacity-matches-card-count",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp-promo/Benefits/rules.json",
+          "checksum": "686ba5844730a60424869e94574248170b8234a2405db57aa0884a5e75342802",
+          "anchor": "manual/rules/component:web.benefits.capacity-matches-card-count"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        }
+      },
+      {
+        "ruleId": "component:web.benefits.nested-card-settings-are-uniform",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp-promo/Benefits/rules.json",
+          "checksum": "686ba5844730a60424869e94574248170b8234a2405db57aa0884a5e75342802",
+          "anchor": "manual/rules/component:web.benefits.nested-card-settings-are-uniform"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        }
+      },
+      {
+        "ruleId": "component:web-corp.table-view.horizontal-multi-column-header-required",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/TableView/rules.json",
+          "checksum": "c7b07bc5ddb5f6aed229bd18138ea0c3497d63840991bf8457c3b70b43b2cc16",
+          "anchor": "manual/rules/component:web-corp.table-view.horizontal-multi-column-header-required"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        }
+      },
+      {
+        "ruleId": "component:web-corp.table-view.compact-is-consistent-across-rows",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/TableView/rules.json",
+          "checksum": "c7b07bc5ddb5f6aed229bd18138ea0c3497d63840991bf8457c3b70b43b2cc16",
+          "anchor": "manual/rules/component:web-corp.table-view.compact-is-consistent-across-rows"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        }
+      },
+      {
+        "ruleId": "component:web-corp.table-view.horizontal-compact-one-column",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/TableView/rules.json",
+          "checksum": "c7b07bc5ddb5f6aed229bd18138ea0c3497d63840991bf8457c3b70b43b2cc16",
+          "anchor": "manual/rules/component:web-corp.table-view.horizontal-compact-one-column"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        }
+      },
+      {
+        "ruleId": "rule:forms.construction-rules.block-spacing.first-level",
+        "revision": 3,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/patterns/p_form-construction-rules.md",
+          "checksum": "e04fc47a3ea69017f1454868d68b959dc7e01135846cfdc9f30a95768d24f70d",
+          "anchor": "rule:forms.construction-rules.block-spacing"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ],
+          "pageType": [
+            "form"
+          ]
+        }
+      },
+      {
+        "ruleId": "rule:forms.construction-rules.block-spacing.second-level-actions",
+        "revision": 2,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/patterns/p_form-construction-rules.md",
+          "checksum": "e04fc47a3ea69017f1454868d68b959dc7e01135846cfdc9f30a95768d24f70d",
+          "anchor": "rule:forms.construction-rules.block-spacing"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ],
+          "pageType": [
+            "form"
+          ]
+        }
+      },
+      {
+        "ruleId": "rule:forms.construction-rules.title-medium-one-per-plate",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/patterns/p_form-construction-rules.md",
+          "checksum": "e04fc47a3ea69017f1454868d68b959dc7e01135846cfdc9f30a95768d24f70d",
+          "anchor": "rule:forms.construction-rules.title-medium-one-per-plate"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ],
+          "pageType": [
+            "form"
+          ]
+        }
+      },
+      {
+        "ruleId": "rule:forms.construction-rules.inner-padding-standard.title-to-content",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/patterns/p_form-construction-rules.md",
+          "checksum": "e04fc47a3ea69017f1454868d68b959dc7e01135846cfdc9f30a95768d24f70d",
+          "anchor": "rule:forms.construction-rules.inner-padding-standard"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ],
+          "pageType": [
+            "form"
+          ]
+        }
+      },
+      {
+        "ruleId": "rule:forms.construction-rules.inner-padding-standard.content-insets",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/patterns/p_form-construction-rules.md",
+          "checksum": "e04fc47a3ea69017f1454868d68b959dc7e01135846cfdc9f30a95768d24f70d",
+          "anchor": "rule:forms.construction-rules.inner-padding-standard"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ],
+          "pageType": [
+            "form"
+          ]
+        }
+      },
+      {
+        "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens.top",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/BackgroundPlate/rules.json",
+          "checksum": "f522685a1a11c95713727d4fdc35967db93345d835c1e13a9bc782a33e5220ed",
+          "anchor": "rules/component:web-corp.background-plate.padding-uses-spacing-tokens"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        },
+        "presentation": {
+          "schemaVersion": "apollo.predicate-presentation.v1",
+          "title": "Верхний padding задан без токена Spacing",
+          "observed": "Верхний padding имеет значение {{actual}} без привязки к токену Spacing.",
+          "expectation": "Каждый layout.padding.* BackgroundPlateSlot должен быть привязан к токену коллекции Spacing.",
+          "action": "Привязать текущее значение к соответствующему токену Spacing.",
+          "targetFact": "layout.padding.top"
+        }
+      },
+      {
+        "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens.right",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/BackgroundPlate/rules.json",
+          "checksum": "f522685a1a11c95713727d4fdc35967db93345d835c1e13a9bc782a33e5220ed",
+          "anchor": "rules/component:web-corp.background-plate.padding-uses-spacing-tokens"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        },
+        "presentation": {
+          "schemaVersion": "apollo.predicate-presentation.v1",
+          "title": "Правый padding задан без токена Spacing",
+          "observed": "Правый padding имеет значение {{actual}} без привязки к токену Spacing.",
+          "expectation": "Каждый layout.padding.* BackgroundPlateSlot должен быть привязан к токену коллекции Spacing.",
+          "action": "Привязать текущее значение к соответствующему токену Spacing.",
+          "targetFact": "layout.padding.right"
+        }
+      },
+      {
+        "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens.bottom",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/BackgroundPlate/rules.json",
+          "checksum": "f522685a1a11c95713727d4fdc35967db93345d835c1e13a9bc782a33e5220ed",
+          "anchor": "rules/component:web-corp.background-plate.padding-uses-spacing-tokens"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        },
+        "presentation": {
+          "schemaVersion": "apollo.predicate-presentation.v1",
+          "title": "Нижний padding задан без токена Spacing",
+          "observed": "Нижний padding имеет значение {{actual}} без привязки к токену Spacing.",
+          "expectation": "Каждый layout.padding.* BackgroundPlateSlot должен быть привязан к токену коллекции Spacing.",
+          "action": "Привязать текущее значение к соответствующему токену Spacing.",
+          "targetFact": "layout.padding.bottom"
+        }
+      },
+      {
+        "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens.left",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/BackgroundPlate/rules.json",
+          "checksum": "f522685a1a11c95713727d4fdc35967db93345d835c1e13a9bc782a33e5220ed",
+          "anchor": "rules/component:web-corp.background-plate.padding-uses-spacing-tokens"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        },
+        "presentation": {
+          "schemaVersion": "apollo.predicate-presentation.v1",
+          "title": "Левый padding задан без токена Spacing",
+          "observed": "Левый padding имеет значение {{actual}} без привязки к токену Spacing.",
+          "expectation": "Каждый layout.padding.* BackgroundPlateSlot должен быть привязан к токену коллекции Spacing.",
+          "action": "Привязать текущее значение к соответствующему токену Spacing.",
+          "targetFact": "layout.padding.left"
+        }
+      },
+      {
+        "ruleId": "rule:components.title-view.single-xlarge",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/patterns/p_title-view.md",
+          "checksum": "037ceb09cd62e8687c69e385abeed3a394c76c18234525f9af1b387954ae33b7",
+          "anchor": "rules/rule:components.title-view.single-xlarge"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        },
+        "presentation": {
+          "schemaVersion": "apollo.predicate-presentation.v1",
+          "title": "На странице несколько главных заголовков",
+          "observed": "В выбранной области найдено {{actual}} TitleView с View=xLarge.",
+          "expectation": "На одной странице допускается только один TitleView с View=xLarge.",
+          "action": "Оставить один TitleView xLarge; остальные перевести на следующий уровень иерархии."
+        }
+      },
+      {
+        "ruleId": "rule:forms.construction-rules.layout-8-4",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/patterns/p_form-construction-rules.md",
+          "checksum": "e04fc47a3ea69017f1454868d68b959dc7e01135846cfdc9f30a95768d24f70d",
+          "anchor": "rules/rule:forms.construction-rules.layout-8-4"
+        },
+        "scope": {
+          "platform": [
+            "desktop"
+          ],
+          "pageType": [
+            "form"
+          ]
+        },
+        "presentation": {
+          "schemaVersion": "apollo.predicate-presentation.v1",
+          "title": "Нарушена сетка формы 8+4",
+          "observed": "Ширины основной и правой зон или отступ между ними не соответствуют формуле 8+4.",
+          "expectation": "Основная зона должна занимать 8 колонок, правая — 4, а отступ между ними — 24 px.",
+          "action": "Вернуть ширины зон к сетке 8+4 и установить отступ 24 px."
+        }
+      }
+    ],
+    "result": {
+      "schemaVersion": "apollo.predicate-result.v1",
+      "snapshotHash": "7da0e229bfd1c0c529fd5a61414b43249feea874f813dee17eb88775544d165a",
+      "ruleRelease": "a185fe3457c8241e4e50b607bc955e2e857fea889b033715f839810831cf25b1",
+      "evaluations": [
+        {
+          "evaluationId": "879d227d24de6fa2e4a26b827b765aec04294f636e6e483d531624ae450d5ed5",
+          "ruleId": "component:web-corp.background-plate.level-2-requires-level-1",
+          "ruleRevision": 4,
+          "subjectNodeId": "12186:11163",
+          "focusNodeId": "12186:11163",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "d3c7b5ea5a5a542dfa9f3c3c0bd358b325f32581d448dcdf8599c7d49a96be5b",
+          "ruleId": "component:web-corp.buttons-group.allowed-views",
+          "ruleRevision": 1,
+          "subjectNodeId": "12186:11163",
+          "focusNodeId": "12186:11163",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "one-of",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "d59eaa18520233491aaf2f0fd169f07b5b9cb6ba7804581dc48111428b72921d",
+          "ruleId": "component:web-corp.buttons-group.button-count",
+          "ruleRevision": 1,
+          "subjectNodeId": "12186:11163",
+          "focusNodeId": "12186:11163",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "count-between",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "d8c80d7de8f8a5cb37e11026905d10fccc0ed0228fa04e4bcddc64624089bd71",
+          "ruleId": "component:web-corp.buttons-group.primary-position",
+          "ruleRevision": 1,
+          "subjectNodeId": "12186:11163",
+          "focusNodeId": "12186:11163",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "value-position",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "1ef5efe81312660d7c9f1afdcbd24e6009971fbad10669b835e1c3e86b667d8e",
+          "ruleId": "component:web-corp.buttons-group.single-icon-position",
+          "ruleRevision": 1,
+          "subjectNodeId": "12186:11163",
+          "focusNodeId": "12186:11163",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "value-position",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "fd1f4fbc2b53258d7d424d94a50be7fcb7f7043265cf7413fe20d0d4888a66e2",
+          "ruleId": "component:web-corp.buttons-group.uniform-size",
+          "ruleRevision": 1,
+          "subjectNodeId": "12186:11163",
+          "focusNodeId": "12186:11163",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "equals",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "5a60b084235ebbaff42a06ee456a0ad5fbd1f67a0db217c94b63fd22bde03db3",
+          "ruleId": "component:web-corp.table-view.compact-is-consistent-across-rows",
+          "ruleRevision": 1,
+          "subjectNodeId": "12186:11163",
+          "focusNodeId": "12186:11163",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "08c9ca250c095212eff01386b07362ff6f42db0ddacc7f79f095cad982f256aa",
+          "ruleId": "component:web-corp.table-view.horizontal-compact-one-column",
+          "ruleRevision": 1,
+          "subjectNodeId": "12186:11163",
+          "focusNodeId": "12186:11163",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "count-between",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "2f7716f9784791d1d329ed37e03e37a5b30ee1b56c1ba612869d093869c21e25",
+          "ruleId": "component:web-corp.table-view.horizontal-multi-column-header-required",
+          "ruleRevision": 1,
+          "subjectNodeId": "12186:11163",
+          "focusNodeId": "12186:11163",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "equals",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "3d0f7759928c377f815b73301ad2c9ceac5e74173415c386310b013fa1468ce2",
+          "ruleId": "component:web-corp.title-view.status-and-title-status-color-match",
+          "ruleRevision": 1,
+          "subjectNodeId": "12186:11163",
+          "focusNodeId": "12186:11163",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "all-equal",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "2d2ee042b3a34480971c87573c75091094c8ddcbad1b439caecf1d0a00952834",
+          "ruleId": "component:web-corp.title-view.visible-slots-follow-required-order",
+          "ruleRevision": 1,
+          "subjectNodeId": "12186:11163",
+          "focusNodeId": "12186:11163",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "62465a5b92b2116000e9bb4def47d1f0359547a6a6e0e6db2b2322ab7ac501b6",
+          "ruleId": "component:web.benefits.capacity-matches-card-count",
+          "ruleRevision": 1,
+          "subjectNodeId": "12186:11163",
+          "focusNodeId": "12186:11163",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "3630778a32c44ba0b37b06a0038134a724f3c965a462a6c265043390fb70d7a7",
+          "ruleId": "component:web.benefits.nested-card-settings-are-uniform",
+          "ruleRevision": 1,
+          "subjectNodeId": "12186:11163",
+          "focusNodeId": "12186:11163",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "117ec10764a43cf97587446f98c48871e4c87d3df38d5270161c1904ec4d6520",
+          "ruleId": "rule:components.title-view.single-xlarge",
+          "ruleRevision": 1,
+          "subjectNodeId": "12186:11163",
+          "focusNodeId": "12186:11163",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "count-between",
+            "truth": "false",
+            "reason": "numeric range inclusive evaluated",
+            "actual": 0,
+            "expected": {
+              "lower": 1,
+              "upper": 1000000,
+              "bounds": "inclusive"
+            },
+            "factPaths": [
+              "component.identity",
+              "ownership.contour.isResolvedRoot",
+              "type"
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "82ed1388e1684a0f5baf0a7ae797b754289ca15b7c7c940233931d483ec9bc2f",
+          "ruleId": "rule:controls.buttons-and-button-groups.desktop-safe-variants",
+          "ruleRevision": 1,
+          "subjectNodeId": "12186:11163",
+          "focusNodeId": "12186:11163",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "not",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "d3f455109cec5130cefa70a5ca5391adcdb525359e1a6143868da65a9d8e6aa1",
+          "ruleId": "rule:forms.construction-rules.block-spacing.first-level",
+          "ruleRevision": 3,
+          "subjectNodeId": "12186:11163",
+          "focusNodeId": "12186:11163",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "distance",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "b0af40e6f5fa90919f51327c92e1418b0d58c33a8fd25e3be86e2962542b2456",
+          "ruleId": "rule:forms.construction-rules.block-spacing.second-level-actions",
+          "ruleRevision": 2,
+          "subjectNodeId": "12186:11163",
+          "focusNodeId": "12186:11163",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "distance",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "ffbbc14edca60b93d9bc6f145d95a7966e9e6478958bfcb11ee1d4b8812e3be6",
+          "ruleId": "rule:forms.construction-rules.inner-padding-standard.content-insets",
+          "ruleRevision": 1,
+          "subjectNodeId": "12186:11163",
+          "focusNodeId": "12186:11163",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "40260c765889f1df235f34c8c18b94892864c9288be9e111883b2611217f5f34",
+          "ruleId": "rule:forms.construction-rules.inner-padding-standard.title-to-content",
+          "ruleRevision": 1,
+          "subjectNodeId": "12186:11163",
+          "focusNodeId": "12186:11163",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "distance",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "0ef9170bf10fbdcbe3864a7122d4f98f2ec4018641efd40ca6d55a97f178195e",
+          "ruleId": "rule:forms.construction-rules.layout-8-4",
+          "ruleRevision": 1,
+          "subjectNodeId": "12186:11163",
+          "focusNodeId": "12186:11163",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "212ee6d65642629964430c628967b350cb144ffaddb1b60329b643177ebffa21",
+          "ruleId": "rule:forms.construction-rules.title-medium-one-per-plate",
+          "ruleRevision": 1,
+          "subjectNodeId": "12186:11163",
+          "focusNodeId": "12186:11163",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "one-of",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "887a5a8b929cbb60e773d6ef17bd7e97cdbfb6f6c88f8e7b523eb668fa9f26d0",
+          "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens.bottom",
+          "ruleRevision": 1,
+          "subjectNodeId": "12186:11177",
+          "focusNodeId": "12186:11177",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "binding-satisfies",
+            "truth": "true",
+            "reason": "contract constraint is satisfied",
+            "actual": {
+              "bound": true,
+              "value": 24,
+              "variableIds": [
+                "VariableID:f7b969edbf5d6f8d732bf46ef7fd3f7c5511fb49/1:38"
+              ],
+              "variables": [
+                {
+                  "id": "VariableID:f7b969edbf5d6f8d732bf46ef7fd3f7c5511fb49/1:38",
+                  "key": "f7b969edbf5d6f8d732bf46ef7fd3f7c5511fb49",
+                  "name": "24",
+                  "collectionId": "VariableCollectionId:1:2",
+                  "collectionName": "Spacing"
+                }
+              ],
+              "collection": "Spacing",
+              "token": "24",
+              "variableId": "VariableID:f7b969edbf5d6f8d732bf46ef7fd3f7c5511fb49/1:38"
+            },
+            "expected": {
+              "bound": true,
+              "collection": "Spacing"
+            },
+            "factPaths": [
+              "bindings.padding.bottom"
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "8de6c029d4289de113081710c52f582d84313c251b9b9a7131646f2b1bf9dbc3",
+          "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens.left",
+          "ruleRevision": 1,
+          "subjectNodeId": "12186:11177",
+          "focusNodeId": "12186:11177",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "binding-satisfies",
+            "truth": "true",
+            "reason": "contract constraint is satisfied",
+            "actual": {
+              "bound": true,
+              "value": 24,
+              "variableIds": [
+                "VariableID:f7b969edbf5d6f8d732bf46ef7fd3f7c5511fb49/1:38"
+              ],
+              "variables": [
+                {
+                  "id": "VariableID:f7b969edbf5d6f8d732bf46ef7fd3f7c5511fb49/1:38",
+                  "key": "f7b969edbf5d6f8d732bf46ef7fd3f7c5511fb49",
+                  "name": "24",
+                  "collectionId": "VariableCollectionId:1:2",
+                  "collectionName": "Spacing"
+                }
+              ],
+              "collection": "Spacing",
+              "token": "24",
+              "variableId": "VariableID:f7b969edbf5d6f8d732bf46ef7fd3f7c5511fb49/1:38"
+            },
+            "expected": {
+              "bound": true,
+              "collection": "Spacing"
+            },
+            "factPaths": [
+              "bindings.padding.left"
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "30797d0398db5376bcdcff7c7910c1f0f66d5bad5a063e86a4247c515deb58b2",
+          "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens.right",
+          "ruleRevision": 1,
+          "subjectNodeId": "12186:11177",
+          "focusNodeId": "12186:11177",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "binding-satisfies",
+            "truth": "true",
+            "reason": "contract constraint is satisfied",
+            "actual": {
+              "bound": true,
+              "value": 24,
+              "variableIds": [
+                "VariableID:f7b969edbf5d6f8d732bf46ef7fd3f7c5511fb49/1:38"
+              ],
+              "variables": [
+                {
+                  "id": "VariableID:f7b969edbf5d6f8d732bf46ef7fd3f7c5511fb49/1:38",
+                  "key": "f7b969edbf5d6f8d732bf46ef7fd3f7c5511fb49",
+                  "name": "24",
+                  "collectionId": "VariableCollectionId:1:2",
+                  "collectionName": "Spacing"
+                }
+              ],
+              "collection": "Spacing",
+              "token": "24",
+              "variableId": "VariableID:f7b969edbf5d6f8d732bf46ef7fd3f7c5511fb49/1:38"
+            },
+            "expected": {
+              "bound": true,
+              "collection": "Spacing"
+            },
+            "factPaths": [
+              "bindings.padding.right"
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "a57b986f8168f62fdfa6d2d395a5883193f97582003e48e1c7da52c5c84b5194",
+          "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens.top",
+          "ruleRevision": 1,
+          "subjectNodeId": "12186:11177",
+          "focusNodeId": "12186:11177",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "binding-satisfies",
+            "truth": "true",
+            "reason": "contract constraint is satisfied",
+            "actual": {
+              "bound": true,
+              "value": 24,
+              "variableIds": [
+                "VariableID:f7b969edbf5d6f8d732bf46ef7fd3f7c5511fb49/1:38"
+              ],
+              "variables": [
+                {
+                  "id": "VariableID:f7b969edbf5d6f8d732bf46ef7fd3f7c5511fb49/1:38",
+                  "key": "f7b969edbf5d6f8d732bf46ef7fd3f7c5511fb49",
+                  "name": "24",
+                  "collectionId": "VariableCollectionId:1:2",
+                  "collectionName": "Spacing"
+                }
+              ],
+              "collection": "Spacing",
+              "token": "24",
+              "variableId": "VariableID:f7b969edbf5d6f8d732bf46ef7fd3f7c5511fb49/1:38"
+            },
+            "expected": {
+              "bound": true,
+              "collection": "Spacing"
+            },
+            "factPaths": [
+              "bindings.padding.top"
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "4b9ccc3ffc15650e44d00e9ccf4400aa64026016b2b8af53869feb0ee28dadf4",
+          "ruleId": "rule:components.title-view.single-xlarge",
+          "ruleRevision": 1,
+          "subjectNodeId": "12186:11179",
+          "focusNodeId": "12186:11179",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "count-between",
+            "truth": "false",
+            "reason": "numeric range inclusive evaluated",
+            "actual": 0,
+            "expected": {
+              "lower": 1,
+              "upper": 1000000,
+              "bounds": "inclusive"
+            },
+            "factPaths": [
+              "component.identity",
+              "ownership.contour.isResolvedRoot",
+              "type"
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "cb48a1f8f67aa304e485e8e4aaef8e4e256449f1a9d2ca51213504c1b004ccc5",
+          "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens.bottom",
+          "ruleRevision": 1,
+          "subjectNodeId": "12186:11193",
+          "focusNodeId": "12186:11193",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "binding-satisfies",
+            "truth": "true",
+            "reason": "contract constraint is satisfied",
+            "actual": {
+              "bound": true,
+              "value": 24,
+              "variableIds": [
+                "VariableID:f7b969edbf5d6f8d732bf46ef7fd3f7c5511fb49/1:38"
+              ],
+              "variables": [
+                {
+                  "id": "VariableID:f7b969edbf5d6f8d732bf46ef7fd3f7c5511fb49/1:38",
+                  "key": "f7b969edbf5d6f8d732bf46ef7fd3f7c5511fb49",
+                  "name": "24",
+                  "collectionId": "VariableCollectionId:1:2",
+                  "collectionName": "Spacing"
+                }
+              ],
+              "collection": "Spacing",
+              "token": "24",
+              "variableId": "VariableID:f7b969edbf5d6f8d732bf46ef7fd3f7c5511fb49/1:38"
+            },
+            "expected": {
+              "bound": true,
+              "collection": "Spacing"
+            },
+            "factPaths": [
+              "bindings.padding.bottom"
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "f3e13223dcf024b5e6c6705b1a04e88ee189fbcebbe870731b02821c3fa038c3",
+          "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens.left",
+          "ruleRevision": 1,
+          "subjectNodeId": "12186:11193",
+          "focusNodeId": "12186:11193",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "binding-satisfies",
+            "truth": "true",
+            "reason": "contract constraint is satisfied",
+            "actual": {
+              "bound": true,
+              "value": 24,
+              "variableIds": [
+                "VariableID:f7b969edbf5d6f8d732bf46ef7fd3f7c5511fb49/1:38"
+              ],
+              "variables": [
+                {
+                  "id": "VariableID:f7b969edbf5d6f8d732bf46ef7fd3f7c5511fb49/1:38",
+                  "key": "f7b969edbf5d6f8d732bf46ef7fd3f7c5511fb49",
+                  "name": "24",
+                  "collectionId": "VariableCollectionId:1:2",
+                  "collectionName": "Spacing"
+                }
+              ],
+              "collection": "Spacing",
+              "token": "24",
+              "variableId": "VariableID:f7b969edbf5d6f8d732bf46ef7fd3f7c5511fb49/1:38"
+            },
+            "expected": {
+              "bound": true,
+              "collection": "Spacing"
+            },
+            "factPaths": [
+              "bindings.padding.left"
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "8c50f915ebe43c34249ef4000e5b8f4810a91a2901e7ad4611d3bff30214116d",
+          "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens.right",
+          "ruleRevision": 1,
+          "subjectNodeId": "12186:11193",
+          "focusNodeId": "12186:11193",
+          "applicability": "applicable",
+          "classification": "violation",
+          "severity": "error",
+          "trace": {
+            "predicate": "binding-satisfies",
+            "truth": "false",
+            "reason": "contract constraint is not satisfied",
+            "actual": {
+              "bound": false,
+              "value": 24,
+              "variableIds": [],
+              "variables": [],
+              "collection": null,
+              "token": null,
+              "variableId": null
+            },
+            "expected": {
+              "bound": true,
+              "collection": "Spacing"
+            },
+            "factPaths": [
+              "bindings.padding.right"
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "a8b2c2e8c2770d848c96eb5f804a506833b39e595abf92833c34e9014bee81c2",
+          "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens.top",
+          "ruleRevision": 1,
+          "subjectNodeId": "12186:11193",
+          "focusNodeId": "12186:11193",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "binding-satisfies",
+            "truth": "true",
+            "reason": "contract constraint is satisfied",
+            "actual": {
+              "bound": true,
+              "value": 24,
+              "variableIds": [
+                "VariableID:f7b969edbf5d6f8d732bf46ef7fd3f7c5511fb49/1:38"
+              ],
+              "variables": [
+                {
+                  "id": "VariableID:f7b969edbf5d6f8d732bf46ef7fd3f7c5511fb49/1:38",
+                  "key": "f7b969edbf5d6f8d732bf46ef7fd3f7c5511fb49",
+                  "name": "24",
+                  "collectionId": "VariableCollectionId:1:2",
+                  "collectionName": "Spacing"
+                }
+              ],
+              "collection": "Spacing",
+              "token": "24",
+              "variableId": "VariableID:f7b969edbf5d6f8d732bf46ef7fd3f7c5511fb49/1:38"
+            },
+            "expected": {
+              "bound": true,
+              "collection": "Spacing"
+            },
+            "factPaths": [
+              "bindings.padding.top"
+            ]
+          },
+          "actionId": null
+        }
+      ],
+      "coverage": {
+        "total": 30,
+        "byClassification": {
+          "not-applicable": 22,
+          "compliant": 7,
+          "violation": 1
+        },
+        "unclassified": 0,
+        "duplicateEvaluationIds": 0
+      }
+    },
+    "repeatability": {
+      "runCount": 10,
+      "stable": true,
+      "resultHash": "db55a68080bd64c32e9bc4a990f83e8b5d5a2410d9f984b94b734e135bff0296"
+    }
+  },
+  "ui": {
+    "responseMarkdown": "## Общие паттерны\n| Статус | Причина | Ожидание | Действие |\n| --- | --- | --- | --- |\n| Ошибка | Правый padding задан без токена Spacing<br>Правый padding имеет значение {\"bound\":false,\"value\":24,\"variableIds\":[],\"variables\":[],\"collection\":null,\"token\":null,\"variableId\":null} без привязки к токену Spacing. | Каждый layout.padding.* BackgroundPlateSlot должен быть привязан к токену коллекции Spacing.<br>BackgroundPlate/rules.json | Привязать текущее значение к соответствующему токену Spacing. |\n\n## Паттерны страницы\n| Статус | Причина | Ожидание | Действие |\n| --- | --- | --- | --- |",
+    "findings": [
+      {
+        "id": "8c50f915ebe43c34249ef4000e5b8f4810a91a2901e7ad4611d3bff30214116d",
+        "nodeId": "12186:11193",
+        "priority": "error",
+        "verdict": "confirmed",
+        "title": "Правый padding задан без токена Spacing",
+        "observed": "Правый padding имеет значение {\"bound\":false,\"value\":24,\"variableIds\":[],\"variables\":[],\"collection\":null,\"token\":null,\"variableId\":null} без привязки к токену Spacing.",
+        "factPath": "bindings.padding.right",
+        "patternScope": "general"
+      }
+    ]
+  }
+}
