@@ -1,0 +1,1245 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-predicate-report",
+  "reportId": "apollo-1096330610570928879-1787643591657-nkn0w8yg:predicates:d623d689044b8d8ab2dd51ebd30f74b5482adc43515a9e21f17bf3ce35c07c80",
+  "sourceReportId": "apollo-1096330610570928879-1787643591657-nkn0w8yg",
+  "generatedAt": "2026-08-25T07:39:52.264Z",
+  "suggestedFileName": "Alexey-Kukhta-CORP-Lead-Designer_25-08-2026_10-39-51_predicates.json",
+  "user": {
+    "id": "1096330610570928879",
+    "name": "Alexey Kukhta / CORP / Lead Designer",
+    "slug": "Alexey-Kukhta-CORP-Lead-Designer"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.3.0"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "❇️ Мастерская :: AI",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "pageType": null,
+    "startedAt": "2026-08-25T07:39:48.914Z",
+    "finishedAt": "2026-08-25T07:39:51.657Z",
+    "durationMs": 2743,
+    "selection": [
+      {
+        "nodeId": "12327:53073",
+        "name": "P21 / PASS / AccountItem inside public root",
+        "nodeType": "FRAME",
+        "path": "тестовая секция / Predicate Engine MVP / Component predicates / P21 / PASS / AccountItem inside public root",
+        "componentKey": null
+      },
+      {
+        "nodeId": "12327:53100",
+        "name": "P21 / FAIL / standalone AccountItem Type=Sum",
+        "nodeType": "FRAME",
+        "path": "тестовая секция / Predicate Engine MVP / Component predicates / P21 / FAIL / standalone AccountItem Type=Sum",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": false
+    }
+  },
+  "summary": {
+    "ruleCount": 25,
+    "evaluationCount": 29,
+    "findingCount": 4,
+    "byClassification": {
+      "compliant": 1,
+      "violation": 4,
+      "not-evaluable": 15,
+      "not-applicable": 9
+    },
+    "unclassified": 0,
+    "duplicateEvaluationIds": 0
+  },
+  "validation": {
+    "snapshot": {
+      "schemaVersion": "apollo.predicate-snapshot.v2",
+      "auditId": "apollo-1096330610570928879-1787643591657-nkn0w8yg",
+      "snapshotHash": "d623d689044b8d8ab2dd51ebd30f74b5482adc43515a9e21f17bf3ce35c07c80",
+      "context": {
+        "fileKey": null,
+        "pageId": "8701:32684",
+        "platform": "desktop",
+        "pageType": null,
+        "viewportWidth": null,
+        "surface": null,
+        "modalRootNodeId": null,
+        "unknownFacts": [
+          "fileKey",
+          "viewportWidth"
+        ]
+      },
+      "release": {
+        "knowledgeSource": "design-system_ab",
+        "revision": "2026-07-06T18:47:40.739Z",
+        "checksum": "a185fe3457c8241e4e50b607bc955e2e857fea889b033715f839810831cf25b1"
+      },
+      "selection": [
+        "12327:53073",
+        "12327:53100"
+      ],
+      "nodeCount": 82
+    },
+    "rules": [
+      {
+        "ruleId": "component:web-corp.buttons-group.button-count",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/ButtonGroup [D]/composition-contract.json",
+          "checksum": "a1f5b3ffe4d5baa357b014f2dad558692c7ad89945589ffae5a10bf6ebd5af56",
+          "anchor": "buttons-group.composition/constraints/button-count"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        }
+      },
+      {
+        "ruleId": "component:web-corp.buttons-group.allowed-views",
+        "revision": 2,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/ButtonGroup [D]/composition-contract.json",
+          "checksum": "a1f5b3ffe4d5baa357b014f2dad558692c7ad89945589ffae5a10bf6ebd5af56",
+          "anchor": "buttons-group.composition/constraints/allowed-views"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        }
+      },
+      {
+        "ruleId": "component:web-corp.buttons-group.uniform-size",
+        "revision": 2,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/ButtonGroup [D]/composition-contract.json",
+          "checksum": "a1f5b3ffe4d5baa357b014f2dad558692c7ad89945589ffae5a10bf6ebd5af56",
+          "anchor": "buttons-group.composition/constraints/uniform-size"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        }
+      },
+      {
+        "ruleId": "component:web-corp.buttons-group.single-icon-position",
+        "revision": 2,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/ButtonGroup [D]/composition-contract.json",
+          "checksum": "a1f5b3ffe4d5baa357b014f2dad558692c7ad89945589ffae5a10bf6ebd5af56",
+          "anchor": "buttons-group.composition/constraints/single-icon-position"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        }
+      },
+      {
+        "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+        "revision": 2,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/TitleView/rules.json",
+          "checksum": "cf5d9753bd2e4820ace32c4265ac39fbc4b48ad4029c442f0fd600b2c7d82997",
+          "anchor": "rules/component:web-corp.title-view.title-and-subtitle-typography-is-fixed"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        }
+      },
+      {
+        "ruleId": "component:web-corp.title-view.status-and-title-status-color-match",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/TitleView/rules.json",
+          "checksum": "cf5d9753bd2e4820ace32c4265ac39fbc4b48ad4029c442f0fd600b2c7d82997",
+          "anchor": "rules/component:web-corp.title-view.status-and-title-status-color-match"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        }
+      },
+      {
+        "ruleId": "rule:controls.buttons-and-button-groups.desktop-safe-variants",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/patterns/p_buttons-and-buttons-group.md",
+          "checksum": "9aa0b263fa31318eee6ddcc8940ab386f918ed6567cc119ecee5e2ac2200e0cc",
+          "anchor": "rule:controls.buttons-and-button-groups.desktop-safe-variants"
+        },
+        "scope": {
+          "platform": [
+            "desktop"
+          ]
+        }
+      },
+      {
+        "ruleId": "component:web-corp.title-view.visible-slots-follow-required-order",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/TitleView/composition-contract.json",
+          "checksum": "eebdbd3d2b01d641d46d41a147cd1583fb388ad0622c40cd15a15a8b3a9db414",
+          "anchor": "manual/slotOrderPolicy"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        }
+      },
+      {
+        "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens.top",
+        "revision": 2,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/BackgroundPlate/rules.json",
+          "checksum": "e5b95d57758c52df313536b882159d17846d57ca001b00d37d9c2686d80729f8",
+          "anchor": "rules/component:web-corp.background-plate.padding-uses-spacing-tokens"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        }
+      },
+      {
+        "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens.right",
+        "revision": 2,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/BackgroundPlate/rules.json",
+          "checksum": "e5b95d57758c52df313536b882159d17846d57ca001b00d37d9c2686d80729f8",
+          "anchor": "rules/component:web-corp.background-plate.padding-uses-spacing-tokens"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        }
+      },
+      {
+        "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens.bottom",
+        "revision": 2,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/BackgroundPlate/rules.json",
+          "checksum": "e5b95d57758c52df313536b882159d17846d57ca001b00d37d9c2686d80729f8",
+          "anchor": "rules/component:web-corp.background-plate.padding-uses-spacing-tokens"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        }
+      },
+      {
+        "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens.left",
+        "revision": 2,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/BackgroundPlate/rules.json",
+          "checksum": "e5b95d57758c52df313536b882159d17846d57ca001b00d37d9c2686d80729f8",
+          "anchor": "rules/component:web-corp.background-plate.padding-uses-spacing-tokens"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        }
+      },
+      {
+        "ruleId": "component:web-corp.background-plate.level-2-requires-level-1",
+        "revision": 4,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/BackgroundPlate/rules.json",
+          "checksum": "e5b95d57758c52df313536b882159d17846d57ca001b00d37d9c2686d80729f8",
+          "anchor": "rules/component:web-corp.background-plate.level-2-requires-level-1"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        }
+      },
+      {
+        "ruleId": "component:web.benefits.capacity-matches-card-count",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp-promo/Benefits/rules.json",
+          "checksum": "2442122268c6e9a1ecd2d515f6bb501b121cbb83897f6a68785802cd931bf16b",
+          "anchor": "manual/rules/component:web.benefits.capacity-matches-card-count"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        }
+      },
+      {
+        "ruleId": "component:web.benefits.nested-card-settings-are-uniform",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp-promo/Benefits/rules.json",
+          "checksum": "2442122268c6e9a1ecd2d515f6bb501b121cbb83897f6a68785802cd931bf16b",
+          "anchor": "manual/rules/component:web.benefits.nested-card-settings-are-uniform"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        }
+      },
+      {
+        "ruleId": "component:web-corp.table-view.horizontal-multi-column-header-required",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/TableView/rules.json",
+          "checksum": "c7b07bc5ddb5f6aed229bd18138ea0c3497d63840991bf8457c3b70b43b2cc16",
+          "anchor": "manual/rules/component:web-corp.table-view.horizontal-multi-column-header-required"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        }
+      },
+      {
+        "ruleId": "component:web-corp.table-view.compact-is-consistent-across-rows",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/TableView/rules.json",
+          "checksum": "c7b07bc5ddb5f6aed229bd18138ea0c3497d63840991bf8457c3b70b43b2cc16",
+          "anchor": "manual/rules/component:web-corp.table-view.compact-is-consistent-across-rows"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        }
+      },
+      {
+        "ruleId": "component:web-corp.table-view.horizontal-compact-one-column",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/TableView/rules.json",
+          "checksum": "c7b07bc5ddb5f6aed229bd18138ea0c3497d63840991bf8457c3b70b43b2cc16",
+          "anchor": "manual/rules/component:web-corp.table-view.horizontal-compact-one-column"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        }
+      },
+      {
+        "ruleId": "rule:forms.construction-rules.block-spacing.first-level",
+        "revision": 3,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/patterns/p_form-construction-rules.md",
+          "checksum": "65f23f28f0a114ca63c1babd17d1394a56f37c27dfffc6c46345880c24d474f3",
+          "anchor": "rule:forms.construction-rules.block-spacing"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ],
+          "pageType": [
+            "form"
+          ]
+        }
+      },
+      {
+        "ruleId": "rule:forms.construction-rules.block-spacing.second-level-actions",
+        "revision": 2,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/patterns/p_form-construction-rules.md",
+          "checksum": "65f23f28f0a114ca63c1babd17d1394a56f37c27dfffc6c46345880c24d474f3",
+          "anchor": "rule:forms.construction-rules.block-spacing"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ],
+          "pageType": [
+            "form"
+          ]
+        }
+      },
+      {
+        "ruleId": "rule:forms.construction-rules.title-medium-one-per-plate",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/patterns/p_form-construction-rules.md",
+          "checksum": "65f23f28f0a114ca63c1babd17d1394a56f37c27dfffc6c46345880c24d474f3",
+          "anchor": "rule:forms.construction-rules.title-medium-one-per-plate"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ],
+          "pageType": [
+            "form"
+          ]
+        }
+      },
+      {
+        "ruleId": "rule:forms.construction-rules.inner-padding-standard.title-to-content",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/patterns/p_form-construction-rules.md",
+          "checksum": "65f23f28f0a114ca63c1babd17d1394a56f37c27dfffc6c46345880c24d474f3",
+          "anchor": "rule:forms.construction-rules.inner-padding-standard"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ],
+          "pageType": [
+            "form"
+          ]
+        }
+      },
+      {
+        "ruleId": "rule:forms.construction-rules.inner-padding-standard.content-insets",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/patterns/p_form-construction-rules.md",
+          "checksum": "65f23f28f0a114ca63c1babd17d1394a56f37c27dfffc6c46345880c24d474f3",
+          "anchor": "rule:forms.construction-rules.inner-padding-standard"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ],
+          "pageType": [
+            "form"
+          ]
+        }
+      },
+      {
+        "ruleId": "rule:forms.construction-rules.layout-8-4.geometry",
+        "revision": 2,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/patterns/p_form-construction-rules.md",
+          "checksum": "65f23f28f0a114ca63c1babd17d1394a56f37c27dfffc6c46345880c24d474f3",
+          "anchor": "rule:forms.construction-rules.layout-8-4"
+        },
+        "scope": {
+          "platform": [
+            "desktop"
+          ],
+          "pageType": [
+            "form"
+          ]
+        }
+      },
+      {
+        "ruleId": "component:web-corp.account-select.public-roots-only",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/AccountSelect/rules.json",
+          "checksum": "415169d929afada4349f7edf9779483db9ab70a3308df013d95cdc7891c7af06",
+          "anchor": "rules/component:web-corp.account-select.public-roots-only"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        }
+      }
+    ],
+    "result": {
+      "schemaVersion": "apollo.predicate-result.v1",
+      "snapshotHash": "d623d689044b8d8ab2dd51ebd30f74b5482adc43515a9e21f17bf3ce35c07c80",
+      "ruleRelease": "a185fe3457c8241e4e50b607bc955e2e857fea889b033715f839810831cf25b1",
+      "evaluations": [
+        {
+          "evaluationId": "4751cd70929eaf916b65da1d2e23a39f182557b490e377b16ca305df033863b9",
+          "ruleId": "component:web-corp.account-select.public-roots-only",
+          "ruleRevision": 1,
+          "subjectNodeId": "12327:52783",
+          "focusNodeId": "12327:52783",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "one-of",
+            "truth": "true",
+            "reason": "value belongs to the allowed set",
+            "actual": "account-option-list-content",
+            "expected": [
+              "account-option-list-content"
+            ],
+            "factPaths": [
+              "ownership.contour.root.component.family"
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "b65015da5c8532b3d4fa034ee2bb141ec3aa35628db0767cb8289a2c85953514",
+          "ruleId": "component:web-corp.account-select.public-roots-only",
+          "ruleRevision": 1,
+          "subjectNodeId": "12327:53053",
+          "focusNodeId": "12327:53053",
+          "applicability": "applicable",
+          "classification": "violation",
+          "severity": "error",
+          "trace": {
+            "predicate": "one-of",
+            "truth": "false",
+            "reason": "value is outside the allowed set",
+            "actual": "account-item",
+            "expected": [
+              "account-option-list-content"
+            ],
+            "factPaths": [
+              "ownership.contour.root.component.family"
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "dd116b6b61262a05a7f70c3a4e1584a42ebf92922e288f825fa0678e6edf593d",
+          "ruleId": "component:web-corp.background-plate.level-2-requires-level-1",
+          "ruleRevision": 4,
+          "subjectNodeId": "12327:53073",
+          "focusNodeId": "12327:53073",
+          "applicability": "unknown",
+          "classification": "not-evaluable",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "unknown",
+            "reason": "selector evidence is unknown",
+            "actual": {
+              "state": "unknown"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "afb35f7380303a8b26f56926b82228aa8ef664468ca83e7131364332a9bb4ae8",
+          "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens.bottom",
+          "ruleRevision": 2,
+          "subjectNodeId": "12327:53073",
+          "focusNodeId": "12327:53073",
+          "applicability": "unknown",
+          "classification": "not-evaluable",
+          "severity": "error",
+          "trace": {
+            "predicate": "binding-satisfies",
+            "truth": "unknown",
+            "reason": "selector evidence is unknown",
+            "actual": {
+              "state": "unknown"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "a4814bc09c4eae6835a8f059e55a3c88783560bea1d90bf553590862424d7d51",
+          "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens.left",
+          "ruleRevision": 2,
+          "subjectNodeId": "12327:53073",
+          "focusNodeId": "12327:53073",
+          "applicability": "unknown",
+          "classification": "not-evaluable",
+          "severity": "error",
+          "trace": {
+            "predicate": "binding-satisfies",
+            "truth": "unknown",
+            "reason": "selector evidence is unknown",
+            "actual": {
+              "state": "unknown"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "e62d26e7a40e8e44003bae4f9e610733ec832093a5af399b4c630c0b3243252e",
+          "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens.right",
+          "ruleRevision": 2,
+          "subjectNodeId": "12327:53073",
+          "focusNodeId": "12327:53073",
+          "applicability": "unknown",
+          "classification": "not-evaluable",
+          "severity": "error",
+          "trace": {
+            "predicate": "binding-satisfies",
+            "truth": "unknown",
+            "reason": "selector evidence is unknown",
+            "actual": {
+              "state": "unknown"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "ea303d618c54ffe078c1cea6e605650332b153192ccec14604414ff7426d66f5",
+          "ruleId": "component:web-corp.background-plate.padding-uses-spacing-tokens.top",
+          "ruleRevision": 2,
+          "subjectNodeId": "12327:53073",
+          "focusNodeId": "12327:53073",
+          "applicability": "unknown",
+          "classification": "not-evaluable",
+          "severity": "error",
+          "trace": {
+            "predicate": "binding-satisfies",
+            "truth": "unknown",
+            "reason": "selector evidence is unknown",
+            "actual": {
+              "state": "unknown"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "01134692a8698d77017807da54d7b88e8ca90bace4800fa613de9168aad69238",
+          "ruleId": "component:web-corp.buttons-group.allowed-views",
+          "ruleRevision": 2,
+          "subjectNodeId": "12327:53073",
+          "focusNodeId": "12327:53073",
+          "applicability": "unknown",
+          "classification": "not-evaluable",
+          "severity": "error",
+          "trace": {
+            "predicate": "one-of",
+            "truth": "unknown",
+            "reason": "selector evidence is unknown",
+            "actual": {
+              "state": "unknown"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "65f3f8acc8f154c148ec91179a7aea13071c12066c43c6914cd69866019ef3d4",
+          "ruleId": "component:web-corp.buttons-group.button-count",
+          "ruleRevision": 1,
+          "subjectNodeId": "12327:53073",
+          "focusNodeId": "12327:53073",
+          "applicability": "unknown",
+          "classification": "not-evaluable",
+          "severity": "error",
+          "trace": {
+            "predicate": "count-between",
+            "truth": "unknown",
+            "reason": "selector evidence is unknown",
+            "actual": {
+              "state": "unknown"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "ed25598ebbfed3d2ba0449805e4d905f817b356b9521db91de85c7a6962224cf",
+          "ruleId": "component:web-corp.buttons-group.single-icon-position",
+          "ruleRevision": 2,
+          "subjectNodeId": "12327:53073",
+          "focusNodeId": "12327:53073",
+          "applicability": "unknown",
+          "classification": "not-evaluable",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "unknown",
+            "reason": "selector evidence is unknown",
+            "actual": {
+              "state": "unknown"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "00c7f718084dc206de4fbb8a1d4625979c61533d7c700958085e03da83996d3d",
+          "ruleId": "component:web-corp.buttons-group.uniform-size",
+          "ruleRevision": 2,
+          "subjectNodeId": "12327:53073",
+          "focusNodeId": "12327:53073",
+          "applicability": "unknown",
+          "classification": "not-evaluable",
+          "severity": "error",
+          "trace": {
+            "predicate": "equals",
+            "truth": "unknown",
+            "reason": "selector evidence is unknown",
+            "actual": {
+              "state": "unknown"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "7711021a243ac5fd070211c4ff8ffb7273ac2fec5e4520d91af1871304e6e8bc",
+          "ruleId": "component:web-corp.table-view.compact-is-consistent-across-rows",
+          "ruleRevision": 1,
+          "subjectNodeId": "12327:53073",
+          "focusNodeId": "12327:53073",
+          "applicability": "unknown",
+          "classification": "not-evaluable",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "unknown",
+            "reason": "selector evidence is unknown",
+            "actual": {
+              "state": "unknown"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "12d34562ff73bdb69184554b93edb44762216d2d9534677550d060aa8a169502",
+          "ruleId": "component:web-corp.table-view.horizontal-compact-one-column",
+          "ruleRevision": 1,
+          "subjectNodeId": "12327:53073",
+          "focusNodeId": "12327:53073",
+          "applicability": "unknown",
+          "classification": "not-evaluable",
+          "severity": "error",
+          "trace": {
+            "predicate": "count-between",
+            "truth": "unknown",
+            "reason": "selector evidence is unknown",
+            "actual": {
+              "state": "unknown"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "4ed4c914648ae3601cac7663d1e38473d45e86f9542a969c395b48062e1942a0",
+          "ruleId": "component:web-corp.table-view.horizontal-multi-column-header-required",
+          "ruleRevision": 1,
+          "subjectNodeId": "12327:53073",
+          "focusNodeId": "12327:53073",
+          "applicability": "unknown",
+          "classification": "not-evaluable",
+          "severity": "error",
+          "trace": {
+            "predicate": "equals",
+            "truth": "unknown",
+            "reason": "selector evidence is unknown",
+            "actual": {
+              "state": "unknown"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "5af23ed275fd205c841bd9f78c0b2b554f5289b881efe2ae47cabb4a87c8a703",
+          "ruleId": "component:web-corp.title-view.status-and-title-status-color-match",
+          "ruleRevision": 1,
+          "subjectNodeId": "12327:53073",
+          "focusNodeId": "12327:53073",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "all-equal",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "311c4d0cdb1ca73c505e47ee61e765025881792df47d585c455f4d42185ad64e",
+          "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+          "ruleRevision": 2,
+          "subjectNodeId": "12327:53073",
+          "focusNodeId": "12327:53073",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "9d5e12d5e911357e69dfbb7430fbc32d89408261c35bce0aec695ca301b578ab",
+          "ruleId": "component:web-corp.title-view.visible-slots-follow-required-order",
+          "ruleRevision": 1,
+          "subjectNodeId": "12327:53073",
+          "focusNodeId": "12327:53073",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "be20ec9ae7f073ee3fcaac20eaacc03eb96a42c15ca9397b2068462f31a83b33",
+          "ruleId": "component:web.benefits.capacity-matches-card-count",
+          "ruleRevision": 1,
+          "subjectNodeId": "12327:53073",
+          "focusNodeId": "12327:53073",
+          "applicability": "unknown",
+          "classification": "not-evaluable",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "unknown",
+            "reason": "selector evidence is unknown",
+            "actual": {
+              "state": "unknown"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "be57845b9328b68317792078fb716a320f408df4b8d3e13154b05d358152e5ff",
+          "ruleId": "component:web.benefits.nested-card-settings-are-uniform",
+          "ruleRevision": 1,
+          "subjectNodeId": "12327:53073",
+          "focusNodeId": "12327:53073",
+          "applicability": "unknown",
+          "classification": "not-evaluable",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "unknown",
+            "reason": "selector evidence is unknown",
+            "actual": {
+              "state": "unknown"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "f45b3d4dd2058cdded918735bf9e988bf947a37b4be52916b22e1ef7af940d46",
+          "ruleId": "rule:controls.buttons-and-button-groups.desktop-safe-variants",
+          "ruleRevision": 1,
+          "subjectNodeId": "12327:53073",
+          "focusNodeId": "12327:53073",
+          "applicability": "unknown",
+          "classification": "not-evaluable",
+          "severity": "error",
+          "trace": {
+            "predicate": "not",
+            "truth": "unknown",
+            "reason": "selector evidence is unknown",
+            "actual": {
+              "state": "unknown"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "df78f7d69f3736b9defe816575a83415c27898f05be08d92da9e4f7661c39714",
+          "ruleId": "rule:forms.construction-rules.block-spacing.first-level",
+          "ruleRevision": 3,
+          "subjectNodeId": "12327:53073",
+          "focusNodeId": "12327:53073",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "distance",
+            "truth": "unknown",
+            "reason": "rule scope does not apply",
+            "actual": {
+              "state": "unknown"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "25936fa94583a493fcf6dc6234ba6be9fd1253bc37089d32cacda426fd48c06b",
+          "ruleId": "rule:forms.construction-rules.block-spacing.second-level-actions",
+          "ruleRevision": 2,
+          "subjectNodeId": "12327:53073",
+          "focusNodeId": "12327:53073",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "distance",
+            "truth": "unknown",
+            "reason": "rule scope does not apply",
+            "actual": {
+              "state": "unknown"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "018aa57e64b076becd9dfbbfcfeb5bc09e27a4281587da30fc90c870f02caae8",
+          "ruleId": "rule:forms.construction-rules.inner-padding-standard.content-insets",
+          "ruleRevision": 1,
+          "subjectNodeId": "12327:53073",
+          "focusNodeId": "12327:53073",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "unknown",
+            "reason": "rule scope does not apply",
+            "actual": {
+              "state": "unknown"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "1f5a4ab056b7be2d72cc6a9fa4dd550d6817333356b86d421599a8061e264766",
+          "ruleId": "rule:forms.construction-rules.inner-padding-standard.title-to-content",
+          "ruleRevision": 1,
+          "subjectNodeId": "12327:53073",
+          "focusNodeId": "12327:53073",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "distance",
+            "truth": "unknown",
+            "reason": "rule scope does not apply",
+            "actual": {
+              "state": "unknown"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "099eab4b5b32b1cea5595f194dcbace04cb6300af4e97d4338f43f9331c13c70",
+          "ruleId": "rule:forms.construction-rules.layout-8-4.geometry",
+          "ruleRevision": 2,
+          "subjectNodeId": "12327:53073",
+          "focusNodeId": "12327:53073",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "unknown",
+            "reason": "rule scope does not apply",
+            "actual": {
+              "state": "unknown"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "e42d0bc8dd2997544e2d7c35bf6f188735afa50c91728c64d3c33eb25f051642",
+          "ruleId": "rule:forms.construction-rules.title-medium-one-per-plate",
+          "ruleRevision": 1,
+          "subjectNodeId": "12327:53073",
+          "focusNodeId": "12327:53073",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "one-of",
+            "truth": "unknown",
+            "reason": "rule scope does not apply",
+            "actual": {
+              "state": "unknown"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "08944d7b54b87b54bc6abab30f151ff46360c18104198123d64aed677086bdce",
+          "ruleId": "component:web-corp.account-select.public-roots-only",
+          "ruleRevision": 1,
+          "subjectNodeId": "I12327:52783;56006:42991;56006:42492;56006:41117;204:46979",
+          "focusNodeId": "I12327:52783;56006:42991;56006:42492;56006:41117;204:46979",
+          "applicability": "applicable",
+          "classification": "violation",
+          "severity": "error",
+          "trace": {
+            "predicate": "one-of",
+            "truth": "false",
+            "reason": "value is outside the allowed set",
+            "actual": "account-item",
+            "expected": [
+              "account-option-list-content"
+            ],
+            "factPaths": [
+              "ownership.contour.root.component.family"
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "364c94d169a56e2b402c4c8b4fdcb38d5898e3dd2368a685a611db9cee723ba7",
+          "ruleId": "component:web-corp.account-select.public-roots-only",
+          "ruleRevision": 1,
+          "subjectNodeId": "I12327:52783;56006:42991;56006:42515;56006:41117;204:46979",
+          "focusNodeId": "I12327:52783;56006:42991;56006:42515;56006:41117;204:46979",
+          "applicability": "applicable",
+          "classification": "violation",
+          "severity": "error",
+          "trace": {
+            "predicate": "one-of",
+            "truth": "false",
+            "reason": "value is outside the allowed set",
+            "actual": "account-item",
+            "expected": [
+              "account-option-list-content"
+            ],
+            "factPaths": [
+              "ownership.contour.root.component.family"
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "3f1485fbfa780b69ff1e33ed694f0de3b1218556e013258ca8101df062c17230",
+          "ruleId": "component:web-corp.account-select.public-roots-only",
+          "ruleRevision": 1,
+          "subjectNodeId": "I12327:52783;56006:42991;56006:42538;56006:41117;204:46979",
+          "focusNodeId": "I12327:52783;56006:42991;56006:42538;56006:41117;204:46979",
+          "applicability": "applicable",
+          "classification": "violation",
+          "severity": "error",
+          "trace": {
+            "predicate": "one-of",
+            "truth": "false",
+            "reason": "value is outside the allowed set",
+            "actual": "account-item",
+            "expected": [
+              "account-option-list-content"
+            ],
+            "factPaths": [
+              "ownership.contour.root.component.family"
+            ]
+          },
+          "actionId": null
+        }
+      ],
+      "coverage": {
+        "total": 29,
+        "byClassification": {
+          "compliant": 1,
+          "violation": 4,
+          "not-evaluable": 15,
+          "not-applicable": 9
+        },
+        "unclassified": 0,
+        "duplicateEvaluationIds": 0
+      }
+    },
+    "repeatability": {
+      "runCount": 10,
+      "stable": true,
+      "resultHash": "702e7d127c5ed0d94ca98eb4ca013ffa3e484d27ea49799ded709b5e02ba9f2e"
+    }
+  },
+  "ui": {
+    "responseMarkdown": "## Общие паттерны\n| Статус | Причина | Ожидание | Действие |\n| --- | --- | --- | --- |\n| Ошибка | Нарушено правило дизайн-системы<br>ownership.contour.root.component.family: account-item | Ожидаемое значение: [\"account-option-list-content\"].<br>AccountSelect/rules.json | Проверить значение по указанному правилу. |\n| Ошибка | Нарушено правило дизайн-системы<br>ownership.contour.root.component.family: account-item | Ожидаемое значение: [\"account-option-list-content\"].<br>AccountSelect/rules.json | Проверить значение по указанному правилу. |\n| Ошибка | Нарушено правило дизайн-системы<br>ownership.contour.root.component.family: account-item | Ожидаемое значение: [\"account-option-list-content\"].<br>AccountSelect/rules.json | Проверить значение по указанному правилу. |\n| Ошибка | Нарушено правило дизайн-системы<br>ownership.contour.root.component.family: account-item | Ожидаемое значение: [\"account-option-list-content\"].<br>AccountSelect/rules.json | Проверить значение по указанному правилу. |\n\n## Паттерны страницы\n| Статус | Причина | Ожидание | Действие |\n| --- | --- | --- | --- |",
+    "findings": [
+      {
+        "id": "b65015da5c8532b3d4fa034ee2bb141ec3aa35628db0767cb8289a2c85953514",
+        "nodeId": "12327:53053",
+        "priority": "error",
+        "verdict": "confirmed",
+        "title": "Нарушено правило дизайн-системы",
+        "observed": "ownership.contour.root.component.family: account-item",
+        "factPath": "ownership.contour.root.component.family",
+        "patternScope": "general"
+      },
+      {
+        "id": "08944d7b54b87b54bc6abab30f151ff46360c18104198123d64aed677086bdce",
+        "nodeId": "I12327:52783;56006:42991;56006:42492;56006:41117;204:46979",
+        "priority": "error",
+        "verdict": "confirmed",
+        "title": "Нарушено правило дизайн-системы",
+        "observed": "ownership.contour.root.component.family: account-item",
+        "factPath": "ownership.contour.root.component.family",
+        "patternScope": "general"
+      },
+      {
+        "id": "364c94d169a56e2b402c4c8b4fdcb38d5898e3dd2368a685a611db9cee723ba7",
+        "nodeId": "I12327:52783;56006:42991;56006:42515;56006:41117;204:46979",
+        "priority": "error",
+        "verdict": "confirmed",
+        "title": "Нарушено правило дизайн-системы",
+        "observed": "ownership.contour.root.component.family: account-item",
+        "factPath": "ownership.contour.root.component.family",
+        "patternScope": "general"
+      },
+      {
+        "id": "3f1485fbfa780b69ff1e33ed694f0de3b1218556e013258ca8101df062c17230",
+        "nodeId": "I12327:52783;56006:42991;56006:42538;56006:41117;204:46979",
+        "priority": "error",
+        "verdict": "confirmed",
+        "title": "Нарушено правило дизайн-системы",
+        "observed": "ownership.contour.root.component.family: account-item",
+        "factPath": "ownership.contour.root.component.family",
+        "patternScope": "general"
+      }
+    ]
+  }
+}
