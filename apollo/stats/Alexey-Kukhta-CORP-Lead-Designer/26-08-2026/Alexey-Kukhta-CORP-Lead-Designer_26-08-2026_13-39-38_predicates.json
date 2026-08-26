@@ -1,0 +1,5662 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-predicate-report",
+  "reportId": "apollo-1096330610570928879-1787740778332-vjcd5klv:predicates:3153a66e8e0c48e30b1e35b27b0e2cb01789f5955ca466d912ee615d2da41a2f",
+  "sourceReportId": "apollo-1096330610570928879-1787740778332-vjcd5klv",
+  "generatedAt": "2026-08-26T10:39:40.455Z",
+  "suggestedFileName": "Alexey-Kukhta-CORP-Lead-Designer_26-08-2026_13-39-38_predicates.json",
+  "user": {
+    "id": "1096330610570928879",
+    "name": "Alexey Kukhta / CORP / Lead Designer",
+    "slug": "Alexey-Kukhta-CORP-Lead-Designer"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.3.0"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "❇️ Мастерская :: AI",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "pageType": "form",
+    "startedAt": "2026-08-26T10:39:30.016Z",
+    "finishedAt": "2026-08-26T10:39:38.332Z",
+    "durationMs": 8316,
+    "selection": [
+      {
+        "nodeId": "12242:17321",
+        "name": "P14 / PASS / Compact=True with one data Column per Body Row",
+        "nodeType": "FRAME",
+        "path": "тестовая секция / Predicate Engine MVP / Component predicates / P14 / PASS / Compact=True with one data Column per Body Row",
+        "componentKey": null
+      },
+      {
+        "nodeId": "12242:17645",
+        "name": "P14 / FAIL / Compact=True with one Body Row containing two Columns",
+        "nodeType": "FRAME",
+        "path": "тестовая секция / Predicate Engine MVP / Component predicates / P14 / FAIL / Compact=True with one Body Row containing two Columns",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": false
+    }
+  },
+  "summary": {
+    "ruleCount": 17,
+    "evaluationCount": 34,
+    "findingCount": 2,
+    "byClassification": {
+      "not-evaluable": 8,
+      "not-applicable": 8,
+      "compliant": 16,
+      "violation": 2
+    },
+    "unclassified": 0,
+    "duplicateEvaluationIds": 0
+  },
+  "validation": {
+    "snapshot": {
+      "schemaVersion": "apollo.predicate-snapshot.v2",
+      "auditId": "apollo-1096330610570928879-1787740778332-vjcd5klv",
+      "snapshotHash": "3153a66e8e0c48e30b1e35b27b0e2cb01789f5955ca466d912ee615d2da41a2f",
+      "context": {
+        "fileKey": null,
+        "pageId": "8701:32684",
+        "platform": "desktop",
+        "pageType": "form",
+        "viewportWidth": null,
+        "surface": null,
+        "modalRootNodeId": null,
+        "unknownFacts": [
+          "fileKey",
+          "viewportWidth"
+        ]
+      },
+      "release": {
+        "knowledgeSource": "design-system_ab",
+        "revision": "2026-07-06T18:47:40.739Z",
+        "checksum": "a185fe3457c8241e4e50b607bc955e2e857fea889b033715f839810831cf25b1"
+      },
+      "selection": [
+        "12242:17321",
+        "12242:17645"
+      ],
+      "nodeCount": 193,
+      "contourDiagnostics": [
+        {
+          "nodeId": "12242:17323",
+          "parentNodeId": "12242:17321",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "table-view-horizontal"
+          },
+          "owner": null,
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17323",
+            "isRoot": true,
+            "isResolvedRoot": true,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / PASS / Compact=True one data Column / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17323",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17323;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": []
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82231",
+          "parentNodeId": "12242:17323",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "owner": {
+            "nodeId": "12242:17323",
+            "identity": "web-corp.table-view",
+            "family": "table-view-horizontal"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17323",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / PASS / Compact=True one data Column / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17323",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17323;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "12242:17323"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82231;74245:29621",
+          "parentNodeId": "I12242:17323;60668:82231",
+          "component": {
+            "identity": "web.spacing-component",
+            "family": "spacing-vertical"
+          },
+          "owner": {
+            "nodeId": "I12242:17323;60668:82231",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web.spacing-component",
+            "rootNodeId": "I12242:17323;60668:82231;74245:29621",
+            "isRoot": true,
+            "isResolvedRoot": true,
+            "root": {
+              "component": {
+                "key": "e20ee33385ac041ce04e356b5ba698cad16e18d5",
+                "name": "↕ SpacingVertical",
+                "identity": "web.spacing-component",
+                "family": "spacing-vertical",
+                "library": "Spacing",
+                "lifecycle": "active",
+                "properties": {
+                  "Size": "12"
+                },
+                "api": null,
+                "directOverrides": []
+              }
+            },
+            "ancestorNodeIds": []
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82231;74245:29623",
+          "parentNodeId": "I12242:17323;60668:82231;74245:29622",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "title"
+          },
+          "owner": {
+            "nodeId": "I12242:17323;60668:82231",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17323",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / PASS / Compact=True one data Column / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17323",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17323;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17323;60668:82231",
+              "12242:17323"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82231;74245:29624",
+          "parentNodeId": "I12242:17323;60668:82231;74245:29622",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "title"
+          },
+          "owner": {
+            "nodeId": "I12242:17323;60668:82231",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17323",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / PASS / Compact=True one data Column / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17323",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17323;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17323;60668:82231",
+              "12242:17323"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82231;74245:29628",
+          "parentNodeId": "I12242:17323;60668:82231",
+          "component": {
+            "identity": "web.spacing-component",
+            "family": "spacing-vertical"
+          },
+          "owner": {
+            "nodeId": "I12242:17323;60668:82231",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web.spacing-component",
+            "rootNodeId": "I12242:17323;60668:82231;74245:29628",
+            "isRoot": true,
+            "isResolvedRoot": true,
+            "root": {
+              "component": {
+                "key": "e20ee33385ac041ce04e356b5ba698cad16e18d5",
+                "name": "↕ SpacingVertical",
+                "identity": "web.spacing-component",
+                "family": "spacing-vertical",
+                "library": "Spacing",
+                "lifecycle": "active",
+                "properties": {
+                  "Size": "12"
+                },
+                "api": null,
+                "directOverrides": []
+              }
+            },
+            "ancestorNodeIds": []
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82231;74245:67228",
+          "parentNodeId": "I12242:17323;60668:82231",
+          "component": {
+            "identity": null,
+            "family": null
+          },
+          "owner": {
+            "nodeId": "I12242:17323;60668:82231",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": null,
+            "rootNodeId": null,
+            "isRoot": null,
+            "isResolvedRoot": false,
+            "root": null,
+            "ancestorNodeIds": []
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82232",
+          "parentNodeId": "12242:17323",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "owner": {
+            "nodeId": "12242:17323",
+            "identity": "web-corp.table-view",
+            "family": "table-view-horizontal"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17323",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / PASS / Compact=True one data Column / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17323",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17323;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "12242:17323"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82232;60611:7565",
+          "parentNodeId": "I12242:17323;60668:82232",
+          "component": {
+            "identity": "web.spacing-component",
+            "family": "spacing-vertical"
+          },
+          "owner": {
+            "nodeId": "I12242:17323;60668:82232",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web.spacing-component",
+            "rootNodeId": "I12242:17323;60668:82232;60611:7565",
+            "isRoot": true,
+            "isResolvedRoot": true,
+            "root": {
+              "component": {
+                "key": "e20ee33385ac041ce04e356b5ba698cad16e18d5",
+                "name": "↕ SpacingVertical",
+                "identity": "web.spacing-component",
+                "family": "spacing-vertical",
+                "library": "Spacing",
+                "lifecycle": "active",
+                "properties": {
+                  "Size": "12"
+                },
+                "api": null,
+                "directOverrides": []
+              }
+            },
+            "ancestorNodeIds": []
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82232;60742:427646",
+          "parentNodeId": "I12242:17323;60668:82232;60611:7566",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "caption"
+          },
+          "owner": {
+            "nodeId": "I12242:17323;60668:82232",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17323",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / PASS / Compact=True one data Column / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17323",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17323;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17323;60668:82232",
+              "12242:17323"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82232;60742:420968",
+          "parentNodeId": "I12242:17323;60668:82232;60611:7566",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "column"
+          },
+          "owner": {
+            "nodeId": "I12242:17323;60668:82232",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17323",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / PASS / Compact=True one data Column / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17323",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17323;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17323;60668:82232",
+              "12242:17323"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82232;60742:420968;60742:431238",
+          "parentNodeId": "I12242:17323;60668:82232;60742:420968;60740:369443",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "title"
+          },
+          "owner": {
+            "nodeId": "I12242:17323;60668:82232;60742:420968",
+            "identity": "web-corp.table-view",
+            "family": "column"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17323",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / PASS / Compact=True one data Column / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17323",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17323;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17323;60668:82232;60742:420968",
+              "I12242:17323;60668:82232",
+              "12242:17323"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82232;60742:420968;60742:439396",
+          "parentNodeId": "I12242:17323;60668:82232;60742:420968;60740:369443",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "subtitle"
+          },
+          "owner": {
+            "nodeId": "I12242:17323;60668:82232;60742:420968",
+            "identity": "web-corp.table-view",
+            "family": "column"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17323",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / PASS / Compact=True one data Column / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17323",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17323;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17323;60668:82232;60742:420968",
+              "I12242:17323;60668:82232",
+              "12242:17323"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82232;60611:7577",
+          "parentNodeId": "I12242:17323;60668:82232",
+          "component": {
+            "identity": "web.spacing-component",
+            "family": "spacing-vertical"
+          },
+          "owner": {
+            "nodeId": "I12242:17323;60668:82232",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web.spacing-component",
+            "rootNodeId": "I12242:17323;60668:82232;60611:7577",
+            "isRoot": true,
+            "isResolvedRoot": true,
+            "root": {
+              "component": {
+                "key": "e20ee33385ac041ce04e356b5ba698cad16e18d5",
+                "name": "↕ SpacingVertical",
+                "identity": "web.spacing-component",
+                "family": "spacing-vertical",
+                "library": "Spacing",
+                "lifecycle": "active",
+                "properties": {
+                  "Size": "12"
+                },
+                "api": null,
+                "directOverrides": []
+              }
+            },
+            "ancestorNodeIds": []
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82233",
+          "parentNodeId": "12242:17323",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "owner": {
+            "nodeId": "12242:17323",
+            "identity": "web-corp.table-view",
+            "family": "table-view-horizontal"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17323",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / PASS / Compact=True one data Column / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17323",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17323;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "12242:17323"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82233;60611:7565",
+          "parentNodeId": "I12242:17323;60668:82233",
+          "component": {
+            "identity": "web.spacing-component",
+            "family": "spacing-vertical"
+          },
+          "owner": {
+            "nodeId": "I12242:17323;60668:82233",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web.spacing-component",
+            "rootNodeId": "I12242:17323;60668:82233;60611:7565",
+            "isRoot": true,
+            "isResolvedRoot": true,
+            "root": {
+              "component": {
+                "key": "e20ee33385ac041ce04e356b5ba698cad16e18d5",
+                "name": "↕ SpacingVertical",
+                "identity": "web.spacing-component",
+                "family": "spacing-vertical",
+                "library": "Spacing",
+                "lifecycle": "active",
+                "properties": {
+                  "Size": "12"
+                },
+                "api": null,
+                "directOverrides": []
+              }
+            },
+            "ancestorNodeIds": []
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82233;60742:427646",
+          "parentNodeId": "I12242:17323;60668:82233;60611:7566",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "caption"
+          },
+          "owner": {
+            "nodeId": "I12242:17323;60668:82233",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17323",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / PASS / Compact=True one data Column / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17323",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17323;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17323;60668:82233",
+              "12242:17323"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82233;60742:420968",
+          "parentNodeId": "I12242:17323;60668:82233;60611:7566",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "column"
+          },
+          "owner": {
+            "nodeId": "I12242:17323;60668:82233",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17323",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / PASS / Compact=True one data Column / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17323",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17323;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17323;60668:82233",
+              "12242:17323"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82233;60742:420968;60742:431238",
+          "parentNodeId": "I12242:17323;60668:82233;60742:420968;60740:369443",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "title"
+          },
+          "owner": {
+            "nodeId": "I12242:17323;60668:82233;60742:420968",
+            "identity": "web-corp.table-view",
+            "family": "column"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17323",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / PASS / Compact=True one data Column / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17323",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17323;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17323;60668:82233;60742:420968",
+              "I12242:17323;60668:82233",
+              "12242:17323"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82233;60742:420968;60742:439396",
+          "parentNodeId": "I12242:17323;60668:82233;60742:420968;60740:369443",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "subtitle"
+          },
+          "owner": {
+            "nodeId": "I12242:17323;60668:82233;60742:420968",
+            "identity": "web-corp.table-view",
+            "family": "column"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17323",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / PASS / Compact=True one data Column / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17323",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17323;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17323;60668:82233;60742:420968",
+              "I12242:17323;60668:82233",
+              "12242:17323"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82233;60611:7577",
+          "parentNodeId": "I12242:17323;60668:82233",
+          "component": {
+            "identity": "web.spacing-component",
+            "family": "spacing-vertical"
+          },
+          "owner": {
+            "nodeId": "I12242:17323;60668:82233",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web.spacing-component",
+            "rootNodeId": "I12242:17323;60668:82233;60611:7577",
+            "isRoot": true,
+            "isResolvedRoot": true,
+            "root": {
+              "component": {
+                "key": "e20ee33385ac041ce04e356b5ba698cad16e18d5",
+                "name": "↕ SpacingVertical",
+                "identity": "web.spacing-component",
+                "family": "spacing-vertical",
+                "library": "Spacing",
+                "lifecycle": "active",
+                "properties": {
+                  "Size": "12"
+                },
+                "api": null,
+                "directOverrides": []
+              }
+            },
+            "ancestorNodeIds": []
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82234",
+          "parentNodeId": "12242:17323",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "owner": {
+            "nodeId": "12242:17323",
+            "identity": "web-corp.table-view",
+            "family": "table-view-horizontal"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17323",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / PASS / Compact=True one data Column / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17323",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17323;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "12242:17323"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82234;60611:7565",
+          "parentNodeId": "I12242:17323;60668:82234",
+          "component": {
+            "identity": "web.spacing-component",
+            "family": "spacing-vertical"
+          },
+          "owner": {
+            "nodeId": "I12242:17323;60668:82234",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web.spacing-component",
+            "rootNodeId": "I12242:17323;60668:82234;60611:7565",
+            "isRoot": true,
+            "isResolvedRoot": true,
+            "root": {
+              "component": {
+                "key": "e20ee33385ac041ce04e356b5ba698cad16e18d5",
+                "name": "↕ SpacingVertical",
+                "identity": "web.spacing-component",
+                "family": "spacing-vertical",
+                "library": "Spacing",
+                "lifecycle": "active",
+                "properties": {
+                  "Size": "12"
+                },
+                "api": null,
+                "directOverrides": []
+              }
+            },
+            "ancestorNodeIds": []
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82234;60742:427646",
+          "parentNodeId": "I12242:17323;60668:82234;60611:7566",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "caption"
+          },
+          "owner": {
+            "nodeId": "I12242:17323;60668:82234",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17323",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / PASS / Compact=True one data Column / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17323",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17323;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17323;60668:82234",
+              "12242:17323"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82234;60742:420968",
+          "parentNodeId": "I12242:17323;60668:82234;60611:7566",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "column"
+          },
+          "owner": {
+            "nodeId": "I12242:17323;60668:82234",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17323",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / PASS / Compact=True one data Column / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17323",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17323;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17323;60668:82234",
+              "12242:17323"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82234;60742:420968;60742:431238",
+          "parentNodeId": "I12242:17323;60668:82234;60742:420968;60740:369443",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "title"
+          },
+          "owner": {
+            "nodeId": "I12242:17323;60668:82234;60742:420968",
+            "identity": "web-corp.table-view",
+            "family": "column"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17323",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / PASS / Compact=True one data Column / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17323",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17323;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17323;60668:82234;60742:420968",
+              "I12242:17323;60668:82234",
+              "12242:17323"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82234;60742:420968;60742:439396",
+          "parentNodeId": "I12242:17323;60668:82234;60742:420968;60740:369443",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "subtitle"
+          },
+          "owner": {
+            "nodeId": "I12242:17323;60668:82234;60742:420968",
+            "identity": "web-corp.table-view",
+            "family": "column"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17323",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / PASS / Compact=True one data Column / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17323",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17323;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17323;60668:82234;60742:420968",
+              "I12242:17323;60668:82234",
+              "12242:17323"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82234;60611:7577",
+          "parentNodeId": "I12242:17323;60668:82234",
+          "component": {
+            "identity": "web.spacing-component",
+            "family": "spacing-vertical"
+          },
+          "owner": {
+            "nodeId": "I12242:17323;60668:82234",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web.spacing-component",
+            "rootNodeId": "I12242:17323;60668:82234;60611:7577",
+            "isRoot": true,
+            "isResolvedRoot": true,
+            "root": {
+              "component": {
+                "key": "e20ee33385ac041ce04e356b5ba698cad16e18d5",
+                "name": "↕ SpacingVertical",
+                "identity": "web.spacing-component",
+                "family": "spacing-vertical",
+                "library": "Spacing",
+                "lifecycle": "active",
+                "properties": {
+                  "Size": "12"
+                },
+                "api": null,
+                "directOverrides": []
+              }
+            },
+            "ancestorNodeIds": []
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82235",
+          "parentNodeId": "12242:17323",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "owner": {
+            "nodeId": "12242:17323",
+            "identity": "web-corp.table-view",
+            "family": "table-view-horizontal"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17323",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / PASS / Compact=True one data Column / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17323",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17323;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "12242:17323"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82235;60611:7565",
+          "parentNodeId": "I12242:17323;60668:82235",
+          "component": {
+            "identity": "web.spacing-component",
+            "family": "spacing-vertical"
+          },
+          "owner": {
+            "nodeId": "I12242:17323;60668:82235",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web.spacing-component",
+            "rootNodeId": "I12242:17323;60668:82235;60611:7565",
+            "isRoot": true,
+            "isResolvedRoot": true,
+            "root": {
+              "component": {
+                "key": "e20ee33385ac041ce04e356b5ba698cad16e18d5",
+                "name": "↕ SpacingVertical",
+                "identity": "web.spacing-component",
+                "family": "spacing-vertical",
+                "library": "Spacing",
+                "lifecycle": "active",
+                "properties": {
+                  "Size": "12"
+                },
+                "api": null,
+                "directOverrides": []
+              }
+            },
+            "ancestorNodeIds": []
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82235;60742:427646",
+          "parentNodeId": "I12242:17323;60668:82235;60611:7566",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "caption"
+          },
+          "owner": {
+            "nodeId": "I12242:17323;60668:82235",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17323",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / PASS / Compact=True one data Column / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17323",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17323;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17323;60668:82235",
+              "12242:17323"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82235;60742:420968",
+          "parentNodeId": "I12242:17323;60668:82235;60611:7566",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "column"
+          },
+          "owner": {
+            "nodeId": "I12242:17323;60668:82235",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17323",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / PASS / Compact=True one data Column / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17323",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17323;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17323;60668:82235",
+              "12242:17323"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82235;60742:420968;60742:431238",
+          "parentNodeId": "I12242:17323;60668:82235;60742:420968;60740:369443",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "title"
+          },
+          "owner": {
+            "nodeId": "I12242:17323;60668:82235;60742:420968",
+            "identity": "web-corp.table-view",
+            "family": "column"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17323",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / PASS / Compact=True one data Column / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17323",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17323;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17323;60668:82235;60742:420968",
+              "I12242:17323;60668:82235",
+              "12242:17323"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82235;60742:420968;60742:439396",
+          "parentNodeId": "I12242:17323;60668:82235;60742:420968;60740:369443",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "subtitle"
+          },
+          "owner": {
+            "nodeId": "I12242:17323;60668:82235;60742:420968",
+            "identity": "web-corp.table-view",
+            "family": "column"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17323",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / PASS / Compact=True one data Column / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17323",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17323;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17323;60668:82235;60742:420968",
+              "I12242:17323;60668:82235",
+              "12242:17323"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82235;60611:7577",
+          "parentNodeId": "I12242:17323;60668:82235",
+          "component": {
+            "identity": "web.spacing-component",
+            "family": "spacing-vertical"
+          },
+          "owner": {
+            "nodeId": "I12242:17323;60668:82235",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web.spacing-component",
+            "rootNodeId": "I12242:17323;60668:82235;60611:7577",
+            "isRoot": true,
+            "isResolvedRoot": true,
+            "root": {
+              "component": {
+                "key": "e20ee33385ac041ce04e356b5ba698cad16e18d5",
+                "name": "↕ SpacingVertical",
+                "identity": "web.spacing-component",
+                "family": "spacing-vertical",
+                "library": "Spacing",
+                "lifecycle": "active",
+                "properties": {
+                  "Size": "12"
+                },
+                "api": null,
+                "directOverrides": []
+              }
+            },
+            "ancestorNodeIds": []
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82239",
+          "parentNodeId": "I12242:17323;60668:82238",
+          "component": {
+            "identity": "web.spacing-component",
+            "family": "spacing-vertical"
+          },
+          "owner": {
+            "nodeId": "12242:17323",
+            "identity": "web-corp.table-view",
+            "family": "table-view-horizontal"
+          },
+          "contour": {
+            "identity": "web.spacing-component",
+            "rootNodeId": "I12242:17323;60668:82239",
+            "isRoot": true,
+            "isResolvedRoot": true,
+            "root": {
+              "component": {
+                "key": "452ccc2cfcaa139709c7538d175c592b00232332",
+                "name": "↕ SpacingVertical",
+                "identity": "web.spacing-component",
+                "family": "spacing-vertical",
+                "library": "Spacing",
+                "lifecycle": "active",
+                "properties": {
+                  "Size": "16"
+                },
+                "api": null,
+                "directOverrides": []
+              }
+            },
+            "ancestorNodeIds": []
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82240",
+          "parentNodeId": "I12242:17323;60668:82238",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "show-more"
+          },
+          "owner": {
+            "nodeId": "12242:17323",
+            "identity": "web-corp.table-view",
+            "family": "table-view-horizontal"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17323",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / PASS / Compact=True one data Column / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17323",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17323;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "12242:17323"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82240;60611:7909",
+          "parentNodeId": "I12242:17323;60668:82240",
+          "component": {
+            "identity": "web-core.link",
+            "family": "link"
+          },
+          "owner": {
+            "nodeId": "I12242:17323;60668:82240",
+            "identity": "web-corp.table-view",
+            "family": "show-more"
+          },
+          "contour": {
+            "identity": "web-core.link",
+            "rootNodeId": "I12242:17323;60668:82240;60611:7909",
+            "isRoot": true,
+            "isResolvedRoot": true,
+            "root": {
+              "component": {
+                "key": "bb2e85770f194e7bed71f247e82d40d0c4afd1e3",
+                "name": "Link",
+                "identity": "web-core.link",
+                "family": "link",
+                "library": "Web _ Core",
+                "lifecycle": "active",
+                "properties": {
+                  "Size": "S (14-20)",
+                  "Right icon 24": "9167:79822",
+                  "Left icon 24": "9167:79822",
+                  "Right Addon": true,
+                  "Left icon 16": "9167:79823",
+                  "Left Addon": false,
+                  "✎ Label": "Ещё N",
+                  "Right icon 16": "9565:178035"
+                },
+                "api": null,
+                "directOverrides": []
+              }
+            },
+            "ancestorNodeIds": []
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82240;60611:7909;493:7848",
+          "parentNodeId": "I12242:17323;60668:82240;60611:7909;493:7846",
+          "component": {
+            "identity": "web-core.link",
+            "family": "underline"
+          },
+          "owner": {
+            "nodeId": "I12242:17323;60668:82240;60611:7909",
+            "identity": "web-core.link",
+            "family": "link"
+          },
+          "contour": {
+            "identity": "web-core.link",
+            "rootNodeId": "I12242:17323;60668:82240;60611:7909",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "bb2e85770f194e7bed71f247e82d40d0c4afd1e3",
+                "name": "Link",
+                "identity": "web-core.link",
+                "family": "link",
+                "library": "Web _ Core",
+                "lifecycle": "active",
+                "properties": {
+                  "Size": "S (14-20)",
+                  "Right icon 24": "9167:79822",
+                  "Left icon 24": "9167:79822",
+                  "Right Addon": true,
+                  "Left icon 16": "9167:79823",
+                  "Left Addon": false,
+                  "✎ Label": "Ещё N",
+                  "Right icon 16": "9565:178035"
+                },
+                "api": null,
+                "directOverrides": []
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17323;60668:82240;60611:7909"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17323;60668:82240;60611:7909;493:10113",
+          "parentNodeId": "I12242:17323;60668:82240;60611:7909;493:10110",
+          "component": {
+            "identity": null,
+            "family": null
+          },
+          "owner": {
+            "nodeId": "I12242:17323;60668:82240;60611:7909",
+            "identity": "web-core.link",
+            "family": "link"
+          },
+          "contour": {
+            "identity": null,
+            "rootNodeId": null,
+            "isRoot": null,
+            "isResolvedRoot": false,
+            "root": null,
+            "ancestorNodeIds": []
+          }
+        },
+        {
+          "nodeId": "12242:17647",
+          "parentNodeId": "12242:17645",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "table-view-horizontal"
+          },
+          "owner": null,
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17647",
+            "isRoot": true,
+            "isResolvedRoot": true,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / FAIL / Compact=True two data Columns / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17647",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82232",
+                    "fields": [
+                      "componentProperties",
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": []
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82231",
+          "parentNodeId": "12242:17647",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "owner": {
+            "nodeId": "12242:17647",
+            "identity": "web-corp.table-view",
+            "family": "table-view-horizontal"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17647",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / FAIL / Compact=True two data Columns / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17647",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82232",
+                    "fields": [
+                      "componentProperties",
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "12242:17647"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82231;74245:29621",
+          "parentNodeId": "I12242:17647;60668:82231",
+          "component": {
+            "identity": "web.spacing-component",
+            "family": "spacing-vertical"
+          },
+          "owner": {
+            "nodeId": "I12242:17647;60668:82231",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web.spacing-component",
+            "rootNodeId": "I12242:17647;60668:82231;74245:29621",
+            "isRoot": true,
+            "isResolvedRoot": true,
+            "root": {
+              "component": {
+                "key": "e20ee33385ac041ce04e356b5ba698cad16e18d5",
+                "name": "↕ SpacingVertical",
+                "identity": "web.spacing-component",
+                "family": "spacing-vertical",
+                "library": "Spacing",
+                "lifecycle": "active",
+                "properties": {
+                  "Size": "12"
+                },
+                "api": null,
+                "directOverrides": []
+              }
+            },
+            "ancestorNodeIds": []
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82231;74245:29623",
+          "parentNodeId": "I12242:17647;60668:82231;74245:29622",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "title"
+          },
+          "owner": {
+            "nodeId": "I12242:17647;60668:82231",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17647",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / FAIL / Compact=True two data Columns / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17647",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82232",
+                    "fields": [
+                      "componentProperties",
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17647;60668:82231",
+              "12242:17647"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82231;74245:29624",
+          "parentNodeId": "I12242:17647;60668:82231;74245:29622",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "title"
+          },
+          "owner": {
+            "nodeId": "I12242:17647;60668:82231",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17647",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / FAIL / Compact=True two data Columns / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17647",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82232",
+                    "fields": [
+                      "componentProperties",
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17647;60668:82231",
+              "12242:17647"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82231;74245:29628",
+          "parentNodeId": "I12242:17647;60668:82231",
+          "component": {
+            "identity": "web.spacing-component",
+            "family": "spacing-vertical"
+          },
+          "owner": {
+            "nodeId": "I12242:17647;60668:82231",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web.spacing-component",
+            "rootNodeId": "I12242:17647;60668:82231;74245:29628",
+            "isRoot": true,
+            "isResolvedRoot": true,
+            "root": {
+              "component": {
+                "key": "e20ee33385ac041ce04e356b5ba698cad16e18d5",
+                "name": "↕ SpacingVertical",
+                "identity": "web.spacing-component",
+                "family": "spacing-vertical",
+                "library": "Spacing",
+                "lifecycle": "active",
+                "properties": {
+                  "Size": "12"
+                },
+                "api": null,
+                "directOverrides": []
+              }
+            },
+            "ancestorNodeIds": []
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82231;74245:67228",
+          "parentNodeId": "I12242:17647;60668:82231",
+          "component": {
+            "identity": null,
+            "family": null
+          },
+          "owner": {
+            "nodeId": "I12242:17647;60668:82231",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": null,
+            "rootNodeId": null,
+            "isRoot": null,
+            "isResolvedRoot": false,
+            "root": null,
+            "ancestorNodeIds": []
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82232",
+          "parentNodeId": "12242:17647",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "owner": {
+            "nodeId": "12242:17647",
+            "identity": "web-corp.table-view",
+            "family": "table-view-horizontal"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17647",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / FAIL / Compact=True two data Columns / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17647",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82232",
+                    "fields": [
+                      "componentProperties",
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "12242:17647"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82232;60611:7537",
+          "parentNodeId": "I12242:17647;60668:82232",
+          "component": {
+            "identity": "web.spacing-component",
+            "family": "spacing-vertical"
+          },
+          "owner": {
+            "nodeId": "I12242:17647;60668:82232",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web.spacing-component",
+            "rootNodeId": "I12242:17647;60668:82232;60611:7537",
+            "isRoot": true,
+            "isResolvedRoot": true,
+            "root": {
+              "component": {
+                "key": "452ccc2cfcaa139709c7538d175c592b00232332",
+                "name": "↕ SpacingVertical",
+                "identity": "web.spacing-component",
+                "family": "spacing-vertical",
+                "library": "Spacing",
+                "lifecycle": "active",
+                "properties": {
+                  "Size": "16"
+                },
+                "api": null,
+                "directOverrides": []
+              }
+            },
+            "ancestorNodeIds": []
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82232;60611:7540",
+          "parentNodeId": "I12242:17647;60668:82232;60611:7538",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "caption"
+          },
+          "owner": {
+            "nodeId": "I12242:17647;60668:82232",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17647",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / FAIL / Compact=True two data Columns / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17647",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82232",
+                    "fields": [
+                      "componentProperties",
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17647;60668:82232",
+              "12242:17647"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82232;60742:374808",
+          "parentNodeId": "I12242:17647;60668:82232;60611:7538",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "column"
+          },
+          "owner": {
+            "nodeId": "I12242:17647;60668:82232",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17647",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / FAIL / Compact=True two data Columns / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17647",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82232",
+                    "fields": [
+                      "componentProperties",
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17647;60668:82232",
+              "12242:17647"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82232;60742:374808;60742:431238",
+          "parentNodeId": "I12242:17647;60668:82232;60742:374808;60740:369443",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "title"
+          },
+          "owner": {
+            "nodeId": "I12242:17647;60668:82232;60742:374808",
+            "identity": "web-corp.table-view",
+            "family": "column"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17647",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / FAIL / Compact=True two data Columns / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17647",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82232",
+                    "fields": [
+                      "componentProperties",
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17647;60668:82232;60742:374808",
+              "I12242:17647;60668:82232",
+              "12242:17647"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82232;60742:374808;60742:439396",
+          "parentNodeId": "I12242:17647;60668:82232;60742:374808;60740:369443",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "subtitle"
+          },
+          "owner": {
+            "nodeId": "I12242:17647;60668:82232;60742:374808",
+            "identity": "web-corp.table-view",
+            "family": "column"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17647",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / FAIL / Compact=True two data Columns / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17647",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82232",
+                    "fields": [
+                      "componentProperties",
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17647;60668:82232;60742:374808",
+              "I12242:17647;60668:82232",
+              "12242:17647"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82232;60742:394469",
+          "parentNodeId": "I12242:17647;60668:82232;60611:7538",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "column"
+          },
+          "owner": {
+            "nodeId": "I12242:17647;60668:82232",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17647",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / FAIL / Compact=True two data Columns / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17647",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82232",
+                    "fields": [
+                      "componentProperties",
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17647;60668:82232",
+              "12242:17647"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82232;60742:394469;60742:431238",
+          "parentNodeId": "I12242:17647;60668:82232;60742:394469;60740:369443",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "title"
+          },
+          "owner": {
+            "nodeId": "I12242:17647;60668:82232;60742:394469",
+            "identity": "web-corp.table-view",
+            "family": "column"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17647",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / FAIL / Compact=True two data Columns / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17647",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82232",
+                    "fields": [
+                      "componentProperties",
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17647;60668:82232;60742:394469",
+              "I12242:17647;60668:82232",
+              "12242:17647"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82232;60742:394469;60742:439396",
+          "parentNodeId": "I12242:17647;60668:82232;60742:394469;60740:369443",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "subtitle"
+          },
+          "owner": {
+            "nodeId": "I12242:17647;60668:82232;60742:394469",
+            "identity": "web-corp.table-view",
+            "family": "column"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17647",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / FAIL / Compact=True two data Columns / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17647",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82232",
+                    "fields": [
+                      "componentProperties",
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17647;60668:82232;60742:394469",
+              "I12242:17647;60668:82232",
+              "12242:17647"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82232;60668:57521",
+          "parentNodeId": "I12242:17647;60668:82232",
+          "component": {
+            "identity": "web.spacing-component",
+            "family": "spacing-vertical"
+          },
+          "owner": {
+            "nodeId": "I12242:17647;60668:82232",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web.spacing-component",
+            "rootNodeId": "I12242:17647;60668:82232;60668:57521",
+            "isRoot": true,
+            "isResolvedRoot": true,
+            "root": {
+              "component": {
+                "key": "452ccc2cfcaa139709c7538d175c592b00232332",
+                "name": "↕ SpacingVertical",
+                "identity": "web.spacing-component",
+                "family": "spacing-vertical",
+                "library": "Spacing",
+                "lifecycle": "active",
+                "properties": {
+                  "Size": "16"
+                },
+                "api": null,
+                "directOverrides": []
+              }
+            },
+            "ancestorNodeIds": []
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82233",
+          "parentNodeId": "12242:17647",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "owner": {
+            "nodeId": "12242:17647",
+            "identity": "web-corp.table-view",
+            "family": "table-view-horizontal"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17647",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / FAIL / Compact=True two data Columns / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17647",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82232",
+                    "fields": [
+                      "componentProperties",
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "12242:17647"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82233;60611:7565",
+          "parentNodeId": "I12242:17647;60668:82233",
+          "component": {
+            "identity": "web.spacing-component",
+            "family": "spacing-vertical"
+          },
+          "owner": {
+            "nodeId": "I12242:17647;60668:82233",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web.spacing-component",
+            "rootNodeId": "I12242:17647;60668:82233;60611:7565",
+            "isRoot": true,
+            "isResolvedRoot": true,
+            "root": {
+              "component": {
+                "key": "e20ee33385ac041ce04e356b5ba698cad16e18d5",
+                "name": "↕ SpacingVertical",
+                "identity": "web.spacing-component",
+                "family": "spacing-vertical",
+                "library": "Spacing",
+                "lifecycle": "active",
+                "properties": {
+                  "Size": "12"
+                },
+                "api": null,
+                "directOverrides": []
+              }
+            },
+            "ancestorNodeIds": []
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82233;60742:427646",
+          "parentNodeId": "I12242:17647;60668:82233;60611:7566",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "caption"
+          },
+          "owner": {
+            "nodeId": "I12242:17647;60668:82233",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17647",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / FAIL / Compact=True two data Columns / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17647",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82232",
+                    "fields": [
+                      "componentProperties",
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17647;60668:82233",
+              "12242:17647"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82233;60742:420968",
+          "parentNodeId": "I12242:17647;60668:82233;60611:7566",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "column"
+          },
+          "owner": {
+            "nodeId": "I12242:17647;60668:82233",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17647",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / FAIL / Compact=True two data Columns / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17647",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82232",
+                    "fields": [
+                      "componentProperties",
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17647;60668:82233",
+              "12242:17647"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82233;60742:420968;60742:431238",
+          "parentNodeId": "I12242:17647;60668:82233;60742:420968;60740:369443",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "title"
+          },
+          "owner": {
+            "nodeId": "I12242:17647;60668:82233;60742:420968",
+            "identity": "web-corp.table-view",
+            "family": "column"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17647",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / FAIL / Compact=True two data Columns / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17647",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82232",
+                    "fields": [
+                      "componentProperties",
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17647;60668:82233;60742:420968",
+              "I12242:17647;60668:82233",
+              "12242:17647"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82233;60742:420968;60742:439396",
+          "parentNodeId": "I12242:17647;60668:82233;60742:420968;60740:369443",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "subtitle"
+          },
+          "owner": {
+            "nodeId": "I12242:17647;60668:82233;60742:420968",
+            "identity": "web-corp.table-view",
+            "family": "column"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17647",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / FAIL / Compact=True two data Columns / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17647",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82232",
+                    "fields": [
+                      "componentProperties",
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17647;60668:82233;60742:420968",
+              "I12242:17647;60668:82233",
+              "12242:17647"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82233;60611:7577",
+          "parentNodeId": "I12242:17647;60668:82233",
+          "component": {
+            "identity": "web.spacing-component",
+            "family": "spacing-vertical"
+          },
+          "owner": {
+            "nodeId": "I12242:17647;60668:82233",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web.spacing-component",
+            "rootNodeId": "I12242:17647;60668:82233;60611:7577",
+            "isRoot": true,
+            "isResolvedRoot": true,
+            "root": {
+              "component": {
+                "key": "e20ee33385ac041ce04e356b5ba698cad16e18d5",
+                "name": "↕ SpacingVertical",
+                "identity": "web.spacing-component",
+                "family": "spacing-vertical",
+                "library": "Spacing",
+                "lifecycle": "active",
+                "properties": {
+                  "Size": "12"
+                },
+                "api": null,
+                "directOverrides": []
+              }
+            },
+            "ancestorNodeIds": []
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82234",
+          "parentNodeId": "12242:17647",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "owner": {
+            "nodeId": "12242:17647",
+            "identity": "web-corp.table-view",
+            "family": "table-view-horizontal"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17647",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / FAIL / Compact=True two data Columns / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17647",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82232",
+                    "fields": [
+                      "componentProperties",
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "12242:17647"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82234;60611:7565",
+          "parentNodeId": "I12242:17647;60668:82234",
+          "component": {
+            "identity": "web.spacing-component",
+            "family": "spacing-vertical"
+          },
+          "owner": {
+            "nodeId": "I12242:17647;60668:82234",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web.spacing-component",
+            "rootNodeId": "I12242:17647;60668:82234;60611:7565",
+            "isRoot": true,
+            "isResolvedRoot": true,
+            "root": {
+              "component": {
+                "key": "e20ee33385ac041ce04e356b5ba698cad16e18d5",
+                "name": "↕ SpacingVertical",
+                "identity": "web.spacing-component",
+                "family": "spacing-vertical",
+                "library": "Spacing",
+                "lifecycle": "active",
+                "properties": {
+                  "Size": "12"
+                },
+                "api": null,
+                "directOverrides": []
+              }
+            },
+            "ancestorNodeIds": []
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82234;60742:427646",
+          "parentNodeId": "I12242:17647;60668:82234;60611:7566",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "caption"
+          },
+          "owner": {
+            "nodeId": "I12242:17647;60668:82234",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17647",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / FAIL / Compact=True two data Columns / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17647",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82232",
+                    "fields": [
+                      "componentProperties",
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17647;60668:82234",
+              "12242:17647"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82234;60742:420968",
+          "parentNodeId": "I12242:17647;60668:82234;60611:7566",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "column"
+          },
+          "owner": {
+            "nodeId": "I12242:17647;60668:82234",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17647",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / FAIL / Compact=True two data Columns / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17647",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82232",
+                    "fields": [
+                      "componentProperties",
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17647;60668:82234",
+              "12242:17647"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82234;60742:420968;60742:431238",
+          "parentNodeId": "I12242:17647;60668:82234;60742:420968;60740:369443",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "title"
+          },
+          "owner": {
+            "nodeId": "I12242:17647;60668:82234;60742:420968",
+            "identity": "web-corp.table-view",
+            "family": "column"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17647",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / FAIL / Compact=True two data Columns / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17647",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82232",
+                    "fields": [
+                      "componentProperties",
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17647;60668:82234;60742:420968",
+              "I12242:17647;60668:82234",
+              "12242:17647"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82234;60742:420968;60742:439396",
+          "parentNodeId": "I12242:17647;60668:82234;60742:420968;60740:369443",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "subtitle"
+          },
+          "owner": {
+            "nodeId": "I12242:17647;60668:82234;60742:420968",
+            "identity": "web-corp.table-view",
+            "family": "column"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17647",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / FAIL / Compact=True two data Columns / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17647",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82232",
+                    "fields": [
+                      "componentProperties",
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17647;60668:82234;60742:420968",
+              "I12242:17647;60668:82234",
+              "12242:17647"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82234;60611:7577",
+          "parentNodeId": "I12242:17647;60668:82234",
+          "component": {
+            "identity": "web.spacing-component",
+            "family": "spacing-vertical"
+          },
+          "owner": {
+            "nodeId": "I12242:17647;60668:82234",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web.spacing-component",
+            "rootNodeId": "I12242:17647;60668:82234;60611:7577",
+            "isRoot": true,
+            "isResolvedRoot": true,
+            "root": {
+              "component": {
+                "key": "e20ee33385ac041ce04e356b5ba698cad16e18d5",
+                "name": "↕ SpacingVertical",
+                "identity": "web.spacing-component",
+                "family": "spacing-vertical",
+                "library": "Spacing",
+                "lifecycle": "active",
+                "properties": {
+                  "Size": "12"
+                },
+                "api": null,
+                "directOverrides": []
+              }
+            },
+            "ancestorNodeIds": []
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82235",
+          "parentNodeId": "12242:17647",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "owner": {
+            "nodeId": "12242:17647",
+            "identity": "web-corp.table-view",
+            "family": "table-view-horizontal"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17647",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / FAIL / Compact=True two data Columns / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17647",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82232",
+                    "fields": [
+                      "componentProperties",
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "12242:17647"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82235;60611:7565",
+          "parentNodeId": "I12242:17647;60668:82235",
+          "component": {
+            "identity": "web.spacing-component",
+            "family": "spacing-vertical"
+          },
+          "owner": {
+            "nodeId": "I12242:17647;60668:82235",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web.spacing-component",
+            "rootNodeId": "I12242:17647;60668:82235;60611:7565",
+            "isRoot": true,
+            "isResolvedRoot": true,
+            "root": {
+              "component": {
+                "key": "e20ee33385ac041ce04e356b5ba698cad16e18d5",
+                "name": "↕ SpacingVertical",
+                "identity": "web.spacing-component",
+                "family": "spacing-vertical",
+                "library": "Spacing",
+                "lifecycle": "active",
+                "properties": {
+                  "Size": "12"
+                },
+                "api": null,
+                "directOverrides": []
+              }
+            },
+            "ancestorNodeIds": []
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82235;60742:427646",
+          "parentNodeId": "I12242:17647;60668:82235;60611:7566",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "caption"
+          },
+          "owner": {
+            "nodeId": "I12242:17647;60668:82235",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17647",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / FAIL / Compact=True two data Columns / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17647",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82232",
+                    "fields": [
+                      "componentProperties",
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17647;60668:82235",
+              "12242:17647"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82235;60742:420968",
+          "parentNodeId": "I12242:17647;60668:82235;60611:7566",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "column"
+          },
+          "owner": {
+            "nodeId": "I12242:17647;60668:82235",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17647",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / FAIL / Compact=True two data Columns / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17647",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82232",
+                    "fields": [
+                      "componentProperties",
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17647;60668:82235",
+              "12242:17647"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82235;60742:420968;60742:431238",
+          "parentNodeId": "I12242:17647;60668:82235;60742:420968;60740:369443",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "title"
+          },
+          "owner": {
+            "nodeId": "I12242:17647;60668:82235;60742:420968",
+            "identity": "web-corp.table-view",
+            "family": "column"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17647",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / FAIL / Compact=True two data Columns / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17647",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82232",
+                    "fields": [
+                      "componentProperties",
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17647;60668:82235;60742:420968",
+              "I12242:17647;60668:82235",
+              "12242:17647"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82235;60742:420968;60742:439396",
+          "parentNodeId": "I12242:17647;60668:82235;60742:420968;60740:369443",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "subtitle"
+          },
+          "owner": {
+            "nodeId": "I12242:17647;60668:82235;60742:420968",
+            "identity": "web-corp.table-view",
+            "family": "column"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17647",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / FAIL / Compact=True two data Columns / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17647",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82232",
+                    "fields": [
+                      "componentProperties",
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17647;60668:82235;60742:420968",
+              "I12242:17647;60668:82235",
+              "12242:17647"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82235;60611:7577",
+          "parentNodeId": "I12242:17647;60668:82235",
+          "component": {
+            "identity": "web.spacing-component",
+            "family": "spacing-vertical"
+          },
+          "owner": {
+            "nodeId": "I12242:17647;60668:82235",
+            "identity": "web-corp.table-view",
+            "family": "row"
+          },
+          "contour": {
+            "identity": "web.spacing-component",
+            "rootNodeId": "I12242:17647;60668:82235;60611:7577",
+            "isRoot": true,
+            "isResolvedRoot": true,
+            "root": {
+              "component": {
+                "key": "e20ee33385ac041ce04e356b5ba698cad16e18d5",
+                "name": "↕ SpacingVertical",
+                "identity": "web.spacing-component",
+                "family": "spacing-vertical",
+                "library": "Spacing",
+                "lifecycle": "active",
+                "properties": {
+                  "Size": "12"
+                },
+                "api": null,
+                "directOverrides": []
+              }
+            },
+            "ancestorNodeIds": []
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82239",
+          "parentNodeId": "I12242:17647;60668:82238",
+          "component": {
+            "identity": "web.spacing-component",
+            "family": "spacing-vertical"
+          },
+          "owner": {
+            "nodeId": "12242:17647",
+            "identity": "web-corp.table-view",
+            "family": "table-view-horizontal"
+          },
+          "contour": {
+            "identity": "web.spacing-component",
+            "rootNodeId": "I12242:17647;60668:82239",
+            "isRoot": true,
+            "isResolvedRoot": true,
+            "root": {
+              "component": {
+                "key": "452ccc2cfcaa139709c7538d175c592b00232332",
+                "name": "↕ SpacingVertical",
+                "identity": "web.spacing-component",
+                "family": "spacing-vertical",
+                "library": "Spacing",
+                "lifecycle": "active",
+                "properties": {
+                  "Size": "16"
+                },
+                "api": null,
+                "directOverrides": []
+              }
+            },
+            "ancestorNodeIds": []
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82240",
+          "parentNodeId": "I12242:17647;60668:82238",
+          "component": {
+            "identity": "web-corp.table-view",
+            "family": "show-more"
+          },
+          "owner": {
+            "nodeId": "12242:17647",
+            "identity": "web-corp.table-view",
+            "family": "table-view-horizontal"
+          },
+          "contour": {
+            "identity": "web-corp.table-view",
+            "rootNodeId": "12242:17647",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+                "name": "P14 / FAIL / Compact=True two data Columns / [D] TableView :: Horizontal",
+                "identity": "web-corp.table-view",
+                "family": "table-view-horizontal",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Compact": "True",
+                  "Collapse": true
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12242:17647",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82231",
+                    "fields": [
+                      "name"
+                    ]
+                  },
+                  {
+                    "nodeId": "I12242:17647;60668:82232",
+                    "fields": [
+                      "componentProperties",
+                      "name"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "12242:17647"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82240;60611:7909",
+          "parentNodeId": "I12242:17647;60668:82240",
+          "component": {
+            "identity": "web-core.link",
+            "family": "link"
+          },
+          "owner": {
+            "nodeId": "I12242:17647;60668:82240",
+            "identity": "web-corp.table-view",
+            "family": "show-more"
+          },
+          "contour": {
+            "identity": "web-core.link",
+            "rootNodeId": "I12242:17647;60668:82240;60611:7909",
+            "isRoot": true,
+            "isResolvedRoot": true,
+            "root": {
+              "component": {
+                "key": "bb2e85770f194e7bed71f247e82d40d0c4afd1e3",
+                "name": "Link",
+                "identity": "web-core.link",
+                "family": "link",
+                "library": "Web _ Core",
+                "lifecycle": "active",
+                "properties": {
+                  "Size": "S (14-20)",
+                  "Right icon 24": "9167:79822",
+                  "Left icon 24": "9167:79822",
+                  "Right Addon": true,
+                  "Left icon 16": "9167:79823",
+                  "Left Addon": false,
+                  "✎ Label": "Ещё N",
+                  "Right icon 16": "9565:178035"
+                },
+                "api": null,
+                "directOverrides": []
+              }
+            },
+            "ancestorNodeIds": []
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82240;60611:7909;493:7848",
+          "parentNodeId": "I12242:17647;60668:82240;60611:7909;493:7846",
+          "component": {
+            "identity": "web-core.link",
+            "family": "underline"
+          },
+          "owner": {
+            "nodeId": "I12242:17647;60668:82240;60611:7909",
+            "identity": "web-core.link",
+            "family": "link"
+          },
+          "contour": {
+            "identity": "web-core.link",
+            "rootNodeId": "I12242:17647;60668:82240;60611:7909",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "bb2e85770f194e7bed71f247e82d40d0c4afd1e3",
+                "name": "Link",
+                "identity": "web-core.link",
+                "family": "link",
+                "library": "Web _ Core",
+                "lifecycle": "active",
+                "properties": {
+                  "Size": "S (14-20)",
+                  "Right icon 24": "9167:79822",
+                  "Left icon 24": "9167:79822",
+                  "Right Addon": true,
+                  "Left icon 16": "9167:79823",
+                  "Left Addon": false,
+                  "✎ Label": "Ещё N",
+                  "Right icon 16": "9565:178035"
+                },
+                "api": null,
+                "directOverrides": []
+              }
+            },
+            "ancestorNodeIds": [
+              "I12242:17647;60668:82240;60611:7909"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12242:17647;60668:82240;60611:7909;493:10113",
+          "parentNodeId": "I12242:17647;60668:82240;60611:7909;493:10110",
+          "component": {
+            "identity": null,
+            "family": null
+          },
+          "owner": {
+            "nodeId": "I12242:17647;60668:82240;60611:7909",
+            "identity": "web-core.link",
+            "family": "link"
+          },
+          "contour": {
+            "identity": null,
+            "rootNodeId": null,
+            "isRoot": null,
+            "isResolvedRoot": false,
+            "root": null,
+            "ancestorNodeIds": []
+          }
+        }
+      ]
+    },
+    "rules": [
+      {
+        "ruleId": "component:web-corp.buttons-group.button-count",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/ButtonGroup [D]/composition-contract.json",
+          "checksum": "3a6c2463f144da77f440576da16390efb7061ba7a71db30e37e86e74ce7fe3d9",
+          "anchor": "manual/contracts/buttons-group.composition/constraints/button-count"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        },
+        "presentation": null
+      },
+      {
+        "ruleId": "component:web-corp.buttons-group.allowed-views",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/ButtonGroup [D]/composition-contract.json",
+          "checksum": "3a6c2463f144da77f440576da16390efb7061ba7a71db30e37e86e74ce7fe3d9",
+          "anchor": "manual/contracts/buttons-group.composition/constraints/allowed-views"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        },
+        "presentation": null
+      },
+      {
+        "ruleId": "component:web-corp.buttons-group.uniform-size",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/ButtonGroup [D]/composition-contract.json",
+          "checksum": "3a6c2463f144da77f440576da16390efb7061ba7a71db30e37e86e74ce7fe3d9",
+          "anchor": "manual/contracts/buttons-group.composition/constraints/uniform-size"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        },
+        "presentation": null
+      },
+      {
+        "ruleId": "component:web-corp.buttons-group.primary-position",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/ButtonGroup [D]/composition-contract.json",
+          "checksum": "3a6c2463f144da77f440576da16390efb7061ba7a71db30e37e86e74ce7fe3d9",
+          "anchor": "manual/contracts/buttons-group.composition/constraints/primary-position"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        },
+        "presentation": {
+          "schemaVersion": "apollo.predicate-presentation.v1",
+          "title": "Primary-кнопка находится не на первом месте",
+          "observed": "В группе Primary-кнопка расположена не первой или используется несколько раз.",
+          "expectation": "Primary-кнопка необязательна, но может быть только одной и только первой.",
+          "action": "Переместить Primary-кнопку на первое место или изменить лишние Primary-кнопки на Secondary."
+        }
+      },
+      {
+        "ruleId": "component:web-corp.buttons-group.single-icon-position",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/ButtonGroup [D]/composition-contract.json",
+          "checksum": "3a6c2463f144da77f440576da16390efb7061ba7a71db30e37e86e74ce7fe3d9",
+          "anchor": "manual/contracts/buttons-group.composition/constraints/single-icon-position"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        },
+        "presentation": null
+      },
+      {
+        "ruleId": "component:web-corp.title-view.visible-slots-follow-required-order",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/TitleView/composition-contract.json",
+          "checksum": "245a7f862a3afdef140500cabfe08d386f45a7d07fa2916bda122f86db546bdb",
+          "anchor": "manual/slotOrderPolicy"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        },
+        "presentation": {
+          "schemaVersion": "apollo.predicate-presentation.v1",
+          "title": "Нарушен порядок элементов TitleView",
+          "observed": "Элемент {{actual}} расположен раньше обязательного предыдущего элемента {{expected}}.",
+          "expectation": "Видимые элементы TitleView должны сохранять порядок, заданный контрактом компонента.",
+          "action": "Восстановить порядок элементов через свойства опубликованного TitleView."
+        }
+      },
+      {
+        "ruleId": "rule:controls.buttons-and-button-groups.desktop-safe-variants",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/patterns/p_buttons-and-buttons-group.md",
+          "checksum": "9aa0b263fa31318eee6ddcc8940ab386f918ed6567cc119ecee5e2ac2200e0cc",
+          "anchor": "rule:controls.buttons-and-button-groups.desktop-safe-variants"
+        },
+        "scope": {
+          "platform": [
+            "desktop"
+          ]
+        }
+      },
+      {
+        "ruleId": "component:web-corp.table-view.compact-is-consistent-across-rows",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/TableView/rules.json",
+          "checksum": "4ea2b749d76f5942b8ca0f700dc3d8757d6d4491e948f2a9e4d370767e984647",
+          "anchor": "manual/rules/component:web-corp.table-view.compact-is-consistent-across-rows"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        }
+      },
+      {
+        "ruleId": "component:web-corp.table-view.horizontal-compact-one-column",
+        "revision": 2,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/TableView/rules.json",
+          "checksum": "4ea2b749d76f5942b8ca0f700dc3d8757d6d4491e948f2a9e4d370767e984647",
+          "anchor": "rules/component:web-corp.table-view.horizontal-compact-one-column"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        },
+        "presentation": {
+          "schemaVersion": "apollo.predicate-presentation.v1",
+          "title": "В Compact TableView обнаружено несколько колонок данных",
+          "observed": "В строке Compact TableView найдено колонок данных: {{actual}}.",
+          "expectation": "Каждая Body Row в Horizontal TableView с Compact=true должна содержать ровно одну колонку данных.",
+          "action": "Оставить в строке одну колонку данных или отключить Compact.",
+          "targetFact": "composition.visibleDataColumnCount"
+        }
+      },
+      {
+        "ruleId": "component:web-corp.table-view.horizontal-multi-column-header-required",
+        "revision": 2,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/TableView/rules.json",
+          "checksum": "4ea2b749d76f5942b8ca0f700dc3d8757d6d4491e948f2a9e4d370767e984647",
+          "anchor": "rules/component:web-corp.table-view.horizontal-multi-column-header-required"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        },
+        "presentation": {
+          "schemaVersion": "apollo.predicate-presentation.v1",
+          "title": "В Horizontal TableView отсутствует обязательный Header Row",
+          "observed": "При Compact=False найдено строк Header: {{actual}}.",
+          "expectation": "Horizontal TableView с Compact=False должен содержать ровно один Row с Presets=Header.",
+          "action": "Добавить или восстановить один Header Row в составе TableView.",
+          "targetFact": "composition.visibleHeaderRowCount"
+        }
+      },
+      {
+        "ruleId": "rule:components.title-view.single-xlarge",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/patterns/p_title-view.md",
+          "checksum": "037ceb09cd62e8687c69e385abeed3a394c76c18234525f9af1b387954ae33b7",
+          "anchor": "rules/rule:components.title-view.single-xlarge"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        },
+        "presentation": {
+          "schemaVersion": "apollo.predicate-presentation.v1",
+          "title": "На странице несколько главных заголовков",
+          "observed": "В выбранной области найдено {{actual}} TitleView с View=xLarge.",
+          "expectation": "На одной странице допускается только один TitleView с View=xLarge.",
+          "action": "Оставить один TitleView xLarge; остальные перевести на следующий уровень иерархии."
+        }
+      },
+      {
+        "ruleId": "rule:forms.construction-rules.block-spacing.first-level",
+        "revision": 4,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/patterns/p_form-construction-rules.md",
+          "checksum": "163809ade36747bf1d8b1b3cdf694f20958304d9aecad4c1e9e006d61727c2b0",
+          "anchor": "rules/rule:forms.construction-rules.block-spacing.first-level"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ],
+          "pageType": [
+            "form"
+          ]
+        },
+        "presentation": {
+          "schemaVersion": "apollo.predicate-presentation.v1",
+          "title": "Неверный отступ между блоками первого уровня формы",
+          "observed": "Вертикальный отступ между соседними подложками: {{measured}} px.",
+          "expectation": "Между соседними блоками первого уровня формы должно быть 24 px.",
+          "action": "Установить вертикальный отступ между подложками 24 px."
+        }
+      },
+      {
+        "ruleId": "rule:forms.construction-rules.block-spacing.second-level-actions",
+        "revision": 3,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/patterns/p_form-construction-rules.md",
+          "checksum": "163809ade36747bf1d8b1b3cdf694f20958304d9aecad4c1e9e006d61727c2b0",
+          "anchor": "rules/rule:forms.construction-rules.block-spacing.second-level-actions"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ],
+          "pageType": [
+            "form"
+          ]
+        },
+        "presentation": {
+          "schemaVersion": "apollo.predicate-presentation.v1",
+          "title": "Неверный отступ перед основными действиями формы",
+          "observed": "Вертикальный отступ от последнего блока второго уровня до основных действий: {{measured}} px.",
+          "expectation": "Перед основными действиями формы должно быть 32 px.",
+          "action": "Установить вертикальный отступ перед основными действиями 32 px."
+        }
+      },
+      {
+        "ruleId": "rule:forms.construction-rules.inner-padding-standard.content-insets",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/patterns/p_form-construction-rules.md",
+          "checksum": "163809ade36747bf1d8b1b3cdf694f20958304d9aecad4c1e9e006d61727c2b0",
+          "anchor": "rules/rule:forms.construction-rules.inner-padding-standard.content-insets"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ],
+          "pageType": [
+            "form"
+          ]
+        },
+        "presentation": {
+          "schemaVersion": "apollo.predicate-presentation.v1",
+          "title": "Неверные внутренние отступы блока формы",
+          "observed": "Внутренние отступы стандартного блока формы не соответствуют 32 px.",
+          "expectation": "В стандартном блоке формы внутренние отступы сверху, справа, снизу и слева должны быть 32 px.",
+          "action": "Установить внутренние отступы блока 32 px."
+        }
+      },
+      {
+        "ruleId": "rule:forms.construction-rules.inner-padding-standard.title-to-content",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/patterns/p_form-construction-rules.md",
+          "checksum": "163809ade36747bf1d8b1b3cdf694f20958304d9aecad4c1e9e006d61727c2b0",
+          "anchor": "rules/rule:forms.construction-rules.inner-padding-standard.title-to-content"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ],
+          "pageType": [
+            "form"
+          ]
+        },
+        "presentation": {
+          "schemaVersion": "apollo.predicate-presentation.v1",
+          "title": "Неверный отступ от TitleView Medium до контента",
+          "observed": "Вертикальный отступ от заголовка до первого контентного блока: {{measured}} px.",
+          "expectation": "От TitleView Medium до первого контентного блока должно быть 24 px.",
+          "action": "Установить вертикальный отступ между TitleView Medium и контентом 24 px."
+        }
+      },
+      {
+        "ruleId": "rule:forms.construction-rules.layout-8-4",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/patterns/p_form-construction-rules.md",
+          "checksum": "163809ade36747bf1d8b1b3cdf694f20958304d9aecad4c1e9e006d61727c2b0",
+          "anchor": "rules/rule:forms.construction-rules.layout-8-4"
+        },
+        "scope": {
+          "platform": [
+            "desktop"
+          ],
+          "pageType": [
+            "form"
+          ]
+        },
+        "presentation": {
+          "schemaVersion": "apollo.predicate-presentation.v1",
+          "title": "Нарушена сетка формы 8+4",
+          "observed": "Ширины основной и правой зон или отступ между ними не соответствуют формуле 8+4.",
+          "expectation": "Основная зона должна занимать 8 колонок, правая — 4, а отступ между ними — 24 px.",
+          "action": "Вернуть ширины зон к сетке 8+4 и установить отступ 24 px."
+        }
+      },
+      {
+        "ruleId": "rule:forms.construction-rules.title-medium-one-per-plate",
+        "revision": 2,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/patterns/p_form-construction-rules.md",
+          "checksum": "163809ade36747bf1d8b1b3cdf694f20958304d9aecad4c1e9e006d61727c2b0",
+          "anchor": "rules/rule:forms.construction-rules.title-medium-one-per-plate"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ],
+          "pageType": [
+            "form"
+          ]
+        },
+        "presentation": {
+          "schemaVersion": "apollo.predicate-presentation.v1",
+          "title": "На одной подложке несколько TitleView Medium",
+          "observed": "Этот TitleView Medium не является единственным или первым заголовком Medium на подложке.",
+          "expectation": "На одной подложке формы допускается только один TitleView с View=Medium.",
+          "action": "Оставить один TitleView Medium как главный заголовок логической части; остальные перевести на следующий уровень иерархии.",
+          "targetFact": "composition.formFirstLevelSurface.mediumTitlePosition"
+        }
+      }
+    ],
+    "result": {
+      "schemaVersion": "apollo.predicate-result.v1",
+      "snapshotHash": "3153a66e8e0c48e30b1e35b27b0e2cb01789f5955ca466d912ee615d2da41a2f",
+      "ruleRelease": "a185fe3457c8241e4e50b607bc955e2e857fea889b033715f839810831cf25b1",
+      "evaluations": [
+        {
+          "evaluationId": "8380e52b735e1f0898b6ba84d66769fdc4d7e36c48fb9069d37317392e3d5050",
+          "ruleId": "component:web-corp.buttons-group.allowed-views",
+          "ruleRevision": 1,
+          "subjectNodeId": "12242:17321",
+          "focusNodeId": "12242:17321",
+          "applicability": "unknown",
+          "classification": "not-evaluable",
+          "severity": "error",
+          "trace": {
+            "predicate": "one-of",
+            "truth": "unknown",
+            "reason": "selector evidence is unknown",
+            "actual": {
+              "state": "unknown"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "8267e780f56355a95a4a3e9ba0063f4ac2fc92e820c91164e695a7705f2724ff",
+          "ruleId": "component:web-corp.buttons-group.button-count",
+          "ruleRevision": 1,
+          "subjectNodeId": "12242:17321",
+          "focusNodeId": "12242:17321",
+          "applicability": "unknown",
+          "classification": "not-evaluable",
+          "severity": "error",
+          "trace": {
+            "predicate": "count-between",
+            "truth": "unknown",
+            "reason": "selector evidence is unknown",
+            "actual": {
+              "state": "unknown"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "f03bdc7b48444083322e20828a3617a31033839eb21654948c59db16f671f941",
+          "ruleId": "component:web-corp.buttons-group.primary-position",
+          "ruleRevision": 1,
+          "subjectNodeId": "12242:17321",
+          "focusNodeId": "12242:17321",
+          "applicability": "unknown",
+          "classification": "not-evaluable",
+          "severity": "error",
+          "trace": {
+            "predicate": "value-position",
+            "truth": "unknown",
+            "reason": "selector evidence is unknown",
+            "actual": {
+              "state": "unknown"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "bef6e184bc1e2c1b122888980f5d9f86e679f529bb21c83a9da1201523c48291",
+          "ruleId": "component:web-corp.buttons-group.single-icon-position",
+          "ruleRevision": 1,
+          "subjectNodeId": "12242:17321",
+          "focusNodeId": "12242:17321",
+          "applicability": "unknown",
+          "classification": "not-evaluable",
+          "severity": "error",
+          "trace": {
+            "predicate": "value-position",
+            "truth": "unknown",
+            "reason": "selector evidence is unknown",
+            "actual": {
+              "state": "unknown"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "85029999c82a81165835225e4925a427bf7a6c98401db72f2398df8e6ec35b42",
+          "ruleId": "component:web-corp.buttons-group.uniform-size",
+          "ruleRevision": 1,
+          "subjectNodeId": "12242:17321",
+          "focusNodeId": "12242:17321",
+          "applicability": "unknown",
+          "classification": "not-evaluable",
+          "severity": "error",
+          "trace": {
+            "predicate": "equals",
+            "truth": "unknown",
+            "reason": "selector evidence is unknown",
+            "actual": {
+              "state": "unknown"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "7ecc48296f65e27665b05abe5ef342b61754490272aba63550a4dfb4a2e1aa75",
+          "ruleId": "component:web-corp.table-view.horizontal-multi-column-header-required",
+          "ruleRevision": 2,
+          "subjectNodeId": "12242:17321",
+          "focusNodeId": "12242:17321",
+          "applicability": "unknown",
+          "classification": "not-evaluable",
+          "severity": "error",
+          "trace": {
+            "predicate": "one-of",
+            "truth": "unknown",
+            "reason": "selector evidence is unknown",
+            "actual": {
+              "state": "unknown"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "be346b4367fd577e91a50f5b5dfb29eea805f23b958216972e176e273346ec79",
+          "ruleId": "component:web-corp.title-view.visible-slots-follow-required-order",
+          "ruleRevision": 1,
+          "subjectNodeId": "12242:17321",
+          "focusNodeId": "12242:17321",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "b8d9966ee682391f36e9a59ebba0aa13669f8dc74311e4e2e516dd4e055ee1c1",
+          "ruleId": "rule:components.title-view.single-xlarge",
+          "ruleRevision": 1,
+          "subjectNodeId": "12242:17321",
+          "focusNodeId": "12242:17321",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "count-between",
+            "truth": "false",
+            "reason": "numeric range inclusive evaluated",
+            "actual": 0,
+            "expected": {
+              "lower": 1,
+              "upper": 1000000,
+              "bounds": "inclusive"
+            },
+            "factPaths": [
+              "component.identity",
+              "ownership.contour.isResolvedRoot",
+              "type"
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "10f806cecfbfa8dd28301b86b93c78608d87e87605a3368fb7a101c533d36a15",
+          "ruleId": "rule:controls.buttons-and-button-groups.desktop-safe-variants",
+          "ruleRevision": 1,
+          "subjectNodeId": "12242:17321",
+          "focusNodeId": "12242:17321",
+          "applicability": "unknown",
+          "classification": "not-evaluable",
+          "severity": "error",
+          "trace": {
+            "predicate": "not",
+            "truth": "unknown",
+            "reason": "selector evidence is unknown",
+            "actual": {
+              "state": "unknown"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "3e3cab05c650284179659a34d5052145bb8215fa7b9bc92af9237befc146c02c",
+          "ruleId": "rule:forms.construction-rules.block-spacing.first-level",
+          "ruleRevision": 4,
+          "subjectNodeId": "12242:17321",
+          "focusNodeId": "12242:17321",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "distance",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "3857f14f830f43cf44d58eee5d77950dd8f9cf6011d6b82d5a9cce69ba07e0d8",
+          "ruleId": "rule:forms.construction-rules.block-spacing.second-level-actions",
+          "ruleRevision": 3,
+          "subjectNodeId": "12242:17321",
+          "focusNodeId": "12242:17321",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "distance",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "b2f298bb5fdcdefefe7abc3499fbc5a55a3b4e20d47e481050c4f011bbee091e",
+          "ruleId": "rule:forms.construction-rules.inner-padding-standard.content-insets",
+          "ruleRevision": 1,
+          "subjectNodeId": "12242:17321",
+          "focusNodeId": "12242:17321",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "c9badfc46bfae482436a6a9330f5aeaf2f648de13ccac58fd286d0ed466a84dc",
+          "ruleId": "rule:forms.construction-rules.inner-padding-standard.title-to-content",
+          "ruleRevision": 1,
+          "subjectNodeId": "12242:17321",
+          "focusNodeId": "12242:17321",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "distance",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "534224a2c80ec2461ba389ecefe874fe7f26b79ac29f5155a55df0fceef3da23",
+          "ruleId": "rule:forms.construction-rules.layout-8-4",
+          "ruleRevision": 1,
+          "subjectNodeId": "12242:17321",
+          "focusNodeId": "12242:17321",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "c2d28a59ed261381d5e9755d302f9cefa6e909924140401d0468a22cf916a4f3",
+          "ruleId": "rule:forms.construction-rules.title-medium-one-per-plate",
+          "ruleRevision": 2,
+          "subjectNodeId": "12242:17321",
+          "focusNodeId": "12242:17321",
+          "applicability": "unknown",
+          "classification": "not-evaluable",
+          "severity": "error",
+          "trace": {
+            "predicate": "one-of",
+            "truth": "unknown",
+            "reason": "selector evidence is unknown",
+            "actual": {
+              "state": "unknown"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "0cef5ed8b2dd7661e1e3f94fa7c2325ce9fcbd6970f4102c8a1a79a9a70c15ae",
+          "ruleId": "rule:components.title-view.single-xlarge",
+          "ruleRevision": 1,
+          "subjectNodeId": "12242:17645",
+          "focusNodeId": "12242:17645",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "count-between",
+            "truth": "false",
+            "reason": "numeric range inclusive evaluated",
+            "actual": 0,
+            "expected": {
+              "lower": 1,
+              "upper": 1000000,
+              "bounds": "inclusive"
+            },
+            "factPaths": [
+              "component.identity",
+              "ownership.contour.isResolvedRoot",
+              "type"
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "b5e2a19e65bb86c9af5a574fade397bea957d8d129dd55c3496a9b134aabda16",
+          "ruleId": "component:web-corp.table-view.compact-is-consistent-across-rows",
+          "ruleRevision": 1,
+          "subjectNodeId": "I12242:17323;60668:82231",
+          "focusNodeId": "I12242:17323;60668:82231",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "true",
+            "reason": "logical all evaluated",
+            "actual": [
+              "true",
+              "true"
+            ],
+            "expected": "all true",
+            "factPaths": [
+              "component.properties.Compact",
+              "composition.expectedRowSpacing",
+              "composition.spacingVertical",
+              "composition.tableViewOwner.component.properties.Compact"
+            ],
+            "children": [
+              {
+                "predicate": "equals",
+                "truth": "true",
+                "reason": "values are equal",
+                "actual": "True",
+                "expected": "True",
+                "factPaths": [
+                  "component.properties.Compact",
+                  "composition.tableViewOwner.component.properties.Compact"
+                ]
+              },
+              {
+                "predicate": "equals",
+                "truth": "true",
+                "reason": "values are equal",
+                "actual": 12,
+                "expected": 12,
+                "factPaths": [
+                  "composition.expectedRowSpacing",
+                  "composition.spacingVertical"
+                ]
+              }
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "0c5d0baab7c074169591df5cd18599b087c5b38ae470f3379a5963d9482aae26",
+          "ruleId": "component:web-corp.table-view.compact-is-consistent-across-rows",
+          "ruleRevision": 1,
+          "subjectNodeId": "I12242:17323;60668:82232",
+          "focusNodeId": "I12242:17323;60668:82232",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "true",
+            "reason": "logical all evaluated",
+            "actual": [
+              "true",
+              "true"
+            ],
+            "expected": "all true",
+            "factPaths": [
+              "component.properties.Compact",
+              "composition.expectedRowSpacing",
+              "composition.spacingVertical",
+              "composition.tableViewOwner.component.properties.Compact"
+            ],
+            "children": [
+              {
+                "predicate": "equals",
+                "truth": "true",
+                "reason": "values are equal",
+                "actual": "True",
+                "expected": "True",
+                "factPaths": [
+                  "component.properties.Compact",
+                  "composition.tableViewOwner.component.properties.Compact"
+                ]
+              },
+              {
+                "predicate": "equals",
+                "truth": "true",
+                "reason": "values are equal",
+                "actual": 12,
+                "expected": 12,
+                "factPaths": [
+                  "composition.expectedRowSpacing",
+                  "composition.spacingVertical"
+                ]
+              }
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "2a55d2d9e3e2e483967eb450ae767764ce2d7d6301357f0c9d96c2d25e4834af",
+          "ruleId": "component:web-corp.table-view.horizontal-compact-one-column",
+          "ruleRevision": 2,
+          "subjectNodeId": "I12242:17323;60668:82232",
+          "focusNodeId": "I12242:17323;60668:82232",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "one-of",
+            "truth": "true",
+            "reason": "value belongs to the allowed set",
+            "actual": 1,
+            "expected": [
+              1
+            ],
+            "factPaths": [
+              "composition.visibleDataColumnCount"
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "6bbf1394a9984b64c222c948dcd3a55dcbaa12dd62e2c6a631f0ce88883d87e8",
+          "ruleId": "component:web-corp.table-view.compact-is-consistent-across-rows",
+          "ruleRevision": 1,
+          "subjectNodeId": "I12242:17323;60668:82233",
+          "focusNodeId": "I12242:17323;60668:82233",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "true",
+            "reason": "logical all evaluated",
+            "actual": [
+              "true",
+              "true"
+            ],
+            "expected": "all true",
+            "factPaths": [
+              "component.properties.Compact",
+              "composition.expectedRowSpacing",
+              "composition.spacingVertical",
+              "composition.tableViewOwner.component.properties.Compact"
+            ],
+            "children": [
+              {
+                "predicate": "equals",
+                "truth": "true",
+                "reason": "values are equal",
+                "actual": "True",
+                "expected": "True",
+                "factPaths": [
+                  "component.properties.Compact",
+                  "composition.tableViewOwner.component.properties.Compact"
+                ]
+              },
+              {
+                "predicate": "equals",
+                "truth": "true",
+                "reason": "values are equal",
+                "actual": 12,
+                "expected": 12,
+                "factPaths": [
+                  "composition.expectedRowSpacing",
+                  "composition.spacingVertical"
+                ]
+              }
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "33ac64a629dc6a734eab865959bcae0f86b04ed06e6889fe86c8bad2b189ebcc",
+          "ruleId": "component:web-corp.table-view.horizontal-compact-one-column",
+          "ruleRevision": 2,
+          "subjectNodeId": "I12242:17323;60668:82233",
+          "focusNodeId": "I12242:17323;60668:82233",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "one-of",
+            "truth": "true",
+            "reason": "value belongs to the allowed set",
+            "actual": 1,
+            "expected": [
+              1
+            ],
+            "factPaths": [
+              "composition.visibleDataColumnCount"
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "3d172418ffbb664986e737dd357bcbf772d8b1bea08376116c2fa620801ea5e2",
+          "ruleId": "component:web-corp.table-view.compact-is-consistent-across-rows",
+          "ruleRevision": 1,
+          "subjectNodeId": "I12242:17323;60668:82234",
+          "focusNodeId": "I12242:17323;60668:82234",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "true",
+            "reason": "logical all evaluated",
+            "actual": [
+              "true",
+              "true"
+            ],
+            "expected": "all true",
+            "factPaths": [
+              "component.properties.Compact",
+              "composition.expectedRowSpacing",
+              "composition.spacingVertical",
+              "composition.tableViewOwner.component.properties.Compact"
+            ],
+            "children": [
+              {
+                "predicate": "equals",
+                "truth": "true",
+                "reason": "values are equal",
+                "actual": "True",
+                "expected": "True",
+                "factPaths": [
+                  "component.properties.Compact",
+                  "composition.tableViewOwner.component.properties.Compact"
+                ]
+              },
+              {
+                "predicate": "equals",
+                "truth": "true",
+                "reason": "values are equal",
+                "actual": 12,
+                "expected": 12,
+                "factPaths": [
+                  "composition.expectedRowSpacing",
+                  "composition.spacingVertical"
+                ]
+              }
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "bc95bdb3f4f1c438c560856803cc6300168772dfdac5558d596fa0e01ab01e84",
+          "ruleId": "component:web-corp.table-view.horizontal-compact-one-column",
+          "ruleRevision": 2,
+          "subjectNodeId": "I12242:17323;60668:82234",
+          "focusNodeId": "I12242:17323;60668:82234",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "one-of",
+            "truth": "true",
+            "reason": "value belongs to the allowed set",
+            "actual": 1,
+            "expected": [
+              1
+            ],
+            "factPaths": [
+              "composition.visibleDataColumnCount"
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "e4ea545a8080ee1e0b38389f725c8e210d57b19cf46dd556568e116ecbeb6f8d",
+          "ruleId": "component:web-corp.table-view.compact-is-consistent-across-rows",
+          "ruleRevision": 1,
+          "subjectNodeId": "I12242:17323;60668:82235",
+          "focusNodeId": "I12242:17323;60668:82235",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "true",
+            "reason": "logical all evaluated",
+            "actual": [
+              "true",
+              "true"
+            ],
+            "expected": "all true",
+            "factPaths": [
+              "component.properties.Compact",
+              "composition.expectedRowSpacing",
+              "composition.spacingVertical",
+              "composition.tableViewOwner.component.properties.Compact"
+            ],
+            "children": [
+              {
+                "predicate": "equals",
+                "truth": "true",
+                "reason": "values are equal",
+                "actual": "True",
+                "expected": "True",
+                "factPaths": [
+                  "component.properties.Compact",
+                  "composition.tableViewOwner.component.properties.Compact"
+                ]
+              },
+              {
+                "predicate": "equals",
+                "truth": "true",
+                "reason": "values are equal",
+                "actual": 12,
+                "expected": 12,
+                "factPaths": [
+                  "composition.expectedRowSpacing",
+                  "composition.spacingVertical"
+                ]
+              }
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "fc484e522eaeec4b688284dbff5947fb215c92860511a8f92a8013d2ada40089",
+          "ruleId": "component:web-corp.table-view.horizontal-compact-one-column",
+          "ruleRevision": 2,
+          "subjectNodeId": "I12242:17323;60668:82235",
+          "focusNodeId": "I12242:17323;60668:82235",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "one-of",
+            "truth": "true",
+            "reason": "value belongs to the allowed set",
+            "actual": 1,
+            "expected": [
+              1
+            ],
+            "factPaths": [
+              "composition.visibleDataColumnCount"
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "14394b32b8c14a64c9521d72cf322454e2e446929d695ea2b4bece5e30ae5908",
+          "ruleId": "component:web-corp.table-view.compact-is-consistent-across-rows",
+          "ruleRevision": 1,
+          "subjectNodeId": "I12242:17647;60668:82231",
+          "focusNodeId": "I12242:17647;60668:82231",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "true",
+            "reason": "logical all evaluated",
+            "actual": [
+              "true",
+              "true"
+            ],
+            "expected": "all true",
+            "factPaths": [
+              "component.properties.Compact",
+              "composition.expectedRowSpacing",
+              "composition.spacingVertical",
+              "composition.tableViewOwner.component.properties.Compact"
+            ],
+            "children": [
+              {
+                "predicate": "equals",
+                "truth": "true",
+                "reason": "values are equal",
+                "actual": "True",
+                "expected": "True",
+                "factPaths": [
+                  "component.properties.Compact",
+                  "composition.tableViewOwner.component.properties.Compact"
+                ]
+              },
+              {
+                "predicate": "equals",
+                "truth": "true",
+                "reason": "values are equal",
+                "actual": 12,
+                "expected": 12,
+                "factPaths": [
+                  "composition.expectedRowSpacing",
+                  "composition.spacingVertical"
+                ]
+              }
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "352bf26e6ebb2d7f735c70317c708d6ddda5e02b238c7c7dac7247ce59394749",
+          "ruleId": "component:web-corp.table-view.compact-is-consistent-across-rows",
+          "ruleRevision": 1,
+          "subjectNodeId": "I12242:17647;60668:82232",
+          "focusNodeId": "I12242:17647;60668:82232",
+          "applicability": "applicable",
+          "classification": "violation",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "false",
+            "reason": "logical all evaluated",
+            "actual": [
+              "false",
+              "false"
+            ],
+            "expected": "all true",
+            "factPaths": [
+              "component.properties.Compact",
+              "composition.expectedRowSpacing",
+              "composition.spacingVertical",
+              "composition.tableViewOwner.component.properties.Compact"
+            ],
+            "children": [
+              {
+                "predicate": "equals",
+                "truth": "false",
+                "reason": "values differ",
+                "actual": "False",
+                "expected": "True",
+                "factPaths": [
+                  "component.properties.Compact",
+                  "composition.tableViewOwner.component.properties.Compact"
+                ]
+              },
+              {
+                "predicate": "equals",
+                "truth": "false",
+                "reason": "values differ",
+                "actual": 16,
+                "expected": 12,
+                "factPaths": [
+                  "composition.expectedRowSpacing",
+                  "composition.spacingVertical"
+                ]
+              }
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "7984a7e2995f02ac8e11dbf002441107370f870a275cf84d2cd08d7b6929cb22",
+          "ruleId": "component:web-corp.table-view.horizontal-compact-one-column",
+          "ruleRevision": 2,
+          "subjectNodeId": "I12242:17647;60668:82232",
+          "focusNodeId": "I12242:17647;60668:82232",
+          "applicability": "applicable",
+          "classification": "violation",
+          "severity": "error",
+          "trace": {
+            "predicate": "one-of",
+            "truth": "false",
+            "reason": "value is outside the allowed set",
+            "actual": 2,
+            "expected": [
+              1
+            ],
+            "factPaths": [
+              "composition.visibleDataColumnCount"
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "0724344350581bf5c9743ce1930b8a5a0fcae78cf7bfd490388a7fb44bde50f5",
+          "ruleId": "component:web-corp.table-view.compact-is-consistent-across-rows",
+          "ruleRevision": 1,
+          "subjectNodeId": "I12242:17647;60668:82233",
+          "focusNodeId": "I12242:17647;60668:82233",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "true",
+            "reason": "logical all evaluated",
+            "actual": [
+              "true",
+              "true"
+            ],
+            "expected": "all true",
+            "factPaths": [
+              "component.properties.Compact",
+              "composition.expectedRowSpacing",
+              "composition.spacingVertical",
+              "composition.tableViewOwner.component.properties.Compact"
+            ],
+            "children": [
+              {
+                "predicate": "equals",
+                "truth": "true",
+                "reason": "values are equal",
+                "actual": "True",
+                "expected": "True",
+                "factPaths": [
+                  "component.properties.Compact",
+                  "composition.tableViewOwner.component.properties.Compact"
+                ]
+              },
+              {
+                "predicate": "equals",
+                "truth": "true",
+                "reason": "values are equal",
+                "actual": 12,
+                "expected": 12,
+                "factPaths": [
+                  "composition.expectedRowSpacing",
+                  "composition.spacingVertical"
+                ]
+              }
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "e31f9cbeb381b80dcd7e59dd7199aee129734fe1d9e40442fe9f00e400e69773",
+          "ruleId": "component:web-corp.table-view.horizontal-compact-one-column",
+          "ruleRevision": 2,
+          "subjectNodeId": "I12242:17647;60668:82233",
+          "focusNodeId": "I12242:17647;60668:82233",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "one-of",
+            "truth": "true",
+            "reason": "value belongs to the allowed set",
+            "actual": 1,
+            "expected": [
+              1
+            ],
+            "factPaths": [
+              "composition.visibleDataColumnCount"
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "dc87949a671a610f41a5e2ad2f5c00fdae1d333c014346c260507854cb7cb6b9",
+          "ruleId": "component:web-corp.table-view.compact-is-consistent-across-rows",
+          "ruleRevision": 1,
+          "subjectNodeId": "I12242:17647;60668:82234",
+          "focusNodeId": "I12242:17647;60668:82234",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "true",
+            "reason": "logical all evaluated",
+            "actual": [
+              "true",
+              "true"
+            ],
+            "expected": "all true",
+            "factPaths": [
+              "component.properties.Compact",
+              "composition.expectedRowSpacing",
+              "composition.spacingVertical",
+              "composition.tableViewOwner.component.properties.Compact"
+            ],
+            "children": [
+              {
+                "predicate": "equals",
+                "truth": "true",
+                "reason": "values are equal",
+                "actual": "True",
+                "expected": "True",
+                "factPaths": [
+                  "component.properties.Compact",
+                  "composition.tableViewOwner.component.properties.Compact"
+                ]
+              },
+              {
+                "predicate": "equals",
+                "truth": "true",
+                "reason": "values are equal",
+                "actual": 12,
+                "expected": 12,
+                "factPaths": [
+                  "composition.expectedRowSpacing",
+                  "composition.spacingVertical"
+                ]
+              }
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "466bded9b8d6a07ffda8f578451f0341a274dc104cce8d4b869649df6b87dc8c",
+          "ruleId": "component:web-corp.table-view.horizontal-compact-one-column",
+          "ruleRevision": 2,
+          "subjectNodeId": "I12242:17647;60668:82234",
+          "focusNodeId": "I12242:17647;60668:82234",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "one-of",
+            "truth": "true",
+            "reason": "value belongs to the allowed set",
+            "actual": 1,
+            "expected": [
+              1
+            ],
+            "factPaths": [
+              "composition.visibleDataColumnCount"
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "0e5bd827b65980e436e9d0a8ee5a3afb4f71dad3d0181760719ab46669e30f26",
+          "ruleId": "component:web-corp.table-view.compact-is-consistent-across-rows",
+          "ruleRevision": 1,
+          "subjectNodeId": "I12242:17647;60668:82235",
+          "focusNodeId": "I12242:17647;60668:82235",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "true",
+            "reason": "logical all evaluated",
+            "actual": [
+              "true",
+              "true"
+            ],
+            "expected": "all true",
+            "factPaths": [
+              "component.properties.Compact",
+              "composition.expectedRowSpacing",
+              "composition.spacingVertical",
+              "composition.tableViewOwner.component.properties.Compact"
+            ],
+            "children": [
+              {
+                "predicate": "equals",
+                "truth": "true",
+                "reason": "values are equal",
+                "actual": "True",
+                "expected": "True",
+                "factPaths": [
+                  "component.properties.Compact",
+                  "composition.tableViewOwner.component.properties.Compact"
+                ]
+              },
+              {
+                "predicate": "equals",
+                "truth": "true",
+                "reason": "values are equal",
+                "actual": 12,
+                "expected": 12,
+                "factPaths": [
+                  "composition.expectedRowSpacing",
+                  "composition.spacingVertical"
+                ]
+              }
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "a40aeba62892be354490652ccbf4cf35c71ac9b7af220f5d87e18ca604b990bc",
+          "ruleId": "component:web-corp.table-view.horizontal-compact-one-column",
+          "ruleRevision": 2,
+          "subjectNodeId": "I12242:17647;60668:82235",
+          "focusNodeId": "I12242:17647;60668:82235",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "one-of",
+            "truth": "true",
+            "reason": "value belongs to the allowed set",
+            "actual": 1,
+            "expected": [
+              1
+            ],
+            "factPaths": [
+              "composition.visibleDataColumnCount"
+            ]
+          },
+          "actionId": null
+        }
+      ],
+      "coverage": {
+        "total": 34,
+        "byClassification": {
+          "not-evaluable": 8,
+          "not-applicable": 8,
+          "compliant": 16,
+          "violation": 2
+        },
+        "unclassified": 0,
+        "duplicateEvaluationIds": 0
+      }
+    },
+    "repeatability": {
+      "runCount": 10,
+      "stable": true,
+      "resultHash": "c239e8dc44370d10b7b8304137494634c91b6eeeb63ab99a3fb7ad2c0f16f9a6"
+    }
+  },
+  "ui": {
+    "responseMarkdown": "## Общие паттерны\n| Статус | Причина | Ожидание | Действие |\n| --- | --- | --- | --- |\n| Ошибка | Row не соответствует Compact TableView<br>Row Compact=False, spacing=16 px; TableView Compact=True, ожидаемый spacing=12 px. | Все прямые Row должны повторять Compact корневого TableView: spacing 16 px для Compact=False и 12 px для Compact=True.<br>TableView/rules.json | Установить Row Compact=True и spacing=12 px. |\n| Ошибка | В Compact TableView обнаружено несколько колонок данных<br>В строке Compact TableView найдено колонок данных: 2. | Каждая Body Row в Horizontal TableView с Compact=true должна содержать ровно одну колонку данных.<br>TableView/rules.json | Оставить в строке одну колонку данных или отключить Compact. |\n\n## Паттерны страницы\n| Статус | Причина | Ожидание | Действие |\n| --- | --- | --- | --- |",
+    "findings": [
+      {
+        "id": "352bf26e6ebb2d7f735c70317c708d6ddda5e02b238c7c7dac7247ce59394749",
+        "nodeId": "I12242:17647;60668:82232",
+        "priority": "error",
+        "verdict": "confirmed",
+        "title": "Row не соответствует Compact TableView",
+        "observed": "Row Compact=False, spacing=16 px; TableView Compact=True, ожидаемый spacing=12 px.",
+        "factPath": "component.properties.Compact",
+        "patternScope": "general"
+      },
+      {
+        "id": "7984a7e2995f02ac8e11dbf002441107370f870a275cf84d2cd08d7b6929cb22",
+        "nodeId": "I12242:17647;60668:82232",
+        "priority": "error",
+        "verdict": "confirmed",
+        "title": "В Compact TableView обнаружено несколько колонок данных",
+        "observed": "В строке Compact TableView найдено колонок данных: 2.",
+        "factPath": "composition.visibleDataColumnCount",
+        "patternScope": "general"
+      }
+    ]
+  }
+}
