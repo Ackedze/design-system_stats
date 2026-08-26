@@ -1,0 +1,2033 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-predicate-report",
+  "reportId": "apollo-1096330610570928879-1787739901924-yjxe4aq0:predicates:3d71c452ee316775227a4fd286f800d4c88fc06d80aeb479087bac68880bb21e",
+  "sourceReportId": "apollo-1096330610570928879-1787739901924-yjxe4aq0",
+  "generatedAt": "2026-08-26T10:25:02.709Z",
+  "suggestedFileName": "Alexey-Kukhta-CORP-Lead-Designer_26-08-2026_13-25-01_predicates.json",
+  "user": {
+    "id": "1096330610570928879",
+    "name": "Alexey Kukhta / CORP / Lead Designer",
+    "slug": "Alexey-Kukhta-CORP-Lead-Designer"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.3.0"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "❇️ Мастерская :: AI",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "pageType": "form",
+    "startedAt": "2026-08-26T10:25:01.042Z",
+    "finishedAt": "2026-08-26T10:25:01.924Z",
+    "durationMs": 882,
+    "selection": [
+      {
+        "nodeId": "12196:86198",
+        "name": "P07 / PASS / matching Status Type",
+        "nodeType": "FRAME",
+        "path": "тестовая секция / Predicate Engine MVP / Component predicates / P07 / PASS / matching Status Type",
+        "componentKey": null
+      },
+      {
+        "nodeId": "12418:79819",
+        "name": "P07 / FAIL / TitleStatus Type=Attention",
+        "nodeType": "FRAME",
+        "path": "тестовая секция / Predicate Engine MVP / Component predicates / P07 / FAIL / TitleStatus Type=Attention",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": false
+    }
+  },
+  "summary": {
+    "ruleCount": 21,
+    "evaluationCount": 32,
+    "findingCount": 1,
+    "byClassification": {
+      "not-applicable": 15,
+      "compliant": 16,
+      "violation": 1
+    },
+    "unclassified": 0,
+    "duplicateEvaluationIds": 0
+  },
+  "validation": {
+    "snapshot": {
+      "schemaVersion": "apollo.predicate-snapshot.v2",
+      "auditId": "apollo-1096330610570928879-1787739901924-yjxe4aq0",
+      "snapshotHash": "3d71c452ee316775227a4fd286f800d4c88fc06d80aeb479087bac68880bb21e",
+      "context": {
+        "fileKey": null,
+        "pageId": "8701:32684",
+        "platform": "desktop",
+        "pageType": "form",
+        "viewportWidth": null,
+        "surface": null,
+        "modalRootNodeId": null,
+        "unknownFacts": [
+          "fileKey",
+          "viewportWidth"
+        ]
+      },
+      "release": {
+        "knowledgeSource": "design-system_ab",
+        "revision": "2026-07-06T18:47:40.739Z",
+        "checksum": "a185fe3457c8241e4e50b607bc955e2e857fea889b033715f839810831cf25b1"
+      },
+      "selection": [
+        "12196:86198",
+        "12418:79819"
+      ],
+      "nodeCount": 25,
+      "contourDiagnostics": [
+        {
+          "nodeId": "12196:86200",
+          "parentNodeId": "12196:86198",
+          "component": {
+            "identity": "web-corp.title-view",
+            "family": "title-view"
+          },
+          "owner": null,
+          "contour": {
+            "identity": "web-corp.title-view",
+            "rootNodeId": "12196:86200",
+            "isRoot": true,
+            "isResolvedRoot": true,
+            "root": {
+              "component": {
+                "key": "3bfd179dc3b4c996f58db4cbcd26687a356fb3b7",
+                "name": "P07 / PASS / matching Status Type / [D] TitleView",
+                "identity": "web-corp.title-view",
+                "family": "title-view",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "View": "xLarge",
+                  "Skeleton": "False",
+                  "TitleStatus": true,
+                  "Status": true,
+                  "TitleAddon": false,
+                  "Holding": false,
+                  "RightAddon": false,
+                  "Subtitle": false,
+                  "Button group": false
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12196:86200",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": []
+          }
+        },
+        {
+          "nodeId": "I12196:86200;37705:55351",
+          "parentNodeId": "I12196:86200;37705:55350",
+          "component": {
+            "identity": "web-corp.status-property",
+            "family": "status-preset"
+          },
+          "owner": {
+            "nodeId": "12196:86200",
+            "identity": "web-corp.title-view",
+            "family": "title-view"
+          },
+          "contour": {
+            "identity": "web-corp.status-property",
+            "rootNodeId": "I12196:86200;37705:55351",
+            "isRoot": true,
+            "isResolvedRoot": true,
+            "root": {
+              "component": {
+                "key": "26b847ef2dadd62ff9728ab50c728f6c7dcef455",
+                "name": "StatusPreset",
+                "identity": "web-corp.status-property",
+                "family": "status-preset",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "Type": "Approved",
+                  "Style": "Contrast",
+                  "Size": "24"
+                },
+                "api": null,
+                "directOverrides": []
+              }
+            },
+            "ancestorNodeIds": []
+          }
+        },
+        {
+          "nodeId": "I12196:86200;37705:55351;60798:623943",
+          "parentNodeId": "I12196:86200;37705:55351",
+          "component": {
+            "identity": "web-core.status",
+            "family": "status"
+          },
+          "owner": {
+            "nodeId": "I12196:86200;37705:55351",
+            "identity": "web-corp.status-property",
+            "family": "status-preset"
+          },
+          "contour": {
+            "identity": "web-core.status",
+            "rootNodeId": "I12196:86200;37705:55351;60798:623943",
+            "isRoot": true,
+            "isResolvedRoot": true,
+            "root": {
+              "component": {
+                "key": "a54fc8de49f424f46ddb87e1f14103cda8a5456e",
+                "name": "Status",
+                "identity": "web-core.status",
+                "family": "status",
+                "library": "Web _ Core",
+                "lifecycle": "active",
+                "properties": {
+                  "Size": "24",
+                  "Shape": "Rounded",
+                  "LeftAddon": "False",
+                  "RightAddon": "False"
+                },
+                "api": null,
+                "directOverrides": []
+              }
+            },
+            "ancestorNodeIds": []
+          }
+        },
+        {
+          "nodeId": "I12196:86200;37705:55351;60798:623943;34498:5780",
+          "parentNodeId": "I12196:86200;37705:55351;60798:623943",
+          "component": {
+            "identity": "web-core.status",
+            "family": "label"
+          },
+          "owner": {
+            "nodeId": "I12196:86200;37705:55351;60798:623943",
+            "identity": "web-core.status",
+            "family": "status"
+          },
+          "contour": {
+            "identity": "web-core.status",
+            "rootNodeId": "I12196:86200;37705:55351;60798:623943",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "a54fc8de49f424f46ddb87e1f14103cda8a5456e",
+                "name": "Status",
+                "identity": "web-core.status",
+                "family": "status",
+                "library": "Web _ Core",
+                "lifecycle": "active",
+                "properties": {
+                  "Size": "24",
+                  "Shape": "Rounded",
+                  "LeftAddon": "False",
+                  "RightAddon": "False"
+                },
+                "api": null,
+                "directOverrides": []
+              }
+            },
+            "ancestorNodeIds": [
+              "I12196:86200;37705:55351;60798:623943"
+            ]
+          }
+        },
+        {
+          "nodeId": "I12196:86200;58026:551404",
+          "parentNodeId": "I12196:86200;37705:55349",
+          "component": {
+            "identity": "web-corp.title-view",
+            "family": "title-status"
+          },
+          "owner": {
+            "nodeId": "12196:86200",
+            "identity": "web-corp.title-view",
+            "family": "title-view"
+          },
+          "contour": {
+            "identity": "web-corp.title-view",
+            "rootNodeId": "12196:86200",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "3bfd179dc3b4c996f58db4cbcd26687a356fb3b7",
+                "name": "P07 / PASS / matching Status Type / [D] TitleView",
+                "identity": "web-corp.title-view",
+                "family": "title-view",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "View": "xLarge",
+                  "Skeleton": "False",
+                  "TitleStatus": true,
+                  "Status": true,
+                  "TitleAddon": false,
+                  "Holding": false,
+                  "RightAddon": false,
+                  "Subtitle": false,
+                  "Button group": false
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12196:86200",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "12196:86200"
+            ]
+          }
+        },
+        {
+          "nodeId": "12418:79821",
+          "parentNodeId": "12418:79819",
+          "component": {
+            "identity": "web-corp.title-view",
+            "family": "title-view"
+          },
+          "owner": null,
+          "contour": {
+            "identity": "web-corp.title-view",
+            "rootNodeId": "12418:79821",
+            "isRoot": true,
+            "isResolvedRoot": true,
+            "root": {
+              "component": {
+                "key": "3bfd179dc3b4c996f58db4cbcd26687a356fb3b7",
+                "name": "P07 / FAIL / TitleStatus Type=Attention / [D] TitleView",
+                "identity": "web-corp.title-view",
+                "family": "title-view",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "View": "xLarge",
+                  "Skeleton": "False",
+                  "TitleStatus": true,
+                  "Status": false,
+                  "TitleAddon": false,
+                  "Holding": false,
+                  "RightAddon": false,
+                  "Subtitle": false,
+                  "Button group": false
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12418:79821",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": []
+          }
+        },
+        {
+          "nodeId": "I12418:79821;58026:551404",
+          "parentNodeId": "I12418:79821;37705:55349",
+          "component": {
+            "identity": "web-corp.title-view",
+            "family": "title-status"
+          },
+          "owner": {
+            "nodeId": "12418:79821",
+            "identity": "web-corp.title-view",
+            "family": "title-view"
+          },
+          "contour": {
+            "identity": "web-corp.title-view",
+            "rootNodeId": "12418:79821",
+            "isRoot": false,
+            "isResolvedRoot": false,
+            "root": {
+              "component": {
+                "key": "3bfd179dc3b4c996f58db4cbcd26687a356fb3b7",
+                "name": "P07 / FAIL / TitleStatus Type=Attention / [D] TitleView",
+                "identity": "web-corp.title-view",
+                "family": "title-view",
+                "library": "Web _ Corp Components",
+                "lifecycle": "active",
+                "properties": {
+                  "View": "xLarge",
+                  "Skeleton": "False",
+                  "TitleStatus": true,
+                  "Status": false,
+                  "TitleAddon": false,
+                  "Holding": false,
+                  "RightAddon": false,
+                  "Subtitle": false,
+                  "Button group": false
+                },
+                "api": null,
+                "directOverrides": [
+                  {
+                    "nodeId": "12418:79821",
+                    "fields": [
+                      "height",
+                      "name",
+                      "width"
+                    ]
+                  }
+                ]
+              }
+            },
+            "ancestorNodeIds": [
+              "12418:79821"
+            ]
+          }
+        }
+      ]
+    },
+    "rules": [
+      {
+        "ruleId": "component:web-corp.buttons-group.button-count",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/ButtonGroup [D]/composition-contract.json",
+          "checksum": "3a6c2463f144da77f440576da16390efb7061ba7a71db30e37e86e74ce7fe3d9",
+          "anchor": "manual/contracts/buttons-group.composition/constraints/button-count"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        },
+        "presentation": null
+      },
+      {
+        "ruleId": "component:web-corp.buttons-group.allowed-views",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/ButtonGroup [D]/composition-contract.json",
+          "checksum": "3a6c2463f144da77f440576da16390efb7061ba7a71db30e37e86e74ce7fe3d9",
+          "anchor": "manual/contracts/buttons-group.composition/constraints/allowed-views"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        },
+        "presentation": null
+      },
+      {
+        "ruleId": "component:web-corp.buttons-group.uniform-size",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/ButtonGroup [D]/composition-contract.json",
+          "checksum": "3a6c2463f144da77f440576da16390efb7061ba7a71db30e37e86e74ce7fe3d9",
+          "anchor": "manual/contracts/buttons-group.composition/constraints/uniform-size"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        },
+        "presentation": null
+      },
+      {
+        "ruleId": "component:web-corp.buttons-group.primary-position",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/ButtonGroup [D]/composition-contract.json",
+          "checksum": "3a6c2463f144da77f440576da16390efb7061ba7a71db30e37e86e74ce7fe3d9",
+          "anchor": "manual/contracts/buttons-group.composition/constraints/primary-position"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        },
+        "presentation": {
+          "schemaVersion": "apollo.predicate-presentation.v1",
+          "title": "Primary-кнопка находится не на первом месте",
+          "observed": "В группе Primary-кнопка расположена не первой или используется несколько раз.",
+          "expectation": "Primary-кнопка необязательна, но может быть только одной и только первой.",
+          "action": "Переместить Primary-кнопку на первое место или изменить лишние Primary-кнопки на Secondary."
+        }
+      },
+      {
+        "ruleId": "component:web-corp.buttons-group.single-icon-position",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/ButtonGroup [D]/composition-contract.json",
+          "checksum": "3a6c2463f144da77f440576da16390efb7061ba7a71db30e37e86e74ce7fe3d9",
+          "anchor": "manual/contracts/buttons-group.composition/constraints/single-icon-position"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        },
+        "presentation": null
+      },
+      {
+        "ruleId": "component:web-corp.title-view.visible-slots-follow-required-order",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/TitleView/composition-contract.json",
+          "checksum": "245a7f862a3afdef140500cabfe08d386f45a7d07fa2916bda122f86db546bdb",
+          "anchor": "manual/slotOrderPolicy"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        },
+        "presentation": {
+          "schemaVersion": "apollo.predicate-presentation.v1",
+          "title": "Нарушен порядок элементов TitleView",
+          "observed": "Элемент {{actual}} расположен раньше обязательного предыдущего элемента {{expected}}.",
+          "expectation": "Видимые элементы TitleView должны сохранять порядок, заданный контрактом компонента.",
+          "action": "Восстановить порядок элементов через свойства опубликованного TitleView."
+        }
+      },
+      {
+        "ruleId": "rule:controls.buttons-and-button-groups.desktop-safe-variants",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/patterns/p_buttons-and-buttons-group.md",
+          "checksum": "9aa0b263fa31318eee6ddcc8940ab386f918ed6567cc119ecee5e2ac2200e0cc",
+          "anchor": "rule:controls.buttons-and-button-groups.desktop-safe-variants"
+        },
+        "scope": {
+          "platform": [
+            "desktop"
+          ]
+        }
+      },
+      {
+        "ruleId": "component:web-corp.table-view.compact-is-consistent-across-rows",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/TableView/rules.json",
+          "checksum": "99d2ee90c9ff58e91c93107f91aeae1ca66b457413d481281269ac48f3c43d84",
+          "anchor": "manual/rules/component:web-corp.table-view.compact-is-consistent-across-rows"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        }
+      },
+      {
+        "ruleId": "component:web-corp.table-view.horizontal-compact-one-column",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/TableView/rules.json",
+          "checksum": "99d2ee90c9ff58e91c93107f91aeae1ca66b457413d481281269ac48f3c43d84",
+          "anchor": "manual/rules/component:web-corp.table-view.horizontal-compact-one-column"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        }
+      },
+      {
+        "ruleId": "component:web-corp.status-property.shape-is-fixed-by-preset",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/Status & Property/rules.json",
+          "checksum": "2854440a5f585a2e717c8aeb3a61f7c2c60fe6c1e8b3511cc9e46a0750ea3c2c",
+          "anchor": "rules/component:web-corp.status-property.shape-is-fixed-by-preset"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        },
+        "presentation": {
+          "schemaVersion": "apollo.predicate-presentation.v1",
+          "title": "Форма Status не соответствует preset",
+          "observed": "Внутри {{contextLabel}} у Status выбран Shape={{actual}}.",
+          "expectation": "Форма вложенного Status должна соответствовать preset: Shape={{expected}}.",
+          "action": "Вернуть Shape={{expected}}.",
+          "contextLabels": {
+            "status-preset": "StatusPreset",
+            "property-preset": "PropertyPreset"
+          },
+          "contextFact": "ownership.owner.component.family",
+          "targetFact": "component.properties.Shape"
+        }
+      },
+      {
+        "ruleId": "component:web-corp.title-view.root-style-and-clickability-prohibited",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/TitleView/rules.json",
+          "checksum": "d862d145b40a65ab8d737afc98c059a405ff1cf20564abc0badfe54987672b3b",
+          "anchor": "rules/component:web-corp.title-view.root-style-and-clickability-prohibited"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        },
+        "presentation": {
+          "schemaVersion": "apollo.predicate-presentation.v1",
+          "title": "Изменена прозрачность корня TitleView",
+          "observed": "Прозрачность изменена с {{expected}} на {{actual}}.",
+          "expectation": "Прозрачность корня TitleView должна совпадать с effective baseline выбранного варианта.",
+          "action": "Сбросить прозрачность корня TitleView к effective baseline.",
+          "targetFact": "appearance.opacity"
+        }
+      },
+      {
+        "ruleId": "component:web-corp.title-view.status-and-title-status-color-match",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/TitleView/rules.json",
+          "checksum": "d862d145b40a65ab8d737afc98c059a405ff1cf20564abc0badfe54987672b3b",
+          "anchor": "rules/component:web-corp.title-view.status-and-title-status-color-match"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        },
+        "presentation": {
+          "schemaVersion": "apollo.predicate-presentation.v1",
+          "title": "Типы Status и TitleStatus не совпадают",
+          "observed": "Обнаружены разные значения Type: {{actual}}.",
+          "expectation": "При совместном использовании Status и TitleStatus их значения Type должны совпадать.",
+          "action": "Установить для TitleStatus тот же Type, что используется у Status.",
+          "targetFact": "composition.peerCollections.statusTypeConsistency.values"
+        }
+      },
+      {
+        "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/TitleView/rules.json",
+          "checksum": "d862d145b40a65ab8d737afc98c059a405ff1cf20564abc0badfe54987672b3b",
+          "anchor": "rules/component:web-corp.title-view.title-and-subtitle-typography-is-fixed"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        },
+        "presentation": {
+          "schemaVersion": "apollo.predicate-presentation.v1",
+          "title": "Изменена фиксированная типографика TitleView",
+          "observed": "Текстовый стиль изменён с {{expected}} на {{actual}}.",
+          "expectation": "Типографика Title и Subtitle должна совпадать с effective baseline выбранного View.",
+          "action": "Сбросить текстовый стиль к effective baseline TitleView.",
+          "targetFact": "appearance.styles.textStyle"
+        }
+      },
+      {
+        "ruleId": "component:web-corp.title-view.title-status-requires-status",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/JSONS/web/components/web-corp/TitleView/rules.json",
+          "checksum": "d862d145b40a65ab8d737afc98c059a405ff1cf20564abc0badfe54987672b3b",
+          "anchor": "rules/component:web-corp.title-view.title-status-requires-status"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        },
+        "presentation": {
+          "schemaVersion": "apollo.predicate-presentation.v1",
+          "title": "TitleStatus включён без Status",
+          "observed": "У TitleView включён TitleStatus, но свойство Status имеет значение {{actual}}.",
+          "expectation": "TitleStatus может использоваться только при Status=true у того же TitleView.",
+          "action": "Включить свойство Status у TitleView или отключить TitleStatus.",
+          "targetFact": "component.properties.Status"
+        }
+      },
+      {
+        "ruleId": "rule:components.title-view.single-xlarge",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/patterns/p_title-view.md",
+          "checksum": "037ceb09cd62e8687c69e385abeed3a394c76c18234525f9af1b387954ae33b7",
+          "anchor": "rules/rule:components.title-view.single-xlarge"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ]
+        },
+        "presentation": {
+          "schemaVersion": "apollo.predicate-presentation.v1",
+          "title": "На странице несколько главных заголовков",
+          "observed": "В выбранной области найдено {{actual}} TitleView с View=xLarge.",
+          "expectation": "На одной странице допускается только один TitleView с View=xLarge.",
+          "action": "Оставить один TitleView xLarge; остальные перевести на следующий уровень иерархии."
+        }
+      },
+      {
+        "ruleId": "rule:forms.construction-rules.block-spacing.first-level",
+        "revision": 4,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/patterns/p_form-construction-rules.md",
+          "checksum": "163809ade36747bf1d8b1b3cdf694f20958304d9aecad4c1e9e006d61727c2b0",
+          "anchor": "rules/rule:forms.construction-rules.block-spacing.first-level"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ],
+          "pageType": [
+            "form"
+          ]
+        },
+        "presentation": {
+          "schemaVersion": "apollo.predicate-presentation.v1",
+          "title": "Неверный отступ между блоками первого уровня формы",
+          "observed": "Вертикальный отступ между соседними подложками: {{measured}} px.",
+          "expectation": "Между соседними блоками первого уровня формы должно быть 24 px.",
+          "action": "Установить вертикальный отступ между подложками 24 px."
+        }
+      },
+      {
+        "ruleId": "rule:forms.construction-rules.block-spacing.second-level-actions",
+        "revision": 3,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/patterns/p_form-construction-rules.md",
+          "checksum": "163809ade36747bf1d8b1b3cdf694f20958304d9aecad4c1e9e006d61727c2b0",
+          "anchor": "rules/rule:forms.construction-rules.block-spacing.second-level-actions"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ],
+          "pageType": [
+            "form"
+          ]
+        },
+        "presentation": {
+          "schemaVersion": "apollo.predicate-presentation.v1",
+          "title": "Неверный отступ перед основными действиями формы",
+          "observed": "Вертикальный отступ от последнего блока второго уровня до основных действий: {{measured}} px.",
+          "expectation": "Перед основными действиями формы должно быть 32 px.",
+          "action": "Установить вертикальный отступ перед основными действиями 32 px."
+        }
+      },
+      {
+        "ruleId": "rule:forms.construction-rules.inner-padding-standard.content-insets",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/patterns/p_form-construction-rules.md",
+          "checksum": "163809ade36747bf1d8b1b3cdf694f20958304d9aecad4c1e9e006d61727c2b0",
+          "anchor": "rules/rule:forms.construction-rules.inner-padding-standard.content-insets"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ],
+          "pageType": [
+            "form"
+          ]
+        },
+        "presentation": {
+          "schemaVersion": "apollo.predicate-presentation.v1",
+          "title": "Неверные внутренние отступы блока формы",
+          "observed": "Внутренние отступы стандартного блока формы не соответствуют 32 px.",
+          "expectation": "В стандартном блоке формы внутренние отступы сверху, справа, снизу и слева должны быть 32 px.",
+          "action": "Установить внутренние отступы блока 32 px."
+        }
+      },
+      {
+        "ruleId": "rule:forms.construction-rules.inner-padding-standard.title-to-content",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/patterns/p_form-construction-rules.md",
+          "checksum": "163809ade36747bf1d8b1b3cdf694f20958304d9aecad4c1e9e006d61727c2b0",
+          "anchor": "rules/rule:forms.construction-rules.inner-padding-standard.title-to-content"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ],
+          "pageType": [
+            "form"
+          ]
+        },
+        "presentation": {
+          "schemaVersion": "apollo.predicate-presentation.v1",
+          "title": "Неверный отступ от TitleView Medium до контента",
+          "observed": "Вертикальный отступ от заголовка до первого контентного блока: {{measured}} px.",
+          "expectation": "От TitleView Medium до первого контентного блока должно быть 24 px.",
+          "action": "Установить вертикальный отступ между TitleView Medium и контентом 24 px."
+        }
+      },
+      {
+        "ruleId": "rule:forms.construction-rules.layout-8-4",
+        "revision": 1,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/patterns/p_form-construction-rules.md",
+          "checksum": "163809ade36747bf1d8b1b3cdf694f20958304d9aecad4c1e9e006d61727c2b0",
+          "anchor": "rules/rule:forms.construction-rules.layout-8-4"
+        },
+        "scope": {
+          "platform": [
+            "desktop"
+          ],
+          "pageType": [
+            "form"
+          ]
+        },
+        "presentation": {
+          "schemaVersion": "apollo.predicate-presentation.v1",
+          "title": "Нарушена сетка формы 8+4",
+          "observed": "Ширины основной и правой зон или отступ между ними не соответствуют формуле 8+4.",
+          "expectation": "Основная зона должна занимать 8 колонок, правая — 4, а отступ между ними — 24 px.",
+          "action": "Вернуть ширины зон к сетке 8+4 и установить отступ 24 px."
+        }
+      },
+      {
+        "ruleId": "rule:forms.construction-rules.title-medium-one-per-plate",
+        "revision": 2,
+        "severity": "error",
+        "source": {
+          "path": "design-system_ab/patterns/p_form-construction-rules.md",
+          "checksum": "163809ade36747bf1d8b1b3cdf694f20958304d9aecad4c1e9e006d61727c2b0",
+          "anchor": "rules/rule:forms.construction-rules.title-medium-one-per-plate"
+        },
+        "scope": {
+          "platform": [
+            "desktop",
+            "mobile-web"
+          ],
+          "pageType": [
+            "form"
+          ]
+        },
+        "presentation": {
+          "schemaVersion": "apollo.predicate-presentation.v1",
+          "title": "На одной подложке несколько TitleView Medium",
+          "observed": "Этот TitleView Medium не является единственным или первым заголовком Medium на подложке.",
+          "expectation": "На одной подложке формы допускается только один TitleView с View=Medium.",
+          "action": "Оставить один TitleView Medium как главный заголовок логической части; остальные перевести на следующий уровень иерархии.",
+          "targetFact": "composition.formFirstLevelSurface.mediumTitlePosition"
+        }
+      }
+    ],
+    "result": {
+      "schemaVersion": "apollo.predicate-result.v1",
+      "snapshotHash": "3d71c452ee316775227a4fd286f800d4c88fc06d80aeb479087bac68880bb21e",
+      "ruleRelease": "a185fe3457c8241e4e50b607bc955e2e857fea889b033715f839810831cf25b1",
+      "evaluations": [
+        {
+          "evaluationId": "cb060db4dadc0409d3f68e5685f194cb7dfccdcdb8c333779f8e0cebc740a21a",
+          "ruleId": "component:web-corp.buttons-group.allowed-views",
+          "ruleRevision": 1,
+          "subjectNodeId": "12196:86198",
+          "focusNodeId": "12196:86198",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "one-of",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "e761f8dc89800c78d09e9044914fd1085541bbfdd613d23e37b1c7a713b3ec1c",
+          "ruleId": "component:web-corp.buttons-group.button-count",
+          "ruleRevision": 1,
+          "subjectNodeId": "12196:86198",
+          "focusNodeId": "12196:86198",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "count-between",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "3e3022385b507e2ed0a62a4ff2a1958d2cda4d4a05fb6d3a27eb07cf55ef7eb8",
+          "ruleId": "component:web-corp.buttons-group.primary-position",
+          "ruleRevision": 1,
+          "subjectNodeId": "12196:86198",
+          "focusNodeId": "12196:86198",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "value-position",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "0b1af454c842578affdb5c4dee2dba358932d6ee0b9c0bfc1053b0e592220764",
+          "ruleId": "component:web-corp.buttons-group.single-icon-position",
+          "ruleRevision": 1,
+          "subjectNodeId": "12196:86198",
+          "focusNodeId": "12196:86198",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "value-position",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "798ac6734dbe884e2b477a561f94459337331f2368d146f6aa2a2d7faa44fc5d",
+          "ruleId": "component:web-corp.buttons-group.uniform-size",
+          "ruleRevision": 1,
+          "subjectNodeId": "12196:86198",
+          "focusNodeId": "12196:86198",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "equals",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "27695409c0445cdd4b96d701589a62061472eec5343046774ccb21b2c7a37c48",
+          "ruleId": "component:web-corp.table-view.compact-is-consistent-across-rows",
+          "ruleRevision": 1,
+          "subjectNodeId": "12196:86198",
+          "focusNodeId": "12196:86198",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "414aaa4a1825f041fddbe79b28fb7f8de6691821a9d2635fc46d9d2f74cd8bf9",
+          "ruleId": "component:web-corp.table-view.horizontal-compact-one-column",
+          "ruleRevision": 1,
+          "subjectNodeId": "12196:86198",
+          "focusNodeId": "12196:86198",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "count-between",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "fce8ec1bbcdd3db70228e8a62af2ebe69c22f92a26f276f8ca126e6c48481ba6",
+          "ruleId": "rule:components.title-view.single-xlarge",
+          "ruleRevision": 1,
+          "subjectNodeId": "12196:86198",
+          "focusNodeId": "12196:86198",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "count-between",
+            "truth": "true",
+            "reason": "numeric range inclusive evaluated",
+            "actual": 1,
+            "expected": {
+              "lower": 0,
+              "upper": 1,
+              "bounds": "inclusive"
+            },
+            "factPaths": [
+              "component.identity",
+              "component.properties.View",
+              "ownership.contour.isResolvedRoot",
+              "type"
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "2da943e980f7c3ebd82dc8425505c3fa2c5296a3334f36dbbccea86448ccfeb2",
+          "ruleId": "rule:controls.buttons-and-button-groups.desktop-safe-variants",
+          "ruleRevision": 1,
+          "subjectNodeId": "12196:86198",
+          "focusNodeId": "12196:86198",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "not",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "81bbd49699c18df2214c59bafb6d2d5a99d7c2f074d79abbc68a9fac99f8ca7d",
+          "ruleId": "rule:forms.construction-rules.block-spacing.first-level",
+          "ruleRevision": 4,
+          "subjectNodeId": "12196:86198",
+          "focusNodeId": "12196:86198",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "distance",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "f2e71e97e9970d81ad790f1641ea16b357fa65f02d7c5c01f62512ac893fb625",
+          "ruleId": "rule:forms.construction-rules.block-spacing.second-level-actions",
+          "ruleRevision": 3,
+          "subjectNodeId": "12196:86198",
+          "focusNodeId": "12196:86198",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "distance",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "54e8487728bf17cde37d991cd72fcf10293596da6554087f0b611207748e1de1",
+          "ruleId": "rule:forms.construction-rules.inner-padding-standard.content-insets",
+          "ruleRevision": 1,
+          "subjectNodeId": "12196:86198",
+          "focusNodeId": "12196:86198",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "dc0863b55e8beeb6486bbc9515063c7e9667c2bcf661243f46e025afb8e7165f",
+          "ruleId": "rule:forms.construction-rules.inner-padding-standard.title-to-content",
+          "ruleRevision": 1,
+          "subjectNodeId": "12196:86198",
+          "focusNodeId": "12196:86198",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "distance",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "23cfafb4a94798e0c3ee35ad90333dc35661b018320c5bc99877dfb7687b9a0d",
+          "ruleId": "rule:forms.construction-rules.layout-8-4",
+          "ruleRevision": 1,
+          "subjectNodeId": "12196:86198",
+          "focusNodeId": "12196:86198",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "a2a8710da143acee2da900d6067d22ec8525d641a51c15018d05c03a921ac25c",
+          "ruleId": "rule:forms.construction-rules.title-medium-one-per-plate",
+          "ruleRevision": 2,
+          "subjectNodeId": "12196:86198",
+          "focusNodeId": "12196:86198",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "one-of",
+            "truth": "unknown",
+            "reason": "selector matched no visible nodes",
+            "actual": {
+              "state": "absent"
+            },
+            "expected": {
+              "state": "unknown"
+            },
+            "factPaths": []
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "fad15c38f70ca46283fff1372c15828cc6a24f6c81fb0ebdb4b6a97628ad82c8",
+          "ruleId": "component:web-corp.title-view.root-style-and-clickability-prohibited",
+          "ruleRevision": 1,
+          "subjectNodeId": "12196:86200",
+          "focusNodeId": "12196:86200",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "true",
+            "reason": "logical all evaluated",
+            "actual": [
+              "true"
+            ],
+            "expected": "all true",
+            "factPaths": [
+              "appearance.opacity",
+              "baseline.effective.appearance.opacity"
+            ],
+            "children": [
+              {
+                "predicate": "matches-effective-baseline",
+                "truth": "true",
+                "reason": "actual value matches effective baseline",
+                "actual": 1,
+                "expected": 1,
+                "factPaths": [
+                  "appearance.opacity",
+                  "baseline.effective.appearance.opacity"
+                ]
+              }
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "b129fd9036861b2457c8e28c67a3bbaa2fd55e4a02426427c3303c9fde651e25",
+          "ruleId": "component:web-corp.title-view.title-status-requires-status",
+          "ruleRevision": 1,
+          "subjectNodeId": "12196:86200",
+          "focusNodeId": "12196:86200",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "one-of",
+            "truth": "true",
+            "reason": "value belongs to the allowed set",
+            "actual": true,
+            "expected": [
+              true
+            ],
+            "factPaths": [
+              "component.properties.Status"
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "5d51d582b848c7b9fbe1c731eee23712390f6ccb429409818f1fd6cffa23751d",
+          "ruleId": "rule:components.title-view.single-xlarge",
+          "ruleRevision": 1,
+          "subjectNodeId": "12418:79819",
+          "focusNodeId": "12418:79819",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "count-between",
+            "truth": "true",
+            "reason": "numeric range inclusive evaluated",
+            "actual": 1,
+            "expected": {
+              "lower": 0,
+              "upper": 1,
+              "bounds": "inclusive"
+            },
+            "factPaths": [
+              "component.identity",
+              "component.properties.View",
+              "ownership.contour.isResolvedRoot",
+              "type"
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "6ec781ad425273ac79a2e58ff6edf3e296bca8ea8a0ca1731c9ea30f0164ff06",
+          "ruleId": "component:web-corp.title-view.root-style-and-clickability-prohibited",
+          "ruleRevision": 1,
+          "subjectNodeId": "12418:79821",
+          "focusNodeId": "12418:79821",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "true",
+            "reason": "logical all evaluated",
+            "actual": [
+              "true"
+            ],
+            "expected": "all true",
+            "factPaths": [
+              "appearance.opacity",
+              "baseline.effective.appearance.opacity"
+            ],
+            "children": [
+              {
+                "predicate": "matches-effective-baseline",
+                "truth": "true",
+                "reason": "actual value matches effective baseline",
+                "actual": 1,
+                "expected": 1,
+                "factPaths": [
+                  "appearance.opacity",
+                  "baseline.effective.appearance.opacity"
+                ]
+              }
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "6642bd6d542517ed00e7cd6bc79ece94d5fa814a59c1d474ca3dedead9f098f8",
+          "ruleId": "component:web-corp.title-view.title-status-requires-status",
+          "ruleRevision": 1,
+          "subjectNodeId": "12418:79821",
+          "focusNodeId": "12418:79821",
+          "applicability": "applicable",
+          "classification": "violation",
+          "severity": "error",
+          "trace": {
+            "predicate": "one-of",
+            "truth": "false",
+            "reason": "value is outside the allowed set",
+            "actual": false,
+            "expected": [
+              true
+            ],
+            "factPaths": [
+              "component.properties.Status"
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "19bffdde39743e0a44dbd4bfb1fe37ca2ec5923281e88861d15805034b1c96f2",
+          "ruleId": "component:web-corp.status-property.shape-is-fixed-by-preset",
+          "ruleRevision": 1,
+          "subjectNodeId": "I12196:86200;37705:55351;60798:623943",
+          "focusNodeId": "I12196:86200;37705:55351;60798:623943",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "any",
+            "truth": "true",
+            "reason": "logical any evaluated",
+            "actual": [
+              "true",
+              "false"
+            ],
+            "expected": "at least one true",
+            "factPaths": [
+              "component.properties.Shape",
+              "ownership.owner.component.family"
+            ],
+            "children": [
+              {
+                "predicate": "all",
+                "truth": "true",
+                "reason": "logical all evaluated",
+                "actual": [
+                  "true",
+                  "true"
+                ],
+                "expected": "all true",
+                "factPaths": [
+                  "component.properties.Shape",
+                  "ownership.owner.component.family"
+                ],
+                "children": [
+                  {
+                    "predicate": "equals",
+                    "truth": "true",
+                    "reason": "values are equal",
+                    "actual": "status-preset",
+                    "expected": "status-preset",
+                    "factPaths": [
+                      "ownership.owner.component.family"
+                    ]
+                  },
+                  {
+                    "predicate": "equals",
+                    "truth": "true",
+                    "reason": "values are equal",
+                    "actual": "Rounded",
+                    "expected": "Rounded",
+                    "factPaths": [
+                      "component.properties.Shape"
+                    ]
+                  }
+                ]
+              },
+              {
+                "predicate": "all",
+                "truth": "false",
+                "reason": "logical all evaluated",
+                "actual": [
+                  "false",
+                  "false"
+                ],
+                "expected": "all true",
+                "factPaths": [
+                  "component.properties.Shape",
+                  "ownership.owner.component.family"
+                ],
+                "children": [
+                  {
+                    "predicate": "equals",
+                    "truth": "false",
+                    "reason": "values differ",
+                    "actual": "status-preset",
+                    "expected": "property-preset",
+                    "factPaths": [
+                      "ownership.owner.component.family"
+                    ]
+                  },
+                  {
+                    "predicate": "equals",
+                    "truth": "false",
+                    "reason": "values differ",
+                    "actual": "Rounded",
+                    "expected": "Rectangular",
+                    "factPaths": [
+                      "component.properties.Shape"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "ec746fc5f2cf9816c75aba25128c1e26f0d8695d495e30eefee0548d8e70d43a",
+          "ruleId": "component:web-corp.title-view.visible-slots-follow-required-order",
+          "ruleRevision": 1,
+          "subjectNodeId": "I12196:86200;37705:55352",
+          "focusNodeId": "I12196:86200;37705:55352",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "true",
+            "reason": "logical all evaluated",
+            "actual": [
+              "true",
+              "true",
+              "true"
+            ],
+            "expected": "all true",
+            "factPaths": [
+              "composition.expectedPreviousSlotNodeId",
+              "composition.expectedPreviousSlotRole",
+              "id",
+              "slot.role"
+            ],
+            "children": [
+              {
+                "predicate": "after",
+                "truth": "true",
+                "reason": "node relation after holds",
+                "actual": "I12196:86200;37705:55352",
+                "expected": "I12196:86200;37705:55350",
+                "factPaths": [
+                  "composition.expectedPreviousSlotNodeId",
+                  "id"
+                ]
+              },
+              {
+                "predicate": "exists",
+                "truth": "true",
+                "reason": "fact exists",
+                "actual": "Heading",
+                "expected": null,
+                "factPaths": [
+                  "slot.role"
+                ]
+              },
+              {
+                "predicate": "exists",
+                "truth": "true",
+                "reason": "fact exists",
+                "actual": "Status",
+                "expected": null,
+                "factPaths": [
+                  "composition.expectedPreviousSlotRole"
+                ]
+              }
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "27643e6b3151b02c2eecb164fe93e155233eb41d5d490f6815e78b439a03d9ec",
+          "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+          "ruleRevision": 1,
+          "subjectNodeId": "I12196:86200;37705:55353",
+          "focusNodeId": "I12196:86200;37705:55353",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "true",
+            "reason": "logical all evaluated",
+            "actual": [
+              "true",
+              "true"
+            ],
+            "expected": "all true",
+            "factPaths": [
+              "appearance.styles.textStyle",
+              "baseline.effective.appearance.styles.textStyle"
+            ],
+            "children": [
+              {
+                "predicate": "exists",
+                "truth": "true",
+                "reason": "fact exists",
+                "actual": "S:e451446afce66cddd400f39abc5837a829b5a6c2,9221:114",
+                "expected": null,
+                "factPaths": [
+                  "appearance.styles.textStyle"
+                ]
+              },
+              {
+                "predicate": "matches-effective-baseline",
+                "truth": "true",
+                "reason": "actual value matches effective baseline",
+                "actual": "S:e451446afce66cddd400f39abc5837a829b5a6c2,9221:114",
+                "expected": "S:e451446afce66cddd400f39abc5837a829b5a6c2,9221:114",
+                "factPaths": [
+                  "appearance.styles.textStyle",
+                  "baseline.effective.appearance.styles.textStyle"
+                ]
+              }
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "6464d5f907cc051335c4784a6a486b5279ae5356067d1c20233d4412837ce19e",
+          "ruleId": "component:web-corp.title-view.status-and-title-status-color-match",
+          "ruleRevision": 1,
+          "subjectNodeId": "I12196:86200;58026:551404",
+          "focusNodeId": "I12196:86200;58026:551404",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "all-equal",
+            "truth": "true",
+            "reason": "all collection values are equal",
+            "actual": [
+              "Approved",
+              "Approved"
+            ],
+            "expected": "Approved",
+            "factPaths": [
+              "composition.peerCollections.statusTypeConsistency.values"
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "37c3a73d09079040fd15907f440616055dc4ef38415056aeb5e7e69347704d37",
+          "ruleId": "component:web-corp.title-view.visible-slots-follow-required-order",
+          "ruleRevision": 1,
+          "subjectNodeId": "I12196:86200;58026:551404",
+          "focusNodeId": "I12196:86200;58026:551404",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "true",
+            "reason": "logical all evaluated",
+            "actual": [
+              "true",
+              "true",
+              "true"
+            ],
+            "expected": "all true",
+            "factPaths": [
+              "composition.expectedPreviousSlotNodeId",
+              "composition.expectedPreviousSlotRole",
+              "id",
+              "slot.role"
+            ],
+            "children": [
+              {
+                "predicate": "after",
+                "truth": "true",
+                "reason": "node relation after holds",
+                "actual": "I12196:86200;58026:551404",
+                "expected": "I12196:86200;37705:55352",
+                "factPaths": [
+                  "composition.expectedPreviousSlotNodeId",
+                  "id"
+                ]
+              },
+              {
+                "predicate": "exists",
+                "truth": "true",
+                "reason": "fact exists",
+                "actual": "TitleStatus",
+                "expected": null,
+                "factPaths": [
+                  "slot.role"
+                ]
+              },
+              {
+                "predicate": "exists",
+                "truth": "true",
+                "reason": "fact exists",
+                "actual": "Heading",
+                "expected": null,
+                "factPaths": [
+                  "composition.expectedPreviousSlotRole"
+                ]
+              }
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "e5e2cc016c668812de189c102712a53fb949ee473b0b2c35b0e453110e3d185e",
+          "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+          "ruleRevision": 1,
+          "subjectNodeId": "I12196:86200;58026:551404;58026:551371",
+          "focusNodeId": "I12196:86200;58026:551404;58026:551371",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "true",
+            "reason": "logical all evaluated",
+            "actual": [
+              "true",
+              "true"
+            ],
+            "expected": "all true",
+            "factPaths": [
+              "appearance.styles.textStyle",
+              "baseline.effective.appearance.styles.textStyle"
+            ],
+            "children": [
+              {
+                "predicate": "exists",
+                "truth": "true",
+                "reason": "fact exists",
+                "actual": "S:69723bb178c1d1f9ec90e7b5670389dadb9de724,9221:117",
+                "expected": null,
+                "factPaths": [
+                  "appearance.styles.textStyle"
+                ]
+              },
+              {
+                "predicate": "matches-effective-baseline",
+                "truth": "true",
+                "reason": "actual value matches effective baseline",
+                "actual": "S:69723bb178c1d1f9ec90e7b5670389dadb9de724,9221:117",
+                "expected": "S:69723bb178c1d1f9ec90e7b5670389dadb9de724,9221:117",
+                "factPaths": [
+                  "appearance.styles.textStyle",
+                  "baseline.effective.appearance.styles.textStyle"
+                ]
+              }
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "d9db7bec70575fae3c167b89c691a154e082e1e3d9adcbd982da51c798f82a28",
+          "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+          "ruleRevision": 1,
+          "subjectNodeId": "I12196:86200;58026:551404;58026:551372",
+          "focusNodeId": "I12196:86200;58026:551404;58026:551372",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "true",
+            "reason": "logical all evaluated",
+            "actual": [
+              "true",
+              "true"
+            ],
+            "expected": "all true",
+            "factPaths": [
+              "appearance.styles.textStyle",
+              "baseline.effective.appearance.styles.textStyle"
+            ],
+            "children": [
+              {
+                "predicate": "exists",
+                "truth": "true",
+                "reason": "fact exists",
+                "actual": "S:6fb5ab6969beee7da9e23dfcbab2f4864b30b665,9221:96",
+                "expected": null,
+                "factPaths": [
+                  "appearance.styles.textStyle"
+                ]
+              },
+              {
+                "predicate": "matches-effective-baseline",
+                "truth": "true",
+                "reason": "actual value matches effective baseline",
+                "actual": "S:6fb5ab6969beee7da9e23dfcbab2f4864b30b665,9221:96",
+                "expected": "S:6fb5ab6969beee7da9e23dfcbab2f4864b30b665,9221:96",
+                "factPaths": [
+                  "appearance.styles.textStyle",
+                  "baseline.effective.appearance.styles.textStyle"
+                ]
+              }
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "7582bb925b18d7ecc03d68606247b81085b11b774499233a35455beeeb39575c",
+          "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+          "ruleRevision": 1,
+          "subjectNodeId": "I12418:79821;37705:55353",
+          "focusNodeId": "I12418:79821;37705:55353",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "true",
+            "reason": "logical all evaluated",
+            "actual": [
+              "true",
+              "true"
+            ],
+            "expected": "all true",
+            "factPaths": [
+              "appearance.styles.textStyle",
+              "baseline.effective.appearance.styles.textStyle"
+            ],
+            "children": [
+              {
+                "predicate": "exists",
+                "truth": "true",
+                "reason": "fact exists",
+                "actual": "S:e451446afce66cddd400f39abc5837a829b5a6c2,9221:114",
+                "expected": null,
+                "factPaths": [
+                  "appearance.styles.textStyle"
+                ]
+              },
+              {
+                "predicate": "matches-effective-baseline",
+                "truth": "true",
+                "reason": "actual value matches effective baseline",
+                "actual": "S:e451446afce66cddd400f39abc5837a829b5a6c2,9221:114",
+                "expected": "S:e451446afce66cddd400f39abc5837a829b5a6c2,9221:114",
+                "factPaths": [
+                  "appearance.styles.textStyle",
+                  "baseline.effective.appearance.styles.textStyle"
+                ]
+              }
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "b2662cacd036862b8af8bb4cbb99b22cb19eedfd282ea5d4082cb0552185961d",
+          "ruleId": "component:web-corp.title-view.status-and-title-status-color-match",
+          "ruleRevision": 1,
+          "subjectNodeId": "I12418:79821;58026:551404",
+          "focusNodeId": "I12418:79821;58026:551404",
+          "applicability": "not-applicable",
+          "classification": "not-applicable",
+          "severity": "error",
+          "trace": {
+            "predicate": "count-between",
+            "truth": "false",
+            "reason": "numeric range inclusive evaluated",
+            "actual": 1,
+            "expected": {
+              "lower": 2,
+              "upper": 2,
+              "bounds": "inclusive"
+            },
+            "factPaths": [
+              "composition.peerCollections.statusTypeConsistency.roles"
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "720b2788ff1f30390a8f3a78ee31f3346403b7540b898b573fae507c31c3370b",
+          "ruleId": "component:web-corp.title-view.visible-slots-follow-required-order",
+          "ruleRevision": 1,
+          "subjectNodeId": "I12418:79821;58026:551404",
+          "focusNodeId": "I12418:79821;58026:551404",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "true",
+            "reason": "logical all evaluated",
+            "actual": [
+              "true",
+              "true",
+              "true"
+            ],
+            "expected": "all true",
+            "factPaths": [
+              "composition.expectedPreviousSlotNodeId",
+              "composition.expectedPreviousSlotRole",
+              "id",
+              "slot.role"
+            ],
+            "children": [
+              {
+                "predicate": "after",
+                "truth": "true",
+                "reason": "node relation after holds",
+                "actual": "I12418:79821;58026:551404",
+                "expected": "I12418:79821;37705:55352",
+                "factPaths": [
+                  "composition.expectedPreviousSlotNodeId",
+                  "id"
+                ]
+              },
+              {
+                "predicate": "exists",
+                "truth": "true",
+                "reason": "fact exists",
+                "actual": "TitleStatus",
+                "expected": null,
+                "factPaths": [
+                  "slot.role"
+                ]
+              },
+              {
+                "predicate": "exists",
+                "truth": "true",
+                "reason": "fact exists",
+                "actual": "Heading",
+                "expected": null,
+                "factPaths": [
+                  "composition.expectedPreviousSlotRole"
+                ]
+              }
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "a10f8806fe2bda01af2a6f562f6ec519ca7a3eafa88149fb3be61e35a4c337e6",
+          "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+          "ruleRevision": 1,
+          "subjectNodeId": "I12418:79821;58026:551404;58026:551361",
+          "focusNodeId": "I12418:79821;58026:551404;58026:551361",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "true",
+            "reason": "logical all evaluated",
+            "actual": [
+              "true",
+              "true"
+            ],
+            "expected": "all true",
+            "factPaths": [
+              "appearance.styles.textStyle",
+              "baseline.effective.appearance.styles.textStyle"
+            ],
+            "children": [
+              {
+                "predicate": "exists",
+                "truth": "true",
+                "reason": "fact exists",
+                "actual": "S:69723bb178c1d1f9ec90e7b5670389dadb9de724,9221:117",
+                "expected": null,
+                "factPaths": [
+                  "appearance.styles.textStyle"
+                ]
+              },
+              {
+                "predicate": "matches-effective-baseline",
+                "truth": "true",
+                "reason": "actual value matches effective baseline",
+                "actual": "S:69723bb178c1d1f9ec90e7b5670389dadb9de724,9221:117",
+                "expected": "S:69723bb178c1d1f9ec90e7b5670389dadb9de724,9221:117",
+                "factPaths": [
+                  "appearance.styles.textStyle",
+                  "baseline.effective.appearance.styles.textStyle"
+                ]
+              }
+            ]
+          },
+          "actionId": null
+        },
+        {
+          "evaluationId": "7063e1482c6bb3a18350a01b1fded08ab3fe4c1bc32021a90cafdcf449e3a66c",
+          "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+          "ruleRevision": 1,
+          "subjectNodeId": "I12418:79821;58026:551404;58026:551362",
+          "focusNodeId": "I12418:79821;58026:551404;58026:551362",
+          "applicability": "applicable",
+          "classification": "compliant",
+          "severity": "error",
+          "trace": {
+            "predicate": "all",
+            "truth": "true",
+            "reason": "logical all evaluated",
+            "actual": [
+              "true",
+              "true"
+            ],
+            "expected": "all true",
+            "factPaths": [
+              "appearance.styles.textStyle",
+              "baseline.effective.appearance.styles.textStyle"
+            ],
+            "children": [
+              {
+                "predicate": "exists",
+                "truth": "true",
+                "reason": "fact exists",
+                "actual": "S:6fb5ab6969beee7da9e23dfcbab2f4864b30b665,9221:96",
+                "expected": null,
+                "factPaths": [
+                  "appearance.styles.textStyle"
+                ]
+              },
+              {
+                "predicate": "matches-effective-baseline",
+                "truth": "true",
+                "reason": "actual value matches effective baseline",
+                "actual": "S:6fb5ab6969beee7da9e23dfcbab2f4864b30b665,9221:96",
+                "expected": "S:6fb5ab6969beee7da9e23dfcbab2f4864b30b665,9221:96",
+                "factPaths": [
+                  "appearance.styles.textStyle",
+                  "baseline.effective.appearance.styles.textStyle"
+                ]
+              }
+            ]
+          },
+          "actionId": null
+        }
+      ],
+      "coverage": {
+        "total": 32,
+        "byClassification": {
+          "not-applicable": 15,
+          "compliant": 16,
+          "violation": 1
+        },
+        "unclassified": 0,
+        "duplicateEvaluationIds": 0
+      }
+    },
+    "repeatability": {
+      "runCount": 10,
+      "stable": true,
+      "resultHash": "d59aa24c5fce6a0f668aad01e6e98ce6db2bd36be14472e3e39190c1b6920110"
+    }
+  },
+  "ui": {
+    "responseMarkdown": "## Общие паттерны\n| Статус | Причина | Ожидание | Действие |\n| --- | --- | --- | --- |\n| Ошибка | TitleStatus включён без Status<br>У TitleView включён TitleStatus, но свойство Status имеет значение false. | TitleStatus может использоваться только при Status=true у того же TitleView.<br>TitleView/rules.json | Включить свойство Status у TitleView или отключить TitleStatus. |\n\n## Паттерны страницы\n| Статус | Причина | Ожидание | Действие |\n| --- | --- | --- | --- |",
+    "findings": [
+      {
+        "id": "6642bd6d542517ed00e7cd6bc79ece94d5fa814a59c1d474ca3dedead9f098f8",
+        "nodeId": "12418:79821",
+        "priority": "error",
+        "verdict": "confirmed",
+        "title": "TitleStatus включён без Status",
+        "observed": "У TitleView включён TitleStatus, но свойство Status имеет значение false.",
+        "factPath": "component.properties.Status",
+        "patternScope": "general"
+      }
+    ]
+  }
+}
