@@ -1,0 +1,3234 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1574738253305514894-1787752558069-gafx1bsx:agent",
+  "sourceReportId": "apollo-1574738253305514894-1787752558069-gafx1bsx",
+  "generatedAt": "2026-08-26T13:55:58.069Z",
+  "suggestedFileName": "Ekaterina-Sokolova_26-08-2026_16-55-58_agent.json",
+  "user": {
+    "id": "1574738253305514894",
+    "name": "Ekaterina Sokolova",
+    "slug": "Ekaterina-Sokolova"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.1.63"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "Счёт цифровых рублей",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "startedAt": "2026-08-26T13:55:40.034Z",
+    "finishedAt": "2026-08-26T13:55:58.069Z",
+    "durationMs": 18035,
+    "selection": [
+      {
+        "nodeId": "123404:438496",
+        "name": "Android:: Между счетами",
+        "nodeType": "FRAME",
+        "path": "Android:: Между счетами",
+        "componentKey": null
+      },
+      {
+        "nodeId": "123496:418020",
+        "name": "Android",
+        "nodeType": "FRAME",
+        "path": "Android",
+        "componentKey": null
+      },
+      {
+        "nodeId": "123627:149248",
+        "name": "Android:: Между счетами",
+        "nodeType": "FRAME",
+        "path": "Android:: Между счетами",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 260,
+    "problemOccurrenceCount": 153,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 5,
+      "customStyles": 148,
+      "updates": 0,
+      "customizations": 0,
+      "localComponents": 0,
+      "detachedComponents": 0,
+      "presets": 0,
+      "technicalComponents": 0,
+      "currentComponents": 15,
+      "wrongChannel": 0,
+      "themization": 0
+    },
+    "includedFindingCount": 153,
+    "omittedCurrentComponentCount": 15
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with severity=error and matchKind=exact_component_rule for the same property/change.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 5,
+      "includedCount": 5,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 148,
+      "includedCount": 148,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "deprecatedStyles",
+      "severityHint": "medium",
+      "title": "Устаревший стиль",
+      "node": {
+        "id": "I123404:438498;11:276352;11:276509;11:276336;13834:631",
+        "name": "Shape",
+        "type": "VECTOR",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Header / TopAppBar / PageHeader / .RegularTopAppBar_New / Set / ❌.Glyph / arrow-left / Shape",
+        "visible": true
+      },
+      "style": {
+        "name": "light/graphic/primary",
+        "key": "8c5ec1a5d6949a0d8d6535d6446095e35485ad36",
+        "library": "020 :: Colors BlueTint Light",
+        "sourceFile": "styles/020 _ Colors BlueTint Light.json"
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "deprecatedStyles",
+      "severityHint": "medium",
+      "title": "Устаревший стиль",
+      "node": {
+        "id": "123496:418025",
+        "name": "TopAppBar / PageHeader",
+        "type": "INSTANCE",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android / Header / TopAppBar / PageHeader",
+        "visible": true
+      },
+      "style": {
+        "name": "light/bg/primary",
+        "key": "4ebfb8f1d236d6a150a43b63b8d2f518e1a0c277",
+        "library": "020 :: Colors BlueTint Light",
+        "sourceFile": "styles/020 _ Colors BlueTint Light.json"
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "deprecatedStyles",
+      "severityHint": "medium",
+      "title": "Устаревший стиль",
+      "node": {
+        "id": "I123496:418025;11:276352;11:276509;11:276336;13834:631",
+        "name": "Shape",
+        "type": "VECTOR",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android / Header / TopAppBar / PageHeader / .RegularTopAppBar_New / Set / ❌.Glyph / arrow-left / Shape",
+        "visible": true
+      },
+      "style": {
+        "name": "light/graphic/primary",
+        "key": "8c5ec1a5d6949a0d8d6535d6446095e35485ad36",
+        "library": "020 :: Colors BlueTint Light",
+        "sourceFile": "styles/020 _ Colors BlueTint Light.json"
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "deprecatedStyles",
+      "severityHint": "medium",
+      "title": "Устаревший стиль",
+      "node": {
+        "id": "I123496:418025;11:276352;11:276519",
+        "name": "_title",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android / Header / TopAppBar / PageHeader / .RegularTopAppBar_New / Header / _title",
+        "visible": true
+      },
+      "style": {
+        "name": "light/text/primary",
+        "key": "6313f5ef73de1fb787861cd6e0408c77214b7898",
+        "library": "020 :: Colors BlueTint Light",
+        "sourceFile": "styles/020 _ Colors BlueTint Light.json"
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "deprecatedStyles",
+      "severityHint": "medium",
+      "title": "Устаревший стиль",
+      "node": {
+        "id": "I123627:149250;11:276352;11:276509;11:276336;13834:631",
+        "name": "Shape",
+        "type": "VECTOR",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Header / TopAppBar / PageHeader / .RegularTopAppBar_New / Set / ❌.Glyph / arrow-left / Shape",
+        "visible": true
+      },
+      "style": {
+        "name": "light/graphic/primary",
+        "key": "8c5ec1a5d6949a0d8d6535d6446095e35485ad36",
+        "library": "020 :: Colors BlueTint Light",
+        "sourceFile": "styles/020 _ Colors BlueTint Light.json"
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438498;11:276352;11:276519",
+        "name": "_title",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Header / TopAppBar / PageHeader / .RegularTopAppBar_New / Header / _title",
+        "visible": true
+      },
+      "style": {
+        "name": "16/20 px · Medium · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438500;19805:209152;13282:172445;563:45959;2175:91082;2175:90916",
+        "name": "major",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Content / StackView / AccountToAccount / VerticalPaddingsGroup / ContentGroup / ContentViewA / VerticalPaddingsGroup / ContentGroup / ContentViewB / VerticalPaddingsGroup / ContentGroup / FirstLine / Title / ContentGroup / Title / major",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Medium · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438500;19805:209152;13282:172445;563:45959;2175:91082;2175:90918",
+        "name": ",",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Content / StackView / AccountToAccount / VerticalPaddingsGroup / ContentGroup / ContentViewA / VerticalPaddingsGroup / ContentGroup / ContentViewB / VerticalPaddingsGroup / ContentGroup / FirstLine / Title / ContentGroup / Title / MinorGroup / ,",
+        "visible": true
+      },
+      "style": {
+        "name": "16/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438500;19805:209152;13282:172445;563:45959;2175:91082;2175:90920",
+        "name": "minor",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Content / StackView / AccountToAccount / VerticalPaddingsGroup / ContentGroup / ContentViewA / VerticalPaddingsGroup / ContentGroup / ContentViewB / VerticalPaddingsGroup / ContentGroup / FirstLine / Title / ContentGroup / Title / MinorGroup / CurrencyGroup / minor",
+        "visible": true
+      },
+      "style": {
+        "name": "16/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438500;19805:209152;13282:172445;563:45959;2175:91082;2175:90921",
+        "name": "currency",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Content / StackView / AccountToAccount / VerticalPaddingsGroup / ContentGroup / ContentViewA / VerticalPaddingsGroup / ContentGroup / ContentViewB / VerticalPaddingsGroup / ContentGroup / FirstLine / Title / ContentGroup / Title / MinorGroup / CurrencyGroup / currency",
+        "visible": true
+      },
+      "style": {
+        "name": "16/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438500;19805:209152;13282:172445;563:45962;2175:91082;2175:90949",
+        "name": "title",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Content / StackView / AccountToAccount / VerticalPaddingsGroup / ContentGroup / ContentViewA / VerticalPaddingsGroup / ContentGroup / ContentViewB / VerticalPaddingsGroup / ContentGroup / SecondLine / Subtitle / ContentGroup / Title / title",
+        "visible": true
+      },
+      "style": {
+        "name": "15/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438500;19805:209152;13282:172445;563:45963;2175:91085;2175:90949",
+        "name": "title",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Content / StackView / AccountToAccount / VerticalPaddingsGroup / ContentGroup / ContentViewA / VerticalPaddingsGroup / ContentGroup / ContentViewB / VerticalPaddingsGroup / ContentGroup / SecondLine / Subvalue / ContentGroup / Title / title",
+        "visible": true
+      },
+      "style": {
+        "name": "14/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438500;19805:209156;13282:172445;563:45959;2175:91082;2175:90916",
+        "name": "major",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Content / StackView / AccountToAccount / VerticalPaddingsGroup / ContentGroup / ContentViewC / VerticalPaddingsGroup / ContentGroup / ContentViewB / VerticalPaddingsGroup / ContentGroup / FirstLine / Title / ContentGroup / Title / major",
+        "visible": true
+      },
+      "style": {
+        "name": "16/24 px · Medium · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438500;19805:209156;13282:172445;563:45959;2175:91082;2175:90918",
+        "name": ",",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Content / StackView / AccountToAccount / VerticalPaddingsGroup / ContentGroup / ContentViewC / VerticalPaddingsGroup / ContentGroup / ContentViewB / VerticalPaddingsGroup / ContentGroup / FirstLine / Title / ContentGroup / Title / MinorGroup / ,",
+        "visible": true
+      },
+      "style": {
+        "name": "16/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438500;19805:209156;13282:172445;563:45959;2175:91082;2175:90920",
+        "name": "minor",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Content / StackView / AccountToAccount / VerticalPaddingsGroup / ContentGroup / ContentViewC / VerticalPaddingsGroup / ContentGroup / ContentViewB / VerticalPaddingsGroup / ContentGroup / FirstLine / Title / ContentGroup / Title / MinorGroup / CurrencyGroup / minor",
+        "visible": true
+      },
+      "style": {
+        "name": "16/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438500;19805:209156;13282:172445;563:45959;2175:91082;2175:90921",
+        "name": "currency",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Content / StackView / AccountToAccount / VerticalPaddingsGroup / ContentGroup / ContentViewC / VerticalPaddingsGroup / ContentGroup / ContentViewB / VerticalPaddingsGroup / ContentGroup / FirstLine / Title / ContentGroup / Title / MinorGroup / CurrencyGroup / currency",
+        "visible": true
+      },
+      "style": {
+        "name": "16/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438500;19805:209156;13282:172445;563:45962;2175:91082;2175:90949",
+        "name": "title",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Content / StackView / AccountToAccount / VerticalPaddingsGroup / ContentGroup / ContentViewC / VerticalPaddingsGroup / ContentGroup / ContentViewB / VerticalPaddingsGroup / ContentGroup / SecondLine / Subtitle / ContentGroup / Title / title",
+        "visible": true
+      },
+      "style": {
+        "name": "14/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438500;19805:209156;13282:172445;563:45963;2175:91085;2175:90949",
+        "name": "title",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Content / StackView / AccountToAccount / VerticalPaddingsGroup / ContentGroup / ContentViewC / VerticalPaddingsGroup / ContentGroup / ContentViewB / VerticalPaddingsGroup / ContentGroup / SecondLine / Subvalue / ContentGroup / Title / title",
+        "visible": true
+      },
+      "style": {
+        "name": "14/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123812:696738;13282:173621;13282:170972;13282:149466;48583:46457",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Content / StackView / VerticalPaddingsGroup / ContentGroup / ContentViewA / VerticalPaddingsGroup / ContentGroup / ContentViewB / VerticalPaddingsGroup / ContentGroup / MainContentView / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "16/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123812:696738;13282:173621;13282:170972;13282:149468;48583:46457",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Content / StackView / VerticalPaddingsGroup / ContentGroup / ContentViewA / VerticalPaddingsGroup / ContentGroup / ContentViewB / VerticalPaddingsGroup / ContentGroup / AddonContentView / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "14/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438501;11370:2292",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Content / 🔁 TextLabel / VerticalPaddingsGroup / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "14/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438503;11:110895;11:110985;268:259270;268:259392",
+        "name": "_text_left",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / PaymentControlView / .Payment Input / Text / Sum / TextView / x / TextView / content-wrap / _text_left",
+        "visible": true
+      },
+      "style": {
+        "name": "26/32 px · Medium · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438503;11:110895;11:110987;268:259270;268:259392",
+        "name": "_text_left",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / PaymentControlView / .Payment Input / Text / Sum / TextView / x / TextView / content-wrap / _text_left",
+        "visible": true
+      },
+      "style": {
+        "name": "26/32 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438503;11:110895;11:110993",
+        "name": "_text",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / PaymentControlView / .Payment Input / Text / Hint / _text",
+        "visible": true
+      },
+      "style": {
+        "name": "14/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "123404:438504",
+        "name": "(n)Keyboard",
+        "type": "INSTANCE",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard",
+        "visible": true
+      },
+      "style": {
+        "name": "071100acdd63a94b8b302d4d0e8856cc027043b3",
+        "key": "071100acdd63a94b8b302d4d0e8856cc027043b3",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2707",
+        "name": "Key",
+        "type": "FRAME",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key",
+        "visible": true
+      },
+      "style": {
+        "name": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "key": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2708",
+        "name": "1",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 1",
+        "visible": true
+      },
+      "style": {
+        "name": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "key": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2708",
+        "name": "1",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 1",
+        "visible": true
+      },
+      "style": {
+        "name": "23/auto · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2709",
+        "name": "Key",
+        "type": "FRAME",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key",
+        "visible": true
+      },
+      "style": {
+        "name": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "key": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2710",
+        "name": "2",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 2",
+        "visible": true
+      },
+      "style": {
+        "name": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "key": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2710",
+        "name": "2",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 2",
+        "visible": true
+      },
+      "style": {
+        "name": "23/auto · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2711",
+        "name": "Key",
+        "type": "FRAME",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key",
+        "visible": true
+      },
+      "style": {
+        "name": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "key": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2712",
+        "name": "3",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 3",
+        "visible": true
+      },
+      "style": {
+        "name": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "key": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2712",
+        "name": "3",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 3",
+        "visible": true
+      },
+      "style": {
+        "name": "23/auto · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2713",
+        "name": "Key",
+        "type": "FRAME",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key",
+        "visible": true
+      },
+      "style": {
+        "name": "cb6cd52f2bb5d1402795ffdf956cbc0a473dec40",
+        "key": "cb6cd52f2bb5d1402795ffdf956cbc0a473dec40",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;16706:11246",
+        "name": "fill",
+        "type": "VECTOR",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / fill",
+        "visible": true
+      },
+      "style": {
+        "name": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "key": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2716",
+        "name": "Key",
+        "type": "FRAME",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key",
+        "visible": true
+      },
+      "style": {
+        "name": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "key": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2717",
+        "name": "4",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 4",
+        "visible": true
+      },
+      "style": {
+        "name": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "key": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2717",
+        "name": "4",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 4",
+        "visible": true
+      },
+      "style": {
+        "name": "23/auto · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2718",
+        "name": "Key",
+        "type": "FRAME",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key",
+        "visible": true
+      },
+      "style": {
+        "name": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "key": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2719",
+        "name": "5",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 5",
+        "visible": true
+      },
+      "style": {
+        "name": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "key": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2719",
+        "name": "5",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 5",
+        "visible": true
+      },
+      "style": {
+        "name": "23/auto · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2720",
+        "name": "Key",
+        "type": "FRAME",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key",
+        "visible": true
+      },
+      "style": {
+        "name": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "key": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2721",
+        "name": "6",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 6",
+        "visible": true
+      },
+      "style": {
+        "name": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "key": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2721",
+        "name": "6",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 6",
+        "visible": true
+      },
+      "style": {
+        "name": "23/auto · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2722",
+        "name": "Key",
+        "type": "FRAME",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key",
+        "visible": true
+      },
+      "style": {
+        "name": "cb6cd52f2bb5d1402795ffdf956cbc0a473dec40",
+        "key": "cb6cd52f2bb5d1402795ffdf956cbc0a473dec40",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;16706:11236",
+        "name": "fill",
+        "type": "VECTOR",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / Icon / fill",
+        "visible": true
+      },
+      "style": {
+        "name": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "key": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2726",
+        "name": "Key",
+        "type": "FRAME",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key",
+        "visible": true
+      },
+      "style": {
+        "name": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "key": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2727",
+        "name": "7",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 7",
+        "visible": true
+      },
+      "style": {
+        "name": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "key": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2727",
+        "name": "7",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 7",
+        "visible": true
+      },
+      "style": {
+        "name": "23/auto · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2728",
+        "name": "Key",
+        "type": "FRAME",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key",
+        "visible": true
+      },
+      "style": {
+        "name": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "key": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2729",
+        "name": "8",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 8",
+        "visible": true
+      },
+      "style": {
+        "name": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "key": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2729",
+        "name": "8",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 8",
+        "visible": true
+      },
+      "style": {
+        "name": "23/auto · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2730",
+        "name": "Key",
+        "type": "FRAME",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key",
+        "visible": true
+      },
+      "style": {
+        "name": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "key": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2731",
+        "name": "9",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 9",
+        "visible": true
+      },
+      "style": {
+        "name": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "key": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2731",
+        "name": "9",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 9",
+        "visible": true
+      },
+      "style": {
+        "name": "23/auto · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2732",
+        "name": "Key",
+        "type": "FRAME",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key",
+        "visible": true
+      },
+      "style": {
+        "name": "cb6cd52f2bb5d1402795ffdf956cbc0a473dec40",
+        "key": "cb6cd52f2bb5d1402795ffdf956cbc0a473dec40",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;16706:11322",
+        "name": "fill",
+        "type": "VECTOR",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / Icon / fill",
+        "visible": true
+      },
+      "style": {
+        "name": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "key": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2735",
+        "name": "Key",
+        "type": "FRAME",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key",
+        "visible": true
+      },
+      "style": {
+        "name": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "key": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2736",
+        "name": ",",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / ,",
+        "visible": true
+      },
+      "style": {
+        "name": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "key": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2736",
+        "name": ",",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / ,",
+        "visible": true
+      },
+      "style": {
+        "name": "23/auto · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2737",
+        "name": "Key",
+        "type": "FRAME",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key",
+        "visible": true
+      },
+      "style": {
+        "name": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "key": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2738",
+        "name": "0",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 0",
+        "visible": true
+      },
+      "style": {
+        "name": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "key": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2738",
+        "name": "0",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 0",
+        "visible": true
+      },
+      "style": {
+        "name": "23/auto · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2739",
+        "name": "Key",
+        "type": "FRAME",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key",
+        "visible": true
+      },
+      "style": {
+        "name": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "key": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2740",
+        "name": ".",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / .",
+        "visible": true
+      },
+      "style": {
+        "name": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "key": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2740",
+        "name": ".",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / .",
+        "visible": true
+      },
+      "style": {
+        "name": "23/auto · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2741",
+        "name": "Return",
+        "type": "INSTANCE",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Return",
+        "visible": true
+      },
+      "style": {
+        "name": "7b8d9412062417a522823fd9e4dfdafed00bc9f1",
+        "key": "7b8d9412062417a522823fd9e4dfdafed00bc9f1",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123404:438504;15669:2833;15669:2741;16706:11261",
+        "name": "fill",
+        "type": "VECTOR",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Return / fill",
+        "visible": true
+      },
+      "style": {
+        "name": "30f57634dfc7eae8167539f20282abd622d956bf",
+        "key": "30f57634dfc7eae8167539f20282abd622d956bf",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123496:418448;48583:46457",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android / Content / TextLabel (🤖 12.11) / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "20/28 px · Medium · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123496:418495;48583:46457",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android / Content / TextLabel (🤖 12.11) / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "14/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123496:418496;50152:69332;48661:120250",
+        "name": "Major",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android / Content / Amount / TextLabel/Amount (🤖 12.23) / ContentGroup / Major",
+        "visible": true
+      },
+      "style": {
+        "name": "16/24 px · Medium · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123496:418496;50152:69332;48661:120251",
+        "name": "Minor",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android / Content / Amount / TextLabel/Amount (🤖 12.23) / ContentGroup / Minor",
+        "visible": true
+      },
+      "style": {
+        "name": "16/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123496:418496;50152:69332;48661:120253",
+        "name": "Currency",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android / Content / Amount / TextLabel/Amount (🤖 12.23) / ContentGroup / Currency",
+        "visible": true
+      },
+      "style": {
+        "name": "14/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123496:418527;48583:46457",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android / Content / TextLabel (🤖 12.11) / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "14/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123496:418531;48583:46457",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android / Content / TextLabel (🤖 12.11) / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "16/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123496:418477;48583:46457",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android / Content / TextLabel (🤖 12.11) / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "20/28 px · Medium · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123496:418548;48583:46457",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android / Content / TextLabel (🤖 12.11) / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "14/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123496:418549;48583:46457",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android / Content / TextLabel (🤖 12.11) / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "16/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123496:418556;48583:46457",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android / Content / TextLabel (🤖 12.11) / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "14/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123496:418557;48583:46457",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android / Content / TextLabel (🤖 12.11) / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "16/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123496:418486;48583:46457",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android / Content / TextLabel (🤖 12.11) / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "20/28 px · Medium · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123496:418599;48583:46457",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android / Content / TextLabel (🤖 12.11) / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "14/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123496:418600;48583:46457",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android / Content / TextLabel (🤖 12.11) / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "16/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123496:418601;48583:46457",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android / Content / TextLabel (🤖 12.11) / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "14/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123496:418602;48583:46457",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android / Content / TextLabel (🤖 12.11) / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "16/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123496:418616;30527:31489;48583:46493",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android / Footer / ButtonViewV2 (🤖🟦 12.14) / PrimaryRectangleShape / 🎨 ContentGroup / TextLabelsStack / Title_Statable / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "16/24 px · Medium · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123496:418025;11:276351;23787:950",
+        "name": "time",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android / Header / TopAppBar / PageHeader / StatusBar / LeftContentGroup / time",
+        "visible": true
+      },
+      "style": {
+        "name": "14/20 px · Medium · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123496:418025;11:276352;11:276519",
+        "name": "_title",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android / Header / TopAppBar / PageHeader / .RegularTopAppBar_New / Header / _title",
+        "visible": true
+      },
+      "style": {
+        "name": "16/20 px · Medium · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149250;11:276352;11:276519",
+        "name": "_title",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Header / TopAppBar / PageHeader / .RegularTopAppBar_New / Header / _title",
+        "visible": true
+      },
+      "style": {
+        "name": "16/20 px · Medium · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149252;19805:209152;13282:172445;563:45959;2175:91082;2175:90916",
+        "name": "major",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Content / StackView / AccountToAccount / VerticalPaddingsGroup / ContentGroup / ContentViewA / VerticalPaddingsGroup / ContentGroup / ContentViewB / VerticalPaddingsGroup / ContentGroup / FirstLine / Title / ContentGroup / Title / major",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Medium · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149252;19805:209152;13282:172445;563:45959;2175:91082;2175:90918",
+        "name": ",",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Content / StackView / AccountToAccount / VerticalPaddingsGroup / ContentGroup / ContentViewA / VerticalPaddingsGroup / ContentGroup / ContentViewB / VerticalPaddingsGroup / ContentGroup / FirstLine / Title / ContentGroup / Title / MinorGroup / ,",
+        "visible": true
+      },
+      "style": {
+        "name": "16/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149252;19805:209152;13282:172445;563:45959;2175:91082;2175:90920",
+        "name": "minor",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Content / StackView / AccountToAccount / VerticalPaddingsGroup / ContentGroup / ContentViewA / VerticalPaddingsGroup / ContentGroup / ContentViewB / VerticalPaddingsGroup / ContentGroup / FirstLine / Title / ContentGroup / Title / MinorGroup / CurrencyGroup / minor",
+        "visible": true
+      },
+      "style": {
+        "name": "16/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149252;19805:209152;13282:172445;563:45959;2175:91082;2175:90921",
+        "name": "currency",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Content / StackView / AccountToAccount / VerticalPaddingsGroup / ContentGroup / ContentViewA / VerticalPaddingsGroup / ContentGroup / ContentViewB / VerticalPaddingsGroup / ContentGroup / FirstLine / Title / ContentGroup / Title / MinorGroup / CurrencyGroup / currency",
+        "visible": true
+      },
+      "style": {
+        "name": "16/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149252;19805:209152;13282:172445;563:45962;2175:91082;2175:90949",
+        "name": "title",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Content / StackView / AccountToAccount / VerticalPaddingsGroup / ContentGroup / ContentViewA / VerticalPaddingsGroup / ContentGroup / ContentViewB / VerticalPaddingsGroup / ContentGroup / SecondLine / Subtitle / ContentGroup / Title / title",
+        "visible": true
+      },
+      "style": {
+        "name": "15/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149252;19805:209152;13282:172445;563:45963;2175:91085;2175:90949",
+        "name": "title",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Content / StackView / AccountToAccount / VerticalPaddingsGroup / ContentGroup / ContentViewA / VerticalPaddingsGroup / ContentGroup / ContentViewB / VerticalPaddingsGroup / ContentGroup / SecondLine / Subvalue / ContentGroup / Title / title",
+        "visible": true
+      },
+      "style": {
+        "name": "14/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149252;19805:209156;13282:172445;563:45959;2175:91082;2175:90916",
+        "name": "major",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Content / StackView / AccountToAccount / VerticalPaddingsGroup / ContentGroup / ContentViewC / VerticalPaddingsGroup / ContentGroup / ContentViewB / VerticalPaddingsGroup / ContentGroup / FirstLine / Title / ContentGroup / Title / major",
+        "visible": true
+      },
+      "style": {
+        "name": "16/24 px · Medium · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149252;19805:209156;13282:172445;563:45959;2175:91082;2175:90918",
+        "name": ",",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Content / StackView / AccountToAccount / VerticalPaddingsGroup / ContentGroup / ContentViewC / VerticalPaddingsGroup / ContentGroup / ContentViewB / VerticalPaddingsGroup / ContentGroup / FirstLine / Title / ContentGroup / Title / MinorGroup / ,",
+        "visible": true
+      },
+      "style": {
+        "name": "16/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149252;19805:209156;13282:172445;563:45959;2175:91082;2175:90920",
+        "name": "minor",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Content / StackView / AccountToAccount / VerticalPaddingsGroup / ContentGroup / ContentViewC / VerticalPaddingsGroup / ContentGroup / ContentViewB / VerticalPaddingsGroup / ContentGroup / FirstLine / Title / ContentGroup / Title / MinorGroup / CurrencyGroup / minor",
+        "visible": true
+      },
+      "style": {
+        "name": "16/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149252;19805:209156;13282:172445;563:45959;2175:91082;2175:90921",
+        "name": "currency",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Content / StackView / AccountToAccount / VerticalPaddingsGroup / ContentGroup / ContentViewC / VerticalPaddingsGroup / ContentGroup / ContentViewB / VerticalPaddingsGroup / ContentGroup / FirstLine / Title / ContentGroup / Title / MinorGroup / CurrencyGroup / currency",
+        "visible": true
+      },
+      "style": {
+        "name": "16/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149252;19805:209156;13282:172445;563:45962;2175:91082;2175:90949",
+        "name": "title",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Content / StackView / AccountToAccount / VerticalPaddingsGroup / ContentGroup / ContentViewC / VerticalPaddingsGroup / ContentGroup / ContentViewB / VerticalPaddingsGroup / ContentGroup / SecondLine / Subtitle / ContentGroup / Title / title",
+        "visible": true
+      },
+      "style": {
+        "name": "14/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149252;19805:209156;13282:172445;563:45963;2175:91085;2175:90949",
+        "name": "title",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Content / StackView / AccountToAccount / VerticalPaddingsGroup / ContentGroup / ContentViewC / VerticalPaddingsGroup / ContentGroup / ContentViewB / VerticalPaddingsGroup / ContentGroup / SecondLine / Subvalue / ContentGroup / Title / title",
+        "visible": true
+      },
+      "style": {
+        "name": "14/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149796;13282:173621;13282:170972;13282:149466;48583:46457",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Content / StackView / VerticalPaddingsGroup / ContentGroup / ContentViewA / VerticalPaddingsGroup / ContentGroup / ContentViewB / VerticalPaddingsGroup / ContentGroup / MainContentView / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "16/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149796;13282:173621;13282:170972;13282:149468;48583:46457",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Content / StackView / VerticalPaddingsGroup / ContentGroup / ContentViewA / VerticalPaddingsGroup / ContentGroup / ContentViewB / VerticalPaddingsGroup / ContentGroup / AddonContentView / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "14/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149253;11370:2292",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Content / 🔁 TextLabel / VerticalPaddingsGroup / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "14/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149255;11:110895;11:110985;268:259270;268:259392",
+        "name": "_text_left",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / PaymentControlView / .Payment Input / Text / Sum / TextView / x / TextView / content-wrap / _text_left",
+        "visible": true
+      },
+      "style": {
+        "name": "26/32 px · Medium · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149255;11:110895;11:110987;268:259270;268:259392",
+        "name": "_text_left",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / PaymentControlView / .Payment Input / Text / Sum / TextView / x / TextView / content-wrap / _text_left",
+        "visible": true
+      },
+      "style": {
+        "name": "26/32 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149255;11:110895;11:110993",
+        "name": "_text",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / PaymentControlView / .Payment Input / Text / Hint / _text",
+        "visible": true
+      },
+      "style": {
+        "name": "14/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "123627:149256",
+        "name": "(n)Keyboard",
+        "type": "INSTANCE",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard",
+        "visible": true
+      },
+      "style": {
+        "name": "071100acdd63a94b8b302d4d0e8856cc027043b3",
+        "key": "071100acdd63a94b8b302d4d0e8856cc027043b3",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2707",
+        "name": "Key",
+        "type": "FRAME",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key",
+        "visible": true
+      },
+      "style": {
+        "name": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "key": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2708",
+        "name": "1",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 1",
+        "visible": true
+      },
+      "style": {
+        "name": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "key": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2708",
+        "name": "1",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 1",
+        "visible": true
+      },
+      "style": {
+        "name": "23/auto · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2709",
+        "name": "Key",
+        "type": "FRAME",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key",
+        "visible": true
+      },
+      "style": {
+        "name": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "key": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2710",
+        "name": "2",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 2",
+        "visible": true
+      },
+      "style": {
+        "name": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "key": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2710",
+        "name": "2",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 2",
+        "visible": true
+      },
+      "style": {
+        "name": "23/auto · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2711",
+        "name": "Key",
+        "type": "FRAME",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key",
+        "visible": true
+      },
+      "style": {
+        "name": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "key": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2712",
+        "name": "3",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 3",
+        "visible": true
+      },
+      "style": {
+        "name": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "key": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2712",
+        "name": "3",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 3",
+        "visible": true
+      },
+      "style": {
+        "name": "23/auto · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2713",
+        "name": "Key",
+        "type": "FRAME",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key",
+        "visible": true
+      },
+      "style": {
+        "name": "cb6cd52f2bb5d1402795ffdf956cbc0a473dec40",
+        "key": "cb6cd52f2bb5d1402795ffdf956cbc0a473dec40",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;16706:11246",
+        "name": "fill",
+        "type": "VECTOR",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / fill",
+        "visible": true
+      },
+      "style": {
+        "name": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "key": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2716",
+        "name": "Key",
+        "type": "FRAME",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key",
+        "visible": true
+      },
+      "style": {
+        "name": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "key": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2717",
+        "name": "4",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 4",
+        "visible": true
+      },
+      "style": {
+        "name": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "key": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2717",
+        "name": "4",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 4",
+        "visible": true
+      },
+      "style": {
+        "name": "23/auto · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2718",
+        "name": "Key",
+        "type": "FRAME",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key",
+        "visible": true
+      },
+      "style": {
+        "name": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "key": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2719",
+        "name": "5",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 5",
+        "visible": true
+      },
+      "style": {
+        "name": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "key": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2719",
+        "name": "5",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 5",
+        "visible": true
+      },
+      "style": {
+        "name": "23/auto · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2720",
+        "name": "Key",
+        "type": "FRAME",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key",
+        "visible": true
+      },
+      "style": {
+        "name": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "key": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2721",
+        "name": "6",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 6",
+        "visible": true
+      },
+      "style": {
+        "name": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "key": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2721",
+        "name": "6",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 6",
+        "visible": true
+      },
+      "style": {
+        "name": "23/auto · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2722",
+        "name": "Key",
+        "type": "FRAME",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key",
+        "visible": true
+      },
+      "style": {
+        "name": "cb6cd52f2bb5d1402795ffdf956cbc0a473dec40",
+        "key": "cb6cd52f2bb5d1402795ffdf956cbc0a473dec40",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;16706:11236",
+        "name": "fill",
+        "type": "VECTOR",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / Icon / fill",
+        "visible": true
+      },
+      "style": {
+        "name": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "key": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2726",
+        "name": "Key",
+        "type": "FRAME",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key",
+        "visible": true
+      },
+      "style": {
+        "name": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "key": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2727",
+        "name": "7",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 7",
+        "visible": true
+      },
+      "style": {
+        "name": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "key": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2727",
+        "name": "7",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 7",
+        "visible": true
+      },
+      "style": {
+        "name": "23/auto · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2728",
+        "name": "Key",
+        "type": "FRAME",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key",
+        "visible": true
+      },
+      "style": {
+        "name": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "key": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2729",
+        "name": "8",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 8",
+        "visible": true
+      },
+      "style": {
+        "name": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "key": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2729",
+        "name": "8",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 8",
+        "visible": true
+      },
+      "style": {
+        "name": "23/auto · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2730",
+        "name": "Key",
+        "type": "FRAME",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key",
+        "visible": true
+      },
+      "style": {
+        "name": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "key": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2731",
+        "name": "9",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 9",
+        "visible": true
+      },
+      "style": {
+        "name": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "key": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2731",
+        "name": "9",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 9",
+        "visible": true
+      },
+      "style": {
+        "name": "23/auto · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2732",
+        "name": "Key",
+        "type": "FRAME",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key",
+        "visible": true
+      },
+      "style": {
+        "name": "cb6cd52f2bb5d1402795ffdf956cbc0a473dec40",
+        "key": "cb6cd52f2bb5d1402795ffdf956cbc0a473dec40",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;16706:11322",
+        "name": "fill",
+        "type": "VECTOR",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / Icon / fill",
+        "visible": true
+      },
+      "style": {
+        "name": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "key": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2735",
+        "name": "Key",
+        "type": "FRAME",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key",
+        "visible": true
+      },
+      "style": {
+        "name": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "key": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2736",
+        "name": ",",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / ,",
+        "visible": true
+      },
+      "style": {
+        "name": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "key": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2736",
+        "name": ",",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / ,",
+        "visible": true
+      },
+      "style": {
+        "name": "23/auto · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2737",
+        "name": "Key",
+        "type": "FRAME",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key",
+        "visible": true
+      },
+      "style": {
+        "name": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "key": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2738",
+        "name": "0",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 0",
+        "visible": true
+      },
+      "style": {
+        "name": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "key": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2738",
+        "name": "0",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / 0",
+        "visible": true
+      },
+      "style": {
+        "name": "23/auto · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2739",
+        "name": "Key",
+        "type": "FRAME",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key",
+        "visible": true
+      },
+      "style": {
+        "name": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "key": "91847c25f6aba62da0d6f650028bdf1ed5790e7b",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2740",
+        "name": ".",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / .",
+        "visible": true
+      },
+      "style": {
+        "name": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "key": "cffd3630e102a0bf4ac92915042aa91b183cd63d",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2740",
+        "name": ".",
+        "type": "TEXT",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Key / .",
+        "visible": true
+      },
+      "style": {
+        "name": "23/auto · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2741",
+        "name": "Return",
+        "type": "INSTANCE",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Return",
+        "visible": true
+      },
+      "style": {
+        "name": "7b8d9412062417a522823fd9e4dfdafed00bc9f1",
+        "key": "7b8d9412062417a522823fd9e4dfdafed00bc9f1",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I123627:149256;15669:2833;15669:2741;16706:11261",
+        "name": "fill",
+        "type": "VECTOR",
+        "pageName": "Дополнение флоу пополнения счёта",
+        "path": "Android:: Между счетами / Footer / (n)Keyboard / NumericKeyboard / Row / Return / fill",
+        "visible": true
+      },
+      "style": {
+        "name": "30f57634dfc7eae8167539f20282abd622d956bf",
+        "key": "30f57634dfc7eae8167539f20282abd622d956bf",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    }
+  ],
+  "componentContexts": []
+}
