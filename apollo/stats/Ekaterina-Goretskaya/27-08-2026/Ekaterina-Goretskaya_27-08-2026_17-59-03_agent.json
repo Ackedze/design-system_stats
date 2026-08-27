@@ -1,0 +1,448 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1534219656993111263-1787842743369-ur3r346o:agent",
+  "sourceReportId": "apollo-1534219656993111263-1787842743369-ur3r346o",
+  "generatedAt": "2026-08-27T14:59:03.369Z",
+  "suggestedFileName": "Ekaterina-Goretskaya_27-08-2026_17-59-03_agent.json",
+  "user": {
+    "id": "1534219656993111263",
+    "name": "Ekaterina Goretskaya",
+    "slug": "Ekaterina-Goretskaya"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.1.63"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "🏠 Эскроу счета (ФЗ-214)",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "startedAt": "2026-08-27T14:59:03.003Z",
+    "finishedAt": "2026-08-27T14:59:03.369Z",
+    "durationMs": 366,
+    "selection": [
+      {
+        "nodeId": "106869:152577",
+        "name": "[D] UniversalModal",
+        "nodeType": "FRAME",
+        "path": "Overlay / [D] UniversalModal",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 8,
+    "problemOccurrenceCount": 2,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 0,
+      "updates": 1,
+      "customizations": 2,
+      "localComponents": 0,
+      "detachedComponents": 0,
+      "presets": 0,
+      "technicalComponents": 0,
+      "currentComponents": 7,
+      "wrongChannel": 0,
+      "themization": 0
+    },
+    "includedFindingCount": 2,
+    "omittedCurrentComponentCount": 7
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with severity=error and matchKind=exact_component_rule for the same property/change.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 2,
+      "includedCount": 1,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "106869:152583",
+        "name": "[D] UniversalModalFooter",
+        "type": "INSTANCE",
+        "pageName": "Page 41",
+        "path": "Overlay / [D] UniversalModal / [D] UniversalModal / [D] UniversalModalFooter",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] UniversalModalFooter",
+        "key": "9dc117bf5cbd78a515d86bcb5df4ca28bff29470",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- UniversalModal.json"
+      },
+      "variant": {
+        "name": "Content=True, Custom=False, FilledBg=True",
+        "key": "9dc117bf5cbd78a515d86bcb5df4ca28bff29470"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "9dc117bf5cbd78a515d86bcb5df4ca28bff29470",
+        "currentComponentId": "104723:947466",
+        "latestComponentId": "106869:157403"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "106869:152582",
+        "name": "[D] UniversalModalBody",
+        "type": "INSTANCE",
+        "pageName": "Page 41",
+        "path": "Overlay / [D] UniversalModal / [D] UniversalModal / [D] UniversalModalBody",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] UniversalModalBody",
+        "key": "91428cc8a0e08451abb7c204605bb242e0b9a165",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- UniversalModal.json"
+      },
+      "variant": {
+        "name": "[D] UniversalModalBody",
+        "key": "91428cc8a0e08451abb7c204605bb242e0b9a165"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "106869:152582",
+            "name": "[D] UniversalModalBody",
+            "type": null,
+            "pageName": "Page 41",
+            "path": "[D] UniversalModalBody",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.top",
+          "message": "Паддинг top: 0 → 16",
+          "referenceValue": 0,
+          "actualValue": 16,
+          "referenceRawValue": 0,
+          "actualRawValue": 16,
+          "referenceDisplayValue": 0,
+          "actualDisplayValue": 16,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "91428cc8a0e08451abb7c204605bb242e0b9a165",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": null,
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "106869:152582",
+              "nodeName": "[D] UniversalModalBody",
+              "tokenId": "VariableID:224167a7a0d8a160932c76a7ef008143801aab08/3541:154",
+              "tokenName": "modal-bg/primary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.universal-modal.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.universal-modal.layer-properties-use-effective-baseline",
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "106869:152582",
+            "name": "[D] UniversalModalBody",
+            "type": null,
+            "pageName": "Page 41",
+            "path": "[D] UniversalModalBody",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.bottom",
+          "message": "Паддинг bottom: 0 → 8",
+          "referenceValue": 0,
+          "actualValue": 8,
+          "referenceRawValue": 0,
+          "actualRawValue": 8,
+          "referenceDisplayValue": 0,
+          "actualDisplayValue": 8,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "91428cc8a0e08451abb7c204605bb242e0b9a165",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": null,
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "106869:152582",
+              "nodeName": "[D] UniversalModalBody",
+              "tokenId": "VariableID:224167a7a0d8a160932c76a7ef008143801aab08/3541:154",
+              "tokenName": "modal-bg/primary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.universal-modal.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.universal-modal.layer-properties-use-effective-baseline",
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        }
+      ]
+    }
+  ],
+  "componentContexts": [
+    {
+      "componentKey": "web-core.universal-modal",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [
+        "Заголовок модального окна задаётся через активную конфигурацию [D] UniversalModalHeader и его declared title/MiddleSlot content. Не дублируй заголовок ручным Text-узлом в BodyContent.",
+        "BodyContent должен иметь width=Fill и height=Hug. Fixed height допустима только при фактическом overflow и явно выбранном scroll-сценарии.",
+        "Scrollbar в [D] UniversalModalBody выключен, когда body-content полностью помещается в доступную высоту. Его включают только при подтверждённом вертикальном overflow.",
+        "Overlap у [D] UniversalModalHeader и [D] UniversalModalFooter выключен в нескроллируемом modal. Он включается только когда scroll-content действительно заезжает под фиксированные header или footer."
+      ],
+      "agentInstructions": [
+        "Перед сборкой модального окна прочитай component properties Header, Body и Footer; при наличии системного title preset используй его вместо ручной типографики.",
+        "Не оставляй Scrollbar, Overlap или fixed height как значения по умолчанию: проверь фактическую высоту body-content после наполнения слотa.",
+        "Для confirm-flow проверяй три состояния: entry action, confirmation и result; все action controls и menu/popover должны быть активными библиотечными компонентами."
+      ],
+      "includedComponents": [
+        "[D] UniversalModalFooter",
+        "[D] UniversalModalHeader",
+        "[M] UniversalModalFooter",
+        "[M] UniversalModalHeader",
+        "🔄  🔩 [D][Corporate] Preset",
+        "🔄 [D][Corporate] UniversalModalFooter",
+        "🔄 [M][Corporate]  UniversalModalFooter",
+        "🔄 🔩 [M][Corporate] Preset",
+        "🔩 [D] LeftAddon",
+        "🔩 [D] MiddleSlot",
+        "🔩 [D] Navigation",
+        "🔩 [D] Preset",
+        "🔩 [D] Presets",
+        "🔩 [D] RightAddon",
+        "🔩 [M] Preset",
+        "🔩 [M] Preset",
+        ".ScrollContentExample",
+        "[D] UniversalModalBody",
+        "[M] UniversalModalBody",
+        "🔩 [D] BodyContent",
+        "🔩 [D] BottomAddon",
+        "🔩 [D] FooterContent",
+        "🔩 [M] FooterContent",
+        "🔩 [M] ModalBody"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    }
+  ]
+}
