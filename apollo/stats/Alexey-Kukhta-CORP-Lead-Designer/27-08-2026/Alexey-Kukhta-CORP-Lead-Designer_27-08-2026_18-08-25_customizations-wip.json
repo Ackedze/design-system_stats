@@ -1,0 +1,479 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-customizations-wip-report",
+  "reportId": "apollo-1096330610570928879-1787843305593-7hyj4ba6:customizations-wip",
+  "sourceReportId": "apollo-1096330610570928879-1787843305593-7hyj4ba6",
+  "generatedAt": "2026-08-27T15:08:25.593Z",
+  "suggestedFileName": "Alexey-Kukhta-CORP-Lead-Designer_27-08-2026_18-08-25_customizations-wip.json",
+  "user": {
+    "id": "1096330610570928879",
+    "name": "Alexey Kukhta / CORP / Lead Designer",
+    "slug": "Alexey-Kukhta-CORP-Lead-Designer"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.3.0"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "❇️ Мастерская :: AI",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "pageType": null,
+    "startedAt": "2026-08-27T15:08:25.457Z",
+    "finishedAt": "2026-08-27T15:08:25.593Z",
+    "durationMs": 136,
+    "selection": [
+      {
+        "nodeId": "12536:143140",
+        "name": "IconView",
+        "nodeType": "INSTANCE",
+        "path": "IconView / IconView",
+        "componentKey": "e2fa51ace6584f743e46af463b4ae018d39ec6c0"
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 5,
+    "componentCount": 1,
+    "changeCount": 4
+  },
+  "category": {
+    "id": "customizationsWip",
+    "title": "Кастомизации [WIP]",
+    "count": 1,
+    "changeCount": 4,
+    "items": [
+      {
+        "node": {
+          "id": "12536:143140",
+          "name": "IconView",
+          "type": "INSTANCE",
+          "pageName": "     Лаборатория",
+          "path": "IconView / IconView",
+          "visible": true,
+          "ancestorNodeIds": []
+        },
+        "component": {
+          "type": "component",
+          "name": "IconView",
+          "key": "e2fa51ace6584f743e46af463b4ae018d39ec6c0",
+          "id": null,
+          "library": "Web _ Core",
+          "sourceFile": "web/components/web-core/core/Web _ Core -- IconView.json"
+        },
+        "variant": {
+          "type": "component-variant",
+          "name": "Size=128",
+          "key": "e2fa51ace6584f743e46af463b4ae018d39ec6c0",
+          "id": null,
+          "library": "Web _ Core",
+          "sourceFile": "web/components/web-core/core/Web _ Core -- IconView.json"
+        },
+        "comparisonIssues": [],
+        "updateReasons": [
+          "library-update-available"
+        ],
+        "libraryFreshness": {
+          "status": "update-available",
+          "reason": "remote-component-update-available",
+          "componentKey": "e2fa51ace6584f743e46af463b4ae018d39ec6c0",
+          "currentComponentId": "11188:13664",
+          "latestComponentId": "11340:47447"
+        },
+        "localComponentOwner": null,
+        "changes": [
+          {
+            "node": {
+              "id": "I12536:143140;448:17287",
+              "name": "Shape",
+              "type": null,
+              "pageName": "     Лаборатория",
+              "path": "Size=128 / Content / Shape",
+              "visible": true
+            },
+            "kind": "layout",
+            "property": "radius",
+            "message": "Скругления: 6 → 10",
+            "reference": {
+              "value": "6",
+              "resource": null,
+              "binding": null
+            },
+            "actual": {
+              "value": "10",
+              "resource": null,
+              "binding": null
+            },
+            "bindingStatus": null,
+            "variableMode": null,
+            "signature": "component:e2fa51ace6584f743e46af463b4ae018d39ec6c0:layout:radius:6->10",
+            "context": {
+              "actualComponentKey": null,
+              "referenceComponentKey": null,
+              "referenceOrigin": "host",
+              "actualNestedOwnerComponentKey": "e2fa51ace6584f743e46af463b4ae018d39ec6c0",
+              "actualNestedOwnerPath": "Size=128",
+              "actualNestedOwnerRelativePath": "Content / Shape",
+              "nestedOwnerComponentKey": null,
+              "nestedOwnerComponentRole": null,
+              "nestedOwnerPath": null,
+              "nestedOwnerRelativePath": null,
+              "actualVariantProperties": {
+                "Size": "128"
+              },
+              "referenceVariantProperties": null,
+              "surfaceContext": {
+                "kind": "white",
+                "source": "ancestor-fill-color",
+                "nodeId": "12536:143128",
+                "nodeName": "IconView",
+                "tokenId": null,
+                "tokenName": null,
+                "color": "#FFFFFF"
+              }
+            },
+            "componentRules": [
+              {
+                "ruleId": "component:web-core.icon-view.layer-properties-use-effective-baseline",
+                "severity": "error",
+                "source": "component-contract",
+                "ruleKind": "design-rule",
+                "authority": {
+                  "status": "active",
+                  "provenance": "design-system-author",
+                  "revision": 1
+                },
+                "severityScope": null,
+                "appliesTo": "layout.*|fill|stroke|radius|opacity",
+                "checkType": "deterministic",
+                "matchKind": "exact_component_rule",
+                "changeScope": null,
+                "ruleText": "Layout, fill, stroke, radius и opacity корня и внутренних слоёв IconView должны совпадать с effective baseline текущего состояния. Разрешение компонента-хоста имеет приоритет и должно быть выражено отдельным contextual rule.",
+                "remediation": null,
+                "numericConstraint": null,
+                "requiredTokenSource": null
+              }
+            ],
+            "presentation": {
+              "scope": "layer-property",
+              "groupTitle": "Параметры слоя",
+              "displayName": null,
+              "priority": 60,
+              "resetAction": "reset-layer-properties",
+              "effectiveBaseline": "composition-contract"
+            },
+            "assessment": {
+              "verdict": "violation",
+              "source": "component-contract",
+              "reasonCode": "component-contract-violation",
+              "ruleId": "component:web-core.icon-view.layer-properties-use-effective-baseline",
+              "message": "Layout, fill, stroke, radius и opacity корня и внутренних слоёв IconView должны совпадать с effective baseline текущего состояния. Разрешение компонента-хоста имеет приоритет и должно быть выражено отдельным contextual rule.",
+              "remediation": null
+            }
+          },
+          {
+            "node": {
+              "id": "I12536:143140;448:25199;448:24940",
+              "name": "PaintMe",
+              "type": null,
+              "pageName": "     Лаборатория",
+              "path": "Size=128 / Content / ShapeContent / Content / Fixer / PaintMe",
+              "visible": true
+            },
+            "kind": "paint",
+            "property": "fill",
+            "message": "заливка: neutral-translucent/700 → status_inverted/negative",
+            "reference": {
+              "value": "neutral-translucent/700",
+              "resource": {
+                "type": "token",
+                "name": "neutral-translucent/700",
+                "key": "faac436b14cc199cfe97243b05af867af9ecb365",
+                "id": "VariableID:faac436b14cc199cfe97243b05af867af9ecb365/3541:130",
+                "library": "Interface Dynamic",
+                "sourceFile": "001 :: Interface Dynamic Colors"
+              },
+              "binding": {
+                "id": "VariableID:faac436b14cc199cfe97243b05af867af9ecb365/3541:130",
+                "key": "faac436b14cc199cfe97243b05af867af9ecb365",
+                "name": "neutral-translucent/700",
+                "collectionId": "VariableCollectionId:868:9636",
+                "collectionName": "Interface Dynamic",
+                "resolvedModeId": null,
+                "resolvedModeName": null,
+                "explicitModeId": null,
+                "explicitModeName": null,
+                "modeSource": "unknown",
+                "modeOwnerNodeId": null,
+                "modeOwnerName": null,
+                "modeOwnerPath": null
+              }
+            },
+            "actual": {
+              "value": "status_inverted/negative",
+              "resource": {
+                "type": "token",
+                "name": "status_inverted/negative",
+                "key": "220741b5724a1934c627a3fe6b5318e51e209a25",
+                "id": "VariableID:220741b5724a1934c627a3fe6b5318e51e209a25/3541:185",
+                "library": "Interface Dynamic",
+                "sourceFile": "001 :: Interface Dynamic Colors"
+              },
+              "binding": {
+                "id": "VariableID:220741b5724a1934c627a3fe6b5318e51e209a25/3541:185",
+                "key": "220741b5724a1934c627a3fe6b5318e51e209a25",
+                "name": "status_inverted/negative",
+                "collectionId": "VariableCollectionId:868:9636",
+                "collectionName": "Interface Dynamic",
+                "resolvedModeId": null,
+                "resolvedModeName": null,
+                "explicitModeId": null,
+                "explicitModeName": null,
+                "modeSource": "unknown",
+                "modeOwnerNodeId": null,
+                "modeOwnerName": null,
+                "modeOwnerPath": null
+              }
+            },
+            "bindingStatus": "different-binding",
+            "variableMode": null,
+            "signature": "component:e2fa51ace6584f743e46af463b4ae018d39ec6c0:paint:fill:faac436b14cc199cfe97243b05af867af9ecb365->220741b5724a1934c627a3fe6b5318e51e209a25",
+            "context": {
+              "actualComponentKey": null,
+              "referenceComponentKey": null,
+              "referenceOrigin": "host",
+              "actualNestedOwnerComponentKey": "ee23234c6cf8a50d8d47eefc5bb9dfcb8b262121",
+              "actualNestedOwnerPath": "Size=128 / Content / ShapeContent / Content",
+              "actualNestedOwnerRelativePath": "Fixer / PaintMe",
+              "nestedOwnerComponentKey": "ee23234c6cf8a50d8d47eefc5bb9dfcb8b262121",
+              "nestedOwnerComponentRole": "Part",
+              "nestedOwnerPath": "Size=128 / Content / ShapeContent / Content",
+              "nestedOwnerRelativePath": "Fixer / PaintMe",
+              "actualVariantProperties": {
+                "Size": "80",
+                "Type": "Icon"
+              },
+              "referenceVariantProperties": {
+                "Size": "80",
+                "Type": "Icon"
+              },
+              "surfaceContext": {
+                "kind": "white",
+                "source": "ancestor-fill-color",
+                "nodeId": "12536:143128",
+                "nodeName": "IconView",
+                "tokenId": null,
+                "tokenName": null,
+                "color": "#FFFFFF"
+              }
+            },
+            "componentRules": [],
+            "presentation": {
+              "scope": "layer-property",
+              "groupTitle": "Параметры слоя",
+              "displayName": null,
+              "priority": 40,
+              "resetAction": "reset-layer-properties",
+              "effectiveBaseline": "composition-contract"
+            },
+            "assessment": null
+          },
+          {
+            "node": {
+              "id": "I12536:143140;448:17296",
+              "name": "Border",
+              "type": null,
+              "pageName": "     Лаборатория",
+              "path": "Size=128 / Content / ShapeContent / Border",
+              "visible": true
+            },
+            "kind": "paint",
+            "property": "stroke",
+            "message": "обводка: neutral-translucent/200 → status/info",
+            "reference": {
+              "value": "neutral-translucent/200",
+              "resource": {
+                "type": "token",
+                "name": "neutral-translucent/200",
+                "key": "446796436fc66df888a34eb47bed90e0341e558c",
+                "id": "VariableID:446796436fc66df888a34eb47bed90e0341e558c/3541:147",
+                "library": "Interface Dynamic",
+                "sourceFile": "001 :: Interface Dynamic Colors"
+              },
+              "binding": {
+                "id": "VariableID:446796436fc66df888a34eb47bed90e0341e558c/3541:147",
+                "key": "446796436fc66df888a34eb47bed90e0341e558c",
+                "name": "neutral-translucent/200",
+                "collectionId": "VariableCollectionId:868:9636",
+                "collectionName": "Interface Dynamic",
+                "resolvedModeId": null,
+                "resolvedModeName": null,
+                "explicitModeId": null,
+                "explicitModeName": null,
+                "modeSource": "unknown",
+                "modeOwnerNodeId": null,
+                "modeOwnerName": null,
+                "modeOwnerPath": null
+              }
+            },
+            "actual": {
+              "value": "status/info",
+              "resource": {
+                "type": "token",
+                "name": "status/info",
+                "key": "b10db1879590531b56541f549df1687fe4a23efb",
+                "id": "VariableID:b10db1879590531b56541f549df1687fe4a23efb/3541:190",
+                "library": "Interface Dynamic",
+                "sourceFile": "001 :: Interface Dynamic Colors"
+              },
+              "binding": {
+                "id": "VariableID:b10db1879590531b56541f549df1687fe4a23efb/3541:190",
+                "key": "b10db1879590531b56541f549df1687fe4a23efb",
+                "name": "status/info",
+                "collectionId": "VariableCollectionId:868:9636",
+                "collectionName": "Interface Dynamic",
+                "resolvedModeId": null,
+                "resolvedModeName": null,
+                "explicitModeId": null,
+                "explicitModeName": null,
+                "modeSource": "unknown",
+                "modeOwnerNodeId": null,
+                "modeOwnerName": null,
+                "modeOwnerPath": null
+              }
+            },
+            "bindingStatus": "different-binding",
+            "variableMode": null,
+            "signature": "component:e2fa51ace6584f743e46af463b4ae018d39ec6c0:paint:stroke:446796436fc66df888a34eb47bed90e0341e558c->b10db1879590531b56541f549df1687fe4a23efb",
+            "context": {
+              "actualComponentKey": null,
+              "referenceComponentKey": null,
+              "referenceOrigin": "host",
+              "actualNestedOwnerComponentKey": "e2fa51ace6584f743e46af463b4ae018d39ec6c0",
+              "actualNestedOwnerPath": "Size=128",
+              "actualNestedOwnerRelativePath": "Content / ShapeContent / Border",
+              "nestedOwnerComponentKey": null,
+              "nestedOwnerComponentRole": null,
+              "nestedOwnerPath": null,
+              "nestedOwnerRelativePath": null,
+              "actualVariantProperties": {
+                "Size": "128"
+              },
+              "referenceVariantProperties": null,
+              "surfaceContext": {
+                "kind": "white",
+                "source": "ancestor-fill-color",
+                "nodeId": "12536:143128",
+                "nodeName": "IconView",
+                "tokenId": null,
+                "tokenName": null,
+                "color": "#FFFFFF"
+              }
+            },
+            "componentRules": [
+              {
+                "ruleId": "component:web-core.icon-view.layer-properties-use-effective-baseline",
+                "severity": "error",
+                "source": "component-contract",
+                "ruleKind": "design-rule",
+                "authority": {
+                  "status": "active",
+                  "provenance": "design-system-author",
+                  "revision": 1
+                },
+                "severityScope": null,
+                "appliesTo": "layout.*|fill|stroke|radius|opacity",
+                "checkType": "deterministic",
+                "matchKind": "exact_component_rule",
+                "changeScope": null,
+                "ruleText": "Layout, fill, stroke, radius и opacity корня и внутренних слоёв IconView должны совпадать с effective baseline текущего состояния. Разрешение компонента-хоста имеет приоритет и должно быть выражено отдельным contextual rule.",
+                "remediation": null,
+                "numericConstraint": null,
+                "requiredTokenSource": null
+              }
+            ],
+            "presentation": {
+              "scope": "layer-property",
+              "groupTitle": "Параметры слоя",
+              "displayName": null,
+              "priority": 50,
+              "resetAction": "reset-layer-properties",
+              "effectiveBaseline": "composition-contract"
+            },
+            "assessment": {
+              "verdict": "violation",
+              "source": "component-contract",
+              "reasonCode": "component-contract-violation",
+              "ruleId": "component:web-core.icon-view.layer-properties-use-effective-baseline",
+              "message": "Layout, fill, stroke, radius и opacity корня и внутренних слоёв IconView должны совпадать с effective baseline текущего состояния. Разрешение компонента-хоста имеет приоритет и должно быть выражено отдельным contextual rule.",
+              "remediation": null
+            }
+          },
+          {
+            "node": {
+              "id": "I12536:143140;448:25199;448:24941",
+              "name": "document-banknote",
+              "type": null,
+              "pageName": "     Лаборатория",
+              "path": "Size=128 / Content / ShapeContent / Content / Fixer / PaintMe / document-banknote",
+              "visible": true
+            },
+            "kind": "other",
+            "property": "component.identity",
+            "message": "Компонент: diamonds → document-banknote",
+            "reference": {
+              "value": "diamonds",
+              "resource": null,
+              "binding": null
+            },
+            "actual": {
+              "value": "document-banknote",
+              "resource": null,
+              "binding": null
+            },
+            "bindingStatus": null,
+            "variableMode": null,
+            "signature": "component:e2fa51ace6584f743e46af463b4ae018d39ec6c0:other:component.identity:diamonds->document-banknote",
+            "context": {
+              "actualComponentKey": "f781a12fbbb2ccf4b9fcb85de608ce2e4a9bd1f0",
+              "referenceComponentKey": "86df8e8eab2476704d9ae803b04ca616a2e9a358",
+              "referenceOrigin": "host",
+              "actualNestedOwnerComponentKey": "ee23234c6cf8a50d8d47eefc5bb9dfcb8b262121",
+              "actualNestedOwnerPath": "Size=128 / Content / ShapeContent / Content",
+              "actualNestedOwnerRelativePath": "Fixer / PaintMe / document-banknote",
+              "nestedOwnerComponentKey": "86df8e8eab2476704d9ae803b04ca616a2e9a358",
+              "nestedOwnerComponentRole": null,
+              "nestedOwnerPath": "Size=128 / Content / ShapeContent / Content / Fixer / PaintMe / document-banknote",
+              "nestedOwnerRelativePath": "",
+              "actualVariantProperties": {
+                "Size": "m"
+              },
+              "referenceVariantProperties": {
+                "Size": "m"
+              },
+              "surfaceContext": {
+                "kind": "white",
+                "source": "ancestor-fill-color",
+                "nodeId": "12536:143128",
+                "nodeName": "IconView",
+                "tokenId": null,
+                "tokenName": null,
+                "color": "#FFFFFF"
+              }
+            },
+            "componentRules": [],
+            "presentation": null,
+            "assessment": null
+          }
+        ]
+      }
+    ]
+  }
+}
