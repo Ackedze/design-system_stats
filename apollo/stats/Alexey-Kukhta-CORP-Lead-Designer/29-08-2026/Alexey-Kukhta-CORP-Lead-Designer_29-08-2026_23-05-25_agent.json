@@ -1,0 +1,2036 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1096330610570928879-1788033925629-1b1apgj4:agent",
+  "sourceReportId": "apollo-1096330610570928879-1788033925629-1b1apgj4",
+  "generatedAt": "2026-08-29T20:05:25.629Z",
+  "suggestedFileName": "Alexey-Kukhta-CORP-Lead-Designer_29-08-2026_23-05-25_agent.json",
+  "user": {
+    "id": "1096330610570928879",
+    "name": "Alexey Kukhta / CORP / Lead Designer",
+    "slug": "Alexey-Kukhta-CORP-Lead-Designer"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.3.0"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "❇️ Мастерская :: AI",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "pageType": null,
+    "startedAt": "2026-08-29T20:05:22.552Z",
+    "finishedAt": "2026-08-29T20:05:25.629Z",
+    "durationMs": 3077,
+    "selection": [
+      {
+        "nodeId": "12623:156421",
+        "name": "BenefitCard · BASE 1440 · Apollo Predicate",
+        "nodeType": "SECTION",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 47,
+    "problemOccurrenceCount": 67,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 53,
+      "updates": 8,
+      "customizations": 0,
+      "localComponents": 0,
+      "detachedComponents": 0,
+      "presets": 0,
+      "technicalComponents": 0,
+      "currentComponents": 27,
+      "wrongChannel": 5,
+      "themization": 1
+    },
+    "includedFindingCount": 67,
+    "omittedCurrentComponentCount": 27
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, authority.status=active, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with authority.status=active, severity=error, and matchKind=exact_component_rule for the same property/change. Missing, draft, or malformed authority never confirms a violation.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 53,
+      "includedCount": 53,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 8,
+      "includedCount": 8,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 5,
+      "includedCount": 5,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156422",
+        "name": "BenefitCard · BASE 1440",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BenefitCard · BASE 1440",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156422",
+        "name": "BenefitCard · BASE 1440",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BenefitCard · BASE 1440",
+        "visible": true
+      },
+      "style": {
+        "name": "24/auto · Semi Bold · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156423",
+        "name": "Ожидание: 3 ошибки, 1 warning; PASS/ALLOW/UNKNOWN без ложных срабатываний.",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / Ожидание: 3 ошибки, 1 warning; PASS/ALLOW/UNKNOWN без ложных срабатываний.",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156423",
+        "name": "Ожидание: 3 ошибки, 1 warning; PASS/ALLOW/UNKNOWN без ложных срабатываний.",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / Ожидание: 3 ошибки, 1 warning; PASS/ALLOW/UNKNOWN без ложных срабатываний.",
+        "visible": true
+      },
+      "style": {
+        "name": "14/auto · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156424",
+        "name": "BC-00 PASS",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-00 PASS",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156424",
+        "name": "BC-00 PASS",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-00 PASS",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156425",
+        "name": "BC-00 PASS",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-00 PASS / BC-00 PASS",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156425",
+        "name": "BC-00 PASS",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-00 PASS / BC-00 PASS",
+        "visible": true
+      },
+      "style": {
+        "name": "18/auto · Semi Bold · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156426",
+        "name": "Опубликованный desktop BenefitCard без изменений.",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-00 PASS / Опубликованный desktop BenefitCard без изменений.",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156426",
+        "name": "Опубликованный desktop BenefitCard без изменений.",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-00 PASS / Опубликованный desktop BenefitCard без изменений.",
+        "visible": true
+      },
+      "style": {
+        "name": "13/auto · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156428",
+        "name": "BC-01 FAIL · wrong channel",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-01 FAIL · wrong channel",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156428",
+        "name": "BC-01 FAIL · wrong channel",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-01 FAIL · wrong channel",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156429",
+        "name": "BC-01 FAIL · wrong channel",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-01 FAIL · wrong channel / BC-01 FAIL · wrong channel",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156429",
+        "name": "BC-01 FAIL · wrong channel",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-01 FAIL · wrong channel / BC-01 FAIL · wrong channel",
+        "visible": true
+      },
+      "style": {
+        "name": "18/auto · Semi Bold · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156430",
+        "name": "MobileWeb BenefitCard помещён в desktop-контекст.",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-01 FAIL · wrong channel / MobileWeb BenefitCard помещён в desktop-контекст.",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156430",
+        "name": "MobileWeb BenefitCard помещён в desktop-контекст.",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-01 FAIL · wrong channel / MobileWeb BenefitCard помещён в desktop-контекст.",
+        "visible": true
+      },
+      "style": {
+        "name": "13/auto · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156432",
+        "name": "BC-04 FAIL · BottomContent SwapMe",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-04 FAIL · BottomContent SwapMe",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156432",
+        "name": "BC-04 FAIL · BottomContent SwapMe",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-04 FAIL · BottomContent SwapMe",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156433",
+        "name": "BC-04 FAIL · BottomContent SwapMe",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-04 FAIL · BottomContent SwapMe / BC-04 FAIL · BottomContent SwapMe",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156433",
+        "name": "BC-04 FAIL · BottomContent SwapMe",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-04 FAIL · BottomContent SwapMe / BC-04 FAIL · BottomContent SwapMe",
+        "visible": true
+      },
+      "style": {
+        "name": "18/auto · Semi Bold · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156434",
+        "name": "BottomContent включён, служебный Presets=SwapMe не заменён на Link.",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-04 FAIL · BottomContent SwapMe / BottomContent включён, служебный Presets=SwapMe не заменён на Link.",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156434",
+        "name": "BottomContent включён, служебный Presets=SwapMe не заменён на Link.",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-04 FAIL · BottomContent SwapMe / BottomContent включён, служебный Presets=SwapMe не заменён на Link.",
+        "visible": true
+      },
+      "style": {
+        "name": "13/auto · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156436",
+        "name": "BC-05 PASS · public invariant",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-05 PASS · public invariant",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156436",
+        "name": "BC-05 PASS · public invariant",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-05 PASS · public invariant",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156437",
+        "name": "BC-05 PASS · public invariant",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-05 PASS · public invariant / BC-05 PASS · public invariant",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156437",
+        "name": "BC-05 PASS · public invariant",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-05 PASS · public invariant / BC-05 PASS · public invariant",
+        "visible": true
+      },
+      "style": {
+        "name": "18/auto · Semi Bold · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156438",
+        "name": "Background=False удаляет BackgroundPlate; невозможный Skeleton не эмулируется.",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-05 PASS · public invariant / Background=False удаляет BackgroundPlate; невозможный Skeleton не эмулируется.",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156438",
+        "name": "Background=False удаляет BackgroundPlate; невозможный Skeleton не эмулируется.",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-05 PASS · public invariant / Background=False удаляет BackgroundPlate; невозможный Skeleton не эмулируется.",
+        "visible": true
+      },
+      "style": {
+        "name": "13/auto · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156440",
+        "name": "BC-06 WARNING · Secondary surface",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-06 WARNING · Secondary surface",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156440",
+        "name": "BC-06 WARNING · Secondary surface",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-06 WARNING · Secondary surface",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156441",
+        "name": "BC-06 WARNING · Secondary surface",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-06 WARNING · Secondary surface / BC-06 WARNING · Secondary surface",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156441",
+        "name": "BC-06 WARNING · Secondary surface",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-06 WARNING · Secondary surface / BC-06 WARNING · Secondary surface",
+        "visible": true
+      },
+      "style": {
+        "name": "18/auto · Semi Bold · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156442",
+        "name": "Вложенный BackgroundPlate Type=Secondary: допустимо, но не рекомендуется.",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-06 WARNING · Secondary surface / Вложенный BackgroundPlate Type=Secondary: допустимо, но не рекомендуется.",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156442",
+        "name": "Вложенный BackgroundPlate Type=Secondary: допустимо, но не рекомендуется.",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-06 WARNING · Secondary surface / Вложенный BackgroundPlate Type=Secondary: допустимо, но не рекомендуется.",
+        "visible": true
+      },
+      "style": {
+        "name": "13/auto · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156444",
+        "name": "BC-07 FAIL · visual baseline",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-07 FAIL · visual baseline",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156444",
+        "name": "BC-07 FAIL · visual baseline",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-07 FAIL · visual baseline",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156445",
+        "name": "BC-07 FAIL · visual baseline",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-07 FAIL · visual baseline / BC-07 FAIL · visual baseline",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156445",
+        "name": "BC-07 FAIL · visual baseline",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-07 FAIL · visual baseline / BC-07 FAIL · visual baseline",
+        "visible": true
+      },
+      "style": {
+        "name": "18/auto · Semi Bold · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156446",
+        "name": "Ручная заливка заголовка отклонена от effective baseline.",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-07 FAIL · visual baseline / Ручная заливка заголовка отклонена от effective baseline.",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156446",
+        "name": "Ручная заливка заголовка отклонена от effective baseline.",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-07 FAIL · visual baseline / Ручная заливка заголовка отклонена от effective baseline.",
+        "visible": true
+      },
+      "style": {
+        "name": "13/auto · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I12623:156447;17:12766;17:12823",
+        "name": "value",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-07 FAIL · visual baseline / BC-07 FAIL · title fill / ContentWrapper / Content / Content / Title / value",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156448",
+        "name": "BC-08 ALLOW · public variants",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-08 ALLOW · public variants",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156448",
+        "name": "BC-08 ALLOW · public variants",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-08 ALLOW · public variants",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156449",
+        "name": "BC-08 ALLOW · public variants",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-08 ALLOW · public variants / BC-08 ALLOW · public variants",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156449",
+        "name": "BC-08 ALLOW · public variants",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-08 ALLOW · public variants / BC-08 ALLOW · public variants",
+        "visible": true
+      },
+      "style": {
+        "name": "18/auto · Semi Bold · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156450",
+        "name": "CardAxis=Horizontal и GraphicPosition=Right разрешены публичным API.",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-08 ALLOW · public variants / CardAxis=Horizontal и GraphicPosition=Right разрешены публичным API.",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156450",
+        "name": "CardAxis=Horizontal и GraphicPosition=Right разрешены публичным API.",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-08 ALLOW · public variants / CardAxis=Horizontal и GraphicPosition=Right разрешены публичным API.",
+        "visible": true
+      },
+      "style": {
+        "name": "13/auto · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156452",
+        "name": "BC-10 UNKNOWN · ImageView baseline",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-10 UNKNOWN · ImageView baseline",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156452",
+        "name": "BC-10 UNKNOWN · ImageView baseline",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-10 UNKNOWN · ImageView baseline",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156453",
+        "name": "BC-10 UNKNOWN · ImageView baseline",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-10 UNKNOWN · ImageView baseline / BC-10 UNKNOWN · ImageView baseline",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156453",
+        "name": "BC-10 UNKNOWN · ImageView baseline",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-10 UNKNOWN · ImageView baseline / BC-10 UNKNOWN · ImageView baseline",
+        "visible": true
+      },
+      "style": {
+        "name": "18/auto · Semi Bold · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156454",
+        "name": "Size изменён: фиксированный verdict запрещён без effective baseline facts.",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-10 UNKNOWN · ImageView baseline / Size изменён: фиксированный verdict запрещён без effective baseline facts.",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12623:156454",
+        "name": "Size изменён: фиксированный verdict запрещён без effective baseline facts.",
+        "type": "TEXT",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-10 UNKNOWN · ImageView baseline / Size изменён: фиксированный verdict запрещён без effective baseline facts.",
+        "visible": true
+      },
+      "style": {
+        "name": "13/auto · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "12623:156427",
+        "name": "BC-00 PASS · desktop default",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-00 PASS / BC-00 PASS · desktop default",
+        "visible": true,
+        "ancestorNodeIds": [
+          "12623:156424"
+        ]
+      },
+      "component": {
+        "name": "[D] BenefitCard",
+        "key": "f4bf880ba158305302c367965268c48643719697",
+        "library": "Web _ Сorp Promo Components",
+        "sourceFile": "web/components/web-corp-promo/Web _ Сorp Promo Components -- BenefitCard.json"
+      },
+      "variant": {
+        "name": "GraphicPosition=Left, CardAxis=Vertical, Background=True, Compact=False",
+        "key": "f4bf880ba158305302c367965268c48643719697"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "f4bf880ba158305302c367965268c48643719697",
+        "currentComponentId": "12615:11284",
+        "latestComponentId": "11298:144321"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "12623:156431",
+        "name": "BC-01 FAIL · mobile in desktop",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-01 FAIL · wrong channel / BC-01 FAIL · mobile in desktop",
+        "visible": true,
+        "ancestorNodeIds": [
+          "12623:156428"
+        ]
+      },
+      "component": {
+        "name": "[M] BenefitCard",
+        "key": "6561ac087a33424016baae244032f60fa2dd6cfc",
+        "library": "Web _ Сorp Promo Components",
+        "sourceFile": "web/components/web-corp-promo/Web _ Сorp Promo Components -- BenefitCard.json"
+      },
+      "variant": {
+        "name": "GraphicPosition=Left, CardAxis=Vertical, Background=True, Compact=False",
+        "key": "6561ac087a33424016baae244032f60fa2dd6cfc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "6561ac087a33424016baae244032f60fa2dd6cfc",
+        "currentComponentId": "12621:11306",
+        "latestComponentId": "11259:15707"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "12623:156435",
+        "name": "BC-04 FAIL · bottom placeholder",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-04 FAIL · BottomContent SwapMe / BC-04 FAIL · bottom placeholder",
+        "visible": true,
+        "ancestorNodeIds": [
+          "12623:156432"
+        ]
+      },
+      "component": {
+        "name": "[D] BenefitCard",
+        "key": "f4bf880ba158305302c367965268c48643719697",
+        "library": "Web _ Сorp Promo Components",
+        "sourceFile": "web/components/web-corp-promo/Web _ Сorp Promo Components -- BenefitCard.json"
+      },
+      "variant": {
+        "name": "GraphicPosition=Left, CardAxis=Vertical, Background=True, Compact=False",
+        "key": "f4bf880ba158305302c367965268c48643719697"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "f4bf880ba158305302c367965268c48643719697",
+        "currentComponentId": "12615:11284",
+        "latestComponentId": "11298:144321"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "12623:156439",
+        "name": "BC-05 PASS · no background",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-05 PASS · public invariant / BC-05 PASS · no background",
+        "visible": true,
+        "ancestorNodeIds": [
+          "12623:156436"
+        ]
+      },
+      "component": {
+        "name": "[D] BenefitCard",
+        "key": "936389f53d85dd192c155efa26fcbe8a7dea29cb",
+        "library": "Web _ Сorp Promo Components",
+        "sourceFile": "web/components/web-corp-promo/Web _ Сorp Promo Components -- BenefitCard.json"
+      },
+      "variant": {
+        "name": "GraphicPosition=Left, CardAxis=Vertical, Background=False, Compact=False",
+        "key": "936389f53d85dd192c155efa26fcbe8a7dea29cb"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "936389f53d85dd192c155efa26fcbe8a7dea29cb",
+        "currentComponentId": "12615:11285",
+        "latestComponentId": "11298:144322"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "12623:156443",
+        "name": "BC-06 WARNING · secondary",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-06 WARNING · Secondary surface / BC-06 WARNING · secondary",
+        "visible": true,
+        "ancestorNodeIds": [
+          "12623:156440"
+        ]
+      },
+      "component": {
+        "name": "[D] BenefitCard",
+        "key": "f4bf880ba158305302c367965268c48643719697",
+        "library": "Web _ Сorp Promo Components",
+        "sourceFile": "web/components/web-corp-promo/Web _ Сorp Promo Components -- BenefitCard.json"
+      },
+      "variant": {
+        "name": "GraphicPosition=Left, CardAxis=Vertical, Background=True, Compact=False",
+        "key": "f4bf880ba158305302c367965268c48643719697"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "f4bf880ba158305302c367965268c48643719697",
+        "currentComponentId": "12615:11284",
+        "latestComponentId": "11298:144321"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "12623:156447",
+        "name": "BC-07 FAIL · title fill",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-07 FAIL · visual baseline / BC-07 FAIL · title fill",
+        "visible": true,
+        "ancestorNodeIds": [
+          "12623:156444"
+        ]
+      },
+      "component": {
+        "name": "[D] BenefitCard",
+        "key": "f4bf880ba158305302c367965268c48643719697",
+        "library": "Web _ Сorp Promo Components",
+        "sourceFile": "web/components/web-corp-promo/Web _ Сorp Promo Components -- BenefitCard.json"
+      },
+      "variant": {
+        "name": "GraphicPosition=Left, CardAxis=Vertical, Background=True, Compact=False",
+        "key": "f4bf880ba158305302c367965268c48643719697"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "f4bf880ba158305302c367965268c48643719697",
+        "currentComponentId": "12615:11284",
+        "latestComponentId": "11298:144321"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "12623:156451",
+        "name": "BC-08 ALLOW · horizontal right",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-08 ALLOW · public variants / BC-08 ALLOW · horizontal right",
+        "visible": true,
+        "ancestorNodeIds": [
+          "12623:156448"
+        ]
+      },
+      "component": {
+        "name": "[D] BenefitCard",
+        "key": "d14b6755e5e97d02785dc84b4c4612f4792d70a4",
+        "library": "Web _ Сorp Promo Components",
+        "sourceFile": "web/components/web-corp-promo/Web _ Сorp Promo Components -- BenefitCard.json"
+      },
+      "variant": {
+        "name": "GraphicPosition=Right, CardAxis=Horizontal, Background=True, Compact=False",
+        "key": "d14b6755e5e97d02785dc84b4c4612f4792d70a4"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "d14b6755e5e97d02785dc84b4c4612f4792d70a4",
+        "currentComponentId": "12615:11288",
+        "latestComponentId": "11298:144325"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "12623:156455",
+        "name": "BC-10 UNKNOWN · image baseline",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-10 UNKNOWN · ImageView baseline / BC-10 UNKNOWN · image baseline",
+        "visible": true,
+        "ancestorNodeIds": [
+          "12623:156452"
+        ]
+      },
+      "component": {
+        "name": "[D] BenefitCard",
+        "key": "f4bf880ba158305302c367965268c48643719697",
+        "library": "Web _ Сorp Promo Components",
+        "sourceFile": "web/components/web-corp-promo/Web _ Сorp Promo Components -- BenefitCard.json"
+      },
+      "variant": {
+        "name": "GraphicPosition=Left, CardAxis=Vertical, Background=True, Compact=False",
+        "key": "f4bf880ba158305302c367965268c48643719697"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "f4bf880ba158305302c367965268c48643719697",
+        "currentComponentId": "12615:11284",
+        "latestComponentId": "11298:144321"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "12623:156431",
+        "name": "BC-01 FAIL · mobile in desktop",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-01 FAIL · wrong channel / BC-01 FAIL · mobile in desktop",
+        "visible": true,
+        "ancestorNodeIds": [
+          "12623:156428"
+        ]
+      },
+      "component": {
+        "name": "[M] BenefitCard",
+        "key": "6561ac087a33424016baae244032f60fa2dd6cfc",
+        "library": "Web _ Сorp Promo Components",
+        "sourceFile": "web/components/web-corp-promo/Web _ Сorp Promo Components -- BenefitCard.json"
+      },
+      "variant": {
+        "name": "GraphicPosition=Left, CardAxis=Vertical, Background=True, Compact=False",
+        "key": "6561ac087a33424016baae244032f60fa2dd6cfc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "6561ac087a33424016baae244032f60fa2dd6cfc",
+        "currentComponentId": "12621:11306",
+        "latestComponentId": "11259:15707"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I12623:156431;17:12784",
+        "name": "[M] Graphic",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-01 FAIL · wrong channel / BC-01 FAIL · mobile in desktop / GraphicContainer / [M] Graphic",
+        "visible": true,
+        "ancestorNodeIds": [
+          "12623:156428",
+          "12623:156431",
+          "I12623:156431;17:12783"
+        ]
+      },
+      "component": {
+        "name": "[M] Graphic",
+        "key": "c5ea8be04e7b406016508940340f65b910405d31",
+        "library": "Web _ Сorp Promo Components",
+        "sourceFile": "web/components/web-corp-promo/Web _ Сorp Promo Components -- BenefitCard.json"
+      },
+      "variant": {
+        "name": "Presets=Image",
+        "key": "c5ea8be04e7b406016508940340f65b910405d31"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I12623:156431;17:12785",
+        "name": "Content",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-01 FAIL · wrong channel / BC-01 FAIL · mobile in desktop / ContentWrapper / Content",
+        "visible": true,
+        "ancestorNodeIds": [
+          "12623:156428",
+          "12623:156431",
+          "I12623:156431;17:14634"
+        ]
+      },
+      "component": {
+        "name": "[M] ContentWrapper",
+        "key": "c268ce79a17e465ecb808ea4ee01b0075eed23b8",
+        "library": "Web _ Сorp Promo Components",
+        "sourceFile": "web/components/web-corp-promo/Web _ Сorp Promo Components -- BenefitCard.json"
+      },
+      "variant": {
+        "name": "Title=Secondary",
+        "key": "c268ce79a17e465ecb808ea4ee01b0075eed23b8"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I12623:156431;17:14838",
+        "name": "[M][Promo] BackgroundPlate",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-01 FAIL · wrong channel / BC-01 FAIL · mobile in desktop / BackgroundPlate / [M][Promo] BackgroundPlate",
+        "visible": true,
+        "ancestorNodeIds": [
+          "12623:156428",
+          "12623:156431",
+          "I12623:156431;17:14837"
+        ]
+      },
+      "component": {
+        "name": "[M][Promo] BackgroundPlate",
+        "key": "226115cfb30c2c99106d802b9a3661b04406bad9",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Position=Level 1 (outer)",
+        "key": "226115cfb30c2c99106d802b9a3661b04406bad9"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I12623:156431;17:14838;102592:139633",
+        "name": "[M][Promo] Style Level 1",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "BenefitCard · BASE 1440 · Apollo Predicate / BC-01 FAIL · wrong channel / BC-01 FAIL · mobile in desktop / BackgroundPlate / [M][Promo] BackgroundPlate / [M][Promo] Style Level 1",
+        "visible": true,
+        "ancestorNodeIds": [
+          "12623:156428",
+          "12623:156431",
+          "I12623:156431;17:14837",
+          "I12623:156431;17:14838"
+        ]
+      },
+      "component": {
+        "name": "[M][Promo] Style Level 1",
+        "key": "a67224c0acd2cb9a7a05d02912ea1d6b20a97d3b",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "BackgroundColor=base-bg (white), Type=Primary, Skeleton=False",
+        "key": "a67224c0acd2cb9a7a05d02912ea1d6b20a97d3b"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "12623:156421",
+        "name": "Страница:      Лаборатория",
+        "type": "PAGE",
+        "pageName": "     Лаборатория",
+        "path": "     Лаборатория",
+        "visible": true
+      },
+      "kind": "missingThemeMode",
+      "recommendation": "Смени темизацию на Corp",
+      "component": null
+    }
+  ],
+  "componentContexts": [
+    {
+      "componentKey": "web-corp.background-plate",
+      "summary": "BackgroundPlate — семейство variable-driven surface-компонентов. Для нового контента используется BackgroundPlateSlot: Level-0 задаётся главной поверхности, первый компонент получает Level-1, а опциональный Level-2 располагается только непосредственно внутри Level-1. Type, BackgroundColor, Skeleton и layer-свойства трактуются по exact component rules. BackgroundPlateView — кодовый alias этого же семейства.",
+      "criticalBaselines": [
+        "Для новых макетов основным контейнером является BackgroundPlateSlot; BackgroundPlate считается legacy для генерации, но его существующее использование не является нарушением само по себе.",
+        "Mode BackgroundPlate Level=Level-0 назначается главной поверхности страницы или модальной сущности. Первый вложенный BackgroundPlateSlot получает Level-1; Level-2 всегда располагается непосредственно внутри Level-1.",
+        "Обычный контент может лежать непосредственно в Slot Level-1. Level-2 является опциональной вложенной поверхностью; Level-0 и Level-1 внутри Slot запрещены.",
+        "Рекомендуемый padding: Spacing/32 для Level-1 и Spacing/24 для Level-2. Другие значения допустимы под контекст или паттерн только с Spacing token binding.",
+        "Axis, gap и alignment Slot определяются контекстом; width должен быть Fill, height — Hug. Clip content может быть true или false по контексту.",
+        "Primary и Secondary получают fill/stroke только из effective baseline. Colored использует только токенизированную заливку без stroke. Border используется без fill, с токенизированным stroke; strokeWeight контекстный, strokeAlign всегда INSIDE.",
+        "Radius, opacity и blend mode фиксируются effective baseline. Drop shadow и Inner shadow запрещены; Layer blur и Background blur разрешены по контексту.",
+        "Skeleton=True является штатным состоянием загрузки компонента или контента. Сложная skeleton-композиция допустима только при явном сценарии паттерна.",
+        "BackgroundPlateView в code/private usage маппится на BackgroundPlate и должен использовать те же правила, контракты и pattern links.",
+        "Для desktop рабочей поверхности Level 1 использует radius 16, Level 2 использует radius 12. Promo и mobile variants могут иметь другие baseline из каталога.",
+        "BackgroundColor зависит от surface context: для страниц используются base-bg/base-bg-alt, для модальных сущностей используются modal-bg/modal-bg-alt. Суффикс в скобках (gray)/(white) описывает визуальный фон, а часть имени до скобок соответствует цветовому токену поверхности.",
+        "В каталоге вариант обводочной поверхности называется Type=Border. В тексте рекомендаций можно пояснять его как bordered/обводочный, но в машинных фактах и таблицах используй точное значение Border.",
+        "Radius/cornerRadius у BackgroundPlate, BackgroundPlateSlot и вложенных Style Level фиксируется component effective baseline. Ручное изменение скруглений запрещено и должно трактоваться как нарушение, а не как допустимая композиционная настройка.",
+        "Для Table Wide [D] в BackgroundPlateSlot действует специальное правило: Slot padding top=Spacing/0, right/bottom/left=Spacing/16. [D] TopBar расположен рядом с плейтом в общем Level-0 контейнере, а не внутри Slot."
+      ],
+      "agentInstructions": [
+        "Не выводи нарушение из примера. Используй только exact rules, exact component contracts и явно найденные pattern rules.",
+        "Если во входном отчёте встречается BackgroundPlateView, трактуй его как code/private alias компонента BackgroundPlate, а не как отдельный компонент без правил.",
+        "Изменения variant/property показывай как component-property customizations; изменения fill, stroke, stroke geometry, radius, opacity, effects, blend mode, layout и style показывай как layer-property customizations.",
+        "Если nested diff принадлежит wrapper и actual совпадает с effective baseline, не показывай его как дизайнерскую кастомизацию.",
+        "Если actual отличается от effective baseline, показывай effectiveBaseline -> actual. Не подставляй standalone baseline вложенного Style Level вместо baseline выбранного BackgroundPlate variant.",
+        "Padding у BackgroundPlateSlot может быть осознанной настройкой композиции. Комментируй его как layer customization и проверяй Spacing token binding; не требуй вернуть 32 или 24 только из-за отличия от рекомендации.",
+        "Не требуй Level-2 для обычного контента Slot Level-1. Если внутри Slot найден BackgroundPlate Level-0 или Level-1, используй rule:components.background-plate.slot-content-levels.",
+        "Axis, gap, alignment и Clip content Slot трактуй как контекстные настройки. Width не должен отличаться от Fill, height — от Hug.",
+        "При анализе BackgroundColor сначала определи контекст поверхности: page или modal. Не рекомендуй modal-bg* для обычной страницы и не рекомендуй base-bg* для модальной сущности, если exact rule или отчёт указывают на противоположный surface context.",
+        "Для Primary и Secondary любое ручное изменение fill/stroke является нарушением, даже при token binding. Сравнивай с effective baseline текущего Type, уровня и BackgroundColor.",
+        "Для Colored разрешена только видимая заливка через color token; raw fill, отсутствие fill и любой stroke являются нарушением.",
+        "Для Border fill запрещён, stroke должен быть привязан к color token. StrokeWeight можно менять под контекст; strokeAlign должен оставаться INSIDE. Border не может быть кликабельным.",
+        "Если в отчёте есть изменение radius/cornerRadius, opacity или blend mode, используй соответствующее exact component rule и рекомендуй сброс к effective baseline.",
+        "Drop shadow и Inner shadow трактуй как нарушения. Layer blur и Background blur являются допустимыми контекстными кастомизациями и не должны попадать под запрет теней.",
+        "Переключение Skeleton=False → True само по себе разрешено. Ручную простую skeleton-композицию вместо component property считай нарушением; сложное исключение допускай только по явному паттерну.",
+        "Для Table Wide не разрешай дублировать table inset внутри плейта: HeadRow, BodyRow и ячейки используют собственные effective baseline без дополнительных padding."
+      ],
+      "includedComponents": [
+        "[D] BackgroundPlate",
+        "[D] BackgroundPlateSlot",
+        "[D] Style Level 1",
+        "[D] Style Level 2",
+        "[D][Promo] BackgroundPlate",
+        "[D][Promo] Style Level 1",
+        "[D][Promo] Style Level 2",
+        "[M] BackgroundPlate",
+        "[M] BackgroundPlateSlot",
+        "[M] Style Level 1",
+        "[M] Style Level 2",
+        "[M][Promo] BackgroundPlate",
+        "[M][Promo] Style Level 1",
+        "[M][Promo] Style Level 2"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "a58fa7ae11989280fc24069f204ba617fdb1f93c",
+          "name": "[M][Promo] BackgroundPlate",
+          "purpose": "Mobile-web подложка для промо-композиций, которым нужна отдельная брендированная поверхность и два уровня вложенности.",
+          "useWhen": [
+            "Собирается mobile-web промо блок из компонентов промо-библиотеки."
+          ],
+          "doNotUseWhen": [
+            "Собирается обычный продуктовый mobile-web интерфейс без промо-сценария."
+          ],
+          "relationship": "Mobile-web promo-only ветка семейства BackgroundPlate с собственным effective baseline.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        },
+        {
+          "componentKey": "19b4b6ed5718d82888a6551b56e0c776f4993ccc",
+          "name": "[M][Promo] Style Level 1",
+          "purpose": "💅🏻 For Promo page only",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.*"
+          ],
+          "layerProperties": [
+            "layout.*",
+            "styles.*",
+            "fill",
+            "stroke",
+            "radius",
+            "opacity",
+            "text.*"
+          ],
+          "dependencyPolicy": "Component-property reset и layer-property reset разделены. Layer reset должен использовать effective baseline после nested variant/materialization resolution. Для BackgroundPlateView применяй тот же reset model, что и для BackgroundPlate."
+        },
+        "publicApi": {
+          "components": [
+            {
+              "name": "[D] BackgroundPlate",
+              "key": "2c7332d281570f4d5af6d334f8df378d24a1f235",
+              "role": "legacy-surface",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "legacy",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D] BackgroundPlateSlot",
+              "key": "5b6c5ac720154aff36be2f8a883bd058faa663cf",
+              "role": "content-container",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "preferred",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[D] Style Level 1",
+              "key": "adb65a62cde9ebedc5d0d41d2d77cd63e71e0745",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D] Style Level 2",
+              "key": "c8735f4834a8b43fd2ab821ffc0a6e72a57c4b5b",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D][Promo] BackgroundPlate",
+              "key": "c49f08db71ab44ea64f0880730220de1d93ac263",
+              "role": "promo-surface",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "promo-only",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[D][Promo] Style Level 1",
+              "key": "2b46e94cdecdab7d4cb977055c0405b2f6204127",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D][Promo] Style Level 2",
+              "key": "a5a4240097211b28195291a593c567e9d7c62bd3",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M] BackgroundPlate",
+              "key": "4cfe3915785e5c37255190ae16314f6f2a1d05b3",
+              "role": "legacy-surface",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "legacy",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M] BackgroundPlateSlot",
+              "key": "1745af83255e324781c2fbadfe0ad8cc7f13e0d8",
+              "role": "content-container",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "preferred",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[M] Style Level 1",
+              "key": "efc528bd86582d96a824edeb2c257dc8b22a8f14",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M] Style Level 2",
+              "key": "74f025a02889239c3f6eed60d74ba85f292bdcb0",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M][Promo] BackgroundPlate",
+              "key": "a58fa7ae11989280fc24069f204ba617fdb1f93c",
+              "role": "promo-surface",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "promo-only",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[M][Promo] Style Level 1",
+              "key": "19b4b6ed5718d82888a6551b56e0c776f4993ccc",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M][Promo] Style Level 2",
+              "key": "b33f77cc56c5feffb4f24a5912d74e3af927140e",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            }
+          ],
+          "aliases": null,
+          "codeExports": [
+            {
+              "name": "BackgroundPlate",
+              "kind": "react-component-export",
+              "mapsTo": "[D] BackgroundPlate / [M] BackgroundPlate",
+              "usage": "Основной code/private export, который соответствует Figma-компонентам семейства BackgroundPlate."
+            },
+            {
+              "name": "BackgroundPlateView",
+              "kind": "react-view-export",
+              "mapsTo": "BackgroundPlate",
+              "usage": "Кодовая обёртка/представление BackgroundPlate. В Apollo и агентском анализе не является отдельным Figma-компонентом и должна использовать тот же componentKey web-corp.background-plate."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "componentKey": "web.benefit-card",
+      "summary": "BenefitCard показывает преимущество, функцию или ключевое ценностное предложение в карточке с обязательными заголовком и графикой.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] BenefitCard",
+        "[D] BottomContent",
+        "[D] ContentWrapper",
+        "[D] Graphic",
+        "[M] BenefitCard",
+        "[M] BottomContent",
+        "[M] ContentWrapper",
+        "[M] Graphic"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    }
+  ]
+}
