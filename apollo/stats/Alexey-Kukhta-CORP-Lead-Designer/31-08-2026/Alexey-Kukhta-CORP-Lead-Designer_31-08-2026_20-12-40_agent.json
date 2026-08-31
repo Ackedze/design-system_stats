@@ -1,0 +1,1045 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1096330610570928879-1788196360076-s8v0p6lr:agent",
+  "sourceReportId": "apollo-1096330610570928879-1788196360076-s8v0p6lr",
+  "generatedAt": "2026-08-31T17:12:40.076Z",
+  "suggestedFileName": "Alexey-Kukhta-CORP-Lead-Designer_31-08-2026_20-12-40_agent.json",
+  "user": {
+    "id": "1096330610570928879",
+    "name": "Alexey Kukhta / CORP / Lead Designer",
+    "slug": "Alexey-Kukhta-CORP-Lead-Designer"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.3.0"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "Воркшоп Дашборд ИП",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "pageType": null,
+    "startedAt": "2026-08-31T17:12:31.396Z",
+    "finishedAt": "2026-08-31T17:12:40.076Z",
+    "durationMs": 8680,
+    "selection": [
+      {
+        "nodeId": "3820:20945",
+        "name": "Frame 1948754535",
+        "nodeType": "FRAME",
+        "path": "[D] CorporatePage / Page / Frame 1948754535",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 66,
+    "problemOccurrenceCount": 11,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 6,
+      "updates": 0,
+      "customizations": 15,
+      "localComponents": 0,
+      "detachedComponents": 0,
+      "presets": 0,
+      "technicalComponents": 0,
+      "currentComponents": 65,
+      "wrongChannel": 0,
+      "themization": 1
+    },
+    "includedFindingCount": 11,
+    "omittedCurrentComponentCount": 65
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, authority.status=active, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with authority.status=active, severity=error, and matchKind=exact_component_rule for the same property/change. Missing, draft, or malformed authority never confirms a violation.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 6,
+      "includedCount": 6,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 15,
+      "includedCount": 4,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "3820:20493",
+        "name": "сайдпанель",
+        "type": "FRAME",
+        "pageName": "Для показа",
+        "path": "[D] CorporatePage / Page / Frame 1948754535 / сайдпанель",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I3820:20506;20005:49516;20005:49739;20005:49801",
+        "name": "line",
+        "type": "RECTANGLE",
+        "pageName": "Для показа",
+        "path": "[D] CorporatePage / Page / Frame 1948754535 / сайдпанель / Frame 2147238710 / cell / Frame 2147238490 / CardImage / CardItem / Cover / Stack Card / line",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I3820:20506;20005:49516;20005:49739;20005:49802",
+        "name": "mask",
+        "type": "RECTANGLE",
+        "pageName": "Для показа",
+        "path": "[D] CorporatePage / Page / Frame 1948754535 / сайдпанель / Frame 2147238710 / cell / Frame 2147238490 / CardImage / CardItem / Cover / Stack Card / mask",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I3820:20506;20005:49516;20005:49739;20005:49805",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "Для показа",
+        "path": "[D] CorporatePage / Page / Frame 1948754535 / сайдпанель / Frame 2147238710 / cell / Frame 2147238490 / CardImage / CardItem / Cover / Logo Alfa XS / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "1872fd7695fd7e1e73a8d289cb2bce48a98a9901",
+        "key": "1872fd7695fd7e1e73a8d289cb2bce48a98a9901",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I3820:20514;448:33204;145953:45275",
+        "name": "PaintMe",
+        "type": "BOOLEAN_OPERATION",
+        "pageName": "Для показа",
+        "path": "[D] CorporatePage / Page / Frame 1948754535 / сайдпанель / Frame 2147238710 / cell / IconView / Content / ShapeContent / Content / Fixer / PaintMe",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "3820:20516",
+        "name": "amount",
+        "type": "TEXT",
+        "pageName": "Для показа",
+        "path": "[D] CorporatePage / Page / Frame 1948754535 / сайдпанель / Frame 2147238710 / cell / text / amount",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "3820:20506",
+        "name": "CardImage",
+        "type": "INSTANCE",
+        "pageName": "Для показа",
+        "path": "[D] CorporatePage / Page / Frame 1948754535 / сайдпанель / Frame 2147238710 / cell / Frame 2147238490 / CardImage",
+        "visible": true,
+        "ancestorNodeIds": [
+          "3820:18301",
+          "3820:20945",
+          "3820:20493",
+          "3820:20497",
+          "3820:20498",
+          "3820:20505"
+        ]
+      },
+      "component": {
+        "name": "CardImage",
+        "key": "4c595860008f6c3efaa0c25b336f59fb9d1bd87e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- CardImage.json"
+      },
+      "variant": {
+        "name": "Cover=Alfa Business, Size=24x16, State=Active, Stack=true",
+        "key": "4c595860008f6c3efaa0c25b336f59fb9d1bd87e"
+      },
+      "comparisonIssues": [
+        "Нет данных для itemSpacing в снапшоте для «Cover=Alfa Business, Size=24x16, State=Active, Stack=true / CardItem / Cover»"
+      ],
+      "changes": [
+        {
+          "node": {
+            "id": "I3820:20506;20005:49517;20005:49739;20005:49855",
+            "name": "Image Container",
+            "type": null,
+            "pageName": "Для показа",
+            "path": "Cover=Alfa Business, Size=24x16, State=Active, Stack=true / 🔩 CardItem / Cover / Image Container",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: — → Изображение",
+          "referenceValue": null,
+          "actualValue": "Изображение",
+          "referenceRawValue": null,
+          "actualRawValue": "Изображение",
+          "referenceDisplayValue": null,
+          "actualDisplayValue": "Изображение",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "da5d68abd878db60d5f18a589c2deeadde16027b",
+            "actualNestedOwnerPath": "Cover=Alfa Business, Size=24x16, State=Active, Stack=true / 🔩 CardItem / Cover",
+            "actualNestedOwnerRelativePath": "Image Container",
+            "nestedOwnerComponentKey": "da5d68abd878db60d5f18a589c2deeadde16027b",
+            "nestedOwnerComponentRole": "Part",
+            "nestedOwnerPath": "Cover=Alfa Business, Size=24x16, State=Active, Stack=true / 🔩 CardItem / Cover",
+            "nestedOwnerRelativePath": "Image Container",
+            "actualVariantProperties": {
+              "Product Type": "AB",
+              "Size": "24x16"
+            },
+            "referenceVariantProperties": {
+              "Product Type": "AB",
+              "Size": "24x16"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "3820:20493",
+              "nodeName": "сайдпанель",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.card-image.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            },
+            {
+              "ruleId": "component:web-corp.card-image.visuals-follow-effective-baseline",
+              "severity": "error",
+              "source": "owner-confirmed",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "design-system-author",
+                "revision": 1
+              },
+              "severityScope": null,
+              "appliesTo": "component.identity|layout.*|styles.text|fill|stroke|radius|opacity|effects.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Не меняйте вручную структуру, размеры, пропорции, отступы, типографику, цвета, радиусы, opacity и эффекты CardImage. Разрешены только контент имени/последних четырёх цифр, Show Shadow, рубашка при Cover=None и условное скрытие SilverLine по их точным правилам.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.card-image.visuals-follow-effective-baseline",
+            "message": "Не меняйте вручную структуру, размеры, пропорции, отступы, типографику, цвета, радиусы, opacity и эффекты CardImage. Разрешены только контент имени/последних четырёх цифр, Show Shadow, рубашка при Cover=None и условное скрытие SilverLine по их точным правилам.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "3820:20514",
+        "name": "IconView",
+        "type": "INSTANCE",
+        "pageName": "Для показа",
+        "path": "[D] CorporatePage / Page / Frame 1948754535 / сайдпанель / Frame 2147238710 / cell / IconView",
+        "visible": true,
+        "ancestorNodeIds": [
+          "3820:18301",
+          "3820:20945",
+          "3820:20493",
+          "3820:20497",
+          "3820:20513"
+        ]
+      },
+      "component": {
+        "name": "IconView",
+        "key": "1de0077f72a5b4394917373eafa55639f91b3779",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=40",
+        "key": "1de0077f72a5b4394917373eafa55639f91b3779"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I3820:20514;448:33204;145953:45275",
+            "name": "PaintMe",
+            "type": null,
+            "pageName": "Для показа",
+            "path": "Size=40 / Content / ShapeContent / Content / Fixer / PaintMe",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "fill: neutral-translucent/700 → #897EFF",
+          "referenceValue": "neutral-translucent/700",
+          "actualValue": "#897EFF",
+          "referenceRawValue": "VariableID:faac436b14cc199cfe97243b05af867af9ecb365/3541:130",
+          "actualRawValue": "#897EFF",
+          "referenceDisplayValue": "neutral-translucent/700",
+          "actualDisplayValue": "#897EFF",
+          "referenceResource": {
+            "name": "neutral-translucent/700",
+            "key": "faac436b14cc199cfe97243b05af867af9ecb365",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": null,
+          "referenceBinding": {
+            "id": "VariableID:faac436b14cc199cfe97243b05af867af9ecb365/3541:130",
+            "key": "faac436b14cc199cfe97243b05af867af9ecb365",
+            "name": "neutral-translucent/700",
+            "collectionId": null,
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": null,
+          "bindingStatus": "unbound",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "549dece0b3a3103d862a6b8dc31d977eb8d9b926",
+            "actualNestedOwnerPath": "Size=40 / Content / ShapeContent / Content",
+            "actualNestedOwnerRelativePath": "Fixer / PaintMe",
+            "nestedOwnerComponentKey": "549dece0b3a3103d862a6b8dc31d977eb8d9b926",
+            "nestedOwnerComponentRole": "Part",
+            "nestedOwnerPath": "Size=40 / Content / ShapeContent / Content",
+            "nestedOwnerRelativePath": "Fixer / PaintMe",
+            "actualVariantProperties": {
+              "Size": "20 (glyph-26)",
+              "Type": "Icon"
+            },
+            "referenceVariantProperties": {
+              "Size": "20 (glyph-26)",
+              "Type": "Icon"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "3820:20493",
+              "nodeName": "сайдпанель",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.icon-view.paint-colors-are-public-settings",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "design-system-author",
+                "revision": 1
+              },
+              "severityScope": null,
+              "appliesTo": "fill|stroke",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "В IconView разрешено менять токен или цвет обводки Border, заливки Shape/BgColor и самой иконки Content/PaintMe. Эти paint overrides являются публичными настройками IconView и сами по себе не нарушают effective baseline. Компонент-хост может ограничить их только отдельным active contextual rule.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "3820:20535",
+        "name": "IconView",
+        "type": "INSTANCE",
+        "pageName": "Для показа",
+        "path": "[D] CorporatePage / Page / Frame 1948754535 / сайдпанель / cells / Frame 2147238707 / IconView",
+        "visible": true,
+        "ancestorNodeIds": [
+          "3820:18301",
+          "3820:20945",
+          "3820:20493",
+          "3820:20518",
+          "3820:20534"
+        ]
+      },
+      "component": {
+        "name": "IconView",
+        "key": "1de0077f72a5b4394917373eafa55639f91b3779",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=40",
+        "key": "1de0077f72a5b4394917373eafa55639f91b3779"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I3820:20535;448:17364",
+            "name": "Border",
+            "type": null,
+            "pageName": "Для показа",
+            "path": "Size=40 / Content / ShapeContent / Border",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "stroke",
+          "message": "обводка: neutral-translucent/200 → neutral/400",
+          "referenceValue": "neutral-translucent/200",
+          "actualValue": "neutral/400",
+          "referenceRawValue": "neutral-translucent/200",
+          "actualRawValue": "neutral/400",
+          "referenceDisplayValue": "neutral-translucent/200",
+          "actualDisplayValue": "neutral/400",
+          "referenceResource": {
+            "name": "neutral-translucent/200",
+            "key": "446796436fc66df888a34eb47bed90e0341e558c",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "neutral/400",
+            "key": "a7c18f5825f95e560138779e61e9faf51129998c",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": {
+            "id": "VariableID:446796436fc66df888a34eb47bed90e0341e558c/3541:147",
+            "key": "446796436fc66df888a34eb47bed90e0341e558c",
+            "name": "neutral-translucent/200",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:a7c18f5825f95e560138779e61e9faf51129998c/3541:164",
+            "key": "a7c18f5825f95e560138779e61e9faf51129998c",
+            "name": "neutral/400",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "1de0077f72a5b4394917373eafa55639f91b3779",
+            "actualNestedOwnerPath": "Size=40",
+            "actualNestedOwnerRelativePath": "Content / ShapeContent / Border",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "40"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "3820:20493",
+              "nodeName": "сайдпанель",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.icon-view.paint-colors-are-public-settings",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "design-system-author",
+                "revision": 1
+              },
+              "severityScope": null,
+              "appliesTo": "fill|stroke",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "В IconView разрешено менять токен или цвет обводки Border, заливки Shape/BgColor и самой иконки Content/PaintMe. Эти paint overrides являются публичными настройками IconView и сами по себе не нарушают effective baseline. Компонент-хост может ограничить их только отдельным active contextual rule.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 50,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "3820:20538",
+        "name": "IconView",
+        "type": "INSTANCE",
+        "pageName": "Для показа",
+        "path": "[D] CorporatePage / Page / Frame 1948754535 / сайдпанель / cells / Frame 2147238709 / IconView",
+        "visible": true,
+        "ancestorNodeIds": [
+          "3820:18301",
+          "3820:20945",
+          "3820:20493",
+          "3820:20518",
+          "3820:20537"
+        ]
+      },
+      "component": {
+        "name": "IconView",
+        "key": "1de0077f72a5b4394917373eafa55639f91b3779",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=40",
+        "key": "1de0077f72a5b4394917373eafa55639f91b3779"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I3820:20538;448:17364",
+            "name": "Border",
+            "type": null,
+            "pageName": "Для показа",
+            "path": "Size=40 / Content / ShapeContent / Border",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "stroke",
+          "message": "обводка: neutral-translucent/200 → neutral/400",
+          "referenceValue": "neutral-translucent/200",
+          "actualValue": "neutral/400",
+          "referenceRawValue": "neutral-translucent/200",
+          "actualRawValue": "neutral/400",
+          "referenceDisplayValue": "neutral-translucent/200",
+          "actualDisplayValue": "neutral/400",
+          "referenceResource": {
+            "name": "neutral-translucent/200",
+            "key": "446796436fc66df888a34eb47bed90e0341e558c",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "neutral/400",
+            "key": "a7c18f5825f95e560138779e61e9faf51129998c",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": {
+            "id": "VariableID:446796436fc66df888a34eb47bed90e0341e558c/3541:147",
+            "key": "446796436fc66df888a34eb47bed90e0341e558c",
+            "name": "neutral-translucent/200",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:a7c18f5825f95e560138779e61e9faf51129998c/3541:164",
+            "key": "a7c18f5825f95e560138779e61e9faf51129998c",
+            "name": "neutral/400",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "1de0077f72a5b4394917373eafa55639f91b3779",
+            "actualNestedOwnerPath": "Size=40",
+            "actualNestedOwnerRelativePath": "Content / ShapeContent / Border",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "40"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "3820:20493",
+              "nodeName": "сайдпанель",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.icon-view.paint-colors-are-public-settings",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "design-system-author",
+                "revision": 1
+              },
+              "severityScope": null,
+              "appliesTo": "fill|stroke",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "В IconView разрешено менять токен или цвет обводки Border, заливки Shape/BgColor и самой иконки Content/PaintMe. Эти paint overrides являются публичными настройками IconView и сами по себе не нарушают effective baseline. Компонент-хост может ограничить их только отдельным active contextual rule.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 50,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "3820:20945",
+        "name": "Страница: Для показа",
+        "type": "PAGE",
+        "pageName": "Для показа",
+        "path": "Для показа",
+        "visible": true
+      },
+      "kind": "missingThemeMode",
+      "recommendation": "Смени темизацию на Corp",
+      "component": null
+    }
+  ],
+  "componentContexts": [
+    {
+      "componentKey": "web-core.icon-view",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Content",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "IconView"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.card-image",
+      "summary": "Активный универсальный компонент для визуального представления банковской карты самостоятельно или внутри продуктового host-компонента.",
+      "criticalBaselines": [],
+      "agentInstructions": [
+        "Не трактуй компоненты 🔩 как доступные пользователю: это внутренние части CardImage.",
+        "Не считай все observed raw combinations допустимыми: 24x16 Inactive/Locked являются неканоническими.",
+        "Не предлагай detach или ручную пересборку CardImage.",
+        "Не запрещай собственную рубашку: она разрешена только при Cover=None как первый Image fill существующего Image Container.",
+        "Не разрешай собственной рубашке изменять геометрию, радиусы, логотип, платёжную систему, state overlay или структуру Cover.",
+        "Не требуй SilverLine для карты другого банка; он должен быть скрыт.",
+        "Не показывай полный номер карты и не убирай штатную маску.",
+        "Не считай Show Shadow=False нарушением у одиночной XL/L/M/S карты.",
+        "Не придумывай Delivery, Add new card, Loading, Error или Empty как состояния CardImage.",
+        "Не требуй отдельные desktop/mobile roots: CardImage универсален.",
+        "Не объявляй runtime API verified: Figma-документация подтверждает cardId, но package/import и Code Connect не подтверждены.",
+        "Повышай severity только по exact component rule или применимому pattern rule; пример сам по себе не является evidence."
+      ],
+      "includedComponents": [
+        "🔩 CardItem",
+        "🔩 Cover",
+        "🔩 Shadow",
+        "🔩 SilverLine",
+        "🔩 State",
+        "🔩 UserData",
+        "CardImage"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*",
+          "variant.Cover",
+          "variant.Size",
+          "variant.Stack",
+          "variant.State",
+          "boolean.Show Shadow"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сначала разреши Size, Cover, State, Stack и Show Shadow, затем примени разрешённые content и custom-cover overrides. Остальные layer changes сравнивай с effective CardImage baseline.",
+        "contentProperties": [
+          "content.cardholderName",
+          "content.lastFourDigits",
+          "content.stackCount"
+        ],
+        "allowedLayerOverrides": [
+          "Details/CardCover / Image Container first Image fill when Cover=None",
+          "SilverLine visibility for an approved custom cover"
+        ]
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [],
+          "layerProperties": [],
+          "dependencyPolicy": null
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    }
+  ]
+}
