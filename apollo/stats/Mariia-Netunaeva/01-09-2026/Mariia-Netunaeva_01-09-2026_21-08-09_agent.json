@@ -1,0 +1,2504 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1633045680722146212-1788278889832-sou5sqb7:agent",
+  "sourceReportId": "apollo-1633045680722146212-1788278889832-sou5sqb7",
+  "generatedAt": "2026-09-01T16:08:09.832Z",
+  "suggestedFileName": "Mariia-Netunaeva_01-09-2026_21-08-09_agent.json",
+  "user": {
+    "id": "1633045680722146212",
+    "name": "Mariia Netunaeva",
+    "slug": "Mariia-Netunaeva"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.1.63"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "[W] Альфа-кредит",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "startedAt": "2026-09-01T16:08:06.269Z",
+    "finishedAt": "2026-09-01T16:08:09.832Z",
+    "durationMs": 3563,
+    "selection": [
+      {
+        "nodeId": "30631:557397",
+        "name": "1.0.2 — Условия кредита",
+        "nodeType": "FRAME",
+        "path": "1 шаг / 1.0.2 — Условия кредита",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 110,
+    "problemOccurrenceCount": 17,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 1,
+      "updates": 9,
+      "customizations": 1,
+      "localComponents": 4,
+      "detachedComponents": 1,
+      "presets": 1,
+      "technicalComponents": 0,
+      "currentComponents": 96,
+      "wrongChannel": 0,
+      "themization": 0
+    },
+    "includedFindingCount": 17,
+    "omittedCurrentComponentCount": 96
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with severity=error and matchKind=exact_component_rule for the same property/change.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 9,
+      "includedCount": 9,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 4,
+      "includedCount": 4,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "30631:558352",
+        "name": "Rectangle 6738",
+        "type": "RECTANGLE",
+        "pageName": "     ↳ Заявление на транш",
+        "path": "1 шаг / 1.0.2 — Условия кредита / Body / [D] CorporateContent / [D](1440) CreditFormAK :: Stage-1 / Frame 2131328785 / Stage 1-1 / Rectangle 6738",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "30631:557408",
+        "name": "[D] TitleView",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Заявление на транш",
+        "path": "1 шаг / 1.0.2 — Условия кредита / Body / [D] CorporateContent / [D](1440) CreditFormAK :: Stage-1 / Frame 2131328785 / Stage 1-1 / [D] TitleView",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] TitleView",
+        "key": "22c9df3a231be047e827af4f1625eca22ad9c26d",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "View=Medium, Skeleton=False",
+        "key": "22c9df3a231be047e827af4f1625eca22ad9c26d"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "22c9df3a231be047e827af4f1625eca22ad9c26d",
+        "currentComponentId": "25127:19235",
+        "latestComponentId": "30818:110076"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "30631:557410",
+        "name": "[D] Select",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Заявление на транш",
+        "path": "1 шаг / 1.0.2 — Условия кредита / Body / [D] CorporateContent / [D](1440) CreditFormAK :: Stage-1 / Frame 2131328785 / Stage 1-1 / [D] Select",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] Select",
+        "key": "f8985699a50f83bee59904a9f482d85ddabbc86d",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Select.json"
+      },
+      "variant": {
+        "name": "Size=56, FilledState=True, ActiveState=False, ↳ Placeholder=True, DisabledState=False, ErrorState=False, OuterLabel=False",
+        "key": "f8985699a50f83bee59904a9f482d85ddabbc86d"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "f8985699a50f83bee59904a9f482d85ddabbc86d",
+        "currentComponentId": "25482:53855",
+        "latestComponentId": "30654:863752"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "30631:557413",
+        "name": "[D] Input",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Заявление на транш",
+        "path": "1 шаг / 1.0.2 — Условия кредита / Body / [D] CorporateContent / [D](1440) CreditFormAK :: Stage-1 / Frame 2131328785 / Stage 1-1 / Frame 2131328790 / [D] Input",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] Input",
+        "key": "61cc155ea97d9a7cf9b62aed3c3de013fc0cc7a6",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Input.json"
+      },
+      "variant": {
+        "name": "Size=56, FilledState=True, ActiveState=False, DisabledState=False, ErrorState=False, OuterLabel=False",
+        "key": "61cc155ea97d9a7cf9b62aed3c3de013fc0cc7a6"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "61cc155ea97d9a7cf9b62aed3c3de013fc0cc7a6",
+        "currentComponentId": "25482:50490",
+        "latestComponentId": "30654:865955"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "30631:557414",
+        "name": "[D] Select",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Заявление на транш",
+        "path": "1 шаг / 1.0.2 — Условия кредита / Body / [D] CorporateContent / [D](1440) CreditFormAK :: Stage-1 / Frame 2131328785 / Stage 1-1 / Frame 2131328790 / [D] Select",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] Select",
+        "key": "f8985699a50f83bee59904a9f482d85ddabbc86d",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Select.json"
+      },
+      "variant": {
+        "name": "Size=56, FilledState=True, ActiveState=False, ↳ Placeholder=True, DisabledState=False, ErrorState=False, OuterLabel=False",
+        "key": "f8985699a50f83bee59904a9f482d85ddabbc86d"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "f8985699a50f83bee59904a9f482d85ddabbc86d",
+        "currentComponentId": "25482:53855",
+        "latestComponentId": "30654:863752"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "30631:557417",
+        "name": "[D] Select",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Заявление на транш",
+        "path": "1 шаг / 1.0.2 — Условия кредита / Body / [D] CorporateContent / [D](1440) CreditFormAK :: Stage-1 / Frame 2131328785 / Stage 1-1 / Frame 2131328791 / [D] Select",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] Select",
+        "key": "f8985699a50f83bee59904a9f482d85ddabbc86d",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Select.json"
+      },
+      "variant": {
+        "name": "Size=56, FilledState=True, ActiveState=False, ↳ Placeholder=True, DisabledState=False, ErrorState=False, OuterLabel=False",
+        "key": "f8985699a50f83bee59904a9f482d85ddabbc86d"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "f8985699a50f83bee59904a9f482d85ddabbc86d",
+        "currentComponentId": "25482:53855",
+        "latestComponentId": "30654:863752"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "30631:557418",
+        "name": "[D] UniversalDateInput",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Заявление на транш",
+        "path": "1 шаг / 1.0.2 — Условия кредита / Body / [D] CorporateContent / [D](1440) CreditFormAK :: Stage-1 / Frame 2131328785 / Stage 1-1 / Frame 2131328791 / [D] UniversalDateInput",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] UniversalDateInput",
+        "key": "661fb8b10c9e9fb5c502c51843306f12a7d5105d",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- UniversalDateInput.json"
+      },
+      "variant": {
+        "name": "Size=56, FilledState=True, ActiveState=False, DisabledState=False, ErrorState=False, OuterLabel=False",
+        "key": "661fb8b10c9e9fb5c502c51843306f12a7d5105d"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "661fb8b10c9e9fb5c502c51843306f12a7d5105d",
+        "currentComponentId": "25482:55355",
+        "latestComponentId": "30654:864947"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "30631:557420",
+        "name": "[D] Select",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Заявление на транш",
+        "path": "1 шаг / 1.0.2 — Условия кредита / Body / [D] CorporateContent / [D](1440) CreditFormAK :: Stage-1 / Frame 2131328785 / Stage 1-1 / [D] Select",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] Select",
+        "key": "f8985699a50f83bee59904a9f482d85ddabbc86d",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Select.json"
+      },
+      "variant": {
+        "name": "Size=56, FilledState=True, ActiveState=False, ↳ Placeholder=True, DisabledState=False, ErrorState=False, OuterLabel=False",
+        "key": "f8985699a50f83bee59904a9f482d85ddabbc86d"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "f8985699a50f83bee59904a9f482d85ddabbc86d",
+        "currentComponentId": "28757:70310",
+        "latestComponentId": "30654:863752"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "27629:276241",
+        "name": "[D] ContentCardWrapper",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Цели договора 214-ФЗ",
+        "path": "На ревью / PurposeAgreementCard / State=Active, Menu_open=No, Full_text=No / [D] ContentCardWrapper",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] ContentCardWrapper",
+        "key": "db811120887de6e1719c687338fe388fcc37fd1b",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- ContentCardWrapper.json"
+      },
+      "variant": {
+        "name": "State=Active, Skeleton=False",
+        "key": "db811120887de6e1719c687338fe388fcc37fd1b"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "db811120887de6e1719c687338fe388fcc37fd1b",
+        "currentComponentId": "27430:61665",
+        "latestComponentId": "30891:554105"
+      },
+      "localComponentOwner": {
+        "id": "27629:276522",
+        "name": "State=Active, Menu_open=No, Full_text=No",
+        "type": "COMPONENT",
+        "pageName": "     ↳ Цели договора 214-ФЗ",
+        "path": "На ревью / PurposeAgreementCard / State=Active, Menu_open=No, Full_text=No",
+        "visible": true
+      }
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "27629:278564",
+        "name": "[D] ContentCardWrapper",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Цели договора 214-ФЗ",
+        "path": "На ревью / ConstructionStageCard / State=Active, StageAll=No / [D] ContentCardWrapper",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] ContentCardWrapper",
+        "key": "db811120887de6e1719c687338fe388fcc37fd1b",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- ContentCardWrapper.json"
+      },
+      "variant": {
+        "name": "State=Active, Skeleton=False",
+        "key": "db811120887de6e1719c687338fe388fcc37fd1b"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "db811120887de6e1719c687338fe388fcc37fd1b",
+        "currentComponentId": "26878:188170",
+        "latestComponentId": "30891:554105"
+      },
+      "localComponentOwner": {
+        "id": "27629:278663",
+        "name": "State=Active, StageAll=No",
+        "type": "COMPONENT",
+        "pageName": "     ↳ Цели договора 214-ФЗ",
+        "path": "На ревью / ConstructionStageCard / State=Active, StageAll=No",
+        "visible": true
+      }
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I30865:492844;25737:126744",
+        "name": "🔒 [D] IsleBlock :: 1024+",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Заявление на транш",
+        "path": "1 шаг / 1.0.2 — Условия кредита / Body / [D] CorporateContent / [D](1440) CreditFormAK :: Stage-1 / 🔒 [D] IsleBlock :: Desktop :: AK / 🔒 [D] IsleBlock :: 1024+",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] IsleBlock :: 1024+",
+        "key": "9dd86bd040376734e605227c0d849d1328e62d76",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- IsleBlock.json"
+      },
+      "variant": {
+        "name": "Type=Static",
+        "key": "9dd86bd040376734e605227c0d849d1328e62d76"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I30865:492844;25737:126744;62722:160365",
+            "name": "IsleContent",
+            "type": null,
+            "pageName": "     ↳ Заявление на транш",
+            "path": "Type=Static / body / content / IsleContent",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": "0",
+          "referenceRawValue": 8,
+          "actualRawValue": "0",
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": "0",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "f6a208753e14a9a435dff14c2aea920aeffd4eee",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "9dd86bd040376734e605227c0d849d1328e62d76",
+            "actualNestedOwnerPath": "Type=Static",
+            "actualNestedOwnerRelativePath": "body / content / IsleContent",
+            "nestedOwnerComponentKey": "f6a208753e14a9a435dff14c2aea920aeffd4eee",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Type=Static / body / content / IsleContent",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "Type": "Stepper"
+            },
+            "referenceVariantProperties": {
+              "Type": "Stepper"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "30631:557401",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.isle-block.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I30865:492844;25737:126744;62722:160365;84613:100551;4530:3853",
+            "name": "Content",
+            "type": null,
+            "pageName": "     ↳ Заявление на транш",
+            "path": "Type=Static / body / content / IsleContent / First / Content",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.top",
+          "message": "Паддинг top: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": 0,
+          "referenceRawValue": 8,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 0,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "40f736b756c33be093841bcb07bf1cc97650ae9d",
+            "actualNestedOwnerPath": "Type=Static / body / content / IsleContent / First",
+            "actualNestedOwnerRelativePath": "Content",
+            "nestedOwnerComponentKey": "f6a208753e14a9a435dff14c2aea920aeffd4eee",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Type=Static / body / content / IsleContent",
+            "nestedOwnerRelativePath": "First / Content",
+            "actualVariantProperties": {
+              "LastStep": "False"
+            },
+            "referenceVariantProperties": {
+              "Type": "Stepper"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "30631:557401",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.isle-block.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I30865:492844;25737:126744;62722:160365;84613:100551;4530:3853",
+            "name": "Content",
+            "type": null,
+            "pageName": "     ↳ Заявление на транш",
+            "path": "Type=Static / body / content / IsleContent / First / Content",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.right",
+          "message": "Паддинг right: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": 0,
+          "referenceRawValue": 8,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 0,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "40f736b756c33be093841bcb07bf1cc97650ae9d",
+            "actualNestedOwnerPath": "Type=Static / body / content / IsleContent / First",
+            "actualNestedOwnerRelativePath": "Content",
+            "nestedOwnerComponentKey": "f6a208753e14a9a435dff14c2aea920aeffd4eee",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Type=Static / body / content / IsleContent",
+            "nestedOwnerRelativePath": "First / Content",
+            "actualVariantProperties": {
+              "LastStep": "False"
+            },
+            "referenceVariantProperties": {
+              "Type": "Stepper"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "30631:557401",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.isle-block.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I30865:492844;25737:126744;62722:160365;84613:100551;4530:3853",
+            "name": "Content",
+            "type": null,
+            "pageName": "     ↳ Заявление на транш",
+            "path": "Type=Static / body / content / IsleContent / First / Content",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.bottom",
+          "message": "Паддинг bottom: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": 0,
+          "referenceRawValue": 8,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 0,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "40f736b756c33be093841bcb07bf1cc97650ae9d",
+            "actualNestedOwnerPath": "Type=Static / body / content / IsleContent / First",
+            "actualNestedOwnerRelativePath": "Content",
+            "nestedOwnerComponentKey": "f6a208753e14a9a435dff14c2aea920aeffd4eee",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Type=Static / body / content / IsleContent",
+            "nestedOwnerRelativePath": "First / Content",
+            "actualVariantProperties": {
+              "LastStep": "False"
+            },
+            "referenceVariantProperties": {
+              "Type": "Stepper"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "30631:557401",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.isle-block.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I30865:492844;25737:126744;62722:160365;84613:100551;4530:3853",
+            "name": "Content",
+            "type": null,
+            "pageName": "     ↳ Заявление на транш",
+            "path": "Type=Static / body / content / IsleContent / First / Content",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.left",
+          "message": "Паддинг left: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": 0,
+          "referenceRawValue": 8,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 0,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "40f736b756c33be093841bcb07bf1cc97650ae9d",
+            "actualNestedOwnerPath": "Type=Static / body / content / IsleContent / First",
+            "actualNestedOwnerRelativePath": "Content",
+            "nestedOwnerComponentKey": "f6a208753e14a9a435dff14c2aea920aeffd4eee",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Type=Static / body / content / IsleContent",
+            "nestedOwnerRelativePath": "First / Content",
+            "actualVariantProperties": {
+              "LastStep": "False"
+            },
+            "referenceVariantProperties": {
+              "Type": "Stepper"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "30631:557401",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.isle-block.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I30865:492844;25737:126744;62722:160365;84613:100552;4530:3853",
+            "name": "Content",
+            "type": null,
+            "pageName": "     ↳ Заявление на транш",
+            "path": "Type=Static / body / content / IsleContent / Steps_Vertical / Content",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.top",
+          "message": "Паддинг top: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": 0,
+          "referenceRawValue": 8,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 0,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "40f736b756c33be093841bcb07bf1cc97650ae9d",
+            "actualNestedOwnerPath": "Type=Static / body / content / IsleContent / Steps_Vertical",
+            "actualNestedOwnerRelativePath": "Content",
+            "nestedOwnerComponentKey": "f6a208753e14a9a435dff14c2aea920aeffd4eee",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Type=Static / body / content / IsleContent",
+            "nestedOwnerRelativePath": "Steps_Vertical / Content",
+            "actualVariantProperties": {
+              "LastStep": "False"
+            },
+            "referenceVariantProperties": {
+              "Type": "Stepper"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "30631:557401",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.isle-block.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I30865:492844;25737:126744;62722:160365;84613:100552;4530:3853",
+            "name": "Content",
+            "type": null,
+            "pageName": "     ↳ Заявление на транш",
+            "path": "Type=Static / body / content / IsleContent / Steps_Vertical / Content",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.right",
+          "message": "Паддинг right: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": 0,
+          "referenceRawValue": 8,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 0,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "40f736b756c33be093841bcb07bf1cc97650ae9d",
+            "actualNestedOwnerPath": "Type=Static / body / content / IsleContent / Steps_Vertical",
+            "actualNestedOwnerRelativePath": "Content",
+            "nestedOwnerComponentKey": "f6a208753e14a9a435dff14c2aea920aeffd4eee",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Type=Static / body / content / IsleContent",
+            "nestedOwnerRelativePath": "Steps_Vertical / Content",
+            "actualVariantProperties": {
+              "LastStep": "False"
+            },
+            "referenceVariantProperties": {
+              "Type": "Stepper"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "30631:557401",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.isle-block.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I30865:492844;25737:126744;62722:160365;84613:100552;4530:3853",
+            "name": "Content",
+            "type": null,
+            "pageName": "     ↳ Заявление на транш",
+            "path": "Type=Static / body / content / IsleContent / Steps_Vertical / Content",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.bottom",
+          "message": "Паддинг bottom: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": 0,
+          "referenceRawValue": 8,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 0,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "40f736b756c33be093841bcb07bf1cc97650ae9d",
+            "actualNestedOwnerPath": "Type=Static / body / content / IsleContent / Steps_Vertical",
+            "actualNestedOwnerRelativePath": "Content",
+            "nestedOwnerComponentKey": "f6a208753e14a9a435dff14c2aea920aeffd4eee",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Type=Static / body / content / IsleContent",
+            "nestedOwnerRelativePath": "Steps_Vertical / Content",
+            "actualVariantProperties": {
+              "LastStep": "False"
+            },
+            "referenceVariantProperties": {
+              "Type": "Stepper"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "30631:557401",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.isle-block.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I30865:492844;25737:126744;62722:160365;84613:100552;4530:3853",
+            "name": "Content",
+            "type": null,
+            "pageName": "     ↳ Заявление на транш",
+            "path": "Type=Static / body / content / IsleContent / Steps_Vertical / Content",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.left",
+          "message": "Паддинг left: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": 0,
+          "referenceRawValue": 8,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 0,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "40f736b756c33be093841bcb07bf1cc97650ae9d",
+            "actualNestedOwnerPath": "Type=Static / body / content / IsleContent / Steps_Vertical",
+            "actualNestedOwnerRelativePath": "Content",
+            "nestedOwnerComponentKey": "f6a208753e14a9a435dff14c2aea920aeffd4eee",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Type=Static / body / content / IsleContent",
+            "nestedOwnerRelativePath": "Steps_Vertical / Content",
+            "actualVariantProperties": {
+              "LastStep": "False"
+            },
+            "referenceVariantProperties": {
+              "Type": "Stepper"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "30631:557401",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.isle-block.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I30865:492844;25737:126744;62722:160365;84613:100553;4530:3853",
+            "name": "Content",
+            "type": null,
+            "pageName": "     ↳ Заявление на транш",
+            "path": "Type=Static / body / content / IsleContent / Steps_Vertical / Content@@2",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.top",
+          "message": "Паддинг top: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": 0,
+          "referenceRawValue": 8,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 0,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "40f736b756c33be093841bcb07bf1cc97650ae9d",
+            "actualNestedOwnerPath": "Type=Static / body / content / IsleContent / Steps_Vertical",
+            "actualNestedOwnerRelativePath": "Content",
+            "nestedOwnerComponentKey": "39f8620fc762b4625dfdffeec51abe7f3f7fb12f",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Type=Static / body / content / IsleContent / Steps_Vertical",
+            "nestedOwnerRelativePath": "Content",
+            "actualVariantProperties": {
+              "LastStep": "False"
+            },
+            "referenceVariantProperties": {
+              "LastStep": "True"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "30631:557401",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I30865:492844;25737:126744;62722:160365;84613:100553;4530:3853",
+            "name": "Content",
+            "type": null,
+            "pageName": "     ↳ Заявление на транш",
+            "path": "Type=Static / body / content / IsleContent / Steps_Vertical / Content@@2",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.right",
+          "message": "Паддинг right: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": 0,
+          "referenceRawValue": 8,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 0,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "40f736b756c33be093841bcb07bf1cc97650ae9d",
+            "actualNestedOwnerPath": "Type=Static / body / content / IsleContent / Steps_Vertical",
+            "actualNestedOwnerRelativePath": "Content",
+            "nestedOwnerComponentKey": "39f8620fc762b4625dfdffeec51abe7f3f7fb12f",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Type=Static / body / content / IsleContent / Steps_Vertical",
+            "nestedOwnerRelativePath": "Content",
+            "actualVariantProperties": {
+              "LastStep": "False"
+            },
+            "referenceVariantProperties": {
+              "LastStep": "True"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "30631:557401",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I30865:492844;25737:126744;62722:160365;84613:100553;4530:3853",
+            "name": "Content",
+            "type": null,
+            "pageName": "     ↳ Заявление на транш",
+            "path": "Type=Static / body / content / IsleContent / Steps_Vertical / Content@@2",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.bottom",
+          "message": "Паддинг bottom: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": 0,
+          "referenceRawValue": 8,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 0,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "40f736b756c33be093841bcb07bf1cc97650ae9d",
+            "actualNestedOwnerPath": "Type=Static / body / content / IsleContent / Steps_Vertical",
+            "actualNestedOwnerRelativePath": "Content",
+            "nestedOwnerComponentKey": "39f8620fc762b4625dfdffeec51abe7f3f7fb12f",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Type=Static / body / content / IsleContent / Steps_Vertical",
+            "nestedOwnerRelativePath": "Content",
+            "actualVariantProperties": {
+              "LastStep": "False"
+            },
+            "referenceVariantProperties": {
+              "LastStep": "True"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "30631:557401",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I30865:492844;25737:126744;62722:160365;84613:100553;4530:3853",
+            "name": "Content",
+            "type": null,
+            "pageName": "     ↳ Заявление на транш",
+            "path": "Type=Static / body / content / IsleContent / Steps_Vertical / Content@@2",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.left",
+          "message": "Паддинг left: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": 0,
+          "referenceRawValue": 8,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 0,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "40f736b756c33be093841bcb07bf1cc97650ae9d",
+            "actualNestedOwnerPath": "Type=Static / body / content / IsleContent / Steps_Vertical",
+            "actualNestedOwnerRelativePath": "Content",
+            "nestedOwnerComponentKey": "39f8620fc762b4625dfdffeec51abe7f3f7fb12f",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Type=Static / body / content / IsleContent / Steps_Vertical",
+            "nestedOwnerRelativePath": "Content",
+            "actualVariantProperties": {
+              "LastStep": "False"
+            },
+            "referenceVariantProperties": {
+              "LastStep": "True"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "30631:557401",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "30631:557422",
+        "name": "PurposeAgreementCard",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Заявление на транш",
+        "path": "1 шаг / 1.0.2 — Условия кредита / Body / [D] CorporateContent / [D](1440) CreditFormAK :: Stage-1 / Frame 2131328785 / Stage 1-1 / PurposeAgreementCard",
+        "visible": true
+      },
+      "component": {
+        "name": "PurposeAgreementCard",
+        "key": "963e63a8411104d8f63613d5125c7ba70ba24d7d",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "30631:557424",
+        "name": "ConstructionStageCard",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Заявление на транш",
+        "path": "1 шаг / 1.0.2 — Условия кредита / Body / [D] CorporateContent / [D](1440) CreditFormAK :: Stage-1 / Frame 2131328785 / Stage 1-1 / ConstructionStageCard",
+        "visible": true
+      },
+      "component": {
+        "name": "ConstructionStageCard",
+        "key": "7ed980b56f802ef7eaf9afd53dafe250abb0bc89",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "30631:557426",
+        "name": "[LOCAL] CreditButtonGroup",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Заявление на транш",
+        "path": "1 шаг / 1.0.2 — Условия кредита / Body / [D] CorporateContent / [D](1440) CreditFormAK :: Stage-1 / Frame 2131328785 / [LOCAL] CreditButtonGroup",
+        "visible": true
+      },
+      "component": {
+        "name": "[LOCAL] CreditButtonGroup",
+        "key": "79957caddef861c80c02b78bb3141a48365d0891",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "30865:492844",
+        "name": "🔒 [D] IsleBlock :: Desktop :: AK",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Заявление на транш",
+        "path": "1 шаг / 1.0.2 — Условия кредита / Body / [D] CorporateContent / [D](1440) CreditFormAK :: Stage-1 / 🔒 [D] IsleBlock :: Desktop :: AK",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] IsleBlock :: Desktop :: AK",
+        "key": "4c2afef62fe4db0e21da4cf46a5dca30e36532a4",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "detachedComponents",
+      "severityHint": "high",
+      "title": "Detach компонента",
+      "node": {
+        "id": "30631:557401",
+        "name": "[D] CorporateContent",
+        "type": "FRAME_OR_GROUP",
+        "pageName": "     ↳ Заявление на транш",
+        "path": "1 шаг / 1.0.2 — Условия кредита / Body / [D] CorporateContent",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] CorporateContent",
+        "key": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateContent.json"
+      }
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I30865:492844;25737:126744",
+        "name": "🔒 [D] IsleBlock :: 1024+",
+        "type": "INSTANCE",
+        "pageName": "     ↳ Заявление на транш",
+        "path": "1 шаг / 1.0.2 — Условия кредита / Body / [D] CorporateContent / [D](1440) CreditFormAK :: Stage-1 / 🔒 [D] IsleBlock :: Desktop :: AK / 🔒 [D] IsleBlock :: 1024+",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] IsleBlock :: 1024+",
+        "key": "9dd86bd040376734e605227c0d849d1328e62d76",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- IsleBlock.json"
+      },
+      "variant": {
+        "name": "Type=Static",
+        "key": "9dd86bd040376734e605227c0d849d1328e62d76"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    }
+  ],
+  "componentContexts": [
+    {
+      "componentKey": "web-core.input",
+      "summary": "Input — семейство text fields. Apollo должен трактовать изменения состояния Input как component property changes, а ручные изменения style/token/layout как layer customizations. Text content может требовать редакторской проверки по pattern.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] Input",
+        "[D] Input_Inverted",
+        "[M] Input",
+        "[M] Input_Inverted",
+        "🔄 [D][Corporate] Input",
+        "🔄 [D][Corporate] Input_Inverted",
+        "🔄 [M][AO] Input",
+        "🔄 [M][AO] Input_Inverted"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*",
+          "variant.Size",
+          "variant.FilledState",
+          "variant.ActiveState",
+          "variant.DisabledState",
+          "variant.ErrorState",
+          "variant.OuterLabel"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent",
+          "strokeWeight",
+          "layout.padding",
+          "layout.itemSpacing"
+        ],
+        "baselinePolicy": "Если component property изменилась, сравнивай ручные layer overrides с baseline текущего actual-состояния компонента, а не с исходным reference baseline.",
+        "slotProperties": [
+          "LeftAddon1.variant.Type",
+          "LeftAddon2.variant.Type",
+          "RightAddon1.variant.Type",
+          "RightAddon2.variant.Type",
+          "Placeholder.variant.Accent"
+        ],
+        "contentProperties": [
+          "Label.characters",
+          "Placeholder.characters",
+          "HintMessage.characters"
+        ],
+        "ordering": [
+          "component-property",
+          "slot-property",
+          "layer-property",
+          "content-property"
+        ]
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.Size",
+            "variant.FilledState",
+            "variant.ActiveState",
+            "variant.DisabledState",
+            "variant.ErrorState",
+            "variant.OuterLabel"
+          ],
+          "layerProperties": [
+            "fills",
+            "strokes",
+            "strokeWeight",
+            "cornerRadius",
+            "opacity",
+            "layout.padding",
+            "layout.itemSpacing",
+            "styles.text",
+            "typography"
+          ],
+          "dependencyPolicy": "При reset состояния компонента layer differences, вызванные только этим состоянием, могут исчезнуть автоматически. Ручные layer overrides должны оставаться независимо сбрасываемыми, пока reset родительского состояния не уберёт их target state."
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web-core.select",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] Select",
+        "[D] Select_Inverted",
+        "[M] Select",
+        "[M] Select_Inverted",
+        "🔄 [D][Corporate] Select",
+        "🔄 [D][Corporate] Select_Inverted",
+        "🔄 [M][AO] Select",
+        "🔄 [M][AO] Select_Inverted",
+        "🔩 Arrow_Down",
+        "🔩 Arrow_Down",
+        "🔩 Arrow_Up",
+        "🔩 Arrow_Up"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.steps",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "❌  Indicator",
+        "❌  Line",
+        "❌ Steps_Vertical",
+        "🔩 IndicatorContent",
+        "🔩 Line",
+        "🔩 Line",
+        "🔩 MinSpace",
+        "Steps_Horizontal",
+        "Steps_Vertical",
+        "❌   HorizontalLabel",
+        "❌  Steps_Horizontal",
+        "❌  SwapMe",
+        "🔩 HorizontalLabel",
+        "🔩 SwapMe"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.universal-date-input",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] UniversalDateInput",
+        "[D] UniversalDateInput_Inverted",
+        "[M] UniversalDateInput",
+        "[M] UniversalDateInput_Inverted",
+        "🔄 [D][Corporate] UniversalDateInput",
+        "🔄 [D][Corporate] UniversalDateInput_Inverted",
+        "🔄 [M][AO] UniversalDateInput",
+        "🔄 [M][AO] UniversalDateInput_Inverted",
+        "🔩 Picker",
+        "🔩 Picker"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.content-card-wrapper",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] ContentCardWrapper",
+        "[M] ContentCardWrapper",
+        "🔩 [D] ContentPresets",
+        "🔩 [D] LeftSlot",
+        "🔩 [D] RightSlot",
+        "🔩 [M] ContentPresets",
+        "🔩 [M] LeftSlot",
+        "🔩 [M] MiddleContentSlot",
+        "🔩 [M] RightSlot",
+        "🔩 MiddleContentSlot",
+        "SwapMe"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.corporate-content",
+      "summary": "CorporateContent — обязательная контентная область продуктовой страницы. Используй [D] CorporateContent для desktop и [M] CorporateContent для mobile-web.",
+      "criticalBaselines": [],
+      "agentInstructions": [
+        "Не считай произвольный контент или несколько дочерних элементов внутри Body нарушением сами по себе.",
+        "Проверяй содержимое Body по собственным компонентным контрактам и паттернам.",
+        "Считай использование переходного [T] CorporateContent явным нарушением.",
+        "Не рекомендуй ручную правку fill, grid style или padding корня CorporateContent; рекомендуй правильный mode переменных.",
+        "Не требуй наличия родительского компонента CorporatePage в Figma: такого компонента нет, самостоятельное использование CorporateContent допустимо.",
+        "Не применяй Gutter как обязательный itemSpacing внутри Body; он допустим в любой горизонтальной композиции без обязательного Section.",
+        "На ширине 768 требуй [D] CorporateContent и mode 768 коллекции [D] Grid & Cols.",
+        "Не придумывай условия выбора между base-bg-alt и base-bg до появления отдельного паттерна; default — base-bg-alt (grey).",
+        "Не разрешай кликабельность корня или detach CorporateContent и Body.",
+        "Не разрешай вкладывать CorporateContent внутрь CorporateContent и не оставляй SwapMe после добавления реального содержимого.",
+        "Требуй Header или HeaderMenu непосредственно над CorporateContent в общем вертикальном контейнере с gap 0.",
+        "Не разрешай менять вертикальное направление, itemSpacing=0 или clipsContent=false корня CorporateContent."
+      ],
+      "includedComponents": [
+        "[D] Section",
+        "[D] CorporateContent",
+        "[M] CorporateContent",
+        "❌ [D] Body",
+        "❌ [M} Body",
+        "❌ [T] Body",
+        "❌ [T] CorporateContent"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+          "name": "[D] CorporateContent",
+          "purpose": "Основная desktop-контентная область корпоративной продуктовой страницы с системной сеткой, фоном и адаптивными отступами.",
+          "useWhen": [
+            "Собирается содержимое корпоративной страницы на ширине 768 px и выше."
+          ],
+          "doNotUseWhen": [
+            "Нужен вложенный контейнер внутри другого CorporateContent."
+          ],
+          "relationship": "Единственный корневой контентный контейнер CorporatePage на desktop; принимает произвольную композицию в Body.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.isle-block",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] IsleContent :: 768",
+        "[D] IsleFooter :: 1024+",
+        "[D] IsleFooter :: 768",
+        "[D] IsleHeader :: 1024+",
+        "[D] IsleHeader :: 768",
+        "[D] Status",
+        "[D] Status :: 1024+",
+        "[D] TopAddon",
+        "[D] TopAddon :: 1024+",
+        "[M] IsleContent",
+        "[M] IsleFooter",
+        "[M] IsleHeader",
+        "[M] TopAddon",
+        "❌ IsleCustomContent",
+        "🔒 [D] IsleBlock :: 1024+",
+        "🔒 [D] IsleBlock :: 768",
+        "🔒 [M] IsleBlock",
+        "🔩 StatusCompact",
+        "IsleContent"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.title-view",
+      "summary": "TitleView — составная обёртка заголовка для сценария с основным заголовком, статусом и действиями. Компонент объединяет Title, Status, TitleAddon, RightAddon, выбор компании, Subtitle, TitleStatus и Button group в готовую DS-композицию.",
+      "criticalBaselines": [
+        "Nested [D]/[M] Button instances внутри Button group являются частью TitleView baseline; изменения variant дизайнером нужно показывать относительно TitleView effective baseline.",
+        "StatusPreset и Status внутри MainContent / Status являются ожидаемыми nested structures; само использование preset нормально, если preset не изменён за пределами его variant API.",
+        "View и Skeleton являются public TitleView component properties.",
+        "На странице допускается только один TitleView с View=xLarge.",
+        "Внешние отступы 40 px, 32 px и 12 px, определённые правилами TitleView, обязательны для соответствующих соседних блоков.",
+        "Если одновременно используются Status и TitleStatus, значения Type должны совпадать: Type определяет статусный цвет.",
+        "В View=xLarge primary-действия размещаются в Button group. В View=Large, Medium и Small primary-действия размещаются вне TitleView.",
+        "Запрет primary-действия в RightAddon применяется ко всем значениям View.",
+        "Частичная загрузка отдельных слотов допустима при Skeleton=False у родительского TitleView.",
+        "Для View=Large, Medium и Small доступны только Title, Subtitle, TitleAddon и RightAddon.",
+        "Holding обязателен для одиночного выбора компании, когда пользователь работает от группы компаний, а страница доступна только в моно-режиме.",
+        "Ручные изменения layout, sizing, типографики, цвета, прозрачности и других стилей корня и всего внутреннего дерева TitleView запрещены.",
+        "Для корня TitleView рекомендуется ширина Fill container и высота Hug contents; правило одинаково для desktop и mobile-web.",
+        "Порядок слотов Status -> Heading -> Holding -> Subtitle -> TitleStatus -> Button group обязателен.",
+        "В предусмотренных слотах разрешён instance swap на произвольные компоненты, если сохраняются порядок слотов и структура TitleView.",
+        "Корень TitleView не оформляется вручную и не может быть единой кликабельной поверхностью."
+      ],
+      "agentInstructions": [
+        "Не выводи pattern violations из примеров. Используй только exact rules и exact component contracts.",
+        "Используй component-property facts для variant changes и layer-property facts для styles/layout/paint changes.",
+        "Если nested diff принадлежит host wrapper и actual совпадает с effective baseline, не показывай его как designer customization.",
+        "Если actual отличается от effective baseline, показывай effectiveBaseline -> actual.",
+        "Для сценария заголовка со статусом и действиями рекомендуй настройку встроенных slots TitleView, а не внешнюю ручную композицию из отдельных локальных компонентов.",
+        "Не считай отсутствие опциональных Status, TitleStatus, TitleAddon, RightAddon, Subtitle или Button group нарушением без отдельного правила.",
+        "Если загружается только отдельный вложенный элемент, не требуй переключать весь TitleView в Skeleton=True.",
+        "Для View=Large, Medium и Small рекомендуй primary-действие вне TitleView, а не в RightAddon.",
+        "Не считай изменение label у Status нарушением, если Type корректен и нет отдельного текстового правила.",
+        "Не придумывай ограничения параметров FilterCompanySelect_Single: используй его собственный компонентный контракт, когда он будет доступен.",
+        "Для настроек View, addons, hint и singleIcon вложенных Button используй паттерн «Кнопки и группы кнопок»; не создавай отдельные ограничения TitleView.",
+        "Применяй правила p_title-view-editable.md как часть правил TitleView, когда обнаружен editable-сценарий.",
+        "Не требуй Enter, Escape или отдельные кнопки подтверждения и отмены без точного правила для конкретной платформы и сценария.",
+        "Не считай сам факт instance swap внутри предусмотренного слота нарушением; оценивай выбранный компонент по его собственному контракту.",
+        "Проверяй обязательный порядок слотов отдельно от содержимого каждого слота.",
+        "Не разрешай ручное оформление корня или внутренних слоёв TitleView и не предлагай делать весь TitleView кликабельным."
+      ],
+      "includedComponents": [
+        "[D] RightAddon",
+        "[D] RightAddonXL",
+        "[D] TitleAddon",
+        "[D] TitleAddonXL",
+        "[D] TitleStatus",
+        "[D] TitleView",
+        "[M] RightAddon",
+        "[M] RightAddonXL",
+        "[M] TitleAddon",
+        "[M] TitleAddonXL",
+        "[M] TitleStatus",
+        "[M] TitleView"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "fbc4ff889c9fe2db128bc76471f512271d4cc229",
+          "name": "[D] TitleView",
+          "purpose": "Готовая desktop-композиция заголовка страницы или секции с обязательным Title, статусами, дополнениями и контекстными действиями.",
+          "useWhen": [
+            "Нужно собрать заголовочную область продукта из системных слотов TitleView вместо ручной композиции."
+          ],
+          "doNotUseWhen": [
+            "Нужен простой текстовый заголовок без структуры, статусов и действий TitleView."
+          ],
+          "relationship": "Публичный desktop-корень семейства TitleView; вложенные TitleAddon, RightAddon, TitleStatus и Button group настраиваются через его slots.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.*"
+          ],
+          "layerProperties": [
+            "layout.*",
+            "styles.*",
+            "fill",
+            "stroke",
+            "radius",
+            "opacity",
+            "text.*"
+          ],
+          "dependencyPolicy": "Component-property reset и layer-property reset разделены. Layer reset должен использовать effective baseline после nested variant/materialization resolution."
+        },
+        "publicApi": {
+          "components": [
+            {
+              "name": "[D] RightAddon",
+              "key": "edd174301746415867bc998cd0c0322b68c6269c",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] RightAddonXL",
+              "key": "8edd3829b4b7091209299a5b5c838f0a159018aa",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleAddon",
+              "key": "f32313498fd345a1a41584c8d9edc61c3e2053bf",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleAddonXL",
+              "key": "b4cd3e21d108962a24b75aec2de71fba0672d63f",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleStatus",
+              "key": "6a8aa56ae7c8b57b9d9dfbbf23af14c348d83763",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleView",
+              "key": "fbc4ff889c9fe2db128bc76471f512271d4cc229",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] RightAddon",
+              "key": "b762143a2872257a497f9c3e0a012a9bed92f9ca",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] RightAddonXL",
+              "key": "c1092f678271e7de3291bb5699eeab4ad43c7710",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleAddon",
+              "key": "50d8b48cc1dcd4052efc7a151219578d1d993e2f",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleAddonXL",
+              "key": "a40e2549a5a23e645fb38c2af4c15df0f6813153",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleStatus",
+              "key": "e64c6d19cadc818b180b9176a51e3f65714b84b0",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleView",
+              "key": "227149bd55130d69d63e33cd3c8c52ae3f4e7e19",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            }
+          ],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    }
+  ]
+}
