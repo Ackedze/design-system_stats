@@ -1,0 +1,1750 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1577609615361178639-1788270147602-beh477e7:agent",
+  "sourceReportId": "apollo-1577609615361178639-1788270147602-beh477e7",
+  "generatedAt": "2026-09-01T13:42:27.602Z",
+  "suggestedFileName": "Elena-Plevina_01-09-2026_16-42-27_agent.json",
+  "user": {
+    "id": "1577609615361178639",
+    "name": "Elena Plevina",
+    "slug": "Elena-Plevina"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.1.63"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "[W] Открытие счёта КИБ",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "startedAt": "2026-09-01T13:42:04.539Z",
+    "finishedAt": "2026-09-01T13:42:27.602Z",
+    "durationMs": 23063,
+    "selection": [
+      {
+        "nodeId": "10553:185038",
+        "name": "Body",
+        "nodeType": "FRAME",
+        "path": "Выбрано более 1 компании / Формирование документа 1 заявки / [D] CorporatePage / Page / Body",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 116,
+    "problemOccurrenceCount": 20,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 0,
+      "updates": 5,
+      "customizations": 5,
+      "localComponents": 5,
+      "detachedComponents": 2,
+      "presets": 1,
+      "technicalComponents": 4,
+      "currentComponents": 88,
+      "wrongChannel": 0,
+      "themization": 1
+    },
+    "includedFindingCount": 20,
+    "omittedCurrentComponentCount": 88
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with severity=error and matchKind=exact_component_rule for the same property/change.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 5,
+      "includedCount": 5,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 5,
+      "includedCount": 2,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 5,
+      "includedCount": 5,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 2,
+      "includedCount": 2,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 4,
+      "includedCount": 4,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "10553:186312",
+        "name": "↕ SpacingVertical",
+        "type": "INSTANCE",
+        "pageName": "↳ Юрик-Юрик 2026",
+        "path": "Выбрано более 1 компании / Формирование документа 1 заявки / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / ↕ SpacingVertical",
+        "visible": true
+      },
+      "component": {
+        "name": "↕ SpacingVertical",
+        "key": "49a470db9fbf5e656508d3ace1a3dda30c0f2702",
+        "library": "Spacing",
+        "sourceFile": "web/components/Spacing -- Spacing component.json"
+      },
+      "variant": {
+        "name": "Size=32",
+        "key": "49a470db9fbf5e656508d3ace1a3dda30c0f2702"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "49a470db9fbf5e656508d3ace1a3dda30c0f2702",
+        "currentComponentId": "10049:109263",
+        "latestComponentId": "10049:87334"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "10553:186318",
+        "name": "↕ SpacingVertical",
+        "type": "INSTANCE",
+        "pageName": "↳ Юрик-Юрик 2026",
+        "path": "Выбрано более 1 компании / Формирование документа 1 заявки / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / content / content / ↕ SpacingVertical",
+        "visible": true
+      },
+      "component": {
+        "name": "↕ SpacingVertical",
+        "key": "508d47492708bb3aaf5971a85357be62b7ccbfc3",
+        "library": "Spacing",
+        "sourceFile": "web/components/Spacing -- Spacing component.json"
+      },
+      "variant": {
+        "name": "Size=24",
+        "key": "508d47492708bb3aaf5971a85357be62b7ccbfc3"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "508d47492708bb3aaf5971a85357be62b7ccbfc3",
+        "currentComponentId": "10049:109262",
+        "latestComponentId": "10049:87333"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "10553:186340",
+        "name": "🔒 [D] IsleBlock :: 1024+",
+        "type": "INSTANCE",
+        "pageName": "↳ Юрик-Юрик 2026",
+        "path": "Выбрано более 1 компании / Формирование документа 1 заявки / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / content / Isle / 🔒 [D] IsleBlock :: 1024+",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] IsleBlock :: 1024+",
+        "key": "9dd86bd040376734e605227c0d849d1328e62d76",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- IsleBlock.json"
+      },
+      "variant": {
+        "name": "Type=Static",
+        "key": "9dd86bd040376734e605227c0d849d1328e62d76"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "9dd86bd040376734e605227c0d849d1328e62d76",
+        "currentComponentId": "10049:100937",
+        "latestComponentId": "10472:129130"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I10553:186340;62722:160365;84613:100555;4497:14417",
+        "name": "🔄 [D][Corporate] PureCell",
+        "type": "INSTANCE",
+        "pageName": "↳ Юрик-Юрик 2026",
+        "path": "Выбрано более 1 компании / Формирование документа 1 заявки / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / content / Isle / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent / Last / Content / Content / 🔄 [D][Corporate] PureCell",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] PureCell",
+        "key": "74efb09c57618b38759a89239de2605158cdc279",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- PureCell.json"
+      },
+      "variant": {
+        "name": "GraphicsSide=None",
+        "key": "74efb09c57618b38759a89239de2605158cdc279"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I10553:186340;62722:160365;84613:100555;4497:14417;215:15071",
+        "name": "RowTitle",
+        "type": "INSTANCE",
+        "pageName": "↳ Юрик-Юрик 2026",
+        "path": "Выбрано более 1 компании / Формирование документа 1 заявки / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / content / Isle / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent / Last / Content / Content / 🔄 [D][Corporate] PureCell / Content / Body / Main / Row / RowTitle",
+        "visible": true
+      },
+      "component": {
+        "name": "🔄 🔩 [D][Corporate] RowTitle",
+        "key": "31bf832dc500b119f05098d0c8c0dda90372e08f",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- PureCell.json"
+      },
+      "variant": {
+        "name": "Type=Text 16",
+        "key": "31bf832dc500b119f05098d0c8c0dda90372e08f"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I10553:186317;10230:817429",
+        "name": "Accordion",
+        "type": "INSTANCE",
+        "pageName": "↳ Юрик-Юрик 2026",
+        "path": "Выбрано более 1 компании / Формирование документа 1 заявки / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / content / content / Информация о компании / Accordion",
+        "visible": true
+      },
+      "component": {
+        "name": "Accordion",
+        "key": "582a00330d1f466c935ae9b4e709b63f9a87dfdb",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- Accordion.json"
+      },
+      "variant": {
+        "name": "Content=False, ControlSide=Right",
+        "key": "582a00330d1f466c935ae9b4e709b63f9a87dfdb"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I10553:186317;10230:817429;15691:10562;10553:186316;37705:55414",
+            "name": "Heading",
+            "type": null,
+            "pageName": "↳ Юрик-Юрик 2026",
+            "path": "Content=False, ControlSide=Right / HeadLine / Header / [D] TitleView / MainContent / Heading",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.itemSpacing",
+          "message": "Отступ между элементами: 0 → 2",
+          "referenceValue": 0,
+          "actualValue": 2,
+          "referenceRawValue": 0,
+          "actualRawValue": 2,
+          "referenceDisplayValue": 0,
+          "actualDisplayValue": 2,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "actualNestedOwnerPath": "Content=False, ControlSide=Right / HeadLine / Header / [D] TitleView",
+            "actualNestedOwnerRelativePath": "MainContent / Heading",
+            "nestedOwnerComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Content=False, ControlSide=Right / HeadLine / Header / [D] TitleView",
+            "nestedOwnerRelativePath": "MainContent / Heading",
+            "actualVariantProperties": {
+              "View": "Small",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": {
+              "View": "Small",
+              "Skeleton": "False"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "10553:186309",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.stroke|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства TitleView нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I10553:186330;10235:860347",
+        "name": "[D] ContentCardWrapper",
+        "type": "INSTANCE",
+        "pageName": "↳ Юрик-Юрик 2026",
+        "path": "Выбрано более 1 компании / Формирование документа 1 заявки / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / content / content / Тариф / Plate / [D] ContentCardWrapper",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] ContentCardWrapper",
+        "key": "db811120887de6e1719c687338fe388fcc37fd1b",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- ContentCardWrapper.json"
+      },
+      "variant": {
+        "name": "State=Active, Skeleton=False",
+        "key": "db811120887de6e1719c687338fe388fcc37fd1b"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I10553:186330;10235:860347;55398:40912",
+            "name": "🔩 [D] RightSlot",
+            "type": null,
+            "pageName": "↳ Юрик-Юрик 2026",
+            "path": "State=Active, Skeleton=False / 🔩 [D] RightSlot",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": "0",
+          "referenceRawValue": 8,
+          "actualRawValue": "0",
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": "0",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "3306117dae38c0f239cc31f02da16e98678a4d76",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "db811120887de6e1719c687338fe388fcc37fd1b",
+            "actualNestedOwnerPath": "State=Active, Skeleton=False",
+            "actualNestedOwnerRelativePath": "🔩 [D] RightSlot",
+            "nestedOwnerComponentKey": "3306117dae38c0f239cc31f02da16e98678a4d76",
+            "nestedOwnerComponentRole": "Part",
+            "nestedOwnerPath": "State=Active, Skeleton=False / 🔩 [D] RightSlot",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "Presets": "IconButton"
+            },
+            "referenceVariantProperties": {
+              "Presets": "IconButton"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "10553:186309",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.content-card-wrapper.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|styles.fill|styles.stroke|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри семейства ContentCardWrapper нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "10553:186317",
+        "name": "Информация о компании",
+        "type": "INSTANCE",
+        "pageName": "↳ Юрик-Юрик 2026",
+        "path": "Выбрано более 1 компании / Формирование документа 1 заявки / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / content / content / Информация о компании",
+        "visible": true
+      },
+      "component": {
+        "name": "Информация о компании",
+        "key": "3645dc50dee0f89c309a3214ccdbbb23bb895f25",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "10702:392823",
+        "name": "Полномочия руководителя",
+        "type": "INSTANCE",
+        "pageName": "↳ Юрик-Юрик 2026",
+        "path": "Выбрано более 1 компании / Формирование документа 1 заявки / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / content / content / Полномочия руководителя",
+        "visible": true
+      },
+      "component": {
+        "name": "Полномочия руководителя",
+        "key": "10b4ba994fbf58dbc2828dd64c6f85f2f5514db4",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "10553:186330",
+        "name": "Тариф",
+        "type": "INSTANCE",
+        "pageName": "↳ Юрик-Юрик 2026",
+        "path": "Выбрано более 1 компании / Формирование документа 1 заявки / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / content / content / Тариф",
+        "visible": true
+      },
+      "component": {
+        "name": "Тариф",
+        "key": "88576af952e0316977a20954bfbd1885262f5146",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "10553:186332",
+        "name": "Данные заявителя",
+        "type": "INSTANCE",
+        "pageName": "↳ Юрик-Юрик 2026",
+        "path": "Выбрано более 1 компании / Формирование документа 1 заявки / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / content / content / Данные заявителя",
+        "visible": true
+      },
+      "component": {
+        "name": "Данные заявителя",
+        "key": "b7c5757e87b9a1eda33a178dca067702deffb6ed",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "10553:186334",
+        "name": "Дополнительная информация",
+        "type": "INSTANCE",
+        "pageName": "↳ Юрик-Юрик 2026",
+        "path": "Выбрано более 1 компании / Формирование документа 1 заявки / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / content / content / Дополнительная информация",
+        "visible": true
+      },
+      "component": {
+        "name": "Дополнительная информация",
+        "key": "adb2a0066202a4a5db3eeb0c05908f9beb6f6925",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "detachedComponents",
+      "severityHint": "high",
+      "title": "Detach компонента",
+      "node": {
+        "id": "10553:186309",
+        "name": "[D] CorporateContent",
+        "type": "FRAME_OR_GROUP",
+        "pageName": "↳ Юрик-Юрик 2026",
+        "path": "Выбрано более 1 компании / Формирование документа 1 заявки / [D] CorporatePage / Page / Body / [D] CorporateContent",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] CorporateContent",
+        "key": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateContent.json"
+      }
+    },
+    {
+      "category": "detachedComponents",
+      "severityHint": "high",
+      "title": "Detach компонента",
+      "node": {
+        "id": "10553:186310",
+        "name": "[D] Body",
+        "type": "FRAME_OR_GROUP",
+        "pageName": "↳ Юрик-Юрик 2026",
+        "path": "Выбрано более 1 компании / Формирование документа 1 заявки / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body",
+        "visible": true
+      },
+      "component": {
+        "name": "❌ [D] Body",
+        "key": "28b1ffd86a806eab0daa7c5c75975c5ed103dca2",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateContent.json"
+      }
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "10553:186340",
+        "name": "🔒 [D] IsleBlock :: 1024+",
+        "type": "INSTANCE",
+        "pageName": "↳ Юрик-Юрик 2026",
+        "path": "Выбрано более 1 компании / Формирование документа 1 заявки / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / content / Isle / 🔒 [D] IsleBlock :: 1024+",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] IsleBlock :: 1024+",
+        "key": "9dd86bd040376734e605227c0d849d1328e62d76",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- IsleBlock.json"
+      },
+      "variant": {
+        "name": "Type=Static",
+        "key": "9dd86bd040376734e605227c0d849d1328e62d76"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "9dd86bd040376734e605227c0d849d1328e62d76",
+        "currentComponentId": "10049:100937",
+        "latestComponentId": "10472:129130"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "technicalComponents",
+      "severityHint": "low",
+      "title": "Технический компонент",
+      "node": {
+        "id": "I10553:186329;406:281438",
+        "name": "💊Rulers / Side",
+        "type": "INSTANCE",
+        "pageName": "↳ Юрик-Юрик 2026",
+        "path": "Выбрано более 1 компании / Формирование документа 1 заявки / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / content / content / Spacers / 💊Rulers / Side",
+        "visible": true
+      },
+      "component": {
+        "name": "💊Rulers / Side",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f",
+        "library": "Web :: Core Helpers",
+        "sourceFile": "web/components/web-core-helpers/Web _ Core Helpers -- Documentation.json"
+      },
+      "variant": {
+        "name": "Direction=←",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "technicalComponents",
+      "severityHint": "low",
+      "title": "Технический компонент",
+      "node": {
+        "id": "I10553:186331;406:281438",
+        "name": "💊Rulers / Side",
+        "type": "INSTANCE",
+        "pageName": "↳ Юрик-Юрик 2026",
+        "path": "Выбрано более 1 компании / Формирование документа 1 заявки / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / content / content / Spacers / 💊Rulers / Side",
+        "visible": true
+      },
+      "component": {
+        "name": "💊Rulers / Side",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f",
+        "library": "Web :: Core Helpers",
+        "sourceFile": "web/components/web-core-helpers/Web _ Core Helpers -- Documentation.json"
+      },
+      "variant": {
+        "name": "Direction=←",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "technicalComponents",
+      "severityHint": "low",
+      "title": "Технический компонент",
+      "node": {
+        "id": "I10553:186333;406:281438",
+        "name": "💊Rulers / Side",
+        "type": "INSTANCE",
+        "pageName": "↳ Юрик-Юрик 2026",
+        "path": "Выбрано более 1 компании / Формирование документа 1 заявки / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / content / content / Spacers / 💊Rulers / Side",
+        "visible": true
+      },
+      "component": {
+        "name": "💊Rulers / Side",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f",
+        "library": "Web :: Core Helpers",
+        "sourceFile": "web/components/web-core-helpers/Web _ Core Helpers -- Documentation.json"
+      },
+      "variant": {
+        "name": "Direction=←",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "technicalComponents",
+      "severityHint": "low",
+      "title": "Технический компонент",
+      "node": {
+        "id": "I10553:186335;406:281446",
+        "name": "💊Rulers / Side",
+        "type": "INSTANCE",
+        "pageName": "↳ Юрик-Юрик 2026",
+        "path": "Выбрано более 1 компании / Формирование документа 1 заявки / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / content / content / Spacers / 💊Rulers / Side",
+        "visible": true
+      },
+      "component": {
+        "name": "💊Rulers / Side",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f",
+        "library": "Web :: Core Helpers",
+        "sourceFile": "web/components/web-core-helpers/Web _ Core Helpers -- Documentation.json"
+      },
+      "variant": {
+        "name": "Direction=←",
+        "key": "8d82004435ce6a515c9d78254202f9113210061f"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I10553:186340;62722:160365;84613:100555;4497:14417",
+        "name": "🔄 [D][Corporate] PureCell",
+        "type": "INSTANCE",
+        "pageName": "↳ Юрик-Юрик 2026",
+        "path": "Выбрано более 1 компании / Формирование документа 1 заявки / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / content / Isle / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent / Last / Content / Content / 🔄 [D][Corporate] PureCell",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] PureCell",
+      "component": {
+        "name": "🔄 [D][Corporate] PureCell",
+        "key": "6f52eb09fb75c59e3624216d8f409af586e24d6c",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": null
+      }
+    }
+  ],
+  "componentContexts": [
+    {
+      "componentKey": "web-core.accordion",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "Accordion",
+        "❌ Accordion",
+        "🔩 AccordionBody",
+        "🔩 AccordionHeader",
+        "🔩  SwapMe",
+        "🔩 AccordionControl"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "6dff8dfbbc3a4578289823489e06bb801affca13",
+          "name": "❌ Accordion",
+          "purpose": "Смотри описание в спеке. Решили разкомпонентить аккордион по образу женерик враппера.",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.button",
+      "summary": "Button — семейство action controls. Apollo должен трактовать изменения Button variant как component property changes, а ручные изменения style/token/layout как layer customizations.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] Button",
+        "[D] Button_Inverted",
+        "[M] Button",
+        "[M] Button_Inverted",
+        "🔄 [D][Corporate] Button",
+        "🔄 [D][Corporate] Button_Inverted",
+        "🔄 [M][Corporate] Button",
+        "🔄 [M][Corporate] Button_Inverted",
+        "🔩 Addon",
+        "🔩 Addon"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*",
+          "variant.View",
+          "variant.Size",
+          "variant.Shape",
+          "variant.SingleIcon",
+          "variant.DisabledState"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent",
+          "layout.padding",
+          "layout.itemSpacing"
+        ],
+        "baselinePolicy": "Если component property изменилась, сравнивай ручные layer overrides с baseline текущего actual-состояния компонента, а не с исходным reference baseline.",
+        "slotProperties": [
+          "LeftAddon.variant.Type",
+          "RightAddon.variant.Type"
+        ],
+        "ordering": [
+          "component-property",
+          "slot-property",
+          "layer-property"
+        ]
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.View",
+            "variant.Size",
+            "variant.Shape",
+            "variant.SingleIcon",
+            "variant.DisabledState"
+          ],
+          "layerProperties": [
+            "fills",
+            "strokes",
+            "strokeWeight",
+            "cornerRadius",
+            "opacity",
+            "layout.padding",
+            "layout.itemSpacing",
+            "styles.text",
+            "typography"
+          ],
+          "dependencyPolicy": "При reset component property layer differences, вызванные только этой property, могут исчезнуть автоматически. Ручные layer overrides должны оставаться независимо сбрасываемыми, пока reset родительской property не уберёт их target state."
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web-core.checkbox",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "Checkbox_20",
+        "Checkbox_20_Inverted",
+        "Checkbox_24",
+        "Checkbox_24_Inverted",
+        "CheckboxLabel_20",
+        "CheckboxLabel_20_Inverted",
+        "CheckboxLabel_20_Reverse",
+        "CheckboxLabel_20_Reverse_Inverted",
+        "CheckboxLabel_24",
+        "CheckboxLabel_24_Inverted",
+        "CheckboxLabel_24_Reverse",
+        "CheckboxLabel24_Reverse_Inverted"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.pure-cell",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔄 [M][Corporate] PureCell",
+        "🔄 [D][Corporate] PureCell",
+        "[M] PureCell",
+        "[D] PureCell",
+        "🔄 🔩 [M][Corporate] RowValue",
+        "🔄 🔩 [D][Corporate] RowValue",
+        "🔄 🔩 [M][Corporate] RowTitle",
+        "🔄 🔩 [D][Corporate] RowTitle",
+        "🔄 🔩 [M][Corporate] Footer",
+        "🔄 🔩 [D][Corporate] Footer",
+        "🔄 🔩 [M][Corporate] Addon",
+        "🔄 🔩 [D][Corporate] Addon",
+        "🔄 🔩 [M][Corporate] Graphics",
+        "🔄 🔩 [D][Corporate] Graphics",
+        "🔩 [M] RowValue",
+        "🔩 [D] RowValue",
+        "🔩 [M] RowTitle",
+        "🔩 [D] RowTitle",
+        "🔩 [M] Footer",
+        "🔩 [D] Footer",
+        "🔩 [M] Addon",
+        "🔩 [D] Addon",
+        "🔩 [M] Graphics",
+        "🔩 [D] Graphics"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "35ac63e4ca504a3da402f04f044109c11682c1eb",
+          "name": "🔄 [D][Corporate] PureCell",
+          "purpose": "🔄 Замени на актуальный",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        },
+        {
+          "componentKey": "6f52eb09fb75c59e3624216d8f409af586e24d6c",
+          "name": "[D] PureCell",
+          "purpose": "🟠 При создании макетов для мобильной версии замени кнопки и заголовки (если они есть) на мобильные инстансы / стили. Например, если у тебя есть кнопка в футере ячейки, в мобильной версии её нужно свопнуть на кнопку с приставкой [M].",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.buttons-group",
+      "summary": "ButtonsGroup — рабочий компонент для композиции связанных кнопок. [D] ButtonsGroup используется на desktop, [M] ButtonsGroup — на mobile-web; оба компонента существуют в коде.",
+      "criticalBaselines": [
+        "В [D] ButtonsGroup допускается до четырёх видимых кнопок, в [M] ButtonsGroup — до двух.",
+        "Primary необязателен. Если Primary используется, он должен быть единственным и располагаться первым.",
+        "ButtonsGroup содержит минимум две видимые кнопки.",
+        "Все вложенные кнопки используют Size группы; разрешены 32, 40, 48 и 56.",
+        "Остальные настройки вложенных кнопок следуют правилам соответствующего Button.",
+        "Используются только штатные button slots: их можно скрывать и показывать, но нельзя добавлять, дублировать или заменять через instance swap.",
+        "Группа всегда горизонтальная, использует Hug/Hug и itemSpacing по effective baseline выбранного Size.",
+        "Кнопки располагаются слева направо в порядке убывания приоритета.",
+        "Кнопку в середине группы можно скрыть. При переносе действий в платформенный список первым переносится действие непосредственно перед SingleIcon, затем перенос продолжается справа налево.",
+        "У группы нет общего Disabled или Loading state в Figma. Loading допустим у отдельной видимой Button. Skeleton существует только в коде и будет добавлен в Figma позже.",
+        "SingleIcon открывает платформенный список действий, а его заданную компонентом иконку менять нельзя.",
+        "На desktop SingleIcon открывает [D] OptionList, на mobile-web — BottomSheet только со списком действий без footer.",
+        "Перенесённые действия сохраняют label, действие и наличие иконки; если исходная кнопка без иконки, пункт также без иконки. Отдельного лимита пунктов нет.",
+        "Недоступное перенесённое действие сохраняет disabled state и показывает Tooltip с причиной недоступности. У OptionListCell нет Loading state.",
+        "После выбора доступного действия [D] OptionList или BottomSheet сразу закрывается.",
+        "Одно действие нельзя одновременно оставлять видимым и дублировать в списке."
+      ],
+      "agentInstructions": [
+        "Не выводи нарушение из примера: используй только точное применимое правило или component contract.",
+        "Variant changes показывай как параметры компонента, а style/layout/paint changes — как параметры слоя.",
+        "Не показывай wrapper-owned nested diff, если actual совпадает с effective baseline ButtonsGroup.",
+        "Если actual отличается, показывай effectiveBaseline → actual.",
+        "Не называй SingleIcon PickerButton: это последняя Button с SingleIcon=true, которая открывает [D] OptionList на desktop или BottomSheet на mobile-web.",
+        "Не требуй Skeleton в Figma: пока это только code state будущей версии компонента.",
+        "Не делай выводов о Loading скрытого действия: поведение пока не определено владельцем, а у OptionListCell нет Loading state."
+      ],
+      "includedComponents": [
+        "[D] ButtonsGroup",
+        "[M] ButtonsGroup"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "f05915599f71e822fd8b46a2b2509a2e395005cf",
+          "name": "[D] ButtonsGroup",
+          "purpose": "Вспомогательный компонент Figma, в коде не существует.",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.*"
+          ],
+          "layerProperties": [
+            "layout.*",
+            "styles.*",
+            "fill",
+            "stroke",
+            "radius",
+            "opacity",
+            "text.*"
+          ],
+          "dependencyPolicy": "Component-property reset и layer-property reset разделены. Layer reset должен использовать effective baseline после nested variant/materialization resolution."
+        },
+        "publicApi": {
+          "components": [
+            {
+              "name": "[D] ButtonsGroup",
+              "key": "f05915599f71e822fd8b46a2b2509a2e395005cf",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] ButtonsGroup",
+              "key": "3efdfaf64eddbcf48b183ce917b7a64c0c3d6062",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            }
+          ],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web-corp.content-card-wrapper",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] ContentCardWrapper",
+        "[M] ContentCardWrapper",
+        "🔩 [D] ContentPresets",
+        "🔩 [D] LeftSlot",
+        "🔩 [D] RightSlot",
+        "🔩 [M] ContentPresets",
+        "🔩 [M] LeftSlot",
+        "🔩 [M] MiddleContentSlot",
+        "🔩 [M] RightSlot",
+        "🔩 MiddleContentSlot",
+        "SwapMe"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.corporate-content",
+      "summary": "CorporateContent — обязательная контентная область продуктовой страницы. Используй [D] CorporateContent для desktop и [M] CorporateContent для mobile-web.",
+      "criticalBaselines": [],
+      "agentInstructions": [
+        "Не считай произвольный контент или несколько дочерних элементов внутри Body нарушением сами по себе.",
+        "Проверяй содержимое Body по собственным компонентным контрактам и паттернам.",
+        "Считай использование переходного [T] CorporateContent явным нарушением.",
+        "Не рекомендуй ручную правку fill, grid style или padding корня CorporateContent; рекомендуй правильный mode переменных.",
+        "Не требуй наличия родительского компонента CorporatePage в Figma: такого компонента нет, самостоятельное использование CorporateContent допустимо.",
+        "Не применяй Gutter как обязательный itemSpacing внутри Body; он допустим в любой горизонтальной композиции без обязательного Section.",
+        "На ширине 768 требуй [D] CorporateContent и mode 768 коллекции [D] Grid & Cols.",
+        "Не придумывай условия выбора между base-bg-alt и base-bg до появления отдельного паттерна; default — base-bg-alt (grey).",
+        "Не разрешай кликабельность корня или detach CorporateContent и Body.",
+        "Не разрешай вкладывать CorporateContent внутрь CorporateContent и не оставляй SwapMe после добавления реального содержимого.",
+        "Требуй Header или HeaderMenu непосредственно над CorporateContent в общем вертикальном контейнере с gap 0.",
+        "Не разрешай менять вертикальное направление, itemSpacing=0 или clipsContent=false корня CorporateContent."
+      ],
+      "includedComponents": [
+        "[D] Section",
+        "[D] CorporateContent",
+        "[M] CorporateContent",
+        "❌ [D] Body",
+        "❌ [M} Body",
+        "❌ [T] Body",
+        "❌ [T] CorporateContent"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "28b1ffd86a806eab0daa7c5c75975c5ed103dca2",
+          "name": "❌ [D] Body",
+          "purpose": "SwapMe or DetachMe",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        },
+        {
+          "componentKey": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+          "name": "[D] CorporateContent",
+          "purpose": "Основная desktop-контентная область корпоративной продуктовой страницы с системной сеткой, фоном и адаптивными отступами.",
+          "useWhen": [
+            "Собирается содержимое корпоративной страницы на ширине 768 px и выше."
+          ],
+          "doNotUseWhen": [
+            "Нужен вложенный контейнер внутри другого CorporateContent."
+          ],
+          "relationship": "Единственный корневой контентный контейнер CorporatePage на desktop; принимает произвольную композицию в Body.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.isle-block",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] IsleContent :: 768",
+        "[D] IsleFooter :: 1024+",
+        "[D] IsleFooter :: 768",
+        "[D] IsleHeader :: 1024+",
+        "[D] IsleHeader :: 768",
+        "[D] Status",
+        "[D] Status :: 1024+",
+        "[D] TopAddon",
+        "[D] TopAddon :: 1024+",
+        "[M] IsleContent",
+        "[M] IsleFooter",
+        "[M] IsleHeader",
+        "[M] TopAddon",
+        "❌ IsleCustomContent",
+        "🔒 [D] IsleBlock :: 1024+",
+        "🔒 [D] IsleBlock :: 768",
+        "🔒 [M] IsleBlock",
+        "🔩 StatusCompact",
+        "IsleContent"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.title-view",
+      "summary": "TitleView — составная обёртка заголовка для сценария с основным заголовком, статусом и действиями. Компонент объединяет Title, Status, TitleAddon, RightAddon, выбор компании, Subtitle, TitleStatus и Button group в готовую DS-композицию.",
+      "criticalBaselines": [
+        "Nested [D]/[M] Button instances внутри Button group являются частью TitleView baseline; изменения variant дизайнером нужно показывать относительно TitleView effective baseline.",
+        "StatusPreset и Status внутри MainContent / Status являются ожидаемыми nested structures; само использование preset нормально, если preset не изменён за пределами его variant API.",
+        "View и Skeleton являются public TitleView component properties.",
+        "На странице допускается только один TitleView с View=xLarge.",
+        "Внешние отступы 40 px, 32 px и 12 px, определённые правилами TitleView, обязательны для соответствующих соседних блоков.",
+        "Если одновременно используются Status и TitleStatus, значения Type должны совпадать: Type определяет статусный цвет.",
+        "В View=xLarge primary-действия размещаются в Button group. В View=Large, Medium и Small primary-действия размещаются вне TitleView.",
+        "Запрет primary-действия в RightAddon применяется ко всем значениям View.",
+        "Частичная загрузка отдельных слотов допустима при Skeleton=False у родительского TitleView.",
+        "Для View=Large, Medium и Small доступны только Title, Subtitle, TitleAddon и RightAddon.",
+        "Holding обязателен для одиночного выбора компании, когда пользователь работает от группы компаний, а страница доступна только в моно-режиме.",
+        "Ручные изменения layout, sizing, типографики, цвета, прозрачности и других стилей корня и всего внутреннего дерева TitleView запрещены.",
+        "Для корня TitleView рекомендуется ширина Fill container и высота Hug contents; правило одинаково для desktop и mobile-web.",
+        "Порядок слотов Status -> Heading -> Holding -> Subtitle -> TitleStatus -> Button group обязателен.",
+        "В предусмотренных слотах разрешён instance swap на произвольные компоненты, если сохраняются порядок слотов и структура TitleView.",
+        "Корень TitleView не оформляется вручную и не может быть единой кликабельной поверхностью."
+      ],
+      "agentInstructions": [
+        "Не выводи pattern violations из примеров. Используй только exact rules и exact component contracts.",
+        "Используй component-property facts для variant changes и layer-property facts для styles/layout/paint changes.",
+        "Если nested diff принадлежит host wrapper и actual совпадает с effective baseline, не показывай его как designer customization.",
+        "Если actual отличается от effective baseline, показывай effectiveBaseline -> actual.",
+        "Для сценария заголовка со статусом и действиями рекомендуй настройку встроенных slots TitleView, а не внешнюю ручную композицию из отдельных локальных компонентов.",
+        "Не считай отсутствие опциональных Status, TitleStatus, TitleAddon, RightAddon, Subtitle или Button group нарушением без отдельного правила.",
+        "Если загружается только отдельный вложенный элемент, не требуй переключать весь TitleView в Skeleton=True.",
+        "Для View=Large, Medium и Small рекомендуй primary-действие вне TitleView, а не в RightAddon.",
+        "Не считай изменение label у Status нарушением, если Type корректен и нет отдельного текстового правила.",
+        "Не придумывай ограничения параметров FilterCompanySelect_Single: используй его собственный компонентный контракт, когда он будет доступен.",
+        "Для настроек View, addons, hint и singleIcon вложенных Button используй паттерн «Кнопки и группы кнопок»; не создавай отдельные ограничения TitleView.",
+        "Применяй правила p_title-view-editable.md как часть правил TitleView, когда обнаружен editable-сценарий.",
+        "Не требуй Enter, Escape или отдельные кнопки подтверждения и отмены без точного правила для конкретной платформы и сценария.",
+        "Не считай сам факт instance swap внутри предусмотренного слота нарушением; оценивай выбранный компонент по его собственному контракту.",
+        "Проверяй обязательный порядок слотов отдельно от содержимого каждого слота.",
+        "Не разрешай ручное оформление корня или внутренних слоёв TitleView и не предлагай делать весь TitleView кликабельным."
+      ],
+      "includedComponents": [
+        "[D] RightAddon",
+        "[D] RightAddonXL",
+        "[D] TitleAddon",
+        "[D] TitleAddonXL",
+        "[D] TitleStatus",
+        "[D] TitleView",
+        "[M] RightAddon",
+        "[M] RightAddonXL",
+        "[M] TitleAddon",
+        "[M] TitleAddonXL",
+        "[M] TitleStatus",
+        "[M] TitleView"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.*"
+          ],
+          "layerProperties": [
+            "layout.*",
+            "styles.*",
+            "fill",
+            "stroke",
+            "radius",
+            "opacity",
+            "text.*"
+          ],
+          "dependencyPolicy": "Component-property reset и layer-property reset разделены. Layer reset должен использовать effective baseline после nested variant/materialization resolution."
+        },
+        "publicApi": {
+          "components": [
+            {
+              "name": "[D] RightAddon",
+              "key": "edd174301746415867bc998cd0c0322b68c6269c",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] RightAddonXL",
+              "key": "8edd3829b4b7091209299a5b5c838f0a159018aa",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleAddon",
+              "key": "f32313498fd345a1a41584c8d9edc61c3e2053bf",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleAddonXL",
+              "key": "b4cd3e21d108962a24b75aec2de71fba0672d63f",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleStatus",
+              "key": "6a8aa56ae7c8b57b9d9dfbbf23af14c348d83763",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleView",
+              "key": "fbc4ff889c9fe2db128bc76471f512271d4cc229",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] RightAddon",
+              "key": "b762143a2872257a497f9c3e0a012a9bed92f9ca",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] RightAddonXL",
+              "key": "c1092f678271e7de3291bb5699eeab4ad43c7710",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleAddon",
+              "key": "50d8b48cc1dcd4052efc7a151219578d1d993e2f",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleAddonXL",
+              "key": "a40e2549a5a23e645fb38c2af4c15df0f6813153",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleStatus",
+              "key": "e64c6d19cadc818b180b9176a51e3f65714b84b0",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleView",
+              "key": "227149bd55130d69d63e33cd3c8c52ae3f4e7e19",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            }
+          ],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web.documentation",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        ".x / PropertyValue",
+        "💊Rulers / Corner radius",
+        "💊Rulers / Inline",
+        "💊Rulers / Side",
+        ".Details / Triangle",
+        ".Details / Body",
+        ".Details / Spacer_hor",
+        ".Details / Spacer_vert",
+        "💊Documentations / Plates / Bottom",
+        "💊Documentations / Inline / Plates",
+        ".Details / Plate / Icon",
+        "💊Documentations / Inline / Code",
+        ".Details / Plate / Master",
+        "💊Documentations / Inline / Good and Bad",
+        "💊Documentations / Plates / Cell",
+        "💊Documentations / Plates / Head"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web.spacing-component",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "↔ SpacingHorizontal",
+        "↕ SpacingVertical",
+        ".SpacerСell"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "2038eba49b808faf3f35b4c9e57166f366e2660b",
+          "name": "↕ SpacingVertical",
+          "purpose": "Shift+ctrl+4 чтобы увидеть заливку. Можно тянуть влево и вправо.",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    }
+  ]
+}
