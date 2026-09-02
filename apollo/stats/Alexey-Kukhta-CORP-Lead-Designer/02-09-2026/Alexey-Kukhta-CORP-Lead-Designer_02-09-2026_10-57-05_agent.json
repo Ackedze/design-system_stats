@@ -1,0 +1,1378 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1096330610570928879-1788335825375-t00zjywc:agent",
+  "sourceReportId": "apollo-1096330610570928879-1788335825375-t00zjywc",
+  "generatedAt": "2026-09-02T07:57:05.375Z",
+  "suggestedFileName": "Alexey-Kukhta-CORP-Lead-Designer_02-09-2026_10-57-05_agent.json",
+  "user": {
+    "id": "1096330610570928879",
+    "name": "Alexey Kukhta / CORP / Lead Designer",
+    "slug": "Alexey-Kukhta-CORP-Lead-Designer"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.3.0"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "❇️ Мастерская :: AI",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "MobileWeb",
+    "pageType": null,
+    "startedAt": "2026-09-02T07:57:03.994Z",
+    "finishedAt": "2026-09-02T07:57:05.375Z",
+    "durationMs": 1381,
+    "selection": [
+      {
+        "nodeId": "12770:93652",
+        "name": "Frame 2147238501",
+        "nodeType": "FRAME",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 40,
+    "problemOccurrenceCount": 37,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 18,
+      "updates": 1,
+      "customizations": 0,
+      "localComponents": 0,
+      "detachedComponents": 0,
+      "presets": 0,
+      "technicalComponents": 0,
+      "currentComponents": 23,
+      "wrongChannel": 17,
+      "themization": 1
+    },
+    "includedFindingCount": 37,
+    "omittedCurrentComponentCount": 23
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, authority.status=active, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with authority.status=active, severity=error, and matchKind=exact_component_rule for the same property/change. Missing, draft, or malformed authority never confirms a violation.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 18,
+      "includedCount": 18,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 17,
+      "includedCount": 17,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:52528",
+        "name": "FCS-01 · PASS · public Single Compact",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-01 · PASS · public Single Compact",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:52528",
+        "name": "FCS-01 · PASS · public Single Compact",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-01 · PASS · public Single Compact",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:52787",
+        "name": "FCS-02 · FAIL · internal CompactTag root",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-02 · FAIL · internal CompactTag root",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:52787",
+        "name": "FCS-02 · FAIL · internal CompactTag root",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-02 · FAIL · internal CompactTag root",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:102391",
+        "name": "FCS-03 · FAIL · desktop root on mobile-web",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-03 · FAIL · desktop root on mobile-web",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:102391",
+        "name": "FCS-03 · FAIL · desktop root on mobile-web",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-03 · FAIL · desktop root on mobile-web",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:102499",
+        "name": "FCS-04 · FAIL · ShowFirstCompany true",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-04 · FAIL · ShowFirstCompany true",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:102499",
+        "name": "FCS-04 · FAIL · ShowFirstCompany true",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-04 · FAIL · ShowFirstCompany true",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:102870",
+        "name": "FCS-05 · FAIL · Compact without selection",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-05 · FAIL · Compact without selection",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:102870",
+        "name": "FCS-05 · FAIL · Compact without selection",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-05 · FAIL · Compact without selection",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:102957",
+        "name": "FCS-06 · FAIL · root radius override",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-06 · FAIL · root radius override",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:102957",
+        "name": "FCS-06 · FAIL · root radius override",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-06 · FAIL · root radius override",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:103038",
+        "name": "FCS-07 · NOT-EVALUABLE · runtime company count",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-07 · NOT-EVALUABLE · runtime company count",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:103038",
+        "name": "FCS-07 · NOT-EVALUABLE · runtime company count",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-07 · NOT-EVALUABLE · runtime company count",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:103445",
+        "name": "FCS-08 · INTERACTION · Multi transaction",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-08 · INTERACTION · Multi transaction",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:103445",
+        "name": "FCS-08 · INTERACTION · Multi transaction",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-08 · INTERACTION · Multi transaction",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:103558",
+        "name": "FCS-09 · LLM · holding scenario",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-09 · LLM · holding scenario",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:103558",
+        "name": "FCS-09 · LLM · holding scenario",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-09 · LLM · holding scenario",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "12766:52791",
+        "name": "[D] CompactTag · FAIL · internal root",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-02 · FAIL · internal CompactTag root / [D] CompactTag · FAIL · internal root",
+        "visible": true,
+        "ancestorNodeIds": [
+          "12770:93652",
+          "12766:52787"
+        ]
+      },
+      "component": {
+        "name": "[D] CompactTag",
+        "key": "378b326969116e8ec24e8bebcb3a33148f9802a1",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- FilterCompanySelect.json"
+      },
+      "variant": {
+        "name": "SelectedState=true",
+        "key": "378b326969116e8ec24e8bebcb3a33148f9802a1"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "378b326969116e8ec24e8bebcb3a33148f9802a1",
+        "currentComponentId": "10742:13785",
+        "latestComponentId": "10560:26426"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "12766:52532",
+        "name": "[D] FilterCompanySelect_Single · PASS",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-01 · PASS · public Single Compact / [D] FilterCompanySelect_Single · PASS",
+        "visible": true,
+        "ancestorNodeIds": [
+          "12770:93652",
+          "12766:52528"
+        ]
+      },
+      "component": {
+        "name": "[D] FilterCompanySelect_Single",
+        "key": "f8c7f8caa0d477db59f7aa2ccc97be9bc541f467",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- FilterCompanySelect.json"
+      },
+      "variant": {
+        "name": "Open=False, Selected=True, View=Compact, ShowFirstCompany=False",
+        "key": "f8c7f8caa0d477db59f7aa2ccc97be9bc541f467"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "f8c7f8caa0d477db59f7aa2ccc97be9bc541f467",
+        "currentComponentId": "12766:52415",
+        "latestComponentId": "12766:52415"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I12766:52532;44325:24938",
+        "name": "[D] CompactTag",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-01 · PASS · public Single Compact / [D] FilterCompanySelect_Single · PASS / [D] CompactTag",
+        "visible": true,
+        "ancestorNodeIds": [
+          "12770:93652",
+          "12766:52528",
+          "12766:52532"
+        ]
+      },
+      "component": {
+        "name": "[D] CompactTag",
+        "key": "378b326969116e8ec24e8bebcb3a33148f9802a1",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- FilterCompanySelect.json"
+      },
+      "variant": {
+        "name": "SelectedState=true",
+        "key": "378b326969116e8ec24e8bebcb3a33148f9802a1"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "12766:52791",
+        "name": "[D] CompactTag · FAIL · internal root",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-02 · FAIL · internal CompactTag root / [D] CompactTag · FAIL · internal root",
+        "visible": true,
+        "ancestorNodeIds": [
+          "12770:93652",
+          "12766:52787"
+        ]
+      },
+      "component": {
+        "name": "[D] CompactTag",
+        "key": "378b326969116e8ec24e8bebcb3a33148f9802a1",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- FilterCompanySelect.json"
+      },
+      "variant": {
+        "name": "SelectedState=true",
+        "key": "378b326969116e8ec24e8bebcb3a33148f9802a1"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "378b326969116e8ec24e8bebcb3a33148f9802a1",
+        "currentComponentId": "10742:13785",
+        "latestComponentId": "10560:26426"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "12766:102395",
+        "name": "[D] FilterCompanySelect_Single · FAIL · mobile-web",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-03 · FAIL · desktop root on mobile-web / [D] FilterCompanySelect_Single · FAIL · mobile-web",
+        "visible": true,
+        "ancestorNodeIds": [
+          "12770:93652",
+          "12766:102391"
+        ]
+      },
+      "component": {
+        "name": "[D] FilterCompanySelect_Single",
+        "key": "b1fa20f98adf21e99329ddd79a9de33da537f4a7",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- FilterCompanySelect.json"
+      },
+      "variant": {
+        "name": "Open=False, Selected=False, View=Select, ShowFirstCompany=False",
+        "key": "b1fa20f98adf21e99329ddd79a9de33da537f4a7"
+      },
+      "comparisonIssues": [
+        "Нет данных для обводка в снапшоте для «Open=False, Selected=False, View=Select, ShowFirstCompany=False / [D] Select / Field»",
+        "Нет данных для толщины обводки в снапшоте для «Open=False, Selected=False, View=Select, ShowFirstCompany=False / [D] Select / Field»"
+      ],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "b1fa20f98adf21e99329ddd79a9de33da537f4a7",
+        "currentComponentId": "12766:52409",
+        "latestComponentId": "12766:52409"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I12766:102395;38714:107370",
+        "name": "[D] Select",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-03 · FAIL · desktop root on mobile-web / [D] FilterCompanySelect_Single · FAIL · mobile-web / [D] Select",
+        "visible": true,
+        "ancestorNodeIds": [
+          "12770:93652",
+          "12766:102391",
+          "12766:102395"
+        ]
+      },
+      "component": {
+        "name": "[D] Select",
+        "key": "6969983665cfa8bb53a1c1dbebb142852d203ec0",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Select.json"
+      },
+      "variant": {
+        "name": "Size=56, FilledState=False, ActiveState=False, ↳ Placeholder=True, DisabledState=False, ErrorState=False, OuterLabel=False",
+        "key": "6969983665cfa8bb53a1c1dbebb142852d203ec0"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "12766:102503",
+        "name": "[D] FilterCompanySelect_Multi · FAIL · ShowFirstCompany=True",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-04 · FAIL · ShowFirstCompany true / [D] FilterCompanySelect_Multi · FAIL · ShowFirstCompany=True",
+        "visible": true,
+        "ancestorNodeIds": [
+          "12770:93652",
+          "12766:102499"
+        ]
+      },
+      "component": {
+        "name": "[D] FilterCompanySelect_Multi",
+        "key": "0df1b48f63deeb198567c74a9392649d5e985256",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- FilterCompanySelect.json"
+      },
+      "variant": {
+        "name": "Open=False, Selected=False, ShowFirstCompany=True",
+        "key": "0df1b48f63deeb198567c74a9392649d5e985256"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "0df1b48f63deeb198567c74a9392649d5e985256",
+        "currentComponentId": "12766:102347",
+        "latestComponentId": "12766:102347"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I12766:102503;90110:65757",
+        "name": "[D] FilterTag_Filled",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-04 · FAIL · ShowFirstCompany true / [D] FilterCompanySelect_Multi · FAIL · ShowFirstCompany=True / [D] FilterTag_Filled",
+        "visible": true,
+        "ancestorNodeIds": [
+          "12770:93652",
+          "12766:102499",
+          "12766:102503"
+        ]
+      },
+      "component": {
+        "name": "[D] FilterTag_Filled",
+        "key": "54041e9a5043f034f038dedda65962eba0d68a34",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- FilterTag.json"
+      },
+      "variant": {
+        "name": "Size=40, Shape=Rectangular, SelectedState=False, DisabledState=False, Chevron=True, ClearButton=False, MultipleValue=False",
+        "key": "54041e9a5043f034f038dedda65962eba0d68a34"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "12766:102874",
+        "name": "[D] FilterCompanySelect_Single · FAIL · Compact Selected=False",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-05 · FAIL · Compact without selection / [D] FilterCompanySelect_Single · FAIL · Compact Selected=False",
+        "visible": true,
+        "ancestorNodeIds": [
+          "12770:93652",
+          "12766:102870"
+        ]
+      },
+      "component": {
+        "name": "[D] FilterCompanySelect_Single",
+        "key": "61222a8ae2ac5767752ad90bb07db3ee294d3a0d",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- FilterCompanySelect.json"
+      },
+      "variant": {
+        "name": "Open=False, Selected=False, View=Compact, ShowFirstCompany=False",
+        "key": "61222a8ae2ac5767752ad90bb07db3ee294d3a0d"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "61222a8ae2ac5767752ad90bb07db3ee294d3a0d",
+        "currentComponentId": "12766:52425",
+        "latestComponentId": "12766:52425"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I12766:102874;44325:23572",
+        "name": "[D] CompactTag",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-05 · FAIL · Compact without selection / [D] FilterCompanySelect_Single · FAIL · Compact Selected=False / [D] CompactTag",
+        "visible": true,
+        "ancestorNodeIds": [
+          "12770:93652",
+          "12766:102870",
+          "12766:102874"
+        ]
+      },
+      "component": {
+        "name": "[D] CompactTag",
+        "key": "29531c5431546309c8c0e4d7d3e0ed56797ba9bb",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- FilterCompanySelect.json"
+      },
+      "variant": {
+        "name": "SelectedState=false",
+        "key": "29531c5431546309c8c0e4d7d3e0ed56797ba9bb"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "12766:102961",
+        "name": "[D] FilterCompanySelect_Single · FAIL · radius=20",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-06 · FAIL · root radius override / [D] FilterCompanySelect_Single · FAIL · radius=20",
+        "visible": true,
+        "ancestorNodeIds": [
+          "12770:93652",
+          "12766:102957"
+        ]
+      },
+      "component": {
+        "name": "[D] FilterCompanySelect_Single",
+        "key": "b1fa20f98adf21e99329ddd79a9de33da537f4a7",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- FilterCompanySelect.json"
+      },
+      "variant": {
+        "name": "Open=False, Selected=False, View=Select, ShowFirstCompany=False",
+        "key": "b1fa20f98adf21e99329ddd79a9de33da537f4a7"
+      },
+      "comparisonIssues": [
+        "Нет данных для обводка в снапшоте для «Open=False, Selected=False, View=Select, ShowFirstCompany=False / [D] Select / Field»",
+        "Нет данных для толщины обводки в снапшоте для «Open=False, Selected=False, View=Select, ShowFirstCompany=False / [D] Select / Field»"
+      ],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "b1fa20f98adf21e99329ddd79a9de33da537f4a7",
+        "currentComponentId": "12766:52409",
+        "latestComponentId": "12766:52409"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I12766:102961;38714:107370",
+        "name": "[D] Select",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-06 · FAIL · root radius override / [D] FilterCompanySelect_Single · FAIL · radius=20 / [D] Select",
+        "visible": true,
+        "ancestorNodeIds": [
+          "12770:93652",
+          "12766:102957",
+          "12766:102961"
+        ]
+      },
+      "component": {
+        "name": "[D] Select",
+        "key": "6969983665cfa8bb53a1c1dbebb142852d203ec0",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Select.json"
+      },
+      "variant": {
+        "name": "Size=56, FilledState=False, ActiveState=False, ↳ Placeholder=True, DisabledState=False, ErrorState=False, OuterLabel=False",
+        "key": "6969983665cfa8bb53a1c1dbebb142852d203ec0"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "12766:103042",
+        "name": "[D] FilterCompanySelect_Multi · NOT-EVALUABLE · runtime",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-07 · NOT-EVALUABLE · runtime company count / [D] FilterCompanySelect_Multi · NOT-EVALUABLE · runtime",
+        "visible": true,
+        "ancestorNodeIds": [
+          "12770:93652",
+          "12766:103038"
+        ]
+      },
+      "component": {
+        "name": "[D] FilterCompanySelect_Multi",
+        "key": "d854a30f7d6aecabfd2973bd59a50ca37a0ad3ab",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- FilterCompanySelect.json"
+      },
+      "variant": {
+        "name": "Open=False, Selected=False, ShowFirstCompany=False",
+        "key": "d854a30f7d6aecabfd2973bd59a50ca37a0ad3ab"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "d854a30f7d6aecabfd2973bd59a50ca37a0ad3ab",
+        "currentComponentId": "12766:102346",
+        "latestComponentId": "12766:102346"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I12766:103042;38714:106230",
+        "name": "[D] FilterTag_Filled",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-07 · NOT-EVALUABLE · runtime company count / [D] FilterCompanySelect_Multi · NOT-EVALUABLE · runtime / [D] FilterTag_Filled",
+        "visible": true,
+        "ancestorNodeIds": [
+          "12770:93652",
+          "12766:103038",
+          "12766:103042"
+        ]
+      },
+      "component": {
+        "name": "[D] FilterTag_Filled",
+        "key": "54041e9a5043f034f038dedda65962eba0d68a34",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- FilterTag.json"
+      },
+      "variant": {
+        "name": "Size=40, Shape=Rectangular, SelectedState=False, DisabledState=False, Chevron=True, ClearButton=False, MultipleValue=False",
+        "key": "54041e9a5043f034f038dedda65962eba0d68a34"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "12766:103449",
+        "name": "[D] FilterCompanySelect_Multi · INTERACTION",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-08 · INTERACTION · Multi transaction / [D] FilterCompanySelect_Multi · INTERACTION",
+        "visible": true,
+        "ancestorNodeIds": [
+          "12770:93652",
+          "12766:103445"
+        ]
+      },
+      "component": {
+        "name": "[D] FilterCompanySelect_Multi",
+        "key": "bb3ece025c94c17cdddc0ed6453561e3dbb6426f",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- FilterCompanySelect.json"
+      },
+      "variant": {
+        "name": "Open=False, Selected=True, ShowFirstCompany=False",
+        "key": "bb3ece025c94c17cdddc0ed6453561e3dbb6426f"
+      },
+      "comparisonIssues": [
+        "Нет данных для заливка в снапшоте для «Open=False, Selected=True, ShowFirstCompany=False / [D] FilterTag_Filled / Text / _»"
+      ],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "bb3ece025c94c17cdddc0ed6453561e3dbb6426f",
+        "currentComponentId": "12766:102348",
+        "latestComponentId": "12766:102348"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I12766:103449;38714:106531",
+        "name": "[D] FilterTag_Filled",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-08 · INTERACTION · Multi transaction / [D] FilterCompanySelect_Multi · INTERACTION / [D] FilterTag_Filled",
+        "visible": true,
+        "ancestorNodeIds": [
+          "12770:93652",
+          "12766:103445",
+          "12766:103449"
+        ]
+      },
+      "component": {
+        "name": "[D] FilterTag_Filled",
+        "key": "07a5df97ff0cebf480ef9f5741d9d32f18ea138d",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- FilterTag.json"
+      },
+      "variant": {
+        "name": "Size=40, Shape=Rectangular, SelectedState=True, DisabledState=False, Chevron=True, ClearButton=True, MultipleValue=False",
+        "key": "07a5df97ff0cebf480ef9f5741d9d32f18ea138d"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "12766:103562",
+        "name": "[D] FilterCompanySelect_Single · LLM context",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-09 · LLM · holding scenario / [D] FilterCompanySelect_Single · LLM context",
+        "visible": true,
+        "ancestorNodeIds": [
+          "12770:93652",
+          "12766:103558"
+        ]
+      },
+      "component": {
+        "name": "[D] FilterCompanySelect_Single",
+        "key": "b1fa20f98adf21e99329ddd79a9de33da537f4a7",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- FilterCompanySelect.json"
+      },
+      "variant": {
+        "name": "Open=False, Selected=False, View=Select, ShowFirstCompany=False",
+        "key": "b1fa20f98adf21e99329ddd79a9de33da537f4a7"
+      },
+      "comparisonIssues": [
+        "Нет данных для обводка в снапшоте для «Open=False, Selected=False, View=Select, ShowFirstCompany=False / [D] Select / Field»",
+        "Нет данных для толщины обводки в снапшоте для «Open=False, Selected=False, View=Select, ShowFirstCompany=False / [D] Select / Field»"
+      ],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "b1fa20f98adf21e99329ddd79a9de33da537f4a7",
+        "currentComponentId": "12766:52409",
+        "latestComponentId": "12766:52409"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I12766:103562;38714:107370",
+        "name": "[D] Select",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-09 · LLM · holding scenario / [D] FilterCompanySelect_Single · LLM context / [D] Select",
+        "visible": true,
+        "ancestorNodeIds": [
+          "12770:93652",
+          "12766:103558",
+          "12766:103562"
+        ]
+      },
+      "component": {
+        "name": "[D] Select",
+        "key": "6969983665cfa8bb53a1c1dbebb142852d203ec0",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Select.json"
+      },
+      "variant": {
+        "name": "Size=56, FilledState=False, ActiveState=False, ↳ Placeholder=True, DisabledState=False, ErrorState=False, OuterLabel=False",
+        "key": "6969983665cfa8bb53a1c1dbebb142852d203ec0"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "12770:93652",
+        "name": "Страница:      Лаборатория",
+        "type": "PAGE",
+        "pageName": "     Лаборатория",
+        "path": "     Лаборатория",
+        "visible": true
+      },
+      "kind": "missingThemeMode",
+      "recommendation": "Смени темизацию на Corp",
+      "component": null
+    }
+  ],
+  "componentContexts": [
+    {
+      "componentKey": "web-core.filter-tag",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] FilterTag_Filled",
+        "[D] FilterTag_Filled_Inverted",
+        "[D] FilterTag_Muted",
+        "[M] FilterTag_Filled",
+        "[M] FilterTag_Filled_Inverted",
+        "[M] FilterTag_Muted",
+        "🔄[D] FilterTag_Outlined",
+        "🔄[D] FilterTag_Outlined_Inverted",
+        "🔄[D][Corporate] FilterTag",
+        "🔄[D][Corporate] FilterTag_Inverted",
+        "🔄[M] FilterTag_Outlined",
+        "🔄[M] FilterTag_Outlined_Inverted",
+        "🔄[M][Corporate] FilterTag",
+        "🔄[M][Corporate] FilterTag_Inverted",
+        "🔩 Arrow",
+        "🔩 Arrow",
+        "🔩 Clear",
+        "🔩 Clear"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.select",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] Select",
+        "[D] Select_Inverted",
+        "[M] Select",
+        "[M] Select_Inverted",
+        "🔄 [D][Corporate] Select",
+        "🔄 [D][Corporate] Select_Inverted",
+        "🔄 [M][AO] Select",
+        "🔄 [M][AO] Select_Inverted",
+        "🔩 Arrow_Down",
+        "🔩 Arrow_Down",
+        "🔩 Arrow_Up",
+        "🔩 Arrow_Up"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.filter-company-select",
+      "summary": "FilterCompanySelect выбирает одну или несколько компаний в режиме холдинга. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [
+        "Не заставляй «Выбрать все» игнорировать применённый поиск.",
+        "Не добавляй очистку Single в Select или Compact.",
+        "Не придумывай отдельные loading, disabled, error или empty states поверх контрактов вложенных Select, FilterTag и OptionList-компонентов.",
+        "Не меняй канонический порядок слов счётчика «выбрано N».",
+        "Не показывай поиск при 10 компаниях или меньше и не скрывай его при количестве больше 10.",
+        "Не считай ручное изменение ширины нарушением само по себе; проверяй отдельно внутреннюю геометрию.",
+        "Не предлагай detach, замену DropdownList/OptionList или instance swap служебных частей.",
+        "Не трактуй реальные названия компаний в макете как изменение фиксированного компонентного текста.",
+        "Не разрешай ручные визуальные overrides под видом настройки runtime-контента.",
+        "Не включай FilterCompanySelect_UniversalModal в public roots текущего package.",
+        "Не придумывай собственные empty/no-results или keyboard rules, если их нет в контракте владельца вложенного компонента."
+      ],
+      "includedComponents": [
+        "[D] CompactTag",
+        "[D] CompactTag",
+        "[D] FilterCompanySelect_Multi",
+        "[D] FilterCompanySelect_Single",
+        "[D] DropdownList_MultiSelect",
+        "[D] DropdownList_MultiSelect",
+        "[D] DropdownList_SingleSelect",
+        "[D] DropdownList_SingleSelect",
+        "🔄 [D] DropdownList_MultiSelect",
+        "🔄 [D] DropdownList_SingleSelect"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    }
+  ]
+}
