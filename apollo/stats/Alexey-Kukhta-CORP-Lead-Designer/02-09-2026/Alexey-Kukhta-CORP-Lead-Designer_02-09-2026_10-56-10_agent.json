@@ -1,0 +1,978 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1096330610570928879-1788335770909-tby8xn0w:agent",
+  "sourceReportId": "apollo-1096330610570928879-1788335770909-tby8xn0w",
+  "generatedAt": "2026-09-02T07:56:10.909Z",
+  "suggestedFileName": "Alexey-Kukhta-CORP-Lead-Designer_02-09-2026_10-56-10_agent.json",
+  "user": {
+    "id": "1096330610570928879",
+    "name": "Alexey Kukhta / CORP / Lead Designer",
+    "slug": "Alexey-Kukhta-CORP-Lead-Designer"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.3.0"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "❇️ Мастерская :: AI",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "pageType": null,
+    "startedAt": "2026-09-02T07:55:55.203Z",
+    "finishedAt": "2026-09-02T07:56:10.909Z",
+    "durationMs": 15706,
+    "selection": [
+      {
+        "nodeId": "12770:93652",
+        "name": "Frame 2147238501",
+        "nodeType": "FRAME",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 40,
+    "problemOccurrenceCount": 22,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 18,
+      "updates": 1,
+      "customizations": 2,
+      "localComponents": 0,
+      "detachedComponents": 0,
+      "presets": 0,
+      "technicalComponents": 0,
+      "currentComponents": 39,
+      "wrongChannel": 0,
+      "themization": 1
+    },
+    "includedFindingCount": 22,
+    "omittedCurrentComponentCount": 39
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, authority.status=active, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with authority.status=active, severity=error, and matchKind=exact_component_rule for the same property/change. Missing, draft, or malformed authority never confirms a violation.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 18,
+      "includedCount": 18,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 2,
+      "includedCount": 2,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:52528",
+        "name": "FCS-01 · PASS · public Single Compact",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-01 · PASS · public Single Compact",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:52528",
+        "name": "FCS-01 · PASS · public Single Compact",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-01 · PASS · public Single Compact",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:52787",
+        "name": "FCS-02 · FAIL · internal CompactTag root",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-02 · FAIL · internal CompactTag root",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:52787",
+        "name": "FCS-02 · FAIL · internal CompactTag root",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-02 · FAIL · internal CompactTag root",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:102391",
+        "name": "FCS-03 · FAIL · desktop root on mobile-web",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-03 · FAIL · desktop root on mobile-web",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:102391",
+        "name": "FCS-03 · FAIL · desktop root on mobile-web",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-03 · FAIL · desktop root on mobile-web",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:102499",
+        "name": "FCS-04 · FAIL · ShowFirstCompany true",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-04 · FAIL · ShowFirstCompany true",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:102499",
+        "name": "FCS-04 · FAIL · ShowFirstCompany true",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-04 · FAIL · ShowFirstCompany true",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:102870",
+        "name": "FCS-05 · FAIL · Compact without selection",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-05 · FAIL · Compact without selection",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:102870",
+        "name": "FCS-05 · FAIL · Compact without selection",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-05 · FAIL · Compact without selection",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:102957",
+        "name": "FCS-06 · FAIL · root radius override",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-06 · FAIL · root radius override",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:102957",
+        "name": "FCS-06 · FAIL · root radius override",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-06 · FAIL · root radius override",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:103038",
+        "name": "FCS-07 · NOT-EVALUABLE · runtime company count",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-07 · NOT-EVALUABLE · runtime company count",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:103038",
+        "name": "FCS-07 · NOT-EVALUABLE · runtime company count",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-07 · NOT-EVALUABLE · runtime company count",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:103445",
+        "name": "FCS-08 · INTERACTION · Multi transaction",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-08 · INTERACTION · Multi transaction",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:103445",
+        "name": "FCS-08 · INTERACTION · Multi transaction",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-08 · INTERACTION · Multi transaction",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:103558",
+        "name": "FCS-09 · LLM · holding scenario",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-09 · LLM · holding scenario",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "12766:103558",
+        "name": "FCS-09 · LLM · holding scenario",
+        "type": "FRAME",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-09 · LLM · holding scenario",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "12766:52791",
+        "name": "[D] CompactTag · FAIL · internal root",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-02 · FAIL · internal CompactTag root / [D] CompactTag · FAIL · internal root",
+        "visible": true,
+        "ancestorNodeIds": [
+          "12770:93652",
+          "12766:52787"
+        ]
+      },
+      "component": {
+        "name": "[D] CompactTag",
+        "key": "378b326969116e8ec24e8bebcb3a33148f9802a1",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- FilterCompanySelect.json"
+      },
+      "variant": {
+        "name": "SelectedState=true",
+        "key": "378b326969116e8ec24e8bebcb3a33148f9802a1"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "378b326969116e8ec24e8bebcb3a33148f9802a1",
+        "currentComponentId": "10742:13785",
+        "latestComponentId": "10560:26426"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "12766:102961",
+        "name": "[D] FilterCompanySelect_Single · FAIL · radius=20",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-06 · FAIL · root radius override / [D] FilterCompanySelect_Single · FAIL · radius=20",
+        "visible": true,
+        "ancestorNodeIds": [
+          "12770:93652",
+          "12766:102957"
+        ]
+      },
+      "component": {
+        "name": "[D] FilterCompanySelect_Single",
+        "key": "b1fa20f98adf21e99329ddd79a9de33da537f4a7",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- FilterCompanySelect.json"
+      },
+      "variant": {
+        "name": "Open=False, Selected=False, View=Select, ShowFirstCompany=False",
+        "key": "b1fa20f98adf21e99329ddd79a9de33da537f4a7"
+      },
+      "comparisonIssues": [
+        "Нет данных для обводка в снапшоте для «Open=False, Selected=False, View=Select, ShowFirstCompany=False / [D] Select / Field»",
+        "Нет данных для толщины обводки в снапшоте для «Open=False, Selected=False, View=Select, ShowFirstCompany=False / [D] Select / Field»"
+      ],
+      "changes": [
+        {
+          "node": {
+            "id": "12766:102961",
+            "name": "[D] FilterCompanySelect_Single · FAIL · radius=20",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Open=False, Selected=False, View=Select, ShowFirstCompany=False",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 0 → 20",
+          "referenceValue": "0",
+          "actualValue": "20",
+          "referenceRawValue": "0",
+          "actualRawValue": "20",
+          "referenceDisplayValue": "0",
+          "actualDisplayValue": "20",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "b1fa20f98adf21e99329ddd79a9de33da537f4a7",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Open": "False",
+              "Selected": "False",
+              "View": "Select",
+              "ShowFirstCompany": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "12763:52279",
+              "nodeName": "FilterCompanySelect · Predicate v1 · Draft",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.filter-company-select.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            },
+            {
+              "ruleId": "component:web-corp.filter-company-select.visuals-follow-effective-baseline",
+              "severity": "error",
+              "source": "owner-confirmed",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "design-system-author",
+                "revision": 1
+              },
+              "severityScope": null,
+              "appliesTo": "fill|stroke|styles.text|radius|effects.*|layout.height|layout.padding|layout.gap",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Сравнивай визуальные и внутренние layout-параметры с effective baseline выбранного root, View и nested state. Ручные цвета, типографика, радиусы, тени, высота, padding и gap запрещены; подтверждённая ручная ширина остаётся разрешённым исключением.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            },
+            {
+              "ruleId": "component:web-corp.filter-company-select.root-visuals-follow-effective-baseline",
+              "severity": "error",
+              "source": "owner-confirmed",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "design-system-author",
+                "revision": 1
+              },
+              "severityScope": null,
+              "appliesTo": "fill|stroke|radius|opacity|layout.height|layout.padding|layout.gap",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Высота, внутренние отступы, gap и оформление корня FilterCompanySelect должны совпадать с effective baseline. Ручная ширина корня остаётся разрешённой.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.filter-company-select.visuals-follow-effective-baseline",
+            "message": "Сравнивай визуальные и внутренние layout-параметры с effective baseline выбранного root, View и nested state. Ручные цвета, типографика, радиусы, тени, высота, padding и gap запрещены; подтверждённая ручная ширина остаётся разрешённым исключением.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "12766:103449",
+        "name": "[D] FilterCompanySelect_Multi · INTERACTION",
+        "type": "INSTANCE",
+        "pageName": "     Лаборатория",
+        "path": "FilterCompanySelect · Predicate v1 · Draft / Frame 2147238501 / FCS-08 · INTERACTION · Multi transaction / [D] FilterCompanySelect_Multi · INTERACTION",
+        "visible": true,
+        "ancestorNodeIds": [
+          "12770:93652",
+          "12766:103445"
+        ]
+      },
+      "component": {
+        "name": "[D] FilterCompanySelect_Multi",
+        "key": "bb3ece025c94c17cdddc0ed6453561e3dbb6426f",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- FilterCompanySelect.json"
+      },
+      "variant": {
+        "name": "Open=False, Selected=True, ShowFirstCompany=False",
+        "key": "bb3ece025c94c17cdddc0ed6453561e3dbb6426f"
+      },
+      "comparisonIssues": [
+        "Нет данных для заливка в снапшоте для «Open=False, Selected=True, ShowFirstCompany=False / [D] FilterTag_Filled / Text / _»"
+      ],
+      "changes": [
+        {
+          "node": {
+            "id": "I12766:103449;38714:106531;180:74571",
+            "name": ":",
+            "type": null,
+            "pageName": "     Лаборатория",
+            "path": "Open=False, Selected=True, ShowFirstCompany=False / [D] FilterTag_Filled / Text / :",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: — → text_inverted/primary",
+          "referenceValue": null,
+          "actualValue": "text_inverted/primary",
+          "referenceRawValue": null,
+          "actualRawValue": "text_inverted/primary",
+          "referenceDisplayValue": null,
+          "actualDisplayValue": "text_inverted/primary",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "text_inverted/primary",
+            "key": "de53e1056e003a1b3aedbb9e81b2d767e4c85fa2",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:de53e1056e003a1b3aedbb9e81b2d767e4c85fa2/3541:135",
+            "key": "de53e1056e003a1b3aedbb9e81b2d767e4c85fa2",
+            "name": "text_inverted/primary",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "07a5df97ff0cebf480ef9f5741d9d32f18ea138d",
+            "actualNestedOwnerPath": "Open=False, Selected=True, ShowFirstCompany=False / [D] FilterTag_Filled",
+            "actualNestedOwnerRelativePath": "Text / :",
+            "nestedOwnerComponentKey": "07a5df97ff0cebf480ef9f5741d9d32f18ea138d",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Open=False, Selected=True, ShowFirstCompany=False / [D] FilterTag_Filled",
+            "nestedOwnerRelativePath": "Text / :",
+            "actualVariantProperties": {
+              "Size": "40",
+              "Shape": "Rectangular",
+              "SelectedState": "True",
+              "DisabledState": "False",
+              "Chevron": "True",
+              "ClearButton": "True",
+              "MultipleValue": "False"
+            },
+            "referenceVariantProperties": {
+              "Size": "40",
+              "Shape": "Rectangular",
+              "SelectedState": "True",
+              "DisabledState": "False",
+              "Chevron": "True",
+              "ClearButton": "True",
+              "MultipleValue": "False"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "12763:52279",
+              "nodeName": "FilterCompanySelect · Predicate v1 · Draft",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "12770:93652",
+        "name": "Страница:      Лаборатория",
+        "type": "PAGE",
+        "pageName": "     Лаборатория",
+        "path": "     Лаборатория",
+        "visible": true
+      },
+      "kind": "missingThemeMode",
+      "recommendation": "Смени темизацию на Corp",
+      "component": null
+    }
+  ],
+  "componentContexts": [
+    {
+      "componentKey": "web-core.filter-tag",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] FilterTag_Filled",
+        "[D] FilterTag_Filled_Inverted",
+        "[D] FilterTag_Muted",
+        "[M] FilterTag_Filled",
+        "[M] FilterTag_Filled_Inverted",
+        "[M] FilterTag_Muted",
+        "🔄[D] FilterTag_Outlined",
+        "🔄[D] FilterTag_Outlined_Inverted",
+        "🔄[D][Corporate] FilterTag",
+        "🔄[D][Corporate] FilterTag_Inverted",
+        "🔄[M] FilterTag_Outlined",
+        "🔄[M] FilterTag_Outlined_Inverted",
+        "🔄[M][Corporate] FilterTag",
+        "🔄[M][Corporate] FilterTag_Inverted",
+        "🔩 Arrow",
+        "🔩 Arrow",
+        "🔩 Clear",
+        "🔩 Clear"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.filter-company-select",
+      "summary": "FilterCompanySelect выбирает одну или несколько компаний в режиме холдинга. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [
+        "Не заставляй «Выбрать все» игнорировать применённый поиск.",
+        "Не добавляй очистку Single в Select или Compact.",
+        "Не придумывай отдельные loading, disabled, error или empty states поверх контрактов вложенных Select, FilterTag и OptionList-компонентов.",
+        "Не меняй канонический порядок слов счётчика «выбрано N».",
+        "Не показывай поиск при 10 компаниях или меньше и не скрывай его при количестве больше 10.",
+        "Не считай ручное изменение ширины нарушением само по себе; проверяй отдельно внутреннюю геометрию.",
+        "Не предлагай detach, замену DropdownList/OptionList или instance swap служебных частей.",
+        "Не трактуй реальные названия компаний в макете как изменение фиксированного компонентного текста.",
+        "Не разрешай ручные визуальные overrides под видом настройки runtime-контента.",
+        "Не включай FilterCompanySelect_UniversalModal в public roots текущего package.",
+        "Не придумывай собственные empty/no-results или keyboard rules, если их нет в контракте владельца вложенного компонента."
+      ],
+      "includedComponents": [
+        "[D] CompactTag",
+        "[D] CompactTag",
+        "[D] FilterCompanySelect_Multi",
+        "[D] FilterCompanySelect_Single",
+        "[D] DropdownList_MultiSelect",
+        "[D] DropdownList_MultiSelect",
+        "[D] DropdownList_SingleSelect",
+        "[D] DropdownList_SingleSelect",
+        "🔄 [D] DropdownList_MultiSelect",
+        "🔄 [D] DropdownList_SingleSelect"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    }
+  ]
+}
