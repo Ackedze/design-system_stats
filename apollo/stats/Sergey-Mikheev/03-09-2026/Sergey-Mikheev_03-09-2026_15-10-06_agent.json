@@ -1,0 +1,2006 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1103601421254724802-1788441006622-7jjezb19:agent",
+  "sourceReportId": "apollo-1103601421254724802-1788441006622-7jjezb19",
+  "generatedAt": "2026-09-03T13:10:06.622Z",
+  "suggestedFileName": "Sergey-Mikheev_03-09-2026_15-10-06_agent.json",
+  "user": {
+    "id": "1103601421254724802",
+    "name": "Sergey Mikheev",
+    "slug": "Sergey-Mikheev"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.1.63"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "[W] Карты 2025-2026 💳",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "startedAt": "2026-09-03T13:09:23.977Z",
+    "finishedAt": "2026-09-03T13:10:06.622Z",
+    "durationMs": 42645,
+    "selection": [
+      {
+        "nodeId": "131804:174304",
+        "name": "[D] CorporatePage",
+        "nodeType": "FRAME",
+        "path": "[D] CorporatePage",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 173,
+    "problemOccurrenceCount": 21,
+    "categoryCounts": {
+      "deprecatedComponents": 1,
+      "deprecatedStyles": 0,
+      "customStyles": 5,
+      "updates": 6,
+      "customizations": 1,
+      "localComponents": 3,
+      "detachedComponents": 0,
+      "presets": 4,
+      "technicalComponents": 0,
+      "currentComponents": 157,
+      "wrongChannel": 1,
+      "themization": 0
+    },
+    "includedFindingCount": 21,
+    "omittedCurrentComponentCount": 157
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with severity=error and matchKind=exact_component_rule for the same property/change.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 5,
+      "includedCount": 5,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 6,
+      "includedCount": 6,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 3,
+      "includedCount": 3,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 4,
+      "includedCount": 4,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "deprecatedComponents",
+      "severityHint": "high",
+      "title": "Устаревший компонент",
+      "node": {
+        "id": "I131804:174309;135096:147276;131804:176121",
+        "name": "Spacers",
+        "type": "INSTANCE",
+        "pageName": "Комиссии за обслуживание карты",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Spacers",
+        "visible": true
+      },
+      "component": {
+        "name": "Spacers",
+        "key": "3c25f324af61987e1b41db8d303efe77b9ed4cef",
+        "library": "Web :: DEPRECATED CORP (не подключать)",
+        "sourceFile": "web/components/web-deprecated-corp-не-подключать/Web _ DEPRECATED CORP (не подключать) -- Отступы и сетка.json"
+      },
+      "variant": {
+        "name": "Orientation=Horizontal, Size =xl | 24px [recommended]",
+        "key": "3c25f324af61987e1b41db8d303efe77b9ed4cef"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "3c25f324af61987e1b41db8d303efe77b9ed4cef",
+        "currentComponentId": "91382:284260",
+        "latestComponentId": "91382:284260"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "131804:174304",
+        "name": "[D] CorporatePage",
+        "type": "FRAME",
+        "pageName": "Комиссии за обслуживание карты",
+        "path": "[D] CorporatePage",
+        "visible": true
+      },
+      "style": {
+        "name": "dc20fcedbd330ee715c0a3f6c7d3089862a48cfb",
+        "key": "dc20fcedbd330ee715c0a3f6c7d3089862a48cfb",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "131804:174310",
+        "name": "🔒 [D] SpotlightBar",
+        "type": "INSTANCE",
+        "pageName": "Комиссии за обслуживание карты",
+        "path": "[D] CorporatePage / 🔒 [D] SpotlightBar",
+        "visible": true
+      },
+      "style": {
+        "name": "Spotlight/Bar Up Shadow",
+        "key": "30aa972ba2d52e52fc7579e4a0300f44b86487e3",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Inner shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I131804:174310;80:27656;80:27143;79:26990;79:26974",
+        "name": "Spot",
+        "type": "ELLIPSE",
+        "pageName": "Комиссии за обслуживание карты",
+        "path": "[D] CorporatePage / 🔒 [D] SpotlightBar / Left / SpotlightLogo / Icon 28 / 🔩 Shadow / Spot",
+        "visible": true
+      },
+      "style": {
+        "name": "Слой (Layer blur)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Слой (Layer blur)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I131804:174310;80:27656;80:27143;79:26950",
+        "name": "🔩 Shape",
+        "type": "INSTANCE",
+        "pageName": "Комиссии за обслуживание карты",
+        "path": "[D] CorporatePage / 🔒 [D] SpotlightBar / Left / SpotlightLogo / Icon 28 / 🔩 Shape",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Inner shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Inner shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I131804:174310;80:27656;80:27143;79:26950;79:26775",
+        "name": "Mask",
+        "type": "VECTOR",
+        "pageName": "Комиссии за обслуживание карты",
+        "path": "[D] CorporatePage / 🔒 [D] SpotlightBar / Left / SpotlightLogo / Icon 28 / 🔩 Shape / Mask",
+        "visible": true
+      },
+      "style": {
+        "name": "Spotlight/logo-bg",
+        "key": "03c3f9304ce99af99e5f761c9a6bb90cc7f46f65",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I131804:174309;135096:147276;131804:176109",
+        "name": "[D] HeadCell",
+        "type": "INSTANCE",
+        "pageName": "Комиссии за обслуживание карты",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Data Table / [D] HeadRow :: Universal / Cells / [D] HeadCell",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] HeadCell",
+        "key": "71f33dcf941775172bfc1a61ea62829b34f0dc02",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=false",
+        "key": "71f33dcf941775172bfc1a61ea62829b34f0dc02"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "71f33dcf941775172bfc1a61ea62829b34f0dc02",
+        "currentComponentId": "131159:154174",
+        "latestComponentId": "131848:266752"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I131804:174309;135096:147276;131804:176110",
+        "name": "[D] HeadCell",
+        "type": "INSTANCE",
+        "pageName": "Комиссии за обслуживание карты",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Data Table / [D] HeadRow :: Universal / Cells / [D] HeadCell",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] HeadCell",
+        "key": "71f33dcf941775172bfc1a61ea62829b34f0dc02",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=false",
+        "key": "71f33dcf941775172bfc1a61ea62829b34f0dc02"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "71f33dcf941775172bfc1a61ea62829b34f0dc02",
+        "currentComponentId": "131159:154174",
+        "latestComponentId": "131848:266752"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I131804:174309;135096:147276;131804:176111",
+        "name": "[D] HeadCell",
+        "type": "INSTANCE",
+        "pageName": "Комиссии за обслуживание карты",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Data Table / [D] HeadRow :: Universal / Cells / [D] HeadCell",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] HeadCell",
+        "key": "71f33dcf941775172bfc1a61ea62829b34f0dc02",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=false",
+        "key": "71f33dcf941775172bfc1a61ea62829b34f0dc02"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "71f33dcf941775172bfc1a61ea62829b34f0dc02",
+        "currentComponentId": "131159:154174",
+        "latestComponentId": "131848:266752"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I131804:174309;135096:147276;131804:176112",
+        "name": "[D] HeadCell",
+        "type": "INSTANCE",
+        "pageName": "Комиссии за обслуживание карты",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Data Table / [D] HeadRow :: Universal / Cells / [D] HeadCell",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] HeadCell",
+        "key": "71f33dcf941775172bfc1a61ea62829b34f0dc02",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=false",
+        "key": "71f33dcf941775172bfc1a61ea62829b34f0dc02"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "71f33dcf941775172bfc1a61ea62829b34f0dc02",
+        "currentComponentId": "131159:154174",
+        "latestComponentId": "131848:266752"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I131804:174309;135096:147276;131804:176113",
+        "name": "[D] HeadCell",
+        "type": "INSTANCE",
+        "pageName": "Комиссии за обслуживание карты",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Data Table / [D] HeadRow :: Universal / Cells / [D] HeadCell",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] HeadCell",
+        "key": "71f33dcf941775172bfc1a61ea62829b34f0dc02",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=false",
+        "key": "71f33dcf941775172bfc1a61ea62829b34f0dc02"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "71f33dcf941775172bfc1a61ea62829b34f0dc02",
+        "currentComponentId": "131159:154174",
+        "latestComponentId": "131848:266752"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "131804:174310",
+        "name": "🔒 [D] SpotlightBar",
+        "type": "INSTANCE",
+        "pageName": "Комиссии за обслуживание карты",
+        "path": "[D] CorporatePage / 🔒 [D] SpotlightBar",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] SpotlightBar",
+        "key": "8e339a000bd5e9a39153afb381110d84e1bf193d",
+        "library": "Web _ Corp Limited Components (не подключать)",
+        "sourceFile": "web/components/web-corp-limited-components-не-подключать/Web _ Corp Limited Components (не подключать) -- SpotlightBar [D].json"
+      },
+      "variant": {
+        "name": "👽 Tablet=false",
+        "key": "8e339a000bd5e9a39153afb381110d84e1bf193d"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "8e339a000bd5e9a39153afb381110d84e1bf193d",
+        "currentComponentId": "128421:107027",
+        "latestComponentId": "131848:267845"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "131804:174309",
+        "name": "[D] CorporateContent",
+        "type": "INSTANCE",
+        "pageName": "Комиссии за обслуживание карты",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] CorporateContent",
+        "key": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateContent.json"
+      },
+      "variant": {
+        "name": "[D] CorporateContent",
+        "key": "a8d13cb6e1ae67a7296709f669238f41971c7197"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I131804:174309;135096:147276;131804:176116;131161:159079;74754:73724;54711:82391;20005:49681;20005:49731;20005:49837",
+            "name": "Image Container",
+            "type": null,
+            "pageName": "Комиссии за обслуживание карты",
+            "path": "[D] CorporateContent / [D] Body / Data Table / [D] BodyRow :: Basic / Cells / [D] BodyCell :: Basic / Graphics / CardImage / CardItem / Cover / Image Container",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: — → Изображение",
+          "referenceValue": null,
+          "actualValue": "Изображение",
+          "referenceRawValue": null,
+          "actualRawValue": "Изображение",
+          "referenceDisplayValue": null,
+          "actualDisplayValue": "Изображение",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "8374412d6e838af5b5ff5394300043ac736b2af1",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Data Table / [D] BodyRow :: Basic / Cells / [D] BodyCell :: Basic / Graphics / CardImage / CardItem / Cover",
+            "actualNestedOwnerRelativePath": "Image Container",
+            "nestedOwnerComponentKey": "aa4644d01facc67beee28083a0b18d04b449a519",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Data Table / [D] BodyRow :: Basic / Cells / [D] BodyCell :: Basic / Graphics",
+            "nestedOwnerRelativePath": "CardImage / CardItem / Cover / Image Container",
+            "actualVariantProperties": {
+              "Product Type": "AB",
+              "Size": "68x42"
+            },
+            "referenceVariantProperties": {
+              "Presets": "CardImage"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "131804:174309",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.card-image.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.card-image.visuals-follow-effective-baseline",
+              "severity": "error",
+              "source": "owner-confirmed",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "component.identity|layout.*|styles.text|fill|stroke|radius|opacity|effects.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Не меняйте вручную структуру, размеры, пропорции, отступы, типографику, цвета, радиусы, opacity и эффекты CardImage. Разрешены только контент имени/последних четырёх цифр, Show Shadow, рубашка при Cover=None и условное скрытие SilverLine по их точным правилам.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-basic.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-basic-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-basic-d.manual-visual-styles-forbidden",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "styles.text|fill|stroke|opacity|layout.padding|layout.itemSpacing|radius",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "В строках и ячейках Table Basic запрещено вручную менять typography, fill, stroke, opacity, padding, spacing и radius. Разрешены alignment, ширина обычных колонок, текст и предусмотренные компонентом presets.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-basic-d.visual-states-use-effective-baseline",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "state.hover|state.selected|state.disabled|fill|stroke|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Hover, selected и disabled состояния строк и ячеек Table Basic полностью определяются effective baseline. Ручная настройка их цветов и визуальных стилей запрещена.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.card-image.visuals-follow-effective-baseline",
+            "message": "Не меняйте вручную структуру, размеры, пропорции, отступы, типографику, цвета, радиусы, opacity и эффекты CardImage. Разрешены только контент имени/последних четырёх цифр, Show Shadow, рубашка при Cover=None и условное скрытие SilverLine по их точным правилам.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I131804:174309;135096:147276;131804:176116;131161:159079;74754:73724;54711:82391;20005:49681;20005:49731;20005:49838;20005:49718",
+            "name": "Vector",
+            "type": null,
+            "pageName": "Комиссии за обслуживание карты",
+            "path": "[D] CorporateContent / [D] Body / Data Table / [D] BodyRow :: Basic / Cells / [D] BodyCell :: Basic / Graphics / CardImage / CardItem / Cover / Image Container / SilverLine / Vector",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: — → paint:GRADIENT_LINEAR",
+          "referenceValue": null,
+          "actualValue": "paint:GRADIENT_LINEAR",
+          "referenceRawValue": null,
+          "actualRawValue": "paint:GRADIENT_LINEAR",
+          "referenceDisplayValue": null,
+          "actualDisplayValue": "paint:GRADIENT_LINEAR",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "8615390fc2acbc1e94dc866b12fc2d49ae69e64a",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Data Table / [D] BodyRow :: Basic / Cells / [D] BodyCell :: Basic / Graphics / CardImage / CardItem / Cover / Image Container / SilverLine",
+            "actualNestedOwnerRelativePath": "Vector",
+            "nestedOwnerComponentKey": "aa4644d01facc67beee28083a0b18d04b449a519",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Data Table / [D] BodyRow :: Basic / Cells / [D] BodyCell :: Basic / Graphics",
+            "nestedOwnerRelativePath": "CardImage / CardItem / Cover / Image Container / SilverLine / Vector",
+            "actualVariantProperties": {
+              "Type": "simple"
+            },
+            "referenceVariantProperties": {
+              "Presets": "CardImage"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "131804:174309",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.card-image.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.card-image.visuals-follow-effective-baseline",
+              "severity": "error",
+              "source": "owner-confirmed",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "component.identity|layout.*|styles.text|fill|stroke|radius|opacity|effects.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Не меняйте вручную структуру, размеры, пропорции, отступы, типографику, цвета, радиусы, opacity и эффекты CardImage. Разрешены только контент имени/последних четырёх цифр, Show Shadow, рубашка при Cover=None и условное скрытие SilverLine по их точным правилам.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-basic.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-basic-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-basic-d.manual-visual-styles-forbidden",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "styles.text|fill|stroke|opacity|layout.padding|layout.itemSpacing|radius",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "В строках и ячейках Table Basic запрещено вручную менять typography, fill, stroke, opacity, padding, spacing и radius. Разрешены alignment, ширина обычных колонок, текст и предусмотренные компонентом presets.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.table-basic-d.visual-states-use-effective-baseline",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "state.hover|state.selected|state.disabled|fill|stroke|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Hover, selected и disabled состояния строк и ячеек Table Basic полностью определяются effective baseline. Ручная настройка их цветов и визуальных стилей запрещена.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.card-image.visuals-follow-effective-baseline",
+            "message": "Не меняйте вручную структуру, размеры, пропорции, отступы, типографику, цвета, радиусы, opacity и эффекты CardImage. Разрешены только контент имени/последних четырёх цифр, Show Shadow, рубашка при Cover=None и условное скрытие SilverLine по их точным правилам.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I131804:174309;135096:147276;131804:176123;38714:111266",
+            "name": "[D] FilterCompanySelect_Single",
+            "type": null,
+            "pageName": "Комиссии за обслуживание карты",
+            "path": "[D] CorporateContent / [D] Body / [D] TitleView / MainContent / Holding / [D] FilterCompanySelect_Single",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.combination",
+          "message": "variant.combination: 24 допустимых комбинаций → Open=False, Selected=True, View=Compact",
+          "referenceValue": "24 допустимых комбинаций",
+          "actualValue": "Open=False, Selected=True, View=Compact",
+          "referenceRawValue": "24 допустимых комбинаций",
+          "actualRawValue": "Open=False, Selected=True, View=Compact",
+          "referenceDisplayValue": "24 допустимых комбинаций",
+          "actualDisplayValue": "Open=False, Selected=True, View=Compact",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "f8c7f8caa0d477db59f7aa2ccc97be9bc541f467",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Open": "False",
+              "Selected": "True",
+              "View": "Compact"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "131804:174309",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.filter-company-select.component-properties-are-first-class",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения variant/property в этом семействе компонентов являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-api-invalid-variant-combination",
+            "ruleId": "component-api:filter-company-select-single.desktop",
+            "contractId": "filter-company-select-single.desktop",
+            "constraintId": "component-api-invalid-variant-combination",
+            "evidence": {
+              "actualProperties": {
+                "Open": "False",
+                "Selected": "True",
+                "View": "Compact"
+              },
+              "allowedCombinations": [
+                {
+                  "Open": "True",
+                  "Selected": "False",
+                  "View": "Select",
+                  "ShowFirstCompany": "False"
+                },
+                {
+                  "Open": "True",
+                  "Selected": "False",
+                  "View": "Select",
+                  "ShowFirstCompany": "True"
+                },
+                {
+                  "Open": "True",
+                  "Selected": "True",
+                  "View": "Select",
+                  "ShowFirstCompany": "False"
+                },
+                {
+                  "Open": "True",
+                  "Selected": "True",
+                  "View": "Select",
+                  "ShowFirstCompany": "True"
+                },
+                {
+                  "Open": "False",
+                  "Selected": "False",
+                  "View": "Select",
+                  "ShowFirstCompany": "False"
+                },
+                {
+                  "Open": "False",
+                  "Selected": "False",
+                  "View": "Select",
+                  "ShowFirstCompany": "True"
+                },
+                {
+                  "Open": "False",
+                  "Selected": "True",
+                  "View": "Select",
+                  "ShowFirstCompany": "False"
+                },
+                {
+                  "Open": "False",
+                  "Selected": "True",
+                  "View": "Select",
+                  "ShowFirstCompany": "True"
+                },
+                {
+                  "Open": "True",
+                  "Selected": "True",
+                  "View": "Compact",
+                  "ShowFirstCompany": "False"
+                },
+                {
+                  "Open": "True",
+                  "Selected": "True",
+                  "View": "Compact",
+                  "ShowFirstCompany": "True"
+                },
+                {
+                  "Open": "False",
+                  "Selected": "True",
+                  "View": "Compact",
+                  "ShowFirstCompany": "False"
+                },
+                {
+                  "Open": "False",
+                  "Selected": "True",
+                  "View": "Compact",
+                  "ShowFirstCompany": "True"
+                },
+                {
+                  "Open": "False",
+                  "Selected": "True",
+                  "View": "FilterTag",
+                  "ShowFirstCompany": "False"
+                },
+                {
+                  "Open": "False",
+                  "Selected": "True",
+                  "View": "FilterTag",
+                  "ShowFirstCompany": "True"
+                },
+                {
+                  "Open": "True",
+                  "Selected": "False",
+                  "View": "Compact",
+                  "ShowFirstCompany": "False"
+                },
+                {
+                  "Open": "True",
+                  "Selected": "False",
+                  "View": "Compact",
+                  "ShowFirstCompany": "True"
+                },
+                {
+                  "Open": "True",
+                  "Selected": "False",
+                  "View": "FilterTag",
+                  "ShowFirstCompany": "False"
+                },
+                {
+                  "Open": "True",
+                  "Selected": "False",
+                  "View": "FilterTag",
+                  "ShowFirstCompany": "True"
+                },
+                {
+                  "Open": "True",
+                  "Selected": "True",
+                  "View": "FilterTag",
+                  "ShowFirstCompany": "False"
+                },
+                {
+                  "Open": "True",
+                  "Selected": "True",
+                  "View": "FilterTag",
+                  "ShowFirstCompany": "True"
+                },
+                {
+                  "Open": "False",
+                  "Selected": "False",
+                  "View": "Compact",
+                  "ShowFirstCompany": "False"
+                },
+                {
+                  "Open": "False",
+                  "Selected": "False",
+                  "View": "Compact",
+                  "ShowFirstCompany": "True"
+                },
+                {
+                  "Open": "False",
+                  "Selected": "False",
+                  "View": "FilterTag",
+                  "ShowFirstCompany": "False"
+                },
+                {
+                  "Open": "False",
+                  "Selected": "False",
+                  "View": "FilterTag",
+                  "ShowFirstCompany": "True"
+                }
+              ]
+            },
+            "message": "Комбинация параметров отсутствует в Component API [D] FilterCompanySelect_Single",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I131804:174309;135096:147276;131804:176116",
+        "name": "[D] BodyRow :: Basic",
+        "type": "INSTANCE",
+        "pageName": "Комиссии за обслуживание карты",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Data Table / [D] BodyRow :: Basic",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyRow :: Basic",
+        "key": "7f21858b17681fb676ce7e7b4f13313aca6672d7",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I131804:174309;135096:147276;131804:176118",
+        "name": "[D] BodyRow :: Basic",
+        "type": "INSTANCE",
+        "pageName": "Комиссии за обслуживание карты",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Data Table / [D] BodyRow :: Basic",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyRow :: Basic",
+        "key": "7f21858b17681fb676ce7e7b4f13313aca6672d7",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I131804:174309;135096:147276;131804:176117",
+        "name": "[D] BodyRow :: Basic",
+        "type": "INSTANCE",
+        "pageName": "Комиссии за обслуживание карты",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Data Table / [D] BodyRow :: Basic",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BodyRow :: Basic",
+        "key": "7f21858b17681fb676ce7e7b4f13313aca6672d7",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I131804:174309;135096:147276;131804:176116;131161:158699;74754:73719",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "Комиссии за обслуживание карты",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Data Table / [D] BodyRow :: Basic / Cells / [D] BodyCell :: Basic / Content / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "19285e102ff78415287602f8da731e0884aca960",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Action, Style=Muted, Size=20",
+        "key": "19285e102ff78415287602f8da731e0884aca960"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I131804:174309;135096:147276;131804:176118;131161:158699;74754:73719",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "Комиссии за обслуживание карты",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Data Table / [D] BodyRow :: Basic / Cells / [D] BodyCell :: Basic / Content / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Approved, Style=Muted, Size=20",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I131804:174309;135096:147276;131804:176117;131161:158699;74754:73719",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "Комиссии за обслуживание карты",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Data Table / [D] BodyRow :: Basic / Cells / [D] BodyCell :: Basic / Content / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Approved, Style=Muted, Size=20",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "131804:174310",
+        "name": "🔒 [D] SpotlightBar",
+        "type": "INSTANCE",
+        "pageName": "Комиссии за обслуживание карты",
+        "path": "[D] CorporatePage / 🔒 [D] SpotlightBar",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] SpotlightBar",
+        "key": "8e339a000bd5e9a39153afb381110d84e1bf193d",
+        "library": "Web _ Corp Limited Components (не подключать)",
+        "sourceFile": "web/components/web-corp-limited-components-не-подключать/Web _ Corp Limited Components (не подключать) -- SpotlightBar [D].json"
+      },
+      "variant": {
+        "name": "👽 Tablet=false",
+        "key": "8e339a000bd5e9a39153afb381110d84e1bf193d"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "8e339a000bd5e9a39153afb381110d84e1bf193d",
+        "currentComponentId": "128421:107027",
+        "latestComponentId": "131848:267845"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I131804:174309;135096:147276;131804:176123;116960:6821",
+        "name": "[M] RightAddonXL",
+        "type": "INSTANCE",
+        "pageName": "Комиссии за обслуживание карты",
+        "path": "[D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D] TitleView / MainContent / Heading / [M] RightAddonXL",
+        "visible": true
+      },
+      "component": {
+        "name": "[M] RightAddonXL",
+        "key": "73590d6e1d060de4ee1cb27707e5b08f26cdbeff",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "Type=Link",
+        "key": "73590d6e1d060de4ee1cb27707e5b08f26cdbeff"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    }
+  ],
+  "componentContexts": [
+    {
+      "componentKey": "web-corp.card-image",
+      "summary": "Активный универсальный компонент для визуального представления банковской карты самостоятельно или внутри продуктового host-компонента.",
+      "criticalBaselines": [],
+      "agentInstructions": [
+        "Не трактуй компоненты 🔩 как доступные пользователю: это внутренние части CardImage.",
+        "Не считай все observed raw combinations допустимыми: 24x16 Inactive/Locked являются неканоническими.",
+        "Не предлагай detach или ручную пересборку CardImage.",
+        "Не запрещай собственную рубашку: она разрешена только при Cover=None как первый Image fill существующего Image Container.",
+        "Не разрешай собственной рубашке изменять геометрию, радиусы, логотип, платёжную систему, state overlay или структуру Cover.",
+        "Не требуй SilverLine для карты другого банка; он должен быть скрыт.",
+        "Не показывай полный номер карты и не убирай штатную маску.",
+        "Не считай Show Shadow=False нарушением у одиночной XL/L/M/S карты.",
+        "Не придумывай Delivery, Add new card, Loading, Error или Empty как состояния CardImage.",
+        "Не требуй отдельные desktop/mobile roots: CardImage универсален.",
+        "Не объявляй runtime API verified: Figma-документация подтверждает cardId, но package/import и Code Connect не подтверждены.",
+        "Повышай severity только по exact component rule или применимому pattern rule; пример сам по себе не является evidence."
+      ],
+      "includedComponents": [
+        "🔩 CardItem",
+        "🔩 Cover",
+        "🔩 Shadow",
+        "🔩 SilverLine",
+        "🔩 State",
+        "🔩 UserData",
+        "CardImage"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*",
+          "variant.Cover",
+          "variant.Size",
+          "variant.Stack",
+          "variant.State",
+          "boolean.Show Shadow"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сначала разреши Size, Cover, State, Stack и Show Shadow, затем примени разрешённые content и custom-cover overrides. Остальные layer changes сравнивай с effective CardImage baseline.",
+        "contentProperties": [
+          "content.cardholderName",
+          "content.lastFourDigits",
+          "content.stackCount"
+        ],
+        "allowedLayerOverrides": [
+          "Details/CardCover / Image Container first Image fill when Cover=None",
+          "SilverLine visibility for an approved custom cover"
+        ]
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [],
+          "layerProperties": [],
+          "dependencyPolicy": null
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web-corp.corporate-content",
+      "summary": "CorporateContent — обязательная контентная область продуктовой страницы. Используй [D] CorporateContent для desktop и [M] CorporateContent для mobile-web.",
+      "criticalBaselines": [],
+      "agentInstructions": [
+        "Не считай произвольный контент или несколько дочерних элементов внутри Body нарушением сами по себе.",
+        "Проверяй содержимое Body по собственным компонентным контрактам и паттернам.",
+        "Считай использование переходного [T] CorporateContent явным нарушением.",
+        "Не рекомендуй ручную правку fill, grid style или padding корня CorporateContent; рекомендуй правильный mode переменных.",
+        "Не требуй наличия родительского компонента CorporatePage в Figma: такого компонента нет, самостоятельное использование CorporateContent допустимо.",
+        "Не применяй Gutter как обязательный itemSpacing внутри Body; он допустим в любой горизонтальной композиции без обязательного Section.",
+        "На ширине 768 требуй [D] CorporateContent и mode 768 коллекции [D] Grid & Cols.",
+        "Не придумывай условия выбора между base-bg-alt и base-bg до появления отдельного паттерна; default — base-bg-alt (grey).",
+        "Не разрешай кликабельность корня или detach CorporateContent и Body.",
+        "Не разрешай вкладывать CorporateContent внутрь CorporateContent и не оставляй SwapMe после добавления реального содержимого.",
+        "Требуй Header или HeaderMenu непосредственно над CorporateContent в общем вертикальном контейнере с gap 0.",
+        "Не разрешай менять вертикальное направление, itemSpacing=0 или clipsContent=false корня CorporateContent."
+      ],
+      "includedComponents": [
+        "[D] Section",
+        "[D] CorporateContent",
+        "[M] CorporateContent",
+        "❌ [D] Body",
+        "❌ [M} Body",
+        "❌ [T] Body",
+        "❌ [T] CorporateContent"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+          "name": "[D] CorporateContent",
+          "purpose": "Основная desktop-контентная область корпоративной продуктовой страницы с системной сеткой, фоном и адаптивными отступами.",
+          "useWhen": [
+            "Собирается содержимое корпоративной страницы на ширине 768 px и выше."
+          ],
+          "doNotUseWhen": [
+            "Нужен вложенный контейнер внутри другого CorporateContent."
+          ],
+          "relationship": "Единственный корневой контентный контейнер CorporatePage на desktop; принимает произвольную композицию в Body.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.filter-company-select",
+      "summary": "Desktop-компонент режима холдинга для выбора одной или нескольких компаний. Human source определяет смысл; Apollo применяет только подтверждённые predicate и delegated routes.",
+      "criticalBaselines": [],
+      "agentInstructions": [
+        "Не создавай finding при отсутствии runtime или interaction facts.",
+        "Не дублируй сценарные ошибки form/table/TitleView/FilterBlock как правила FilterCompanySelect.",
+        "Не проверяй selected value по локальной формуле: делегируй Select, FilterTag и CompactTag.",
+        "Не считай lifecycle самостоятельным design violation.",
+        "Не рассматривай FilterCompanySelect_UniversalModal как public root текущего package."
+      ],
+      "includedComponents": [
+        "[D] CompactTag",
+        "[D] CompactTag",
+        "[D] FilterCompanySelect_Multi",
+        "[D] FilterCompanySelect_Single",
+        "[D] DropdownList_MultiSelect",
+        "[D] DropdownList_MultiSelect",
+        "[D] DropdownList_SingleSelect",
+        "[D] DropdownList_SingleSelect",
+        "🔄 [D] DropdownList_MultiSelect",
+        "🔄 [D] DropdownList_SingleSelect"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.status-property",
+      "summary": "StatusPreset показывает состояние объекта или процесса, PropertyPreset — характеристику или свойство объекта. Оба preset-компонента разрешено использовать самостоятельно на desktop и mobile-web.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔒 [D] PropertyPreset",
+        "🔒 [D] StatusPreset",
+        "🔒 [M] PropertyPreset",
+        "🔒 [M] StatusPreset"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "5062ff1e0c435b64f3d1f4a0ae699dcb646b34f4",
+          "name": "🔒 [D] StatusPreset",
+          "purpose": "Вспомогательный компонент Figma, в коде существует только Status в core-components.",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.table-basic-d",
+      "summary": "Table Basic [D] — семейство более воздушных таблиц до пяти столбцов с поддержкой двух текстовых слотов в одной ячейке.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] BodyActionCell :: Basic",
+        "[D] BodyCell :: Basic",
+        "[D] BodyControlCell :: Basic",
+        "[D] GroupDivider :: Basic",
+        "🔄 [D] BodyActionCell",
+        "🔄 [D] BodyCell",
+        "🔄 [D] BodyControlCell",
+        "🔄 [D] HeadActionCell",
+        "🔄 [D] HeadCell",
+        "🔄 [D] HeadControlCell",
+        "🔄 Chevron",
+        "🔄 HeadControl",
+        "🔄 Sorting",
+        "🔒 [D] BodyCell",
+        "ActionButton",
+        "Control",
+        "Graphics",
+        "GraphicsSkeleton",
+        "LeftAddon",
+        "RightAddon",
+        "RightAddon",
+        "Text",
+        "[D] BodyRow :: Basic",
+        "🔄 [D] BodyRow :: Core",
+        "🔄 [D] HeadRow :: Core",
+        "🔄 [D] ListHeaderRow :: Core"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "aca58bac6a6137109081a0f7289424b5a240d0fd",
+          "name": "[D] BodyRow :: Basic",
+          "purpose": "Строка данных для воздушной desktop-таблицы Basic с количеством столбцов до пяти.",
+          "useWhen": [
+            "Нужно собрать строку простой таблицы без горизонтального скролла."
+          ],
+          "doNotUseWhen": [
+            "Таблица требует большого количества столбцов, горизонтального скролла или функциональной группировки."
+          ],
+          "relationship": "Основная строка Table Basic; после добавления наполняется библиотечными Basic-ячейками.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        },
+        {
+          "componentKey": "04acf0fa2142daa01998e1a39d18167a64a64a9a",
+          "name": "[D] BodyCell :: Basic",
+          "purpose": "Обычная ячейка Table Basic для основного и опционального дополнительного текста или статусного пресета.",
+          "useWhen": [
+            "В строке Basic нужно показать основное значение и при необходимости второй текстовый слой."
+          ],
+          "doNotUseWhen": [
+            "Колонка предназначена только для выбора строки или действия."
+          ],
+          "relationship": "Контентная ячейка внутри [D] BodyRow :: Basic.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.*"
+          ],
+          "layerProperties": [
+            "fills",
+            "strokes",
+            "strokeWeight",
+            "cornerRadius",
+            "opacity",
+            "layout.padding",
+            "layout.itemSpacing",
+            "styles.text",
+            "typography"
+          ],
+          "dependencyPolicy": "Nested diffs семейства таблиц должны использовать effective baseline выбранного table component перед fallback к standalone baselines вложенных компонентов."
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web-corp.table-wide-d",
+      "summary": "Table Wide [D] — семейство для таблиц с одним текстовым слотом в ячейке, большим количеством столбцов, группировкой и горизонтальным скроллом.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] BodyActionCell :: Wide",
+        "[D] BodyCell :: Wide",
+        "[D] BodyControlCell :: Wide",
+        "[D] HeadActionCell",
+        "[D] HeadCell",
+        "[D] HeadControlCell",
+        "ActionButton",
+        "BorderLine",
+        "Chevron",
+        "ColumnControl",
+        "ColumnControl :: OptionList",
+        "ControlAddon",
+        "HeaderAddon",
+        "LeftAddon",
+        "RightAddon",
+        "Sorting",
+        "Text",
+        "[D] BodyGroupRow :: Wide",
+        "[D] BodyRow :: Wide",
+        "[D] HeadRow :: Universal",
+        "GroupBorderLine",
+        "HeadDivider"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "6968c89343b210b7e5071d4d6ac6e7bd29576dc6",
+          "name": "[D] HeadCell",
+          "purpose": "Обычная ячейка заголовка таблицы для названия колонки и предусмотренного состояния сортировки.",
+          "useWhen": [
+            "В HeadRow нужна колонка с текстовым заголовком."
+          ],
+          "doNotUseWhen": [
+            "Колонка предназначена только для выбора строк или действий."
+          ],
+          "relationship": "Контентная ячейка внутри [D] HeadRow :: Universal; её ширина согласуется с BodyCell.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.*"
+          ],
+          "layerProperties": [
+            "fills",
+            "strokes",
+            "strokeWeight",
+            "cornerRadius",
+            "opacity",
+            "layout.padding",
+            "layout.itemSpacing",
+            "styles.text",
+            "typography"
+          ],
+          "dependencyPolicy": "Nested diffs семейства таблиц должны использовать effective baseline выбранного table component перед fallback к standalone baselines вложенных компонентов."
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web-corp.title-view",
+      "summary": "TitleView — составная обёртка заголовка для сценария с основным заголовком, статусом и действиями. Компонент объединяет Title, Status, TitleAddon, RightAddon, выбор компании, Subtitle, TitleStatus и Button group в готовую DS-композицию.",
+      "criticalBaselines": [
+        "Nested [D]/[M] Button instances внутри Button group являются частью TitleView baseline; изменения variant дизайнером нужно показывать относительно TitleView effective baseline.",
+        "StatusPreset и Status внутри MainContent / Status являются ожидаемыми nested structures; само использование preset нормально, если preset не изменён за пределами его variant API.",
+        "View и Skeleton являются public TitleView component properties.",
+        "На странице допускается только один TitleView с View=xLarge.",
+        "Внешние отступы 40 px, 32 px и 12 px, определённые правилами TitleView, обязательны для соответствующих соседних блоков.",
+        "Если одновременно используются Status и TitleStatus, значения Type должны совпадать: Type определяет статусный цвет.",
+        "В View=xLarge primary-действия размещаются в Button group. В View=Large, Medium и Small primary-действия размещаются вне TitleView.",
+        "Запрет primary-действия в RightAddon применяется ко всем значениям View.",
+        "Частичная загрузка отдельных слотов допустима при Skeleton=False у родительского TitleView.",
+        "Для View=Large, Medium и Small доступны только Title, Subtitle, TitleAddon и RightAddon.",
+        "Holding обязателен для одиночного выбора компании, когда пользователь работает от группы компаний, а страница доступна только в моно-режиме.",
+        "Ручные изменения layout, sizing, типографики, цвета, прозрачности и других стилей корня и всего внутреннего дерева TitleView запрещены.",
+        "Для корня TitleView рекомендуется ширина Fill container и высота Hug contents; правило одинаково для desktop и mobile-web.",
+        "Порядок слотов Status -> Heading -> Holding -> Subtitle -> TitleStatus -> Button group обязателен.",
+        "В предусмотренных слотах разрешён instance swap на произвольные компоненты, если сохраняются порядок слотов и структура TitleView.",
+        "Корень TitleView не оформляется вручную и не может быть единой кликабельной поверхностью."
+      ],
+      "agentInstructions": [
+        "Не выводи pattern violations из примеров. Используй только exact rules и exact component contracts.",
+        "Используй component-property facts для variant changes и layer-property facts для styles/layout/paint changes.",
+        "Если nested diff принадлежит host wrapper и actual совпадает с effective baseline, не показывай его как designer customization.",
+        "Если actual отличается от effective baseline, показывай effectiveBaseline -> actual.",
+        "Для сценария заголовка со статусом и действиями рекомендуй настройку встроенных slots TitleView, а не внешнюю ручную композицию из отдельных локальных компонентов.",
+        "Не считай отсутствие опциональных Status, TitleStatus, TitleAddon, RightAddon, Subtitle или Button group нарушением без отдельного правила.",
+        "Если загружается только отдельный вложенный элемент, не требуй переключать весь TitleView в Skeleton=True.",
+        "Для View=Large, Medium и Small рекомендуй primary-действие вне TitleView, а не в RightAddon.",
+        "Не считай изменение label у Status нарушением, если Type корректен и нет отдельного текстового правила.",
+        "Не придумывай ограничения параметров FilterCompanySelect_Single: используй его собственный компонентный контракт, когда он будет доступен.",
+        "Для настроек View, addons, hint и singleIcon вложенных Button используй паттерн «Кнопки и группы кнопок»; не создавай отдельные ограничения TitleView.",
+        "Применяй правила p_title-view-editable.md как часть правил TitleView, когда обнаружен editable-сценарий.",
+        "Не требуй Enter, Escape или отдельные кнопки подтверждения и отмены без точного правила для конкретной платформы и сценария.",
+        "Не считай сам факт instance swap внутри предусмотренного слота нарушением; оценивай выбранный компонент по его собственному контракту.",
+        "Проверяй обязательный порядок слотов отдельно от содержимого каждого слота.",
+        "Не разрешай ручное оформление корня или внутренних слоёв TitleView и не предлагай делать весь TitleView кликабельным."
+      ],
+      "includedComponents": [
+        "[D] RightAddon",
+        "[D] RightAddonXL",
+        "[D] TitleAddon",
+        "[D] TitleAddonXL",
+        "[D] TitleStatus",
+        "[D] TitleView",
+        "[M] RightAddon",
+        "[M] RightAddonXL",
+        "[M] TitleAddon",
+        "[M] TitleAddonXL",
+        "[M] TitleStatus",
+        "[M] TitleView"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.*"
+          ],
+          "layerProperties": [
+            "layout.*",
+            "styles.*",
+            "fill",
+            "stroke",
+            "radius",
+            "opacity",
+            "text.*"
+          ],
+          "dependencyPolicy": "Component-property reset и layer-property reset разделены. Layer reset должен использовать effective baseline после nested variant/materialization resolution."
+        },
+        "publicApi": {
+          "components": [
+            {
+              "name": "[D] RightAddon",
+              "key": "edd174301746415867bc998cd0c0322b68c6269c",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] RightAddonXL",
+              "key": "8edd3829b4b7091209299a5b5c838f0a159018aa",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleAddon",
+              "key": "f32313498fd345a1a41584c8d9edc61c3e2053bf",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleAddonXL",
+              "key": "b4cd3e21d108962a24b75aec2de71fba0672d63f",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleStatus",
+              "key": "6a8aa56ae7c8b57b9d9dfbbf23af14c348d83763",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleView",
+              "key": "fbc4ff889c9fe2db128bc76471f512271d4cc229",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] RightAddon",
+              "key": "b762143a2872257a497f9c3e0a012a9bed92f9ca",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] RightAddonXL",
+              "key": "c1092f678271e7de3291bb5699eeab4ad43c7710",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleAddon",
+              "key": "50d8b48cc1dcd4052efc7a151219578d1d993e2f",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleAddonXL",
+              "key": "a40e2549a5a23e645fb38c2af4c15df0f6813153",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleStatus",
+              "key": "e64c6d19cadc818b180b9176a51e3f65714b84b0",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleView",
+              "key": "227149bd55130d69d63e33cd3c8c52ae3f4e7e19",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            }
+          ],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web.spotlight-bar",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔒 [D] SpotlightBar"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "8bc7f3ef78fd020085203e9ba738d7e791208f32",
+          "name": "🔒 [D] SpotlightBar",
+          "purpose": "FigmaOnly – такого компонента в ДС не существует, это пресет для дизайна",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    }
+  ]
+}
