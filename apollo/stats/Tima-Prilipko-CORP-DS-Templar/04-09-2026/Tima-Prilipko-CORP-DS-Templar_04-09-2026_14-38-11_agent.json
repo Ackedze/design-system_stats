@@ -1,0 +1,5177 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1459095322385674198-1788521891466-rcorp72o:agent",
+  "sourceReportId": "apollo-1459095322385674198-1788521891466-rcorp72o",
+  "generatedAt": "2026-09-04T11:38:11.466Z",
+  "suggestedFileName": "Tima-Prilipko-CORP-DS-Templar_04-09-2026_14-38-11_agent.json",
+  "user": {
+    "id": "1459095322385674198",
+    "name": "Tima Prilipko • CORP DS • Templar",
+    "slug": "Tima-Prilipko-CORP-DS-Templar"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.3.0"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "Проработка анимации",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "pageType": null,
+    "startedAt": "2026-09-04T11:37:23.996Z",
+    "finishedAt": "2026-09-04T11:38:11.466Z",
+    "durationMs": 47470,
+    "selection": [
+      {
+        "nodeId": "281:91945",
+        "name": "Body",
+        "nodeType": "FRAME",
+        "path": "TO BE / Body",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 190,
+    "problemOccurrenceCount": 79,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 6,
+      "customStyles": 14,
+      "updates": 30,
+      "customizations": 15,
+      "localComponents": 0,
+      "detachedComponents": 1,
+      "presets": 1,
+      "technicalComponents": 0,
+      "currentComponents": 68,
+      "wrongChannel": 0,
+      "themization": 20
+    },
+    "includedFindingCount": 79,
+    "omittedCurrentComponentCount": 68
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, authority.status=active, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with authority.status=active, severity=error, and matchKind=exact_component_rule for the same property/change. Missing, draft, or malformed authority never confirms a violation.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 6,
+      "includedCount": 6,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 14,
+      "includedCount": 14,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 30,
+      "includedCount": 30,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 15,
+      "includedCount": 7,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 20,
+      "includedCount": 20,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "deprecatedStyles",
+      "severityHint": "medium",
+      "title": "Устаревший стиль",
+      "node": {
+        "id": "281:92077",
+        "name": "Accordions/Default",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330370 / Frame 2131327567 / Accordions/Default",
+        "visible": true
+      },
+      "style": {
+        "name": "light/bg/primary",
+        "key": "4ebfb8f1d236d6a150a43b63b8d2f518e1a0c277",
+        "library": "020 :: Colors BlueTint Light",
+        "sourceFile": "styles/020 _ Colors BlueTint Light.json"
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "deprecatedStyles",
+      "severityHint": "medium",
+      "title": "Устаревший стиль",
+      "node": {
+        "id": "281:92078",
+        "name": "Accordions/Default",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330370 / Frame 2131327567 / Accordions/Default",
+        "visible": true
+      },
+      "style": {
+        "name": "light/bg/primary",
+        "key": "4ebfb8f1d236d6a150a43b63b8d2f518e1a0c277",
+        "library": "020 :: Colors BlueTint Light",
+        "sourceFile": "styles/020 _ Colors BlueTint Light.json"
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "deprecatedStyles",
+      "severityHint": "medium",
+      "title": "Устаревший стиль",
+      "node": {
+        "id": "281:92079",
+        "name": "Accordions/Default",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330370 / Frame 2131327567 / Accordions/Default",
+        "visible": true
+      },
+      "style": {
+        "name": "light/bg/primary",
+        "key": "4ebfb8f1d236d6a150a43b63b8d2f518e1a0c277",
+        "library": "020 :: Colors BlueTint Light",
+        "sourceFile": "styles/020 _ Colors BlueTint Light.json"
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "deprecatedStyles",
+      "severityHint": "medium",
+      "title": "Устаревший стиль",
+      "node": {
+        "id": "281:92080",
+        "name": "Accordions/Default",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330370 / Frame 2131327567 / Accordions/Default",
+        "visible": true
+      },
+      "style": {
+        "name": "light/bg/primary",
+        "key": "4ebfb8f1d236d6a150a43b63b8d2f518e1a0c277",
+        "library": "020 :: Colors BlueTint Light",
+        "sourceFile": "styles/020 _ Colors BlueTint Light.json"
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "deprecatedStyles",
+      "severityHint": "medium",
+      "title": "Устаревший стиль",
+      "node": {
+        "id": "281:92081",
+        "name": "Accordions/Default",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330370 / Frame 2131327567 / Accordions/Default",
+        "visible": true
+      },
+      "style": {
+        "name": "light/bg/primary",
+        "key": "4ebfb8f1d236d6a150a43b63b8d2f518e1a0c277",
+        "library": "020 :: Colors BlueTint Light",
+        "sourceFile": "styles/020 _ Colors BlueTint Light.json"
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "deprecatedStyles",
+      "severityHint": "medium",
+      "title": "Устаревший стиль",
+      "node": {
+        "id": "281:92082",
+        "name": "Accordions/Default",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330370 / Frame 2131327567 / Accordions/Default",
+        "visible": true
+      },
+      "style": {
+        "name": "light/bg/primary",
+        "key": "4ebfb8f1d236d6a150a43b63b8d2f518e1a0c277",
+        "library": "020 :: Colors BlueTint Light",
+        "sourceFile": "styles/020 _ Colors BlueTint Light.json"
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I281:91948;760:122237",
+        "name": "Group 2131328864",
+        "type": "GROUP",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / TitleBlock_new / [D] Body / PromoPageBanner / Group 2131328864",
+        "visible": true
+      },
+      "style": {
+        "name": "Фон (Background blur)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Фон (Background blur)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I281:91948;827:123618;994:29145",
+        "name": "Union",
+        "type": "BOOLEAN_OPERATION",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / TitleBlock_new / companies / arrow-right / Union",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I281:91948;827:123618;994:29146",
+        "name": "Vector 2264",
+        "type": "VECTOR",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / TitleBlock_new / companies / arrow-right / Union / Vector 2264",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I281:91948;827:123618;994:29147",
+        "name": "Subtract",
+        "type": "BOOLEAN_OPERATION",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / TitleBlock_new / companies / arrow-right / Union / Subtract",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I281:91948;827:123618;994:29148",
+        "name": "Rectangle 240667592",
+        "type": "RECTANGLE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / TitleBlock_new / companies / arrow-right / Union / Subtract / Rectangle 240667592",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I281:91948;827:123618;994:29149",
+        "name": "Rectangle 240667592",
+        "type": "RECTANGLE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / TitleBlock_new / companies / arrow-right / Union / Subtract / Rectangle 240667592",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "281:91950",
+        "name": "Suggestion",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Suggestion",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I281:91950;827:122228;987:29189",
+        "name": "Rectangle 240667592",
+        "type": "VECTOR",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Suggestion / chevron-right / Subtract / Rectangle 240667592",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I281:91950;827:122228;987:29190",
+        "name": "Rectangle 240667592",
+        "type": "VECTOR",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Suggestion / chevron-right / Subtract / Rectangle 240667592",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I281:91968;50518:42909",
+        "name": "stopper",
+        "type": "RECTANGLE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330376 / Frame 2131330371 / [D] NavigationCardView / ImageContainer / stopper",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I281:92045;935:140170",
+        "name": "Frame 2131330392",
+        "type": "FRAME",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Form / form / Frame 2131330392",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I281:92045;935:140176",
+        "name": "📱 Feedback | WEB | Company selected",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Form / form / Frame 2131330392 / Form / 📱 Feedback | WEB | Company selected",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I281:92045;935:140176;95339:71459;66402:30698",
+        "name": "[D] Style Level 1",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Form / form / Frame 2131330392 / Form / 📱 Feedback | WEB | Company selected / [D] BackgroundPlate / [D] Style Level 1",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I281:92077;131052:107136",
+        "name": "HideMask",
+        "type": "FRAME",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330370 / Frame 2131327567 / Accordions/Default / Head / ChevronContainer / HideMask",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I281:91948;726:121941",
+        "name": "[D][Corporate] Button",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / TitleBlock_new / [D] Body / PromoPageBanner / Frame 2131330361 / Button group / [D][Corporate] Button",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:91948",
+          "I281:91948;726:121933",
+          "I281:91948;726:121934",
+          "I281:91948;726:121936",
+          "I281:91948;726:121940"
+        ]
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Button",
+        "key": "829972babc6855a956b04663692d83d166082090",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Button.json"
+      },
+      "variant": {
+        "name": "View=Primary, Size=56, Shape=Rectangular, SingleIcon=False, DisabledState=False",
+        "key": "829972babc6855a956b04663692d83d166082090"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "281:91954",
+        "name": "[D] TitleView",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330376 / Frame 2131330370 / [D] TitleView",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:91951",
+          "281:91953"
+        ]
+      },
+      "component": {
+        "name": "[D] TitleView",
+        "key": "02b8a91e65c73fbef66fdf9a9a66725bdeac6411",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "View=Large, Skeleton=False",
+        "key": "02b8a91e65c73fbef66fdf9a9a66725bdeac6411"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "02b8a91e65c73fbef66fdf9a9a66725bdeac6411",
+        "currentComponentId": "1039:33106",
+        "latestComponentId": "2590:41054"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "281:91962",
+        "name": "[D] TitleView",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330376 / Frame 2131330371 / [D] TitleView",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:91951",
+          "281:91961"
+        ]
+      },
+      "component": {
+        "name": "[D] TitleView",
+        "key": "02b8a91e65c73fbef66fdf9a9a66725bdeac6411",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "View=Large, Skeleton=False",
+        "key": "02b8a91e65c73fbef66fdf9a9a66725bdeac6411"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "02b8a91e65c73fbef66fdf9a9a66725bdeac6411",
+        "currentComponentId": "1039:33106",
+        "latestComponentId": "2590:41054"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "281:91964",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330376 / Frame 2131330371 / Frame 2131328255 / 🔄 [D][Corporate] Tag",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:91951",
+          "281:91961",
+          "281:91963"
+        ]
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Tag",
+        "key": "590a960d63e2b61a4adb538603612f00f6c7d0fc",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Tag.json"
+      },
+      "variant": {
+        "name": "View=Filled, Size=48, Shape=Rounded, SelectedState=True, DisabledState=False",
+        "key": "590a960d63e2b61a4adb538603612f00f6c7d0fc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle",
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "590a960d63e2b61a4adb538603612f00f6c7d0fc",
+        "currentComponentId": "1801:57723",
+        "latestComponentId": "2590:88904"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "281:91965",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330376 / Frame 2131330371 / Frame 2131328255 / 🔄 [D][Corporate] Tag",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:91951",
+          "281:91961",
+          "281:91963"
+        ]
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Tag",
+        "key": "b2362c0c8222edb8928e9431369e11b74f727511",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Tag.json"
+      },
+      "variant": {
+        "name": "View=Filled, Size=48, Shape=Rounded, SelectedState=False, DisabledState=False",
+        "key": "b2362c0c8222edb8928e9431369e11b74f727511"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle",
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "b2362c0c8222edb8928e9431369e11b74f727511",
+        "currentComponentId": "1801:57749",
+        "latestComponentId": "2590:88930"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "281:91966",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330376 / Frame 2131330371 / Frame 2131328255 / 🔄 [D][Corporate] Tag",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:91951",
+          "281:91961",
+          "281:91963"
+        ]
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Tag",
+        "key": "b2362c0c8222edb8928e9431369e11b74f727511",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Tag.json"
+      },
+      "variant": {
+        "name": "View=Filled, Size=48, Shape=Rounded, SelectedState=False, DisabledState=False",
+        "key": "b2362c0c8222edb8928e9431369e11b74f727511"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle",
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "b2362c0c8222edb8928e9431369e11b74f727511",
+        "currentComponentId": "1801:57749",
+        "latestComponentId": "2590:88930"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "281:91967",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330376 / Frame 2131330371 / Frame 2131328255 / 🔄 [D][Corporate] Tag",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:91951",
+          "281:91961",
+          "281:91963"
+        ]
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Tag",
+        "key": "b2362c0c8222edb8928e9431369e11b74f727511",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Tag.json"
+      },
+      "variant": {
+        "name": "View=Filled, Size=48, Shape=Rounded, SelectedState=False, DisabledState=False",
+        "key": "b2362c0c8222edb8928e9431369e11b74f727511"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle",
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "b2362c0c8222edb8928e9431369e11b74f727511",
+        "currentComponentId": "1801:57749",
+        "latestComponentId": "2590:88930"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "281:91968",
+        "name": "[D] NavigationCardView",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330376 / Frame 2131330371 / [D] NavigationCardView",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:91951",
+          "281:91961"
+        ]
+      },
+      "component": {
+        "name": "[D] NavigationCardView",
+        "key": "0a2fb9f82b0ebc764825e12805ce1f4cefc3208b",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- NavigationCardView.json"
+      },
+      "variant": {
+        "name": "View=Large, State=Active, Image Centred=False, Bottom=False, Skeleton=False",
+        "key": "0a2fb9f82b0ebc764825e12805ce1f4cefc3208b"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "0a2fb9f82b0ebc764825e12805ce1f4cefc3208b",
+        "currentComponentId": "281:150533",
+        "latestComponentId": "1903:63386"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "281:91970",
+        "name": "[D] TitleView",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330379 / [D] TitleView",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:91969"
+        ]
+      },
+      "component": {
+        "name": "[D] TitleView",
+        "key": "02b8a91e65c73fbef66fdf9a9a66725bdeac6411",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "View=Large, Skeleton=False",
+        "key": "02b8a91e65c73fbef66fdf9a9a66725bdeac6411"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "02b8a91e65c73fbef66fdf9a9a66725bdeac6411",
+        "currentComponentId": "1039:33106",
+        "latestComponentId": "2590:41054"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "281:91975",
+        "name": "[D] TitleView",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330379 / Frame 2131329327 / Frame 2131326989 / Content / Frame 2131326989 / [D] TitleView",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:91969",
+          "281:91971",
+          "281:91972",
+          "281:91973",
+          "281:91974"
+        ]
+      },
+      "component": {
+        "name": "[D] TitleView",
+        "key": "22c9df3a231be047e827af4f1625eca22ad9c26d",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "View=Medium, Skeleton=False",
+        "key": "22c9df3a231be047e827af4f1625eca22ad9c26d"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "22c9df3a231be047e827af4f1625eca22ad9c26d",
+        "currentComponentId": "1039:33107",
+        "latestComponentId": "2590:41055"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "281:91976",
+        "name": "[D] 🔄 TabsSecondary",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330379 / Frame 2131329327 / Frame 2131326989 / Content / Frame 2131326989 / [D] 🔄 TabsSecondary",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:91969",
+          "281:91971",
+          "281:91972",
+          "281:91973",
+          "281:91974"
+        ]
+      },
+      "component": {
+        "name": "[D] 🔄 TabsSecondary",
+        "key": "f44439e4178d218f1385ac4ca066c72ef2dc890a",
+        "library": "Web :: Core Navigation",
+        "sourceFile": "web/components/web-core/navigation/Web _ Core Navigation -- Tabs.json"
+      },
+      "variant": {
+        "name": "Size=40",
+        "key": "f44439e4178d218f1385ac4ca066c72ef2dc890a"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle",
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "f44439e4178d218f1385ac4ca066c72ef2dc890a",
+        "currentComponentId": "281:147775",
+        "latestComponentId": "2590:89662"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I281:91976;1:3258",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330379 / Frame 2131329327 / Frame 2131326989 / Content / Frame 2131326989 / [D] 🔄 TabsSecondary / Items / 🔄 [D][Corporate] Tag",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:91969",
+          "281:91971",
+          "281:91972",
+          "281:91973",
+          "281:91974",
+          "281:91976",
+          "I281:91976;1:3257"
+        ]
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Tag",
+        "key": "a5777ee83e2e8a01e4d873c6841521c08c83f472",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Tag.json"
+      },
+      "variant": {
+        "name": "View=Filled, Size=40, Shape=Rounded, SelectedState=True, DisabledState=False",
+        "key": "a5777ee83e2e8a01e4d873c6841521c08c83f472"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I281:91976;1:3259",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330379 / Frame 2131329327 / Frame 2131326989 / Content / Frame 2131326989 / [D] 🔄 TabsSecondary / Items / 🔄 [D][Corporate] Tag",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:91969",
+          "281:91971",
+          "281:91972",
+          "281:91973",
+          "281:91974",
+          "281:91976",
+          "I281:91976;1:3257"
+        ]
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Tag",
+        "key": "488bc481db474737491790d567d2453f78bbc61a",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Tag.json"
+      },
+      "variant": {
+        "name": "View=Filled, Size=40, Shape=Rounded, SelectedState=False, DisabledState=False",
+        "key": "488bc481db474737491790d567d2453f78bbc61a"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I281:91976;1:3260",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330379 / Frame 2131329327 / Frame 2131326989 / Content / Frame 2131326989 / [D] 🔄 TabsSecondary / Items / 🔄 [D][Corporate] Tag",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:91969",
+          "281:91971",
+          "281:91972",
+          "281:91973",
+          "281:91974",
+          "281:91976",
+          "I281:91976;1:3257"
+        ]
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Tag",
+        "key": "488bc481db474737491790d567d2453f78bbc61a",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Tag.json"
+      },
+      "variant": {
+        "name": "View=Filled, Size=40, Shape=Rounded, SelectedState=False, DisabledState=False",
+        "key": "488bc481db474737491790d567d2453f78bbc61a"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I281:91976;1:3261",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330379 / Frame 2131329327 / Frame 2131326989 / Content / Frame 2131326989 / [D] 🔄 TabsSecondary / Items / 🔄 [D][Corporate] Tag",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:91969",
+          "281:91971",
+          "281:91972",
+          "281:91973",
+          "281:91974",
+          "281:91976",
+          "I281:91976;1:3257"
+        ]
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Tag",
+        "key": "488bc481db474737491790d567d2453f78bbc61a",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Tag.json"
+      },
+      "variant": {
+        "name": "View=Filled, Size=40, Shape=Rounded, SelectedState=False, DisabledState=False",
+        "key": "488bc481db474737491790d567d2453f78bbc61a"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I281:91976;1:3262",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330379 / Frame 2131329327 / Frame 2131326989 / Content / Frame 2131326989 / [D] 🔄 TabsSecondary / Items / 🔄 [D][Corporate] Tag",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:91969",
+          "281:91971",
+          "281:91972",
+          "281:91973",
+          "281:91974",
+          "281:91976",
+          "I281:91976;1:3257"
+        ]
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Tag",
+        "key": "488bc481db474737491790d567d2453f78bbc61a",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Tag.json"
+      },
+      "variant": {
+        "name": "View=Filled, Size=40, Shape=Rounded, SelectedState=False, DisabledState=False",
+        "key": "488bc481db474737491790d567d2453f78bbc61a"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "281:91977",
+        "name": "🔄 [D][Corporate] SliderInput",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330379 / Frame 2131329327 / Frame 2131326989 / Content / 🔄 [D][Corporate] SliderInput",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:91969",
+          "281:91971",
+          "281:91972",
+          "281:91973"
+        ]
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] SliderInput",
+        "key": "24cf3549edd1b6c3ccd79f18cca43eaff5812b1e",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- SliderInput.json"
+      },
+      "variant": {
+        "name": "Size=64, FilledState=True, ActiveState=False, DisabledState=False, ErrorState=False, OuterLabel=False",
+        "key": "24cf3549edd1b6c3ccd79f18cca43eaff5812b1e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle",
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "24cf3549edd1b6c3ccd79f18cca43eaff5812b1e",
+        "currentComponentId": "281:162900",
+        "latestComponentId": "2590:89764"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "281:91979",
+        "name": "[D] TitleView",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330379 / Frame 2131329327 / Frame 2131326989 / Content / 4 row / [D] TitleView",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:91969",
+          "281:91971",
+          "281:91972",
+          "281:91973",
+          "281:91978"
+        ]
+      },
+      "component": {
+        "name": "[D] TitleView",
+        "key": "22c9df3a231be047e827af4f1625eca22ad9c26d",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "View=Medium, Skeleton=False",
+        "key": "22c9df3a231be047e827af4f1625eca22ad9c26d"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "22c9df3a231be047e827af4f1625eca22ad9c26d",
+        "currentComponentId": "1039:33107",
+        "latestComponentId": "2590:41055"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "281:91985",
+        "name": "🔒 [D] PropertyPreset",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330379 / Frame 2131329327 / Frame 2131326989 / Content / 4 row / Cards / Card Tariff 2 / Content / Frame 2131326991 / 🔒 [D] PropertyPreset",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:91969",
+          "281:91971",
+          "281:91972",
+          "281:91973",
+          "281:91978",
+          "281:91980",
+          "281:91981",
+          "281:91982",
+          "281:91983"
+        ]
+      },
+      "component": {
+        "name": "🔒 [D] PropertyPreset",
+        "key": "c1d7e1e4f1b78367eddace153f4dbaa264c4845a",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Color=Green, Style=Contrast, Size=20",
+        "key": "c1d7e1e4f1b78367eddace153f4dbaa264c4845a"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "c1d7e1e4f1b78367eddace153f4dbaa264c4845a",
+        "currentComponentId": "45:14649",
+        "latestComponentId": "1904:408"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "281:92043",
+        "name": "🔄 [D][Corporate] Button",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330379 / Frame 2131329327 / Frame 2131326990 / 🔄 [D][Corporate] Button",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:91969",
+          "281:91971",
+          "281:92009"
+        ]
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Button",
+        "key": "dfcd5a4347a7e9b72460bb586055dfb1c09c849a",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Button.json"
+      },
+      "variant": {
+        "name": "View=Primary, Size=48, Shape=Rectangular, SingleIcon=False, DisabledState=False",
+        "key": "dfcd5a4347a7e9b72460bb586055dfb1c09c849a"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle",
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "dfcd5a4347a7e9b72460bb586055dfb1c09c849a",
+        "currentComponentId": "1801:56103",
+        "latestComponentId": "2590:90318"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I281:92045;935:140174;51844:157721",
+        "name": "[D][Corporate] Input",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Form / form / Frame 2131330392 / Form / .formContainer :: 1440 / [D][Corporate] Input",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:92045",
+          "I281:92045;935:140169",
+          "I281:92045;935:140170",
+          "I281:92045;935:140171",
+          "I281:92045;935:140174"
+        ]
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Input",
+        "key": "5caceb5ee6bdd90f68e5a0f68332125db537913c",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Input.json"
+      },
+      "variant": {
+        "name": "Size=56, FilledState=True, ActiveState=False, DisabledState=False, ErrorState=False, OuterLabel=False",
+        "key": "5caceb5ee6bdd90f68e5a0f68332125db537913c"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I281:92045;935:140174;51844:157722",
+        "name": "[D][Corporate] Input",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Form / form / Frame 2131330392 / Form / .formContainer :: 1440 / [D][Corporate] Input",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:92045",
+          "I281:92045;935:140169",
+          "I281:92045;935:140170",
+          "I281:92045;935:140171",
+          "I281:92045;935:140174"
+        ]
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Input",
+        "key": "5caceb5ee6bdd90f68e5a0f68332125db537913c",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Input.json"
+      },
+      "variant": {
+        "name": "Size=56, FilledState=True, ActiveState=False, DisabledState=False, ErrorState=False, OuterLabel=False",
+        "key": "5caceb5ee6bdd90f68e5a0f68332125db537913c"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I281:92045;935:140180",
+        "name": "Button",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Form / form / Frame 2131330392 / Form / Button",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:92045",
+          "I281:92045;935:140169",
+          "I281:92045;935:140170",
+          "I281:92045;935:140171"
+        ]
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Button",
+        "key": "36e79c36f85125a0d9ea94726764a6a98f61a103",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Button.json"
+      },
+      "variant": {
+        "name": "View=Secondary, Size=56, Shape=Rectangular, SingleIcon=False, DisabledState=False",
+        "key": "36e79c36f85125a0d9ea94726764a6a98f61a103"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "281:92048",
+        "name": "[D] TitleView",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330369 / Frame 2131330372 / [D] TitleView",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:92046",
+          "281:92047"
+        ]
+      },
+      "component": {
+        "name": "[D] TitleView",
+        "key": "02b8a91e65c73fbef66fdf9a9a66725bdeac6411",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "View=Large, Skeleton=False",
+        "key": "02b8a91e65c73fbef66fdf9a9a66725bdeac6411"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "02b8a91e65c73fbef66fdf9a9a66725bdeac6411",
+        "currentComponentId": "1039:33106",
+        "latestComponentId": "2590:41054"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "281:92063",
+        "name": "[D] TitleView",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330369 / Frame 2131330373 / Frame 2131330382 / [D] TitleView",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:92046",
+          "281:92061",
+          "281:92062"
+        ]
+      },
+      "component": {
+        "name": "[D] TitleView",
+        "key": "02b8a91e65c73fbef66fdf9a9a66725bdeac6411",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "View=Large, Skeleton=False",
+        "key": "02b8a91e65c73fbef66fdf9a9a66725bdeac6411"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "02b8a91e65c73fbef66fdf9a9a66725bdeac6411",
+        "currentComponentId": "1039:33106",
+        "latestComponentId": "2590:41054"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "281:92070",
+        "name": "[D] TitleView",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330370 / [D] TitleView",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:92069"
+        ]
+      },
+      "component": {
+        "name": "[D] TitleView",
+        "key": "02b8a91e65c73fbef66fdf9a9a66725bdeac6411",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "View=Large, Skeleton=False",
+        "key": "02b8a91e65c73fbef66fdf9a9a66725bdeac6411"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "02b8a91e65c73fbef66fdf9a9a66725bdeac6411",
+        "currentComponentId": "1039:33106",
+        "latestComponentId": "2590:41054"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "281:92072",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330370 / Frame 2131328255 / 🔄 [D][Corporate] Tag",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:92069",
+          "281:92071"
+        ]
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Tag",
+        "key": "590a960d63e2b61a4adb538603612f00f6c7d0fc",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Tag.json"
+      },
+      "variant": {
+        "name": "View=Filled, Size=48, Shape=Rounded, SelectedState=True, DisabledState=False",
+        "key": "590a960d63e2b61a4adb538603612f00f6c7d0fc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle",
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "590a960d63e2b61a4adb538603612f00f6c7d0fc",
+        "currentComponentId": "1801:57723",
+        "latestComponentId": "2590:88904"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "281:92073",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330370 / Frame 2131328255 / 🔄 [D][Corporate] Tag",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:92069",
+          "281:92071"
+        ]
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Tag",
+        "key": "b2362c0c8222edb8928e9431369e11b74f727511",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Tag.json"
+      },
+      "variant": {
+        "name": "View=Filled, Size=48, Shape=Rounded, SelectedState=False, DisabledState=False",
+        "key": "b2362c0c8222edb8928e9431369e11b74f727511"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle",
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "b2362c0c8222edb8928e9431369e11b74f727511",
+        "currentComponentId": "1801:57749",
+        "latestComponentId": "2590:88930"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "281:92074",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330370 / Frame 2131328255 / 🔄 [D][Corporate] Tag",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:92069",
+          "281:92071"
+        ]
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Tag",
+        "key": "b2362c0c8222edb8928e9431369e11b74f727511",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Tag.json"
+      },
+      "variant": {
+        "name": "View=Filled, Size=48, Shape=Rounded, SelectedState=False, DisabledState=False",
+        "key": "b2362c0c8222edb8928e9431369e11b74f727511"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle",
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "b2362c0c8222edb8928e9431369e11b74f727511",
+        "currentComponentId": "1801:57749",
+        "latestComponentId": "2590:88930"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "281:92075",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330370 / Frame 2131328255 / 🔄 [D][Corporate] Tag",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:92069",
+          "281:92071"
+        ]
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Tag",
+        "key": "b2362c0c8222edb8928e9431369e11b74f727511",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Tag.json"
+      },
+      "variant": {
+        "name": "View=Filled, Size=48, Shape=Rounded, SelectedState=False, DisabledState=False",
+        "key": "b2362c0c8222edb8928e9431369e11b74f727511"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle",
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "b2362c0c8222edb8928e9431369e11b74f727511",
+        "currentComponentId": "1801:57749",
+        "latestComponentId": "2590:88930"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I281:91949;726:123778",
+        "name": "[D] TitleView",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / benefits-icons / Benefits / Content / [D] TitleView",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:91949",
+          "I281:91949;726:123775",
+          "I281:91949;726:123776"
+        ]
+      },
+      "component": {
+        "name": "[D] TitleView",
+        "key": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "View=Small, Skeleton=False",
+        "key": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I281:91949;726:123778;37705:55418",
+            "name": "Subtitle",
+            "type": null,
+            "pageName": "Фактура",
+            "path": "View=Small, Skeleton=False / MainContent / Subtitle / Subtitle",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Paragraph/14–20 Primary Small → Paragraph/16–24 Primary Medium",
+          "referenceValue": "Paragraph/14–20 Primary Small",
+          "actualValue": "Paragraph/16–24 Primary Medium",
+          "referenceRawValue": "Paragraph/14–20 Primary Small",
+          "actualRawValue": "Paragraph/16–24 Primary Medium",
+          "referenceDisplayValue": "Paragraph/14–20 Primary Small",
+          "actualDisplayValue": "Paragraph/16–24 Primary Medium",
+          "referenceResource": {
+            "name": "Paragraph/14–20 Primary Small",
+            "key": "6fb5ab6969beee7da9e23dfcbab2f4864b30b665",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": {
+            "name": "Paragraph/16–24 Primary Medium",
+            "key": "f0f0d59f9f92db92901605dd929cfa3b93540058",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "actualNestedOwnerPath": "View=Small, Skeleton=False",
+            "actualNestedOwnerRelativePath": "MainContent / Subtitle / Subtitle",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Small"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "281:91947",
+              "nodeName": "[D] Content",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "design-system-author",
+                "revision": 1
+              },
+              "severityScope": null,
+              "appliesTo": "styles.text",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Типографика Title и Subtitle фиксируется выбранным View компонента TitleView. Менять текстовый стиль заголовка или подзаголовка вручную запрещено.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": "Стиль текст",
+            "priority": 30,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+            "message": "Типографика Title и Subtitle фиксируется выбранным View компонента TitleView. Менять текстовый стиль заголовка или подзаголовка вручную запрещено.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I281:91949;726:123778",
+            "name": "[D] TitleView",
+            "type": null,
+            "pageName": "Фактура",
+            "path": "View=Small, Skeleton=False",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.combination",
+          "message": "variant.combination: 8 допустимых комбинаций → View=Small",
+          "referenceValue": "8 допустимых комбинаций",
+          "actualValue": "View=Small",
+          "referenceRawValue": "8 допустимых комбинаций",
+          "actualRawValue": "View=Small",
+          "referenceDisplayValue": "8 допустимых комбинаций",
+          "actualDisplayValue": "View=Small",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Small"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "281:91947",
+              "nodeName": "[D] Content",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.component-properties-are-first-class",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения variant/property в компонентах семейства TitleView являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-api-invalid-variant-combination",
+            "ruleId": "component-api:title-view.desktop",
+            "contractId": "title-view.desktop",
+            "constraintId": "component-api-invalid-variant-combination",
+            "evidence": {
+              "actualProperties": {
+                "View": "Small"
+              },
+              "allowedCombinations": [
+                {
+                  "View": "xLarge",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "Large",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "Medium",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "Small",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "xLarge",
+                  "Skeleton": "True"
+                },
+                {
+                  "View": "Large",
+                  "Skeleton": "True"
+                },
+                {
+                  "View": "Medium",
+                  "Skeleton": "True"
+                },
+                {
+                  "View": "Small",
+                  "Skeleton": "True"
+                }
+              ]
+            },
+            "message": "Комбинация параметров отсутствует в Component API [D] TitleView",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I281:91949;726:123781",
+        "name": "[D] TitleView",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / benefits-icons / Benefits / Content / [D] TitleView",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:91949",
+          "I281:91949;726:123775",
+          "I281:91949;726:123779"
+        ]
+      },
+      "component": {
+        "name": "[D] TitleView",
+        "key": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "View=Small, Skeleton=False",
+        "key": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I281:91949;726:123781;37705:55418",
+            "name": "Subtitle",
+            "type": null,
+            "pageName": "Фактура",
+            "path": "View=Small, Skeleton=False / MainContent / Subtitle / Subtitle",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Paragraph/14–20 Primary Small → Paragraph/16–24 Primary Medium",
+          "referenceValue": "Paragraph/14–20 Primary Small",
+          "actualValue": "Paragraph/16–24 Primary Medium",
+          "referenceRawValue": "Paragraph/14–20 Primary Small",
+          "actualRawValue": "Paragraph/16–24 Primary Medium",
+          "referenceDisplayValue": "Paragraph/14–20 Primary Small",
+          "actualDisplayValue": "Paragraph/16–24 Primary Medium",
+          "referenceResource": {
+            "name": "Paragraph/14–20 Primary Small",
+            "key": "6fb5ab6969beee7da9e23dfcbab2f4864b30b665",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": {
+            "name": "Paragraph/16–24 Primary Medium",
+            "key": "f0f0d59f9f92db92901605dd929cfa3b93540058",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "actualNestedOwnerPath": "View=Small, Skeleton=False",
+            "actualNestedOwnerRelativePath": "MainContent / Subtitle / Subtitle",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Small"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "281:91947",
+              "nodeName": "[D] Content",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "design-system-author",
+                "revision": 1
+              },
+              "severityScope": null,
+              "appliesTo": "styles.text",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Типографика Title и Subtitle фиксируется выбранным View компонента TitleView. Менять текстовый стиль заголовка или подзаголовка вручную запрещено.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": "Стиль текст",
+            "priority": 30,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+            "message": "Типографика Title и Subtitle фиксируется выбранным View компонента TitleView. Менять текстовый стиль заголовка или подзаголовка вручную запрещено.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I281:91949;726:123781",
+            "name": "[D] TitleView",
+            "type": null,
+            "pageName": "Фактура",
+            "path": "View=Small, Skeleton=False",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.combination",
+          "message": "variant.combination: 8 допустимых комбинаций → View=Small",
+          "referenceValue": "8 допустимых комбинаций",
+          "actualValue": "View=Small",
+          "referenceRawValue": "8 допустимых комбинаций",
+          "actualRawValue": "View=Small",
+          "referenceDisplayValue": "8 допустимых комбинаций",
+          "actualDisplayValue": "View=Small",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Small"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "281:91947",
+              "nodeName": "[D] Content",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.component-properties-are-first-class",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения variant/property в компонентах семейства TitleView являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-api-invalid-variant-combination",
+            "ruleId": "component-api:title-view.desktop",
+            "contractId": "title-view.desktop",
+            "constraintId": "component-api-invalid-variant-combination",
+            "evidence": {
+              "actualProperties": {
+                "View": "Small"
+              },
+              "allowedCombinations": [
+                {
+                  "View": "xLarge",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "Large",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "Medium",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "Small",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "xLarge",
+                  "Skeleton": "True"
+                },
+                {
+                  "View": "Large",
+                  "Skeleton": "True"
+                },
+                {
+                  "View": "Medium",
+                  "Skeleton": "True"
+                },
+                {
+                  "View": "Small",
+                  "Skeleton": "True"
+                }
+              ]
+            },
+            "message": "Комбинация параметров отсутствует в Component API [D] TitleView",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I281:91949;726:123784",
+        "name": "[D] TitleView",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / benefits-icons / Benefits / Content / [D] TitleView",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:91949",
+          "I281:91949;726:123775",
+          "I281:91949;726:123782"
+        ]
+      },
+      "component": {
+        "name": "[D] TitleView",
+        "key": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "View=Small, Skeleton=False",
+        "key": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I281:91949;726:123784;37705:55418",
+            "name": "Subtitle",
+            "type": null,
+            "pageName": "Фактура",
+            "path": "View=Small, Skeleton=False / MainContent / Subtitle / Subtitle",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Paragraph/14–20 Primary Small → Paragraph/16–24 Primary Medium",
+          "referenceValue": "Paragraph/14–20 Primary Small",
+          "actualValue": "Paragraph/16–24 Primary Medium",
+          "referenceRawValue": "Paragraph/14–20 Primary Small",
+          "actualRawValue": "Paragraph/16–24 Primary Medium",
+          "referenceDisplayValue": "Paragraph/14–20 Primary Small",
+          "actualDisplayValue": "Paragraph/16–24 Primary Medium",
+          "referenceResource": {
+            "name": "Paragraph/14–20 Primary Small",
+            "key": "6fb5ab6969beee7da9e23dfcbab2f4864b30b665",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": {
+            "name": "Paragraph/16–24 Primary Medium",
+            "key": "f0f0d59f9f92db92901605dd929cfa3b93540058",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "actualNestedOwnerPath": "View=Small, Skeleton=False",
+            "actualNestedOwnerRelativePath": "MainContent / Subtitle / Subtitle",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Small"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "281:91947",
+              "nodeName": "[D] Content",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "design-system-author",
+                "revision": 1
+              },
+              "severityScope": null,
+              "appliesTo": "styles.text",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Типографика Title и Subtitle фиксируется выбранным View компонента TitleView. Менять текстовый стиль заголовка или подзаголовка вручную запрещено.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": "Стиль текст",
+            "priority": 30,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+            "message": "Типографика Title и Subtitle фиксируется выбранным View компонента TitleView. Менять текстовый стиль заголовка или подзаголовка вручную запрещено.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I281:91949;726:123784",
+            "name": "[D] TitleView",
+            "type": null,
+            "pageName": "Фактура",
+            "path": "View=Small, Skeleton=False",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.combination",
+          "message": "variant.combination: 8 допустимых комбинаций → View=Small",
+          "referenceValue": "8 допустимых комбинаций",
+          "actualValue": "View=Small",
+          "referenceRawValue": "8 допустимых комбинаций",
+          "actualRawValue": "View=Small",
+          "referenceDisplayValue": "8 допустимых комбинаций",
+          "actualDisplayValue": "View=Small",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Small"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "281:91947",
+              "nodeName": "[D] Content",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.component-properties-are-first-class",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения variant/property в компонентах семейства TitleView являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-api-invalid-variant-combination",
+            "ruleId": "component-api:title-view.desktop",
+            "contractId": "title-view.desktop",
+            "constraintId": "component-api-invalid-variant-combination",
+            "evidence": {
+              "actualProperties": {
+                "View": "Small"
+              },
+              "allowedCombinations": [
+                {
+                  "View": "xLarge",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "Large",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "Medium",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "Small",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "xLarge",
+                  "Skeleton": "True"
+                },
+                {
+                  "View": "Large",
+                  "Skeleton": "True"
+                },
+                {
+                  "View": "Medium",
+                  "Skeleton": "True"
+                },
+                {
+                  "View": "Small",
+                  "Skeleton": "True"
+                }
+              ]
+            },
+            "message": "Комбинация параметров отсутствует в Component API [D] TitleView",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I281:91949;726:123787",
+        "name": "[D] TitleView",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / benefits-icons / Benefits / Content / [D] TitleView",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:91949",
+          "I281:91949;726:123775",
+          "I281:91949;726:123785"
+        ]
+      },
+      "component": {
+        "name": "[D] TitleView",
+        "key": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "View=Small, Skeleton=False",
+        "key": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I281:91949;726:123787;37705:55418",
+            "name": "Subtitle",
+            "type": null,
+            "pageName": "Фактура",
+            "path": "View=Small, Skeleton=False / MainContent / Subtitle / Subtitle",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Paragraph/14–20 Primary Small → Paragraph/16–24 Primary Medium",
+          "referenceValue": "Paragraph/14–20 Primary Small",
+          "actualValue": "Paragraph/16–24 Primary Medium",
+          "referenceRawValue": "Paragraph/14–20 Primary Small",
+          "actualRawValue": "Paragraph/16–24 Primary Medium",
+          "referenceDisplayValue": "Paragraph/14–20 Primary Small",
+          "actualDisplayValue": "Paragraph/16–24 Primary Medium",
+          "referenceResource": {
+            "name": "Paragraph/14–20 Primary Small",
+            "key": "6fb5ab6969beee7da9e23dfcbab2f4864b30b665",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": {
+            "name": "Paragraph/16–24 Primary Medium",
+            "key": "f0f0d59f9f92db92901605dd929cfa3b93540058",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "actualNestedOwnerPath": "View=Small, Skeleton=False",
+            "actualNestedOwnerRelativePath": "MainContent / Subtitle / Subtitle",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Small"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "281:91947",
+              "nodeName": "[D] Content",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "design-system-author",
+                "revision": 1
+              },
+              "severityScope": null,
+              "appliesTo": "styles.text",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Типографика Title и Subtitle фиксируется выбранным View компонента TitleView. Менять текстовый стиль заголовка или подзаголовка вручную запрещено.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": "Стиль текст",
+            "priority": 30,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+            "message": "Типографика Title и Subtitle фиксируется выбранным View компонента TitleView. Менять текстовый стиль заголовка или подзаголовка вручную запрещено.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I281:91949;726:123787",
+            "name": "[D] TitleView",
+            "type": null,
+            "pageName": "Фактура",
+            "path": "View=Small, Skeleton=False",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.combination",
+          "message": "variant.combination: 8 допустимых комбинаций → View=Small",
+          "referenceValue": "8 допустимых комбинаций",
+          "actualValue": "View=Small",
+          "referenceRawValue": "8 допустимых комбинаций",
+          "actualRawValue": "View=Small",
+          "referenceDisplayValue": "8 допустимых комбинаций",
+          "actualDisplayValue": "View=Small",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Small"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "281:91947",
+              "nodeName": "[D] Content",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.component-properties-are-first-class",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения variant/property в компонентах семейства TitleView являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-api-invalid-variant-combination",
+            "ruleId": "component-api:title-view.desktop",
+            "contractId": "title-view.desktop",
+            "constraintId": "component-api-invalid-variant-combination",
+            "evidence": {
+              "actualProperties": {
+                "View": "Small"
+              },
+              "allowedCombinations": [
+                {
+                  "View": "xLarge",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "Large",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "Medium",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "Small",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "xLarge",
+                  "Skeleton": "True"
+                },
+                {
+                  "View": "Large",
+                  "Skeleton": "True"
+                },
+                {
+                  "View": "Medium",
+                  "Skeleton": "True"
+                },
+                {
+                  "View": "Small",
+                  "Skeleton": "True"
+                }
+              ]
+            },
+            "message": "Комбинация параметров отсутствует в Component API [D] TitleView",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "281:92017",
+        "name": "IconWrapper",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330379 / Frame 2131329327 / Frame 2131326990 / Frame 3482 / Frame 2131326991 / 1 / Frame 2131326991 / IconWrapper",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:91969",
+          "281:91971",
+          "281:92009",
+          "281:92011",
+          "281:92012",
+          "281:92013",
+          "281:92015"
+        ]
+      },
+      "component": {
+        "name": "IconWrapper",
+        "key": "681b79c8ee0148838642501c5a7c8ae9d9da2478",
+        "library": "Icons",
+        "sourceFile": "icons/Icons -- helper.json"
+      },
+      "variant": {
+        "name": "Size=s | 16 px",
+        "key": "681b79c8ee0148838642501c5a7c8ae9d9da2478"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I281:92017;92650:27810",
+            "name": "PaintMe",
+            "type": null,
+            "pageName": "Фактура",
+            "path": "Size=s | 16 px / Wrapper / PaintMe",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #CF70FF → neutral-translucent/700",
+          "referenceValue": "#CF70FF",
+          "actualValue": "neutral-translucent/700",
+          "referenceRawValue": "#CF70FF",
+          "actualRawValue": "neutral-translucent/700",
+          "referenceDisplayValue": "#CF70FF",
+          "actualDisplayValue": "neutral-translucent/700",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/700",
+            "key": "faac436b14cc199cfe97243b05af867af9ecb365",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:faac436b14cc199cfe97243b05af867af9ecb365/3541:130",
+            "key": "faac436b14cc199cfe97243b05af867af9ecb365",
+            "name": "neutral-translucent/700",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "681b79c8ee0148838642501c5a7c8ae9d9da2478",
+            "actualNestedOwnerPath": "Size=s | 16 px",
+            "actualNestedOwnerRelativePath": "Wrapper / PaintMe",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "s | 16 px"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "281:91947",
+              "nodeName": "[D] Content",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I281:92045;935:140172",
+        "name": "TitleView",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Form / form / Frame 2131330392 / Form / TitleView",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:92045",
+          "I281:92045;935:140169",
+          "I281:92045;935:140170",
+          "I281:92045;935:140171"
+        ]
+      },
+      "component": {
+        "name": "[D] TitleView",
+        "key": "02b8a91e65c73fbef66fdf9a9a66725bdeac6411",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "View=Large, Skeleton=False",
+        "key": "02b8a91e65c73fbef66fdf9a9a66725bdeac6411"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I281:92045;935:140172",
+            "name": "TitleView",
+            "type": null,
+            "pageName": "Фактура",
+            "path": "View=Large, Skeleton=False",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.combination",
+          "message": "variant.combination: 8 допустимых комбинаций → View=Large",
+          "referenceValue": "8 допустимых комбинаций",
+          "actualValue": "View=Large",
+          "referenceRawValue": "8 допустимых комбинаций",
+          "actualRawValue": "View=Large",
+          "referenceDisplayValue": "8 допустимых комбинаций",
+          "actualDisplayValue": "View=Large",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "02b8a91e65c73fbef66fdf9a9a66725bdeac6411",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Large"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "I281:92045;935:140170",
+              "nodeName": "Frame 2131330392",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.component-properties-are-first-class",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения variant/property в компонентах семейства TitleView являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-api-invalid-variant-combination",
+            "ruleId": "component-api:title-view.desktop",
+            "contractId": "title-view.desktop",
+            "constraintId": "component-api-invalid-variant-combination",
+            "evidence": {
+              "actualProperties": {
+                "View": "Large"
+              },
+              "allowedCombinations": [
+                {
+                  "View": "xLarge",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "Large",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "Medium",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "Small",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "xLarge",
+                  "Skeleton": "True"
+                },
+                {
+                  "View": "Large",
+                  "Skeleton": "True"
+                },
+                {
+                  "View": "Medium",
+                  "Skeleton": "True"
+                },
+                {
+                  "View": "Small",
+                  "Skeleton": "True"
+                }
+              ]
+            },
+            "message": "Комбинация параметров отсутствует в Component API [D] TitleView",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I281:92045;935:140176;95339:71459",
+        "name": "[D] BackgroundPlate",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Form / form / Frame 2131330392 / Form / 📱 Feedback | WEB | Company selected / [D] BackgroundPlate",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:92045",
+          "I281:92045;935:140169",
+          "I281:92045;935:140170",
+          "I281:92045;935:140171",
+          "I281:92045;935:140176"
+        ]
+      },
+      "component": {
+        "name": "[D] BackgroundPlate",
+        "key": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Position=Level 1 (outer)",
+        "key": "34e9064066253fb2f2d7bc056bb36a2580fd860e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I281:92045;935:140176;95339:71459;66402:30698",
+            "name": "[D] Style Level 1",
+            "type": null,
+            "pageName": "Фактура",
+            "path": "Position=Level 1 (outer) / [D] Style Level 1",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "Переменная заливки: base-bg/secondary → #FFFFFF",
+          "referenceValue": "base-bg/secondary",
+          "actualValue": "#FFFFFF",
+          "referenceRawValue": "base-bg/secondary",
+          "actualRawValue": "#FFFFFF",
+          "referenceDisplayValue": "base-bg/secondary",
+          "actualDisplayValue": "#FFFFFF",
+          "referenceResource": {
+            "name": "base-bg/secondary",
+            "key": "be3bf2c65d1f3fd8c66b5d74e95d79a608ee8f72",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": null,
+          "referenceBinding": {
+            "id": "VariableID:be3bf2c65d1f3fd8c66b5d74e95d79a608ee8f72/3541:152",
+            "key": "be3bf2c65d1f3fd8c66b5d74e95d79a608ee8f72",
+            "name": "base-bg/secondary",
+            "collectionId": null,
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": null,
+          "bindingStatus": "unbound",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "1bb1a4ce3b8b2f4ed6c34a96043d86e4156155b3",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+            "actualNestedOwnerPath": "Position=Level 1 (outer)",
+            "actualNestedOwnerRelativePath": "[D] Style Level 1",
+            "nestedOwnerComponentKey": "1bb1a4ce3b8b2f4ed6c34a96043d86e4156155b3",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Position=Level 1 (outer) / [D] Style Level 1",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "BackgroundColor": "base-bg (white)",
+              "Type": "Primary"
+            },
+            "referenceVariantProperties": {
+              "BackgroundColor": "base-bg-alt (gray)",
+              "Skeleton": "False",
+              "Type": "Primary"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "I281:92045;935:140176",
+              "nodeName": "📱 Feedback | WEB | Company selected",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.primary-secondary-paint-is-fixed",
+              "severity": "error",
+              "source": "pattern-link",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "design-system-author",
+                "revision": 2
+              },
+              "severityScope": "design",
+              "appliesTo": "fill|styles.fill|stroke|styles.stroke",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Внешний вид Type=Primary и Type=Secondary полностью определяется компонентом, уровнем поверхности и BackgroundColor. Ручные изменения fill или stroke запрещены, даже если новое значение привязано к токену. Производные paint-изменения при переключении Type или BackgroundColor не считаются отдельной кастомизацией.",
+              "remediation": "Сбросьте ручные изменения fill и stroke к effective baseline текущего Type, уровня и BackgroundColor.",
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "composition-contract-violation",
+            "ruleId": "background-plate.composition.surface-paint",
+            "contractId": "background-plate.composition",
+            "constraintId": "surface-paint",
+            "evidence": {
+              "variantProperty": "Type",
+              "variantValue": "Primary",
+              "controlledProperty": "fill",
+              "allowedProperties": []
+            },
+            "message": "Выбранный Type BackgroundPlate не разрешает это изменение поверхности",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I281:92045;935:140176;95339:71459;66402:30698",
+            "name": "[D] Style Level 1",
+            "type": null,
+            "pageName": "Фактура",
+            "path": "Position=Level 1 (outer) / [D] Style Level 1",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.combination",
+          "message": "variant.combination: 18 допустимых комбинаций → BackgroundColor=base-bg (white), Type=Primary",
+          "referenceValue": "18 допустимых комбинаций",
+          "actualValue": "BackgroundColor=base-bg (white), Type=Primary",
+          "referenceRawValue": "18 допустимых комбинаций",
+          "actualRawValue": "BackgroundColor=base-bg (white), Type=Primary",
+          "referenceDisplayValue": "18 допустимых комбинаций",
+          "actualDisplayValue": "BackgroundColor=base-bg (white), Type=Primary",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "1bb1a4ce3b8b2f4ed6c34a96043d86e4156155b3",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "BackgroundColor": "base-bg (white)",
+              "Type": "Primary"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "I281:92045;935:140176",
+              "nodeName": "📱 Feedback | WEB | Company selected",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.component-properties-are-first-class",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения variant/property в компонентах семейства BackgroundPlate являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-api-invalid-variant-combination",
+            "ruleId": "component-api:style-level-1.desktop",
+            "contractId": "style-level-1.desktop",
+            "constraintId": "component-api-invalid-variant-combination",
+            "evidence": {
+              "actualProperties": {
+                "BackgroundColor": "base-bg (white)",
+                "Type": "Primary"
+              },
+              "allowedCombinations": [
+                {
+                  "BackgroundColor": "base-bg-alt (gray)",
+                  "Type": "Primary",
+                  "Skeleton": "False"
+                },
+                {
+                  "BackgroundColor": "base-bg (white)",
+                  "Type": "Primary",
+                  "Skeleton": "False"
+                },
+                {
+                  "BackgroundColor": "base-bg-alt (gray)",
+                  "Type": "Secondary",
+                  "Skeleton": "False"
+                },
+                {
+                  "BackgroundColor": "base-bg (white)",
+                  "Type": "Secondary",
+                  "Skeleton": "False"
+                },
+                {
+                  "BackgroundColor": "base-bg-alt (gray)",
+                  "Type": "Colored",
+                  "Skeleton": "False"
+                },
+                {
+                  "BackgroundColor": "base-bg (white)",
+                  "Type": "Colored",
+                  "Skeleton": "False"
+                },
+                {
+                  "BackgroundColor": "base-bg-alt (gray)",
+                  "Type": "Border",
+                  "Skeleton": "False"
+                },
+                {
+                  "BackgroundColor": "base-bg (white)",
+                  "Type": "Border",
+                  "Skeleton": "False"
+                },
+                {
+                  "BackgroundColor": "modal-bg-alt (gray)",
+                  "Type": "Primary",
+                  "Skeleton": "False"
+                },
+                {
+                  "BackgroundColor": "modal-bg (white)",
+                  "Type": "Primary",
+                  "Skeleton": "False"
+                },
+                {
+                  "BackgroundColor": "modal-bg-alt (gray)",
+                  "Type": "Secondary",
+                  "Skeleton": "False"
+                },
+                {
+                  "BackgroundColor": "modal-bg (white)",
+                  "Type": "Secondary",
+                  "Skeleton": "False"
+                },
+                {
+                  "BackgroundColor": "modal-bg-alt (gray)",
+                  "Type": "Colored",
+                  "Skeleton": "False"
+                },
+                {
+                  "BackgroundColor": "modal-bg (white)",
+                  "Type": "Colored",
+                  "Skeleton": "False"
+                },
+                {
+                  "BackgroundColor": "modal-bg-alt (gray)",
+                  "Type": "Border",
+                  "Skeleton": "False"
+                },
+                {
+                  "BackgroundColor": "modal-bg (white)",
+                  "Type": "Border",
+                  "Skeleton": "False"
+                },
+                {
+                  "BackgroundColor": "base-bg-alt (gray)",
+                  "Type": "Primary",
+                  "Skeleton": "True"
+                },
+                {
+                  "BackgroundColor": "base-bg (white)",
+                  "Type": "Primary",
+                  "Skeleton": "True"
+                }
+              ]
+            },
+            "message": "Комбинация параметров отсутствует в Component API [D] Style Level 1",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "detachedComponents",
+      "severityHint": "high",
+      "title": "Detach компонента",
+      "node": {
+        "id": "281:91947",
+        "name": "[D] Content",
+        "type": "FRAME_OR_GROUP",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] CorporateContent",
+        "key": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateContent.json"
+      }
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "281:91985",
+        "name": "🔒 [D] PropertyPreset",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330379 / Frame 2131329327 / Frame 2131326989 / Content / 4 row / Cards / Card Tariff 2 / Content / Frame 2131326991 / 🔒 [D] PropertyPreset",
+        "visible": true,
+        "ancestorNodeIds": [
+          "281:91945",
+          "281:91947",
+          "281:91969",
+          "281:91971",
+          "281:91972",
+          "281:91973",
+          "281:91978",
+          "281:91980",
+          "281:91981",
+          "281:91982",
+          "281:91983"
+        ]
+      },
+      "component": {
+        "name": "🔒 [D] PropertyPreset",
+        "key": "c1d7e1e4f1b78367eddace153f4dbaa264c4845a",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Color=Green, Style=Contrast, Size=20",
+        "key": "c1d7e1e4f1b78367eddace153f4dbaa264c4845a"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "c1d7e1e4f1b78367eddace153f4dbaa264c4845a",
+        "currentComponentId": "45:14649",
+        "latestComponentId": "1904:408"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "281:91945",
+        "name": "Страница: Фактура",
+        "type": "PAGE",
+        "pageName": "Фактура",
+        "path": "Фактура",
+        "visible": true
+      },
+      "kind": "missingThemeMode",
+      "recommendation": "Смени темизацию на Corp",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I281:91948;726:121941",
+        "name": "[D][Corporate] Button",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / TitleBlock_new / [D] Body / PromoPageBanner / Frame 2131330361 / Button group / [D][Corporate] Button",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Button",
+      "component": {
+        "name": "[D][Corporate] Button",
+        "key": "f9979d6cc8598aec25f721e0a45b7eef2eeb0088",
+        "library": "Web _ Core",
+        "sourceFile": null
+      }
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "281:91964",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330376 / Frame 2131330371 / Frame 2131328255 / 🔄 [D][Corporate] Tag",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Tag",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "281:91965",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330376 / Frame 2131330371 / Frame 2131328255 / 🔄 [D][Corporate] Tag",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Tag",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "281:91966",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330376 / Frame 2131330371 / Frame 2131328255 / 🔄 [D][Corporate] Tag",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Tag",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "281:91967",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330376 / Frame 2131330371 / Frame 2131328255 / 🔄 [D][Corporate] Tag",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Tag",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I281:91976;1:3258",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330379 / Frame 2131329327 / Frame 2131326989 / Content / Frame 2131326989 / [D] 🔄 TabsSecondary / Items / 🔄 [D][Corporate] Tag",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Tag",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I281:91976;1:3259",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330379 / Frame 2131329327 / Frame 2131326989 / Content / Frame 2131326989 / [D] 🔄 TabsSecondary / Items / 🔄 [D][Corporate] Tag",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Tag",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I281:91976;1:3260",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330379 / Frame 2131329327 / Frame 2131326989 / Content / Frame 2131326989 / [D] 🔄 TabsSecondary / Items / 🔄 [D][Corporate] Tag",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Tag",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I281:91976;1:3261",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330379 / Frame 2131329327 / Frame 2131326989 / Content / Frame 2131326989 / [D] 🔄 TabsSecondary / Items / 🔄 [D][Corporate] Tag",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Tag",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I281:91976;1:3262",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330379 / Frame 2131329327 / Frame 2131326989 / Content / Frame 2131326989 / [D] 🔄 TabsSecondary / Items / 🔄 [D][Corporate] Tag",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Tag",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "281:91977",
+        "name": "🔄 [D][Corporate] SliderInput",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330379 / Frame 2131329327 / Frame 2131326989 / Content / 🔄 [D][Corporate] SliderInput",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] SliderInput",
+      "component": {
+        "name": "🔄 [D][Corporate] SliderInput",
+        "key": "29dd11dd8b2ab961ec693dcf925be095df31448a",
+        "library": "Web _ Core",
+        "sourceFile": null
+      }
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "281:92043",
+        "name": "🔄 [D][Corporate] Button",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330379 / Frame 2131329327 / Frame 2131326990 / 🔄 [D][Corporate] Button",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Button",
+      "component": {
+        "name": "🔄 [D][Corporate] Button",
+        "key": "f9979d6cc8598aec25f721e0a45b7eef2eeb0088",
+        "library": "Web _ Core",
+        "sourceFile": null
+      }
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I281:92045;935:140174;51844:157721",
+        "name": "[D][Corporate] Input",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Form / form / Frame 2131330392 / Form / .formContainer :: 1440 / [D][Corporate] Input",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Input",
+      "component": {
+        "name": "[D][Corporate] Input",
+        "key": "ef458e5f86b2e18e6f2ff21e21018f6c4ae85b0d",
+        "library": "Web _ Core",
+        "sourceFile": null
+      }
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I281:92045;935:140174;51844:157722",
+        "name": "[D][Corporate] Input",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Form / form / Frame 2131330392 / Form / .formContainer :: 1440 / [D][Corporate] Input",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Input",
+      "component": {
+        "name": "[D][Corporate] Input",
+        "key": "ef458e5f86b2e18e6f2ff21e21018f6c4ae85b0d",
+        "library": "Web _ Core",
+        "sourceFile": null
+      }
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I281:92045;935:140180",
+        "name": "Button",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Form / form / Frame 2131330392 / Form / Button",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Button",
+      "component": {
+        "name": "Button",
+        "key": "f9979d6cc8598aec25f721e0a45b7eef2eeb0088",
+        "library": "Web _ Core",
+        "sourceFile": null
+      }
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "281:92072",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330370 / Frame 2131328255 / 🔄 [D][Corporate] Tag",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Tag",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "281:92073",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330370 / Frame 2131328255 / 🔄 [D][Corporate] Tag",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Tag",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "281:92074",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330370 / Frame 2131328255 / 🔄 [D][Corporate] Tag",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Tag",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "281:92075",
+        "name": "🔄 [D][Corporate] Tag",
+        "type": "INSTANCE",
+        "pageName": "Фактура",
+        "path": "TO BE / Body / [D] Content / Frame 2131330370 / Frame 2131328255 / 🔄 [D][Corporate] Tag",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Tag",
+      "component": null
+    }
+  ],
+  "componentContexts": [
+    {
+      "componentKey": "web-core-navigation.tabs",
+      "summary": "Web Core Navigation Tabs содержит standalone-компоненты primary и secondary tabs. Он задаёт baseline values для TabsPrimary и TabPrimary, но composite components вроде TabsView могут владеть другими effective baselines через собственные composition contracts.",
+      "criticalBaselines": [
+        "Standalone TabsPrimary / Items / TabPrimary has layout.itemSpacing = 12.",
+        "Standalone TabPrimary label has text style Paragraph/18–24 Primary Large.",
+        "If [D] TabsView reports TabPrimary 12 → 16 or Paragraph/18–24 → Action/18–24, first check TabsView composition-contract: those can be host-owned effective baselines, not designer customizations."
+      ],
+      "agentInstructions": [
+        "Do not call TabsView-owned nested overrides violations when actual equals the TabsView effective baseline.",
+        "Use this core Tabs contract to identify standalone baselines and component keys.",
+        "Use the host component composition-contract to decide whether a nested difference is owned by the host wrapper or by the designer."
+      ],
+      "includedComponents": [
+        "[M] 🔄 TabsSecondary",
+        "[D] 🔄 TabsSecondary",
+        "🔩 ExampleOptionListContent",
+        "🔩 ExampleAddon",
+        "🔩 TabPrimary",
+        "🔩 Addon",
+        "🔩 Slider",
+        "🔩 Slider",
+        "🔩 Slider",
+        "🔩 Slider",
+        "🔩 Slider",
+        "[M] TabsSecondary",
+        "[D] TabsSecondary",
+        "TabsPrimary"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "470ba328cc0e1b5fcf59edcedb733255750120bf",
+          "name": "[D] 🔄 TabsSecondary",
+          "purpose": "Замени на круглые",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.ActiveState",
+            "variant.DisabledState",
+            "variant.Size",
+            "variant.View"
+          ],
+          "layerProperties": [
+            "layout.itemSpacing",
+            "layout.padding.*",
+            "styles.text",
+            "styles.fill",
+            "styles.stroke",
+            "fill",
+            "stroke",
+            "radius",
+            "opacity"
+          ],
+          "dependencyPolicy": "Standalone Tabs contract описывает core baseline. Composite wrappers вроде TabsView могут переопределять nested TabsPrimary или TabPrimary baselines через собственный composition-contract."
+        },
+        "publicApi": {
+          "components": [
+            {
+              "name": "[M] 🔄 TabsSecondary",
+              "key": "6e662f3c27660bda0a5b17995b67a6319e6286b7",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "scheduled",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] 🔄 TabsSecondary",
+              "key": "470ba328cc0e1b5fcf59edcedb733255750120bf",
+              "role": "main",
+              "platform": "desktop",
+              "status": "scheduled",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "🔩 ExampleOptionListContent",
+              "key": "5e988eea2a439f7aeb2a55a05b7d4ca58e4d5624",
+              "role": "part",
+              "platform": "universal",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "🔩 ExampleAddon",
+              "key": "25567b89ee5a4ac534d1bf71163cc0d1ac12519d",
+              "role": "part",
+              "platform": "universal",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "🔩 TabPrimary",
+              "key": "8d45c768b56f9781ec44a60b93a5467a3310236c",
+              "role": "part",
+              "platform": "universal",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "🔩 Addon",
+              "key": "f875b10e3bb447d250a4208675e5dbaefa24b754",
+              "role": "part",
+              "platform": "universal",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "🔩 Slider",
+              "key": "d6d7eed01d99cc3511dfe15cf4df35d771683894",
+              "role": "part",
+              "platform": "universal",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "🔩 Slider",
+              "key": "18e95cc695ac9ddff019545dbd9932751b07c3b4",
+              "role": "part",
+              "platform": "universal",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "🔩 Slider",
+              "key": "6a29142107d9a4d2ac60e88c9a2aaa16de51f4ac",
+              "role": "part",
+              "platform": "universal",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "🔩 Slider",
+              "key": "7e96411b167cdb8223d73640aeb4ea5f1d3f602b",
+              "role": "part",
+              "platform": "universal",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "🔩 Slider",
+              "key": "71f50751224f2becd3515bc3c8da24cb13725dee",
+              "role": "part",
+              "platform": "universal",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TabsSecondary",
+              "key": "4d05d1c47c37f00fcd2705dd44a74a9750f9f922",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TabsSecondary",
+              "key": "742f286666794402fc4e91cb801f5c202f30e00c",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "TabsPrimary",
+              "key": "0b6cbeb2069d15adf5be7b9a4ba17acc6a397017",
+              "role": "main",
+              "platform": "universal",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            }
+          ],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web-core.button",
+      "summary": "Button — семейство action controls. Apollo должен трактовать изменения Button variant как component property changes, а ручные изменения style/token/layout как layer customizations.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] Button",
+        "[D] Button_Inverted",
+        "[M] Button",
+        "[M] Button_Inverted",
+        "🔄 [D][Corporate] Button",
+        "🔄 [D][Corporate] Button_Inverted",
+        "🔄 [M][Corporate] Button",
+        "🔄 [M][Corporate] Button_Inverted",
+        "🔩 Addon",
+        "🔩 Addon"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "0ec969ab700db8f0257403ebb2ad3c893646814a",
+          "name": "🔄 [D][Corporate] Button",
+          "purpose": "🔄 Замени на актуальный",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*",
+          "variant.View",
+          "variant.Size",
+          "variant.Shape",
+          "variant.SingleIcon",
+          "variant.DisabledState"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent",
+          "layout.padding",
+          "layout.itemSpacing"
+        ],
+        "baselinePolicy": "Если component property изменилась, сравнивай ручные layer overrides с baseline текущего actual-состояния компонента, а не с исходным reference baseline.",
+        "slotProperties": [
+          "LeftAddon.variant.Type",
+          "RightAddon.variant.Type"
+        ],
+        "ordering": [
+          "component-property",
+          "slot-property",
+          "layer-property"
+        ]
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.View",
+            "variant.Size",
+            "variant.Shape",
+            "variant.SingleIcon",
+            "variant.DisabledState"
+          ],
+          "layerProperties": [
+            "fills",
+            "strokes",
+            "strokeWeight",
+            "cornerRadius",
+            "opacity",
+            "layout.padding",
+            "layout.itemSpacing",
+            "styles.text",
+            "typography"
+          ],
+          "dependencyPolicy": "При reset component property layer differences, вызванные только этой property, могут исчезнуть автоматически. Ручные layer overrides должны оставаться независимо сбрасываемыми, пока reset родительской property не уберёт их target state."
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web-core.checkbox",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "Checkbox_20",
+        "Checkbox_20_Inverted",
+        "Checkbox_24",
+        "Checkbox_24_Inverted",
+        "CheckboxLabel_20",
+        "CheckboxLabel_20_Inverted",
+        "CheckboxLabel_20_Reverse",
+        "CheckboxLabel_20_Reverse_Inverted",
+        "CheckboxLabel_24",
+        "CheckboxLabel_24_Inverted",
+        "CheckboxLabel_24_Reverse",
+        "CheckboxLabel24_Reverse_Inverted"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.icon-view",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Content",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "IconView"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.input",
+      "summary": "Input — семейство text fields. Apollo должен трактовать изменения состояния Input как component property changes, а ручные изменения style/token/layout как layer customizations. Text content может требовать редакторской проверки по pattern.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] Input",
+        "[D] Input_Inverted",
+        "[M] Input",
+        "[M] Input_Inverted",
+        "🔄 [D][Corporate] Input",
+        "🔄 [D][Corporate] Input_Inverted",
+        "🔄 [M][AO] Input",
+        "🔄 [M][AO] Input_Inverted"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "aacaefcbd8c36b5985609691edecccf170067aa6",
+          "name": "🔄 [D][Corporate] Input",
+          "purpose": "🔄 Замени на актуальный",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*",
+          "variant.Size",
+          "variant.FilledState",
+          "variant.ActiveState",
+          "variant.DisabledState",
+          "variant.ErrorState",
+          "variant.OuterLabel"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent",
+          "strokeWeight",
+          "layout.padding",
+          "layout.itemSpacing"
+        ],
+        "baselinePolicy": "Если component property изменилась, сравнивай ручные layer overrides с baseline текущего actual-состояния компонента, а не с исходным reference baseline.",
+        "slotProperties": [
+          "LeftAddon1.variant.Type",
+          "LeftAddon2.variant.Type",
+          "RightAddon1.variant.Type",
+          "RightAddon2.variant.Type",
+          "Placeholder.variant.Accent"
+        ],
+        "contentProperties": [
+          "Label.characters",
+          "Placeholder.characters",
+          "HintMessage.characters"
+        ],
+        "ordering": [
+          "component-property",
+          "slot-property",
+          "layer-property",
+          "content-property"
+        ]
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.Size",
+            "variant.FilledState",
+            "variant.ActiveState",
+            "variant.DisabledState",
+            "variant.ErrorState",
+            "variant.OuterLabel"
+          ],
+          "layerProperties": [
+            "fills",
+            "strokes",
+            "strokeWeight",
+            "cornerRadius",
+            "opacity",
+            "layout.padding",
+            "layout.itemSpacing",
+            "styles.text",
+            "typography"
+          ],
+          "dependencyPolicy": "При reset состояния компонента layer differences, вызванные только этим состоянием, могут исчезнуть автоматически. Ручные layer overrides должны оставаться независимо сбрасываемыми, пока reset родительского состояния не уберёт их target state."
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web-core.slider-input",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] SliderInput",
+        "[D] SliderInput_Inverted",
+        "[M] SliderInput",
+        "[M] SliderInput_Inverted",
+        "🔄 [D][Corporate] SliderInput",
+        "🔄 [D][Corporate] SliderInput_Inverted",
+        "🔄 [M][AO] SliderInput",
+        "🔄 [M][AO] SliderInput_Inverted",
+        "🔩 Slider",
+        "🔩 Slider_Inverted"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "9118e65c665f4240c75df6884870d69785d113c7",
+          "name": "🔄 [D][Corporate] SliderInput",
+          "purpose": "🔄 Замени на актуальный",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.tag",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] Tag_Filled",
+        "[D] Tag_Filled_Inverted",
+        "[D] Tag_Muted",
+        "[D] Tag_Transparent",
+        "[D] Tag_Transparent_Inverted",
+        "[M] Tag_Filled",
+        "[M] Tag_Filled_Inverted",
+        "[M] Tag_Muted",
+        "[M] Tag_Transparent",
+        "[M] Tag_Transparent_Inverted",
+        "🔄 [D][Corporate] Tag",
+        "🔄 [D][Corporate] Tag_Inverted",
+        "🔄 [M][Corporate] Tag",
+        "🔄 [M][Corporate] Tag_Inverted",
+        "🔄[D] Tag_Outlined",
+        "🔄[D] Tag_Outlined_Inverted",
+        "🔄[M] Tag_Outlined",
+        "🔄[M] Tag_Outlined_Inverted"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "093b16209b63162a22e199536fcf1e433ac96dbb",
+          "name": "🔄 [D][Corporate] Tag",
+          "purpose": "🔄 Замени на актуальный",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.background-plate",
+      "summary": "BackgroundPlate — семейство variable-driven surface-компонентов. Для нового контента используется BackgroundPlateSlot: Level-0 задаётся главной поверхности, первый компонент получает Level-1, а опциональный Level-2 располагается только непосредственно внутри Level-1. Type, BackgroundColor, Skeleton и layer-свойства трактуются по exact component rules. BackgroundPlateView — кодовый alias этого же семейства.",
+      "criticalBaselines": [
+        "Для новых макетов основным контейнером является BackgroundPlateSlot; BackgroundPlate считается legacy для генерации, но его существующее использование не является нарушением само по себе.",
+        "Mode BackgroundPlate Level=Level-0 назначается главной поверхности страницы или модальной сущности. Первый вложенный BackgroundPlateSlot получает Level-1; Level-2 всегда располагается непосредственно внутри Level-1.",
+        "Обычный контент может лежать непосредственно в Slot Level-1. Level-2 является опциональной вложенной поверхностью; Level-0 и Level-1 внутри Slot запрещены.",
+        "Рекомендуемый padding: Spacing/32 для Level-1 и Spacing/24 для Level-2. Другие значения допустимы под контекст или паттерн только с Spacing token binding.",
+        "Axis, gap и alignment Slot определяются контекстом; width должен быть Fill, height — Hug. Clip content может быть true или false по контексту.",
+        "Primary и Secondary получают fill/stroke только из effective baseline. Colored использует только токенизированную заливку без stroke. Border используется без fill, с токенизированным stroke; strokeWeight контекстный, strokeAlign всегда INSIDE.",
+        "Radius, opacity и blend mode фиксируются effective baseline. Drop shadow и Inner shadow запрещены; Layer blur и Background blur разрешены по контексту.",
+        "Skeleton=True является штатным состоянием загрузки компонента или контента. Сложная skeleton-композиция допустима только при явном сценарии паттерна.",
+        "BackgroundPlateView в code/private usage маппится на BackgroundPlate и должен использовать те же правила, контракты и pattern links.",
+        "Для desktop рабочей поверхности Level 1 использует radius 16, Level 2 использует radius 12. Promo и mobile variants могут иметь другие baseline из каталога.",
+        "BackgroundColor зависит от surface context: для страниц используются base-bg/base-bg-alt, для модальных сущностей используются modal-bg/modal-bg-alt. Суффикс в скобках (gray)/(white) описывает визуальный фон, а часть имени до скобок соответствует цветовому токену поверхности.",
+        "В каталоге вариант обводочной поверхности называется Type=Border. В тексте рекомендаций можно пояснять его как bordered/обводочный, но в машинных фактах и таблицах используй точное значение Border.",
+        "Radius/cornerRadius у BackgroundPlate, BackgroundPlateSlot и вложенных Style Level фиксируется component effective baseline. Ручное изменение скруглений запрещено и должно трактоваться как нарушение, а не как допустимая композиционная настройка.",
+        "Для Table Wide [D] в BackgroundPlateSlot действует специальное правило: Slot padding top=Spacing/0, right/bottom/left=Spacing/16. [D] TopBar расположен рядом с плейтом в общем Level-0 контейнере, а не внутри Slot."
+      ],
+      "agentInstructions": [
+        "Не выводи нарушение из примера. Используй только exact rules, exact component contracts и явно найденные pattern rules.",
+        "Если во входном отчёте встречается BackgroundPlateView, трактуй его как code/private alias компонента BackgroundPlate, а не как отдельный компонент без правил.",
+        "Изменения variant/property показывай как component-property customizations; изменения fill, stroke, stroke geometry, radius, opacity, effects, blend mode, layout и style показывай как layer-property customizations.",
+        "Если nested diff принадлежит wrapper и actual совпадает с effective baseline, не показывай его как дизайнерскую кастомизацию.",
+        "Если actual отличается от effective baseline, показывай effectiveBaseline -> actual. Не подставляй standalone baseline вложенного Style Level вместо baseline выбранного BackgroundPlate variant.",
+        "Padding у BackgroundPlateSlot может быть осознанной настройкой композиции. Комментируй его как layer customization и проверяй Spacing token binding; не требуй вернуть 32 или 24 только из-за отличия от рекомендации.",
+        "Не требуй Level-2 для обычного контента Slot Level-1. Если внутри Slot найден BackgroundPlate Level-0 или Level-1, используй rule:components.background-plate.slot-content-levels.",
+        "Axis, gap, alignment и Clip content Slot трактуй как контекстные настройки. Width не должен отличаться от Fill, height — от Hug.",
+        "При анализе BackgroundColor сначала определи контекст поверхности: page или modal. Не рекомендуй modal-bg* для обычной страницы и не рекомендуй base-bg* для модальной сущности, если exact rule или отчёт указывают на противоположный surface context.",
+        "Для Primary и Secondary любое ручное изменение fill/stroke является нарушением, даже при token binding. Сравнивай с effective baseline текущего Type, уровня и BackgroundColor.",
+        "Для Colored разрешена только видимая заливка через color token; raw fill, отсутствие fill и любой stroke являются нарушением.",
+        "Для Border fill запрещён, stroke должен быть привязан к color token. StrokeWeight можно менять под контекст; strokeAlign должен оставаться INSIDE. Border не может быть кликабельным.",
+        "Если в отчёте есть изменение radius/cornerRadius, opacity или blend mode, используй соответствующее exact component rule и рекомендуй сброс к effective baseline.",
+        "Drop shadow и Inner shadow трактуй как нарушения. Layer blur и Background blur являются допустимыми контекстными кастомизациями и не должны попадать под запрет теней.",
+        "Переключение Skeleton=False → True само по себе разрешено. Ручную простую skeleton-композицию вместо component property считай нарушением; сложное исключение допускай только по явному паттерну.",
+        "Для Table Wide не разрешай дублировать table inset внутри плейта: HeadRow, BodyRow и ячейки используют собственные effective baseline без дополнительных padding."
+      ],
+      "includedComponents": [
+        "[D] BackgroundPlate",
+        "[D] BackgroundPlateSlot",
+        "[D] Style Level 1",
+        "[D] Style Level 2",
+        "[D][Promo] BackgroundPlate",
+        "[D][Promo] Style Level 1",
+        "[D][Promo] Style Level 2",
+        "[M] BackgroundPlate",
+        "[M] BackgroundPlateSlot",
+        "[M] Style Level 1",
+        "[M] Style Level 2",
+        "[M][Promo] BackgroundPlate",
+        "[M][Promo] Style Level 1",
+        "[M][Promo] Style Level 2"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.*"
+          ],
+          "layerProperties": [
+            "layout.*",
+            "styles.*",
+            "fill",
+            "stroke",
+            "radius",
+            "opacity",
+            "text.*"
+          ],
+          "dependencyPolicy": "Component-property reset и layer-property reset разделены. Layer reset должен использовать effective baseline после nested variant/materialization resolution. Для BackgroundPlateView применяй тот же reset model, что и для BackgroundPlate."
+        },
+        "publicApi": {
+          "components": [
+            {
+              "name": "[D] BackgroundPlate",
+              "key": "2c7332d281570f4d5af6d334f8df378d24a1f235",
+              "role": "legacy-surface",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "legacy",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D] BackgroundPlateSlot",
+              "key": "5b6c5ac720154aff36be2f8a883bd058faa663cf",
+              "role": "content-container",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "preferred",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[D] Style Level 1",
+              "key": "adb65a62cde9ebedc5d0d41d2d77cd63e71e0745",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D] Style Level 2",
+              "key": "c8735f4834a8b43fd2ab821ffc0a6e72a57c4b5b",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D][Promo] BackgroundPlate",
+              "key": "c49f08db71ab44ea64f0880730220de1d93ac263",
+              "role": "promo-surface",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "promo-only",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[D][Promo] Style Level 1",
+              "key": "2b46e94cdecdab7d4cb977055c0405b2f6204127",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D][Promo] Style Level 2",
+              "key": "a5a4240097211b28195291a593c567e9d7c62bd3",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M] BackgroundPlate",
+              "key": "4cfe3915785e5c37255190ae16314f6f2a1d05b3",
+              "role": "legacy-surface",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "legacy",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M] BackgroundPlateSlot",
+              "key": "1745af83255e324781c2fbadfe0ad8cc7f13e0d8",
+              "role": "content-container",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "preferred",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[M] Style Level 1",
+              "key": "efc528bd86582d96a824edeb2c257dc8b22a8f14",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M] Style Level 2",
+              "key": "74f025a02889239c3f6eed60d74ba85f292bdcb0",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M][Promo] BackgroundPlate",
+              "key": "a58fa7ae11989280fc24069f204ba617fdb1f93c",
+              "role": "promo-surface",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "promo-only",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[M][Promo] Style Level 1",
+              "key": "19b4b6ed5718d82888a6551b56e0c776f4993ccc",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M][Promo] Style Level 2",
+              "key": "b33f77cc56c5feffb4f24a5912d74e3af927140e",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            }
+          ],
+          "aliases": null,
+          "codeExports": [
+            {
+              "name": "BackgroundPlate",
+              "kind": "react-component-export",
+              "mapsTo": "[D] BackgroundPlate / [M] BackgroundPlate",
+              "usage": "Основной code/private export, который соответствует Figma-компонентам семейства BackgroundPlate."
+            },
+            {
+              "name": "BackgroundPlateView",
+              "kind": "react-view-export",
+              "mapsTo": "BackgroundPlate",
+              "usage": "Кодовая обёртка/представление BackgroundPlate. В Apollo и агентском анализе не является отдельным Figma-компонентом и должна использовать тот же componentKey web-corp.background-plate."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "componentKey": "web-corp.corporate-content",
+      "summary": "CorporateContent — обязательная контентная область продуктовой страницы. Используй [D] CorporateContent для desktop и [M] CorporateContent для mobile-web.",
+      "criticalBaselines": [],
+      "agentInstructions": [
+        "Не считай произвольный контент или несколько дочерних элементов внутри Body нарушением сами по себе.",
+        "Проверяй содержимое Body по собственным компонентным контрактам и паттернам.",
+        "Считай использование переходного [T] CorporateContent явным нарушением.",
+        "Не рекомендуй ручную правку fill, grid style или padding корня CorporateContent; рекомендуй правильный mode переменных.",
+        "Не требуй наличия родительского компонента CorporatePage в Figma: такого компонента нет, самостоятельное использование CorporateContent допустимо.",
+        "Не применяй Gutter как обязательный itemSpacing внутри Body; он допустим в любой горизонтальной композиции без обязательного Section.",
+        "На ширине 768 требуй [D] CorporateContent и mode 768 коллекции [D] Grid & Cols.",
+        "Не придумывай условия выбора между base-bg-alt и base-bg до появления отдельного паттерна; default — base-bg-alt (grey).",
+        "Не разрешай кликабельность корня или detach CorporateContent и Body.",
+        "Не разрешай вкладывать CorporateContent внутрь CorporateContent и не оставляй SwapMe после добавления реального содержимого.",
+        "Требуй Header или HeaderMenu непосредственно над CorporateContent в общем вертикальном контейнере с gap 0.",
+        "Не разрешай менять вертикальное направление, itemSpacing=0 или clipsContent=false корня CorporateContent."
+      ],
+      "includedComponents": [
+        "[D] Section",
+        "[D] CorporateContent",
+        "[M] CorporateContent",
+        "❌ [D] Body",
+        "❌ [M} Body",
+        "❌ [T] Body",
+        "❌ [T] CorporateContent"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+          "name": "[D] CorporateContent",
+          "purpose": "Основная desktop-контентная область корпоративной продуктовой страницы с системной сеткой, фоном и адаптивными отступами.",
+          "useWhen": [
+            "Собирается содержимое корпоративной страницы на ширине 768 px и выше."
+          ],
+          "doNotUseWhen": [
+            "Нужен вложенный контейнер внутри другого CorporateContent."
+          ],
+          "relationship": "Единственный корневой контентный контейнер CorporatePage на desktop; принимает произвольную композицию в Body.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.navigation-card-view",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] Benefits",
+        "[D] BottomAddonLargeVIew",
+        "[D] BottomAddonSmallView",
+        "[D] IconViewGroups",
+        "[D] NavigationCardView",
+        "[D][Promo] Benefits",
+        "[D][Promo] BottomAddonLargeVIew",
+        "[D][Promo] BottomAddonSmallView",
+        "[D][Promo] IconViewGroups",
+        "[D][Promo] NavigationCardView",
+        "[M] Benefits",
+        "[M] BottomAddon",
+        "[M] IconViewGroups",
+        "[M] NavigationCardView",
+        "[M][Promo] Benefits",
+        "[M][Promo] BottomAddon",
+        "[M][Promo] IconViewGroups",
+        "[M][Promo] NavigationCardView"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.status-property",
+      "summary": "StatusPreset показывает состояние объекта или процесса, PropertyPreset — характеристику или свойство объекта. Оба preset-компонента разрешено использовать самостоятельно на desktop и mobile-web.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔒 [D] PropertyPreset",
+        "🔒 [D] StatusPreset",
+        "🔒 [M] PropertyPreset",
+        "🔒 [M] StatusPreset"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "53f4d943dc6e9b85579928e876af6ebdb6383ae9",
+          "name": "🔒 [D] PropertyPreset",
+          "purpose": "Вспомогательный компонент Figma, в коде существует только Status в core-components.",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.title-view",
+      "summary": "TitleView — составная обёртка заголовка для сценария с основным заголовком, статусом и действиями. Компонент объединяет Title, Status, TitleAddon, RightAddon, выбор компании, Subtitle, TitleStatus и Button group в готовую DS-композицию.",
+      "criticalBaselines": [
+        "Nested [D]/[M] Button instances внутри Button group являются частью TitleView baseline; изменения variant дизайнером нужно показывать относительно TitleView effective baseline.",
+        "StatusPreset и Status внутри MainContent / Status являются ожидаемыми nested structures; само использование preset нормально, если preset не изменён за пределами его variant API.",
+        "View и Skeleton являются public TitleView component properties.",
+        "На странице допускается только один TitleView с View=xLarge.",
+        "Внешние отступы 40 px, 32 px и 12 px, определённые правилами TitleView, обязательны для соответствующих соседних блоков.",
+        "Если одновременно используются Status и TitleStatus, значения Type должны совпадать: Type определяет статусный цвет.",
+        "В View=xLarge primary-действия размещаются в Button group. В View=Large, Medium и Small primary-действия размещаются вне TitleView.",
+        "Запрет primary-действия в RightAddon применяется ко всем значениям View.",
+        "Частичная загрузка отдельных слотов допустима при Skeleton=False у родительского TitleView.",
+        "Для View=Large, Medium и Small доступны только Title, Subtitle, TitleAddon и RightAddon.",
+        "Holding обязателен для одиночного выбора компании, когда пользователь работает от группы компаний, а страница доступна только в моно-режиме.",
+        "Ручные изменения layout, sizing, типографики, цвета, прозрачности и других стилей корня и всего внутреннего дерева TitleView запрещены.",
+        "Для корня TitleView рекомендуется ширина Fill container и высота Hug contents; правило одинаково для desktop и mobile-web.",
+        "Порядок слотов Status -> Heading -> Holding -> Subtitle -> TitleStatus -> Button group обязателен.",
+        "В предусмотренных слотах разрешён instance swap на произвольные компоненты, если сохраняются порядок слотов и структура TitleView.",
+        "Корень TitleView не оформляется вручную и не может быть единой кликабельной поверхностью."
+      ],
+      "agentInstructions": [
+        "Не выводи pattern violations из примеров. Используй только exact rules и exact component contracts.",
+        "Используй component-property facts для variant changes и layer-property facts для styles/layout/paint changes.",
+        "Если nested diff принадлежит host wrapper и actual совпадает с effective baseline, не показывай его как designer customization.",
+        "Если actual отличается от effective baseline, показывай effectiveBaseline -> actual.",
+        "Для сценария заголовка со статусом и действиями рекомендуй настройку встроенных slots TitleView, а не внешнюю ручную композицию из отдельных локальных компонентов.",
+        "Не считай отсутствие опциональных Status, TitleStatus, TitleAddon, RightAddon, Subtitle или Button group нарушением без отдельного правила.",
+        "Если загружается только отдельный вложенный элемент, не требуй переключать весь TitleView в Skeleton=True.",
+        "Для View=Large, Medium и Small рекомендуй primary-действие вне TitleView, а не в RightAddon.",
+        "Не считай изменение label у Status нарушением, если Type корректен и нет отдельного текстового правила.",
+        "Не придумывай ограничения параметров FilterCompanySelect_Single: используй его собственный компонентный контракт, когда он будет доступен.",
+        "Для настроек View, addons, hint и singleIcon вложенных Button используй паттерн «Кнопки и группы кнопок»; не создавай отдельные ограничения TitleView.",
+        "Применяй правила p_title-view-editable.md как часть правил TitleView, когда обнаружен editable-сценарий.",
+        "Не требуй Enter, Escape или отдельные кнопки подтверждения и отмены без точного правила для конкретной платформы и сценария.",
+        "Не считай сам факт instance swap внутри предусмотренного слота нарушением; оценивай выбранный компонент по его собственному контракту.",
+        "Проверяй обязательный порядок слотов отдельно от содержимого каждого слота.",
+        "Не разрешай ручное оформление корня или внутренних слоёв TitleView и не предлагай делать весь TitleView кликабельным."
+      ],
+      "includedComponents": [
+        "[D] RightAddon",
+        "[D] RightAddonXL",
+        "[D] TitleAddon",
+        "[D] TitleAddonXL",
+        "[D] TitleStatus",
+        "[D] TitleView",
+        "[M] RightAddon",
+        "[M] RightAddonXL",
+        "[M] TitleAddon",
+        "[M] TitleAddonXL",
+        "[M] TitleStatus",
+        "[M] TitleView"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "fbc4ff889c9fe2db128bc76471f512271d4cc229",
+          "name": "[D] TitleView",
+          "purpose": "Готовая desktop-композиция заголовка страницы или секции с обязательным Title, статусами, дополнениями и контекстными действиями.",
+          "useWhen": [
+            "Нужно собрать заголовочную область продукта из системных слотов TitleView вместо ручной композиции."
+          ],
+          "doNotUseWhen": [
+            "Нужен простой текстовый заголовок без структуры, статусов и действий TitleView."
+          ],
+          "relationship": "Публичный desktop-корень семейства TitleView; вложенные TitleAddon, RightAddon, TitleStatus и Button group настраиваются через его slots.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.*"
+          ],
+          "layerProperties": [
+            "layout.*",
+            "styles.*",
+            "fill",
+            "stroke",
+            "radius",
+            "opacity",
+            "text.*"
+          ],
+          "dependencyPolicy": "Component-property reset и layer-property reset разделены. Layer reset должен использовать effective baseline после nested variant/materialization resolution."
+        },
+        "publicApi": {
+          "components": [
+            {
+              "name": "[D] RightAddon",
+              "key": "edd174301746415867bc998cd0c0322b68c6269c",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] RightAddonXL",
+              "key": "8edd3829b4b7091209299a5b5c838f0a159018aa",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleAddon",
+              "key": "f32313498fd345a1a41584c8d9edc61c3e2053bf",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleAddonXL",
+              "key": "b4cd3e21d108962a24b75aec2de71fba0672d63f",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleStatus",
+              "key": "6a8aa56ae7c8b57b9d9dfbbf23af14c348d83763",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleView",
+              "key": "fbc4ff889c9fe2db128bc76471f512271d4cc229",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] RightAddon",
+              "key": "b762143a2872257a497f9c3e0a012a9bed92f9ca",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] RightAddonXL",
+              "key": "c1092f678271e7de3291bb5699eeab4ad43c7710",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleAddon",
+              "key": "50d8b48cc1dcd4052efc7a151219578d1d993e2f",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleAddonXL",
+              "key": "a40e2549a5a23e645fb38c2af4c15df0f6813153",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleStatus",
+              "key": "e64c6d19cadc818b180b9176a51e3f65714b84b0",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleView",
+              "key": "227149bd55130d69d63e33cd3c8c52ae3f4e7e19",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            }
+          ],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    }
+  ]
+}
