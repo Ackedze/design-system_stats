@@ -1,0 +1,3607 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1256584474811604593-1789136373566-graswjzw:agent",
+  "sourceReportId": "apollo-1256584474811604593-1789136373566-graswjzw",
+  "generatedAt": "2026-09-11T14:19:33.566Z",
+  "suggestedFileName": "Phill-Shimanets-CORP-DS-Guardian_11-09-2026_18-19-33_agent.json",
+  "user": {
+    "id": "1256584474811604593",
+    "name": "Phill Shimanets • CORP DS • Guardian",
+    "slug": "Phill-Shimanets-CORP-DS-Guardian"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.3.0"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "🕊️ Благотворительность (Добрая подписка)",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "pageType": null,
+    "startedAt": "2026-09-11T14:19:03.317Z",
+    "finishedAt": "2026-09-11T14:19:33.566Z",
+    "durationMs": 30249,
+    "selection": [
+      {
+        "nodeId": "67591:96954",
+        "name": "[D] CorporatePage",
+        "nodeType": "FRAME",
+        "path": "Новая сборка / [D] CorporatePage",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": true,
+      "experimentalContractV2Enabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 204,
+    "problemOccurrenceCount": 33,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 6,
+      "updates": 14,
+      "customizations": 3,
+      "localComponents": 6,
+      "detachedComponents": 0,
+      "presets": 2,
+      "technicalComponents": 0,
+      "currentComponents": 168,
+      "wrongChannel": 0,
+      "themization": 2
+    },
+    "includedFindingCount": 33,
+    "omittedCurrentComponentCount": 168
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, authority.status=active, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with authority.status=active, severity=error, and matchKind=exact_component_rule for the same property/change. Missing, draft, or malformed authority never confirms a violation.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 6,
+      "includedCount": 6,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 14,
+      "includedCount": 14,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 3,
+      "includedCount": 3,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 6,
+      "includedCount": 6,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 2,
+      "includedCount": 2,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 2,
+      "includedCount": 2,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "67591:96954",
+        "name": "[D] CorporatePage",
+        "type": "FRAME",
+        "pageName": "Обновление благотворительность ",
+        "path": "Новая сборка / [D] CorporatePage",
+        "visible": true
+      },
+      "style": {
+        "name": "dc20fcedbd330ee715c0a3f6c7d3089862a48cfb",
+        "key": "dc20fcedbd330ee715c0a3f6c7d3089862a48cfb",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I67591:96958;137517:80990;57:15090",
+        "name": "Label",
+        "type": "TEXT",
+        "pageName": "Обновление благотворительность ",
+        "path": "Новая сборка / [D] CorporatePage / Page / Body / [D] Header / Left / Button / Text / Label",
+        "visible": true
+      },
+      "style": {
+        "name": "13/20 px · Medium · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I67591:96959;135096:147276;67656:29893",
+        "name": "stopper",
+        "type": "RECTANGLE",
+        "pageName": "Обновление благотворительность ",
+        "path": "Новая сборка / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D][Promo] NavigationCardView / ImageContainer / stopper",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "67591:96960",
+        "name": "🔒 [D] SpotlightBar",
+        "type": "INSTANCE",
+        "pageName": "Обновление благотворительность ",
+        "path": "Новая сборка / [D] CorporatePage / 🔒 [D] SpotlightBar",
+        "visible": true
+      },
+      "style": {
+        "name": "Spotlight/Bar Up Shadow",
+        "key": "30aa972ba2d52e52fc7579e4a0300f44b86487e3",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Inner shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I67591:96960;80:27656;80:27143;79:26990;79:26974",
+        "name": "Spot",
+        "type": "ELLIPSE",
+        "pageName": "Обновление благотворительность ",
+        "path": "Новая сборка / [D] CorporatePage / 🔒 [D] SpotlightBar / Left / NeuroLogo / Icon 28 / 🔩 Shadow / Spot",
+        "visible": true
+      },
+      "style": {
+        "name": "Слой (Layer blur)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Слой (Layer blur)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I67591:96960;80:27656;80:27143;79:26950",
+        "name": "🔩 Shape",
+        "type": "INSTANCE",
+        "pageName": "Обновление благотворительность ",
+        "path": "Новая сборка / [D] CorporatePage / 🔒 [D] SpotlightBar / Left / NeuroLogo / Icon 28 / 🔩 Shape",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Inner shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Inner shadow)"
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "67591:96956",
+        "name": "[D] SideMenu",
+        "type": "INSTANCE",
+        "pageName": "Обновление благотворительность ",
+        "path": "Новая сборка / [D] CorporatePage / Page / [D] SideMenu",
+        "visible": true,
+        "ancestorNodeIds": [
+          "67591:96954",
+          "67591:96955"
+        ]
+      },
+      "component": {
+        "name": "[D] SideMenu",
+        "key": "3fd50fe48ed8ce51ff236a54525ed6ec90b073c9",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateAppHeaderNew [D].json"
+      },
+      "variant": {
+        "name": "Edit Mode=False",
+        "key": "3fd50fe48ed8ce51ff236a54525ed6ec90b073c9"
+      },
+      "comparisonIssues": [
+        "Нет данных для padding top в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@2»",
+        "Нет данных для padding right в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@2»",
+        "Нет данных для padding bottom в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@2»",
+        "Нет данных для padding left в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@2»",
+        "Нет данных для padding top в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@3»",
+        "Нет данных для padding right в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@3»",
+        "Нет данных для padding bottom в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@3»",
+        "Нет данных для padding left в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@3»",
+        "Нет данных для padding top в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@4»",
+        "Нет данных для padding right в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@4»",
+        "Нет данных для padding bottom в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@4»",
+        "Нет данных для padding left в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@4»",
+        "Нет данных для padding top в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@5»",
+        "Нет данных для padding right в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@5»",
+        "Нет данных для padding bottom в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@5»",
+        "Нет данных для padding left в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@5»",
+        "Нет данных для padding top в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@6»",
+        "Нет данных для padding right в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@6»",
+        "Нет данных для padding bottom в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@6»",
+        "Нет данных для padding left в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@6»",
+        "Нет данных для padding top в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@7»",
+        "Нет данных для padding right в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@7»",
+        "Нет данных для padding bottom в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@7»",
+        "Нет данных для padding left в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@7»",
+        "Нет данных для padding top в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@8»",
+        "Нет данных для padding right в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@8»",
+        "Нет данных для padding bottom в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@8»",
+        "Нет данных для padding left в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@8»",
+        "Нет данных для padding top в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@9»",
+        "Нет данных для padding right в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@9»",
+        "Нет данных для padding bottom в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@9»",
+        "Нет данных для padding left в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@9»",
+        "Нет данных для padding top в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@10»",
+        "Нет данных для padding right в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@10»",
+        "Нет данных для padding bottom в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@10»",
+        "Нет данных для padding left в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@10»",
+        "Нет данных для padding top в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@11»",
+        "Нет данных для padding right в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@11»",
+        "Нет данных для padding bottom в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@11»",
+        "Нет данных для padding left в снапшоте для «Edit Mode=False / Cells / Products / ProductCell / Content / LeftAddon / IconView / Content / ShapeContent / 🔩 Content@@11»"
+      ],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "3fd50fe48ed8ce51ff236a54525ed6ec90b073c9",
+        "currentComponentId": "67443:28031",
+        "latestComponentId": "67421:53379"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I67591:96956;138079:84206;67591:96962",
+        "name": "ProductCell",
+        "type": "INSTANCE",
+        "pageName": "Обновление благотворительность ",
+        "path": "Новая сборка / [D] CorporatePage / Page / [D] SideMenu / Cells / Products / ProductCell",
+        "visible": true,
+        "ancestorNodeIds": [
+          "67591:96954",
+          "67591:96955",
+          "67591:96956",
+          "I67591:96956;138079:83019",
+          "I67591:96956;138079:84206"
+        ]
+      },
+      "component": {
+        "name": "ProductCell",
+        "key": "8a86dbd319616b934ff861c78c04fe7767525887",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateAppHeaderNew [D].json"
+      },
+      "variant": {
+        "name": "Hover=false, Active=false",
+        "key": "8a86dbd319616b934ff861c78c04fe7767525887"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "8a86dbd319616b934ff861c78c04fe7767525887",
+        "currentComponentId": "67373:72990",
+        "latestComponentId": "67421:53352"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I67591:96956;138079:84206;67591:96963",
+        "name": "ProductCell",
+        "type": "INSTANCE",
+        "pageName": "Обновление благотворительность ",
+        "path": "Новая сборка / [D] CorporatePage / Page / [D] SideMenu / Cells / Products / ProductCell",
+        "visible": true,
+        "ancestorNodeIds": [
+          "67591:96954",
+          "67591:96955",
+          "67591:96956",
+          "I67591:96956;138079:83019",
+          "I67591:96956;138079:84206"
+        ]
+      },
+      "component": {
+        "name": "ProductCell",
+        "key": "8a86dbd319616b934ff861c78c04fe7767525887",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateAppHeaderNew [D].json"
+      },
+      "variant": {
+        "name": "Hover=false, Active=false",
+        "key": "8a86dbd319616b934ff861c78c04fe7767525887"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "8a86dbd319616b934ff861c78c04fe7767525887",
+        "currentComponentId": "67373:72990",
+        "latestComponentId": "67421:53352"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I67591:96956;138079:84206;67591:96964",
+        "name": "ProductCell",
+        "type": "INSTANCE",
+        "pageName": "Обновление благотворительность ",
+        "path": "Новая сборка / [D] CorporatePage / Page / [D] SideMenu / Cells / Products / ProductCell",
+        "visible": true,
+        "ancestorNodeIds": [
+          "67591:96954",
+          "67591:96955",
+          "67591:96956",
+          "I67591:96956;138079:83019",
+          "I67591:96956;138079:84206"
+        ]
+      },
+      "component": {
+        "name": "ProductCell",
+        "key": "8a86dbd319616b934ff861c78c04fe7767525887",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateAppHeaderNew [D].json"
+      },
+      "variant": {
+        "name": "Hover=false, Active=false",
+        "key": "8a86dbd319616b934ff861c78c04fe7767525887"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "8a86dbd319616b934ff861c78c04fe7767525887",
+        "currentComponentId": "67373:72990",
+        "latestComponentId": "67421:53352"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I67591:96956;138079:84206;67591:96965",
+        "name": "ProductCell",
+        "type": "INSTANCE",
+        "pageName": "Обновление благотворительность ",
+        "path": "Новая сборка / [D] CorporatePage / Page / [D] SideMenu / Cells / Products / ProductCell",
+        "visible": true,
+        "ancestorNodeIds": [
+          "67591:96954",
+          "67591:96955",
+          "67591:96956",
+          "I67591:96956;138079:83019",
+          "I67591:96956;138079:84206"
+        ]
+      },
+      "component": {
+        "name": "ProductCell",
+        "key": "8a86dbd319616b934ff861c78c04fe7767525887",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateAppHeaderNew [D].json"
+      },
+      "variant": {
+        "name": "Hover=false, Active=false",
+        "key": "8a86dbd319616b934ff861c78c04fe7767525887"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "8a86dbd319616b934ff861c78c04fe7767525887",
+        "currentComponentId": "67373:72990",
+        "latestComponentId": "67421:53352"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I67591:96956;138079:84206;67591:96966",
+        "name": "ProductCell",
+        "type": "INSTANCE",
+        "pageName": "Обновление благотворительность ",
+        "path": "Новая сборка / [D] CorporatePage / Page / [D] SideMenu / Cells / Products / ProductCell",
+        "visible": true,
+        "ancestorNodeIds": [
+          "67591:96954",
+          "67591:96955",
+          "67591:96956",
+          "I67591:96956;138079:83019",
+          "I67591:96956;138079:84206"
+        ]
+      },
+      "component": {
+        "name": "ProductCell",
+        "key": "8a86dbd319616b934ff861c78c04fe7767525887",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateAppHeaderNew [D].json"
+      },
+      "variant": {
+        "name": "Hover=false, Active=false",
+        "key": "8a86dbd319616b934ff861c78c04fe7767525887"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "8a86dbd319616b934ff861c78c04fe7767525887",
+        "currentComponentId": "67373:72990",
+        "latestComponentId": "67421:53352"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I67591:96956;138079:84206;67591:96967",
+        "name": "ProductCell",
+        "type": "INSTANCE",
+        "pageName": "Обновление благотворительность ",
+        "path": "Новая сборка / [D] CorporatePage / Page / [D] SideMenu / Cells / Products / ProductCell",
+        "visible": true,
+        "ancestorNodeIds": [
+          "67591:96954",
+          "67591:96955",
+          "67591:96956",
+          "I67591:96956;138079:83019",
+          "I67591:96956;138079:84206"
+        ]
+      },
+      "component": {
+        "name": "ProductCell",
+        "key": "8a86dbd319616b934ff861c78c04fe7767525887",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateAppHeaderNew [D].json"
+      },
+      "variant": {
+        "name": "Hover=false, Active=false",
+        "key": "8a86dbd319616b934ff861c78c04fe7767525887"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "8a86dbd319616b934ff861c78c04fe7767525887",
+        "currentComponentId": "67373:72990",
+        "latestComponentId": "67421:53352"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I67591:96956;138079:84206;67591:96968",
+        "name": "ProductCell",
+        "type": "INSTANCE",
+        "pageName": "Обновление благотворительность ",
+        "path": "Новая сборка / [D] CorporatePage / Page / [D] SideMenu / Cells / Products / ProductCell",
+        "visible": true,
+        "ancestorNodeIds": [
+          "67591:96954",
+          "67591:96955",
+          "67591:96956",
+          "I67591:96956;138079:83019",
+          "I67591:96956;138079:84206"
+        ]
+      },
+      "component": {
+        "name": "ProductCell",
+        "key": "8a86dbd319616b934ff861c78c04fe7767525887",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateAppHeaderNew [D].json"
+      },
+      "variant": {
+        "name": "Hover=false, Active=false",
+        "key": "8a86dbd319616b934ff861c78c04fe7767525887"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "8a86dbd319616b934ff861c78c04fe7767525887",
+        "currentComponentId": "67373:72990",
+        "latestComponentId": "67421:53352"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I67591:96956;138079:84206;67591:96969",
+        "name": "ProductCell",
+        "type": "INSTANCE",
+        "pageName": "Обновление благотворительность ",
+        "path": "Новая сборка / [D] CorporatePage / Page / [D] SideMenu / Cells / Products / ProductCell",
+        "visible": true,
+        "ancestorNodeIds": [
+          "67591:96954",
+          "67591:96955",
+          "67591:96956",
+          "I67591:96956;138079:83019",
+          "I67591:96956;138079:84206"
+        ]
+      },
+      "component": {
+        "name": "ProductCell",
+        "key": "8a86dbd319616b934ff861c78c04fe7767525887",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateAppHeaderNew [D].json"
+      },
+      "variant": {
+        "name": "Hover=false, Active=false",
+        "key": "8a86dbd319616b934ff861c78c04fe7767525887"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "8a86dbd319616b934ff861c78c04fe7767525887",
+        "currentComponentId": "67373:72990",
+        "latestComponentId": "67421:53352"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I67591:96956;138079:84206;67591:96970",
+        "name": "ProductCell",
+        "type": "INSTANCE",
+        "pageName": "Обновление благотворительность ",
+        "path": "Новая сборка / [D] CorporatePage / Page / [D] SideMenu / Cells / Products / ProductCell",
+        "visible": true,
+        "ancestorNodeIds": [
+          "67591:96954",
+          "67591:96955",
+          "67591:96956",
+          "I67591:96956;138079:83019",
+          "I67591:96956;138079:84206"
+        ]
+      },
+      "component": {
+        "name": "ProductCell",
+        "key": "8a86dbd319616b934ff861c78c04fe7767525887",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateAppHeaderNew [D].json"
+      },
+      "variant": {
+        "name": "Hover=false, Active=false",
+        "key": "8a86dbd319616b934ff861c78c04fe7767525887"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "8a86dbd319616b934ff861c78c04fe7767525887",
+        "currentComponentId": "67373:72990",
+        "latestComponentId": "67421:53352"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I67591:96956;138079:84206;67591:96971",
+        "name": "ProductCell",
+        "type": "INSTANCE",
+        "pageName": "Обновление благотворительность ",
+        "path": "Новая сборка / [D] CorporatePage / Page / [D] SideMenu / Cells / Products / ProductCell",
+        "visible": true,
+        "ancestorNodeIds": [
+          "67591:96954",
+          "67591:96955",
+          "67591:96956",
+          "I67591:96956;138079:83019",
+          "I67591:96956;138079:84206"
+        ]
+      },
+      "component": {
+        "name": "ProductCell",
+        "key": "8a86dbd319616b934ff861c78c04fe7767525887",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateAppHeaderNew [D].json"
+      },
+      "variant": {
+        "name": "Hover=false, Active=false",
+        "key": "8a86dbd319616b934ff861c78c04fe7767525887"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "8a86dbd319616b934ff861c78c04fe7767525887",
+        "currentComponentId": "67373:72990",
+        "latestComponentId": "67421:53352"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I67591:96956;138079:84206;67591:96972",
+        "name": "ProductCell",
+        "type": "INSTANCE",
+        "pageName": "Обновление благотворительность ",
+        "path": "Новая сборка / [D] CorporatePage / Page / [D] SideMenu / Cells / Products / ProductCell",
+        "visible": true,
+        "ancestorNodeIds": [
+          "67591:96954",
+          "67591:96955",
+          "67591:96956",
+          "I67591:96956;138079:83019",
+          "I67591:96956;138079:84206"
+        ]
+      },
+      "component": {
+        "name": "ProductCell",
+        "key": "bbef2191519dd54476f8bc08e5bd1eaf96b607f3",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateAppHeaderNew [D].json"
+      },
+      "variant": {
+        "name": "Hover=false, Active=true",
+        "key": "bbef2191519dd54476f8bc08e5bd1eaf96b607f3"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "bbef2191519dd54476f8bc08e5bd1eaf96b607f3",
+        "currentComponentId": "67373:73006",
+        "latestComponentId": "67421:53354"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I67591:96956;138079:83036",
+        "name": "ProductCell",
+        "type": "INSTANCE",
+        "pageName": "Обновление благотворительность ",
+        "path": "Новая сборка / [D] CorporatePage / Page / [D] SideMenu / Cells / Reccomended / ProductCell",
+        "visible": true,
+        "ancestorNodeIds": [
+          "67591:96954",
+          "67591:96955",
+          "67591:96956",
+          "I67591:96956;138079:83019",
+          "I67591:96956;138079:84541"
+        ]
+      },
+      "component": {
+        "name": "ProductCell",
+        "key": "8a86dbd319616b934ff861c78c04fe7767525887",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateAppHeaderNew [D].json"
+      },
+      "variant": {
+        "name": "Hover=false, Active=false",
+        "key": "8a86dbd319616b934ff861c78c04fe7767525887"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "8a86dbd319616b934ff861c78c04fe7767525887",
+        "currentComponentId": "67373:72990",
+        "latestComponentId": "67421:53352"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Компонент требует обновления",
+      "node": {
+        "id": "I67591:96958;137517:80990",
+        "name": "Button",
+        "type": "INSTANCE",
+        "pageName": "Обновление благотворительность ",
+        "path": "Новая сборка / [D] CorporatePage / Page / Body / [D] Header / Left / Button",
+        "visible": true,
+        "ancestorNodeIds": [
+          "67591:96954",
+          "67591:96955",
+          "67591:96957",
+          "67591:96958",
+          "I67591:96958;137517:80989"
+        ]
+      },
+      "component": {
+        "name": "🔄 [D][Corporate] Button",
+        "key": "d356564fcf3cc3889e239f49a50d1f48bd2ca241",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Button.json"
+      },
+      "variant": {
+        "name": "View=Transparent, Size=40, Shape=Rectangular, SingleIcon=False, DisabledState=False",
+        "key": "d356564fcf3cc3889e239f49a50d1f48bd2ca241"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "67591:96958",
+        "name": "[D] Header",
+        "type": "INSTANCE",
+        "pageName": "Обновление благотворительность ",
+        "path": "Новая сборка / [D] CorporatePage / Page / Body / [D] Header",
+        "visible": true,
+        "ancestorNodeIds": [
+          "67591:96954",
+          "67591:96955",
+          "67591:96957"
+        ]
+      },
+      "component": {
+        "name": "[D] Header",
+        "key": "04a68b027b0dfe7e7b2edd5d57113e6ec6620427",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateAppHeaderNew [D].json"
+      },
+      "variant": {
+        "name": "Back=true, 👽 Tablet=false",
+        "key": "04a68b027b0dfe7e7b2edd5d57113e6ec6620427"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I67591:96958;137517:80998;97401:16432;448:17361",
+            "name": "BgImg",
+            "type": null,
+            "pageName": "Обновление благотворительность ",
+            "path": "Back=true, 👽 Tablet=false / Right / CompanyAccount / IconView / Content / ShapeContent / BgImg",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: — → Изображение",
+          "referenceValue": null,
+          "actualValue": "Изображение",
+          "referenceRawValue": null,
+          "actualRawValue": "Изображение",
+          "referenceDisplayValue": null,
+          "actualDisplayValue": "Изображение",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "1de0077f72a5b4394917373eafa55639f91b3779",
+            "actualNestedOwnerPath": "Back=true, 👽 Tablet=false / Right / CompanyAccount / IconView",
+            "actualNestedOwnerRelativePath": "Content / ShapeContent / BgImg",
+            "nestedOwnerComponentKey": "736d5c09f32580de3fc307e44eea2f3fadf77077",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Back=true, 👽 Tablet=false / Right / CompanyAccount",
+            "nestedOwnerRelativePath": "IconView / Content / ShapeContent / BgImg",
+            "actualVariantProperties": {
+              "Size": "40"
+            },
+            "referenceVariantProperties": {
+              "Holding": "false"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "67591:96958",
+              "nodeName": "[D] Header",
+              "tokenId": "VariableID:88dd7ea8641361035fe8ba4f5626d20b317dcd63/136950:22",
+              "tokenName": "Level-0 (base)",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.icon-view.paint-colors-are-public-settings",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "design-system-author",
+                "revision": 1
+              },
+              "severityScope": null,
+              "appliesTo": "fill|stroke",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "В IconView разрешено менять токен или цвет обводки Border, заливки Shape/BgColor и самой иконки Content/PaintMe. Эти paint overrides являются публичными настройками IconView и сами по себе не нарушают effective baseline. Компонент-хост может ограничить их только отдельным active contextual rule.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            },
+            {
+              "ruleId": "component:web-corp.corporate-app-header-new.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I67591:96958;141656:33378;141656:17430;448:17392",
+            "name": "BgColor",
+            "type": null,
+            "pageName": "Обновление благотворительность ",
+            "path": "Back=true, 👽 Tablet=false / Right / PersonSelect / IconView / Content / ShapeContent / BgColor",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "Заливка: neutral/100 → Изображение",
+          "referenceValue": "neutral/100",
+          "actualValue": "Изображение",
+          "referenceRawValue": "neutral/100",
+          "actualRawValue": "Изображение",
+          "referenceDisplayValue": "neutral/100",
+          "actualDisplayValue": "Изображение",
+          "referenceResource": {
+            "name": "neutral/100",
+            "key": "aa26b8f4b0aa0245c30526f8217f804393c953b7",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": null,
+          "referenceBinding": {
+            "id": "VariableID:aa26b8f4b0aa0245c30526f8217f804393c953b7/3541:173",
+            "key": "aa26b8f4b0aa0245c30526f8217f804393c953b7",
+            "name": "neutral/100",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "da76ef0432f226c9eccfa7b4a874ca7f3a82b164",
+            "actualNestedOwnerPath": "Back=true, 👽 Tablet=false / Right / PersonSelect / IconView",
+            "actualNestedOwnerRelativePath": "Content / ShapeContent / BgColor",
+            "nestedOwnerComponentKey": "da76ef0432f226c9eccfa7b4a874ca7f3a82b164",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Back=true, 👽 Tablet=false / Right / PersonSelect / IconView",
+            "nestedOwnerRelativePath": "Content / ShapeContent / BgColor",
+            "actualVariantProperties": {
+              "Size": "24"
+            },
+            "referenceVariantProperties": {
+              "Size": "24"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "67591:96958",
+              "nodeName": "[D] Header",
+              "tokenId": "VariableID:88dd7ea8641361035fe8ba4f5626d20b317dcd63/136950:22",
+              "tokenName": "Level-0 (base)",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.icon-view.paint-colors-are-public-settings",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "design-system-author",
+                "revision": 1
+              },
+              "severityScope": null,
+              "appliesTo": "fill|stroke",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "В IconView разрешено менять токен или цвет обводки Border, заливки Shape/BgColor и самой иконки Content/PaintMe. Эти paint overrides являются публичными настройками IconView и сами по себе не нарушают effective baseline. Компонент-хост может ограничить их только отдельным active contextual rule.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "catalog-host",
+            "reasonCode": "differs-from-materialized-host-value",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Значение не соответствует структуре родительского компонента",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I67591:96958;137517:80990;57:15090",
+            "name": "Label",
+            "type": null,
+            "pageName": "Обновление благотворительность ",
+            "path": "Back=true, 👽 Tablet=false / Left / Button / Text / Label",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Action/14–20 Primary Small → —",
+          "referenceValue": "Action/14–20 Primary Small",
+          "actualValue": "—",
+          "referenceRawValue": "Action/14–20 Primary Small",
+          "actualRawValue": "—",
+          "referenceDisplayValue": "Action/14–20 Primary Small",
+          "actualDisplayValue": "—",
+          "referenceResource": {
+            "name": "Action/14–20 Primary Small",
+            "key": "f3cc4701ff633e5c5f3cbbc1d47e35a6a6f60dad",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "d356564fcf3cc3889e239f49a50d1f48bd2ca241",
+            "actualNestedOwnerPath": "Back=true, 👽 Tablet=false / Left / Button",
+            "actualNestedOwnerRelativePath": "Text / Label",
+            "nestedOwnerComponentKey": "d356564fcf3cc3889e239f49a50d1f48bd2ca241",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Back=true, 👽 Tablet=false / Left / Button",
+            "nestedOwnerRelativePath": "Text / Label",
+            "actualVariantProperties": {
+              "View": "Transparent",
+              "Size": "40",
+              "Shape": "Rectangular",
+              "SingleIcon": "False",
+              "DisabledState": "False"
+            },
+            "referenceVariantProperties": {
+              "View": "Transparent",
+              "Size": "40",
+              "Shape": "Rectangular",
+              "SingleIcon": "False",
+              "DisabledState": "False"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "67591:96958",
+              "nodeName": "[D] Header",
+              "tokenId": "VariableID:88dd7ea8641361035fe8ba4f5626d20b317dcd63/136950:22",
+              "tokenName": "Level-0 (base)",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.button.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "generated-policy",
+                "revision": 1
+              },
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            },
+            {
+              "ruleId": "component:web-core.button.label-text-style-locked",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "design-system-author",
+                "revision": 2
+              },
+              "severityScope": "design",
+              "appliesTo": "styles.text",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Не меняй вручную text styles на Button Label или Hint. Text style определяется состоянием Button component и должен совпадать с effective component baseline.",
+              "remediation": "Сбрось layer text style к effective Button baseline.",
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": "Стиль текст",
+            "priority": 30,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.button.layer-properties-use-effective-baseline",
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "67591:96959",
+        "name": "[D] CorporateContent",
+        "type": "INSTANCE",
+        "pageName": "Обновление благотворительность ",
+        "path": "Новая сборка / [D] CorporatePage / Page / Body / [D] CorporateContent",
+        "visible": true,
+        "ancestorNodeIds": [
+          "67591:96954",
+          "67591:96955",
+          "67591:96957"
+        ]
+      },
+      "component": {
+        "name": "[D] CorporateContent",
+        "key": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateContent.json"
+      },
+      "variant": {
+        "name": "[D] CorporateContent",
+        "key": "a8d13cb6e1ae67a7296709f669238f41971c7197"
+      },
+      "comparisonIssues": [
+        "Нет данных для заливка в снапшоте для «[D] CorporateContent / [D] Body / Cards / Card_Fund / PartnerContent / Content / Content / IconView / Content / ShapeContent / BgColor»"
+      ],
+      "changes": [
+        {
+          "node": {
+            "id": "I67591:96959;135096:147276;67612:125284",
+            "name": "[D] PromoMainBlock",
+            "type": null,
+            "pageName": "Обновление благотворительность ",
+            "path": "[D] CorporateContent / [D] Body / [D] PromoMainBlock",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 24 → 0",
+          "referenceValue": 24,
+          "actualValue": "0",
+          "referenceRawValue": 24,
+          "actualRawValue": "0",
+          "referenceDisplayValue": 24,
+          "actualDisplayValue": "0",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "3aec61948e342dd87176a74cf156a0a25bd430e5",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+            "actualNestedOwnerPath": "[D] CorporateContent",
+            "actualNestedOwnerRelativePath": "[D] Body / [D] PromoMainBlock",
+            "nestedOwnerComponentKey": "3aec61948e342dd87176a74cf156a0a25bd430e5",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / [D] PromoMainBlock",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "View": "Page",
+              "Appearance": "Light",
+              "Background": "False",
+              "Compact": "False"
+            },
+            "referenceVariantProperties": {
+              "View": "Page",
+              "Appearance": "Light",
+              "Background": "False",
+              "Compact": "False"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "67591:96959",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web.promo-main-block.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I67591:96959;135096:147276;67612:125284;2192:11560",
+            "name": "BlurEffect",
+            "type": null,
+            "pageName": "Обновление благотворительность ",
+            "path": "[D] CorporateContent / [D] Body / [D] PromoMainBlock / Content / ImageContainer / BlurEffect",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "effects",
+          "message": "Эффекты: Нет → BACKGROUND_BLUR · blur 32 · скрыт",
+          "referenceValue": "Нет",
+          "actualValue": "BACKGROUND_BLUR · blur 32 · скрыт",
+          "referenceRawValue": "Нет",
+          "actualRawValue": "BACKGROUND_BLUR · blur 32 · скрыт",
+          "referenceDisplayValue": "Нет",
+          "actualDisplayValue": "BACKGROUND_BLUR · blur 32 · скрыт",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "3aec61948e342dd87176a74cf156a0a25bd430e5",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / [D] PromoMainBlock",
+            "actualNestedOwnerRelativePath": "Content / ImageContainer / BlurEffect",
+            "nestedOwnerComponentKey": "3aec61948e342dd87176a74cf156a0a25bd430e5",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / [D] PromoMainBlock",
+            "nestedOwnerRelativePath": "Content / ImageContainer / BlurEffect",
+            "actualVariantProperties": {
+              "View": "Page",
+              "Appearance": "Light",
+              "Background": "False",
+              "Compact": "False"
+            },
+            "referenceVariantProperties": {
+              "View": "Page",
+              "Appearance": "Light",
+              "Background": "False",
+              "Compact": "False"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "67591:96959",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 80,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I67591:96959;135096:147276;67612:125284;2192:11561",
+            "name": "Linear",
+            "type": null,
+            "pageName": "Обновление благотворительность ",
+            "path": "[D] CorporateContent / [D] Body / [D] PromoMainBlock / Content / ImageContainer / BlurEffect / Linear",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: — → paint:GRADIENT_LINEAR",
+          "referenceValue": null,
+          "actualValue": "paint:GRADIENT_LINEAR",
+          "referenceRawValue": null,
+          "actualRawValue": "paint:GRADIENT_LINEAR",
+          "referenceDisplayValue": null,
+          "actualDisplayValue": "paint:GRADIENT_LINEAR",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "3aec61948e342dd87176a74cf156a0a25bd430e5",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / [D] PromoMainBlock",
+            "actualNestedOwnerRelativePath": "Content / ImageContainer / BlurEffect / Linear",
+            "nestedOwnerComponentKey": "3aec61948e342dd87176a74cf156a0a25bd430e5",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / [D] PromoMainBlock",
+            "nestedOwnerRelativePath": "Content / ImageContainer / BlurEffect / Linear",
+            "actualVariantProperties": {
+              "View": "Page",
+              "Appearance": "Light",
+              "Background": "False",
+              "Compact": "False"
+            },
+            "referenceVariantProperties": {
+              "View": "Page",
+              "Appearance": "Light",
+              "Background": "False",
+              "Compact": "False"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "67591:96959",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web.promo-main-block.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I67591:96959;135096:147276;67612:125284;2148:9607;3181:259",
+            "name": "Image",
+            "type": null,
+            "pageName": "Обновление благотворительность ",
+            "path": "[D] CorporateContent / [D] Body / [D] PromoMainBlock / Content / ImageContainer / Container / ImageView / Image",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: — → Изображение",
+          "referenceValue": null,
+          "actualValue": "Изображение",
+          "referenceRawValue": null,
+          "actualRawValue": "Изображение",
+          "referenceDisplayValue": null,
+          "actualDisplayValue": "Изображение",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "6796f778d0d2cd9f0e71560a12e3a85e9b3e4f43",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / [D] PromoMainBlock / Content / ImageContainer / Container / ImageView",
+            "actualNestedOwnerRelativePath": "Image",
+            "nestedOwnerComponentKey": "6796f778d0d2cd9f0e71560a12e3a85e9b3e4f43",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / [D] PromoMainBlock / Content / ImageContainer / Container / ImageView",
+            "nestedOwnerRelativePath": "Image",
+            "actualVariantProperties": {
+              "Size": "534",
+              "Crop": "Center",
+              "Segment": "MMB"
+            },
+            "referenceVariantProperties": {
+              "Size": "534",
+              "Crop": "Center",
+              "Segment": "MMB"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "67591:96959",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I67591:96959;135096:147276;67656:29895;3183:328",
+            "name": "Image",
+            "type": null,
+            "pageName": "Обновление благотворительность ",
+            "path": "[D] CorporateContent / [D] Body / [D][Promo] NavigationCardView / ImageContainer / Container / kind-subscription-main / Image",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: — → Изображение",
+          "referenceValue": null,
+          "actualValue": "Изображение",
+          "referenceRawValue": null,
+          "actualRawValue": "Изображение",
+          "referenceDisplayValue": null,
+          "actualDisplayValue": "Изображение",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "caca0abaeaa220944343bb2efb4652dcff1cb8af",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / [D][Promo] NavigationCardView / ImageContainer / Container / kind-subscription-main",
+            "actualNestedOwnerRelativePath": "Image",
+            "nestedOwnerComponentKey": "caca0abaeaa220944343bb2efb4652dcff1cb8af",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / [D][Promo] NavigationCardView / ImageContainer / Container / kind-subscription-main",
+            "nestedOwnerRelativePath": "Image",
+            "actualVariantProperties": {
+              "Size": "534",
+              "Crop": "Center",
+              "Segment": "MMB"
+            },
+            "referenceVariantProperties": {
+              "Size": "534",
+              "Crop": "Center",
+              "Segment": "MMB"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "67591:96959",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I67591:96959;135096:147276;67591:96976",
+            "name": "TitleView",
+            "type": null,
+            "pageName": "Обновление благотворительность ",
+            "path": "[D] CorporateContent / [D] Body / TitleView",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.top",
+          "message": "Паддинг top: 0 → 32",
+          "referenceValue": 0,
+          "actualValue": 32,
+          "referenceRawValue": 0,
+          "actualRawValue": 32,
+          "referenceDisplayValue": 0,
+          "actualDisplayValue": 32,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "02b8a91e65c73fbef66fdf9a9a66725bdeac6411",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+            "actualNestedOwnerPath": "[D] CorporateContent",
+            "actualNestedOwnerRelativePath": "[D] Body / TitleView",
+            "nestedOwnerComponentKey": "02b8a91e65c73fbef66fdf9a9a66725bdeac6411",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / TitleView",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "View": "Large",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": {
+              "View": "Large",
+              "Skeleton": "False"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "67591:96959",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "component-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.stroke|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства TitleView нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I67591:96959;135096:147276;67660:35773;67660:34195;2591:367143;110168:16855",
+            "name": "icon",
+            "type": null,
+            "pageName": "Обновление благотворительность ",
+            "path": "[D] CorporateContent / [D] Body / Cards / Card_Fund / PartnerContent / Content / Content / bookmark-action / bookmark-line / icon",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: rgba(116,116,116,1) → neutral/700",
+          "referenceValue": "rgba(116,116,116,1)",
+          "actualValue": "neutral/700",
+          "referenceRawValue": "rgba(116,116,116,1)",
+          "actualRawValue": "neutral/700",
+          "referenceDisplayValue": "rgba(116,116,116,1)",
+          "actualDisplayValue": "neutral/700",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral/700",
+            "key": "6d79dab22065d6235e925db28794e4ede838d304",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:6d79dab22065d6235e925db28794e4ede838d304/1250:653",
+            "key": "6d79dab22065d6235e925db28794e4ede838d304",
+            "name": "neutral/700",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "56fd7382e9fa01341c8c54ea750c23e221622a0c",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Cards / Card_Fund / PartnerContent / Content / Content / bookmark-action / bookmark-line",
+            "actualNestedOwnerRelativePath": "icon",
+            "nestedOwnerComponentKey": "56fd7382e9fa01341c8c54ea750c23e221622a0c",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Cards / Card_Fund / PartnerContent / Content / Content / bookmark-action / bookmark-line",
+            "nestedOwnerRelativePath": "icon",
+            "actualVariantProperties": {
+              "Size": "m"
+            },
+            "referenceVariantProperties": {
+              "Size": "m"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "67591:96959",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I67591:96959;135096:147276;67660:35773;67660:34195;2591:367143;110168:16855",
+            "name": "icon",
+            "type": null,
+            "pageName": "Обновление благотворительность ",
+            "path": "[D] CorporateContent / [D] Body / Cards / Card_Fund / PartnerContent / Content / Content / bookmark-action / bookmark-line / icon",
+            "visible": true
+          },
+          "kind": "opacity",
+          "property": "opacity",
+          "message": "Прозрачность: 1 → 0",
+          "referenceValue": 1,
+          "actualValue": 0,
+          "referenceRawValue": 1,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 1,
+          "actualDisplayValue": 0,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "56fd7382e9fa01341c8c54ea750c23e221622a0c",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / Cards / Card_Fund / PartnerContent / Content / Content / bookmark-action / bookmark-line",
+            "actualNestedOwnerRelativePath": "icon",
+            "nestedOwnerComponentKey": "56fd7382e9fa01341c8c54ea750c23e221622a0c",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / Cards / Card_Fund / PartnerContent / Content / Content / bookmark-action / bookmark-line",
+            "nestedOwnerRelativePath": "icon",
+            "actualVariantProperties": {
+              "Size": "m"
+            },
+            "referenceVariantProperties": {
+              "Size": "m"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "67591:96959",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "67591:96960",
+        "name": "🔒 [D] SpotlightBar",
+        "type": "INSTANCE",
+        "pageName": "Обновление благотворительность ",
+        "path": "Новая сборка / [D] CorporatePage / 🔒 [D] SpotlightBar",
+        "visible": true,
+        "ancestorNodeIds": [
+          "67591:96954"
+        ]
+      },
+      "component": {
+        "name": "🔒 [D] SpotlightBar",
+        "key": "8e339a000bd5e9a39153afb381110d84e1bf193d",
+        "library": "Web _ Corp Limited Components (не подключать)",
+        "sourceFile": "web/components/web-corp-limited-components-не-подключать/Web _ Corp Limited Components (не подключать) -- SpotlightBar [D].json"
+      },
+      "variant": {
+        "name": "👽 Tablet=false",
+        "key": "8e339a000bd5e9a39153afb381110d84e1bf193d"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "67591:96960",
+            "name": "🔒 [D] SpotlightBar",
+            "type": null,
+            "pageName": "Обновление благотворительность ",
+            "path": "👽 Tablet=false",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: decorative-muted-alt/indigo → S:27ba925a81fd8c8a03755940253f21d1c9099141,317:32",
+          "referenceValue": "decorative-muted-alt/indigo",
+          "actualValue": "S:27ba925a81fd8c8a03755940253f21d1c9099141,317:32",
+          "referenceRawValue": "decorative-muted-alt/indigo",
+          "actualRawValue": "S:27ba925a81fd8c8a03755940253f21d1c9099141,317:32",
+          "referenceDisplayValue": "decorative-muted-alt/indigo",
+          "actualDisplayValue": "S:27ba925a81fd8c8a03755940253f21d1c9099141,317:32",
+          "referenceResource": {
+            "name": "decorative-muted-alt/indigo",
+            "key": "546c89f3ab23c26a4beea3ccdd61cc7f22fff31d",
+            "library": "Decorative Dynamic",
+            "sourceFile": "003 :: Decarative Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "S:27ba925a81fd8c8a03755940253f21d1c9099141,317:32",
+            "key": "27ba925a81fd8c8a03755940253f21d1c9099141",
+            "library": null,
+            "sourceFile": null
+          },
+          "referenceBinding": {
+            "id": "VariableID:546c89f3ab23c26a4beea3ccdd61cc7f22fff31d/1816:89",
+            "key": "546c89f3ab23c26a4beea3ccdd61cc7f22fff31d",
+            "name": "decorative-muted-alt/indigo",
+            "collectionId": "VariableCollectionId:944:1243",
+            "collectionName": "Decorative Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": null,
+          "bindingStatus": "unbound",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "8e339a000bd5e9a39153afb381110d84e1bf193d",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "👽 Tablet": "false"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "67591:96954",
+              "nodeName": "[D] CorporatePage",
+              "tokenId": "VariableID:dc20fcedbd330ee715c0a3f6c7d3089862a48cfb/6:31",
+              "tokenName": "VariableID:dc20fcedbd330ee715c0a3f6c7d3089862a48cfb/6:31",
+              "color": "#E7E8EB"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web.spotlight-bar.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I67591:96960;3:5308;1209:29761",
+            "name": "RightAddon1",
+            "type": null,
+            "pageName": "Обновление благотворительность ",
+            "path": "👽 Tablet=false / Right / [D][Corporate] Input / Field / RightAddons / RightAddon1",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 4 → 0",
+          "referenceValue": 4,
+          "actualValue": "0",
+          "referenceRawValue": 4,
+          "actualRawValue": "0",
+          "referenceDisplayValue": 4,
+          "actualDisplayValue": "0",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "aed4c2993452251cf0ea38aeb98a16d334495e16",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "5e2f9b5a7c345b0f853179f9ae137439b8563cc3",
+            "actualNestedOwnerPath": "👽 Tablet=false / Right / [D][Corporate] Input",
+            "actualNestedOwnerRelativePath": "Field / RightAddons / RightAddon1",
+            "nestedOwnerComponentKey": "aed4c2993452251cf0ea38aeb98a16d334495e16",
+            "nestedOwnerComponentRole": "Part",
+            "nestedOwnerPath": "👽 Tablet=false / Right / [D][Corporate] Input / Field / RightAddons / RightAddon1",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "Type": "IconSecondary"
+            },
+            "referenceVariantProperties": {
+              "Type": "IconSecondary"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "67591:96954",
+              "nodeName": "[D] CorporatePage",
+              "tokenId": "VariableID:dc20fcedbd330ee715c0a3f6c7d3089862a48cfb/6:31",
+              "tokenName": "VariableID:dc20fcedbd330ee715c0a3f6c7d3089862a48cfb/6:31",
+              "color": "#E7E8EB"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.master-input.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "generated-policy",
+                "revision": 1
+              },
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.master-input.layer-properties-use-effective-baseline",
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I67591:96960;80:27656",
+            "name": "NeuroLogo",
+            "type": null,
+            "pageName": "Обновление благотворительность ",
+            "path": "👽 Tablet=false / Left / NeuroLogo",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.New Logo",
+          "message": "variant.New Logo: Параметр не объявлен в Component API → false",
+          "referenceValue": "Параметр не объявлен в Component API",
+          "actualValue": "false",
+          "referenceRawValue": "Параметр не объявлен в Component API",
+          "actualRawValue": "false",
+          "referenceDisplayValue": "Параметр не объявлен в Component API",
+          "actualDisplayValue": "false",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "67b5851e52273dd47708e66194bfcbac0ca4e365",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "28",
+              "New Logo": "false"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "67591:96954",
+              "nodeName": "[D] CorporatePage",
+              "tokenId": "VariableID:dc20fcedbd330ee715c0a3f6c7d3089862a48cfb/6:31",
+              "tokenName": "VariableID:dc20fcedbd330ee715c0a3f6c7d3089862a48cfb/6:31",
+              "color": "#E7E8EB"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web.neuro-logo.component-properties-are-first-class",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения variant/property в этом семействе компонентов являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-api-unknown-variant-property",
+            "ruleId": "component-api:neuro-logo.universal",
+            "contractId": "neuro-logo.universal",
+            "constraintId": "component-api-unknown-variant-property",
+            "evidence": {
+              "property": "New Logo",
+              "allowedProperties": [
+                "Size"
+              ]
+            },
+            "message": "Параметр New Logo отсутствует в Component API NeuroLogo",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I67591:96960;80:27656;80:27143",
+            "name": "Icon 28",
+            "type": null,
+            "pageName": "Обновление благотворительность ",
+            "path": "👽 Tablet=false / Left / NeuroLogo / Icon 28",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.NewLogo",
+          "message": "variant.NewLogo: Параметр не объявлен в Component API → false",
+          "referenceValue": "Параметр не объявлен в Component API",
+          "actualValue": "false",
+          "referenceRawValue": "Параметр не объявлен в Component API",
+          "actualRawValue": "false",
+          "referenceDisplayValue": "Параметр не объявлен в Component API",
+          "actualDisplayValue": "false",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "c3a440f5c2c5081047bdea1f65b640a2e8e03f9a",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "NewLogo": "false"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "67591:96954",
+              "nodeName": "[D] CorporatePage",
+              "tokenId": "VariableID:dc20fcedbd330ee715c0a3f6c7d3089862a48cfb/6:31",
+              "tokenName": "VariableID:dc20fcedbd330ee715c0a3f6c7d3089862a48cfb/6:31",
+              "color": "#E7E8EB"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web.neuro-logo.component-properties-are-first-class",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения variant/property в этом семействе компонентов являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-api-unknown-variant-property",
+            "ruleId": "component-api:icon-28.universal",
+            "contractId": "icon-28.universal",
+            "constraintId": "component-api-unknown-variant-property",
+            "evidence": {
+              "property": "NewLogo",
+              "allowedProperties": [
+                "Animate"
+              ]
+            },
+            "message": "Параметр NewLogo отсутствует в Component API Icon 28",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I67591:96959;135096:147276;67660:35773",
+        "name": "Card_Fund",
+        "type": "INSTANCE",
+        "pageName": "Обновление благотворительность ",
+        "path": "Новая сборка / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Cards / Card_Fund",
+        "visible": true,
+        "ancestorNodeIds": [
+          "67591:96954",
+          "67591:96955",
+          "67591:96957",
+          "67591:96959",
+          "I67591:96959;135096:147276",
+          "I67591:96959;135096:147276;67660:35772"
+        ]
+      },
+      "component": {
+        "name": "Card_Fund",
+        "key": "2e687f384255f2e33bb88161a6b9dbe835864107",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I67591:96959;135096:147276;67660:35774",
+        "name": "Card_Fund",
+        "type": "INSTANCE",
+        "pageName": "Обновление благотворительность ",
+        "path": "Новая сборка / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Cards / Card_Fund",
+        "visible": true,
+        "ancestorNodeIds": [
+          "67591:96954",
+          "67591:96955",
+          "67591:96957",
+          "67591:96959",
+          "I67591:96959;135096:147276",
+          "I67591:96959;135096:147276;67660:35772"
+        ]
+      },
+      "component": {
+        "name": "Card_Fund",
+        "key": "2e687f384255f2e33bb88161a6b9dbe835864107",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I67591:96959;135096:147276;67660:35775",
+        "name": "Card_Fund",
+        "type": "INSTANCE",
+        "pageName": "Обновление благотворительность ",
+        "path": "Новая сборка / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Cards / Card_Fund",
+        "visible": true,
+        "ancestorNodeIds": [
+          "67591:96954",
+          "67591:96955",
+          "67591:96957",
+          "67591:96959",
+          "I67591:96959;135096:147276",
+          "I67591:96959;135096:147276;67660:35772"
+        ]
+      },
+      "component": {
+        "name": "Card_Fund",
+        "key": "2e687f384255f2e33bb88161a6b9dbe835864107",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I67591:96959;135096:147276;67660:35776",
+        "name": "Card_Fund",
+        "type": "INSTANCE",
+        "pageName": "Обновление благотворительность ",
+        "path": "Новая сборка / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Cards / Card_Fund",
+        "visible": true,
+        "ancestorNodeIds": [
+          "67591:96954",
+          "67591:96955",
+          "67591:96957",
+          "67591:96959",
+          "I67591:96959;135096:147276",
+          "I67591:96959;135096:147276;67660:35772"
+        ]
+      },
+      "component": {
+        "name": "Card_Fund",
+        "key": "2e687f384255f2e33bb88161a6b9dbe835864107",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I67591:96959;135096:147276;67660:35777",
+        "name": "Card_Fund",
+        "type": "INSTANCE",
+        "pageName": "Обновление благотворительность ",
+        "path": "Новая сборка / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Cards / Card_Fund",
+        "visible": true,
+        "ancestorNodeIds": [
+          "67591:96954",
+          "67591:96955",
+          "67591:96957",
+          "67591:96959",
+          "I67591:96959;135096:147276",
+          "I67591:96959;135096:147276;67660:35772"
+        ]
+      },
+      "component": {
+        "name": "Card_Fund",
+        "key": "2e687f384255f2e33bb88161a6b9dbe835864107",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I67591:96959;135096:147276;67660:35778",
+        "name": "Card_Fund",
+        "type": "INSTANCE",
+        "pageName": "Обновление благотворительность ",
+        "path": "Новая сборка / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / Cards / Card_Fund",
+        "visible": true,
+        "ancestorNodeIds": [
+          "67591:96954",
+          "67591:96955",
+          "67591:96957",
+          "67591:96959",
+          "I67591:96959;135096:147276",
+          "I67591:96959;135096:147276;67660:35772"
+        ]
+      },
+      "component": {
+        "name": "Card_Fund",
+        "key": "2e687f384255f2e33bb88161a6b9dbe835864107",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I67591:96959;135096:147276;67656:29887",
+        "name": "🔒 [D] PropertyPreset",
+        "type": "INSTANCE",
+        "pageName": "Обновление благотворительность ",
+        "path": "Новая сборка / [D] CorporatePage / Page / Body / [D] CorporateContent / [D] Body / [D][Promo] NavigationCardView / ContentWrapper / Frame 3 / 🔒 [D] PropertyPreset",
+        "visible": true,
+        "ancestorNodeIds": [
+          "67591:96954",
+          "67591:96955",
+          "67591:96957",
+          "67591:96959",
+          "I67591:96959;135096:147276",
+          "I67591:96959;135096:147276;67656:29883",
+          "I67591:96959;135096:147276;67656:29884",
+          "I67591:96959;135096:147276;67656:29886"
+        ]
+      },
+      "component": {
+        "name": "🔒 [D] PropertyPreset",
+        "key": "94407218ccfa65749e066cbc12be9a6201402291",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Color=Grey, Style=Contrast, Size=20",
+        "key": "94407218ccfa65749e066cbc12be9a6201402291"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "94407218ccfa65749e066cbc12be9a6201402291",
+        "currentComponentId": "67421:53248",
+        "latestComponentId": "67421:53248"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "67591:96960",
+        "name": "🔒 [D] SpotlightBar",
+        "type": "INSTANCE",
+        "pageName": "Обновление благотворительность ",
+        "path": "Новая сборка / [D] CorporatePage / 🔒 [D] SpotlightBar",
+        "visible": true,
+        "ancestorNodeIds": [
+          "67591:96954"
+        ]
+      },
+      "component": {
+        "name": "🔒 [D] SpotlightBar",
+        "key": "8e339a000bd5e9a39153afb381110d84e1bf193d",
+        "library": "Web _ Corp Limited Components (не подключать)",
+        "sourceFile": "web/components/web-corp-limited-components-не-подключать/Web _ Corp Limited Components (не подключать) -- SpotlightBar [D].json"
+      },
+      "variant": {
+        "name": "👽 Tablet=false",
+        "key": "8e339a000bd5e9a39153afb381110d84e1bf193d"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "8e339a000bd5e9a39153afb381110d84e1bf193d",
+        "currentComponentId": "67650:24129",
+        "latestComponentId": "67650:24129"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "67591:96954",
+        "name": "Страница: Обновление благотворительность ",
+        "type": "PAGE",
+        "pageName": "Обновление благотворительность ",
+        "path": "Обновление благотворительность ",
+        "visible": true
+      },
+      "kind": "missingThemeMode",
+      "recommendation": "Смени темизацию на Corp",
+      "component": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I67591:96958;137517:80990",
+        "name": "Button",
+        "type": "INSTANCE",
+        "pageName": "Обновление благотворительность ",
+        "path": "Новая сборка / [D] CorporatePage / Page / Body / [D] Header / Left / Button",
+        "visible": true
+      },
+      "kind": "corporateComponent",
+      "recommendation": "[D] Button",
+      "component": {
+        "name": "Button",
+        "key": "f9979d6cc8598aec25f721e0a45b7eef2eeb0088",
+        "library": "Web _ Core",
+        "sourceFile": null
+      }
+    }
+  ],
+  "componentContexts": [
+    {
+      "componentKey": "web-core.button",
+      "summary": "Button — семейство action controls. Apollo должен трактовать изменения Button variant как component property changes, а ручные изменения style/token/layout как layer customizations.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] Button",
+        "[D] Button_Inverted",
+        "[M] Button",
+        "[M] Button_Inverted",
+        "🔄 [D][Corporate] Button",
+        "🔄 [D][Corporate] Button_Inverted",
+        "🔄 [M][Corporate] Button",
+        "🔄 [M][Corporate] Button_Inverted",
+        "🔩 Addon",
+        "🔩 Addon"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "0ec969ab700db8f0257403ebb2ad3c893646814a",
+          "name": "🔄 [D][Corporate] Button",
+          "purpose": "🔄 Замени на актуальный",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*",
+          "variant.View",
+          "variant.Size",
+          "variant.Shape",
+          "variant.SingleIcon",
+          "variant.DisabledState"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent",
+          "layout.padding",
+          "layout.itemSpacing"
+        ],
+        "baselinePolicy": "Если component property изменилась, сравнивай ручные layer overrides с baseline текущего actual-состояния компонента, а не с исходным reference baseline.",
+        "slotProperties": [
+          "LeftAddon.variant.Type",
+          "RightAddon.variant.Type"
+        ],
+        "ordering": [
+          "component-property",
+          "slot-property",
+          "layer-property"
+        ]
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.View",
+            "variant.Size",
+            "variant.Shape",
+            "variant.SingleIcon",
+            "variant.DisabledState"
+          ],
+          "layerProperties": [
+            "fills",
+            "strokes",
+            "strokeWeight",
+            "cornerRadius",
+            "opacity",
+            "layout.padding",
+            "layout.itemSpacing",
+            "styles.text",
+            "typography"
+          ],
+          "dependencyPolicy": "При reset component property layer differences, вызванные только этой property, могут исчезнуть автоматически. Ручные layer overrides должны оставаться независимо сбрасываемыми, пока reset родительской property не уберёт их target state."
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web-core.icon-view",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Content",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "IconView"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "031b9c19cfdb55f22b11decda14a5a43f8bccd44",
+          "name": "🔩 Shape",
+          "purpose": "72",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        },
+        {
+          "componentKey": "6f2474f1bf5c54880e218ec1502e7a3c2cc38592",
+          "name": "🔩 Shape",
+          "purpose": "128",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        },
+        {
+          "componentKey": "65643a405c5f69009dd5033227153636e654c7bb",
+          "name": "🔩 Shape",
+          "purpose": "80",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        },
+        {
+          "componentKey": "3c049893d299e11ff0733e7f53ef86312bff1baa",
+          "name": "🔩 Shape",
+          "purpose": "64",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        },
+        {
+          "componentKey": "86e69b1b407b18d1df789689ff3efc4483075eb7",
+          "name": "🔩 Shape",
+          "purpose": "48",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        },
+        {
+          "componentKey": "128fbff32975857b9a463d517c871d435ebacc27",
+          "name": "🔩 Shape",
+          "purpose": "40",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        },
+        {
+          "componentKey": "f546642c4d7e7babdcdccb624822528a25193ed1",
+          "name": "🔩 Shape",
+          "purpose": "32",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        },
+        {
+          "componentKey": "449b43b058636a77d58aec2daa7094cdcaf58537",
+          "name": "🔩 Shape",
+          "purpose": "24",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        },
+        {
+          "componentKey": "759a55c909d483d89b5673fafbb9241415bbad79",
+          "name": "🔩 Shape",
+          "purpose": "20",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        },
+        {
+          "componentKey": "4b91be0c3631c3cf16d1b5fb1f86d0db89564b3b",
+          "name": "🔩 Shape",
+          "purpose": "56",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        },
+        {
+          "componentKey": "f9bfd9e4dd2b7d9765efbd095e6feb13fa8a8f9d",
+          "name": "🔩 Shape",
+          "purpose": "16",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.master-input",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔩 Addon",
+        "🔩 Addon",
+        "🔩 Addon",
+        "🔩 Addon",
+        "🔩 Placeholder",
+        "🔩 Placeholder",
+        "🔩 Placeholder",
+        "🔩 Placeholder",
+        "🔩 Placeholder",
+        "🔩 Placeholder",
+        "🔩 Placeholder",
+        "🔩 Placeholder",
+        "🔩 Placeholder",
+        "🔩 Placeholder",
+        "🔩 Placeholder",
+        "🔩 Placeholder",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value",
+        "🔩 Value"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.corporate-app-header-new",
+      "summary": "Обязательная desktop-навигационная оболочка корпоративной страницы. На больших разрешениях она состоит из [D] Header и [D] SideMenu. На ширине 768 px Header остаётся в состоянии 👽 Tablet=true, а SideMenu заменяется компонентом [D](768) HeaderMenu, который открывается слева как drawer. Header также даёт доступ к письмам, уведомлениям, переключению компании или группы, выбору доступной роли, выходу и возврату по истории.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] Header",
+        "[D] SideMenu",
+        "[D](768) HeaderMenu",
+        "AddIconButton",
+        "CompanyAccount",
+        "IconButton",
+        "LeftAddon",
+        "ListProductCell",
+        "Logo",
+        "LogoCell",
+        "LogoGroup",
+        "NestedProductCell",
+        "PersonSelect",
+        "ProductCell",
+        "RightAddon",
+        "DividerHorizontal",
+        "DividerVertical",
+        "HomeItem",
+        "LocalHomeIcon"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "d187029a0a1af08dbb499e13b3ef2ac98efaaac2",
+          "name": "[D] Header",
+          "purpose": "Верхняя навигационная панель корпоративной страницы с системными действиями, переключением компании и доступом к профилю.",
+          "useWhen": [
+            "Собирается корпоративная desktop-страница на ширине 768 px и выше."
+          ],
+          "doNotUseWhen": [
+            "Компонент используется без соответствующей боковой навигации или вне корпоративной оболочки."
+          ],
+          "relationship": "Обязательная верхняя часть CorporateAppHeaderNew; на больших разрешениях работает с SideMenu, на 768 px — с HeaderMenu.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        },
+        {
+          "componentKey": "379ded7ba661ce24eaedeb43cf38f117fd89be96",
+          "name": "[D] SideMenu",
+          "purpose": "Постоянная боковая навигация по продуктам и разделам корпоративного desktop-интерфейса.",
+          "useWhen": [
+            "На большом desktop-разрешении нужно постоянно показывать основную корпоративную навигацию."
+          ],
+          "doNotUseWhen": [
+            "Макет находится на ширине 768 px, где SideMenu заменяется HeaderMenu."
+          ],
+          "relationship": "Desktop-компаньон [D] Header; использует общую с HeaderMenu модель пунктов и активного состояния.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context. Back и Edit Mode являются разрешёнными контекстными параметрами; ручное изменение 👽 Tablet запрещено. Структура Header, набор Mail/Notifications, аватар и роль неизменяемы. Логотип компании, название компании или группы, имя пользователя, названия и иконки продуктовых пунктов являются контекстными overrides. SideMenu и HeaderMenu синхронизированы: Products следуют персональным настройкам, Reccomended фиксирован, Footer закреплён снизу, вложенность ограничена одним уровнем. Геометрия, visual и layout styles не редактируются вручную; прокручивается только область Cells. LogoCell обязателен и неизменяем. Edit Mode управляет только порядком и видимостью, применяет изменения сразу и не имеет сброса. Drawer закрывается только кнопкой Close. Detach запрещён. Текст остаётся однострочным с fade, рекомендуемая длина — 16 символов; непрочитанные события ограничиваются значением 99+."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.corporate-content",
+      "summary": "CorporateContent — обязательная контентная область продуктовой страницы. Используй [D] CorporateContent для desktop и [M] CorporateContent для mobile-web.",
+      "criticalBaselines": [],
+      "agentInstructions": [
+        "Не считай произвольный контент или несколько дочерних элементов внутри Body нарушением сами по себе.",
+        "Проверяй содержимое Body по собственным компонентным контрактам и паттернам.",
+        "Считай использование переходного [T] CorporateContent явным нарушением.",
+        "Не рекомендуй ручную правку fill, grid style или padding корня CorporateContent; рекомендуй правильный mode переменных.",
+        "Не требуй наличия родительского компонента CorporatePage в Figma: такого компонента нет, самостоятельное использование CorporateContent допустимо.",
+        "Не применяй Gutter как обязательный itemSpacing внутри Body; он допустим в любой горизонтальной композиции без обязательного Section.",
+        "На ширине 768 требуй [D] CorporateContent и mode 768 коллекции [D] Grid & Cols.",
+        "Не придумывай условия выбора между base-bg-alt и base-bg до появления отдельного паттерна; default — base-bg-alt (grey).",
+        "Не разрешай кликабельность корня или detach CorporateContent и Body.",
+        "Не разрешай вкладывать CorporateContent внутрь CorporateContent и не оставляй SwapMe после добавления реального содержимого.",
+        "Требуй Header или HeaderMenu непосредственно над CorporateContent в общем вертикальном контейнере с gap 0.",
+        "Не разрешай менять вертикальное направление, itemSpacing=0 или clipsContent=false корня CorporateContent."
+      ],
+      "includedComponents": [
+        "[D] Section",
+        "[D] CorporateContent",
+        "[M] CorporateContent",
+        "❌ [D] Body",
+        "❌ [M} Body",
+        "❌ [T] Body",
+        "❌ [T] CorporateContent"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+          "name": "[D] CorporateContent",
+          "purpose": "Основная desktop-контентная область корпоративной продуктовой страницы с системной сеткой, фоном и адаптивными отступами.",
+          "useWhen": [
+            "Собирается содержимое корпоративной страницы на ширине 768 px и выше."
+          ],
+          "doNotUseWhen": [
+            "Нужен вложенный контейнер внутри другого CorporateContent."
+          ],
+          "relationship": "Единственный корневой контентный контейнер CorporatePage на desktop; принимает произвольную композицию в Body.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.navigation-card-view",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] Benefits",
+        "[D] BottomAddonLargeVIew",
+        "[D] BottomAddonSmallView",
+        "[D] IconViewGroups",
+        "[D] NavigationCardView",
+        "[D][Promo] Benefits",
+        "[D][Promo] BottomAddonLargeVIew",
+        "[D][Promo] BottomAddonSmallView",
+        "[D][Promo] IconViewGroups",
+        "[D][Promo] NavigationCardView",
+        "[M] Benefits",
+        "[M] BottomAddon",
+        "[M] IconViewGroups",
+        "[M] NavigationCardView",
+        "[M][Promo] Benefits",
+        "[M][Promo] BottomAddon",
+        "[M][Promo] IconViewGroups",
+        "[M][Promo] NavigationCardView"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.status-property",
+      "summary": "StatusPreset показывает состояние объекта или процесса, PropertyPreset — характеристику или свойство объекта. Оба preset-компонента разрешено использовать самостоятельно на desktop и mobile-web.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔒 [D] PropertyPreset",
+        "🔒 [D] StatusPreset",
+        "🔒 [M] PropertyPreset",
+        "🔒 [M] StatusPreset"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "53f4d943dc6e9b85579928e876af6ebdb6383ae9",
+          "name": "🔒 [D] PropertyPreset",
+          "purpose": "Вспомогательный компонент Figma, в коде существует только Status в core-components.",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.title-view",
+      "summary": "TitleView — составная обёртка заголовка для сценария с основным заголовком, статусом и действиями. Компонент объединяет Title, Status, TitleAddon, RightAddon, выбор компании, Subtitle, TitleStatus и Button group в готовую DS-композицию.",
+      "criticalBaselines": [
+        "Nested [D]/[M] Button instances внутри Button group являются частью TitleView baseline; изменения variant дизайнером нужно показывать относительно TitleView effective baseline.",
+        "StatusPreset и Status внутри MainContent / Status являются ожидаемыми nested structures; само использование preset нормально, если preset не изменён за пределами его variant API.",
+        "View и Skeleton являются public TitleView component properties.",
+        "На странице допускается только один TitleView с View=xLarge.",
+        "Внешние отступы 40 px, 32 px и 12 px, определённые правилами TitleView, обязательны для соответствующих соседних блоков.",
+        "Если одновременно используются Status и TitleStatus, значения Type должны совпадать: Type определяет статусный цвет.",
+        "В View=xLarge primary-действия размещаются в Button group. В View=Large, Medium и Small primary-действия размещаются вне TitleView.",
+        "Запрет primary-действия в RightAddon применяется ко всем значениям View.",
+        "Частичная загрузка отдельных слотов допустима при Skeleton=False у родительского TitleView.",
+        "Для View=Large, Medium и Small доступны только Title, Subtitle, TitleAddon и RightAddon.",
+        "Holding обязателен для одиночного выбора компании, когда пользователь работает от группы компаний, а страница доступна только в моно-режиме.",
+        "Ручные изменения layout, sizing, типографики, цвета, прозрачности и других стилей корня и всего внутреннего дерева TitleView запрещены.",
+        "Для корня TitleView рекомендуется ширина Fill container и высота Hug contents; правило одинаково для desktop и mobile-web.",
+        "Порядок слотов Status -> Heading -> Holding -> Subtitle -> TitleStatus -> Button group обязателен.",
+        "В предусмотренных слотах разрешён instance swap на произвольные компоненты, если сохраняются порядок слотов и структура TitleView.",
+        "Корень TitleView не оформляется вручную и не может быть единой кликабельной поверхностью."
+      ],
+      "agentInstructions": [
+        "Не выводи pattern violations из примеров. Используй только exact rules и exact component contracts.",
+        "Используй component-property facts для variant changes и layer-property facts для styles/layout/paint changes.",
+        "Если nested diff принадлежит host wrapper и actual совпадает с effective baseline, не показывай его как designer customization.",
+        "Если actual отличается от effective baseline, показывай effectiveBaseline -> actual.",
+        "Для сценария заголовка со статусом и действиями рекомендуй настройку встроенных slots TitleView, а не внешнюю ручную композицию из отдельных локальных компонентов.",
+        "Не считай отсутствие опциональных Status, TitleStatus, TitleAddon, RightAddon, Subtitle или Button group нарушением без отдельного правила.",
+        "Если загружается только отдельный вложенный элемент, не требуй переключать весь TitleView в Skeleton=True.",
+        "Для View=Large, Medium и Small рекомендуй primary-действие вне TitleView, а не в RightAddon.",
+        "Не считай изменение label у Status нарушением, если Type корректен и нет отдельного текстового правила.",
+        "Не придумывай ограничения параметров FilterCompanySelect_Single: используй его собственный компонентный контракт, когда он будет доступен.",
+        "Для настроек View, addons, hint и singleIcon вложенных Button используй паттерн «Кнопки и группы кнопок»; не создавай отдельные ограничения TitleView.",
+        "Применяй правила p_title-view-editable.md как часть правил TitleView, когда обнаружен editable-сценарий.",
+        "Не требуй Enter, Escape или отдельные кнопки подтверждения и отмены без точного правила для конкретной платформы и сценария.",
+        "Не считай сам факт instance swap внутри предусмотренного слота нарушением; оценивай выбранный компонент по его собственному контракту.",
+        "Проверяй обязательный порядок слотов отдельно от содержимого каждого слота.",
+        "Не разрешай ручное оформление корня или внутренних слоёв TitleView и не предлагай делать весь TitleView кликабельным."
+      ],
+      "includedComponents": [
+        "[D] RightAddon",
+        "[D] RightAddonXL",
+        "[D] TitleAddon",
+        "[D] TitleAddonXL",
+        "[D] TitleStatus",
+        "[D] TitleView",
+        "[M] RightAddon",
+        "[M] RightAddonXL",
+        "[M] TitleAddon",
+        "[M] TitleAddonXL",
+        "[M] TitleStatus",
+        "[M] TitleView"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.*"
+          ],
+          "layerProperties": [
+            "layout.*",
+            "styles.*",
+            "fill",
+            "stroke",
+            "radius",
+            "opacity",
+            "text.*"
+          ],
+          "dependencyPolicy": "Component-property reset и layer-property reset разделены. Layer reset должен использовать effective baseline после nested variant/materialization resolution."
+        },
+        "publicApi": {
+          "components": [
+            {
+              "name": "[D] RightAddon",
+              "key": "edd174301746415867bc998cd0c0322b68c6269c",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] RightAddonXL",
+              "key": "8edd3829b4b7091209299a5b5c838f0a159018aa",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleAddon",
+              "key": "f32313498fd345a1a41584c8d9edc61c3e2053bf",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleAddonXL",
+              "key": "b4cd3e21d108962a24b75aec2de71fba0672d63f",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleStatus",
+              "key": "6a8aa56ae7c8b57b9d9dfbbf23af14c348d83763",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleView",
+              "key": "fbc4ff889c9fe2db128bc76471f512271d4cc229",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] RightAddon",
+              "key": "b762143a2872257a497f9c3e0a012a9bed92f9ca",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] RightAddonXL",
+              "key": "c1092f678271e7de3291bb5699eeab4ad43c7710",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleAddon",
+              "key": "50d8b48cc1dcd4052efc7a151219578d1d993e2f",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleAddonXL",
+              "key": "a40e2549a5a23e645fb38c2af4c15df0f6813153",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleStatus",
+              "key": "e64c6d19cadc818b180b9176a51e3f65714b84b0",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleView",
+              "key": "227149bd55130d69d63e33cd3c8c52ae3f4e7e19",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            }
+          ],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web.neuro-logo",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "Icon 28",
+        "Icon 32",
+        "Icon 36",
+        "Icon 40",
+        "NeuroLogo",
+        "🔩 Magnifier/20",
+        "🔩 Shadow",
+        "🔩 Shape"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web.promo-main-block",
+      "summary": "Главный промо-блок с ключевым сообщением, изображением и CTA. Сценарное размещение задаёт landing-page pattern.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] ButtonGroup",
+        "[D] DarkOverlay",
+        "[D] LightOverlay",
+        "[D] PromoMainBlock",
+        "[D] SwapMe",
+        "[M] ButtonGroup",
+        "[M] DarkOverlay",
+        "[M] LightOverlay",
+        "[M] PromoMainBlock",
+        "[M] SwapMe"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web.spotlight-bar",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔒 [D] SpotlightBar"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "8bc7f3ef78fd020085203e9ba738d7e791208f32",
+          "name": "🔒 [D] SpotlightBar",
+          "purpose": "FigmaOnly – такого компонента в ДС не существует, это пресет для дизайна",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    }
+  ]
+}
