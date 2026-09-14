@@ -1,0 +1,3266 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1645744392870335692-1789379369769-bkm9zvss:agent",
+  "sourceReportId": "apollo-1645744392870335692-1789379369769-bkm9zvss",
+  "generatedAt": "2026-09-14T09:49:29.769Z",
+  "suggestedFileName": "Anna-Vrubel-Corp-Product-designer_14-09-2026_12-49-29_agent.json",
+  "user": {
+    "id": "1645744392870335692",
+    "name": "Anna Vrubel / Corp / Product designer",
+    "slug": "Anna-Vrubel-Corp-Product-designer"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.3.0"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "[W] Нейроофис. АО",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "pageType": null,
+    "startedAt": "2026-09-14T09:49:28.369Z",
+    "finishedAt": "2026-09-14T09:49:29.769Z",
+    "durationMs": 1400,
+    "selection": [
+      {
+        "nodeId": "7872:160820",
+        "name": "[M] 379",
+        "nodeType": "FRAME",
+        "path": "Обновление частых запросов / [M] 379",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 63,
+    "problemOccurrenceCount": 35,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 15,
+      "updates": 2,
+      "customizations": 6,
+      "localComponents": 1,
+      "detachedComponents": 1,
+      "presets": 0,
+      "technicalComponents": 0,
+      "currentComponents": 48,
+      "wrongChannel": 10,
+      "themization": 0
+    },
+    "includedFindingCount": 35,
+    "omittedCurrentComponentCount": 48
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, authority.status=active, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with authority.status=active, severity=error, and matchKind=exact_component_rule for the same property/change. Missing, draft, or malformed authority never confirms a violation.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 15,
+      "includedCount": 15,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 2,
+      "includedCount": 2,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 6,
+      "includedCount": 6,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 10,
+      "includedCount": 10,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "7872:160869",
+        "name": "NativeSafariBottom",
+        "type": "INSTANCE",
+        "pageName": "Библиотека промтов обновление [14.09]",
+        "path": "Обновление частых запросов / [M] 379 / BottomSheet / NativeSafariBottom",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "7872:160869",
+        "name": "NativeSafariBottom",
+        "type": "INSTANCE",
+        "pageName": "Библиотека промтов обновление [14.09]",
+        "path": "Обновление частых запросов / [M] 379 / BottomSheet / NativeSafariBottom",
+        "visible": true
+      },
+      "style": {
+        "name": "Фон (Background blur)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Фон (Background blur)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I7872:160869;208:80821",
+        "name": "TabBar",
+        "type": "FRAME",
+        "pageName": "Библиотека промтов обновление [14.09]",
+        "path": "Обновление частых запросов / [M] 379 / BottomSheet / NativeSafariBottom / Tab Container / TabBar",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I7872:160869;208:80821",
+        "name": "TabBar",
+        "type": "FRAME",
+        "pageName": "Библиотека промтов обновление [14.09]",
+        "path": "Обновление частых запросов / [M] 379 / BottomSheet / NativeSafariBottom / Tab Container / TabBar",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I7872:160869;208:80823",
+        "name": "SF Symbol / lock.fill",
+        "type": "VECTOR",
+        "pageName": "Библиотека промтов обновление [14.09]",
+        "path": "Обновление частых запросов / [M] 379 / BottomSheet / NativeSafariBottom / Tab Container / TabBar / URL / SF Symbol / lock.fill",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I7872:160869;208:80824",
+        "name": "URL",
+        "type": "TEXT",
+        "pageName": "Библиотека промтов обновление [14.09]",
+        "path": "Обновление частых запросов / [M] 379 / BottomSheet / NativeSafariBottom / Tab Container / TabBar / URL / URL",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I7872:160869;208:80824",
+        "name": "URL",
+        "type": "TEXT",
+        "pageName": "Библиотека промтов обновление [14.09]",
+        "path": "Обновление частых запросов / [M] 379 / BottomSheet / NativeSafariBottom / Tab Container / TabBar / URL / URL",
+        "visible": true
+      },
+      "style": {
+        "name": "17/22 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I7872:160869;208:80825",
+        "name": "SF Symbol / arrow.clockwise",
+        "type": "VECTOR",
+        "pageName": "Библиотека промтов обновление [14.09]",
+        "path": "Обновление частых запросов / [M] 379 / BottomSheet / NativeSafariBottom / Tab Container / TabBar / SF Symbol / arrow.clockwise",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I7872:160869;208:80826",
+        "name": "SF Symbol / textformat.size",
+        "type": "VECTOR",
+        "pageName": "Библиотека промтов обновление [14.09]",
+        "path": "Обновление частых запросов / [M] 379 / BottomSheet / NativeSafariBottom / Tab Container / TabBar / SF Symbol / textformat.size",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I7872:160869;208:80829",
+        "name": "SF Symbol / chevron.left",
+        "type": "VECTOR",
+        "pageName": "Библиотека промтов обновление [14.09]",
+        "path": "Обновление частых запросов / [M] 379 / BottomSheet / NativeSafariBottom / Tabs / _Tab Bar Item / SF Symbol / chevron.left",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I7872:160869;208:80831",
+        "name": "SF Symbol / chevron.right",
+        "type": "VECTOR",
+        "pageName": "Библиотека промтов обновление [14.09]",
+        "path": "Обновление частых запросов / [M] 379 / BottomSheet / NativeSafariBottom / Tabs / _Tab Bar Item / SF Symbol / chevron.right",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I7872:160869;208:80833",
+        "name": "SF Symbol / share.and.arrow.up",
+        "type": "VECTOR",
+        "pageName": "Библиотека промтов обновление [14.09]",
+        "path": "Обновление частых запросов / [M] 379 / BottomSheet / NativeSafariBottom / Tabs / _Tab Bar Item / SF Symbol / share.and.arrow.up",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I7872:160869;208:80835",
+        "name": "SF Symbol / book",
+        "type": "VECTOR",
+        "pageName": "Библиотека промтов обновление [14.09]",
+        "path": "Обновление частых запросов / [M] 379 / BottomSheet / NativeSafariBottom / Tabs / _Tab Bar Item / SF Symbol / book",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I7872:160869;208:80837",
+        "name": "SF Symbol / square.on.square",
+        "type": "VECTOR",
+        "pageName": "Библиотека промтов обновление [14.09]",
+        "path": "Обновление частых запросов / [M] 379 / BottomSheet / NativeSafariBottom / Tabs / _Tab Bar Item / SF Symbol / square.on.square",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I7872:160869;208:80839",
+        "name": "Home Indicator",
+        "type": "RECTANGLE",
+        "pageName": "Библиотека промтов обновление [14.09]",
+        "path": "Обновление частых запросов / [M] 379 / BottomSheet / NativeSafariBottom / HomeIndicator / Home Indicator",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "7872:160850",
+        "name": "[D] Button",
+        "type": "INSTANCE",
+        "pageName": "Библиотека промтов обновление [14.09]",
+        "path": "Обновление частых запросов / [M] 379 / [M] CorporateContent / fullInput / TextField / TextField / Input / Text / Left / Attach / [D] Button",
+        "visible": true,
+        "ancestorNodeIds": [
+          "7872:160820",
+          "7872:160824",
+          "7872:160829",
+          "7872:160830",
+          "7872:160831",
+          "7872:160832",
+          "7872:160847",
+          "7872:160848",
+          "7872:160849"
+        ]
+      },
+      "component": {
+        "name": "[D] Button",
+        "key": "d5e6a47bb3e6df32d2dc507d5114365850b71713",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Button.json"
+      },
+      "variant": {
+        "name": "View=Transparent, Size=32, Shape=Rounded, SingleIcon=True, DisabledState=False",
+        "key": "d5e6a47bb3e6df32d2dc507d5114365850b71713"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "d5e6a47bb3e6df32d2dc507d5114365850b71713",
+        "currentComponentId": "4805:16919",
+        "latestComponentId": "7824:188400"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "7872:160853",
+        "name": "[D] Button",
+        "type": "INSTANCE",
+        "pageName": "Библиотека промтов обновление [14.09]",
+        "path": "Обновление частых запросов / [M] 379 / [M] CorporateContent / fullInput / TextField / TextField / Input / Text / [D] Button",
+        "visible": true,
+        "ancestorNodeIds": [
+          "7872:160820",
+          "7872:160824",
+          "7872:160829",
+          "7872:160830",
+          "7872:160831",
+          "7872:160832",
+          "7872:160847"
+        ]
+      },
+      "component": {
+        "name": "[D] Button",
+        "key": "a8255c9c752d0866065e6ee6f77ee4e2785ec11c",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Button.json"
+      },
+      "variant": {
+        "name": "View=Accent, Size=32, Shape=Rounded, SingleIcon=True, DisabledState=True",
+        "key": "a8255c9c752d0866065e6ee6f77ee4e2785ec11c"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "a8255c9c752d0866065e6ee6f77ee4e2785ec11c",
+        "currentComponentId": "4805:16728",
+        "latestComponentId": "7824:188209"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "7872:160826",
+        "name": "ChatBubbleView",
+        "type": "INSTANCE",
+        "pageName": "Библиотека промтов обновление [14.09]",
+        "path": "Обновление частых запросов / [M] 379 / [M] CorporateContent / Frame 2147223385 / ChatBubbleView",
+        "visible": true,
+        "ancestorNodeIds": [
+          "7872:160820",
+          "7872:160824",
+          "7872:160825"
+        ]
+      },
+      "component": {
+        "name": "ChatBubbleView",
+        "key": "bd92d4a6a9d646c98a446f8ac26f1bbe827f5c2e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Сhat [M].json"
+      },
+      "variant": {
+        "name": "Sender=Outgoing",
+        "key": "bd92d4a6a9d646c98a446f8ac26f1bbe827f5c2e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "7872:160826",
+            "name": "ChatBubbleView",
+            "type": null,
+            "pageName": "Библиотека промтов обновление [14.09]",
+            "path": "Sender=Outgoing",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.left",
+          "message": "Паддинг left: 0 → 24",
+          "referenceValue": 0,
+          "actualValue": 24,
+          "referenceRawValue": 0,
+          "actualRawValue": 24,
+          "referenceDisplayValue": 0,
+          "actualDisplayValue": 24,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "bd92d4a6a9d646c98a446f8ac26f1bbe827f5c2e",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Sender": "Outgoing"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "7872:160824",
+              "nodeName": "[M] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.сhat.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I7872:160826;9839:184535;9839:185269",
+            "name": ".Details / ChatBubbleView",
+            "type": null,
+            "pageName": "Библиотека промтов обновление [14.09]",
+            "path": "Sender=Outgoing / .Details / Outgoing BubblesStack / Content / Bubble Group / .Details / ChatBubbleView",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "styles.fill",
+          "message": "Стиль заливка: light/bg/secondary → base-bg/secondary",
+          "referenceValue": "light/bg/secondary",
+          "actualValue": "base-bg/secondary",
+          "referenceRawValue": "light/bg/secondary",
+          "actualRawValue": "base-bg/secondary",
+          "referenceDisplayValue": "light/bg/secondary",
+          "actualDisplayValue": "base-bg/secondary",
+          "referenceResource": {
+            "name": "light/bg/secondary",
+            "key": "005ccc3dbfacc14b33cca9d819568715b908500b",
+            "library": "020 :: Colors BlueTint Light",
+            "sourceFile": "styles/020 _ Colors BlueTint Light.json"
+          },
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "f70ad91d9aacec75c019df638309bf88b963d520",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "e42fa2b8d558ba9503e889b4776e7cf925c8a797",
+            "actualNestedOwnerPath": "Sender=Outgoing / .Details / Outgoing BubblesStack",
+            "actualNestedOwnerRelativePath": "Content / Bubble Group / .Details / ChatBubbleView",
+            "nestedOwnerComponentKey": "e42fa2b8d558ba9503e889b4776e7cf925c8a797",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Sender=Outgoing / .Details / Outgoing BubblesStack",
+            "nestedOwnerRelativePath": "Content / Bubble Group / .Details / ChatBubbleView",
+            "actualVariantProperties": {
+              "Sender": "Outgoing",
+              "Length": "SignleLine",
+              "Position": "Single",
+              "Style": "Primary"
+            },
+            "referenceVariantProperties": {
+              "Length": "SignleLine",
+              "Position": "Single",
+              "Sender": "Outgoing",
+              "Style": "Primary"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "7872:160824",
+              "nodeName": "[M] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I7872:160826;9839:184535;9839:185269;9839:179242",
+            "name": "Message Text",
+            "type": null,
+            "pageName": "Библиотека промтов обновление [14.09]",
+            "path": "Sender=Outgoing / .Details / Outgoing BubblesStack / Content / Bubble Group / .Details / ChatBubbleView / Message Text",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "styles.fill",
+          "message": "Стиль заливка: light/text/primary → text/primary",
+          "referenceValue": "light/text/primary",
+          "actualValue": "text/primary",
+          "referenceRawValue": "light/text/primary",
+          "actualRawValue": "text/primary",
+          "referenceDisplayValue": "light/text/primary",
+          "actualDisplayValue": "text/primary",
+          "referenceResource": {
+            "name": "light/text/primary",
+            "key": "6313f5ef73de1fb787861cd6e0408c77214b7898",
+            "library": "020 :: Colors BlueTint Light",
+            "sourceFile": "styles/020 _ Colors BlueTint Light.json"
+          },
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "f70ad91d9aacec75c019df638309bf88b963d520",
+            "actualNestedOwnerPath": "Sender=Outgoing / .Details / Outgoing BubblesStack / Content / Bubble Group / .Details / ChatBubbleView",
+            "actualNestedOwnerRelativePath": "Message Text",
+            "nestedOwnerComponentKey": "f70ad91d9aacec75c019df638309bf88b963d520",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Sender=Outgoing / .Details / Outgoing BubblesStack / Content / Bubble Group / .Details / ChatBubbleView",
+            "nestedOwnerRelativePath": "Message Text",
+            "actualVariantProperties": {
+              "Sender": "Outgoing",
+              "Length": "SignleLine",
+              "Position": "Single",
+              "Style": "Primary"
+            },
+            "referenceVariantProperties": {
+              "Sender": "Outgoing",
+              "Length": "SignleLine",
+              "Position": "Single",
+              "Style": "Primary"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "7872:160824",
+              "nodeName": "[M] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I7872:160826;9839:184535;9839:185269;9839:179242",
+            "name": "Message Text",
+            "type": null,
+            "pageName": "Библиотека промтов обновление [14.09]",
+            "path": "Sender=Outgoing / .Details / Outgoing BubblesStack / Content / Bubble Group / .Details / ChatBubbleView / Message Text",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Paragraph/16–20 Component Primary → Paragraph/16–24 Primary Medium",
+          "referenceValue": "Paragraph/16–20 Component Primary",
+          "actualValue": "Paragraph/16–24 Primary Medium",
+          "referenceRawValue": "Paragraph/16–20 Component Primary",
+          "actualRawValue": "Paragraph/16–24 Primary Medium",
+          "referenceDisplayValue": "Paragraph/16–20 Component Primary",
+          "actualDisplayValue": "Paragraph/16–24 Primary Medium",
+          "referenceResource": {
+            "name": "Paragraph/16–20 Component Primary",
+            "key": "020582d780ac6ecbb4d8916c4b68099e42b09126",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": {
+            "name": "Paragraph/16–24 Primary Medium",
+            "key": "f0f0d59f9f92db92901605dd929cfa3b93540058",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "f70ad91d9aacec75c019df638309bf88b963d520",
+            "actualNestedOwnerPath": "Sender=Outgoing / .Details / Outgoing BubblesStack / Content / Bubble Group / .Details / ChatBubbleView",
+            "actualNestedOwnerRelativePath": "Message Text",
+            "nestedOwnerComponentKey": "f70ad91d9aacec75c019df638309bf88b963d520",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Sender=Outgoing / .Details / Outgoing BubblesStack / Content / Bubble Group / .Details / ChatBubbleView",
+            "nestedOwnerRelativePath": "Message Text",
+            "actualVariantProperties": {
+              "Sender": "Outgoing",
+              "Length": "SignleLine",
+              "Position": "Single",
+              "Style": "Primary"
+            },
+            "referenceVariantProperties": {
+              "Sender": "Outgoing",
+              "Length": "SignleLine",
+              "Position": "Single",
+              "Style": "Primary"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "7872:160824",
+              "nodeName": "[M] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": "Стиль текст",
+            "priority": 30,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I7872:160827;225:135456",
+        "name": "ChatBubbleView",
+        "type": "INSTANCE",
+        "pageName": "Библиотека промтов обновление [14.09]",
+        "path": "Обновление частых запросов / [M] 379 / [M] CorporateContent / Frame 2147223385 / Local Chat / ChatBubbleView",
+        "visible": true,
+        "ancestorNodeIds": [
+          "7872:160820",
+          "7872:160824",
+          "7872:160825",
+          "7872:160827"
+        ]
+      },
+      "component": {
+        "name": "ChatBubbleView",
+        "key": "e58aaf8e950a93d3d2aa83291e072d2aa0f20252",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Сhat [M].json"
+      },
+      "variant": {
+        "name": "Sender=Incoming",
+        "key": "e58aaf8e950a93d3d2aa83291e072d2aa0f20252"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I7872:160827;225:135456",
+            "name": "ChatBubbleView",
+            "type": null,
+            "pageName": "Библиотека промтов обновление [14.09]",
+            "path": "Sender=Incoming",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.right",
+          "message": "Паддинг right: 0 → 24",
+          "referenceValue": 0,
+          "actualValue": 24,
+          "referenceRawValue": 0,
+          "actualRawValue": 24,
+          "referenceDisplayValue": 0,
+          "actualDisplayValue": 24,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "e58aaf8e950a93d3d2aa83291e072d2aa0f20252",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Sender": "Incoming"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "7872:160824",
+              "nodeName": "[M] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.сhat.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I7872:160827;225:135456;9839:184489;9839:183966;9839:183613",
+            "name": "Label",
+            "type": null,
+            "pageName": "Библиотека промтов обновление [14.09]",
+            "path": "Sender=Incoming / .Details / Incoming BubblesStack / Content / .Details / Label / Label",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "styles.fill",
+          "message": "Стиль заливка: light/text/secondary → text/secondary",
+          "referenceValue": "light/text/secondary",
+          "actualValue": "text/secondary",
+          "referenceRawValue": "light/text/secondary",
+          "actualRawValue": "text/secondary",
+          "referenceDisplayValue": "light/text/secondary",
+          "actualDisplayValue": "text/secondary",
+          "referenceResource": {
+            "name": "light/text/secondary",
+            "key": "ab4b1fccce920cdd000d57d17a62ca54630cc922",
+            "library": "020 :: Colors BlueTint Light",
+            "sourceFile": "styles/020 _ Colors BlueTint Light.json"
+          },
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "f59873cc3e222d9336c2fb274578635ba38a61d9",
+            "actualNestedOwnerPath": "Sender=Incoming / .Details / Incoming BubblesStack / Content / .Details / Label",
+            "actualNestedOwnerRelativePath": "Label",
+            "nestedOwnerComponentKey": "bcce9604c28290364725e6b7efe82f62974324dd",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Sender=Incoming / .Details / Incoming BubblesStack",
+            "nestedOwnerRelativePath": "Content / .Details / Label / Label",
+            "actualVariantProperties": {
+              "State": "Name"
+            },
+            "referenceVariantProperties": {
+              "Bubbles": "2"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "7872:160824",
+              "nodeName": "[M] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I7872:160827;225:135456;9839:184489;9839:183968;2069:235652",
+            "name": "IconButton",
+            "type": null,
+            "pageName": "Библиотека промтов обновление [14.09]",
+            "path": "Sender=Incoming / .Details / Incoming BubblesStack / Content / Bubble Group / .Details/ChatBubble / QuickAction / QuickAction / IconButton",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 6 → 0",
+          "referenceValue": 6,
+          "actualValue": "0",
+          "referenceRawValue": 6,
+          "actualRawValue": "0",
+          "referenceDisplayValue": 6,
+          "actualDisplayValue": "0",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "d073da6eed939fb01af189498f164a08b7d47605",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "e8b662d7a85c840689c22b3e96f75cf2f6e5a44a",
+            "actualNestedOwnerPath": "Sender=Incoming / .Details / Incoming BubblesStack / Content / Bubble Group / .Details/ChatBubble",
+            "actualNestedOwnerRelativePath": "QuickAction / QuickAction / IconButton",
+            "nestedOwnerComponentKey": "d073da6eed939fb01af189498f164a08b7d47605",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Sender=Incoming / .Details / Incoming BubblesStack / Content / Bubble Group / .Details/ChatBubble / QuickAction / QuickAction / IconButton",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "View": "Tertiary",
+              "Size": "24",
+              "Inverted": "False"
+            },
+            "referenceVariantProperties": {
+              "View": "Tertiary",
+              "Size": "24",
+              "Inverted": "False"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "7872:160824",
+              "nodeName": "[M] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.icon-button.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "generated-policy",
+                "revision": 1
+              },
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            },
+            {
+              "ruleId": "component:web-core.icon-button.manual-root-layer-property",
+              "severity": "warning",
+              "source": "component-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Ручные изменения root layout, fill, stroke, radius или opacity на IconButton являются layer customizations и должны сравниваться с effective component state baseline.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "component-state"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.icon-button.layer-properties-use-effective-baseline",
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I7872:160827;225:135456;9839:184489;9839:183968;2069:235652",
+            "name": "IconButton",
+            "type": null,
+            "pageName": "Библиотека промтов обновление [14.09]",
+            "path": "Sender=Incoming / .Details / Incoming BubblesStack / Content / Bubble Group / .Details/ChatBubble / QuickAction / QuickAction / IconButton",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Inverted",
+          "message": "variant.Inverted: Параметр не объявлен в Component API → False",
+          "referenceValue": "Параметр не объявлен в Component API",
+          "actualValue": "False",
+          "referenceRawValue": "Параметр не объявлен в Component API",
+          "actualRawValue": "False",
+          "referenceDisplayValue": "Параметр не объявлен в Component API",
+          "actualDisplayValue": "False",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "d073da6eed939fb01af189498f164a08b7d47605",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Tertiary",
+              "Size": "24",
+              "Inverted": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "7872:160824",
+              "nodeName": "[M] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.icon-button.component-properties-are-first-class",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения variant/property в этом семействе компонентов являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "part-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-api-unknown-variant-property",
+            "ruleId": "component-api:icon-button.desktop",
+            "contractId": "icon-button.desktop",
+            "constraintId": "component-api-unknown-variant-property",
+            "evidence": {
+              "property": "Inverted",
+              "allowedProperties": [
+                "Size",
+                "TransparentBg",
+                "View"
+              ]
+            },
+            "message": "Параметр Inverted отсутствует в Component API [D] IconButton",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I7872:160827;225:135456;9839:184489;9839:183968;2069:235654",
+            "name": "IconButton",
+            "type": null,
+            "pageName": "Библиотека промтов обновление [14.09]",
+            "path": "Sender=Incoming / .Details / Incoming BubblesStack / Content / Bubble Group / .Details/ChatBubble / QuickAction / QuickAction / IconButton",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Inverted",
+          "message": "variant.Inverted: Параметр не объявлен в Component API → False",
+          "referenceValue": "Параметр не объявлен в Component API",
+          "actualValue": "False",
+          "referenceRawValue": "Параметр не объявлен в Component API",
+          "actualRawValue": "False",
+          "referenceDisplayValue": "Параметр не объявлен в Component API",
+          "actualDisplayValue": "False",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "d073da6eed939fb01af189498f164a08b7d47605",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Tertiary",
+              "Size": "24",
+              "Inverted": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "7872:160824",
+              "nodeName": "[M] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.icon-button.component-properties-are-first-class",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения variant/property в этом семействе компонентов являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "part-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-api-unknown-variant-property",
+            "ruleId": "component-api:icon-button.desktop",
+            "contractId": "icon-button.desktop",
+            "constraintId": "component-api-unknown-variant-property",
+            "evidence": {
+              "property": "Inverted",
+              "allowedProperties": [
+                "Size",
+                "TransparentBg",
+                "View"
+              ]
+            },
+            "message": "Параметр Inverted отсутствует в Component API [D] IconButton",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I7872:160827;225:135456;9839:184489;9839:183968;2069:235655",
+            "name": "IconButton",
+            "type": null,
+            "pageName": "Библиотека промтов обновление [14.09]",
+            "path": "Sender=Incoming / .Details / Incoming BubblesStack / Content / Bubble Group / .Details/ChatBubble / QuickAction / QuickAction / IconButton",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Inverted",
+          "message": "variant.Inverted: Параметр не объявлен в Component API → False",
+          "referenceValue": "Параметр не объявлен в Component API",
+          "actualValue": "False",
+          "referenceRawValue": "Параметр не объявлен в Component API",
+          "actualRawValue": "False",
+          "referenceDisplayValue": "Параметр не объявлен в Component API",
+          "actualDisplayValue": "False",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "d073da6eed939fb01af189498f164a08b7d47605",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Tertiary",
+              "Size": "24",
+              "Inverted": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "7872:160824",
+              "nodeName": "[M] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.icon-button.component-properties-are-first-class",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения variant/property в этом семействе компонентов являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "part-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-api-unknown-variant-property",
+            "ruleId": "component-api:icon-button.desktop",
+            "contractId": "icon-button.desktop",
+            "constraintId": "component-api-unknown-variant-property",
+            "evidence": {
+              "property": "Inverted",
+              "allowedProperties": [
+                "Size",
+                "TransparentBg",
+                "View"
+              ]
+            },
+            "message": "Параметр Inverted отсутствует в Component API [D] IconButton",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I7872:160827;225:135456;9839:184489;9839:183968",
+            "name": ".Details/ChatBubble",
+            "type": null,
+            "pageName": "Библиотека промтов обновление [14.09]",
+            "path": "Sender=Incoming / .Details / Incoming BubblesStack / Content / Bubble Group / .Details/ChatBubble",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "component.identity",
+          "message": "Компонент: .Details / ChatBubbleView → .Details/ChatBubble",
+          "referenceValue": ".Details / ChatBubbleView",
+          "actualValue": ".Details/ChatBubble",
+          "referenceRawValue": ".Details / ChatBubbleView",
+          "actualRawValue": ".Details/ChatBubble",
+          "referenceDisplayValue": ".Details / ChatBubbleView",
+          "actualDisplayValue": ".Details/ChatBubble",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "e8b662d7a85c840689c22b3e96f75cf2f6e5a44a",
+            "referenceComponentKey": "1b89f21f6417f699bf5e1c3ffb7de843fe39362e",
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "bcce9604c28290364725e6b7efe82f62974324dd",
+            "actualNestedOwnerPath": "Sender=Incoming / .Details / Incoming BubblesStack",
+            "actualNestedOwnerRelativePath": "Content / Bubble Group / .Details/ChatBubble",
+            "nestedOwnerComponentKey": "71da2297401b61747504766bb40fab63e59719e3",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "Sender=Incoming / .Details / Incoming BubblesStack",
+            "nestedOwnerRelativePath": "Content / Bubble Group / .Details / ChatBubbleView",
+            "actualVariantProperties": {
+              "Type": "SingleLine"
+            },
+            "referenceVariantProperties": {
+              "Length": "SignleLine",
+              "Position": "Single",
+              "Sender": "Incoming",
+              "Style": "Primary"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "7872:160824",
+              "nodeName": "[M] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "7872:160828",
+        "name": "ChatBubbleView",
+        "type": "INSTANCE",
+        "pageName": "Библиотека промтов обновление [14.09]",
+        "path": "Обновление частых запросов / [M] 379 / [M] CorporateContent / Frame 2147223385 / ChatBubbleView",
+        "visible": true,
+        "ancestorNodeIds": [
+          "7872:160820",
+          "7872:160824",
+          "7872:160825"
+        ]
+      },
+      "component": {
+        "name": "ChatBubbleView",
+        "key": "bd92d4a6a9d646c98a446f8ac26f1bbe827f5c2e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Сhat [M].json"
+      },
+      "variant": {
+        "name": "Sender=Outgoing",
+        "key": "bd92d4a6a9d646c98a446f8ac26f1bbe827f5c2e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "7872:160828",
+            "name": "ChatBubbleView",
+            "type": null,
+            "pageName": "Библиотека промтов обновление [14.09]",
+            "path": "Sender=Outgoing",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.left",
+          "message": "Паддинг left: 0 → 24",
+          "referenceValue": 0,
+          "actualValue": 24,
+          "referenceRawValue": 0,
+          "actualRawValue": 24,
+          "referenceDisplayValue": 0,
+          "actualDisplayValue": 24,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "bd92d4a6a9d646c98a446f8ac26f1bbe827f5c2e",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Sender": "Outgoing"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "7872:160824",
+              "nodeName": "[M] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.сhat.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I7872:160828;9839:184535;9839:185269",
+            "name": ".Details / ChatBubbleView",
+            "type": null,
+            "pageName": "Библиотека промтов обновление [14.09]",
+            "path": "Sender=Outgoing / .Details / Outgoing BubblesStack / Content / Bubble Group / .Details / ChatBubbleView",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "styles.fill",
+          "message": "Стиль заливка: light/bg/secondary → base-bg/secondary",
+          "referenceValue": "light/bg/secondary",
+          "actualValue": "base-bg/secondary",
+          "referenceRawValue": "light/bg/secondary",
+          "actualRawValue": "base-bg/secondary",
+          "referenceDisplayValue": "light/bg/secondary",
+          "actualDisplayValue": "base-bg/secondary",
+          "referenceResource": {
+            "name": "light/bg/secondary",
+            "key": "005ccc3dbfacc14b33cca9d819568715b908500b",
+            "library": "020 :: Colors BlueTint Light",
+            "sourceFile": "styles/020 _ Colors BlueTint Light.json"
+          },
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "f70ad91d9aacec75c019df638309bf88b963d520",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "e42fa2b8d558ba9503e889b4776e7cf925c8a797",
+            "actualNestedOwnerPath": "Sender=Outgoing / .Details / Outgoing BubblesStack",
+            "actualNestedOwnerRelativePath": "Content / Bubble Group / .Details / ChatBubbleView",
+            "nestedOwnerComponentKey": "e42fa2b8d558ba9503e889b4776e7cf925c8a797",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Sender=Outgoing / .Details / Outgoing BubblesStack",
+            "nestedOwnerRelativePath": "Content / Bubble Group / .Details / ChatBubbleView",
+            "actualVariantProperties": {
+              "Sender": "Outgoing",
+              "Length": "SignleLine",
+              "Position": "Single",
+              "Style": "Primary"
+            },
+            "referenceVariantProperties": {
+              "Length": "SignleLine",
+              "Position": "Single",
+              "Sender": "Outgoing",
+              "Style": "Primary"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "7872:160824",
+              "nodeName": "[M] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I7872:160828;9839:184535;9839:185269;9839:179242",
+            "name": "Message Text",
+            "type": null,
+            "pageName": "Библиотека промтов обновление [14.09]",
+            "path": "Sender=Outgoing / .Details / Outgoing BubblesStack / Content / Bubble Group / .Details / ChatBubbleView / Message Text",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "styles.fill",
+          "message": "Стиль заливка: light/text/primary → text/primary",
+          "referenceValue": "light/text/primary",
+          "actualValue": "text/primary",
+          "referenceRawValue": "light/text/primary",
+          "actualRawValue": "text/primary",
+          "referenceDisplayValue": "light/text/primary",
+          "actualDisplayValue": "text/primary",
+          "referenceResource": {
+            "name": "light/text/primary",
+            "key": "6313f5ef73de1fb787861cd6e0408c77214b7898",
+            "library": "020 :: Colors BlueTint Light",
+            "sourceFile": "styles/020 _ Colors BlueTint Light.json"
+          },
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "f70ad91d9aacec75c019df638309bf88b963d520",
+            "actualNestedOwnerPath": "Sender=Outgoing / .Details / Outgoing BubblesStack / Content / Bubble Group / .Details / ChatBubbleView",
+            "actualNestedOwnerRelativePath": "Message Text",
+            "nestedOwnerComponentKey": "f70ad91d9aacec75c019df638309bf88b963d520",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Sender=Outgoing / .Details / Outgoing BubblesStack / Content / Bubble Group / .Details / ChatBubbleView",
+            "nestedOwnerRelativePath": "Message Text",
+            "actualVariantProperties": {
+              "Sender": "Outgoing",
+              "Length": "SignleLine",
+              "Position": "Single",
+              "Style": "Primary"
+            },
+            "referenceVariantProperties": {
+              "Sender": "Outgoing",
+              "Length": "SignleLine",
+              "Position": "Single",
+              "Style": "Primary"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "7872:160824",
+              "nodeName": "[M] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I7872:160828;9839:184535;9839:185269;9839:179242",
+            "name": "Message Text",
+            "type": null,
+            "pageName": "Библиотека промтов обновление [14.09]",
+            "path": "Sender=Outgoing / .Details / Outgoing BubblesStack / Content / Bubble Group / .Details / ChatBubbleView / Message Text",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Paragraph/16–20 Component Primary → Paragraph/16–24 Primary Medium",
+          "referenceValue": "Paragraph/16–20 Component Primary",
+          "actualValue": "Paragraph/16–24 Primary Medium",
+          "referenceRawValue": "Paragraph/16–20 Component Primary",
+          "actualRawValue": "Paragraph/16–24 Primary Medium",
+          "referenceDisplayValue": "Paragraph/16–20 Component Primary",
+          "actualDisplayValue": "Paragraph/16–24 Primary Medium",
+          "referenceResource": {
+            "name": "Paragraph/16–20 Component Primary",
+            "key": "020582d780ac6ecbb4d8916c4b68099e42b09126",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": {
+            "name": "Paragraph/16–24 Primary Medium",
+            "key": "f0f0d59f9f92db92901605dd929cfa3b93540058",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "f70ad91d9aacec75c019df638309bf88b963d520",
+            "actualNestedOwnerPath": "Sender=Outgoing / .Details / Outgoing BubblesStack / Content / Bubble Group / .Details / ChatBubbleView",
+            "actualNestedOwnerRelativePath": "Message Text",
+            "nestedOwnerComponentKey": "f70ad91d9aacec75c019df638309bf88b963d520",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Sender=Outgoing / .Details / Outgoing BubblesStack / Content / Bubble Group / .Details / ChatBubbleView",
+            "nestedOwnerRelativePath": "Message Text",
+            "actualVariantProperties": {
+              "Sender": "Outgoing",
+              "Length": "SignleLine",
+              "Position": "Single",
+              "Style": "Primary"
+            },
+            "referenceVariantProperties": {
+              "Sender": "Outgoing",
+              "Length": "SignleLine",
+              "Position": "Single",
+              "Style": "Primary"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "7872:160824",
+              "nodeName": "[M] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": "Стиль текст",
+            "priority": 30,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "7872:160852",
+        "name": "[D] Button",
+        "type": "INSTANCE",
+        "pageName": "Библиотека промтов обновление [14.09]",
+        "path": "Обновление частых запросов / [M] 379 / [M] CorporateContent / fullInput / TextField / TextField / Input / Text / Left / Value / [D] Button",
+        "visible": true,
+        "ancestorNodeIds": [
+          "7872:160820",
+          "7872:160824",
+          "7872:160829",
+          "7872:160830",
+          "7872:160831",
+          "7872:160832",
+          "7872:160847",
+          "7872:160848",
+          "7872:160851"
+        ]
+      },
+      "component": {
+        "name": "[D] Button",
+        "key": "68b4331cfd13fd0258913a2597a4f3e2fef3c54f",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Button.json"
+      },
+      "variant": {
+        "name": "View=Text, Size=32, Shape=Rectangular, SingleIcon=False, DisabledState=False",
+        "key": "68b4331cfd13fd0258913a2597a4f3e2fef3c54f"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I7872:160852;48:102772",
+            "name": "Label",
+            "type": null,
+            "pageName": "Библиотека промтов обновление [14.09]",
+            "path": "View=Text, Size=32, Shape=Rectangular, SingleIcon=False, DisabledState=False / Text / Label",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Action/14–20 Primary Small → Paragraph/14–18 Component Secondary",
+          "referenceValue": "Action/14–20 Primary Small",
+          "actualValue": "Paragraph/14–18 Component Secondary",
+          "referenceRawValue": "Action/14–20 Primary Small",
+          "actualRawValue": "Paragraph/14–18 Component Secondary",
+          "referenceDisplayValue": "Action/14–20 Primary Small",
+          "actualDisplayValue": "Paragraph/14–18 Component Secondary",
+          "referenceResource": {
+            "name": "Action/14–20 Primary Small",
+            "key": "f3cc4701ff633e5c5f3cbbc1d47e35a6a6f60dad",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": {
+            "name": "Paragraph/14–18 Component Secondary",
+            "key": "d3ec8b47e09e08ae335e4f831491482c2eeeecb3",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "68b4331cfd13fd0258913a2597a4f3e2fef3c54f",
+            "actualNestedOwnerPath": "View=Text, Size=32, Shape=Rectangular, SingleIcon=False, DisabledState=False",
+            "actualNestedOwnerRelativePath": "Text / Label",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Text",
+              "Size": "32",
+              "Shape": "Rectangular",
+              "SingleIcon": "False",
+              "DisabledState": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "7872:160832",
+              "nodeName": "Input",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.button.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "generated-policy",
+                "revision": 1
+              },
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            },
+            {
+              "ruleId": "component:web-core.button.label-text-style-locked",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "design-system-author",
+                "revision": 2
+              },
+              "severityScope": "design",
+              "appliesTo": "styles.text",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Не меняй вручную text styles на Button Label или Hint. Text style определяется состоянием Button component и должен совпадать с effective component baseline.",
+              "remediation": "Сбрось layer text style к effective Button baseline.",
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": "Стиль текст",
+            "priority": 30,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.button.layer-properties-use-effective-baseline",
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I7872:160856;2589:11864",
+        "name": "🔩 Underline",
+        "type": "INSTANCE",
+        "pageName": "Библиотека промтов обновление [14.09]",
+        "path": "Обновление частых запросов / [M] 379 / [M] CorporateContent / fullInput / TextField / .BottomInfo / 🔩 Underline",
+        "visible": true,
+        "ancestorNodeIds": [
+          "7872:160820",
+          "7872:160824",
+          "7872:160829",
+          "7872:160830",
+          "7872:160856"
+        ]
+      },
+      "component": {
+        "name": "🔩 Underline",
+        "key": "2ae1ad9dfa1e91be953d34117d126a3a7fecd24b",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Link.json"
+      },
+      "variant": {
+        "name": "Line=Pseudo",
+        "key": "2ae1ad9dfa1e91be953d34117d126a3a7fecd24b"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I7872:160856;2589:11864;493:7888",
+            "name": "Underline",
+            "type": null,
+            "pageName": "Библиотека промтов обновление [14.09]",
+            "path": "Line=Pseudo / Underline",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "stroke",
+          "message": "обводка: decorative/purple → text/secondary",
+          "referenceValue": "decorative/purple",
+          "actualValue": "text/secondary",
+          "referenceRawValue": "decorative/purple",
+          "actualRawValue": "text/secondary",
+          "referenceDisplayValue": "decorative/purple",
+          "actualDisplayValue": "text/secondary",
+          "referenceResource": {
+            "name": "decorative/purple",
+            "key": "f718389f8202eb3dad6f65470c6f8887d7d0b671",
+            "library": "Decorative Dynamic",
+            "sourceFile": "003 :: Decarative Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "text/secondary",
+            "key": "d9d26239617e3ab9e69d7ed378d811a3c4561063",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": {
+            "id": "VariableID:f718389f8202eb3dad6f65470c6f8887d7d0b671/1816:144",
+            "key": "f718389f8202eb3dad6f65470c6f8887d7d0b671",
+            "name": "decorative/purple",
+            "collectionId": "VariableCollectionId:944:1243",
+            "collectionName": "Decorative Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:d9d26239617e3ab9e69d7ed378d811a3c4561063/3541:205",
+            "key": "d9d26239617e3ab9e69d7ed378d811a3c4561063",
+            "name": "text/secondary",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "2ae1ad9dfa1e91be953d34117d126a3a7fecd24b",
+            "actualNestedOwnerPath": "Line=Pseudo",
+            "actualNestedOwnerRelativePath": "Underline",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Line": "Pseudo"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "7872:160829",
+              "nodeName": "fullInput",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.link.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "generated-policy",
+                "revision": 1
+              },
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 50,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.link.layer-properties-use-effective-baseline",
+            "contractId": null,
+            "constraintId": null,
+            "evidence": {
+              "resetSurface": "layer"
+            },
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I7872:160856;2589:11866",
+        "name": "🔩 Underline",
+        "type": "INSTANCE",
+        "pageName": "Библиотека промтов обновление [14.09]",
+        "path": "Обновление частых запросов / [M] 379 / [M] CorporateContent / fullInput / TextField / .BottomInfo / 🔩 Underline",
+        "visible": true,
+        "ancestorNodeIds": [
+          "7872:160820",
+          "7872:160824",
+          "7872:160829",
+          "7872:160830",
+          "7872:160856"
+        ]
+      },
+      "component": {
+        "name": "🔩 Underline",
+        "key": "2ae1ad9dfa1e91be953d34117d126a3a7fecd24b",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Link.json"
+      },
+      "variant": {
+        "name": "Line=Pseudo",
+        "key": "2ae1ad9dfa1e91be953d34117d126a3a7fecd24b"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I7872:160856;2589:11866;493:7888",
+            "name": "Underline",
+            "type": null,
+            "pageName": "Библиотека промтов обновление [14.09]",
+            "path": "Line=Pseudo / Underline",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "stroke",
+          "message": "обводка: decorative/purple → text/secondary",
+          "referenceValue": "decorative/purple",
+          "actualValue": "text/secondary",
+          "referenceRawValue": "decorative/purple",
+          "actualRawValue": "text/secondary",
+          "referenceDisplayValue": "decorative/purple",
+          "actualDisplayValue": "text/secondary",
+          "referenceResource": {
+            "name": "decorative/purple",
+            "key": "f718389f8202eb3dad6f65470c6f8887d7d0b671",
+            "library": "Decorative Dynamic",
+            "sourceFile": "003 :: Decarative Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "text/secondary",
+            "key": "d9d26239617e3ab9e69d7ed378d811a3c4561063",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": {
+            "id": "VariableID:f718389f8202eb3dad6f65470c6f8887d7d0b671/1816:144",
+            "key": "f718389f8202eb3dad6f65470c6f8887d7d0b671",
+            "name": "decorative/purple",
+            "collectionId": "VariableCollectionId:944:1243",
+            "collectionName": "Decorative Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:d9d26239617e3ab9e69d7ed378d811a3c4561063/3541:205",
+            "key": "d9d26239617e3ab9e69d7ed378d811a3c4561063",
+            "name": "text/secondary",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "2ae1ad9dfa1e91be953d34117d126a3a7fecd24b",
+            "actualNestedOwnerPath": "Line=Pseudo",
+            "actualNestedOwnerRelativePath": "Underline",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Line": "Pseudo"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "7872:160829",
+              "nodeName": "fullInput",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.link.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "generated-policy",
+                "revision": 1
+              },
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 50,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.link.layer-properties-use-effective-baseline",
+            "contractId": null,
+            "constraintId": null,
+            "evidence": {
+              "resetSurface": "layer"
+            },
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "7872:160856",
+        "name": ".BottomInfo",
+        "type": "INSTANCE",
+        "pageName": "Библиотека промтов обновление [14.09]",
+        "path": "Обновление частых запросов / [M] 379 / [M] CorporateContent / fullInput / TextField / .BottomInfo",
+        "visible": true,
+        "ancestorNodeIds": [
+          "7872:160820",
+          "7872:160824",
+          "7872:160829",
+          "7872:160830"
+        ]
+      },
+      "component": {
+        "name": ".BottomInfo",
+        "key": "21aa05ce15fe66d0fde67668ba273eea7a4e841b",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "detachedComponents",
+      "severityHint": "high",
+      "title": "Detach компонента",
+      "node": {
+        "id": "7872:160824",
+        "name": "[M] CorporateContent",
+        "type": "FRAME_OR_GROUP",
+        "pageName": "Библиотека промтов обновление [14.09]",
+        "path": "Обновление частых запросов / [M] 379 / [M] CorporateContent",
+        "visible": true
+      },
+      "component": {
+        "name": "[M] CorporateContent",
+        "key": "11ae074b596a6b3dfb6696f51531439723c0225b",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateContent.json"
+      }
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "7872:160860",
+        "name": "[M] BottomSheetHeader",
+        "type": "INSTANCE",
+        "pageName": "Библиотека промтов обновление [14.09]",
+        "path": "Обновление частых запросов / [M] 379 / BottomSheet / [M] BottomSheetHeader",
+        "visible": true,
+        "ancestorNodeIds": [
+          "7872:160820",
+          "7872:160859"
+        ]
+      },
+      "component": {
+        "name": "[M] BottomSheetHeader",
+        "key": "ac992f7795acabf78c991b26696a1592c2bee80d",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- BottomSheet.json"
+      },
+      "variant": {
+        "name": "FullHeight=False, Content=True",
+        "key": "ac992f7795acabf78c991b26696a1592c2bee80d"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "ac992f7795acabf78c991b26696a1592c2bee80d",
+        "currentComponentId": "6297:32269",
+        "latestComponentId": "6297:32269"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "7872:160863",
+        "name": "[M] OptionListCell",
+        "type": "INSTANCE",
+        "pageName": "Библиотека промтов обновление [14.09]",
+        "path": "Обновление частых запросов / [M] 379 / BottomSheet / [M] OptionListCell",
+        "visible": true,
+        "ancestorNodeIds": [
+          "7872:160820",
+          "7872:160859"
+        ]
+      },
+      "component": {
+        "name": "[M] OptionListCell",
+        "key": "e88b9b15815d32e3f306032ee97bd8a78b2ac2ae",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- _ _ OptionsList.json"
+      },
+      "variant": {
+        "name": "LeftControl=False, RightControl=False",
+        "key": "e88b9b15815d32e3f306032ee97bd8a78b2ac2ae"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "e88b9b15815d32e3f306032ee97bd8a78b2ac2ae",
+        "currentComponentId": "6962:116101",
+        "latestComponentId": "6962:116101"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "7872:160862",
+        "name": "[M] OptionListCell",
+        "type": "INSTANCE",
+        "pageName": "Библиотека промтов обновление [14.09]",
+        "path": "Обновление частых запросов / [M] 379 / BottomSheet / [M] OptionListCell",
+        "visible": true,
+        "ancestorNodeIds": [
+          "7872:160820",
+          "7872:160859"
+        ]
+      },
+      "component": {
+        "name": "[M] OptionListCell",
+        "key": "e88b9b15815d32e3f306032ee97bd8a78b2ac2ae",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- _ _ OptionsList.json"
+      },
+      "variant": {
+        "name": "LeftControl=False, RightControl=False",
+        "key": "e88b9b15815d32e3f306032ee97bd8a78b2ac2ae"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "e88b9b15815d32e3f306032ee97bd8a78b2ac2ae",
+        "currentComponentId": "6962:116101",
+        "latestComponentId": "6962:116101"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "7872:160861",
+        "name": "[M] OptionListCell",
+        "type": "INSTANCE",
+        "pageName": "Библиотека промтов обновление [14.09]",
+        "path": "Обновление частых запросов / [M] 379 / BottomSheet / [M] OptionListCell",
+        "visible": true,
+        "ancestorNodeIds": [
+          "7872:160820",
+          "7872:160859"
+        ]
+      },
+      "component": {
+        "name": "[M] OptionListCell",
+        "key": "e88b9b15815d32e3f306032ee97bd8a78b2ac2ae",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- _ _ OptionsList.json"
+      },
+      "variant": {
+        "name": "LeftControl=False, RightControl=False",
+        "key": "e88b9b15815d32e3f306032ee97bd8a78b2ac2ae"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "e88b9b15815d32e3f306032ee97bd8a78b2ac2ae",
+        "currentComponentId": "6962:116101",
+        "latestComponentId": "6962:116101"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "7872:160864",
+        "name": "[M] OptionListCell",
+        "type": "INSTANCE",
+        "pageName": "Библиотека промтов обновление [14.09]",
+        "path": "Обновление частых запросов / [M] 379 / BottomSheet / [M] OptionListCell",
+        "visible": true,
+        "ancestorNodeIds": [
+          "7872:160820",
+          "7872:160859"
+        ]
+      },
+      "component": {
+        "name": "[M] OptionListCell",
+        "key": "e88b9b15815d32e3f306032ee97bd8a78b2ac2ae",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- _ _ OptionsList.json"
+      },
+      "variant": {
+        "name": "LeftControl=False, RightControl=False",
+        "key": "e88b9b15815d32e3f306032ee97bd8a78b2ac2ae"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "e88b9b15815d32e3f306032ee97bd8a78b2ac2ae",
+        "currentComponentId": "6962:116101",
+        "latestComponentId": "6962:116101"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "7872:162084",
+        "name": "[M] OptionListCell",
+        "type": "INSTANCE",
+        "pageName": "Библиотека промтов обновление [14.09]",
+        "path": "Обновление частых запросов / [M] 379 / BottomSheet / [M] OptionListCell",
+        "visible": true,
+        "ancestorNodeIds": [
+          "7872:160820",
+          "7872:160859"
+        ]
+      },
+      "component": {
+        "name": "[M] OptionListCell",
+        "key": "e88b9b15815d32e3f306032ee97bd8a78b2ac2ae",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- _ _ OptionsList.json"
+      },
+      "variant": {
+        "name": "LeftControl=False, RightControl=False",
+        "key": "e88b9b15815d32e3f306032ee97bd8a78b2ac2ae"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "e88b9b15815d32e3f306032ee97bd8a78b2ac2ae",
+        "currentComponentId": "6962:116101",
+        "latestComponentId": "6962:116101"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "7872:160866",
+        "name": "[M] OptionListCell",
+        "type": "INSTANCE",
+        "pageName": "Библиотека промтов обновление [14.09]",
+        "path": "Обновление частых запросов / [M] 379 / BottomSheet / [M] OptionListCell",
+        "visible": true,
+        "ancestorNodeIds": [
+          "7872:160820",
+          "7872:160859"
+        ]
+      },
+      "component": {
+        "name": "[M] OptionListCell",
+        "key": "e88b9b15815d32e3f306032ee97bd8a78b2ac2ae",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- _ _ OptionsList.json"
+      },
+      "variant": {
+        "name": "LeftControl=False, RightControl=False",
+        "key": "e88b9b15815d32e3f306032ee97bd8a78b2ac2ae"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "e88b9b15815d32e3f306032ee97bd8a78b2ac2ae",
+        "currentComponentId": "6962:116101",
+        "latestComponentId": "6962:116101"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "7872:162094",
+        "name": "[M] OptionListCell",
+        "type": "INSTANCE",
+        "pageName": "Библиотека промтов обновление [14.09]",
+        "path": "Обновление частых запросов / [M] 379 / BottomSheet / [M] OptionListCell",
+        "visible": true,
+        "ancestorNodeIds": [
+          "7872:160820",
+          "7872:160859"
+        ]
+      },
+      "component": {
+        "name": "[M] OptionListCell",
+        "key": "e88b9b15815d32e3f306032ee97bd8a78b2ac2ae",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- _ _ OptionsList.json"
+      },
+      "variant": {
+        "name": "LeftControl=False, RightControl=False",
+        "key": "e88b9b15815d32e3f306032ee97bd8a78b2ac2ae"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "e88b9b15815d32e3f306032ee97bd8a78b2ac2ae",
+        "currentComponentId": "6962:116101",
+        "latestComponentId": "6962:116101"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "7872:160865",
+        "name": "[M] OptionListCell",
+        "type": "INSTANCE",
+        "pageName": "Библиотека промтов обновление [14.09]",
+        "path": "Обновление частых запросов / [M] 379 / BottomSheet / [M] OptionListCell",
+        "visible": true,
+        "ancestorNodeIds": [
+          "7872:160820",
+          "7872:160859"
+        ]
+      },
+      "component": {
+        "name": "[M] OptionListCell",
+        "key": "e88b9b15815d32e3f306032ee97bd8a78b2ac2ae",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- _ _ OptionsList.json"
+      },
+      "variant": {
+        "name": "LeftControl=False, RightControl=False",
+        "key": "e88b9b15815d32e3f306032ee97bd8a78b2ac2ae"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "e88b9b15815d32e3f306032ee97bd8a78b2ac2ae",
+        "currentComponentId": "6962:116101",
+        "latestComponentId": "6962:116101"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "7872:160867",
+        "name": "[M] OptionListCell",
+        "type": "INSTANCE",
+        "pageName": "Библиотека промтов обновление [14.09]",
+        "path": "Обновление частых запросов / [M] 379 / BottomSheet / [M] OptionListCell",
+        "visible": true,
+        "ancestorNodeIds": [
+          "7872:160820",
+          "7872:160859"
+        ]
+      },
+      "component": {
+        "name": "[M] OptionListCell",
+        "key": "e88b9b15815d32e3f306032ee97bd8a78b2ac2ae",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- _ _ OptionsList.json"
+      },
+      "variant": {
+        "name": "LeftControl=False, RightControl=False",
+        "key": "e88b9b15815d32e3f306032ee97bd8a78b2ac2ae"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "e88b9b15815d32e3f306032ee97bd8a78b2ac2ae",
+        "currentComponentId": "6962:116101",
+        "latestComponentId": "6962:116101"
+      },
+      "localComponentOwner": null
+    }
+  ],
+  "componentContexts": [
+    {
+      "componentKey": "web-core.bottom-sheet",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[M] BottomSheetFooter",
+        "[M] BottomSheetFooter_Inverted",
+        "[M] BottomSheetHeader",
+        "[M] BottomSheetHeader_Inverted",
+        "🔄 [M][AO] BottomSheetFooter",
+        "🔄 [M][AO] BottomSheetHeader",
+        "🔄 🔩 [M][AO] BackArrow",
+        "🔄 🔩 [M][AO] BottomSheetFooterContent",
+        "🔄 🔩 [M][AO] Cross",
+        "🔄 🔩 [M][AO] MiddleSlot",
+        "🔄 🔩 [M][AO] Navigation",
+        "🔄 🔩 [M][AO] NavigationContent",
+        "🔄 🔩 [M][Corporate] BottomSheetFooterContent",
+        "🔩 [M] BottomSheetFooterContent",
+        "🔩 [M] BottomSheetFooterContent_Inverted",
+        "🔩 [M] Navigation",
+        "🔩 [M] Navigation_Inverted",
+        "BackArrow",
+        "BackArrow_Inverted",
+        "Cross",
+        "Cross_Inverted",
+        "MiddleSlot",
+        "MiddleSlot_Inverted",
+        "NavigationContent",
+        "NavigationContent_Inverted",
+        "[M] BottomSheetBody",
+        "[M] BottomSheetBody_Inverted",
+        "🔄 [M][AO] BottomSheetBody",
+        "🔄 🔩 [M][AO] BottomAddon",
+        "🔄 🔩 [M][AO] BottomSheetBodyContent",
+        "🔄 🔩 [M][AO] LeftAddon",
+        "🔄 🔩 [M][AO] RightAddon",
+        "🔩 [M] BottomAddon",
+        "🔩 [M] BottomAddon_Inverted",
+        "🔩 [M] BottomSheetBodyContent",
+        "🔩 [M] BottomSheetBodyContent_Inverted",
+        "LeftAddon",
+        "LeftAddon_Inverted",
+        "RightAddon",
+        "RightAddon_Inverted"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "28914f153d631a144854224442ae3ea3fce4c2a8",
+          "name": "[M] BottomSheetHeader",
+          "purpose": "[M][Default] BottomSheet",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.button",
+      "summary": "Button — семейство action controls. Apollo должен трактовать изменения Button variant как component property changes, а ручные изменения style/token/layout как layer customizations.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] Button",
+        "[D] Button_Inverted",
+        "[M] Button",
+        "[M] Button_Inverted",
+        "🔄 [D][Corporate] Button",
+        "🔄 [D][Corporate] Button_Inverted",
+        "🔄 [M][Corporate] Button",
+        "🔄 [M][Corporate] Button_Inverted",
+        "🔩 Addon",
+        "🔩 Addon"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*",
+          "variant.View",
+          "variant.Size",
+          "variant.Shape",
+          "variant.SingleIcon",
+          "variant.DisabledState"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent",
+          "layout.padding",
+          "layout.itemSpacing"
+        ],
+        "baselinePolicy": "Если component property изменилась, сравнивай ручные layer overrides с baseline текущего actual-состояния компонента, а не с исходным reference baseline.",
+        "slotProperties": [
+          "LeftAddon.variant.Type",
+          "RightAddon.variant.Type"
+        ],
+        "ordering": [
+          "component-property",
+          "slot-property",
+          "layer-property"
+        ]
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.View",
+            "variant.Size",
+            "variant.Shape",
+            "variant.SingleIcon",
+            "variant.DisabledState"
+          ],
+          "layerProperties": [
+            "fills",
+            "strokes",
+            "strokeWeight",
+            "cornerRadius",
+            "opacity",
+            "layout.padding",
+            "layout.itemSpacing",
+            "styles.text",
+            "typography"
+          ],
+          "dependencyPolicy": "При reset component property layer differences, вызванные только этой property, могут исчезнуть автоматически. Ручные layer overrides должны оставаться независимо сбрасываемыми, пока reset родительской property не уберёт их target state."
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web-core.icon-button",
+      "summary": "IconButton — семейство компонентов для icon-only actions. Apollo должен трактовать Size, View, TransparentBg и nested Icon Type как component/part properties, а ручные root/icon visual changes как layer customizations.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] IconButton",
+        "[D] IconButton_Inverted",
+        "[M] IconButton",
+        "[M] IconButton_Inverted",
+        "🔄 [D][Corporate] IconButton",
+        "🔄 [D][Corporate] IconButton_Inverted",
+        "🔄 [M][Corporate] IconButton",
+        "🔄 [M][Corporate] IconButton_Inverted",
+        "🔩 Icon"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*",
+          "variant.Size",
+          "variant.View",
+          "variant.TransparentBg"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent",
+          "strokeWeight",
+          "layout.padding",
+          "layout.itemSpacing"
+        ],
+        "baselinePolicy": "Если component property изменилась, а затем icon/root layer был вручную кастомизирован, сравнивай layer с текущим IconButton state baseline, а не с исходным reference baseline.",
+        "partProperties": [
+          "Icon.variant.Type"
+        ],
+        "ordering": [
+          "component-property",
+          "part-property",
+          "layer-property"
+        ]
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.Size",
+            "variant.View",
+            "variant.TransparentBg"
+          ],
+          "layerProperties": [
+            "fills",
+            "strokes",
+            "strokeWeight",
+            "cornerRadius",
+            "opacity",
+            "layout.padding",
+            "layout.itemSpacing"
+          ],
+          "dependencyPolicy": "При reset IconButton component property visual differences, вызванные только этой property, могут исчезнуть автоматически. Ручные layer overrides должны оставаться независимо сбрасываемыми, пока reset родительской property не уберёт их target state."
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web-core.link",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔩 Underline",
+        "Link"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.options-list",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] OptionList",
+        "[D] OptionListCell",
+        "[M] OptionListCell",
+        "🔩 [D] OptionListFooterContent",
+        "🔩 [D] OptionListHeaderContent",
+        "🔩 [D][Corporate] OptionListFooterContent",
+        "🔩 [D][Corporate] OptionListHeaderContent",
+        "🔩 [M] OptionListHeaderContent",
+        "🔩 [M][AO] OptionListHeaderContent",
+        "🔩 Checkmark",
+        "🔩 OptionListCellContent",
+        "[D] OptionListEmptyState",
+        "[D] OptionListFooter",
+        "[D] OptionListGroupTitle",
+        "[D] OptionListHeader",
+        "[M] OptionListEmptyState",
+        "[M] OptionListGroupTitle",
+        "[M] OptionListHeader",
+        "🔩 SwapControl"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.corporate-content",
+      "summary": "CorporateContent — обязательная контентная область продуктовой страницы. Используй [D] CorporateContent для desktop и [M] CorporateContent для mobile-web.",
+      "criticalBaselines": [],
+      "agentInstructions": [
+        "Не считай произвольный контент или несколько дочерних элементов внутри Body нарушением сами по себе.",
+        "Проверяй содержимое Body по собственным компонентным контрактам и паттернам.",
+        "Считай использование переходного [T] CorporateContent явным нарушением.",
+        "Не рекомендуй ручную правку fill, grid style или padding корня CorporateContent; рекомендуй правильный mode переменных.",
+        "Не требуй наличия родительского компонента CorporatePage в Figma: такого компонента нет, самостоятельное использование CorporateContent допустимо.",
+        "Не применяй Gutter как обязательный itemSpacing внутри Body; он допустим в любой горизонтальной композиции без обязательного Section.",
+        "На ширине 768 требуй [D] CorporateContent и mode 768 коллекции [D] Grid & Cols.",
+        "Не придумывай условия выбора между base-bg-alt и base-bg до появления отдельного паттерна; default — base-bg-alt (grey).",
+        "Не разрешай кликабельность корня или detach CorporateContent и Body.",
+        "Не разрешай вкладывать CorporateContent внутрь CorporateContent и не оставляй SwapMe после добавления реального содержимого.",
+        "Требуй Header или HeaderMenu непосредственно над CorporateContent в общем вертикальном контейнере с gap 0.",
+        "Не разрешай менять вертикальное направление, itemSpacing=0 или clipsContent=false корня CorporateContent."
+      ],
+      "includedComponents": [
+        "[D] Section",
+        "[D] CorporateContent",
+        "[M] CorporateContent",
+        "❌ [D] Body",
+        "❌ [M} Body",
+        "❌ [T] Body",
+        "❌ [T] CorporateContent"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "11ae074b596a6b3dfb6696f51531439723c0225b",
+          "name": "[M] CorporateContent",
+          "purpose": "Основная mobile-web контентная область корпоративной продуктовой страницы с системным фоном и мобильными отступами.",
+          "useWhen": [
+            "Собирается содержимое корпоративной страницы ниже 768 px."
+          ],
+          "doNotUseWhen": [
+            "Макет использует desktop breakpoint 768 px или выше."
+          ],
+          "relationship": "Mobile-web версия корневого CorporateContent; принимает произвольную композицию в Body.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.сhat",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        ".Details / ChatBubbleView",
+        ".Details / FeedSectionView",
+        ".Details / Incoming BubblesStack",
+        ".Details / Label",
+        ".Details / Outgoing BubblesStack",
+        "ChatBubbleView"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    }
+  ]
+}
