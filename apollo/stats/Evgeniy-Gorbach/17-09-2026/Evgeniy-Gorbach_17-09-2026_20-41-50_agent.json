@@ -1,0 +1,1167 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1629124233656581850-1789666910239-qjzwk0m8:agent",
+  "sourceReportId": "apollo-1629124233656581850-1789666910239-qjzwk0m8",
+  "generatedAt": "2026-09-17T17:41:50.239Z",
+  "suggestedFileName": "Evgeniy-Gorbach_17-09-2026_20-41-50_agent.json",
+  "user": {
+    "id": "1629124233656581850",
+    "name": "Evgeniy Gorbach",
+    "slug": "Evgeniy-Gorbach"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.3.0"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "Все отчёты",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "pageType": null,
+    "startedAt": "2026-09-17T17:41:27.628Z",
+    "finishedAt": "2026-09-17T17:41:50.239Z",
+    "durationMs": 22611,
+    "selection": [
+      {
+        "nodeId": "1329:231981",
+        "name": "Wizard",
+        "nodeType": "FRAME",
+        "path": "Атрибуты в событии / Атрибут, Равно/Не равно / Wizard",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 28,
+    "problemOccurrenceCount": 30,
+    "categoryCounts": {
+      "deprecatedComponents": 1,
+      "deprecatedStyles": 4,
+      "customStyles": 14,
+      "updates": 7,
+      "customizations": 0,
+      "localComponents": 3,
+      "detachedComponents": 0,
+      "presets": 0,
+      "technicalComponents": 0,
+      "currentComponents": 7,
+      "wrongChannel": 0,
+      "themization": 1
+    },
+    "includedFindingCount": 30,
+    "omittedCurrentComponentCount": 7
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, authority.status=active, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with authority.status=active, severity=error, and matchKind=exact_component_rule for the same property/change. Missing, draft, or malformed authority never confirms a violation.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 4,
+      "includedCount": 4,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 14,
+      "includedCount": 14,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 7,
+      "includedCount": 7,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 3,
+      "includedCount": 3,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "deprecatedComponents",
+      "severityHint": "high",
+      "title": "Устаревший компонент",
+      "node": {
+        "id": "1329:232059",
+        "name": "🔄 Button",
+        "type": "INSTANCE",
+        "pageName": "✅  Release | Атрибуты событий",
+        "path": "Атрибуты в событии / Атрибут, Равно/Не равно / Wizard / Wrapper / WizardBody / Group Container / Group Label Container / 🔄 Button",
+        "visible": true,
+        "ancestorNodeIds": [
+          "1342:8457",
+          "1329:231981",
+          "1329:231982",
+          "1329:231984",
+          "1329:232055",
+          "1329:232056"
+        ]
+      },
+      "component": {
+        "name": "🔄 Button",
+        "key": "b01d67c4d9f004f5718501a26a082c785814c755",
+        "library": "Web :: Old Core Default Components",
+        "sourceFile": "web/components/web-old-core-default-components/Web _ Old Core Default Components -- Button.json"
+      },
+      "variant": {
+        "name": "size=XXS (32), view=ghost, disable=False, leftAddon=False, rightAddon=True, label=True, loading=False",
+        "key": "b01d67c4d9f004f5718501a26a082c785814c755"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "b01d67c4d9f004f5718501a26a082c785814c755",
+        "currentComponentId": "6:3806",
+        "latestComponentId": "6:3806"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "deprecatedStyles",
+      "severityHint": "medium",
+      "title": "Устаревший стиль",
+      "node": {
+        "id": "1329:232006",
+        "name": "Label",
+        "type": "TEXT",
+        "pageName": "✅  Release | Атрибуты событий",
+        "path": "Атрибуты в событии / Атрибут, Равно/Не равно / Wizard / Wrapper / WizardBody / Wizard Step / Wizard Step / Wizard Container / Container / Container / EventBlock / Content Block / EventTopper / Description Container / List of Labels / Label",
+        "visible": true
+      },
+      "style": {
+        "name": "light/text/primary",
+        "key": "6313f5ef73de1fb787861cd6e0408c77214b7898",
+        "library": "020 :: Colors BlueTint Light",
+        "sourceFile": "styles/020 _ Colors BlueTint Light.json"
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "deprecatedStyles",
+      "severityHint": "medium",
+      "title": "Устаревший стиль",
+      "node": {
+        "id": "1329:232008",
+        "name": "Label",
+        "type": "TEXT",
+        "pageName": "✅  Release | Атрибуты событий",
+        "path": "Атрибуты в событии / Атрибут, Равно/Не равно / Wizard / Wrapper / WizardBody / Wizard Step / Wizard Step / Wizard Container / Container / Container / EventBlock / Content Block / EventTopper / Description Container / List of Labels / Label",
+        "visible": true
+      },
+      "style": {
+        "name": "light/text/primary",
+        "key": "6313f5ef73de1fb787861cd6e0408c77214b7898",
+        "library": "020 :: Colors BlueTint Light",
+        "sourceFile": "styles/020 _ Colors BlueTint Light.json"
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "deprecatedStyles",
+      "severityHint": "medium",
+      "title": "Устаревший стиль",
+      "node": {
+        "id": "1329:232010",
+        "name": "Label",
+        "type": "TEXT",
+        "pageName": "✅  Release | Атрибуты событий",
+        "path": "Атрибуты в событии / Атрибут, Равно/Не равно / Wizard / Wrapper / WizardBody / Wizard Step / Wizard Step / Wizard Container / Container / Container / EventBlock / Content Block / EventTopper / Description Container / List of Labels / Label",
+        "visible": true
+      },
+      "style": {
+        "name": "light/text/primary",
+        "key": "6313f5ef73de1fb787861cd6e0408c77214b7898",
+        "library": "020 :: Colors BlueTint Light",
+        "sourceFile": "styles/020 _ Colors BlueTint Light.json"
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "deprecatedStyles",
+      "severityHint": "medium",
+      "title": "Устаревший стиль",
+      "node": {
+        "id": "I1329:232014;7485:9067",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "✅  Release | Атрибуты событий",
+        "path": "Атрибуты в событии / Атрибут, Равно/Не равно / Wizard / Wrapper / WizardBody / Wizard Step / Wizard Step / Wizard Container / Container / Container / EventBlock / Dragger / DotsSixVertical / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "light/text/secondary",
+        "key": "ab4b1fccce920cdd000d57d17a62ca54630cc922",
+        "library": "020 :: Colors BlueTint Light",
+        "sourceFile": "styles/020 _ Colors BlueTint Light.json"
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "1329:232013",
+        "name": "Dragger",
+        "type": "FRAME",
+        "pageName": "✅  Release | Атрибуты событий",
+        "path": "Атрибуты в событии / Атрибут, Равно/Не равно / Wizard / Wrapper / WizardBody / Wizard Step / Wizard Step / Wizard Container / Container / Container / EventBlock / Dragger",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I1329:232028;48:102770;16:5970;7485:8997",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "✅  Release | Атрибуты событий",
+        "path": "Атрибуты в событии / Атрибут, Равно/Не равно / Wizard / Wrapper / WizardBody / Wizard Step / Wizard Step / Wizard Container / Container / Container / EventBlock / Filter Block / Event Attributes / [D] Button / LeftAddon / LeftAddon / Fixer / PaintMe / Devices / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I1329:232028;48:102774;16:5970;7485:3574",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "✅  Release | Атрибуты событий",
+        "path": "Атрибуты в событии / Атрибут, Равно/Не равно / Wizard / Wrapper / WizardBody / Wizard Step / Wizard Step / Wizard Container / Container / Container / EventBlock / Filter Block / Event Attributes / [D] Button / RightAddon / RightAddon / Fixer / PaintMe / FadersHorizontal / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I1329:232030;1329:225800;603:60614;119604:1882;7485:16969",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "✅  Release | Атрибуты событий",
+        "path": "Атрибуты в событии / Атрибут, Равно/Не равно / Wizard / Wrapper / WizardBody / Wizard Step / Wizard Step / Wizard Container / Container / Container / EventBlock / Filter Block / Event Attributes / Text content / Attributes / SecondLine / [D] IconButton / Icon / Fixer / PaintMe / Equals / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I1329:232030;1329:225801;237:48730",
+        "name": "Label",
+        "type": "TEXT",
+        "pageName": "✅  Release | Атрибуты событий",
+        "path": "Атрибуты в событии / Атрибут, Равно/Не равно / Wizard / Wrapper / WizardBody / Wizard Step / Wizard Step / Wizard Container / Container / Container / EventBlock / Filter Block / Event Attributes / Text content / Attributes / SecondLine / Button_input / Label",
+        "visible": true
+      },
+      "style": {
+        "name": "14/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I1329:232030;1329:225801;248:43119",
+        "name": "Label",
+        "type": "TEXT",
+        "pageName": "✅  Release | Атрибуты событий",
+        "path": "Атрибуты в событии / Атрибут, Равно/Не равно / Wizard / Wrapper / WizardBody / Wizard Step / Wizard Step / Wizard Container / Container / Container / EventBlock / Filter Block / Event Attributes / Text content / Attributes / SecondLine / Button_input / Label",
+        "visible": true
+      },
+      "style": {
+        "name": "14/20 px · Medium · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I1329:232052;48:100897;16:5970;7485:17543",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "✅  Release | Атрибуты событий",
+        "path": "Атрибуты в событии / Атрибут, Равно/Не равно / Wizard / Wrapper / WizardBody / Filters / ЦД / Activity Filter Container / [D] Button / RightAddon / RightAddon / Fixer / PaintMe / PlusCircle / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I1329:232053;215:41280",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "✅  Release | Атрибуты событий",
+        "path": "Атрибуты в событии / Атрибут, Равно/Не равно / Wizard / Wrapper / WizardBody / Cursor / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I1329:232053;215:41280",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "✅  Release | Атрибуты событий",
+        "path": "Атрибуты в событии / Атрибут, Равно/Не равно / Wizard / Wrapper / WizardBody / Cursor / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I1329:232053;215:41281",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "✅  Release | Атрибуты событий",
+        "path": "Атрибуты в событии / Атрибут, Равно/Не равно / Wizard / Wrapper / WizardBody / Cursor / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I1329:232053;215:41282",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "✅  Release | Атрибуты событий",
+        "path": "Атрибуты в событии / Атрибут, Равно/Не равно / Wizard / Wrapper / WizardBody / Cursor / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I1329:232053;215:41283",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "✅  Release | Атрибуты событий",
+        "path": "Атрибуты в событии / Атрибут, Равно/Не равно / Wizard / Wrapper / WizardBody / Cursor / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I1329:232053;215:41284",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "✅  Release | Атрибуты событий",
+        "path": "Атрибуты в событии / Атрибут, Равно/Не равно / Wizard / Wrapper / WizardBody / Cursor / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I1329:232060;603:60006;603:59878;7485:14905",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "✅  Release | Атрибуты событий",
+        "path": "Атрибуты в событии / Атрибут, Равно/Не равно / Wizard / Wrapper / [D] IconButton / Icon / Fixer / PaintMe / CaretLeft / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "1329:231991",
+        "name": "[D] Button",
+        "type": "INSTANCE",
+        "pageName": "✅  Release | Атрибуты событий",
+        "path": "Атрибуты в событии / Атрибут, Равно/Не равно / Wizard / Wrapper / WizardBody / Wizard Step / Wizard Step / Wizard Container / Target Activity Label / SplitButton / [D] Button",
+        "visible": true,
+        "ancestorNodeIds": [
+          "1342:8457",
+          "1329:231981",
+          "1329:231982",
+          "1329:231984",
+          "1329:231985",
+          "1329:231986",
+          "1329:231987",
+          "1329:231988",
+          "1329:231990"
+        ]
+      },
+      "component": {
+        "name": "[D] Button",
+        "key": "c7e13b203cff4207d508cd0ef04e07f5566ac320",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Button.json"
+      },
+      "variant": {
+        "name": "View=Secondary, Size=32, Shape=Rectangular, SingleIcon=False, DisabledState=False",
+        "key": "c7e13b203cff4207d508cd0ef04e07f5566ac320"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "c7e13b203cff4207d508cd0ef04e07f5566ac320",
+        "currentComponentId": "49:11367",
+        "latestComponentId": "3840:249904"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "1329:231992",
+        "name": "[D] Button",
+        "type": "INSTANCE",
+        "pageName": "✅  Release | Атрибуты событий",
+        "path": "Атрибуты в событии / Атрибут, Равно/Не равно / Wizard / Wrapper / WizardBody / Wizard Step / Wizard Step / Wizard Container / Target Activity Label / SplitButton / [D] Button",
+        "visible": true,
+        "ancestorNodeIds": [
+          "1342:8457",
+          "1329:231981",
+          "1329:231982",
+          "1329:231984",
+          "1329:231985",
+          "1329:231986",
+          "1329:231987",
+          "1329:231988",
+          "1329:231990"
+        ]
+      },
+      "component": {
+        "name": "[D] Button",
+        "key": "6ffe8bbe70c9e2a5685f9aa106f2a9b833f132cc",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Button.json"
+      },
+      "variant": {
+        "name": "View=Transparent, Size=32, Shape=Rectangular, SingleIcon=True, DisabledState=False",
+        "key": "6ffe8bbe70c9e2a5685f9aa106f2a9b833f132cc"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "6ffe8bbe70c9e2a5685f9aa106f2a9b833f132cc",
+        "currentComponentId": "49:11475",
+        "latestComponentId": "3840:250012"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "1329:232028",
+        "name": "[D] Button",
+        "type": "INSTANCE",
+        "pageName": "✅  Release | Атрибуты событий",
+        "path": "Атрибуты в событии / Атрибут, Равно/Не равно / Wizard / Wrapper / WizardBody / Wizard Step / Wizard Step / Wizard Container / Container / Container / EventBlock / Filter Block / Event Attributes / [D] Button",
+        "visible": true,
+        "ancestorNodeIds": [
+          "1342:8457",
+          "1329:231981",
+          "1329:231982",
+          "1329:231984",
+          "1329:231985",
+          "1329:231986",
+          "1329:231987",
+          "1329:231993",
+          "1329:231994",
+          "1329:231995",
+          "1329:232015",
+          "1329:232027"
+        ]
+      },
+      "component": {
+        "name": "[D] Button",
+        "key": "68b4331cfd13fd0258913a2597a4f3e2fef3c54f",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Button.json"
+      },
+      "variant": {
+        "name": "View=Text, Size=32, Shape=Rectangular, SingleIcon=False, DisabledState=False",
+        "key": "68b4331cfd13fd0258913a2597a4f3e2fef3c54f"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "68b4331cfd13fd0258913a2597a4f3e2fef3c54f",
+        "currentComponentId": "49:11510",
+        "latestComponentId": "3840:250047"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "1329:232052",
+        "name": "[D] Button",
+        "type": "INSTANCE",
+        "pageName": "✅  Release | Атрибуты событий",
+        "path": "Атрибуты в событии / Атрибут, Равно/Не равно / Wizard / Wrapper / WizardBody / Filters / ЦД / Activity Filter Container / [D] Button",
+        "visible": true,
+        "ancestorNodeIds": [
+          "1342:8457",
+          "1329:231981",
+          "1329:231982",
+          "1329:231984",
+          "1329:232047",
+          "1329:232048",
+          "1329:232049"
+        ]
+      },
+      "component": {
+        "name": "[D] Button",
+        "key": "0973a407e778adad7ba475e4c023e3947409a768",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Button.json"
+      },
+      "variant": {
+        "name": "View=Transparent, Size=32, Shape=Rectangular, SingleIcon=False, DisabledState=False",
+        "key": "0973a407e778adad7ba475e4c023e3947409a768"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "0973a407e778adad7ba475e4c023e3947409a768",
+        "currentComponentId": "234:50344",
+        "latestComponentId": "3840:250008"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "1329:232060",
+        "name": "[D] IconButton",
+        "type": "INSTANCE",
+        "pageName": "✅  Release | Атрибуты событий",
+        "path": "Атрибуты в событии / Атрибут, Равно/Не равно / Wizard / Wrapper / [D] IconButton",
+        "visible": true,
+        "ancestorNodeIds": [
+          "1342:8457",
+          "1329:231981",
+          "1329:231982"
+        ]
+      },
+      "component": {
+        "name": "[D] IconButton",
+        "key": "89237e1d4348fe129560679282bba08d8310597f",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconButton.json"
+      },
+      "variant": {
+        "name": "Size=32, View=Primary, TransparentBg=False",
+        "key": "89237e1d4348fe129560679282bba08d8310597f"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "89237e1d4348fe129560679282bba08d8310597f",
+        "currentComponentId": "234:49116",
+        "latestComponentId": "3960:48303"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "1329:225800",
+        "name": "[D] IconButton",
+        "type": "INSTANCE",
+        "pageName": "✅  Release | Атрибуты событий",
+        "path": "Attributes / filled=off, version=Equal/Not equal, type=2line / SecondLine / [D] IconButton",
+        "visible": true,
+        "ancestorNodeIds": [
+          "1329:225798",
+          "1329:225883"
+        ]
+      },
+      "component": {
+        "name": "[D] IconButton",
+        "key": "ae253030add578f6d247a9915952eacc8791d8b1",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconButton.json"
+      },
+      "variant": {
+        "name": "Size=24, View=Secondary, TransparentBg=False",
+        "key": "ae253030add578f6d247a9915952eacc8791d8b1"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "ae253030add578f6d247a9915952eacc8791d8b1",
+        "currentComponentId": "49:12999",
+        "latestComponentId": "3960:48309"
+      },
+      "localComponentOwner": {
+        "id": "1329:225798",
+        "name": "filled=off, version=Equal/Not equal, type=2line",
+        "type": "COMPONENT",
+        "pageName": "✅  Release | Атрибуты событий",
+        "path": "Attributes / filled=off, version=Equal/Not equal, type=2line",
+        "visible": true
+      }
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "1329:225802",
+        "name": "[D] IconButton",
+        "type": "INSTANCE",
+        "pageName": "✅  Release | Атрибуты событий",
+        "path": "Attributes / filled=off, version=Equal/Not equal, type=2line / SecondLine / [D] IconButton",
+        "visible": true,
+        "ancestorNodeIds": [
+          "1329:225798",
+          "1329:225883"
+        ]
+      },
+      "component": {
+        "name": "[D] IconButton",
+        "key": "ae253030add578f6d247a9915952eacc8791d8b1",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconButton.json"
+      },
+      "variant": {
+        "name": "Size=24, View=Secondary, TransparentBg=False",
+        "key": "ae253030add578f6d247a9915952eacc8791d8b1"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "ae253030add578f6d247a9915952eacc8791d8b1",
+        "currentComponentId": "49:12999",
+        "latestComponentId": "3960:48309"
+      },
+      "localComponentOwner": {
+        "id": "1329:225798",
+        "name": "filled=off, version=Equal/Not equal, type=2line",
+        "type": "COMPONENT",
+        "pageName": "✅  Release | Атрибуты событий",
+        "path": "Attributes / filled=off, version=Equal/Not equal, type=2line",
+        "visible": true
+      }
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "1329:232030",
+        "name": "Attributes",
+        "type": "INSTANCE",
+        "pageName": "✅  Release | Атрибуты событий",
+        "path": "Атрибуты в событии / Атрибут, Равно/Не равно / Wizard / Wrapper / WizardBody / Wizard Step / Wizard Step / Wizard Container / Container / Container / EventBlock / Filter Block / Event Attributes / Text content / Attributes",
+        "visible": true,
+        "ancestorNodeIds": [
+          "1342:8457",
+          "1329:231981",
+          "1329:231982",
+          "1329:231984",
+          "1329:231985",
+          "1329:231986",
+          "1329:231987",
+          "1329:231993",
+          "1329:231994",
+          "1329:231995",
+          "1329:232015",
+          "1329:232027",
+          "1329:232029"
+        ]
+      },
+      "component": {
+        "name": "Attributes",
+        "key": "15408e97e6f7de935b7eac64d3993531f3b2c591",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I1329:232030;1329:225801",
+        "name": "Button_input",
+        "type": "INSTANCE",
+        "pageName": "✅  Release | Атрибуты событий",
+        "path": "Атрибуты в событии / Атрибут, Равно/Не равно / Wizard / Wrapper / WizardBody / Wizard Step / Wizard Step / Wizard Container / Container / Container / EventBlock / Filter Block / Event Attributes / Text content / Attributes / SecondLine / Button_input",
+        "visible": true,
+        "ancestorNodeIds": [
+          "1342:8457",
+          "1329:231981",
+          "1329:231982",
+          "1329:231984",
+          "1329:231985",
+          "1329:231986",
+          "1329:231987",
+          "1329:231993",
+          "1329:231994",
+          "1329:231995",
+          "1329:232015",
+          "1329:232027",
+          "1329:232029",
+          "1329:232030",
+          "I1329:232030;1329:225883"
+        ]
+      },
+      "component": {
+        "name": "Button_input",
+        "key": "494d68f22bbcfb568a2344043810a2594e9b1b67",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "1329:232053",
+        "name": "Cursor",
+        "type": "INSTANCE",
+        "pageName": "✅  Release | Атрибуты событий",
+        "path": "Атрибуты в событии / Атрибут, Равно/Не равно / Wizard / Wrapper / WizardBody / Cursor",
+        "visible": true,
+        "ancestorNodeIds": [
+          "1342:8457",
+          "1329:231981",
+          "1329:231982",
+          "1329:231984"
+        ]
+      },
+      "component": {
+        "name": "Cursor",
+        "key": "ddd1873960d2050fbf62a10d03721ef28fe4db1d",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "1329:231981",
+        "name": "Страница: ✅  Release | Атрибуты событий",
+        "type": "PAGE",
+        "pageName": "✅  Release | Атрибуты событий",
+        "path": "✅  Release | Атрибуты событий",
+        "visible": true
+      },
+      "kind": "missingThemeMode",
+      "recommendation": "Смени темизацию на Corp",
+      "component": null
+    }
+  ],
+  "componentContexts": [
+    {
+      "componentKey": "web-core.button",
+      "summary": "Button — семейство action controls. Apollo должен трактовать изменения Button variant как component property changes, а ручные изменения style/token/layout как layer customizations.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] Button",
+        "[D] Button_Inverted",
+        "[M] Button",
+        "[M] Button_Inverted",
+        "🔄 [D][Corporate] Button",
+        "🔄 [D][Corporate] Button_Inverted",
+        "🔄 [M][Corporate] Button",
+        "🔄 [M][Corporate] Button_Inverted",
+        "🔩 Addon",
+        "🔩 Addon"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*",
+          "variant.View",
+          "variant.Size",
+          "variant.Shape",
+          "variant.SingleIcon",
+          "variant.DisabledState"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent",
+          "layout.padding",
+          "layout.itemSpacing"
+        ],
+        "baselinePolicy": "Если component property изменилась, сравнивай ручные layer overrides с baseline текущего actual-состояния компонента, а не с исходным reference baseline.",
+        "slotProperties": [
+          "LeftAddon.variant.Type",
+          "RightAddon.variant.Type"
+        ],
+        "ordering": [
+          "component-property",
+          "slot-property",
+          "layer-property"
+        ]
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.View",
+            "variant.Size",
+            "variant.Shape",
+            "variant.SingleIcon",
+            "variant.DisabledState"
+          ],
+          "layerProperties": [
+            "fills",
+            "strokes",
+            "strokeWeight",
+            "cornerRadius",
+            "opacity",
+            "layout.padding",
+            "layout.itemSpacing",
+            "styles.text",
+            "typography"
+          ],
+          "dependencyPolicy": "При reset component property layer differences, вызванные только этой property, могут исчезнуть автоматически. Ручные layer overrides должны оставаться независимо сбрасываемыми, пока reset родительской property не уберёт их target state."
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web-core.icon-button",
+      "summary": "IconButton — семейство компонентов для icon-only actions. Apollo должен трактовать Size, View, TransparentBg и nested Icon Type как component/part properties, а ручные root/icon visual changes как layer customizations.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] IconButton",
+        "[D] IconButton_Inverted",
+        "[M] IconButton",
+        "[M] IconButton_Inverted",
+        "🔄 [D][Corporate] IconButton",
+        "🔄 [D][Corporate] IconButton_Inverted",
+        "🔄 [M][Corporate] IconButton",
+        "🔄 [M][Corporate] IconButton_Inverted",
+        "🔩 Icon"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*",
+          "variant.Size",
+          "variant.View",
+          "variant.TransparentBg"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent",
+          "strokeWeight",
+          "layout.padding",
+          "layout.itemSpacing"
+        ],
+        "baselinePolicy": "Если component property изменилась, а затем icon/root layer был вручную кастомизирован, сравнивай layer с текущим IconButton state baseline, а не с исходным reference baseline.",
+        "partProperties": [
+          "Icon.variant.Type"
+        ],
+        "ordering": [
+          "component-property",
+          "part-property",
+          "layer-property"
+        ]
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.Size",
+            "variant.View",
+            "variant.TransparentBg"
+          ],
+          "layerProperties": [
+            "fills",
+            "strokes",
+            "strokeWeight",
+            "cornerRadius",
+            "opacity",
+            "layout.padding",
+            "layout.itemSpacing"
+          ],
+          "dependencyPolicy": "При reset IconButton component property visual differences, вызванные только этой property, могут исчезнуть автоматически. Ручные layer overrides должны оставаться независимо сбрасываемыми, пока reset родительской property не уберёт их target state."
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    }
+  ]
+}
