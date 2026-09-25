@@ -1,0 +1,760 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1534219656993111263-1790336948463-w05eq4ux:agent",
+  "sourceReportId": "apollo-1534219656993111263-1790336948463-w05eq4ux",
+  "generatedAt": "2026-09-25T11:49:08.463Z",
+  "suggestedFileName": "Ekaterina-Goretskaya_25-09-2026_14-49-08_agent.json",
+  "user": {
+    "id": "1534219656993111263",
+    "name": "Ekaterina Goretskaya",
+    "slug": "Ekaterina-Goretskaya"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.3.0"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "[W] Подбор контрагентов",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "pageType": null,
+    "startedAt": "2026-09-25T11:49:01.525Z",
+    "finishedAt": "2026-09-25T11:49:08.463Z",
+    "durationMs": 6938,
+    "selection": [
+      {
+        "nodeId": "I27441:275424;316:22662;26097:218841",
+        "name": "Tasks",
+        "nodeType": "INSTANCE",
+        "path": "Задание выполнено / [D] Main Dashboard Side panel / SidePanelHub_local / [D] SidePanelBody / SidePanelBodyContent / start / Tasks / Tasks",
+        "componentKey": "1d708ed7a41761a0fb93b9b6829bbcd5a240be4a"
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 10,
+    "problemOccurrenceCount": 10,
+    "categoryCounts": {
+      "deprecatedComponents": 8,
+      "deprecatedStyles": 0,
+      "customStyles": 0,
+      "updates": 0,
+      "customizations": 1,
+      "localComponents": 0,
+      "detachedComponents": 0,
+      "presets": 0,
+      "technicalComponents": 0,
+      "currentComponents": 1,
+      "wrongChannel": 0,
+      "themization": 1
+    },
+    "includedFindingCount": 10,
+    "omittedCurrentComponentCount": 1
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, authority.status=active, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with authority.status=active, severity=error, and matchKind=exact_component_rule for the same property/change. Missing, draft, or malformed authority never confirms a violation.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 8,
+      "includedCount": 8,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "deprecatedComponents",
+      "severityHint": "high",
+      "title": "Устаревший компонент",
+      "node": {
+        "id": "I27441:275424;316:22662;26097:218841;26097:195160",
+        "name": "🔄 ↕ SpacingVertical",
+        "type": "INSTANCE",
+        "pageName": "Онбординг \"есть подписка\"",
+        "path": "Задание выполнено / [D] Main Dashboard Side panel / SidePanelHub_local / [D] SidePanelBody / SidePanelBodyContent / start / Tasks / Tasks / 🔄 ↕ SpacingVertical",
+        "visible": true,
+        "ancestorNodeIds": [
+          "27441:275345",
+          "27441:275422",
+          "27441:275424",
+          "I27441:275424;316:22662",
+          "I27441:275424;316:22662;17846:202412",
+          "I27441:275424;316:22662;17846:202416",
+          "I27441:275424;316:22662;26097:218841"
+        ]
+      },
+      "component": {
+        "name": "🔄 ↕ SpacingVertical",
+        "key": "6715de4f7f5d28572cff87e36afdc43a20ad95d3",
+        "library": "Web :: Old Core Default Components",
+        "sourceFile": "web/components/web-old-core-default-components/Web _ Old Core Default Components -- Spacing.json"
+      },
+      "variant": {
+        "name": "Size=m | 16px",
+        "key": "6715de4f7f5d28572cff87e36afdc43a20ad95d3"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "deprecatedComponents",
+      "severityHint": "high",
+      "title": "Устаревший компонент",
+      "node": {
+        "id": "I27441:275424;316:22662;26097:218841;26097:195162",
+        "name": "↔ SpacingHorizontal",
+        "type": "INSTANCE",
+        "pageName": "Онбординг \"есть подписка\"",
+        "path": "Задание выполнено / [D] Main Dashboard Side panel / SidePanelHub_local / [D] SidePanelBody / SidePanelBodyContent / start / Tasks / Tasks / ContentLayout / ↔ SpacingHorizontal",
+        "visible": true,
+        "ancestorNodeIds": [
+          "27441:275345",
+          "27441:275422",
+          "27441:275424",
+          "I27441:275424;316:22662",
+          "I27441:275424;316:22662;17846:202412",
+          "I27441:275424;316:22662;17846:202416",
+          "I27441:275424;316:22662;26097:218841",
+          "I27441:275424;316:22662;26097:218841;26097:195161"
+        ]
+      },
+      "component": {
+        "name": "🔄 ↔ SpacingHorizontal",
+        "key": "a3653350bc0a98ef797f83b76fdb7c488cf51536",
+        "library": "Web :: Old Core Default Components",
+        "sourceFile": "web/components/web-old-core-default-components/Web _ Old Core Default Components -- Spacing.json"
+      },
+      "variant": {
+        "name": "Size=m | 16px",
+        "key": "a3653350bc0a98ef797f83b76fdb7c488cf51536"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "deprecatedComponents",
+      "severityHint": "high",
+      "title": "Устаревший компонент",
+      "node": {
+        "id": "I27441:275424;316:22662;26097:218841;26097:195164",
+        "name": "↔ SpacingHorizontal",
+        "type": "INSTANCE",
+        "pageName": "Онбординг \"есть подписка\"",
+        "path": "Задание выполнено / [D] Main Dashboard Side panel / SidePanelHub_local / [D] SidePanelBody / SidePanelBodyContent / start / Tasks / Tasks / ContentLayout / ↔ SpacingHorizontal",
+        "visible": true,
+        "ancestorNodeIds": [
+          "27441:275345",
+          "27441:275422",
+          "27441:275424",
+          "I27441:275424;316:22662",
+          "I27441:275424;316:22662;17846:202412",
+          "I27441:275424;316:22662;17846:202416",
+          "I27441:275424;316:22662;26097:218841",
+          "I27441:275424;316:22662;26097:218841;26097:195161"
+        ]
+      },
+      "component": {
+        "name": "🔄 ↔ SpacingHorizontal",
+        "key": "c1cc0775285a047e0d7dd5a6f39b660af332c9de",
+        "library": "Web :: Old Core Default Components",
+        "sourceFile": "web/components/web-old-core-default-components/Web _ Old Core Default Components -- Spacing.json"
+      },
+      "variant": {
+        "name": "Size=s | 12px",
+        "key": "c1cc0775285a047e0d7dd5a6f39b660af332c9de"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "deprecatedComponents",
+      "severityHint": "high",
+      "title": "Устаревший компонент",
+      "node": {
+        "id": "I27441:275424;316:22662;26097:218841;26097:195166",
+        "name": "👻 Content",
+        "type": "INSTANCE",
+        "pageName": "Онбординг \"есть подписка\"",
+        "path": "Задание выполнено / [D] Main Dashboard Side panel / SidePanelHub_local / [D] SidePanelBody / SidePanelBodyContent / start / Tasks / Tasks / ContentLayout / Slot 2 / 👻 Content",
+        "visible": true,
+        "ancestorNodeIds": [
+          "27441:275345",
+          "27441:275422",
+          "27441:275424",
+          "I27441:275424;316:22662",
+          "I27441:275424;316:22662;17846:202412",
+          "I27441:275424;316:22662;17846:202416",
+          "I27441:275424;316:22662;26097:218841",
+          "I27441:275424;316:22662;26097:218841;26097:195161",
+          "I27441:275424;316:22662;26097:218841;26097:195165"
+        ]
+      },
+      "component": {
+        "name": "👻 Content",
+        "key": "47e521e2bce3b408e583f16c686996deae7543d1",
+        "library": "Web :: Old Core Default Components",
+        "sourceFile": "web/components/web-old-core-default-components/Web _ Old Core Default Components -- GenericWrapper.json"
+      },
+      "variant": {
+        "name": "capacity=3",
+        "key": "47e521e2bce3b408e583f16c686996deae7543d1"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "deprecatedComponents",
+      "severityHint": "high",
+      "title": "Устаревший компонент",
+      "node": {
+        "id": "I27441:275424;316:22662;26097:218841;26097:195167",
+        "name": "↔ SpacingHorizontal",
+        "type": "INSTANCE",
+        "pageName": "Онбординг \"есть подписка\"",
+        "path": "Задание выполнено / [D] Main Dashboard Side panel / SidePanelHub_local / [D] SidePanelBody / SidePanelBodyContent / start / Tasks / Tasks / ContentLayout / ↔ SpacingHorizontal",
+        "visible": true,
+        "ancestorNodeIds": [
+          "27441:275345",
+          "27441:275422",
+          "27441:275424",
+          "I27441:275424;316:22662",
+          "I27441:275424;316:22662;17846:202412",
+          "I27441:275424;316:22662;17846:202416",
+          "I27441:275424;316:22662;26097:218841",
+          "I27441:275424;316:22662;26097:218841;26097:195161"
+        ]
+      },
+      "component": {
+        "name": "🔄 ↔ SpacingHorizontal",
+        "key": "8b6f97827f3c7b7eb10e4210f3ff04764f5e5a52",
+        "library": "Web :: Old Core Default Components",
+        "sourceFile": "web/components/web-old-core-default-components/Web _ Old Core Default Components -- Spacing.json"
+      },
+      "variant": {
+        "name": "Size=3xs | 02px",
+        "key": "8b6f97827f3c7b7eb10e4210f3ff04764f5e5a52"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "deprecatedComponents",
+      "severityHint": "high",
+      "title": "Устаревший компонент",
+      "node": {
+        "id": "I27441:275424;316:22662;26097:218841;26097:195168",
+        "name": "↔ SpacingHorizontal",
+        "type": "INSTANCE",
+        "pageName": "Онбординг \"есть подписка\"",
+        "path": "Задание выполнено / [D] Main Dashboard Side panel / SidePanelHub_local / [D] SidePanelBody / SidePanelBodyContent / start / Tasks / Tasks / ContentLayout / ↔ SpacingHorizontal",
+        "visible": true,
+        "ancestorNodeIds": [
+          "27441:275345",
+          "27441:275422",
+          "27441:275424",
+          "I27441:275424;316:22662",
+          "I27441:275424;316:22662;17846:202412",
+          "I27441:275424;316:22662;17846:202416",
+          "I27441:275424;316:22662;26097:218841",
+          "I27441:275424;316:22662;26097:218841;26097:195161"
+        ]
+      },
+      "component": {
+        "name": "🔄 ↔ SpacingHorizontal",
+        "key": "a3653350bc0a98ef797f83b76fdb7c488cf51536",
+        "library": "Web :: Old Core Default Components",
+        "sourceFile": "web/components/web-old-core-default-components/Web _ Old Core Default Components -- Spacing.json"
+      },
+      "variant": {
+        "name": "Size=m | 16px",
+        "key": "a3653350bc0a98ef797f83b76fdb7c488cf51536"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "deprecatedComponents",
+      "severityHint": "high",
+      "title": "Устаревший компонент",
+      "node": {
+        "id": "I27441:275424;316:22662;26097:218841;26097:195169",
+        "name": "👻 Addon",
+        "type": "INSTANCE",
+        "pageName": "Онбординг \"есть подписка\"",
+        "path": "Задание выполнено / [D] Main Dashboard Side panel / SidePanelHub_local / [D] SidePanelBody / SidePanelBodyContent / start / Tasks / Tasks / ContentLayout / 👻 Addon",
+        "visible": true,
+        "ancestorNodeIds": [
+          "27441:275345",
+          "27441:275422",
+          "27441:275424",
+          "I27441:275424;316:22662",
+          "I27441:275424;316:22662;17846:202412",
+          "I27441:275424;316:22662;17846:202416",
+          "I27441:275424;316:22662;26097:218841",
+          "I27441:275424;316:22662;26097:218841;26097:195161"
+        ]
+      },
+      "component": {
+        "name": "👻 Addon",
+        "key": "733f942ac08eaa3bbff1312b3ca4190f0a30e85d",
+        "library": "Web :: Old Core Default Components",
+        "sourceFile": "web/components/web-old-core-default-components/Web _ Old Core Default Components -- Amount.json"
+      },
+      "variant": {
+        "name": "👻 Addon",
+        "key": "733f942ac08eaa3bbff1312b3ca4190f0a30e85d"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "deprecatedComponents",
+      "severityHint": "high",
+      "title": "Устаревший компонент",
+      "node": {
+        "id": "I27441:275424;316:22662;26097:218841;26097:195170",
+        "name": "🔄 ↕ SpacingVertical",
+        "type": "INSTANCE",
+        "pageName": "Онбординг \"есть подписка\"",
+        "path": "Задание выполнено / [D] Main Dashboard Side panel / SidePanelHub_local / [D] SidePanelBody / SidePanelBodyContent / start / Tasks / Tasks / 🔄 ↕ SpacingVertical",
+        "visible": true,
+        "ancestorNodeIds": [
+          "27441:275345",
+          "27441:275422",
+          "27441:275424",
+          "I27441:275424;316:22662",
+          "I27441:275424;316:22662;17846:202412",
+          "I27441:275424;316:22662;17846:202416",
+          "I27441:275424;316:22662;26097:218841"
+        ]
+      },
+      "component": {
+        "name": "🔄 ↕ SpacingVertical",
+        "key": "6715de4f7f5d28572cff87e36afdc43a20ad95d3",
+        "library": "Web :: Old Core Default Components",
+        "sourceFile": "web/components/web-old-core-default-components/Web _ Old Core Default Components -- Spacing.json"
+      },
+      "variant": {
+        "name": "Size=m | 16px",
+        "key": "6715de4f7f5d28572cff87e36afdc43a20ad95d3"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "catalog-lifecycle"
+      ],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I27441:275424;316:22662;26097:218841;29862:134085",
+        "name": "Название метафоры кириллицей",
+        "type": "INSTANCE",
+        "pageName": "Онбординг \"есть подписка\"",
+        "path": "Задание выполнено / [D] Main Dashboard Side panel / SidePanelHub_local / [D] SidePanelBody / SidePanelBodyContent / start / Tasks / Tasks / ContentLayout / Название метафоры кириллицей",
+        "visible": true,
+        "ancestorNodeIds": [
+          "27441:275345",
+          "27441:275422",
+          "27441:275424",
+          "I27441:275424;316:22662",
+          "I27441:275424;316:22662;17846:202412",
+          "I27441:275424;316:22662;17846:202416",
+          "I27441:275424;316:22662;26097:218841",
+          "I27441:275424;316:22662;26097:218841;26097:195161"
+        ]
+      },
+      "component": {
+        "name": "chart-circle-lightning",
+        "key": "897366e13c3926de195954847b238b66fb4070ff",
+        "library": "Сorp _ Image Library",
+        "sourceFile": "images/Сorp _ Image Library -- Вспомогательные имиджи.json"
+      },
+      "variant": {
+        "name": "Size=348, Crop=Center, Segment=KIB",
+        "key": "6c55fee9a6ff5f2cff1ec65fa60a9bb9fd0cf703"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I27441:275424;316:22662;26097:218841;29862:134085",
+            "name": "Название метафоры кириллицей",
+            "type": null,
+            "pageName": "Онбординг \"есть подписка\"",
+            "path": "Size=348, Crop=Center, Segment=KIB",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Size",
+          "message": "size: 348 → XS",
+          "referenceValue": "348",
+          "actualValue": "XS",
+          "referenceRawValue": "348",
+          "actualRawValue": "XS",
+          "referenceDisplayValue": "348",
+          "actualDisplayValue": "XS",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "897366e13c3926de195954847b238b66fb4070ff",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "XS",
+              "Crop": "Center"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "I27441:275424;316:22662;26097:218841",
+              "nodeName": "Tasks",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I27441:275424;316:22662;26097:218841;29862:134085;2201:703",
+            "name": "Image",
+            "type": null,
+            "pageName": "Онбординг \"есть подписка\"",
+            "path": "Size=348, Crop=Center, Segment=KIB / Image",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: — → Изображение",
+          "referenceValue": null,
+          "actualValue": "Изображение",
+          "referenceRawValue": null,
+          "actualRawValue": "Изображение",
+          "referenceDisplayValue": null,
+          "actualDisplayValue": "Изображение",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "897366e13c3926de195954847b238b66fb4070ff",
+            "actualNestedOwnerPath": "Size=348, Crop=Center, Segment=KIB",
+            "actualNestedOwnerRelativePath": "Image",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "XS",
+              "Crop": "Center"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "I27441:275424;316:22662;26097:218841",
+              "nodeName": "Tasks",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I27441:275424;316:22662;26097:218841;29862:134085;2201:703",
+            "name": "Image",
+            "type": null,
+            "pageName": "Онбординг \"есть подписка\"",
+            "path": "Size=348, Crop=Center, Segment=KIB / Image",
+            "visible": true
+          },
+          "kind": "opacity",
+          "property": "opacity",
+          "message": "Прозрачность: 0.15 → 1",
+          "referenceValue": 0.15,
+          "actualValue": 1,
+          "referenceRawValue": 0.15,
+          "actualRawValue": 1,
+          "referenceDisplayValue": 0.15,
+          "actualDisplayValue": 1,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "897366e13c3926de195954847b238b66fb4070ff",
+            "actualNestedOwnerPath": "Size=348, Crop=Center, Segment=KIB",
+            "actualNestedOwnerRelativePath": "Image",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "XS",
+              "Crop": "Center"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "I27441:275424;316:22662;26097:218841",
+              "nodeName": "Tasks",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "I27441:275424;316:22662;26097:218841",
+        "name": "Страница: Онбординг \"есть подписка\"",
+        "type": "PAGE",
+        "pageName": "Онбординг \"есть подписка\"",
+        "path": "Онбординг \"есть подписка\"",
+        "visible": true
+      },
+      "kind": "missingThemeMode",
+      "recommendation": "Смени темизацию на Corp",
+      "component": null
+    }
+  ],
+  "componentContexts": []
+}
