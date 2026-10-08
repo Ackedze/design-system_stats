@@ -1,0 +1,2390 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1524705623793347474-1791455567855-aui9gcej:agent",
+  "sourceReportId": "apollo-1524705623793347474-1791455567855-aui9gcej",
+  "generatedAt": "2026-10-08T10:32:47.855Z",
+  "suggestedFileName": "Darina-Vinogradova_08-10-2026_13-32-47_agent.json",
+  "user": {
+    "id": "1524705623793347474",
+    "name": "Darina Vinogradova",
+    "slug": "Darina-Vinogradova"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.1.63"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "КЭП",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "startedAt": "2026-10-08T10:31:59.775Z",
+    "finishedAt": "2026-10-08T10:32:47.855Z",
+    "durationMs": 48080,
+    "selection": [
+      {
+        "nodeId": "5489:102289",
+        "name": "[D] Promo :: CorporatePage",
+        "nodeType": "FRAME",
+        "path": "[W] Новая версия с калькулятором / Дефолтный / [D] Promo :: CorporatePage",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 104,
+    "problemOccurrenceCount": 18,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 0,
+      "updates": 0,
+      "customizations": 4,
+      "localComponents": 1,
+      "detachedComponents": 1,
+      "presets": 9,
+      "technicalComponents": 2,
+      "currentComponents": 85,
+      "wrongChannel": 0,
+      "themization": 1
+    },
+    "includedFindingCount": 18,
+    "omittedCurrentComponentCount": 85
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with severity=error and matchKind=exact_component_rule for the same property/change.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 4,
+      "includedCount": 4,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 9,
+      "includedCount": 9,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 2,
+      "includedCount": 2,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "5489:102294",
+        "name": "[D] PromoMainBlock",
+        "type": "INSTANCE",
+        "pageName": "[АБ и MW] Лендинг",
+        "path": "[W] Новая версия с калькулятором / Дефолтный / [D] Promo :: CorporatePage / Body / [D] CorporateContent / [D] PromoMainBlock",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] PromoMainBlock",
+        "key": "3aec61948e342dd87176a74cf156a0a25bd430e5",
+        "library": "Web _ Сorp Promo Components",
+        "sourceFile": "web/components/web-corp-promo/Web _ Сorp Promo Components -- PromoMainBlock.json"
+      },
+      "variant": {
+        "name": "View=Page, Appearance=Light, Background=False, Compact=False",
+        "key": "3aec61948e342dd87176a74cf156a0a25bd430e5"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "5489:102294",
+            "name": "[D] PromoMainBlock",
+            "type": null,
+            "pageName": "[АБ и MW] Лендинг",
+            "path": "View=Page, Appearance=Light, Background=False, Compact=False",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 24 → 0",
+          "referenceValue": "24",
+          "actualValue": "0",
+          "referenceRawValue": "24",
+          "actualRawValue": "0",
+          "referenceDisplayValue": "24",
+          "actualDisplayValue": "0",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "3aec61948e342dd87176a74cf156a0a25bd430e5",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Page",
+              "Appearance": "Light",
+              "Background": "False",
+              "Compact": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "5489:102293",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web.promo-main-block.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I5489:102294;2192:11560",
+            "name": "BlurEffect",
+            "type": null,
+            "pageName": "[АБ и MW] Лендинг",
+            "path": "View=Page, Appearance=Light, Background=False, Compact=False / Content / ImageContainer / BlurEffect",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "effects",
+          "message": "Эффекты: Нет → BACKGROUND_BLUR · blur 32 · скрыт",
+          "referenceValue": "Нет",
+          "actualValue": "BACKGROUND_BLUR · blur 32 · скрыт",
+          "referenceRawValue": "Нет",
+          "actualRawValue": "BACKGROUND_BLUR · blur 32 · скрыт",
+          "referenceDisplayValue": "Нет",
+          "actualDisplayValue": "BACKGROUND_BLUR · blur 32 · скрыт",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "3aec61948e342dd87176a74cf156a0a25bd430e5",
+            "actualNestedOwnerPath": "View=Page, Appearance=Light, Background=False, Compact=False",
+            "actualNestedOwnerRelativePath": "Content / ImageContainer / BlurEffect",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Page",
+              "Appearance": "Light",
+              "Background": "False",
+              "Compact": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "5489:102293",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 80,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I5489:102294;2192:11561",
+            "name": "Linear",
+            "type": null,
+            "pageName": "[АБ и MW] Лендинг",
+            "path": "View=Page, Appearance=Light, Background=False, Compact=False / Content / ImageContainer / BlurEffect / Linear",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: — → paint:GRADIENT_LINEAR",
+          "referenceValue": null,
+          "actualValue": "paint:GRADIENT_LINEAR",
+          "referenceRawValue": null,
+          "actualRawValue": "paint:GRADIENT_LINEAR",
+          "referenceDisplayValue": null,
+          "actualDisplayValue": "paint:GRADIENT_LINEAR",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "3aec61948e342dd87176a74cf156a0a25bd430e5",
+            "actualNestedOwnerPath": "View=Page, Appearance=Light, Background=False, Compact=False",
+            "actualNestedOwnerRelativePath": "Content / ImageContainer / BlurEffect / Linear",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Page",
+              "Appearance": "Light",
+              "Background": "False",
+              "Compact": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "5489:102293",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web.promo-main-block.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I5489:102294;2148:9607;4390:216",
+            "name": "Image",
+            "type": null,
+            "pageName": "[АБ и MW] Лендинг",
+            "path": "View=Page, Appearance=Light, Background=False, Compact=False / Content / ImageContainer / Container / ImageView / Image",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: — → Изображение",
+          "referenceValue": null,
+          "actualValue": "Изображение",
+          "referenceRawValue": null,
+          "actualRawValue": "Изображение",
+          "referenceDisplayValue": null,
+          "actualDisplayValue": "Изображение",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "c24abd31d970ab80c3e9539d600f8cf92278ed06",
+            "actualNestedOwnerPath": "View=Page, Appearance=Light, Background=False, Compact=False / Content / ImageContainer / Container / ImageView",
+            "actualNestedOwnerRelativePath": "Image",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "534",
+              "Crop": "Center",
+              "Segment": "MMB"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "5489:102293",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "5489:102297",
+        "name": "🔒 [D] ContentBlock",
+        "type": "INSTANCE",
+        "pageName": "[АБ и MW] Лендинг",
+        "path": "[W] Новая версия с калькулятором / Дефолтный / [D] Promo :: CorporatePage / Body / [D] CorporateContent / [D] MainContent / 🔒 [D] ContentBlock",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] ContentBlock",
+        "key": "f6ff9e5b599f91955dc31b302ce72c499d4e3506",
+        "library": "Web _ Сorp Promo Components",
+        "sourceFile": "web/components/web-corp-promo/Web _ Сorp Promo Components -- ContentBlock.json"
+      },
+      "variant": {
+        "name": "Compact=False",
+        "key": "f6ff9e5b599f91955dc31b302ce72c499d4e3506"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I5489:102297;4086:33371;5489:102313;2748:12499;16:8963;4390:219",
+            "name": "Image",
+            "type": null,
+            "pageName": "[АБ и MW] Лендинг",
+            "path": "Compact=False / Content / 🔒 [D] BentoGrid  / [D] PromoCard / ImageContainer / Container / ImageView / Image",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: — → Изображение",
+          "referenceValue": null,
+          "actualValue": "Изображение",
+          "referenceRawValue": null,
+          "actualRawValue": "Изображение",
+          "referenceDisplayValue": null,
+          "actualDisplayValue": "Изображение",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "a122f10bef813e0138f56b9c7dc62d0e81e97e88",
+            "actualNestedOwnerPath": "Compact=False / Content / 🔒 [D] BentoGrid  / [D] PromoCard / ImageContainer / Container / ImageView",
+            "actualNestedOwnerRelativePath": "Image",
+            "nestedOwnerComponentKey": "8becae9ce2c91d2ea44331cdc065058c37291ebd",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Compact=False / Content / 🔒 [D] BentoGrid  / [D] PromoCard",
+            "nestedOwnerRelativePath": "ImageContainer / Container / ImageView / Image",
+            "actualVariantProperties": {
+              "Size": "348",
+              "Crop": "Center",
+              "Segment": "MMB"
+            },
+            "referenceVariantProperties": {
+              "Size": "Large",
+              "Image": "Bottom",
+              "ImageCrop": "False"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "5489:102293",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web.promo-card.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I5489:102297;4086:33371;5489:102313;2748:12501;465:5051;16:9251;4390:228",
+            "name": "Image",
+            "type": null,
+            "pageName": "[АБ и MW] Лендинг",
+            "path": "Compact=False / Content / 🔒 [D] BentoGrid  / CardsGroup / [D] PromoCard / ImageContainer / Container / ImageView / Image",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: — → Изображение",
+          "referenceValue": null,
+          "actualValue": "Изображение",
+          "referenceRawValue": null,
+          "actualRawValue": "Изображение",
+          "referenceDisplayValue": null,
+          "actualDisplayValue": "Изображение",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "95c198e8e812de7670e8bf419fe9078006470d88",
+            "actualNestedOwnerPath": "Compact=False / Content / 🔒 [D] BentoGrid  / CardsGroup / [D] PromoCard / ImageContainer / Container / ImageView",
+            "actualNestedOwnerRelativePath": "Image",
+            "nestedOwnerComponentKey": "d9f03fd1ddd4ccef3ab80d574b0efb8b7e41e221",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Compact=False / Content / 🔒 [D] BentoGrid  / CardsGroup / [D] PromoCard / ImageContainer",
+            "nestedOwnerRelativePath": "Container / ImageView / Image",
+            "actualVariantProperties": {
+              "Size": "348",
+              "Crop": "Bottom",
+              "Segment": "MMB"
+            },
+            "referenceVariantProperties": {
+              "Image Centred": "True"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "5489:102293",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web.promo-card.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "5526:167850",
+        "name": "🔒 [D] Form",
+        "type": "INSTANCE",
+        "pageName": "[АБ и MW] Лендинг",
+        "path": "[W] Новая версия с калькулятором / Дефолтный / [D] Promo :: CorporatePage / Body / [D] CorporateContent / [D] MainContent / 🔒 [D] Form",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] Form",
+        "key": "ba8ec0d9740cc3705a5d49b9add6f41b5d866967",
+        "library": "Web _ Сorp Promo Components",
+        "sourceFile": "web/components/web-corp-promo/Web _ Сorp Promo Components -- Footer.json"
+      },
+      "variant": {
+        "name": "Compact=False",
+        "key": "ba8ec0d9740cc3705a5d49b9add6f41b5d866967"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I5526:167850;4092:48731",
+            "name": "BodyContent",
+            "type": null,
+            "pageName": "[АБ и MW] Лендинг",
+            "path": "Compact=False / Content / BodyContent",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.itemSpacing",
+          "message": "Отступ между элементами: 10 → 24",
+          "referenceValue": 10,
+          "actualValue": 24,
+          "referenceRawValue": 10,
+          "actualRawValue": 24,
+          "referenceDisplayValue": 10,
+          "actualDisplayValue": 24,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "ba8ec0d9740cc3705a5d49b9add6f41b5d866967",
+            "actualNestedOwnerPath": "Compact=False",
+            "actualNestedOwnerRelativePath": "Content / BodyContent",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Compact": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "5489:102293",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web.footer.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I5526:167850;4092:48731;5749:263423;5749:263363",
+            "name": "[D] Plate",
+            "type": null,
+            "pageName": "[АБ и MW] Лендинг",
+            "path": "Compact=False / Content / BodyContent / Alfa / [D] Plate",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: status-muted-alt/info → neutral-translucent/100",
+          "referenceValue": "status-muted-alt/info",
+          "actualValue": "neutral-translucent/100",
+          "referenceRawValue": "status-muted-alt/info",
+          "actualRawValue": "neutral-translucent/100",
+          "referenceDisplayValue": "status-muted-alt/info",
+          "actualDisplayValue": "neutral-translucent/100",
+          "referenceResource": {
+            "name": "status-muted-alt/info",
+            "key": "587496c4b18675f26a868d9dd6c8c5589f177de5",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "neutral-translucent/100",
+            "key": "8981b6bfc89935b939b249245e60158b88ca252e",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": {
+            "id": "VariableID:587496c4b18675f26a868d9dd6c8c5589f177de5/3541:144",
+            "key": "587496c4b18675f26a868d9dd6c8c5589f177de5",
+            "name": "status-muted-alt/info",
+            "collectionId": null,
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:8981b6bfc89935b939b249245e60158b88ca252e/3541:131",
+            "key": "8981b6bfc89935b939b249245e60158b88ca252e",
+            "name": "neutral-translucent/100",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "27d6bf76fc9822ff154045460e37ad80537c7793",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "6d0a5718f336811da2d630f1e6939348ae5a36f6",
+            "actualNestedOwnerPath": "Compact=False / Content / BodyContent / Alfa",
+            "actualNestedOwnerRelativePath": "[D] Plate",
+            "nestedOwnerComponentKey": "27d6bf76fc9822ff154045460e37ad80537c7793",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Compact=False / Content / BodyContent / Alfa / [D] Plate",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "Border": "False",
+              "BorderRadius": "16"
+            },
+            "referenceVariantProperties": {
+              "Border": "False",
+              "BorderRadius": "16"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "5489:102293",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.plate.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.plate.layer-properties-use-effective-baseline",
+            "contractId": null,
+            "constraintId": null,
+            "evidence": {
+              "resetSurface": "layer"
+            },
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I5526:167850;4092:48731;5819:95992",
+            "name": "SegmentedControl_48",
+            "type": null,
+            "pageName": "[АБ и MW] Лендинг",
+            "path": "Compact=False / Content / BodyContent / SegmentedControl_48",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "component.identity",
+          "message": "Компонент: .SwapMe → SegmentedControl_48",
+          "referenceValue": ".SwapMe",
+          "actualValue": "SegmentedControl_48",
+          "referenceRawValue": ".SwapMe",
+          "actualRawValue": "SegmentedControl_48",
+          "referenceDisplayValue": ".SwapMe",
+          "actualDisplayValue": "SegmentedControl_48",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "1448c9cd73a4ab79eb1f2c48f68d8f3f44795a3b",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "ba8ec0d9740cc3705a5d49b9add6f41b5d866967",
+            "actualNestedOwnerPath": "Compact=False",
+            "actualNestedOwnerRelativePath": "Content / BodyContent / SegmentedControl_48",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Shape": "Rounded",
+              "Capacity": "2",
+              "Resize": "Fill"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "5489:102293",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "5489:102299",
+        "name": "🔒 [D] Footer",
+        "type": "INSTANCE",
+        "pageName": "[АБ и MW] Лендинг",
+        "path": "[W] Новая версия с калькулятором / Дефолтный / [D] Promo :: CorporatePage / Body / [D] CorporateContent / 🔒 [D] Footer",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] Footer",
+        "key": "3ca68f96fecde78719275fc2562e454ad5790b6b",
+        "library": "Web _ Сorp Promo Components",
+        "sourceFile": "web/components/web-corp-promo/Web _ Сorp Promo Components -- Footer.json"
+      },
+      "variant": {
+        "name": "View=Page, Compact=False",
+        "key": "3ca68f96fecde78719275fc2562e454ad5790b6b"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I5489:102299;4090:36977;5489:102322;2804:57716;103095:68641",
+            "name": "FAQItem 05",
+            "type": null,
+            "pageName": "[АБ и MW] Лендинг",
+            "path": "View=Page, Compact=False / Content / 🔒 [D] FAQ / [D][Promo] FAQ / FAQItem 05",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.top",
+          "message": "Паддинг top: 0 → 32",
+          "referenceValue": 0,
+          "actualValue": "32 (Spacing)",
+          "referenceRawValue": 0,
+          "actualRawValue": 32,
+          "referenceDisplayValue": 0,
+          "actualDisplayValue": "32 (Spacing)",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "32",
+            "key": "3d9a2eee092ea793ffa757f1b5e04abb658296a2",
+            "library": "Spacing",
+            "sourceFile": "Spacing"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:3d9a2eee092ea793ffa757f1b5e04abb658296a2/1:39",
+            "key": "3d9a2eee092ea793ffa757f1b5e04abb658296a2",
+            "name": "32",
+            "collectionId": "VariableCollectionId:1:2",
+            "collectionName": "Spacing",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "5cf030f4a38e53bae5688d9806c8c930364f99ae",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "d0b9c2656488739d36bd4125b4c6ce1dc95acba3",
+            "actualNestedOwnerPath": "View=Page, Compact=False / Content / 🔒 [D] FAQ / [D][Promo] FAQ",
+            "actualNestedOwnerRelativePath": "FAQItem 05",
+            "nestedOwnerComponentKey": "5cf030f4a38e53bae5688d9806c8c930364f99ae",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "View=Page, Compact=False / Content / 🔒 [D] FAQ / [D][Promo] FAQ / FAQItem 05",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "Open": "False"
+            },
+            "referenceVariantProperties": {
+              "Open": "False"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "5489:102293",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.faq.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I5489:102299;4090:36977;5489:102322;2804:57716;103095:68641",
+            "name": "FAQItem 05",
+            "type": null,
+            "pageName": "[АБ и MW] Лендинг",
+            "path": "View=Page, Compact=False / Content / 🔒 [D] FAQ / [D][Promo] FAQ / FAQItem 05",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.right",
+          "message": "Паддинг right: 0 → 32",
+          "referenceValue": 0,
+          "actualValue": "32 (Spacing)",
+          "referenceRawValue": 0,
+          "actualRawValue": 32,
+          "referenceDisplayValue": 0,
+          "actualDisplayValue": "32 (Spacing)",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "32",
+            "key": "3d9a2eee092ea793ffa757f1b5e04abb658296a2",
+            "library": "Spacing",
+            "sourceFile": "Spacing"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:3d9a2eee092ea793ffa757f1b5e04abb658296a2/1:39",
+            "key": "3d9a2eee092ea793ffa757f1b5e04abb658296a2",
+            "name": "32",
+            "collectionId": "VariableCollectionId:1:2",
+            "collectionName": "Spacing",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "5cf030f4a38e53bae5688d9806c8c930364f99ae",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "d0b9c2656488739d36bd4125b4c6ce1dc95acba3",
+            "actualNestedOwnerPath": "View=Page, Compact=False / Content / 🔒 [D] FAQ / [D][Promo] FAQ",
+            "actualNestedOwnerRelativePath": "FAQItem 05",
+            "nestedOwnerComponentKey": "5cf030f4a38e53bae5688d9806c8c930364f99ae",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "View=Page, Compact=False / Content / 🔒 [D] FAQ / [D][Promo] FAQ / FAQItem 05",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "Open": "False"
+            },
+            "referenceVariantProperties": {
+              "Open": "False"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "5489:102293",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.faq.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I5489:102299;4090:36977;5489:102322;2804:57716;103095:68641",
+            "name": "FAQItem 05",
+            "type": null,
+            "pageName": "[АБ и MW] Лендинг",
+            "path": "View=Page, Compact=False / Content / 🔒 [D] FAQ / [D][Promo] FAQ / FAQItem 05",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.bottom",
+          "message": "Паддинг bottom: 0 → 32",
+          "referenceValue": 0,
+          "actualValue": "32 (Spacing)",
+          "referenceRawValue": 0,
+          "actualRawValue": 32,
+          "referenceDisplayValue": 0,
+          "actualDisplayValue": "32 (Spacing)",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "32",
+            "key": "3d9a2eee092ea793ffa757f1b5e04abb658296a2",
+            "library": "Spacing",
+            "sourceFile": "Spacing"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:3d9a2eee092ea793ffa757f1b5e04abb658296a2/1:39",
+            "key": "3d9a2eee092ea793ffa757f1b5e04abb658296a2",
+            "name": "32",
+            "collectionId": "VariableCollectionId:1:2",
+            "collectionName": "Spacing",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "5cf030f4a38e53bae5688d9806c8c930364f99ae",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "d0b9c2656488739d36bd4125b4c6ce1dc95acba3",
+            "actualNestedOwnerPath": "View=Page, Compact=False / Content / 🔒 [D] FAQ / [D][Promo] FAQ",
+            "actualNestedOwnerRelativePath": "FAQItem 05",
+            "nestedOwnerComponentKey": "5cf030f4a38e53bae5688d9806c8c930364f99ae",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "View=Page, Compact=False / Content / 🔒 [D] FAQ / [D][Promo] FAQ / FAQItem 05",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "Open": "False"
+            },
+            "referenceVariantProperties": {
+              "Open": "False"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "5489:102293",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.faq.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I5489:102299;4090:36977;5489:102322;2804:57716;103095:68641",
+            "name": "FAQItem 05",
+            "type": null,
+            "pageName": "[АБ и MW] Лендинг",
+            "path": "View=Page, Compact=False / Content / 🔒 [D] FAQ / [D][Promo] FAQ / FAQItem 05",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.left",
+          "message": "Паддинг left: 0 → 32",
+          "referenceValue": 0,
+          "actualValue": "32 (Spacing)",
+          "referenceRawValue": 0,
+          "actualRawValue": 32,
+          "referenceDisplayValue": 0,
+          "actualDisplayValue": "32 (Spacing)",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "32",
+            "key": "3d9a2eee092ea793ffa757f1b5e04abb658296a2",
+            "library": "Spacing",
+            "sourceFile": "Spacing"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:3d9a2eee092ea793ffa757f1b5e04abb658296a2/1:39",
+            "key": "3d9a2eee092ea793ffa757f1b5e04abb658296a2",
+            "name": "32",
+            "collectionId": "VariableCollectionId:1:2",
+            "collectionName": "Spacing",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "5cf030f4a38e53bae5688d9806c8c930364f99ae",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "d0b9c2656488739d36bd4125b4c6ce1dc95acba3",
+            "actualNestedOwnerPath": "View=Page, Compact=False / Content / 🔒 [D] FAQ / [D][Promo] FAQ",
+            "actualNestedOwnerRelativePath": "FAQItem 05",
+            "nestedOwnerComponentKey": "5cf030f4a38e53bae5688d9806c8c930364f99ae",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "View=Page, Compact=False / Content / 🔒 [D] FAQ / [D][Promo] FAQ / FAQItem 05",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "Open": "False"
+            },
+            "referenceVariantProperties": {
+              "Open": "False"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "5489:102293",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.faq.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I5526:167850;4092:48731;5749:263423",
+        "name": "Alfa",
+        "type": "INSTANCE",
+        "pageName": "[АБ и MW] Лендинг",
+        "path": "[W] Новая версия с калькулятором / Дефолтный / [D] Promo :: CorporatePage / Body / [D] CorporateContent / [D] MainContent / 🔒 [D] Form / Content / BodyContent / Alfa",
+        "visible": true
+      },
+      "component": {
+        "name": "Alfa",
+        "key": "6d0a5718f336811da2d630f1e6939348ae5a36f6",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "detachedComponents",
+      "severityHint": "high",
+      "title": "Detach компонента",
+      "node": {
+        "id": "5489:102293",
+        "name": "[D] CorporateContent",
+        "type": "FRAME_OR_GROUP",
+        "pageName": "[АБ и MW] Лендинг",
+        "path": "[W] Новая версия с калькулятором / Дефолтный / [D] Promo :: CorporatePage / Body / [D] CorporateContent",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] CorporateContent",
+        "key": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateContent.json"
+      }
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I5489:102294;4708:5132",
+        "name": "StatusPreset 01",
+        "type": "INSTANCE",
+        "pageName": "[АБ и MW] Лендинг",
+        "path": "[W] Новая версия с калькулятором / Дефолтный / [D] Promo :: CorporatePage / Body / [D] CorporateContent / [D] PromoMainBlock / Content / ContentWrapper / Content / Text content / Status / StatusPreset 01",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "a762ae3bdb7c6e26de67d34aa7791095aa30f02e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Neutral, Style=Contrast, Size=24",
+        "key": "a762ae3bdb7c6e26de67d34aa7791095aa30f02e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I5489:102294;2148:9604",
+        "name": "ButtonGroup",
+        "type": "INSTANCE",
+        "pageName": "[АБ и MW] Лендинг",
+        "path": "[W] Новая версия с калькулятором / Дефолтный / [D] Promo :: CorporatePage / Body / [D] CorporateContent / [D] PromoMainBlock / Content / ContentWrapper / ButtonGroup",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] ButtonGroup",
+        "key": "32f9d03bef2bcb277e375dd4758c7a7d437070b5",
+        "library": "Web _ Сorp Promo Components",
+        "sourceFile": "web/components/web-corp-promo/Web _ Сorp Promo Components -- PromoMainBlock.json"
+      },
+      "variant": {
+        "name": "PrimaryButton=True, SecondaryButton=False, 🔒 Compact=False",
+        "key": "32f9d03bef2bcb277e375dd4758c7a7d437070b5"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "5489:102296",
+        "name": "🔒 [D] Benefits",
+        "type": "INSTANCE",
+        "pageName": "[АБ и MW] Лендинг",
+        "path": "[W] Новая версия с калькулятором / Дефолтный / [D] Promo :: CorporatePage / Body / [D] CorporateContent / [D] MainContent / 🔒 [D] Benefits",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] Benefits",
+        "key": "6830be7fc32b01b3893dee96a3aae8f4338842f3",
+        "library": "Web _ Сorp Promo Components",
+        "sourceFile": "web/components/web-corp-promo/Web _ Сorp Promo Components -- Benefits.json"
+      },
+      "variant": {
+        "name": "Capacity=3, View=Page, Compact=False",
+        "key": "6830be7fc32b01b3893dee96a3aae8f4338842f3"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "6830be7fc32b01b3893dee96a3aae8f4338842f3",
+        "currentComponentId": "4105:89885",
+        "latestComponentId": "4105:89885"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "5489:102297",
+        "name": "🔒 [D] ContentBlock",
+        "type": "INSTANCE",
+        "pageName": "[АБ и MW] Лендинг",
+        "path": "[W] Новая версия с калькулятором / Дефолтный / [D] Promo :: CorporatePage / Body / [D] CorporateContent / [D] MainContent / 🔒 [D] ContentBlock",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] ContentBlock",
+        "key": "f6ff9e5b599f91955dc31b302ce72c499d4e3506",
+        "library": "Web _ Сorp Promo Components",
+        "sourceFile": "web/components/web-corp-promo/Web _ Сorp Promo Components -- ContentBlock.json"
+      },
+      "variant": {
+        "name": "Compact=False",
+        "key": "f6ff9e5b599f91955dc31b302ce72c499d4e3506"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "f6ff9e5b599f91955dc31b302ce72c499d4e3506",
+        "currentComponentId": "3697:57028",
+        "latestComponentId": "3697:57028"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I5489:102297;4086:33371;5489:102313",
+        "name": "🔒 [D] BentoGrid ",
+        "type": "INSTANCE",
+        "pageName": "[АБ и MW] Лендинг",
+        "path": "[W] Новая версия с калькулятором / Дефолтный / [D] Promo :: CorporatePage / Body / [D] CorporateContent / [D] MainContent / 🔒 [D] ContentBlock / Content / 🔒 [D] BentoGrid ",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] BentoGrid ",
+        "key": "20e7efb1156e5e32ab95df904db347e5d728995e",
+        "library": "Web _ Сorp Promo Components",
+        "sourceFile": "web/components/web-corp-promo/Web _ Сorp Promo Components -- BentoGrid.json"
+      },
+      "variant": {
+        "name": "View=Page, Compact=False, Capacity=3, Variations=2",
+        "key": "20e7efb1156e5e32ab95df904db347e5d728995e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "20e7efb1156e5e32ab95df904db347e5d728995e",
+        "currentComponentId": "3809:1184",
+        "latestComponentId": "3809:1184"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "5526:167850",
+        "name": "🔒 [D] Form",
+        "type": "INSTANCE",
+        "pageName": "[АБ и MW] Лендинг",
+        "path": "[W] Новая версия с калькулятором / Дефолтный / [D] Promo :: CorporatePage / Body / [D] CorporateContent / [D] MainContent / 🔒 [D] Form",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] Form",
+        "key": "ba8ec0d9740cc3705a5d49b9add6f41b5d866967",
+        "library": "Web _ Сorp Promo Components",
+        "sourceFile": "web/components/web-corp-promo/Web _ Сorp Promo Components -- Footer.json"
+      },
+      "variant": {
+        "name": "Compact=False",
+        "key": "ba8ec0d9740cc3705a5d49b9add6f41b5d866967"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "ba8ec0d9740cc3705a5d49b9add6f41b5d866967",
+        "currentComponentId": "3697:57115",
+        "latestComponentId": "3697:57115"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I5526:167850;2804:48287",
+        "name": "🔒 [D] Footer",
+        "type": "INSTANCE",
+        "pageName": "[АБ и MW] Лендинг",
+        "path": "[W] Новая версия с калькулятором / Дефолтный / [D] Promo :: CorporatePage / Body / [D] CorporateContent / [D] MainContent / 🔒 [D] Form / Content / 🔒 [D] Footer",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] Footer",
+        "key": "92561c4757b28d7a2f253022c6a481153b53648d",
+        "library": "Web _ Сorp Promo Components",
+        "sourceFile": "web/components/web-corp-promo/Web _ Сorp Promo Components -- Footer.json"
+      },
+      "variant": {
+        "name": "PrimaryButton=True, SecondaryButton=False, Compact=False",
+        "key": "92561c4757b28d7a2f253022c6a481153b53648d"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "5489:102299",
+        "name": "🔒 [D] Footer",
+        "type": "INSTANCE",
+        "pageName": "[АБ и MW] Лендинг",
+        "path": "[W] Новая версия с калькулятором / Дефолтный / [D] Promo :: CorporatePage / Body / [D] CorporateContent / 🔒 [D] Footer",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] Footer",
+        "key": "3ca68f96fecde78719275fc2562e454ad5790b6b",
+        "library": "Web _ Сorp Promo Components",
+        "sourceFile": "web/components/web-corp-promo/Web _ Сorp Promo Components -- Footer.json"
+      },
+      "variant": {
+        "name": "View=Page, Compact=False",
+        "key": "3ca68f96fecde78719275fc2562e454ad5790b6b"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "3ca68f96fecde78719275fc2562e454ad5790b6b",
+        "currentComponentId": "3766:1734",
+        "latestComponentId": "3766:1734"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I5489:102299;4090:36977;5489:102322",
+        "name": "🔒 [D] FAQ",
+        "type": "INSTANCE",
+        "pageName": "[АБ и MW] Лендинг",
+        "path": "[W] Новая версия с калькулятором / Дефолтный / [D] Promo :: CorporatePage / Body / [D] CorporateContent / 🔒 [D] Footer / Content / 🔒 [D] FAQ",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] FAQ",
+        "key": "dc683119a1b94178eca94273c02a5a54ef27481f",
+        "library": "Web _ Сorp Promo Components",
+        "sourceFile": "web/components/web-corp-promo/Web _ Сorp Promo Components -- Footer.json"
+      },
+      "variant": {
+        "name": "Compact=False",
+        "key": "dc683119a1b94178eca94273c02a5a54ef27481f"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "dc683119a1b94178eca94273c02a5a54ef27481f",
+        "currentComponentId": "3697:57133",
+        "latestComponentId": "3697:57133"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "technicalComponents",
+      "severityHint": "low",
+      "title": "Технический компонент",
+      "node": {
+        "id": "5518:164880",
+        "name": "💊 Comments",
+        "type": "INSTANCE",
+        "pageName": "[АБ и MW] Лендинг",
+        "path": "[W] Новая версия с калькулятором / Дефолтный / [D] Promo :: CorporatePage / Body / [D] CorporateContent / [D] MainContent / 💊 Comments",
+        "visible": true
+      },
+      "component": {
+        "name": "💊 Comments",
+        "key": "c151801a2a3deffc8b1504498323f918d255dd79",
+        "library": "Web :: Core Helpers",
+        "sourceFile": "web/components/web-core-helpers/Web _ Core Helpers -- Comments.json"
+      },
+      "variant": {
+        "name": "Direction=←, View=Комментарий",
+        "key": "c151801a2a3deffc8b1504498323f918d255dd79"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "c151801a2a3deffc8b1504498323f918d255dd79",
+        "currentComponentId": "3643:2",
+        "latestComponentId": "3643:2"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "technicalComponents",
+      "severityHint": "low",
+      "title": "Технический компонент",
+      "node": {
+        "id": "5749:264473",
+        "name": "💊 Comments",
+        "type": "INSTANCE",
+        "pageName": "[АБ и MW] Лендинг",
+        "path": "[W] Новая версия с калькулятором / Дефолтный / [D] Promo :: CorporatePage / Body / [D] CorporateContent / 💊 Comments",
+        "visible": true
+      },
+      "component": {
+        "name": "💊 Comments",
+        "key": "c151801a2a3deffc8b1504498323f918d255dd79",
+        "library": "Web :: Core Helpers",
+        "sourceFile": "web/components/web-core-helpers/Web _ Core Helpers -- Comments.json"
+      },
+      "variant": {
+        "name": "Direction=←, View=Комментарий",
+        "key": "c151801a2a3deffc8b1504498323f918d255dd79"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "c151801a2a3deffc8b1504498323f918d255dd79",
+        "currentComponentId": "3643:2",
+        "latestComponentId": "3643:2"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "5489:102289",
+        "name": "Страница: [АБ и MW] Лендинг",
+        "type": "PAGE",
+        "pageName": "[АБ и MW] Лендинг",
+        "path": "[АБ и MW] Лендинг",
+        "visible": true
+      },
+      "kind": "missingThemeMode",
+      "recommendation": "Смени темизацию на Corp",
+      "component": null
+    }
+  ],
+  "componentContexts": [
+    {
+      "componentKey": "web-core.plate",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[M] PlatePresets",
+        "[D] PlatePresets",
+        "🔩 [M] Content",
+        "🔩 [M] Main",
+        "🔩 [M] Controls",
+        "🔩 [M] AddonLeft",
+        "🔩 [M] AddonBottom",
+        "🔩 [M] AddonRight",
+        "🔩 [D] Main",
+        "🔩 [D] Controls",
+        "🔩 [D] AddonLeft",
+        "🔩 [D] AddonBottom",
+        "🔩 [D] AddonRight",
+        "🔩 [D] Content",
+        "🔄[D][Corporate] Plate",
+        "[M] Plate",
+        "[D] Plate"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.corporate-content",
+      "summary": "CorporateContent — обязательная контентная область продуктовой страницы. Используй [D] CorporateContent для desktop и [M] CorporateContent для mobile-web.",
+      "criticalBaselines": [],
+      "agentInstructions": [
+        "Не считай произвольный контент или несколько дочерних элементов внутри Body нарушением сами по себе.",
+        "Проверяй содержимое Body по собственным компонентным контрактам и паттернам.",
+        "Считай использование переходного [T] CorporateContent явным нарушением.",
+        "Не рекомендуй ручную правку fill, grid style или padding корня CorporateContent; рекомендуй правильный mode переменных.",
+        "Не требуй наличия родительского компонента CorporatePage в Figma: такого компонента нет, самостоятельное использование CorporateContent допустимо.",
+        "Не применяй Gutter как обязательный itemSpacing внутри Body; он допустим в любой горизонтальной композиции без обязательного Section.",
+        "На ширине 768 требуй [D] CorporateContent и mode 768 коллекции [D] Grid & Cols.",
+        "Не придумывай условия выбора между base-bg-alt и base-bg до появления отдельного паттерна; default — base-bg-alt (grey).",
+        "Не разрешай кликабельность корня или detach CorporateContent и Body.",
+        "Не разрешай вкладывать CorporateContent внутрь CorporateContent и не оставляй SwapMe после добавления реального содержимого.",
+        "Требуй Header или HeaderMenu непосредственно над CorporateContent в общем вертикальном контейнере с gap 0.",
+        "Не разрешай менять вертикальное направление, itemSpacing=0 или clipsContent=false корня CorporateContent."
+      ],
+      "includedComponents": [
+        "[D] Section",
+        "[D] CorporateContent",
+        "[M] CorporateContent",
+        "❌ [D] Body",
+        "❌ [M} Body",
+        "❌ [T] Body",
+        "❌ [T] CorporateContent"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+          "name": "[D] CorporateContent",
+          "purpose": "Основная desktop-контентная область корпоративной продуктовой страницы с системной сеткой, фоном и адаптивными отступами.",
+          "useWhen": [
+            "Собирается содержимое корпоративной страницы на ширине 768 px и выше."
+          ],
+          "doNotUseWhen": [
+            "Нужен вложенный контейнер внутри другого CorporateContent."
+          ],
+          "relationship": "Единственный корневой контентный контейнер CorporatePage на desktop; принимает произвольную композицию в Body.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.faq",
+      "summary": "FAQ показывает от двух до восьми вопросов в аккордеоне. Promo-версии предназначены только для promo-страниц, универсальная версия — для продуктовых desktop и mobile-web страниц.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D][Promo] FAQItem",
+        "[M][Promo] FAQItem",
+        "FAQItem",
+        "[D][Promo] FAQ",
+        "[M][Promo] FAQ",
+        "FAQ"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "d0b9c2656488739d36bd4125b4c6ce1dc95acba3",
+          "name": "[D][Promo] FAQ",
+          "purpose": "💅🏻 For Promo page only",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.status-property",
+      "summary": "StatusPreset показывает состояние объекта или процесса, PropertyPreset — характеристику или свойство объекта. Оба preset-компонента разрешено использовать самостоятельно на desktop и mobile-web.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔒 [D] PropertyPreset",
+        "🔒 [D] StatusPreset",
+        "🔒 [M] PropertyPreset",
+        "🔒 [M] StatusPreset"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "5062ff1e0c435b64f3d1f4a0ae699dcb646b34f4",
+          "name": "🔒 [D] StatusPreset",
+          "purpose": "Вспомогательный компонент Figma, в коде существует только Status в core-components.",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web.benefits",
+      "summary": "Активный канонический Figma-only пресет для группы из трёх или четырёх BenefitCard на лендинге. Desktop-пресет управляет Capacity, View и Compact; mobile-web — Capacity.",
+      "criticalBaselines": [],
+      "agentInstructions": [
+        "Не требуй Code Connect или runtime API для Benefits: это Figma-only пресет.",
+        "Не считай отличие вложенной BenefitCard от исходного preset baseline нарушением, если настраиваемые свойства согласованы во всей группе.",
+        "Перед оценкой fill/stroke проверь, относится ли поверхность к разрешённым Border или Colored.",
+        "Не требуй одинакового контента у карточек; проверяй каждую карточку по правилам BenefitCard.",
+        "Не смешивай разрешение разных цветов Border/Colored с разрешением разных типов поверхности.",
+        "Не разрешай raw fill/stroke только потому, что цвета Border или Colored могут различаться.",
+        "Не допускай частичный loading/Skeleton внутри одной группы.",
+        "Не предлагай ручную сборку для трёх или четырёх карточек, если Benefits технически доступен.",
+        "Не требуй одинаковых action targets: проверяй только единообразие наличия действия и контракт каждой BenefitCard.",
+        "Cross-platform parity оценивай только при наличии парных desktop/mobile evidence; иначе проси ручную проверку.",
+        "Не выводи дополнительных ограничений интерактивности без exact BenefitCard rule."
+      ],
+      "includedComponents": [
+        "🔒 [D] Benefits",
+        "🔒 [M] Benefits"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*",
+          "variant.Capacity",
+          "variant.Compact",
+          "variant.View",
+          "nested.BenefitCard.variant.*",
+          "responsive.content"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сначала разреши вариант Benefits и effective baseline вложенных BenefitCard. Затем проверь единообразие подтверждённых card properties; fill/stroke Border и Colored обрабатывай как разрешённое контекстное исключение."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web.bento-grid",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔒 [D] BentoGrid ",
+        "🔒 [M] BentoGrid"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web.comments",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "💊 Comments"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web.content-block",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔄 🔒 [D] ContentBlock",
+        "🔒 [D] ContentBlock",
+        "🔒 [D] ModalSeparator",
+        "🔄 🔒 [M] ContentBlock",
+        "🔒 [M] ContentBlock"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web.footer",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔄 🔒 [D] Footer",
+        "🔄 🔒 [M] Footer",
+        "🔒 [D] FAQ",
+        "🔒 [D] FileItem",
+        "🔒 [D] Files",
+        "🔒 [D] Footer",
+        "🔒 [D] Footer",
+        "🔒 [D] Form",
+        "🔒 [M] Footer",
+        "🔒 [M] FAQ",
+        "🔒 [M] FileItem",
+        "🔒 [M] Files",
+        "🔒 [M] Footer",
+        "🔒 [M] Form"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web.promo-card",
+      "summary": "PromoCard показывает отдельное промопредложение, преимущество или акцию с помощью текста, изображения и опционального действия.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] BottomContent",
+        "[D] ButtonGroup",
+        "[D] ContentWrapper",
+        "[D] ImageContainerLarge",
+        "[D] ImageContainerMedium",
+        "[D] ImageContainerSmall",
+        "[D] PromoCard",
+        "[M] BottomContent",
+        "[M] ButtonGroup",
+        "[M] ContentWrapper",
+        "[M] ImageContainerLarge",
+        "[M] ImageContainerMedium",
+        "[M] ImageContainerSmall",
+        "[M] PromoCard"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web.promo-main-block",
+      "summary": "Главный промо-блок с ключевым сообщением, изображением и CTA. Сценарное размещение задаёт landing-page pattern.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] ButtonGroup",
+        "[D] DarkOverlay",
+        "[D] LightOverlay",
+        "[D] PromoMainBlock",
+        "[D] SwapMe",
+        "[M] ButtonGroup",
+        "[M] DarkOverlay",
+        "[M] LightOverlay",
+        "[M] PromoMainBlock",
+        "[M] SwapMe"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    }
+  ]
+}
