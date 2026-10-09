@@ -1,0 +1,4506 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1524705623793347474-1791536671377-ijr8oixr:agent",
+  "sourceReportId": "apollo-1524705623793347474-1791536671377-ijr8oixr",
+  "generatedAt": "2026-10-09T09:04:31.377Z",
+  "suggestedFileName": "Darina-Vinogradova_09-10-2026_12-04-31_agent.json",
+  "user": {
+    "id": "1524705623793347474",
+    "name": "Darina Vinogradova",
+    "slug": "Darina-Vinogradova"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.1.63"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "[W] Альфа-Селлер. Аналитика",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "startedAt": "2026-10-09T09:04:01.316Z",
+    "finishedAt": "2026-10-09T09:04:31.377Z",
+    "durationMs": 30061,
+    "selection": [
+      {
+        "nodeId": "10910:56685",
+        "name": "[D] CorporatePage",
+        "nodeType": "FRAME",
+        "path": "Подписка не подключена / [D] CorporatePage",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 123,
+    "problemOccurrenceCount": 41,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 4,
+      "updates": 5,
+      "customizations": 19,
+      "localComponents": 10,
+      "detachedComponents": 2,
+      "presets": 1,
+      "technicalComponents": 0,
+      "currentComponents": 107,
+      "wrongChannel": 0,
+      "themization": 1
+    },
+    "includedFindingCount": 41,
+    "omittedCurrentComponentCount": 107
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with severity=error and matchKind=exact_component_rule for the same property/change.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 4,
+      "includedCount": 4,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 5,
+      "includedCount": 5,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 19,
+      "includedCount": 18,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 10,
+      "includedCount": 10,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 2,
+      "includedCount": 2,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "10910:56792",
+        "name": "Banner",
+        "type": "INSTANCE",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / Banner",
+        "visible": true
+      },
+      "style": {
+        "name": "Фон (Background blur)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Фон (Background blur)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I10910:56792;9745:136173",
+        "name": "Card",
+        "type": "FRAME",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / Banner / Cards / Right / Card",
+        "visible": true
+      },
+      "style": {
+        "name": "Фон (Background blur)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Фон (Background blur)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I10910:56792;9887:372217;448:17360",
+        "name": "BgColor",
+        "type": "RECTANGLE",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / Banner / Cards / Right / Card / Frame 2147237701 / IconView / Content / ShapeContent / BgColor",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I10910:56792;9745:136178",
+        "name": "Card",
+        "type": "FRAME",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / Banner / Cards / Right / Card",
+        "visible": true
+      },
+      "style": {
+        "name": "Фон (Background blur)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Фон (Background blur)"
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "10910:56779",
+        "name": "TabPrimary",
+        "type": "INSTANCE",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / [D] TabsView / TabsPrimary / Items / TabPrimary",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 TabPrimary",
+        "key": "8d0c9384f60a66603f4f91a52fe9ef931738fa45",
+        "library": "Web :: Core Navigation",
+        "sourceFile": "web/components/web-core/navigation/Web _ Core Navigation -- Tabs.json"
+      },
+      "variant": {
+        "name": "ActiveState=True, DisabledState=False",
+        "key": "8d0c9384f60a66603f4f91a52fe9ef931738fa45"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "8d0c9384f60a66603f4f91a52fe9ef931738fa45",
+        "currentComponentId": "10910:54150",
+        "latestComponentId": "8687:198410"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "10910:56780",
+        "name": "TabPrimary",
+        "type": "INSTANCE",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / [D] TabsView / TabsPrimary / Items / TabPrimary",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 TabPrimary",
+        "key": "00ec4434736ab29772c5394982dc97cd25a07dde",
+        "library": "Web :: Core Navigation",
+        "sourceFile": "web/components/web-core/navigation/Web _ Core Navigation -- Tabs.json"
+      },
+      "variant": {
+        "name": "ActiveState=False, DisabledState=False",
+        "key": "00ec4434736ab29772c5394982dc97cd25a07dde"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "00ec4434736ab29772c5394982dc97cd25a07dde",
+        "currentComponentId": "10910:54145",
+        "latestComponentId": "8687:198411"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "10910:56787",
+        "name": "TabPrimary",
+        "type": "INSTANCE",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / [D] TabsView / TabsPrimary / Items / TabPrimary",
+        "visible": true
+      },
+      "component": {
+        "name": "🔩 TabPrimary",
+        "key": "00ec4434736ab29772c5394982dc97cd25a07dde",
+        "library": "Web :: Core Navigation",
+        "sourceFile": "web/components/web-core/navigation/Web _ Core Navigation -- Tabs.json"
+      },
+      "variant": {
+        "name": "ActiveState=False, DisabledState=False",
+        "key": "00ec4434736ab29772c5394982dc97cd25a07dde"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "00ec4434736ab29772c5394982dc97cd25a07dde",
+        "currentComponentId": "10910:54145",
+        "latestComponentId": "8687:198411"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "9887:372217",
+        "name": "IconView",
+        "type": "INSTANCE",
+        "pageName": "Размещение на главной  ",
+        "path": "Размещение на главной / Banner Alfa-Seller / Banner / Size=1600, Type=Первое подключение, Skeleton=False, Error=– / Cards / Right / Card / Frame 2147237701 / IconView",
+        "visible": true
+      },
+      "component": {
+        "name": "IconView",
+        "key": "1de0077f72a5b4394917373eafa55639f91b3779",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=40",
+        "key": "1de0077f72a5b4394917373eafa55639f91b3779"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "1de0077f72a5b4394917373eafa55639f91b3779",
+        "currentComponentId": "9735:211327",
+        "latestComponentId": "10914:86222"
+      },
+      "localComponentOwner": {
+        "id": "9745:136156",
+        "name": "Size=1600, Type=Первое подключение, Skeleton=False, Error=–",
+        "type": "COMPONENT",
+        "pageName": "Размещение на главной  ",
+        "path": "Размещение на главной / Banner Alfa-Seller / Banner / Size=1600, Type=Первое подключение, Skeleton=False, Error=–",
+        "visible": true
+      }
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "9887:372640",
+        "name": "IconView",
+        "type": "INSTANCE",
+        "pageName": "Размещение на главной  ",
+        "path": "Размещение на главной / Banner Alfa-Seller / Banner / Size=1600, Type=Первое подключение, Skeleton=False, Error=– / Cards / Right / Card / IconView",
+        "visible": true
+      },
+      "component": {
+        "name": "IconView",
+        "key": "1de0077f72a5b4394917373eafa55639f91b3779",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconView.json"
+      },
+      "variant": {
+        "name": "Size=40",
+        "key": "1de0077f72a5b4394917373eafa55639f91b3779"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "1de0077f72a5b4394917373eafa55639f91b3779",
+        "currentComponentId": "9735:211327",
+        "latestComponentId": "10914:86222"
+      },
+      "localComponentOwner": {
+        "id": "9745:136156",
+        "name": "Size=1600, Type=Первое подключение, Skeleton=False, Error=–",
+        "type": "COMPONENT",
+        "pageName": "Размещение на главной  ",
+        "path": "Размещение на главной / Banner Alfa-Seller / Banner / Size=1600, Type=Первое подключение, Skeleton=False, Error=–",
+        "visible": true
+      }
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I10910:56797;10910:56228",
+        "name": "[D] BackgroundPlate",
+        "type": "INSTANCE",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / Frame 2147237847 / 👻 Banners / [D] BackgroundPlate",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BackgroundPlate",
+        "key": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Position=Level 1 (outer)",
+        "key": "34e9064066253fb2f2d7bc056bb36a2580fd860e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I10910:56797;10910:56228",
+            "name": "[D] BackgroundPlate",
+            "type": null,
+            "pageName": "Редизайн виджетов + демо",
+            "path": "Position=Level 1 (outer)",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 0 → 16",
+          "referenceValue": "0",
+          "actualValue": "16",
+          "referenceRawValue": "0",
+          "actualRawValue": "16",
+          "referenceDisplayValue": "0",
+          "actualDisplayValue": "16",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Position": "Level 1 (outer)"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "10910:56685",
+              "nodeName": "[D] CorporatePage",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.radius-is-fixed-by-component-baseline",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "radius|layout.radius|cornerRadius|cornerRadius.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Скругления BackgroundPlate, BackgroundPlateSlot и вложенных Style Level задаются компонентом и его effective baseline. Дизайнер не должен вручную изменять radius/cornerRadius у root-layer BackgroundPlate, BackgroundPlateSlot или Style Level. Любое отличие radius от effective baseline является нарушением, а не допустимой композиционной настройкой.",
+              "remediation": "Сбросьте radius к effective baseline выбранного варианта BackgroundPlate. Не задавайте скругления BackgroundPlate и Style Level вручную.",
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.background-plate.radius-is-fixed-by-component-baseline",
+            "message": "Скругления BackgroundPlate, BackgroundPlateSlot и вложенных Style Level задаются компонентом и его effective baseline. Дизайнер не должен вручную изменять radius/cornerRadius у root-layer BackgroundPlate, BackgroundPlateSlot или Style Level. Любое отличие radius от effective baseline является нарушением, а не допустимой композиционной настройкой.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I10910:56797;10910:56229",
+        "name": "[D] TitleView",
+        "type": "INSTANCE",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / Frame 2147237847 / 👻 Banners / [D] TitleView",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] TitleView",
+        "key": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "View=Small, Skeleton=False",
+        "key": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I10910:56797;10910:56229;37705:55415",
+            "name": "Title",
+            "type": null,
+            "pageName": "Редизайн виджетов + демо",
+            "path": "View=Small, Skeleton=False / MainContent / Heading / Title",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Headline–System/18–22 xSmall → Action/16–20 Component Primary",
+          "referenceValue": "Headline–System/18–22 xSmall",
+          "actualValue": "Action/16–20 Component Primary",
+          "referenceRawValue": "Headline–System/18–22 xSmall",
+          "actualRawValue": "Action/16–20 Component Primary",
+          "referenceDisplayValue": "Headline–System/18–22 xSmall",
+          "actualDisplayValue": "Action/16–20 Component Primary",
+          "referenceResource": {
+            "name": "Headline–System/18–22 xSmall",
+            "key": "69723bb178c1d1f9ec90e7b5670389dadb9de724",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": {
+            "name": "Action/16–20 Component Primary",
+            "key": "0fd87667e8841a94094062af08ade71d47456827",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "actualNestedOwnerPath": "View=Small, Skeleton=False",
+            "actualNestedOwnerRelativePath": "MainContent / Heading / Title",
+            "nestedOwnerComponentKey": "913a526e98f177533ca3e4495d6658d0120e6afe",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "View=Small, Skeleton=False / MainContent / Heading / [D] TitleAddon / StatusBadge / 🔩 Content",
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Small",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": {
+              "Size": "16",
+              "Type": "Icon"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "10910:56685",
+              "nodeName": "[D] CorporatePage",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "styles.text",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Типографика Title и Subtitle фиксируется выбранным View компонента TitleView. Менять текстовый стиль заголовка или подзаголовка вручную запрещено.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": "Стиль текст",
+            "priority": 30,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+            "message": "Типографика Title и Subtitle фиксируется выбранным View компонента TitleView. Менять текстовый стиль заголовка или подзаголовка вручную запрещено.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I10910:56797;10910:56229;37705:55417",
+            "name": "Subtitle",
+            "type": null,
+            "pageName": "Редизайн виджетов + демо",
+            "path": "View=Small, Skeleton=False / MainContent / Subtitle",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.top",
+          "message": "Паддинг top: 8 → 4",
+          "referenceValue": 8,
+          "actualValue": 4,
+          "referenceRawValue": 8,
+          "actualRawValue": 4,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 4,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "actualNestedOwnerPath": "View=Small, Skeleton=False",
+            "actualNestedOwnerRelativePath": "MainContent / Subtitle",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Small",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "10910:56685",
+              "nodeName": "[D] CorporatePage",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.stroke|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства TitleView нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I10910:56798;10910:56228",
+        "name": "[D] BackgroundPlate",
+        "type": "INSTANCE",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / Frame 2147237847 / 👻 Banners / [D] BackgroundPlate",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BackgroundPlate",
+        "key": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Position=Level 1 (outer)",
+        "key": "34e9064066253fb2f2d7bc056bb36a2580fd860e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I10910:56798;10910:56228",
+            "name": "[D] BackgroundPlate",
+            "type": null,
+            "pageName": "Редизайн виджетов + демо",
+            "path": "Position=Level 1 (outer)",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 0 → 16",
+          "referenceValue": "0",
+          "actualValue": "16",
+          "referenceRawValue": "0",
+          "actualRawValue": "16",
+          "referenceDisplayValue": "0",
+          "actualDisplayValue": "16",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Position": "Level 1 (outer)"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "10910:56685",
+              "nodeName": "[D] CorporatePage",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.radius-is-fixed-by-component-baseline",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "radius|layout.radius|cornerRadius|cornerRadius.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Скругления BackgroundPlate, BackgroundPlateSlot и вложенных Style Level задаются компонентом и его effective baseline. Дизайнер не должен вручную изменять radius/cornerRadius у root-layer BackgroundPlate, BackgroundPlateSlot или Style Level. Любое отличие radius от effective baseline является нарушением, а не допустимой композиционной настройкой.",
+              "remediation": "Сбросьте radius к effective baseline выбранного варианта BackgroundPlate. Не задавайте скругления BackgroundPlate и Style Level вручную.",
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.background-plate.radius-is-fixed-by-component-baseline",
+            "message": "Скругления BackgroundPlate, BackgroundPlateSlot и вложенных Style Level задаются компонентом и его effective baseline. Дизайнер не должен вручную изменять radius/cornerRadius у root-layer BackgroundPlate, BackgroundPlateSlot или Style Level. Любое отличие radius от effective baseline является нарушением, а не допустимой композиционной настройкой.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I10910:56798;10910:56229",
+        "name": "[D] TitleView",
+        "type": "INSTANCE",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / Frame 2147237847 / 👻 Banners / [D] TitleView",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] TitleView",
+        "key": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "View=Small, Skeleton=False",
+        "key": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I10910:56798;10910:56229;37705:55415",
+            "name": "Title",
+            "type": null,
+            "pageName": "Редизайн виджетов + демо",
+            "path": "View=Small, Skeleton=False / MainContent / Heading / Title",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Headline–System/18–22 xSmall → Action/16–20 Component Primary",
+          "referenceValue": "Headline–System/18–22 xSmall",
+          "actualValue": "Action/16–20 Component Primary",
+          "referenceRawValue": "Headline–System/18–22 xSmall",
+          "actualRawValue": "Action/16–20 Component Primary",
+          "referenceDisplayValue": "Headline–System/18–22 xSmall",
+          "actualDisplayValue": "Action/16–20 Component Primary",
+          "referenceResource": {
+            "name": "Headline–System/18–22 xSmall",
+            "key": "69723bb178c1d1f9ec90e7b5670389dadb9de724",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": {
+            "name": "Action/16–20 Component Primary",
+            "key": "0fd87667e8841a94094062af08ade71d47456827",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "actualNestedOwnerPath": "View=Small, Skeleton=False",
+            "actualNestedOwnerRelativePath": "MainContent / Heading / Title",
+            "nestedOwnerComponentKey": "913a526e98f177533ca3e4495d6658d0120e6afe",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "View=Small, Skeleton=False / MainContent / Heading / [D] TitleAddon / StatusBadge / 🔩 Content",
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Small",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": {
+              "Size": "16",
+              "Type": "Icon"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "10910:56685",
+              "nodeName": "[D] CorporatePage",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "styles.text",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Типографика Title и Subtitle фиксируется выбранным View компонента TitleView. Менять текстовый стиль заголовка или подзаголовка вручную запрещено.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": "Стиль текст",
+            "priority": 30,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+            "message": "Типографика Title и Subtitle фиксируется выбранным View компонента TitleView. Менять текстовый стиль заголовка или подзаголовка вручную запрещено.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I10910:56798;10910:56229;37705:55417",
+            "name": "Subtitle",
+            "type": null,
+            "pageName": "Редизайн виджетов + демо",
+            "path": "View=Small, Skeleton=False / MainContent / Subtitle",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.top",
+          "message": "Паддинг top: 8 → 4",
+          "referenceValue": 8,
+          "actualValue": 4,
+          "referenceRawValue": 8,
+          "actualRawValue": 4,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 4,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "actualNestedOwnerPath": "View=Small, Skeleton=False",
+            "actualNestedOwnerRelativePath": "MainContent / Subtitle",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Small",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "10910:56685",
+              "nodeName": "[D] CorporatePage",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.stroke|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства TitleView нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I10910:56799;10910:56228",
+        "name": "[D] BackgroundPlate",
+        "type": "INSTANCE",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / Frame 2147237847 / 👻 Banners / [D] BackgroundPlate",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BackgroundPlate",
+        "key": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Position=Level 1 (outer)",
+        "key": "34e9064066253fb2f2d7bc056bb36a2580fd860e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I10910:56799;10910:56228",
+            "name": "[D] BackgroundPlate",
+            "type": null,
+            "pageName": "Редизайн виджетов + демо",
+            "path": "Position=Level 1 (outer)",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 0 → 16",
+          "referenceValue": "0",
+          "actualValue": "16",
+          "referenceRawValue": "0",
+          "actualRawValue": "16",
+          "referenceDisplayValue": "0",
+          "actualDisplayValue": "16",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Position": "Level 1 (outer)"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "10910:56685",
+              "nodeName": "[D] CorporatePage",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.radius-is-fixed-by-component-baseline",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "radius|layout.radius|cornerRadius|cornerRadius.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Скругления BackgroundPlate, BackgroundPlateSlot и вложенных Style Level задаются компонентом и его effective baseline. Дизайнер не должен вручную изменять radius/cornerRadius у root-layer BackgroundPlate, BackgroundPlateSlot или Style Level. Любое отличие radius от effective baseline является нарушением, а не допустимой композиционной настройкой.",
+              "remediation": "Сбросьте radius к effective baseline выбранного варианта BackgroundPlate. Не задавайте скругления BackgroundPlate и Style Level вручную.",
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.background-plate.radius-is-fixed-by-component-baseline",
+            "message": "Скругления BackgroundPlate, BackgroundPlateSlot и вложенных Style Level задаются компонентом и его effective baseline. Дизайнер не должен вручную изменять radius/cornerRadius у root-layer BackgroundPlate, BackgroundPlateSlot или Style Level. Любое отличие radius от effective baseline является нарушением, а не допустимой композиционной настройкой.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I10910:56799;10910:56229",
+        "name": "[D] TitleView",
+        "type": "INSTANCE",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / Frame 2147237847 / 👻 Banners / [D] TitleView",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] TitleView",
+        "key": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "View=Small, Skeleton=False",
+        "key": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I10910:56799;10910:56229;37705:55415",
+            "name": "Title",
+            "type": null,
+            "pageName": "Редизайн виджетов + демо",
+            "path": "View=Small, Skeleton=False / MainContent / Heading / Title",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Headline–System/18–22 xSmall → Action/16–20 Component Primary",
+          "referenceValue": "Headline–System/18–22 xSmall",
+          "actualValue": "Action/16–20 Component Primary",
+          "referenceRawValue": "Headline–System/18–22 xSmall",
+          "actualRawValue": "Action/16–20 Component Primary",
+          "referenceDisplayValue": "Headline–System/18–22 xSmall",
+          "actualDisplayValue": "Action/16–20 Component Primary",
+          "referenceResource": {
+            "name": "Headline–System/18–22 xSmall",
+            "key": "69723bb178c1d1f9ec90e7b5670389dadb9de724",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": {
+            "name": "Action/16–20 Component Primary",
+            "key": "0fd87667e8841a94094062af08ade71d47456827",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "actualNestedOwnerPath": "View=Small, Skeleton=False",
+            "actualNestedOwnerRelativePath": "MainContent / Heading / Title",
+            "nestedOwnerComponentKey": "913a526e98f177533ca3e4495d6658d0120e6afe",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "View=Small, Skeleton=False / MainContent / Heading / [D] TitleAddon / StatusBadge / 🔩 Content",
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Small",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": {
+              "Size": "16",
+              "Type": "Icon"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "10910:56685",
+              "nodeName": "[D] CorporatePage",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "styles.text",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Типографика Title и Subtitle фиксируется выбранным View компонента TitleView. Менять текстовый стиль заголовка или подзаголовка вручную запрещено.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": "Стиль текст",
+            "priority": 30,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+            "message": "Типографика Title и Subtitle фиксируется выбранным View компонента TitleView. Менять текстовый стиль заголовка или подзаголовка вручную запрещено.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I10910:56799;10910:56229;37705:55417",
+            "name": "Subtitle",
+            "type": null,
+            "pageName": "Редизайн виджетов + демо",
+            "path": "View=Small, Skeleton=False / MainContent / Subtitle",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.top",
+          "message": "Паддинг top: 8 → 4",
+          "referenceValue": 8,
+          "actualValue": 4,
+          "referenceRawValue": 8,
+          "actualRawValue": 4,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 4,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "actualNestedOwnerPath": "View=Small, Skeleton=False",
+            "actualNestedOwnerRelativePath": "MainContent / Subtitle",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Small",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "10910:56685",
+              "nodeName": "[D] CorporatePage",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.stroke|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства TitleView нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I10910:56800;10910:56228",
+        "name": "[D] BackgroundPlate",
+        "type": "INSTANCE",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / Frame 2147237847 / 👻 Banners / [D] BackgroundPlate",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BackgroundPlate",
+        "key": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Position=Level 1 (outer)",
+        "key": "34e9064066253fb2f2d7bc056bb36a2580fd860e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I10910:56800;10910:56228",
+            "name": "[D] BackgroundPlate",
+            "type": null,
+            "pageName": "Редизайн виджетов + демо",
+            "path": "Position=Level 1 (outer)",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 0 → 16",
+          "referenceValue": "0",
+          "actualValue": "16",
+          "referenceRawValue": "0",
+          "actualRawValue": "16",
+          "referenceDisplayValue": "0",
+          "actualDisplayValue": "16",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Position": "Level 1 (outer)"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "10910:56685",
+              "nodeName": "[D] CorporatePage",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.radius-is-fixed-by-component-baseline",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "radius|layout.radius|cornerRadius|cornerRadius.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Скругления BackgroundPlate, BackgroundPlateSlot и вложенных Style Level задаются компонентом и его effective baseline. Дизайнер не должен вручную изменять radius/cornerRadius у root-layer BackgroundPlate, BackgroundPlateSlot или Style Level. Любое отличие radius от effective baseline является нарушением, а не допустимой композиционной настройкой.",
+              "remediation": "Сбросьте radius к effective baseline выбранного варианта BackgroundPlate. Не задавайте скругления BackgroundPlate и Style Level вручную.",
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.background-plate.radius-is-fixed-by-component-baseline",
+            "message": "Скругления BackgroundPlate, BackgroundPlateSlot и вложенных Style Level задаются компонентом и его effective baseline. Дизайнер не должен вручную изменять radius/cornerRadius у root-layer BackgroundPlate, BackgroundPlateSlot или Style Level. Любое отличие radius от effective baseline является нарушением, а не допустимой композиционной настройкой.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I10910:56800;10910:56229",
+        "name": "[D] TitleView",
+        "type": "INSTANCE",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / Frame 2147237847 / 👻 Banners / [D] TitleView",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] TitleView",
+        "key": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "View=Small, Skeleton=False",
+        "key": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I10910:56800;10910:56229;37705:55415",
+            "name": "Title",
+            "type": null,
+            "pageName": "Редизайн виджетов + демо",
+            "path": "View=Small, Skeleton=False / MainContent / Heading / Title",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Headline–System/18–22 xSmall → Action/16–20 Component Primary",
+          "referenceValue": "Headline–System/18–22 xSmall",
+          "actualValue": "Action/16–20 Component Primary",
+          "referenceRawValue": "Headline–System/18–22 xSmall",
+          "actualRawValue": "Action/16–20 Component Primary",
+          "referenceDisplayValue": "Headline–System/18–22 xSmall",
+          "actualDisplayValue": "Action/16–20 Component Primary",
+          "referenceResource": {
+            "name": "Headline–System/18–22 xSmall",
+            "key": "69723bb178c1d1f9ec90e7b5670389dadb9de724",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": {
+            "name": "Action/16–20 Component Primary",
+            "key": "0fd87667e8841a94094062af08ade71d47456827",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "actualNestedOwnerPath": "View=Small, Skeleton=False",
+            "actualNestedOwnerRelativePath": "MainContent / Heading / Title",
+            "nestedOwnerComponentKey": "913a526e98f177533ca3e4495d6658d0120e6afe",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "View=Small, Skeleton=False / MainContent / Heading / [D] TitleAddon / StatusBadge / 🔩 Content",
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Small",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": {
+              "Size": "16",
+              "Type": "Icon"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "10910:56685",
+              "nodeName": "[D] CorporatePage",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "styles.text",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Типографика Title и Subtitle фиксируется выбранным View компонента TitleView. Менять текстовый стиль заголовка или подзаголовка вручную запрещено.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": "Стиль текст",
+            "priority": 30,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+            "message": "Типографика Title и Subtitle фиксируется выбранным View компонента TitleView. Менять текстовый стиль заголовка или подзаголовка вручную запрещено.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I10910:56800;10910:56229;37705:55417",
+            "name": "Subtitle",
+            "type": null,
+            "pageName": "Редизайн виджетов + демо",
+            "path": "View=Small, Skeleton=False / MainContent / Subtitle",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.top",
+          "message": "Паддинг top: 8 → 4",
+          "referenceValue": 8,
+          "actualValue": 4,
+          "referenceRawValue": 8,
+          "actualRawValue": 4,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 4,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "actualNestedOwnerPath": "View=Small, Skeleton=False",
+            "actualNestedOwnerRelativePath": "MainContent / Subtitle",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Small",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "10910:56685",
+              "nodeName": "[D] CorporatePage",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.stroke|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства TitleView нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I10910:56803;10910:56228",
+        "name": "[D] BackgroundPlate",
+        "type": "INSTANCE",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / Frame 2147237848 / 👻 Banners / [D] BackgroundPlate",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BackgroundPlate",
+        "key": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Position=Level 1 (outer)",
+        "key": "34e9064066253fb2f2d7bc056bb36a2580fd860e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I10910:56803;10910:56228",
+            "name": "[D] BackgroundPlate",
+            "type": null,
+            "pageName": "Редизайн виджетов + демо",
+            "path": "Position=Level 1 (outer)",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 0 → 16",
+          "referenceValue": "0",
+          "actualValue": "16",
+          "referenceRawValue": "0",
+          "actualRawValue": "16",
+          "referenceDisplayValue": "0",
+          "actualDisplayValue": "16",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Position": "Level 1 (outer)"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "10910:56685",
+              "nodeName": "[D] CorporatePage",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.radius-is-fixed-by-component-baseline",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "radius|layout.radius|cornerRadius|cornerRadius.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Скругления BackgroundPlate, BackgroundPlateSlot и вложенных Style Level задаются компонентом и его effective baseline. Дизайнер не должен вручную изменять radius/cornerRadius у root-layer BackgroundPlate, BackgroundPlateSlot или Style Level. Любое отличие radius от effective baseline является нарушением, а не допустимой композиционной настройкой.",
+              "remediation": "Сбросьте radius к effective baseline выбранного варианта BackgroundPlate. Не задавайте скругления BackgroundPlate и Style Level вручную.",
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.background-plate.radius-is-fixed-by-component-baseline",
+            "message": "Скругления BackgroundPlate, BackgroundPlateSlot и вложенных Style Level задаются компонентом и его effective baseline. Дизайнер не должен вручную изменять radius/cornerRadius у root-layer BackgroundPlate, BackgroundPlateSlot или Style Level. Любое отличие radius от effective baseline является нарушением, а не допустимой композиционной настройкой.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I10910:56803;10910:56229",
+        "name": "[D] TitleView",
+        "type": "INSTANCE",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / Frame 2147237848 / 👻 Banners / [D] TitleView",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] TitleView",
+        "key": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "View=Small, Skeleton=False",
+        "key": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I10910:56803;10910:56229;37705:55415",
+            "name": "Title",
+            "type": null,
+            "pageName": "Редизайн виджетов + демо",
+            "path": "View=Small, Skeleton=False / MainContent / Heading / Title",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Headline–System/18–22 xSmall → Action/16–20 Component Primary",
+          "referenceValue": "Headline–System/18–22 xSmall",
+          "actualValue": "Action/16–20 Component Primary",
+          "referenceRawValue": "Headline–System/18–22 xSmall",
+          "actualRawValue": "Action/16–20 Component Primary",
+          "referenceDisplayValue": "Headline–System/18–22 xSmall",
+          "actualDisplayValue": "Action/16–20 Component Primary",
+          "referenceResource": {
+            "name": "Headline–System/18–22 xSmall",
+            "key": "69723bb178c1d1f9ec90e7b5670389dadb9de724",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": {
+            "name": "Action/16–20 Component Primary",
+            "key": "0fd87667e8841a94094062af08ade71d47456827",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "actualNestedOwnerPath": "View=Small, Skeleton=False",
+            "actualNestedOwnerRelativePath": "MainContent / Heading / Title",
+            "nestedOwnerComponentKey": "913a526e98f177533ca3e4495d6658d0120e6afe",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "View=Small, Skeleton=False / MainContent / Heading / [D] TitleAddon / StatusBadge / 🔩 Content",
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Small",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": {
+              "Size": "16",
+              "Type": "Icon"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "10910:56685",
+              "nodeName": "[D] CorporatePage",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "styles.text",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Типографика Title и Subtitle фиксируется выбранным View компонента TitleView. Менять текстовый стиль заголовка или подзаголовка вручную запрещено.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": "Стиль текст",
+            "priority": 30,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+            "message": "Типографика Title и Subtitle фиксируется выбранным View компонента TitleView. Менять текстовый стиль заголовка или подзаголовка вручную запрещено.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I10910:56803;10910:56229;37705:55417",
+            "name": "Subtitle",
+            "type": null,
+            "pageName": "Редизайн виджетов + демо",
+            "path": "View=Small, Skeleton=False / MainContent / Subtitle",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.top",
+          "message": "Паддинг top: 8 → 4",
+          "referenceValue": 8,
+          "actualValue": 4,
+          "referenceRawValue": 8,
+          "actualRawValue": 4,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 4,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "actualNestedOwnerPath": "View=Small, Skeleton=False",
+            "actualNestedOwnerRelativePath": "MainContent / Subtitle",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Small",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "10910:56685",
+              "nodeName": "[D] CorporatePage",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.stroke|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства TitleView нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I10910:56804;10910:56228",
+        "name": "[D] BackgroundPlate",
+        "type": "INSTANCE",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / Frame 2147237848 / 👻 Banners / [D] BackgroundPlate",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BackgroundPlate",
+        "key": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Position=Level 1 (outer)",
+        "key": "34e9064066253fb2f2d7bc056bb36a2580fd860e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I10910:56804;10910:56228",
+            "name": "[D] BackgroundPlate",
+            "type": null,
+            "pageName": "Редизайн виджетов + демо",
+            "path": "Position=Level 1 (outer)",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 0 → 16",
+          "referenceValue": "0",
+          "actualValue": "16",
+          "referenceRawValue": "0",
+          "actualRawValue": "16",
+          "referenceDisplayValue": "0",
+          "actualDisplayValue": "16",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Position": "Level 1 (outer)"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "10910:56685",
+              "nodeName": "[D] CorporatePage",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.radius-is-fixed-by-component-baseline",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "radius|layout.radius|cornerRadius|cornerRadius.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Скругления BackgroundPlate, BackgroundPlateSlot и вложенных Style Level задаются компонентом и его effective baseline. Дизайнер не должен вручную изменять radius/cornerRadius у root-layer BackgroundPlate, BackgroundPlateSlot или Style Level. Любое отличие radius от effective baseline является нарушением, а не допустимой композиционной настройкой.",
+              "remediation": "Сбросьте radius к effective baseline выбранного варианта BackgroundPlate. Не задавайте скругления BackgroundPlate и Style Level вручную.",
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.background-plate.radius-is-fixed-by-component-baseline",
+            "message": "Скругления BackgroundPlate, BackgroundPlateSlot и вложенных Style Level задаются компонентом и его effective baseline. Дизайнер не должен вручную изменять radius/cornerRadius у root-layer BackgroundPlate, BackgroundPlateSlot или Style Level. Любое отличие radius от effective baseline является нарушением, а не допустимой композиционной настройкой.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I10910:56804;10910:56229",
+        "name": "[D] TitleView",
+        "type": "INSTANCE",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / Frame 2147237848 / 👻 Banners / [D] TitleView",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] TitleView",
+        "key": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "View=Small, Skeleton=False",
+        "key": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I10910:56804;10910:56229;37705:55415",
+            "name": "Title",
+            "type": null,
+            "pageName": "Редизайн виджетов + демо",
+            "path": "View=Small, Skeleton=False / MainContent / Heading / Title",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Headline–System/18–22 xSmall → Action/16–20 Component Primary",
+          "referenceValue": "Headline–System/18–22 xSmall",
+          "actualValue": "Action/16–20 Component Primary",
+          "referenceRawValue": "Headline–System/18–22 xSmall",
+          "actualRawValue": "Action/16–20 Component Primary",
+          "referenceDisplayValue": "Headline–System/18–22 xSmall",
+          "actualDisplayValue": "Action/16–20 Component Primary",
+          "referenceResource": {
+            "name": "Headline–System/18–22 xSmall",
+            "key": "69723bb178c1d1f9ec90e7b5670389dadb9de724",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": {
+            "name": "Action/16–20 Component Primary",
+            "key": "0fd87667e8841a94094062af08ade71d47456827",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "actualNestedOwnerPath": "View=Small, Skeleton=False",
+            "actualNestedOwnerRelativePath": "MainContent / Heading / Title",
+            "nestedOwnerComponentKey": "913a526e98f177533ca3e4495d6658d0120e6afe",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "View=Small, Skeleton=False / MainContent / Heading / [D] TitleAddon / StatusBadge / 🔩 Content",
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Small",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": {
+              "Size": "16",
+              "Type": "Icon"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "10910:56685",
+              "nodeName": "[D] CorporatePage",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "styles.text",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Типографика Title и Subtitle фиксируется выбранным View компонента TitleView. Менять текстовый стиль заголовка или подзаголовка вручную запрещено.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": "Стиль текст",
+            "priority": 30,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+            "message": "Типографика Title и Subtitle фиксируется выбранным View компонента TitleView. Менять текстовый стиль заголовка или подзаголовка вручную запрещено.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I10910:56804;10910:56229;37705:55417",
+            "name": "Subtitle",
+            "type": null,
+            "pageName": "Редизайн виджетов + демо",
+            "path": "View=Small, Skeleton=False / MainContent / Subtitle",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.top",
+          "message": "Паддинг top: 8 → 4",
+          "referenceValue": 8,
+          "actualValue": 4,
+          "referenceRawValue": 8,
+          "actualRawValue": 4,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 4,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "actualNestedOwnerPath": "View=Small, Skeleton=False",
+            "actualNestedOwnerRelativePath": "MainContent / Subtitle",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Small",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "10910:56685",
+              "nodeName": "[D] CorporatePage",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.stroke|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства TitleView нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I10910:56805;10910:56228",
+        "name": "[D] BackgroundPlate",
+        "type": "INSTANCE",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / Frame 2147237848 / 👻 Banners / [D] BackgroundPlate",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BackgroundPlate",
+        "key": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Position=Level 1 (outer)",
+        "key": "34e9064066253fb2f2d7bc056bb36a2580fd860e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I10910:56805;10910:56228",
+            "name": "[D] BackgroundPlate",
+            "type": null,
+            "pageName": "Редизайн виджетов + демо",
+            "path": "Position=Level 1 (outer)",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 0 → 16",
+          "referenceValue": "0",
+          "actualValue": "16",
+          "referenceRawValue": "0",
+          "actualRawValue": "16",
+          "referenceDisplayValue": "0",
+          "actualDisplayValue": "16",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Position": "Level 1 (outer)"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "10910:56685",
+              "nodeName": "[D] CorporatePage",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.radius-is-fixed-by-component-baseline",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "radius|layout.radius|cornerRadius|cornerRadius.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Скругления BackgroundPlate, BackgroundPlateSlot и вложенных Style Level задаются компонентом и его effective baseline. Дизайнер не должен вручную изменять radius/cornerRadius у root-layer BackgroundPlate, BackgroundPlateSlot или Style Level. Любое отличие radius от effective baseline является нарушением, а не допустимой композиционной настройкой.",
+              "remediation": "Сбросьте radius к effective baseline выбранного варианта BackgroundPlate. Не задавайте скругления BackgroundPlate и Style Level вручную.",
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.background-plate.radius-is-fixed-by-component-baseline",
+            "message": "Скругления BackgroundPlate, BackgroundPlateSlot и вложенных Style Level задаются компонентом и его effective baseline. Дизайнер не должен вручную изменять radius/cornerRadius у root-layer BackgroundPlate, BackgroundPlateSlot или Style Level. Любое отличие radius от effective baseline является нарушением, а не допустимой композиционной настройкой.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I10910:56805;10910:56229",
+        "name": "[D] TitleView",
+        "type": "INSTANCE",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / Frame 2147237848 / 👻 Banners / [D] TitleView",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] TitleView",
+        "key": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "View=Small, Skeleton=False",
+        "key": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I10910:56805;10910:56229;37705:55415",
+            "name": "Title",
+            "type": null,
+            "pageName": "Редизайн виджетов + демо",
+            "path": "View=Small, Skeleton=False / MainContent / Heading / Title",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Headline–System/18–22 xSmall → Action/16–20 Component Primary",
+          "referenceValue": "Headline–System/18–22 xSmall",
+          "actualValue": "Action/16–20 Component Primary",
+          "referenceRawValue": "Headline–System/18–22 xSmall",
+          "actualRawValue": "Action/16–20 Component Primary",
+          "referenceDisplayValue": "Headline–System/18–22 xSmall",
+          "actualDisplayValue": "Action/16–20 Component Primary",
+          "referenceResource": {
+            "name": "Headline–System/18–22 xSmall",
+            "key": "69723bb178c1d1f9ec90e7b5670389dadb9de724",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": {
+            "name": "Action/16–20 Component Primary",
+            "key": "0fd87667e8841a94094062af08ade71d47456827",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "actualNestedOwnerPath": "View=Small, Skeleton=False",
+            "actualNestedOwnerRelativePath": "MainContent / Heading / Title",
+            "nestedOwnerComponentKey": "913a526e98f177533ca3e4495d6658d0120e6afe",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "View=Small, Skeleton=False / MainContent / Heading / [D] TitleAddon / StatusBadge / 🔩 Content",
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Small",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": {
+              "Size": "16",
+              "Type": "Icon"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "10910:56685",
+              "nodeName": "[D] CorporatePage",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "styles.text",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Типографика Title и Subtitle фиксируется выбранным View компонента TitleView. Менять текстовый стиль заголовка или подзаголовка вручную запрещено.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": "Стиль текст",
+            "priority": 30,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+            "message": "Типографика Title и Subtitle фиксируется выбранным View компонента TitleView. Менять текстовый стиль заголовка или подзаголовка вручную запрещено.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I10910:56805;10910:56229;37705:55417",
+            "name": "Subtitle",
+            "type": null,
+            "pageName": "Редизайн виджетов + демо",
+            "path": "View=Small, Skeleton=False / MainContent / Subtitle",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.top",
+          "message": "Паддинг top: 8 → 4",
+          "referenceValue": 8,
+          "actualValue": 4,
+          "referenceRawValue": 8,
+          "actualRawValue": 4,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 4,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "actualNestedOwnerPath": "View=Small, Skeleton=False",
+            "actualNestedOwnerRelativePath": "MainContent / Subtitle",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Small",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "10910:56685",
+              "nodeName": "[D] CorporatePage",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.stroke|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства TitleView нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I10910:56823;10910:56228",
+        "name": "[D] BackgroundPlate",
+        "type": "INSTANCE",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / Frame 2147237849 / 👻 Banners / [D] BackgroundPlate",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BackgroundPlate",
+        "key": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Position=Level 1 (outer)",
+        "key": "34e9064066253fb2f2d7bc056bb36a2580fd860e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I10910:56823;10910:56228",
+            "name": "[D] BackgroundPlate",
+            "type": null,
+            "pageName": "Редизайн виджетов + демо",
+            "path": "Position=Level 1 (outer)",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 0 → 16",
+          "referenceValue": "0",
+          "actualValue": "16",
+          "referenceRawValue": "0",
+          "actualRawValue": "16",
+          "referenceDisplayValue": "0",
+          "actualDisplayValue": "16",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Position": "Level 1 (outer)"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "10910:56685",
+              "nodeName": "[D] CorporatePage",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.radius-is-fixed-by-component-baseline",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "radius|layout.radius|cornerRadius|cornerRadius.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Скругления BackgroundPlate, BackgroundPlateSlot и вложенных Style Level задаются компонентом и его effective baseline. Дизайнер не должен вручную изменять radius/cornerRadius у root-layer BackgroundPlate, BackgroundPlateSlot или Style Level. Любое отличие radius от effective baseline является нарушением, а не допустимой композиционной настройкой.",
+              "remediation": "Сбросьте radius к effective baseline выбранного варианта BackgroundPlate. Не задавайте скругления BackgroundPlate и Style Level вручную.",
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.background-plate.radius-is-fixed-by-component-baseline",
+            "message": "Скругления BackgroundPlate, BackgroundPlateSlot и вложенных Style Level задаются компонентом и его effective baseline. Дизайнер не должен вручную изменять radius/cornerRadius у root-layer BackgroundPlate, BackgroundPlateSlot или Style Level. Любое отличие radius от effective baseline является нарушением, а не допустимой композиционной настройкой.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I10910:56823;10910:56229",
+        "name": "[D] TitleView",
+        "type": "INSTANCE",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / Frame 2147237849 / 👻 Banners / [D] TitleView",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] TitleView",
+        "key": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "View=Small, Skeleton=False",
+        "key": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I10910:56823;10910:56229;37705:55415",
+            "name": "Title",
+            "type": null,
+            "pageName": "Редизайн виджетов + демо",
+            "path": "View=Small, Skeleton=False / MainContent / Heading / Title",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Headline–System/18–22 xSmall → Action/16–20 Component Primary",
+          "referenceValue": "Headline–System/18–22 xSmall",
+          "actualValue": "Action/16–20 Component Primary",
+          "referenceRawValue": "Headline–System/18–22 xSmall",
+          "actualRawValue": "Action/16–20 Component Primary",
+          "referenceDisplayValue": "Headline–System/18–22 xSmall",
+          "actualDisplayValue": "Action/16–20 Component Primary",
+          "referenceResource": {
+            "name": "Headline–System/18–22 xSmall",
+            "key": "69723bb178c1d1f9ec90e7b5670389dadb9de724",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": {
+            "name": "Action/16–20 Component Primary",
+            "key": "0fd87667e8841a94094062af08ade71d47456827",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "actualNestedOwnerPath": "View=Small, Skeleton=False",
+            "actualNestedOwnerRelativePath": "MainContent / Heading / Title",
+            "nestedOwnerComponentKey": "913a526e98f177533ca3e4495d6658d0120e6afe",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "View=Small, Skeleton=False / MainContent / Heading / [D] TitleAddon / StatusBadge / 🔩 Content",
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Small",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": {
+              "Size": "16",
+              "Type": "Icon"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "10910:56685",
+              "nodeName": "[D] CorporatePage",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "styles.text",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Типографика Title и Subtitle фиксируется выбранным View компонента TitleView. Менять текстовый стиль заголовка или подзаголовка вручную запрещено.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": "Стиль текст",
+            "priority": 30,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+            "message": "Типографика Title и Subtitle фиксируется выбранным View компонента TitleView. Менять текстовый стиль заголовка или подзаголовка вручную запрещено.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I10910:56823;10910:56229;37705:55417",
+            "name": "Subtitle",
+            "type": null,
+            "pageName": "Редизайн виджетов + демо",
+            "path": "View=Small, Skeleton=False / MainContent / Subtitle",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.top",
+          "message": "Паддинг top: 8 → 4",
+          "referenceValue": 8,
+          "actualValue": 4,
+          "referenceRawValue": 8,
+          "actualRawValue": 4,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 4,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "actualNestedOwnerPath": "View=Small, Skeleton=False",
+            "actualNestedOwnerRelativePath": "MainContent / Subtitle",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Small",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "10910:56685",
+              "nodeName": "[D] CorporatePage",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.stroke|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства TitleView нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I10910:56824;10910:56228",
+        "name": "[D] BackgroundPlate",
+        "type": "INSTANCE",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / Frame 2147237849 / 👻 Banners / [D] BackgroundPlate",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] BackgroundPlate",
+        "key": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Position=Level 1 (outer)",
+        "key": "34e9064066253fb2f2d7bc056bb36a2580fd860e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I10910:56824;10910:56228",
+            "name": "[D] BackgroundPlate",
+            "type": null,
+            "pageName": "Редизайн виджетов + демо",
+            "path": "Position=Level 1 (outer)",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 0 → 16",
+          "referenceValue": "0",
+          "actualValue": "16",
+          "referenceRawValue": "0",
+          "actualRawValue": "16",
+          "referenceDisplayValue": "0",
+          "actualDisplayValue": "16",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "34e9064066253fb2f2d7bc056bb36a2580fd860e",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Position": "Level 1 (outer)"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "10910:56685",
+              "nodeName": "[D] CorporatePage",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.background-plate.radius-is-fixed-by-component-baseline",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": "design",
+              "appliesTo": "radius|layout.radius|cornerRadius|cornerRadius.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Скругления BackgroundPlate, BackgroundPlateSlot и вложенных Style Level задаются компонентом и его effective baseline. Дизайнер не должен вручную изменять radius/cornerRadius у root-layer BackgroundPlate, BackgroundPlateSlot или Style Level. Любое отличие radius от effective baseline является нарушением, а не допустимой композиционной настройкой.",
+              "remediation": "Сбросьте radius к effective baseline выбранного варианта BackgroundPlate. Не задавайте скругления BackgroundPlate и Style Level вручную.",
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.background-plate.radius-is-fixed-by-component-baseline",
+            "message": "Скругления BackgroundPlate, BackgroundPlateSlot и вложенных Style Level задаются компонентом и его effective baseline. Дизайнер не должен вручную изменять radius/cornerRadius у root-layer BackgroundPlate, BackgroundPlateSlot или Style Level. Любое отличие radius от effective baseline является нарушением, а не допустимой композиционной настройкой.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I10910:56824;10910:56229",
+        "name": "[D] TitleView",
+        "type": "INSTANCE",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / Frame 2147237849 / 👻 Banners / [D] TitleView",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] TitleView",
+        "key": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "View=Small, Skeleton=False",
+        "key": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I10910:56824;10910:56229;37705:55415",
+            "name": "Title",
+            "type": null,
+            "pageName": "Редизайн виджетов + демо",
+            "path": "View=Small, Skeleton=False / MainContent / Heading / Title",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Headline–System/18–22 xSmall → Action/16–24 Primary Medium",
+          "referenceValue": "Headline–System/18–22 xSmall",
+          "actualValue": "Action/16–24 Primary Medium",
+          "referenceRawValue": "Headline–System/18–22 xSmall",
+          "actualRawValue": "Action/16–24 Primary Medium",
+          "referenceDisplayValue": "Headline–System/18–22 xSmall",
+          "actualDisplayValue": "Action/16–24 Primary Medium",
+          "referenceResource": {
+            "name": "Headline–System/18–22 xSmall",
+            "key": "69723bb178c1d1f9ec90e7b5670389dadb9de724",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": {
+            "name": "Action/16–24 Primary Medium",
+            "key": "aae5de06136376c7653394d3648478f48372d63f",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "actualNestedOwnerPath": "View=Small, Skeleton=False",
+            "actualNestedOwnerRelativePath": "MainContent / Heading / Title",
+            "nestedOwnerComponentKey": "913a526e98f177533ca3e4495d6658d0120e6afe",
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": "View=Small, Skeleton=False / MainContent / Heading / [D] TitleAddon / StatusBadge / 🔩 Content",
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Small",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": {
+              "Size": "16",
+              "Type": "Icon"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "10910:56685",
+              "nodeName": "[D] CorporatePage",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "styles.text",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Типографика Title и Subtitle фиксируется выбранным View компонента TitleView. Менять текстовый стиль заголовка или подзаголовка вручную запрещено.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": "Стиль текст",
+            "priority": 30,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+            "message": "Типографика Title и Subtitle фиксируется выбранным View компонента TitleView. Менять текстовый стиль заголовка или подзаголовка вручную запрещено.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I10910:56824;10910:56229;37705:55417",
+            "name": "Subtitle",
+            "type": null,
+            "pageName": "Редизайн виджетов + демо",
+            "path": "View=Small, Skeleton=False / MainContent / Subtitle",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.top",
+          "message": "Паддинг top: 8 → 4",
+          "referenceValue": 8,
+          "actualValue": 4,
+          "referenceRawValue": 8,
+          "actualRawValue": 4,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 4,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "actualNestedOwnerPath": "View=Small, Skeleton=False",
+            "actualNestedOwnerRelativePath": "MainContent / Subtitle",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Small",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "10910:56685",
+              "nodeName": "[D] CorporatePage",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.stroke|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства TitleView нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "10910:56792",
+        "name": "Banner",
+        "type": "INSTANCE",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / Banner",
+        "visible": true
+      },
+      "component": {
+        "name": "Banner",
+        "key": "edaf2d30d50741a5760548d509e5bd8b75d7b2a4",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "10910:56797",
+        "name": "👻 Banners",
+        "type": "INSTANCE",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / Frame 2147237847 / 👻 Banners",
+        "visible": true
+      },
+      "component": {
+        "name": "👻 Banners",
+        "key": "10d4589602ec28bb328e3a68ddd88b2ce250437e",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "10910:56798",
+        "name": "👻 Banners",
+        "type": "INSTANCE",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / Frame 2147237847 / 👻 Banners",
+        "visible": true
+      },
+      "component": {
+        "name": "👻 Banners",
+        "key": "10d4589602ec28bb328e3a68ddd88b2ce250437e",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "10910:56799",
+        "name": "👻 Banners",
+        "type": "INSTANCE",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / Frame 2147237847 / 👻 Banners",
+        "visible": true
+      },
+      "component": {
+        "name": "👻 Banners",
+        "key": "10d4589602ec28bb328e3a68ddd88b2ce250437e",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "10910:56800",
+        "name": "👻 Banners",
+        "type": "INSTANCE",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / Frame 2147237847 / 👻 Banners",
+        "visible": true
+      },
+      "component": {
+        "name": "👻 Banners",
+        "key": "10d4589602ec28bb328e3a68ddd88b2ce250437e",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "10910:56803",
+        "name": "👻 Banners",
+        "type": "INSTANCE",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / Frame 2147237848 / 👻 Banners",
+        "visible": true
+      },
+      "component": {
+        "name": "👻 Banners",
+        "key": "10d4589602ec28bb328e3a68ddd88b2ce250437e",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "10910:56804",
+        "name": "👻 Banners",
+        "type": "INSTANCE",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / Frame 2147237848 / 👻 Banners",
+        "visible": true
+      },
+      "component": {
+        "name": "👻 Banners",
+        "key": "10d4589602ec28bb328e3a68ddd88b2ce250437e",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "10910:56805",
+        "name": "👻 Banners",
+        "type": "INSTANCE",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / Frame 2147237848 / 👻 Banners",
+        "visible": true
+      },
+      "component": {
+        "name": "👻 Banners",
+        "key": "10d4589602ec28bb328e3a68ddd88b2ce250437e",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "10910:56823",
+        "name": "👻 Banners",
+        "type": "INSTANCE",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / Frame 2147237849 / 👻 Banners",
+        "visible": true
+      },
+      "component": {
+        "name": "👻 Banners",
+        "key": "10d4589602ec28bb328e3a68ddd88b2ce250437e",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "10910:56824",
+        "name": "👻 Banners",
+        "type": "INSTANCE",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / Frame 2147237849 / 👻 Banners",
+        "visible": true
+      },
+      "component": {
+        "name": "👻 Banners",
+        "key": "10d4589602ec28bb328e3a68ddd88b2ce250437e",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "detachedComponents",
+      "severityHint": "high",
+      "title": "Detach компонента",
+      "node": {
+        "id": "10910:56776",
+        "name": "[D] TabsView",
+        "type": "FRAME_OR_GROUP",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / [D] TabsView",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] TabsView",
+        "key": "519118350c338878dff70f5c8e62cf9c7d53bffd",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TabsView.json"
+      }
+    },
+    {
+      "category": "detachedComponents",
+      "severityHint": "high",
+      "title": "Detach компонента",
+      "node": {
+        "id": "10910:56777",
+        "name": "TabsPrimary",
+        "type": "FRAME_OR_GROUP",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / [D] TabsView / TabsPrimary",
+        "visible": true
+      },
+      "component": {
+        "name": "TabsPrimary",
+        "key": "0b6cbeb2069d15adf5be7b9a4ba17acc6a397017",
+        "library": "Web :: Core Navigation",
+        "sourceFile": "web/components/web-core/navigation/Web _ Core Navigation -- Tabs.json"
+      }
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I10910:56725;155:70025",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Подписка не подключена / [D] CorporatePage / Body / Frame 2131329826 / [D] TitleView / MainContent / Status / StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "a762ae3bdb7c6e26de67d34aa7791095aa30f02e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Neutral, Style=Contrast, Size=24",
+        "key": "a762ae3bdb7c6e26de67d34aa7791095aa30f02e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "10910:56685",
+        "name": "Страница: Редизайн виджетов + демо",
+        "type": "PAGE",
+        "pageName": "Редизайн виджетов + демо",
+        "path": "Редизайн виджетов + демо",
+        "visible": true
+      },
+      "kind": "missingThemeMode",
+      "recommendation": "Смени темизацию на Corp",
+      "component": null
+    }
+  ],
+  "componentContexts": [
+    {
+      "componentKey": "web-core-navigation.tabs",
+      "summary": "Web Core Navigation Tabs содержит standalone-компоненты primary и secondary tabs. Он задаёт baseline values для TabsPrimary и TabPrimary, но composite components вроде TabsView могут владеть другими effective baselines через собственные composition contracts.",
+      "criticalBaselines": [
+        "Standalone TabsPrimary / Items / TabPrimary has layout.itemSpacing = 12.",
+        "Standalone TabPrimary label has text style Paragraph/18–24 Primary Large.",
+        "If [D] TabsView reports TabPrimary 12 → 16 or Paragraph/18–24 → Action/18–24, first check TabsView composition-contract: those can be host-owned effective baselines, not designer customizations."
+      ],
+      "agentInstructions": [
+        "Do not call TabsView-owned nested overrides violations when actual equals the TabsView effective baseline.",
+        "Use this core Tabs contract to identify standalone baselines and component keys.",
+        "Use the host component composition-contract to decide whether a nested difference is owned by the host wrapper or by the designer."
+      ],
+      "includedComponents": [
+        "[M] 🔄 TabsSecondary",
+        "[D] 🔄 TabsSecondary",
+        "🔩 ExampleOptionListContent",
+        "🔩 ExampleAddon",
+        "🔩 TabPrimary",
+        "🔩 Addon",
+        "🔩 Slider",
+        "🔩 Slider",
+        "🔩 Slider",
+        "🔩 Slider",
+        "🔩 Slider",
+        "[M] TabsSecondary",
+        "[D] TabsSecondary",
+        "TabsPrimary"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "0b6cbeb2069d15adf5be7b9a4ba17acc6a397017",
+          "name": "TabsPrimary",
+          "purpose": "🛠️ Сконфигурируй компонент перед использованием согласно инструкции",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.ActiveState",
+            "variant.DisabledState",
+            "variant.Size",
+            "variant.View"
+          ],
+          "layerProperties": [
+            "layout.itemSpacing",
+            "layout.padding.*",
+            "styles.text",
+            "styles.fill",
+            "styles.stroke",
+            "fill",
+            "stroke",
+            "radius",
+            "opacity"
+          ],
+          "dependencyPolicy": "Standalone Tabs contract описывает core baseline. Composite wrappers вроде TabsView могут переопределять nested TabsPrimary или TabPrimary baselines через собственный composition-contract."
+        },
+        "publicApi": {
+          "components": [
+            {
+              "name": "[M] 🔄 TabsSecondary",
+              "key": "6e662f3c27660bda0a5b17995b67a6319e6286b7",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "scheduled",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] 🔄 TabsSecondary",
+              "key": "470ba328cc0e1b5fcf59edcedb733255750120bf",
+              "role": "main",
+              "platform": "desktop",
+              "status": "scheduled",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "🔩 ExampleOptionListContent",
+              "key": "5e988eea2a439f7aeb2a55a05b7d4ca58e4d5624",
+              "role": "part",
+              "platform": "universal",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "🔩 ExampleAddon",
+              "key": "25567b89ee5a4ac534d1bf71163cc0d1ac12519d",
+              "role": "part",
+              "platform": "universal",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "🔩 TabPrimary",
+              "key": "8d45c768b56f9781ec44a60b93a5467a3310236c",
+              "role": "part",
+              "platform": "universal",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "🔩 Addon",
+              "key": "f875b10e3bb447d250a4208675e5dbaefa24b754",
+              "role": "part",
+              "platform": "universal",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "🔩 Slider",
+              "key": "d6d7eed01d99cc3511dfe15cf4df35d771683894",
+              "role": "part",
+              "platform": "universal",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "🔩 Slider",
+              "key": "18e95cc695ac9ddff019545dbd9932751b07c3b4",
+              "role": "part",
+              "platform": "universal",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "🔩 Slider",
+              "key": "6a29142107d9a4d2ac60e88c9a2aaa16de51f4ac",
+              "role": "part",
+              "platform": "universal",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "🔩 Slider",
+              "key": "7e96411b167cdb8223d73640aeb4ea5f1d3f602b",
+              "role": "part",
+              "platform": "universal",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "🔩 Slider",
+              "key": "71f50751224f2becd3515bc3c8da24cb13725dee",
+              "role": "part",
+              "platform": "universal",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TabsSecondary",
+              "key": "4d05d1c47c37f00fcd2705dd44a74a9750f9f922",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TabsSecondary",
+              "key": "742f286666794402fc4e91cb801f5c202f30e00c",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "TabsPrimary",
+              "key": "0b6cbeb2069d15adf5be7b9a4ba17acc6a397017",
+              "role": "main",
+              "platform": "universal",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            }
+          ],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web-core.icon-view",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Content",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "IconView"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.link",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔩 Underline",
+        "Link"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.background-plate",
+      "summary": "BackgroundPlate — семейство variable-driven surface-компонентов. Для нового контента используется BackgroundPlateSlot: Level-0 задаётся главной поверхности, первый компонент получает Level-1, а опциональный Level-2 располагается только непосредственно внутри Level-1. Type, BackgroundColor, Skeleton и layer-свойства трактуются по exact component rules. BackgroundPlateView — кодовый alias этого же семейства.",
+      "criticalBaselines": [
+        "Для новых макетов основным контейнером является BackgroundPlateSlot; BackgroundPlate считается legacy для генерации, но его существующее использование не является нарушением само по себе.",
+        "Mode BackgroundPlate Level=Level-0 назначается главной поверхности страницы или модальной сущности. Первый вложенный BackgroundPlateSlot получает Level-1; Level-2 всегда располагается непосредственно внутри Level-1.",
+        "Обычный контент может лежать непосредственно в Slot Level-1. Level-2 является опциональной вложенной поверхностью; Level-0 и Level-1 внутри Slot запрещены.",
+        "Рекомендуемый padding: Spacing/32 для Level-1 и Spacing/24 для Level-2. Другие значения допустимы под контекст или паттерн только с Spacing token binding.",
+        "Axis, gap и alignment Slot определяются контекстом; width должен быть Fill, height — Hug. Clip content может быть true или false по контексту.",
+        "Primary и Secondary получают fill/stroke только из effective baseline. Colored использует только токенизированную заливку без stroke. Border используется без fill, с токенизированным stroke; strokeWeight контекстный, strokeAlign всегда INSIDE.",
+        "Radius, opacity и blend mode фиксируются effective baseline. Drop shadow и Inner shadow запрещены; Layer blur и Background blur разрешены по контексту.",
+        "Skeleton=True является штатным состоянием загрузки компонента или контента. Сложная skeleton-композиция допустима только при явном сценарии паттерна.",
+        "BackgroundPlateView в code/private usage маппится на BackgroundPlate и должен использовать те же правила, контракты и pattern links.",
+        "Для desktop рабочей поверхности Level 1 использует radius 16, Level 2 использует radius 12. Promo и mobile variants могут иметь другие baseline из каталога.",
+        "BackgroundColor зависит от surface context: для страниц используются base-bg/base-bg-alt, для модальных сущностей используются modal-bg/modal-bg-alt. Суффикс в скобках (gray)/(white) описывает визуальный фон, а часть имени до скобок соответствует цветовому токену поверхности.",
+        "В каталоге вариант обводочной поверхности называется Type=Border. В тексте рекомендаций можно пояснять его как bordered/обводочный, но в машинных фактах и таблицах используй точное значение Border.",
+        "Radius/cornerRadius у BackgroundPlate, BackgroundPlateSlot и вложенных Style Level фиксируется component effective baseline. Ручное изменение скруглений запрещено и должно трактоваться как нарушение, а не как допустимая композиционная настройка.",
+        "Для Table Wide [D] в BackgroundPlateSlot действует специальное правило: Slot padding top=Spacing/0, right/bottom/left=Spacing/16. [D] TopBar расположен рядом с плейтом в общем Level-0 контейнере, а не внутри Slot."
+      ],
+      "agentInstructions": [
+        "Не выводи нарушение из примера. Используй только exact rules, exact component contracts и явно найденные pattern rules.",
+        "Если во входном отчёте встречается BackgroundPlateView, трактуй его как code/private alias компонента BackgroundPlate, а не как отдельный компонент без правил.",
+        "Изменения variant/property показывай как component-property customizations; изменения fill, stroke, stroke geometry, radius, opacity, effects, blend mode, layout и style показывай как layer-property customizations.",
+        "Если nested diff принадлежит wrapper и actual совпадает с effective baseline, не показывай его как дизайнерскую кастомизацию.",
+        "Если actual отличается от effective baseline, показывай effectiveBaseline -> actual. Не подставляй standalone baseline вложенного Style Level вместо baseline выбранного BackgroundPlate variant.",
+        "Padding у BackgroundPlateSlot может быть осознанной настройкой композиции. Комментируй его как layer customization и проверяй Spacing token binding; не требуй вернуть 32 или 24 только из-за отличия от рекомендации.",
+        "Не требуй Level-2 для обычного контента Slot Level-1. Если внутри Slot найден BackgroundPlate Level-0 или Level-1, используй rule:components.background-plate.slot-content-levels.",
+        "Axis, gap, alignment и Clip content Slot трактуй как контекстные настройки. Width не должен отличаться от Fill, height — от Hug.",
+        "При анализе BackgroundColor сначала определи контекст поверхности: page или modal. Не рекомендуй modal-bg* для обычной страницы и не рекомендуй base-bg* для модальной сущности, если exact rule или отчёт указывают на противоположный surface context.",
+        "Для Primary и Secondary любое ручное изменение fill/stroke является нарушением, даже при token binding. Сравнивай с effective baseline текущего Type, уровня и BackgroundColor.",
+        "Для Colored разрешена только видимая заливка через color token; raw fill, отсутствие fill и любой stroke являются нарушением.",
+        "Для Border fill запрещён, stroke должен быть привязан к color token. StrokeWeight можно менять под контекст; strokeAlign должен оставаться INSIDE. Border не может быть кликабельным.",
+        "Если в отчёте есть изменение radius/cornerRadius, opacity или blend mode, используй соответствующее exact component rule и рекомендуй сброс к effective baseline.",
+        "Drop shadow и Inner shadow трактуй как нарушения. Layer blur и Background blur являются допустимыми контекстными кастомизациями и не должны попадать под запрет теней.",
+        "Переключение Skeleton=False → True само по себе разрешено. Ручную простую skeleton-композицию вместо component property считай нарушением; сложное исключение допускай только по явному паттерну.",
+        "Для Table Wide не разрешай дублировать table inset внутри плейта: HeadRow, BodyRow и ячейки используют собственные effective baseline без дополнительных padding."
+      ],
+      "includedComponents": [
+        "[D] BackgroundPlate",
+        "[D] BackgroundPlateSlot",
+        "[D] Style Level 1",
+        "[D] Style Level 2",
+        "[D][Promo] BackgroundPlate",
+        "[D][Promo] Style Level 1",
+        "[D][Promo] Style Level 2",
+        "[M] BackgroundPlate",
+        "[M] BackgroundPlateSlot",
+        "[M] Style Level 1",
+        "[M] Style Level 2",
+        "[M][Promo] BackgroundPlate",
+        "[M][Promo] Style Level 1",
+        "[M][Promo] Style Level 2"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.*"
+          ],
+          "layerProperties": [
+            "layout.*",
+            "styles.*",
+            "fill",
+            "stroke",
+            "radius",
+            "opacity",
+            "text.*"
+          ],
+          "dependencyPolicy": "Component-property reset и layer-property reset разделены. Layer reset должен использовать effective baseline после nested variant/materialization resolution. Для BackgroundPlateView применяй тот же reset model, что и для BackgroundPlate."
+        },
+        "publicApi": {
+          "components": [
+            {
+              "name": "[D] BackgroundPlate",
+              "key": "2c7332d281570f4d5af6d334f8df378d24a1f235",
+              "role": "legacy-surface",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "legacy",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D] BackgroundPlateSlot",
+              "key": "5b6c5ac720154aff36be2f8a883bd058faa663cf",
+              "role": "content-container",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "preferred",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[D] Style Level 1",
+              "key": "adb65a62cde9ebedc5d0d41d2d77cd63e71e0745",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D] Style Level 2",
+              "key": "c8735f4834a8b43fd2ab821ffc0a6e72a57c4b5b",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D][Promo] BackgroundPlate",
+              "key": "c49f08db71ab44ea64f0880730220de1d93ac263",
+              "role": "promo-surface",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "promo-only",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[D][Promo] Style Level 1",
+              "key": "2b46e94cdecdab7d4cb977055c0405b2f6204127",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D][Promo] Style Level 2",
+              "key": "a5a4240097211b28195291a593c567e9d7c62bd3",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M] BackgroundPlate",
+              "key": "4cfe3915785e5c37255190ae16314f6f2a1d05b3",
+              "role": "legacy-surface",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "legacy",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M] BackgroundPlateSlot",
+              "key": "1745af83255e324781c2fbadfe0ad8cc7f13e0d8",
+              "role": "content-container",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "preferred",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[M] Style Level 1",
+              "key": "efc528bd86582d96a824edeb2c257dc8b22a8f14",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M] Style Level 2",
+              "key": "74f025a02889239c3f6eed60d74ba85f292bdcb0",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M][Promo] BackgroundPlate",
+              "key": "a58fa7ae11989280fc24069f204ba617fdb1f93c",
+              "role": "promo-surface",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "promo-only",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[M][Promo] Style Level 1",
+              "key": "19b4b6ed5718d82888a6551b56e0c776f4993ccc",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M][Promo] Style Level 2",
+              "key": "b33f77cc56c5feffb4f24a5912d74e3af927140e",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            }
+          ],
+          "aliases": null,
+          "codeExports": [
+            {
+              "name": "BackgroundPlate",
+              "kind": "react-component-export",
+              "mapsTo": "[D] BackgroundPlate / [M] BackgroundPlate",
+              "usage": "Основной code/private export, который соответствует Figma-компонентам семейства BackgroundPlate."
+            },
+            {
+              "name": "BackgroundPlateView",
+              "kind": "react-view-export",
+              "mapsTo": "BackgroundPlate",
+              "usage": "Кодовая обёртка/представление BackgroundPlate. В Apollo и агентском анализе не является отдельным Figma-компонентом и должна использовать тот же componentKey web-corp.background-plate."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "componentKey": "web-corp.status-property",
+      "summary": "StatusPreset показывает состояние объекта или процесса, PropertyPreset — характеристику или свойство объекта. Оба preset-компонента разрешено использовать самостоятельно на desktop и mobile-web.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔒 [D] PropertyPreset",
+        "🔒 [D] StatusPreset",
+        "🔒 [M] PropertyPreset",
+        "🔒 [M] StatusPreset"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "5062ff1e0c435b64f3d1f4a0ae699dcb646b34f4",
+          "name": "🔒 [D] StatusPreset",
+          "purpose": "Вспомогательный компонент Figma, в коде существует только Status в core-components.",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.tabs-view",
+      "summary": "TabsView — wrapper/composite component вокруг primary и secondary tabs. Apollo должен использовать TabsView effective baseline для nested TabsPrimary/TabsSecondary differences и подавлять wrapper-owned overrides, когда actual совпадает с effective baseline.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] TabsView",
+        "[M] TabsView"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "44f1398a704dba217a9da9694913ec61b5bb15bf",
+          "name": "[D] TabsView",
+          "purpose": "Desktop-композиция вкладок для переключения разделов или представлений с обязательным Primary и опциональным Secondary уровнем.",
+          "useWhen": [
+            "На desktop нужно переключать связанный контент между двумя и более равноправными разделами."
+          ],
+          "doNotUseWhen": [
+            "Нужна основная навигация приложения или больше двух уровней вложенности."
+          ],
+          "relationship": "Публичный desktop-wrapper над TabsPrimary и TabsSecondary; управляет overflow и effective baseline вложенных табов.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*",
+          "variant.Skeleton"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent",
+          "strokeWeight",
+          "layout.padding",
+          "layout.itemSpacing"
+        ],
+        "baselinePolicy": "Для nested TabsPrimary/TabsSecondary changes сравнивай actual с TabsView effective baseline, а не со standalone nested component baseline.",
+        "wrapperOwnedLayerProperties": [
+          "TabsPrimary.layout.itemSpacing",
+          "TabsPrimary/Items.layout.itemSpacing",
+          "TabsPrimary/Items/TabPrimary.layout.itemSpacing",
+          "TabsPrimary/Items/TabPrimary/Content/Label.styles.text",
+          "TabsSecondary.layout.itemSpacing"
+        ],
+        "contentProperties": [
+          "TabPrimary/Content/Label.characters",
+          "Tag/Text/Label.characters"
+        ],
+        "ordering": [
+          "component-property",
+          "wrapper-owned-layer-property",
+          "layer-property",
+          "content-property"
+        ]
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.Skeleton"
+          ],
+          "layerProperties": [
+            "fills",
+            "strokes",
+            "strokeWeight",
+            "cornerRadius",
+            "opacity",
+            "layout.padding",
+            "layout.itemSpacing",
+            "styles.text",
+            "typography"
+          ],
+          "dependencyPolicy": "Wrapper-owned overrides задают effective baseline для nested core components. Ручные layer overrides нужно сравнивать с TabsView effective baseline, а не со standalone nested component baseline."
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web-corp.title-view",
+      "summary": "TitleView — составная обёртка заголовка для сценария с основным заголовком, статусом и действиями. Компонент объединяет Title, Status, TitleAddon, RightAddon, выбор компании, Subtitle, TitleStatus и Button group в готовую DS-композицию.",
+      "criticalBaselines": [
+        "Nested [D]/[M] Button instances внутри Button group являются частью TitleView baseline; изменения variant дизайнером нужно показывать относительно TitleView effective baseline.",
+        "StatusPreset и Status внутри MainContent / Status являются ожидаемыми nested structures; само использование preset нормально, если preset не изменён за пределами его variant API.",
+        "View и Skeleton являются public TitleView component properties.",
+        "На странице допускается только один TitleView с View=xLarge.",
+        "Внешние отступы 40 px, 32 px и 12 px, определённые правилами TitleView, обязательны для соответствующих соседних блоков.",
+        "Если одновременно используются Status и TitleStatus, значения Type должны совпадать: Type определяет статусный цвет.",
+        "В View=xLarge primary-действия размещаются в Button group. В View=Large, Medium и Small primary-действия размещаются вне TitleView.",
+        "Запрет primary-действия в RightAddon применяется ко всем значениям View.",
+        "Частичная загрузка отдельных слотов допустима при Skeleton=False у родительского TitleView.",
+        "Для View=Large, Medium и Small доступны только Title, Subtitle, TitleAddon и RightAddon.",
+        "Holding обязателен для одиночного выбора компании, когда пользователь работает от группы компаний, а страница доступна только в моно-режиме.",
+        "Ручные изменения layout, sizing, типографики, цвета, прозрачности и других стилей корня и всего внутреннего дерева TitleView запрещены.",
+        "Для корня TitleView рекомендуется ширина Fill container и высота Hug contents; правило одинаково для desktop и mobile-web.",
+        "Порядок слотов Status -> Heading -> Holding -> Subtitle -> TitleStatus -> Button group обязателен.",
+        "В предусмотренных слотах разрешён instance swap на произвольные компоненты, если сохраняются порядок слотов и структура TitleView.",
+        "Корень TitleView не оформляется вручную и не может быть единой кликабельной поверхностью."
+      ],
+      "agentInstructions": [
+        "Не выводи pattern violations из примеров. Используй только exact rules и exact component contracts.",
+        "Используй component-property facts для variant changes и layer-property facts для styles/layout/paint changes.",
+        "Если nested diff принадлежит host wrapper и actual совпадает с effective baseline, не показывай его как designer customization.",
+        "Если actual отличается от effective baseline, показывай effectiveBaseline -> actual.",
+        "Для сценария заголовка со статусом и действиями рекомендуй настройку встроенных slots TitleView, а не внешнюю ручную композицию из отдельных локальных компонентов.",
+        "Не считай отсутствие опциональных Status, TitleStatus, TitleAddon, RightAddon, Subtitle или Button group нарушением без отдельного правила.",
+        "Если загружается только отдельный вложенный элемент, не требуй переключать весь TitleView в Skeleton=True.",
+        "Для View=Large, Medium и Small рекомендуй primary-действие вне TitleView, а не в RightAddon.",
+        "Не считай изменение label у Status нарушением, если Type корректен и нет отдельного текстового правила.",
+        "Не придумывай ограничения параметров FilterCompanySelect_Single: используй его собственный компонентный контракт, когда он будет доступен.",
+        "Для настроек View, addons, hint и singleIcon вложенных Button используй паттерн «Кнопки и группы кнопок»; не создавай отдельные ограничения TitleView.",
+        "Применяй правила p_title-view-editable.md как часть правил TitleView, когда обнаружен editable-сценарий.",
+        "Не требуй Enter, Escape или отдельные кнопки подтверждения и отмены без точного правила для конкретной платформы и сценария.",
+        "Не считай сам факт instance swap внутри предусмотренного слота нарушением; оценивай выбранный компонент по его собственному контракту.",
+        "Проверяй обязательный порядок слотов отдельно от содержимого каждого слота.",
+        "Не разрешай ручное оформление корня или внутренних слоёв TitleView и не предлагай делать весь TitleView кликабельным."
+      ],
+      "includedComponents": [
+        "[D] RightAddon",
+        "[D] RightAddonXL",
+        "[D] TitleAddon",
+        "[D] TitleAddonXL",
+        "[D] TitleStatus",
+        "[D] TitleView",
+        "[M] RightAddon",
+        "[M] RightAddonXL",
+        "[M] TitleAddon",
+        "[M] TitleAddonXL",
+        "[M] TitleStatus",
+        "[M] TitleView"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "fbc4ff889c9fe2db128bc76471f512271d4cc229",
+          "name": "[D] TitleView",
+          "purpose": "Готовая desktop-композиция заголовка страницы или секции с обязательным Title, статусами, дополнениями и контекстными действиями.",
+          "useWhen": [
+            "Нужно собрать заголовочную область продукта из системных слотов TitleView вместо ручной композиции."
+          ],
+          "doNotUseWhen": [
+            "Нужен простой текстовый заголовок без структуры, статусов и действий TitleView."
+          ],
+          "relationship": "Публичный desktop-корень семейства TitleView; вложенные TitleAddon, RightAddon, TitleStatus и Button group настраиваются через его slots.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.*"
+          ],
+          "layerProperties": [
+            "layout.*",
+            "styles.*",
+            "fill",
+            "stroke",
+            "radius",
+            "opacity",
+            "text.*"
+          ],
+          "dependencyPolicy": "Component-property reset и layer-property reset разделены. Layer reset должен использовать effective baseline после nested variant/materialization resolution."
+        },
+        "publicApi": {
+          "components": [
+            {
+              "name": "[D] RightAddon",
+              "key": "edd174301746415867bc998cd0c0322b68c6269c",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] RightAddonXL",
+              "key": "8edd3829b4b7091209299a5b5c838f0a159018aa",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleAddon",
+              "key": "f32313498fd345a1a41584c8d9edc61c3e2053bf",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleAddonXL",
+              "key": "b4cd3e21d108962a24b75aec2de71fba0672d63f",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleStatus",
+              "key": "6a8aa56ae7c8b57b9d9dfbbf23af14c348d83763",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleView",
+              "key": "fbc4ff889c9fe2db128bc76471f512271d4cc229",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] RightAddon",
+              "key": "b762143a2872257a497f9c3e0a012a9bed92f9ca",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] RightAddonXL",
+              "key": "c1092f678271e7de3291bb5699eeab4ad43c7710",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleAddon",
+              "key": "50d8b48cc1dcd4052efc7a151219578d1d993e2f",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleAddonXL",
+              "key": "a40e2549a5a23e645fb38c2af4c15df0f6813153",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleStatus",
+              "key": "e64c6d19cadc818b180b9176a51e3f65714b84b0",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleView",
+              "key": "227149bd55130d69d63e33cd3c8c52ae3f4e7e19",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            }
+          ],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    }
+  ]
+}
