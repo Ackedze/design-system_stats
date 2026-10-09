@@ -1,0 +1,3260 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1645744392870335692-1791556359428-asq5cqll:agent",
+  "sourceReportId": "apollo-1645744392870335692-1791556359428-asq5cqll",
+  "generatedAt": "2026-10-09T14:32:39.428Z",
+  "suggestedFileName": "Anna-Vrubel-Corp-Product-designer_09-10-2026_17-32-39_agent.json",
+  "user": {
+    "id": "1645744392870335692",
+    "name": "Anna Vrubel / Corp / Product designer",
+    "slug": "Anna-Vrubel-Corp-Product-designer"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.3.0"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "[W] — Массовые выплаты",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "pageType": null,
+    "startedAt": "2026-10-09T14:32:23.949Z",
+    "finishedAt": "2026-10-09T14:32:39.428Z",
+    "durationMs": 15479,
+    "selection": [
+      {
+        "nodeId": "52070:104248",
+        "name": "[M] UniversalModal :: Helpbook",
+        "nodeType": "INSTANCE",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook",
+        "componentKey": "000c1af1acf7571ab80f0754f602f7a500533aa4"
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 75,
+    "problemOccurrenceCount": 71,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 22,
+      "updates": 16,
+      "customizations": 0,
+      "localComponents": 1,
+      "detachedComponents": 0,
+      "presets": 9,
+      "technicalComponents": 0,
+      "currentComponents": 42,
+      "wrongChannel": 22,
+      "themization": 1
+    },
+    "includedFindingCount": 71,
+    "omittedCurrentComponentCount": 42
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, authority.status=active, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with authority.status=active, severity=error, and matchKind=exact_component_rule for the same property/change. Missing, draft, or malformed authority never confirms a violation.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 22,
+      "includedCount": 22,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 16,
+      "includedCount": 16,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 9,
+      "includedCount": 9,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 22,
+      "includedCount": 22,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I52070:104248;2762:25388;208:81233",
+        "name": "Time",
+        "type": "TEXT",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / NativeStatusBar / Left Side / Time",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I52070:104248;2762:25388;208:81233",
+        "name": "Time",
+        "type": "TEXT",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / NativeStatusBar / Left Side / Time",
+        "visible": true
+      },
+      "style": {
+        "name": "14/17 px · Semibold · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I52070:104248;2762:25388;208:81236",
+        "name": "Cellular",
+        "type": "BOOLEAN_OPERATION",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / NativeStatusBar / Right Side / Icons / Cellular",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I52070:104248;2762:25388;208:81237",
+        "name": "Cellular_Connection-path",
+        "type": "VECTOR",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / NativeStatusBar / Right Side / Icons / Cellular / Cellular_Connection-path",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I52070:104248;2762:25388;208:81238",
+        "name": "Cellular_Connection-path",
+        "type": "VECTOR",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / NativeStatusBar / Right Side / Icons / Cellular / Cellular_Connection-path",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I52070:104248;2762:25388;208:81239",
+        "name": "Cellular_Connection-path",
+        "type": "VECTOR",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / NativeStatusBar / Right Side / Icons / Cellular / Cellular_Connection-path",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I52070:104248;2762:25388;208:81240",
+        "name": "Cellular_Connection-path",
+        "type": "VECTOR",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / NativeStatusBar / Right Side / Icons / Cellular / Cellular_Connection-path",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I52070:104248;2762:25388;208:81241",
+        "name": "Wifi",
+        "type": "BOOLEAN_OPERATION",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / NativeStatusBar / Right Side / Icons / Wifi",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I52070:104248;2762:25388;208:81242",
+        "name": "Wifi-path",
+        "type": "VECTOR",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / NativeStatusBar / Right Side / Icons / Wifi / Wifi-path",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I52070:104248;2762:25388;208:81243",
+        "name": "Wifi-path",
+        "type": "VECTOR",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / NativeStatusBar / Right Side / Icons / Wifi / Wifi-path",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I52070:104248;2762:25388;208:81244",
+        "name": "Wifi-path",
+        "type": "VECTOR",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / NativeStatusBar / Right Side / Icons / Wifi / Wifi-path",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I52070:104248;2762:25388;208:81246",
+        "name": "Union",
+        "type": "BOOLEAN_OPERATION",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / NativeStatusBar / Right Side / Icons / Battery / Union",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I52070:104248;2762:25388;208:81247",
+        "name": "Border",
+        "type": "RECTANGLE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / NativeStatusBar / Right Side / Icons / Battery / Union / Border",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I52070:104248;2762:25388;208:81248",
+        "name": "Cap",
+        "type": "VECTOR",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / NativeStatusBar / Right Side / Icons / Battery / Union / Cap",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I52070:104248;2762:25388;208:81249",
+        "name": "Capacity",
+        "type": "RECTANGLE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / NativeStatusBar / Right Side / Icons / Battery / Capacity",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I52070:104248;2762:25393",
+        "name": "NativeSafariBottom",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / NativeSafariBottom",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I52070:104248;2762:25393",
+        "name": "NativeSafariBottom",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / NativeSafariBottom",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I52070:104248;2762:25393",
+        "name": "NativeSafariBottom",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / NativeSafariBottom",
+        "visible": true
+      },
+      "style": {
+        "name": "Фон (Background blur)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Фон (Background blur)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I52070:104248;2762:25393;208:80842",
+        "name": "SF Symbol / lock.fill",
+        "type": "VECTOR",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / NativeSafariBottom / URL / SF Symbol / lock.fill",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I52070:104248;2762:25393;208:80843",
+        "name": "URL",
+        "type": "TEXT",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / NativeSafariBottom / URL / URL",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I52070:104248;2762:25393;208:80843",
+        "name": "URL",
+        "type": "TEXT",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / NativeSafariBottom / URL / URL",
+        "visible": true
+      },
+      "style": {
+        "name": "12/16 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I52070:104248;2762:25393;208:80845",
+        "name": "Home Indicator",
+        "type": "RECTANGLE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / NativeSafariBottom / HomeIndicator / Home Indicator",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "52070:104248",
+        "name": "[M] UniversalModal :: Helpbook",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860"
+        ]
+      },
+      "component": {
+        "name": "[M] UniversalModal :: Helpbook",
+        "key": "000c1af1acf7571ab80f0754f602f7a500533aa4",
+        "library": "Web :: Corp Presets",
+        "sourceFile": "web/components/web-corp-presets/Web _ Corp Presets -- Helpbook.json"
+      },
+      "variant": {
+        "name": "Type=FAQ",
+        "key": "000c1af1acf7571ab80f0754f602f7a500533aa4"
+      },
+      "comparisonIssues": [
+        "Нет данных для заливка в снапшоте для «Type=FAQ / [M] UniversalModal / [M] UniversalModalBody / BodyContent / Cards / 🔒 [M] Helpbook :: Card / [M] BackgroundPlateSlot / Slot / Content / Accordion / Accordion / Content / Body / Stack Q&A FAQItem / Markdown / Content / Text»"
+      ],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "000c1af1acf7571ab80f0754f602f7a500533aa4",
+        "currentComponentId": "51115:52400",
+        "latestComponentId": "52148:67770"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104218;2756:4818;136941:9166;52070:104217;2754:7126;15691:10562;52070:104216",
+        "name": "🔩 AccordionHeader",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / Cards / 🔒 [M] Helpbook :: Card / [M] BackgroundPlateSlot / Slot / Content / Accordion / Accordion / HeadLine / Header / 🔩 AccordionHeader",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996",
+          "I52070:104248;2762:25391;118707:6996;52070:104210",
+          "I52070:104248;2762:25391;118707:6996;52070:104218",
+          "I52070:104248;2762:25391;118707:6996;52070:104218;2756:4818",
+          "I52070:104248;2762:25391;118707:6996;52070:104218;2756:4818;136941:9166",
+          "I52070:104248;2762:25391;118707:6996;52070:104218;2756:4818;136941:9166;52070:104212",
+          "I52070:104248;2762:25391;118707:6996;52070:104218;2756:4818;136941:9166;52070:104217",
+          "I52070:104248;2762:25391;118707:6996;52070:104218;2756:4818;136941:9166;52070:104217;2754:7126",
+          "I52070:104248;2762:25391;118707:6996;52070:104218;2756:4818;136941:9166;52070:104217;2754:7126;15691:10561",
+          "I52070:104248;2762:25391;118707:6996;52070:104218;2756:4818;136941:9166;52070:104217;2754:7126;15691:10562"
+        ]
+      },
+      "component": {
+        "name": "🔩 AccordionHeader",
+        "key": "c03a9dfd405dd28bfdfc40d57f3912e5637bd457",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- Accordion.json"
+      },
+      "variant": {
+        "name": "Preset=Text",
+        "key": "c03a9dfd405dd28bfdfc40d57f3912e5637bd457"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "c03a9dfd405dd28bfdfc40d57f3912e5637bd457",
+        "currentComponentId": "51023:14876",
+        "latestComponentId": "52148:61179"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104232;2756:4818;136941:9166;52070:104231;2754:25544;15691:10381;52070:104230",
+        "name": "🔩 AccordionHeader",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / Cards / 🔒 [M] Helpbook :: Card / [M] BackgroundPlateSlot / Slot / Content / Accordion / Accordion / HeadLine / Header / 🔩 AccordionHeader",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996",
+          "I52070:104248;2762:25391;118707:6996;52070:104210",
+          "I52070:104248;2762:25391;118707:6996;52070:104232",
+          "I52070:104248;2762:25391;118707:6996;52070:104232;2756:4818",
+          "I52070:104248;2762:25391;118707:6996;52070:104232;2756:4818;136941:9166",
+          "I52070:104248;2762:25391;118707:6996;52070:104232;2756:4818;136941:9166;52070:104226",
+          "I52070:104248;2762:25391;118707:6996;52070:104232;2756:4818;136941:9166;52070:104231",
+          "I52070:104248;2762:25391;118707:6996;52070:104232;2756:4818;136941:9166;52070:104231;2754:25544",
+          "I52070:104248;2762:25391;118707:6996;52070:104232;2756:4818;136941:9166;52070:104231;2754:25544;15691:10364",
+          "I52070:104248;2762:25391;118707:6996;52070:104232;2756:4818;136941:9166;52070:104231;2754:25544;15691:10381"
+        ]
+      },
+      "component": {
+        "name": "🔩 AccordionHeader",
+        "key": "c03a9dfd405dd28bfdfc40d57f3912e5637bd457",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- Accordion.json"
+      },
+      "variant": {
+        "name": "Preset=Text",
+        "key": "c03a9dfd405dd28bfdfc40d57f3912e5637bd457"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "c03a9dfd405dd28bfdfc40d57f3912e5637bd457",
+        "currentComponentId": "51023:14876",
+        "latestComponentId": "52148:61179"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104224;2756:4818;136941:9166;52070:104223;2754:7126;15691:10562;52070:104222",
+        "name": "🔩 AccordionHeader",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / Cards / 🔒 [M] Helpbook :: Card / [M] BackgroundPlateSlot / Slot / Content / Accordion / Accordion / HeadLine / Header / 🔩 AccordionHeader",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996",
+          "I52070:104248;2762:25391;118707:6996;52070:104210",
+          "I52070:104248;2762:25391;118707:6996;52070:104224",
+          "I52070:104248;2762:25391;118707:6996;52070:104224;2756:4818",
+          "I52070:104248;2762:25391;118707:6996;52070:104224;2756:4818;136941:9166",
+          "I52070:104248;2762:25391;118707:6996;52070:104224;2756:4818;136941:9166;52070:104220",
+          "I52070:104248;2762:25391;118707:6996;52070:104224;2756:4818;136941:9166;52070:104223",
+          "I52070:104248;2762:25391;118707:6996;52070:104224;2756:4818;136941:9166;52070:104223;2754:7126",
+          "I52070:104248;2762:25391;118707:6996;52070:104224;2756:4818;136941:9166;52070:104223;2754:7126;15691:10561",
+          "I52070:104248;2762:25391;118707:6996;52070:104224;2756:4818;136941:9166;52070:104223;2754:7126;15691:10562"
+        ]
+      },
+      "component": {
+        "name": "🔩 AccordionHeader",
+        "key": "c03a9dfd405dd28bfdfc40d57f3912e5637bd457",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- Accordion.json"
+      },
+      "variant": {
+        "name": "Preset=Text",
+        "key": "c03a9dfd405dd28bfdfc40d57f3912e5637bd457"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "c03a9dfd405dd28bfdfc40d57f3912e5637bd457",
+        "currentComponentId": "51023:14876",
+        "latestComponentId": "52148:61179"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104238;2756:4818;136941:9166;52070:104237;2754:7126;15691:10562;52070:104236",
+        "name": "🔩 AccordionHeader",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / Cards / 🔒 [M] Helpbook :: Card / [M] BackgroundPlateSlot / Slot / Content / Accordion / Accordion / HeadLine / Header / 🔩 AccordionHeader",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996",
+          "I52070:104248;2762:25391;118707:6996;52070:104210",
+          "I52070:104248;2762:25391;118707:6996;52070:104238",
+          "I52070:104248;2762:25391;118707:6996;52070:104238;2756:4818",
+          "I52070:104248;2762:25391;118707:6996;52070:104238;2756:4818;136941:9166",
+          "I52070:104248;2762:25391;118707:6996;52070:104238;2756:4818;136941:9166;52070:104234",
+          "I52070:104248;2762:25391;118707:6996;52070:104238;2756:4818;136941:9166;52070:104237",
+          "I52070:104248;2762:25391;118707:6996;52070:104238;2756:4818;136941:9166;52070:104237;2754:7126",
+          "I52070:104248;2762:25391;118707:6996;52070:104238;2756:4818;136941:9166;52070:104237;2754:7126;15691:10561",
+          "I52070:104248;2762:25391;118707:6996;52070:104238;2756:4818;136941:9166;52070:104237;2754:7126;15691:10562"
+        ]
+      },
+      "component": {
+        "name": "🔩 AccordionHeader",
+        "key": "c03a9dfd405dd28bfdfc40d57f3912e5637bd457",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- Accordion.json"
+      },
+      "variant": {
+        "name": "Preset=Text",
+        "key": "c03a9dfd405dd28bfdfc40d57f3912e5637bd457"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "c03a9dfd405dd28bfdfc40d57f3912e5637bd457",
+        "currentComponentId": "51023:14876",
+        "latestComponentId": "52148:61179"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104244;2756:4818;136941:9166;52070:104243;2754:7126;15691:10562;52070:104242",
+        "name": "🔩 AccordionHeader",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / Cards / 🔒 [M] Helpbook :: Card / [M] BackgroundPlateSlot / Slot / Content / Accordion / Accordion / HeadLine / Header / 🔩 AccordionHeader",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996",
+          "I52070:104248;2762:25391;118707:6996;52070:104210",
+          "I52070:104248;2762:25391;118707:6996;52070:104244",
+          "I52070:104248;2762:25391;118707:6996;52070:104244;2756:4818",
+          "I52070:104248;2762:25391;118707:6996;52070:104244;2756:4818;136941:9166",
+          "I52070:104248;2762:25391;118707:6996;52070:104244;2756:4818;136941:9166;52070:104240",
+          "I52070:104248;2762:25391;118707:6996;52070:104244;2756:4818;136941:9166;52070:104243",
+          "I52070:104248;2762:25391;118707:6996;52070:104244;2756:4818;136941:9166;52070:104243;2754:7126",
+          "I52070:104248;2762:25391;118707:6996;52070:104244;2756:4818;136941:9166;52070:104243;2754:7126;15691:10561",
+          "I52070:104248;2762:25391;118707:6996;52070:104244;2756:4818;136941:9166;52070:104243;2754:7126;15691:10562"
+        ]
+      },
+      "component": {
+        "name": "🔩 AccordionHeader",
+        "key": "c03a9dfd405dd28bfdfc40d57f3912e5637bd457",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- Accordion.json"
+      },
+      "variant": {
+        "name": "Preset=Text",
+        "key": "c03a9dfd405dd28bfdfc40d57f3912e5637bd457"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "c03a9dfd405dd28bfdfc40d57f3912e5637bd457",
+        "currentComponentId": "51023:14876",
+        "latestComponentId": "52148:61179"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104245;2756:4818;51115:52390;2754:7126;51023:14917",
+        "name": "🔩 AccordionHeader",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / Cards / 🔒 [M] Helpbook :: Card / [M] BackgroundPlateSlot / Slot / Content / Accordion / Accordion / HeadLine / Header / 🔩 AccordionHeader",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996",
+          "I52070:104248;2762:25391;118707:6996;52070:104210",
+          "I52070:104248;2762:25391;118707:6996;52070:104245",
+          "I52070:104248;2762:25391;118707:6996;52070:104245;2756:4818",
+          "I52070:104248;2762:25391;118707:6996;52070:104245;2756:4818;136941:9166",
+          "I52070:104248;2762:25391;118707:6996;52070:104245;2756:4818;51115:52389",
+          "I52070:104248;2762:25391;118707:6996;52070:104245;2756:4818;51115:52390",
+          "I52070:104248;2762:25391;118707:6996;52070:104245;2756:4818;51115:52390;2754:7126",
+          "I52070:104248;2762:25391;118707:6996;52070:104245;2756:4818;51115:52390;2754:7126;15691:10561",
+          "I52070:104248;2762:25391;118707:6996;52070:104245;2756:4818;51115:52390;2754:7126;15691:10562"
+        ]
+      },
+      "component": {
+        "name": "🔩 AccordionHeader",
+        "key": "c03a9dfd405dd28bfdfc40d57f3912e5637bd457",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- Accordion.json"
+      },
+      "variant": {
+        "name": "Preset=Text",
+        "key": "c03a9dfd405dd28bfdfc40d57f3912e5637bd457"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "c03a9dfd405dd28bfdfc40d57f3912e5637bd457",
+        "currentComponentId": "51023:14876",
+        "latestComponentId": "52148:61179"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104246;2756:4818;51115:52390;2754:7126;51023:14917",
+        "name": "🔩 AccordionHeader",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / Cards / 🔒 [M] Helpbook :: Card / [M] BackgroundPlateSlot / Slot / Content / Accordion / Accordion / HeadLine / Header / 🔩 AccordionHeader",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996",
+          "I52070:104248;2762:25391;118707:6996;52070:104210",
+          "I52070:104248;2762:25391;118707:6996;52070:104246",
+          "I52070:104248;2762:25391;118707:6996;52070:104246;2756:4818",
+          "I52070:104248;2762:25391;118707:6996;52070:104246;2756:4818;136941:9166",
+          "I52070:104248;2762:25391;118707:6996;52070:104246;2756:4818;51115:52389",
+          "I52070:104248;2762:25391;118707:6996;52070:104246;2756:4818;51115:52390",
+          "I52070:104248;2762:25391;118707:6996;52070:104246;2756:4818;51115:52390;2754:7126",
+          "I52070:104248;2762:25391;118707:6996;52070:104246;2756:4818;51115:52390;2754:7126;15691:10561",
+          "I52070:104248;2762:25391;118707:6996;52070:104246;2756:4818;51115:52390;2754:7126;15691:10562"
+        ]
+      },
+      "component": {
+        "name": "🔩 AccordionHeader",
+        "key": "c03a9dfd405dd28bfdfc40d57f3912e5637bd457",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- Accordion.json"
+      },
+      "variant": {
+        "name": "Preset=Text",
+        "key": "c03a9dfd405dd28bfdfc40d57f3912e5637bd457"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "c03a9dfd405dd28bfdfc40d57f3912e5637bd457",
+        "currentComponentId": "51023:14876",
+        "latestComponentId": "52148:61179"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104247;2756:4818;51115:52390;2754:7126;51023:14917",
+        "name": "🔩 AccordionHeader",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / Cards / 🔒 [M] Helpbook :: Card / [M] BackgroundPlateSlot / Slot / Content / Accordion / Accordion / HeadLine / Header / 🔩 AccordionHeader",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996",
+          "I52070:104248;2762:25391;118707:6996;52070:104210",
+          "I52070:104248;2762:25391;118707:6996;52070:104247",
+          "I52070:104248;2762:25391;118707:6996;52070:104247;2756:4818",
+          "I52070:104248;2762:25391;118707:6996;52070:104247;2756:4818;136941:9166",
+          "I52070:104248;2762:25391;118707:6996;52070:104247;2756:4818;51115:52389",
+          "I52070:104248;2762:25391;118707:6996;52070:104247;2756:4818;51115:52390",
+          "I52070:104248;2762:25391;118707:6996;52070:104247;2756:4818;51115:52390;2754:7126",
+          "I52070:104248;2762:25391;118707:6996;52070:104247;2756:4818;51115:52390;2754:7126;15691:10561",
+          "I52070:104248;2762:25391;118707:6996;52070:104247;2756:4818;51115:52390;2754:7126;15691:10562"
+        ]
+      },
+      "component": {
+        "name": "🔩 AccordionHeader",
+        "key": "c03a9dfd405dd28bfdfc40d57f3912e5637bd457",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- Accordion.json"
+      },
+      "variant": {
+        "name": "Preset=Text",
+        "key": "c03a9dfd405dd28bfdfc40d57f3912e5637bd457"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "c03a9dfd405dd28bfdfc40d57f3912e5637bd457",
+        "currentComponentId": "51023:14876",
+        "latestComponentId": "52148:61179"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "50951:93679",
+        "name": "Text",
+        "type": "INSTANCE",
+        "pageName": "💠 Локальные компоненты",
+        "path": "Раздел Помощь / Stack Q&A FAQItem / content=q4 / Text",
+        "visible": true,
+        "ancestorNodeIds": [
+          "50951:93651",
+          "50951:93672"
+        ]
+      },
+      "component": {
+        "name": "Text",
+        "key": "418cef72a4f4b0e21dce94c09cf0081a1521ba07",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Text.json"
+      },
+      "variant": {
+        "name": "Text",
+        "key": "418cef72a4f4b0e21dce94c09cf0081a1521ba07"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "418cef72a4f4b0e21dce94c09cf0081a1521ba07",
+        "currentComponentId": "50938:65872",
+        "latestComponentId": "51690:156100"
+      },
+      "localComponentOwner": {
+        "id": "50951:93672",
+        "name": "content=q4",
+        "type": "COMPONENT",
+        "pageName": "💠 Локальные компоненты",
+        "path": "Раздел Помощь / Stack Q&A FAQItem / content=q4",
+        "visible": true
+      }
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "50967:37957",
+        "name": "Markdown",
+        "type": "INSTANCE",
+        "pageName": "💠 Локальные компоненты",
+        "path": "Раздел Помощь / Stack Q&A FAQItem / content=q4 / Markdown",
+        "visible": true,
+        "ancestorNodeIds": [
+          "50951:93651",
+          "50951:93672"
+        ]
+      },
+      "component": {
+        "name": "Markdown",
+        "key": "b97cf41017ce9b7ad30aed76605f4252fef87b27",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Markdown.json"
+      },
+      "variant": {
+        "name": "Tag=❌ • [listBulleted]",
+        "key": "b97cf41017ce9b7ad30aed76605f4252fef87b27"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "b97cf41017ce9b7ad30aed76605f4252fef87b27",
+        "currentComponentId": "50951:160366",
+        "latestComponentId": "52148:68566"
+      },
+      "localComponentOwner": {
+        "id": "50951:93672",
+        "name": "content=q4",
+        "type": "COMPONENT",
+        "pageName": "💠 Локальные компоненты",
+        "path": "Раздел Помощь / Stack Q&A FAQItem / content=q4",
+        "visible": true
+      }
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "50967:37958",
+        "name": "Markdown",
+        "type": "INSTANCE",
+        "pageName": "💠 Локальные компоненты",
+        "path": "Раздел Помощь / Stack Q&A FAQItem / content=q4 / Markdown",
+        "visible": true,
+        "ancestorNodeIds": [
+          "50951:93651",
+          "50951:93672"
+        ]
+      },
+      "component": {
+        "name": "Markdown",
+        "key": "b97cf41017ce9b7ad30aed76605f4252fef87b27",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Markdown.json"
+      },
+      "variant": {
+        "name": "Tag=❌ • [listBulleted]",
+        "key": "b97cf41017ce9b7ad30aed76605f4252fef87b27"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "b97cf41017ce9b7ad30aed76605f4252fef87b27",
+        "currentComponentId": "50951:160366",
+        "latestComponentId": "52148:68566"
+      },
+      "localComponentOwner": {
+        "id": "50951:93672",
+        "name": "content=q4",
+        "type": "COMPONENT",
+        "pageName": "💠 Локальные компоненты",
+        "path": "Раздел Помощь / Stack Q&A FAQItem / content=q4",
+        "visible": true
+      }
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "50967:37959",
+        "name": "Markdown",
+        "type": "INSTANCE",
+        "pageName": "💠 Локальные компоненты",
+        "path": "Раздел Помощь / Stack Q&A FAQItem / content=q4 / Markdown",
+        "visible": true,
+        "ancestorNodeIds": [
+          "50951:93651",
+          "50951:93672"
+        ]
+      },
+      "component": {
+        "name": "Markdown",
+        "key": "b97cf41017ce9b7ad30aed76605f4252fef87b27",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Markdown.json"
+      },
+      "variant": {
+        "name": "Tag=❌ • [listBulleted]",
+        "key": "b97cf41017ce9b7ad30aed76605f4252fef87b27"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "b97cf41017ce9b7ad30aed76605f4252fef87b27",
+        "currentComponentId": "50951:160366",
+        "latestComponentId": "52148:68566"
+      },
+      "localComponentOwner": {
+        "id": "50951:93672",
+        "name": "content=q4",
+        "type": "COMPONENT",
+        "pageName": "💠 Локальные компоненты",
+        "path": "Раздел Помощь / Stack Q&A FAQItem / content=q4",
+        "visible": true
+      }
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "50967:38018",
+        "name": "Markdown",
+        "type": "INSTANCE",
+        "pageName": "💠 Локальные компоненты",
+        "path": "Раздел Помощь / Stack Q&A FAQItem / content=q4 / Markdown",
+        "visible": true,
+        "ancestorNodeIds": [
+          "50951:93651",
+          "50951:93672"
+        ]
+      },
+      "component": {
+        "name": "Markdown",
+        "key": "b97cf41017ce9b7ad30aed76605f4252fef87b27",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Markdown.json"
+      },
+      "variant": {
+        "name": "Tag=❌ • [listBulleted]",
+        "key": "b97cf41017ce9b7ad30aed76605f4252fef87b27"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "b97cf41017ce9b7ad30aed76605f4252fef87b27",
+        "currentComponentId": "50951:160366",
+        "latestComponentId": "52148:68566"
+      },
+      "localComponentOwner": {
+        "id": "50951:93672",
+        "name": "content=q4",
+        "type": "COMPONENT",
+        "pageName": "💠 Локальные компоненты",
+        "path": "Раздел Помощь / Stack Q&A FAQItem / content=q4",
+        "visible": true
+      }
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "50967:38034",
+        "name": "Text",
+        "type": "INSTANCE",
+        "pageName": "💠 Локальные компоненты",
+        "path": "Раздел Помощь / Stack Q&A FAQItem / content=q4 / Text",
+        "visible": true,
+        "ancestorNodeIds": [
+          "50951:93651",
+          "50951:93672"
+        ]
+      },
+      "component": {
+        "name": "Text",
+        "key": "418cef72a4f4b0e21dce94c09cf0081a1521ba07",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Text.json"
+      },
+      "variant": {
+        "name": "Text",
+        "key": "418cef72a4f4b0e21dce94c09cf0081a1521ba07"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "418cef72a4f4b0e21dce94c09cf0081a1521ba07",
+        "currentComponentId": "50938:65872",
+        "latestComponentId": "51690:156100"
+      },
+      "localComponentOwner": {
+        "id": "50951:93672",
+        "name": "content=q4",
+        "type": "COMPONENT",
+        "pageName": "💠 Локальные компоненты",
+        "path": "Раздел Помощь / Stack Q&A FAQItem / content=q4",
+        "visible": true
+      }
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "50967:38051",
+        "name": "Text",
+        "type": "INSTANCE",
+        "pageName": "💠 Локальные компоненты",
+        "path": "Раздел Помощь / Stack Q&A FAQItem / content=q4 / Text",
+        "visible": true,
+        "ancestorNodeIds": [
+          "50951:93651",
+          "50951:93672"
+        ]
+      },
+      "component": {
+        "name": "Text",
+        "key": "418cef72a4f4b0e21dce94c09cf0081a1521ba07",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Text.json"
+      },
+      "variant": {
+        "name": "Text",
+        "key": "418cef72a4f4b0e21dce94c09cf0081a1521ba07"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "418cef72a4f4b0e21dce94c09cf0081a1521ba07",
+        "currentComponentId": "50938:65872",
+        "latestComponentId": "51690:156100"
+      },
+      "localComponentOwner": {
+        "id": "50951:93672",
+        "name": "content=q4",
+        "type": "COMPONENT",
+        "pageName": "💠 Локальные компоненты",
+        "path": "Раздел Помощь / Stack Q&A FAQItem / content=q4",
+        "visible": true
+      }
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104232;2756:4818;136941:9166;52070:104231;2754:25544;15691:10405;52070:104228",
+        "name": "Stack Q&A FAQItem",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / Cards / 🔒 [M] Helpbook :: Card / [M] BackgroundPlateSlot / Slot / Content / Accordion / Accordion / Content / Body / Stack Q&A FAQItem",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996",
+          "I52070:104248;2762:25391;118707:6996;52070:104210",
+          "I52070:104248;2762:25391;118707:6996;52070:104232",
+          "I52070:104248;2762:25391;118707:6996;52070:104232;2756:4818",
+          "I52070:104248;2762:25391;118707:6996;52070:104232;2756:4818;136941:9166",
+          "I52070:104248;2762:25391;118707:6996;52070:104232;2756:4818;136941:9166;52070:104226",
+          "I52070:104248;2762:25391;118707:6996;52070:104232;2756:4818;136941:9166;52070:104231",
+          "I52070:104248;2762:25391;118707:6996;52070:104232;2756:4818;136941:9166;52070:104231;2754:25544",
+          "I52070:104248;2762:25391;118707:6996;52070:104232;2756:4818;136941:9166;52070:104231;2754:25544;15691:10454",
+          "I52070:104248;2762:25391;118707:6996;52070:104232;2756:4818;136941:9166;52070:104231;2754:25544;15691:10405"
+        ]
+      },
+      "component": {
+        "name": "Stack Q&A FAQItem",
+        "key": "fe4c8ed739ef21625053a77fcafb32a3c9d72749",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104209",
+        "name": "🔒 [M] Helpbook :: Navigation",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / 🔒 [M] Helpbook :: Navigation",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996"
+        ]
+      },
+      "component": {
+        "name": "🔒 [M] Helpbook :: Navigation",
+        "key": "edd044329b2a9c4b52bce5c16253feb05598aec4",
+        "library": "Web :: Corp Presets",
+        "sourceFile": "web/components/web-corp-presets/Web _ Corp Presets -- Helpbook.json"
+      },
+      "variant": {
+        "name": "🔒 [M] Helpbook :: Navigation",
+        "key": "edd044329b2a9c4b52bce5c16253feb05598aec4"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "edd044329b2a9c4b52bce5c16253feb05598aec4",
+        "currentComponentId": "51115:48356",
+        "latestComponentId": "51115:48356"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104218",
+        "name": "🔒 [M] Helpbook :: Card",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / Cards / 🔒 [M] Helpbook :: Card",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996",
+          "I52070:104248;2762:25391;118707:6996;52070:104210"
+        ]
+      },
+      "component": {
+        "name": "🔒 [M] Helpbook :: Card",
+        "key": "0ea44cd807f6425607590625ea6745331a4a21a0",
+        "library": "Web :: Corp Presets",
+        "sourceFile": "web/components/web-corp-presets/Web _ Corp Presets -- Helpbook.json"
+      },
+      "variant": {
+        "name": "Presets=FAQ",
+        "key": "0ea44cd807f6425607590625ea6745331a4a21a0"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "0ea44cd807f6425607590625ea6745331a4a21a0",
+        "currentComponentId": "51115:52366",
+        "latestComponentId": "51115:52366"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104232",
+        "name": "🔒 [M] Helpbook :: Card",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / Cards / 🔒 [M] Helpbook :: Card",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996",
+          "I52070:104248;2762:25391;118707:6996;52070:104210"
+        ]
+      },
+      "component": {
+        "name": "🔒 [M] Helpbook :: Card",
+        "key": "0ea44cd807f6425607590625ea6745331a4a21a0",
+        "library": "Web :: Corp Presets",
+        "sourceFile": "web/components/web-corp-presets/Web _ Corp Presets -- Helpbook.json"
+      },
+      "variant": {
+        "name": "Presets=FAQ",
+        "key": "0ea44cd807f6425607590625ea6745331a4a21a0"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "0ea44cd807f6425607590625ea6745331a4a21a0",
+        "currentComponentId": "51115:52366",
+        "latestComponentId": "51115:52366"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104224",
+        "name": "🔒 [M] Helpbook :: Card",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / Cards / 🔒 [M] Helpbook :: Card",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996",
+          "I52070:104248;2762:25391;118707:6996;52070:104210"
+        ]
+      },
+      "component": {
+        "name": "🔒 [M] Helpbook :: Card",
+        "key": "0ea44cd807f6425607590625ea6745331a4a21a0",
+        "library": "Web :: Corp Presets",
+        "sourceFile": "web/components/web-corp-presets/Web _ Corp Presets -- Helpbook.json"
+      },
+      "variant": {
+        "name": "Presets=FAQ",
+        "key": "0ea44cd807f6425607590625ea6745331a4a21a0"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "0ea44cd807f6425607590625ea6745331a4a21a0",
+        "currentComponentId": "51115:52366",
+        "latestComponentId": "51115:52366"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104238",
+        "name": "🔒 [M] Helpbook :: Card",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / Cards / 🔒 [M] Helpbook :: Card",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996",
+          "I52070:104248;2762:25391;118707:6996;52070:104210"
+        ]
+      },
+      "component": {
+        "name": "🔒 [M] Helpbook :: Card",
+        "key": "0ea44cd807f6425607590625ea6745331a4a21a0",
+        "library": "Web :: Corp Presets",
+        "sourceFile": "web/components/web-corp-presets/Web _ Corp Presets -- Helpbook.json"
+      },
+      "variant": {
+        "name": "Presets=FAQ",
+        "key": "0ea44cd807f6425607590625ea6745331a4a21a0"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "0ea44cd807f6425607590625ea6745331a4a21a0",
+        "currentComponentId": "51115:52366",
+        "latestComponentId": "51115:52366"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104244",
+        "name": "🔒 [M] Helpbook :: Card",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / Cards / 🔒 [M] Helpbook :: Card",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996",
+          "I52070:104248;2762:25391;118707:6996;52070:104210"
+        ]
+      },
+      "component": {
+        "name": "🔒 [M] Helpbook :: Card",
+        "key": "0ea44cd807f6425607590625ea6745331a4a21a0",
+        "library": "Web :: Corp Presets",
+        "sourceFile": "web/components/web-corp-presets/Web _ Corp Presets -- Helpbook.json"
+      },
+      "variant": {
+        "name": "Presets=FAQ",
+        "key": "0ea44cd807f6425607590625ea6745331a4a21a0"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "0ea44cd807f6425607590625ea6745331a4a21a0",
+        "currentComponentId": "51115:52366",
+        "latestComponentId": "51115:52366"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104245",
+        "name": "🔒 [M] Helpbook :: Card",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / Cards / 🔒 [M] Helpbook :: Card",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996",
+          "I52070:104248;2762:25391;118707:6996;52070:104210"
+        ]
+      },
+      "component": {
+        "name": "🔒 [M] Helpbook :: Card",
+        "key": "0ea44cd807f6425607590625ea6745331a4a21a0",
+        "library": "Web :: Corp Presets",
+        "sourceFile": "web/components/web-corp-presets/Web _ Corp Presets -- Helpbook.json"
+      },
+      "variant": {
+        "name": "Presets=FAQ",
+        "key": "0ea44cd807f6425607590625ea6745331a4a21a0"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "0ea44cd807f6425607590625ea6745331a4a21a0",
+        "currentComponentId": "51115:52366",
+        "latestComponentId": "51115:52366"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104246",
+        "name": "🔒 [M] Helpbook :: Card",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / Cards / 🔒 [M] Helpbook :: Card",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996",
+          "I52070:104248;2762:25391;118707:6996;52070:104210"
+        ]
+      },
+      "component": {
+        "name": "🔒 [M] Helpbook :: Card",
+        "key": "0ea44cd807f6425607590625ea6745331a4a21a0",
+        "library": "Web :: Corp Presets",
+        "sourceFile": "web/components/web-corp-presets/Web _ Corp Presets -- Helpbook.json"
+      },
+      "variant": {
+        "name": "Presets=FAQ",
+        "key": "0ea44cd807f6425607590625ea6745331a4a21a0"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "0ea44cd807f6425607590625ea6745331a4a21a0",
+        "currentComponentId": "51115:52366",
+        "latestComponentId": "51115:52366"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104247",
+        "name": "🔒 [M] Helpbook :: Card",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / Cards / 🔒 [M] Helpbook :: Card",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996",
+          "I52070:104248;2762:25391;118707:6996;52070:104210"
+        ]
+      },
+      "component": {
+        "name": "🔒 [M] Helpbook :: Card",
+        "key": "0ea44cd807f6425607590625ea6745331a4a21a0",
+        "library": "Web :: Corp Presets",
+        "sourceFile": "web/components/web-corp-presets/Web _ Corp Presets -- Helpbook.json"
+      },
+      "variant": {
+        "name": "Presets=FAQ",
+        "key": "0ea44cd807f6425607590625ea6745331a4a21a0"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "0ea44cd807f6425607590625ea6745331a4a21a0",
+        "currentComponentId": "51115:52366",
+        "latestComponentId": "51115:52366"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "52070:104248",
+        "name": "[M] UniversalModal :: Helpbook",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860"
+        ]
+      },
+      "component": {
+        "name": "[M] UniversalModal :: Helpbook",
+        "key": "000c1af1acf7571ab80f0754f602f7a500533aa4",
+        "library": "Web :: Corp Presets",
+        "sourceFile": "web/components/web-corp-presets/Web _ Corp Presets -- Helpbook.json"
+      },
+      "variant": {
+        "name": "Type=FAQ",
+        "key": "000c1af1acf7571ab80f0754f602f7a500533aa4"
+      },
+      "comparisonIssues": [
+        "Нет данных для заливка в снапшоте для «Type=FAQ / [M] UniversalModal / [M] UniversalModalBody / BodyContent / Cards / 🔒 [M] Helpbook :: Card / [M] BackgroundPlateSlot / Slot / Content / Accordion / Accordion / Content / Body / Stack Q&A FAQItem / Markdown / Content / Text»"
+      ],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "000c1af1acf7571ab80f0754f602f7a500533aa4",
+        "currentComponentId": "51115:52400",
+        "latestComponentId": "52148:67770"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I52070:104248;2762:25390",
+        "name": "[M] UniversalModalHeader",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalHeader",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389"
+        ]
+      },
+      "component": {
+        "name": "[M] UniversalModalHeader",
+        "key": "a52ab528629c109be95cbb0d1fca0d26fc076daa",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- UniversalModal.json"
+      },
+      "variant": {
+        "name": "Content=True, Custom=False, FilledBg=True",
+        "key": "a52ab528629c109be95cbb0d1fca0d26fc076daa"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I52070:104248;2762:25390;50305:25045",
+        "name": "🔩 [M] Preset",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalHeader / 🔩 [M] Preset",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25390"
+        ]
+      },
+      "component": {
+        "name": "🔩 [M] Preset",
+        "key": "df40a3a6c97e52f564bdc903a626dc7e2fbf36c4",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- UniversalModal.json"
+      },
+      "variant": {
+        "name": "Cross=True, Back=False, LeftTitle=True, CentredTitle=False, Subtitle=False",
+        "key": "df40a3a6c97e52f564bdc903a626dc7e2fbf36c4"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I52070:104248;2762:25391",
+        "name": "[M] UniversalModalBody",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389"
+        ]
+      },
+      "component": {
+        "name": "[M] UniversalModalBody",
+        "key": "b5a9e84ef0ade6f3613e4fafab267ebd516be4c7",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- UniversalModal.json"
+      },
+      "variant": {
+        "name": "[M] UniversalModalBody",
+        "key": "b5a9e84ef0ade6f3613e4fafab267ebd516be4c7"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104209",
+        "name": "🔒 [M] Helpbook :: Navigation",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / 🔒 [M] Helpbook :: Navigation",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996"
+        ]
+      },
+      "component": {
+        "name": "🔒 [M] Helpbook :: Navigation",
+        "key": "edd044329b2a9c4b52bce5c16253feb05598aec4",
+        "library": "Web :: Corp Presets",
+        "sourceFile": "web/components/web-corp-presets/Web _ Corp Presets -- Helpbook.json"
+      },
+      "variant": {
+        "name": "🔒 [M] Helpbook :: Navigation",
+        "key": "edd044329b2a9c4b52bce5c16253feb05598aec4"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "edd044329b2a9c4b52bce5c16253feb05598aec4",
+        "currentComponentId": "51115:48356",
+        "latestComponentId": "51115:48356"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104209;2755:3704",
+        "name": "[M] Input",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / 🔒 [M] Helpbook :: Navigation / [M] Input",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996",
+          "I52070:104248;2762:25391;118707:6996;52070:104209"
+        ]
+      },
+      "component": {
+        "name": "[M] Input",
+        "key": "f0575b1b6c144c4aec1716814172e0169da8b9d9",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Input.json"
+      },
+      "variant": {
+        "name": "Size=48, FilledState=False, ActiveState=False, DisabledState=False, ErrorState=False, OuterLabel=True",
+        "key": "f0575b1b6c144c4aec1716814172e0169da8b9d9"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104218",
+        "name": "🔒 [M] Helpbook :: Card",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / Cards / 🔒 [M] Helpbook :: Card",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996",
+          "I52070:104248;2762:25391;118707:6996;52070:104210"
+        ]
+      },
+      "component": {
+        "name": "🔒 [M] Helpbook :: Card",
+        "key": "0ea44cd807f6425607590625ea6745331a4a21a0",
+        "library": "Web :: Corp Presets",
+        "sourceFile": "web/components/web-corp-presets/Web _ Corp Presets -- Helpbook.json"
+      },
+      "variant": {
+        "name": "Presets=FAQ",
+        "key": "0ea44cd807f6425607590625ea6745331a4a21a0"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "0ea44cd807f6425607590625ea6745331a4a21a0",
+        "currentComponentId": "51115:52366",
+        "latestComponentId": "51115:52366"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104218;2756:4818",
+        "name": "[M] BackgroundPlateSlot",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / Cards / 🔒 [M] Helpbook :: Card / [M] BackgroundPlateSlot",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996",
+          "I52070:104248;2762:25391;118707:6996;52070:104210",
+          "I52070:104248;2762:25391;118707:6996;52070:104218"
+        ]
+      },
+      "component": {
+        "name": "[M] BackgroundPlateSlot",
+        "key": "09c2c953e2d1759b18bba0fd83847385df5d6e6a",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Type=Primary, Skeleton=False",
+        "key": "09c2c953e2d1759b18bba0fd83847385df5d6e6a"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104232",
+        "name": "🔒 [M] Helpbook :: Card",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / Cards / 🔒 [M] Helpbook :: Card",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996",
+          "I52070:104248;2762:25391;118707:6996;52070:104210"
+        ]
+      },
+      "component": {
+        "name": "🔒 [M] Helpbook :: Card",
+        "key": "0ea44cd807f6425607590625ea6745331a4a21a0",
+        "library": "Web :: Corp Presets",
+        "sourceFile": "web/components/web-corp-presets/Web _ Corp Presets -- Helpbook.json"
+      },
+      "variant": {
+        "name": "Presets=FAQ",
+        "key": "0ea44cd807f6425607590625ea6745331a4a21a0"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "0ea44cd807f6425607590625ea6745331a4a21a0",
+        "currentComponentId": "51115:52366",
+        "latestComponentId": "51115:52366"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104232;2756:4818",
+        "name": "[M] BackgroundPlateSlot",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / Cards / 🔒 [M] Helpbook :: Card / [M] BackgroundPlateSlot",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996",
+          "I52070:104248;2762:25391;118707:6996;52070:104210",
+          "I52070:104248;2762:25391;118707:6996;52070:104232"
+        ]
+      },
+      "component": {
+        "name": "[M] BackgroundPlateSlot",
+        "key": "09c2c953e2d1759b18bba0fd83847385df5d6e6a",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Type=Primary, Skeleton=False",
+        "key": "09c2c953e2d1759b18bba0fd83847385df5d6e6a"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104224",
+        "name": "🔒 [M] Helpbook :: Card",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / Cards / 🔒 [M] Helpbook :: Card",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996",
+          "I52070:104248;2762:25391;118707:6996;52070:104210"
+        ]
+      },
+      "component": {
+        "name": "🔒 [M] Helpbook :: Card",
+        "key": "0ea44cd807f6425607590625ea6745331a4a21a0",
+        "library": "Web :: Corp Presets",
+        "sourceFile": "web/components/web-corp-presets/Web _ Corp Presets -- Helpbook.json"
+      },
+      "variant": {
+        "name": "Presets=FAQ",
+        "key": "0ea44cd807f6425607590625ea6745331a4a21a0"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "0ea44cd807f6425607590625ea6745331a4a21a0",
+        "currentComponentId": "51115:52366",
+        "latestComponentId": "51115:52366"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104224;2756:4818",
+        "name": "[M] BackgroundPlateSlot",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / Cards / 🔒 [M] Helpbook :: Card / [M] BackgroundPlateSlot",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996",
+          "I52070:104248;2762:25391;118707:6996;52070:104210",
+          "I52070:104248;2762:25391;118707:6996;52070:104224"
+        ]
+      },
+      "component": {
+        "name": "[M] BackgroundPlateSlot",
+        "key": "09c2c953e2d1759b18bba0fd83847385df5d6e6a",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Type=Primary, Skeleton=False",
+        "key": "09c2c953e2d1759b18bba0fd83847385df5d6e6a"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104238",
+        "name": "🔒 [M] Helpbook :: Card",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / Cards / 🔒 [M] Helpbook :: Card",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996",
+          "I52070:104248;2762:25391;118707:6996;52070:104210"
+        ]
+      },
+      "component": {
+        "name": "🔒 [M] Helpbook :: Card",
+        "key": "0ea44cd807f6425607590625ea6745331a4a21a0",
+        "library": "Web :: Corp Presets",
+        "sourceFile": "web/components/web-corp-presets/Web _ Corp Presets -- Helpbook.json"
+      },
+      "variant": {
+        "name": "Presets=FAQ",
+        "key": "0ea44cd807f6425607590625ea6745331a4a21a0"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "0ea44cd807f6425607590625ea6745331a4a21a0",
+        "currentComponentId": "51115:52366",
+        "latestComponentId": "51115:52366"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104238;2756:4818",
+        "name": "[M] BackgroundPlateSlot",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / Cards / 🔒 [M] Helpbook :: Card / [M] BackgroundPlateSlot",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996",
+          "I52070:104248;2762:25391;118707:6996;52070:104210",
+          "I52070:104248;2762:25391;118707:6996;52070:104238"
+        ]
+      },
+      "component": {
+        "name": "[M] BackgroundPlateSlot",
+        "key": "09c2c953e2d1759b18bba0fd83847385df5d6e6a",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Type=Primary, Skeleton=False",
+        "key": "09c2c953e2d1759b18bba0fd83847385df5d6e6a"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104244",
+        "name": "🔒 [M] Helpbook :: Card",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / Cards / 🔒 [M] Helpbook :: Card",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996",
+          "I52070:104248;2762:25391;118707:6996;52070:104210"
+        ]
+      },
+      "component": {
+        "name": "🔒 [M] Helpbook :: Card",
+        "key": "0ea44cd807f6425607590625ea6745331a4a21a0",
+        "library": "Web :: Corp Presets",
+        "sourceFile": "web/components/web-corp-presets/Web _ Corp Presets -- Helpbook.json"
+      },
+      "variant": {
+        "name": "Presets=FAQ",
+        "key": "0ea44cd807f6425607590625ea6745331a4a21a0"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "0ea44cd807f6425607590625ea6745331a4a21a0",
+        "currentComponentId": "51115:52366",
+        "latestComponentId": "51115:52366"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104244;2756:4818",
+        "name": "[M] BackgroundPlateSlot",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / Cards / 🔒 [M] Helpbook :: Card / [M] BackgroundPlateSlot",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996",
+          "I52070:104248;2762:25391;118707:6996;52070:104210",
+          "I52070:104248;2762:25391;118707:6996;52070:104244"
+        ]
+      },
+      "component": {
+        "name": "[M] BackgroundPlateSlot",
+        "key": "09c2c953e2d1759b18bba0fd83847385df5d6e6a",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Type=Primary, Skeleton=False",
+        "key": "09c2c953e2d1759b18bba0fd83847385df5d6e6a"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104245",
+        "name": "🔒 [M] Helpbook :: Card",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / Cards / 🔒 [M] Helpbook :: Card",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996",
+          "I52070:104248;2762:25391;118707:6996;52070:104210"
+        ]
+      },
+      "component": {
+        "name": "🔒 [M] Helpbook :: Card",
+        "key": "0ea44cd807f6425607590625ea6745331a4a21a0",
+        "library": "Web :: Corp Presets",
+        "sourceFile": "web/components/web-corp-presets/Web _ Corp Presets -- Helpbook.json"
+      },
+      "variant": {
+        "name": "Presets=FAQ",
+        "key": "0ea44cd807f6425607590625ea6745331a4a21a0"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "0ea44cd807f6425607590625ea6745331a4a21a0",
+        "currentComponentId": "51115:52366",
+        "latestComponentId": "51115:52366"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104245;2756:4818",
+        "name": "[M] BackgroundPlateSlot",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / Cards / 🔒 [M] Helpbook :: Card / [M] BackgroundPlateSlot",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996",
+          "I52070:104248;2762:25391;118707:6996;52070:104210",
+          "I52070:104248;2762:25391;118707:6996;52070:104245"
+        ]
+      },
+      "component": {
+        "name": "[M] BackgroundPlateSlot",
+        "key": "09c2c953e2d1759b18bba0fd83847385df5d6e6a",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Type=Primary, Skeleton=False",
+        "key": "09c2c953e2d1759b18bba0fd83847385df5d6e6a"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104246",
+        "name": "🔒 [M] Helpbook :: Card",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / Cards / 🔒 [M] Helpbook :: Card",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996",
+          "I52070:104248;2762:25391;118707:6996;52070:104210"
+        ]
+      },
+      "component": {
+        "name": "🔒 [M] Helpbook :: Card",
+        "key": "0ea44cd807f6425607590625ea6745331a4a21a0",
+        "library": "Web :: Corp Presets",
+        "sourceFile": "web/components/web-corp-presets/Web _ Corp Presets -- Helpbook.json"
+      },
+      "variant": {
+        "name": "Presets=FAQ",
+        "key": "0ea44cd807f6425607590625ea6745331a4a21a0"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "0ea44cd807f6425607590625ea6745331a4a21a0",
+        "currentComponentId": "51115:52366",
+        "latestComponentId": "51115:52366"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104246;2756:4818",
+        "name": "[M] BackgroundPlateSlot",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / Cards / 🔒 [M] Helpbook :: Card / [M] BackgroundPlateSlot",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996",
+          "I52070:104248;2762:25391;118707:6996;52070:104210",
+          "I52070:104248;2762:25391;118707:6996;52070:104246"
+        ]
+      },
+      "component": {
+        "name": "[M] BackgroundPlateSlot",
+        "key": "09c2c953e2d1759b18bba0fd83847385df5d6e6a",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Type=Primary, Skeleton=False",
+        "key": "09c2c953e2d1759b18bba0fd83847385df5d6e6a"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104247",
+        "name": "🔒 [M] Helpbook :: Card",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / Cards / 🔒 [M] Helpbook :: Card",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996",
+          "I52070:104248;2762:25391;118707:6996;52070:104210"
+        ]
+      },
+      "component": {
+        "name": "🔒 [M] Helpbook :: Card",
+        "key": "0ea44cd807f6425607590625ea6745331a4a21a0",
+        "library": "Web :: Corp Presets",
+        "sourceFile": "web/components/web-corp-presets/Web _ Corp Presets -- Helpbook.json"
+      },
+      "variant": {
+        "name": "Presets=FAQ",
+        "key": "0ea44cd807f6425607590625ea6745331a4a21a0"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "0ea44cd807f6425607590625ea6745331a4a21a0",
+        "currentComponentId": "51115:52366",
+        "latestComponentId": "51115:52366"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "wrongChannel",
+      "severityHint": "high",
+      "title": "Компонент не из выбранного канала",
+      "node": {
+        "id": "I52070:104248;2762:25391;118707:6996;52070:104247;2756:4818",
+        "name": "[M] BackgroundPlateSlot",
+        "type": "INSTANCE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты / Основные экраны / [M] UniversalModal :: Helpbook / [M] UniversalModal / [M] UniversalModalBody / BodyContent / Cards / 🔒 [M] Helpbook :: Card / [M] BackgroundPlateSlot",
+        "visible": true,
+        "ancestorNodeIds": [
+          "51899:137860",
+          "52070:104248",
+          "I52070:104248;2762:25389",
+          "I52070:104248;2762:25391",
+          "I52070:104248;2762:25391;118707:6996",
+          "I52070:104248;2762:25391;118707:6996;52070:104210",
+          "I52070:104248;2762:25391;118707:6996;52070:104247"
+        ]
+      },
+      "component": {
+        "name": "[M] BackgroundPlateSlot",
+        "key": "09c2c953e2d1759b18bba0fd83847385df5d6e6a",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- BackgroundPlate.json"
+      },
+      "variant": {
+        "name": "Type=Primary, Skeleton=False",
+        "key": "09c2c953e2d1759b18bba0fd83847385df5d6e6a"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "themization",
+      "severityHint": "high",
+      "title": "Проблема темизации",
+      "node": {
+        "id": "52070:104248",
+        "name": "Страница: Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "type": "PAGE",
+        "pageName": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "path": "Мультисделка МВ: СБП и Карты (08.10.26 - )",
+        "visible": true
+      },
+      "kind": "missingThemeMode",
+      "recommendation": "Смени темизацию на Corp",
+      "component": null
+    }
+  ],
+  "componentContexts": [
+    {
+      "componentKey": "web-core.accordion",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "Accordion",
+        "❌ Accordion",
+        "🔩 AccordionBody",
+        "🔩 AccordionHeader",
+        "🔩  SwapMe",
+        "🔩 AccordionControl"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.input",
+      "summary": "Input — семейство text fields. Apollo должен трактовать изменения состояния Input как component property changes, а ручные изменения style/token/layout как layer customizations. Text content может требовать редакторской проверки по pattern.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] Input",
+        "[D] Input_Inverted",
+        "[M] Input",
+        "[M] Input_Inverted",
+        "🔄 [D][Corporate] Input",
+        "🔄 [D][Corporate] Input_Inverted",
+        "🔄 [M][AO] Input",
+        "🔄 [M][AO] Input_Inverted"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*",
+          "variant.Size",
+          "variant.FilledState",
+          "variant.ActiveState",
+          "variant.DisabledState",
+          "variant.ErrorState",
+          "variant.OuterLabel"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent",
+          "strokeWeight",
+          "layout.padding",
+          "layout.itemSpacing"
+        ],
+        "baselinePolicy": "Если component property изменилась, сравнивай ручные layer overrides с baseline текущего actual-состояния компонента, а не с исходным reference baseline.",
+        "slotProperties": [
+          "LeftAddon1.variant.Type",
+          "LeftAddon2.variant.Type",
+          "RightAddon1.variant.Type",
+          "RightAddon2.variant.Type",
+          "Placeholder.variant.Accent"
+        ],
+        "contentProperties": [
+          "Label.characters",
+          "Placeholder.characters",
+          "HintMessage.characters"
+        ],
+        "ordering": [
+          "component-property",
+          "slot-property",
+          "layer-property",
+          "content-property"
+        ]
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.Size",
+            "variant.FilledState",
+            "variant.ActiveState",
+            "variant.DisabledState",
+            "variant.ErrorState",
+            "variant.OuterLabel"
+          ],
+          "layerProperties": [
+            "fills",
+            "strokes",
+            "strokeWeight",
+            "cornerRadius",
+            "opacity",
+            "layout.padding",
+            "layout.itemSpacing",
+            "styles.text",
+            "typography"
+          ],
+          "dependencyPolicy": "При reset состояния компонента layer differences, вызванные только этим состоянием, могут исчезнуть автоматически. Ручные layer overrides должны оставаться независимо сбрасываемыми, пока reset родительского состояния не уберёт их target state."
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web-core.markdown",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "Markdown"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.text",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "Text"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.universal-modal",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [
+        "Заголовок модального окна задаётся через активную конфигурацию [D] UniversalModalHeader и его declared title/MiddleSlot content. Не дублируй заголовок ручным Text-узлом в BodyContent.",
+        "BodyContent должен иметь width=Fill и height=Hug. Fixed height допустима только при фактическом overflow и явно выбранном scroll-сценарии.",
+        "Scrollbar в [D] UniversalModalBody выключен, когда body-content полностью помещается в доступную высоту. Его включают только при подтверждённом вертикальном overflow.",
+        "Overlap у [D] UniversalModalHeader и [D] UniversalModalFooter выключен в нескроллируемом modal. Он включается только когда scroll-content действительно заезжает под фиксированные header или footer."
+      ],
+      "agentInstructions": [
+        "Перед сборкой модального окна прочитай component properties Header, Body и Footer; при наличии системного title preset используй его вместо ручной типографики.",
+        "Не оставляй Scrollbar, Overlap или fixed height как значения по умолчанию: проверь фактическую высоту body-content после наполнения слотa.",
+        "Для confirm-flow проверяй три состояния: entry action, confirmation и result; все action controls и menu/popover должны быть активными библиотечными компонентами."
+      ],
+      "includedComponents": [
+        "[D] UniversalModalFooter",
+        "[D] UniversalModalHeader",
+        "[M] UniversalModalFooter",
+        "[M] UniversalModalHeader",
+        "🔄  🔩 [D][Corporate] Preset",
+        "🔄 [D][Corporate] UniversalModalFooter",
+        "🔄 [M][Corporate]  UniversalModalFooter",
+        "🔄 🔩 [M][Corporate] Preset",
+        "🔩 [D] LeftAddon",
+        "🔩 [D] MiddleSlot",
+        "🔩 [D] Navigation",
+        "🔩 [D] Preset",
+        "🔩 [D] Presets",
+        "🔩 [D] RightAddon",
+        "🔩 [M] Preset",
+        "🔩 [M] Preset",
+        ".ScrollContentExample",
+        "[D] UniversalModalBody",
+        "[M] UniversalModalBody",
+        "🔩 [D] BodyContent",
+        "🔩 [D] BottomAddon",
+        "🔩 [D] FooterContent",
+        "🔩 [M] FooterContent",
+        "🔩 [M] ModalBody"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.background-plate",
+      "summary": "BackgroundPlate — семейство variable-driven surface-компонентов. Для нового контента используется BackgroundPlateSlot: Level-0 задаётся главной поверхности, первый компонент получает Level-1, а опциональный Level-2 располагается только непосредственно внутри Level-1. Type, BackgroundColor, Skeleton и layer-свойства трактуются по exact component rules. BackgroundPlateView — кодовый alias этого же семейства.",
+      "criticalBaselines": [
+        "Для новых макетов основным контейнером является BackgroundPlateSlot; BackgroundPlate считается legacy для генерации, но его существующее использование не является нарушением само по себе.",
+        "Mode BackgroundPlate Level=Level-0 назначается главной поверхности страницы или модальной сущности. Первый вложенный BackgroundPlateSlot получает Level-1; Level-2 всегда располагается непосредственно внутри Level-1.",
+        "Обычный контент может лежать непосредственно в Slot Level-1. Level-2 является опциональной вложенной поверхностью; Level-0 и Level-1 внутри Slot запрещены.",
+        "Рекомендуемый padding: Spacing/32 для Level-1 и Spacing/24 для Level-2. Другие значения допустимы под контекст или паттерн только с Spacing token binding.",
+        "Axis, gap и alignment Slot определяются контекстом; width должен быть Fill, height — Hug. Clip content может быть true или false по контексту.",
+        "Primary и Secondary получают fill/stroke только из effective baseline. Colored использует только токенизированную заливку без stroke. Border используется без fill, с токенизированным stroke; strokeWeight контекстный, strokeAlign всегда INSIDE.",
+        "Radius, opacity и blend mode фиксируются effective baseline. Drop shadow и Inner shadow запрещены; Layer blur и Background blur разрешены по контексту.",
+        "Skeleton=True является штатным состоянием загрузки компонента или контента. Сложная skeleton-композиция допустима только при явном сценарии паттерна.",
+        "BackgroundPlateView в code/private usage маппится на BackgroundPlate и должен использовать те же правила, контракты и pattern links.",
+        "Для desktop рабочей поверхности Level 1 использует radius 16, Level 2 использует radius 12. Promo и mobile variants могут иметь другие baseline из каталога.",
+        "BackgroundColor зависит от surface context: для страниц используются base-bg/base-bg-alt, для модальных сущностей используются modal-bg/modal-bg-alt. Суффикс в скобках (gray)/(white) описывает визуальный фон, а часть имени до скобок соответствует цветовому токену поверхности.",
+        "В каталоге вариант обводочной поверхности называется Type=Border. В тексте рекомендаций можно пояснять его как bordered/обводочный, но в машинных фактах и таблицах используй точное значение Border.",
+        "Radius/cornerRadius у BackgroundPlate, BackgroundPlateSlot и вложенных Style Level фиксируется component effective baseline. Ручное изменение скруглений запрещено и должно трактоваться как нарушение, а не как допустимая композиционная настройка.",
+        "Для Table Wide [D] в BackgroundPlateSlot действует специальное правило: Slot padding top=Spacing/0, right/bottom/left=Spacing/16. [D] TopBar расположен рядом с плейтом в общем Level-0 контейнере, а не внутри Slot."
+      ],
+      "agentInstructions": [
+        "Не выводи нарушение из примера. Используй только exact rules, exact component contracts и явно найденные pattern rules.",
+        "Если во входном отчёте встречается BackgroundPlateView, трактуй его как code/private alias компонента BackgroundPlate, а не как отдельный компонент без правил.",
+        "Изменения variant/property показывай как component-property customizations; изменения fill, stroke, stroke geometry, radius, opacity, effects, blend mode, layout и style показывай как layer-property customizations.",
+        "Если nested diff принадлежит wrapper и actual совпадает с effective baseline, не показывай его как дизайнерскую кастомизацию.",
+        "Если actual отличается от effective baseline, показывай effectiveBaseline -> actual. Не подставляй standalone baseline вложенного Style Level вместо baseline выбранного BackgroundPlate variant.",
+        "Padding у BackgroundPlateSlot может быть осознанной настройкой композиции. Комментируй его как layer customization и проверяй Spacing token binding; не требуй вернуть 32 или 24 только из-за отличия от рекомендации.",
+        "Не требуй Level-2 для обычного контента Slot Level-1. Если внутри Slot найден BackgroundPlate Level-0 или Level-1, используй rule:components.background-plate.slot-content-levels.",
+        "Axis, gap, alignment и Clip content Slot трактуй как контекстные настройки. Width не должен отличаться от Fill, height — от Hug.",
+        "При анализе BackgroundColor сначала определи контекст поверхности: page или modal. Не рекомендуй modal-bg* для обычной страницы и не рекомендуй base-bg* для модальной сущности, если exact rule или отчёт указывают на противоположный surface context.",
+        "Для Primary и Secondary любое ручное изменение fill/stroke является нарушением, даже при token binding. Сравнивай с effective baseline текущего Type, уровня и BackgroundColor.",
+        "Для Colored разрешена только видимая заливка через color token; raw fill, отсутствие fill и любой stroke являются нарушением.",
+        "Для Border fill запрещён, stroke должен быть привязан к color token. StrokeWeight можно менять под контекст; strokeAlign должен оставаться INSIDE. Border не может быть кликабельным.",
+        "Если в отчёте есть изменение radius/cornerRadius, opacity или blend mode, используй соответствующее exact component rule и рекомендуй сброс к effective baseline.",
+        "Drop shadow и Inner shadow трактуй как нарушения. Layer blur и Background blur являются допустимыми контекстными кастомизациями и не должны попадать под запрет теней.",
+        "Переключение Skeleton=False → True само по себе разрешено. Ручную простую skeleton-композицию вместо component property считай нарушением; сложное исключение допускай только по явному паттерну.",
+        "Для Table Wide не разрешай дублировать table inset внутри плейта: HeadRow, BodyRow и ячейки используют собственные effective baseline без дополнительных padding."
+      ],
+      "includedComponents": [
+        "[D] BackgroundPlate",
+        "[D] BackgroundPlateSlot",
+        "[D] Style Level 1",
+        "[D] Style Level 2",
+        "[D][Promo] BackgroundPlate",
+        "[D][Promo] Style Level 1",
+        "[D][Promo] Style Level 2",
+        "[M] BackgroundPlate",
+        "[M] BackgroundPlateSlot",
+        "[M] Style Level 1",
+        "[M] Style Level 2",
+        "[M][Promo] BackgroundPlate",
+        "[M][Promo] Style Level 1",
+        "[M][Promo] Style Level 2"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "1745af83255e324781c2fbadfe0ad8cc7f13e0d8",
+          "name": "[M] BackgroundPlateSlot",
+          "purpose": "Контейнер-подложка для самостоятельного mobile-web блока контента с системной поверхностью, внутренними отступами и состоянием загрузки.",
+          "useWhen": [
+            "Нужно визуально отделить блок контента в mobile-web интерфейсе."
+          ],
+          "doNotUseWhen": [
+            "Нужен фон всего экрана или внутренний Style Level без собственного контента."
+          ],
+          "relationship": "Предпочтительный mobile-web контейнер семейства BackgroundPlate; использует мобильный effective baseline.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.*"
+          ],
+          "layerProperties": [
+            "layout.*",
+            "styles.*",
+            "fill",
+            "stroke",
+            "radius",
+            "opacity",
+            "text.*"
+          ],
+          "dependencyPolicy": "Component-property reset и layer-property reset разделены. Layer reset должен использовать effective baseline после nested variant/materialization resolution. Для BackgroundPlateView применяй тот же reset model, что и для BackgroundPlate."
+        },
+        "publicApi": {
+          "components": [
+            {
+              "name": "[D] BackgroundPlate",
+              "key": "2c7332d281570f4d5af6d334f8df378d24a1f235",
+              "role": "legacy-surface",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "legacy",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D] BackgroundPlateSlot",
+              "key": "5b6c5ac720154aff36be2f8a883bd058faa663cf",
+              "role": "content-container",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "preferred",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[D] Style Level 1",
+              "key": "adb65a62cde9ebedc5d0d41d2d77cd63e71e0745",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D] Style Level 2",
+              "key": "c8735f4834a8b43fd2ab821ffc0a6e72a57c4b5b",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D][Promo] BackgroundPlate",
+              "key": "c49f08db71ab44ea64f0880730220de1d93ac263",
+              "role": "promo-surface",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "promo-only",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[D][Promo] Style Level 1",
+              "key": "2b46e94cdecdab7d4cb977055c0405b2f6204127",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[D][Promo] Style Level 2",
+              "key": "a5a4240097211b28195291a593c567e9d7c62bd3",
+              "role": "internal-style",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M] BackgroundPlate",
+              "key": "4cfe3915785e5c37255190ae16314f6f2a1d05b3",
+              "role": "legacy-surface",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "legacy",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M] BackgroundPlateSlot",
+              "key": "1745af83255e324781c2fbadfe0ad8cc7f13e0d8",
+              "role": "content-container",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "preferred",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[M] Style Level 1",
+              "key": "efc528bd86582d96a824edeb2c257dc8b22a8f14",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M] Style Level 2",
+              "key": "74f025a02889239c3f6eed60d74ba85f292bdcb0",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M][Promo] BackgroundPlate",
+              "key": "a58fa7ae11989280fc24069f204ba617fdb1f93c",
+              "role": "promo-surface",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "promo-only",
+              "allowForNewLayouts": true
+            },
+            {
+              "name": "[M][Promo] Style Level 1",
+              "key": "19b4b6ed5718d82888a6551b56e0c776f4993ccc",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            },
+            {
+              "name": "[M][Promo] Style Level 2",
+              "key": "b33f77cc56c5feffb4f24a5912d74e3af927140e",
+              "role": "internal-style",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": "internal-only",
+              "allowForNewLayouts": false
+            }
+          ],
+          "aliases": null,
+          "codeExports": [
+            {
+              "name": "BackgroundPlate",
+              "kind": "react-component-export",
+              "mapsTo": "[D] BackgroundPlate / [M] BackgroundPlate",
+              "usage": "Основной code/private export, который соответствует Figma-компонентам семейства BackgroundPlate."
+            },
+            {
+              "name": "BackgroundPlateView",
+              "kind": "react-view-export",
+              "mapsTo": "BackgroundPlate",
+              "usage": "Кодовая обёртка/представление BackgroundPlate. В Apollo и агентском анализе не является отдельным Figma-компонентом и должна использовать тот же componentKey web-corp.background-plate."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "componentKey": "web.helpbook",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[M] UniversalModal :: Helpbook",
+        "[D] UniversalModal :: Helpbook",
+        "[M] ContactsAccordion",
+        "[D] ContactsAccordion",
+        "Accordion",
+        " InfoIcon",
+        "🔒 [M] Helpbook :: Card",
+        "🔒 [D] Helpbook :: Card",
+        "🔒[M] Helpbook :: Сontact",
+        "🔒 [D] Helpbook :: Сontact",
+        "🔒 [D] Helpbook :: LinkAddon",
+        "🔒 [M] Helpbook :: Navigation",
+        "🔒 [D] Helpbook:: Navigation"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    }
+  ]
+}
