@@ -1,0 +1,2698 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1645744392870335692-1791294005150-okch6j2m:agent",
+  "sourceReportId": "apollo-1645744392870335692-1791294005150-okch6j2m",
+  "generatedAt": "2026-10-06T13:40:05.150Z",
+  "suggestedFileName": "Anna-Vrubel-Corp-Product-designer_06-10-2026_16-40-05_agent.json",
+  "user": {
+    "id": "1645744392870335692",
+    "name": "Anna Vrubel / Corp / Product designer",
+    "slug": "Anna-Vrubel-Corp-Product-designer"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.3.0"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "[W] Альфа-Страхование",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "pageType": null,
+    "startedAt": "2026-10-06T13:40:01.561Z",
+    "finishedAt": "2026-10-06T13:40:05.150Z",
+    "durationMs": 3589,
+    "selection": [
+      {
+        "nodeId": "8167:278171",
+        "name": "[D] 1700",
+        "nodeType": "FRAME",
+        "path": "Оформление страховки · MVP / [D] 1700",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 108,
+    "problemOccurrenceCount": 14,
+    "categoryCounts": {
+      "deprecatedComponents": 1,
+      "deprecatedStyles": 0,
+      "customStyles": 1,
+      "updates": 2,
+      "customizations": 13,
+      "localComponents": 0,
+      "detachedComponents": 0,
+      "presets": 1,
+      "technicalComponents": 0,
+      "currentComponents": 88,
+      "wrongChannel": 0,
+      "themization": 0
+    },
+    "includedFindingCount": 14,
+    "omittedCurrentComponentCount": 88
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, authority.status=active, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with authority.status=active, severity=error, and matchKind=exact_component_rule for the same property/change. Missing, draft, or malformed authority never confirms a violation.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 2,
+      "includedCount": 2,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 13,
+      "includedCount": 9,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "deprecatedComponents",
+      "severityHint": "high",
+      "title": "Устаревший компонент",
+      "node": {
+        "id": "8167:279354",
+        "name": "PlatePresets",
+        "type": "INSTANCE",
+        "pageName": "   ·  Оформление страховки",
+        "path": "Оформление страховки · MVP / [D] 1700 / Body / content / Header / Frame 2131330348 / content / Frame 2131330339 / Frame 2131327790 / PlatePresets",
+        "visible": true,
+        "ancestorNodeIds": [
+          "8167:278171",
+          "8167:278173",
+          "8167:278175",
+          "8167:278176",
+          "8167:278177",
+          "8167:278179",
+          "8167:278180",
+          "8167:278191"
+        ]
+      },
+      "component": {
+        "name": "PlatePresets",
+        "key": "e0744e2be72056d763ad7c3a8b55db8be341ee7e",
+        "library": "Web :: Old Core Default Components",
+        "sourceFile": "web/components/web-old-core-default-components/Web _ Old Core Default Components -- Plate.json"
+      },
+      "variant": {
+        "name": "view=negative",
+        "key": "e0744e2be72056d763ad7c3a8b55db8be341ee7e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "e0744e2be72056d763ad7c3a8b55db8be341ee7e",
+        "currentComponentId": "8057:202406",
+        "latestComponentId": "8057:202406"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "8167:278181",
+        "name": "Frame 2147225142",
+        "type": "FRAME",
+        "pageName": "   ·  Оформление страховки",
+        "path": "Оформление страховки · MVP / [D] 1700 / Body / content / Header / Frame 2131330348 / content / Frame 2131330339 / Frame 2147225142",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I8167:278226;62722:160365;84613:100551;4530:3853;8167:278237",
+        "name": "[D] PureCell",
+        "type": "INSTANCE",
+        "pageName": "   ·  Оформление страховки",
+        "path": "Оформление страховки · MVP / [D] 1700 / Body / content / Header / Frame 2131330348 / content / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent / First / Content / [D] PureCell",
+        "visible": true,
+        "ancestorNodeIds": [
+          "8167:278171",
+          "8167:278173",
+          "8167:278175",
+          "8167:278176",
+          "8167:278177",
+          "8167:278179",
+          "8167:278226",
+          "I8167:278226;62722:160362",
+          "I8167:278226;62722:160364",
+          "I8167:278226;62722:160365",
+          "I8167:278226;62722:160365;84613:100551",
+          "I8167:278226;62722:160365;84613:100551;4530:3853"
+        ]
+      },
+      "component": {
+        "name": "[D] PureCell",
+        "key": "3e089aea83b054b928cd73dce0627f7e6258c745",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- PureCell.json"
+      },
+      "variant": {
+        "name": "GraphicsSide=None",
+        "key": "3e089aea83b054b928cd73dce0627f7e6258c745"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "3e089aea83b054b928cd73dce0627f7e6258c745",
+        "currentComponentId": "5874:272546",
+        "latestComponentId": "8161:200497"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I8167:278226;62722:160365;84613:100555;4530:5321;8167:278240",
+        "name": "[D] PureCell",
+        "type": "INSTANCE",
+        "pageName": "   ·  Оформление страховки",
+        "path": "Оформление страховки · MVP / [D] 1700 / Body / content / Header / Frame 2131330348 / content / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent / Last / Content / [D] PureCell",
+        "visible": true,
+        "ancestorNodeIds": [
+          "8167:278171",
+          "8167:278173",
+          "8167:278175",
+          "8167:278176",
+          "8167:278177",
+          "8167:278179",
+          "8167:278226",
+          "I8167:278226;62722:160362",
+          "I8167:278226;62722:160364",
+          "I8167:278226;62722:160365",
+          "I8167:278226;62722:160365;84613:100555",
+          "I8167:278226;62722:160365;84613:100555;4530:5321"
+        ]
+      },
+      "component": {
+        "name": "[D] PureCell",
+        "key": "3e089aea83b054b928cd73dce0627f7e6258c745",
+        "library": "Web :: Core Wrappers",
+        "sourceFile": "web/components/web-core/wrappers/Web _ Core Wrappers -- PureCell.json"
+      },
+      "variant": {
+        "name": "GraphicsSide=None",
+        "key": "3e089aea83b054b928cd73dce0627f7e6258c745"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "3e089aea83b054b928cd73dce0627f7e6258c745",
+        "currentComponentId": "5874:272546",
+        "latestComponentId": "8161:200497"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "8167:278178",
+        "name": "[D] TitleView",
+        "type": "INSTANCE",
+        "pageName": "   ·  Оформление страховки",
+        "path": "Оформление страховки · MVP / [D] 1700 / Body / content / Header / Frame 2131330348 / [D] TitleView",
+        "visible": true,
+        "ancestorNodeIds": [
+          "8167:278171",
+          "8167:278173",
+          "8167:278175",
+          "8167:278176",
+          "8167:278177"
+        ]
+      },
+      "component": {
+        "name": "[D] TitleView",
+        "key": "3bfd179dc3b4c996f58db4cbcd26687a356fb3b7",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "View=xLarge, Skeleton=False",
+        "key": "3bfd179dc3b4c996f58db4cbcd26687a356fb3b7"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I8167:278178;37705:55358",
+            "name": "Subtitle",
+            "type": null,
+            "pageName": "   ·  Оформление страховки",
+            "path": "View=xLarge, Skeleton=False / MainContent / Subtitle / Subtitle",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Paragraph/16–24 Primary Medium → Paragraph/18–24 Primary Large",
+          "referenceValue": "Paragraph/16–24 Primary Medium",
+          "actualValue": "Paragraph/18–24 Primary Large",
+          "referenceRawValue": "Paragraph/16–24 Primary Medium",
+          "actualRawValue": "Paragraph/18–24 Primary Large",
+          "referenceDisplayValue": "Paragraph/16–24 Primary Medium",
+          "actualDisplayValue": "Paragraph/18–24 Primary Large",
+          "referenceResource": {
+            "name": "Paragraph/16–24 Primary Medium",
+            "key": "f0f0d59f9f92db92901605dd929cfa3b93540058",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": {
+            "name": "Paragraph/18–24 Primary Large",
+            "key": "b2633a0162f9359a941b9b6ffd702da6acbd02f3",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "3bfd179dc3b4c996f58db4cbcd26687a356fb3b7",
+            "actualNestedOwnerPath": "View=xLarge, Skeleton=False",
+            "actualNestedOwnerRelativePath": "MainContent / Subtitle / Subtitle",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "xLarge",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "8167:278175",
+              "nodeName": "content",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "design-system-author",
+                "revision": 1
+              },
+              "severityScope": null,
+              "appliesTo": "styles.text",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Типографика Title и Subtitle фиксируется выбранным View компонента TitleView. Менять текстовый стиль заголовка или подзаголовка вручную запрещено.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": "Стиль текст",
+            "priority": 30,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+            "message": "Типографика Title и Subtitle фиксируется выбранным View компонента TitleView. Менять текстовый стиль заголовка или подзаголовка вручную запрещено.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "8167:278185",
+        "name": "[D] TableView :: Horizontal",
+        "type": "INSTANCE",
+        "pageName": "   ·  Оформление страховки",
+        "path": "Оформление страховки · MVP / [D] 1700 / Body / content / Header / Frame 2131330348 / content / Frame 2131330339 / Frame 2147225142 / [D] TableView :: Horizontal",
+        "visible": true,
+        "ancestorNodeIds": [
+          "8167:278171",
+          "8167:278173",
+          "8167:278175",
+          "8167:278176",
+          "8167:278177",
+          "8167:278179",
+          "8167:278180",
+          "8167:278181"
+        ]
+      },
+      "component": {
+        "name": "[D] TableView :: Horizontal",
+        "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TableView.json"
+      },
+      "variant": {
+        "name": "Compact=True",
+        "key": "fc30a28cc1077ced1817c3076a9941955262bc08"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I8167:278185;60668:82231;60742:420968;60742:431238;60740:312553",
+            "name": "value",
+            "type": null,
+            "pageName": "   ·  Оформление страховки",
+            "path": "Compact=True / Row / Cells / Column / Content / Title / container / value",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Action/16–24 Primary Medium → Paragraph/16–24 Primary Medium",
+          "referenceValue": "Action/16–24 Primary Medium",
+          "actualValue": "Paragraph/16–24 Primary Medium",
+          "referenceRawValue": "Action/16–24 Primary Medium",
+          "actualRawValue": "Paragraph/16–24 Primary Medium",
+          "referenceDisplayValue": "Action/16–24 Primary Medium",
+          "actualDisplayValue": "Paragraph/16–24 Primary Medium",
+          "referenceResource": {
+            "name": "Action/16–24 Primary Medium",
+            "key": "aae5de06136376c7653394d3648478f48372d63f",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": {
+            "name": "Paragraph/16–24 Primary Medium",
+            "key": "f0f0d59f9f92db92901605dd929cfa3b93540058",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "5ce1cffe9bf235dcc7b4902d2a77a315dca912ce",
+            "actualNestedOwnerPath": "Compact=True / Row / Cells / Column / Content / Title",
+            "actualNestedOwnerRelativePath": "container / value",
+            "nestedOwnerComponentKey": "c65ca1d60347f0eecae4bf9acd8b89c417f6d648",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Compact=True / Row",
+            "nestedOwnerRelativePath": "Cells / Column / Content / Title / container / value",
+            "actualVariantProperties": {
+              "Presets": "Text"
+            },
+            "referenceVariantProperties": {
+              "Presets": "Body",
+              "Compact": "True",
+              "Skeleton": "False"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "8167:278181",
+              "nodeName": "Frame 2147225142",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-view.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            },
+            {
+              "ruleId": "component:web-corp.table-view.manual-visual-overrides-forbidden",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "design-system-author",
+                "revision": 3
+              },
+              "severityScope": null,
+              "appliesTo": "styles.text|layout.padding|layout.itemSpacing|fill|stroke",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Работай с предусмотренными presets и штатными возможностями TableView. Ручное изменение текстовых стилей, отступов, заливок и обводок запрещено.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": "Стиль текст",
+            "priority": 30,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.table-view.manual-visual-overrides-forbidden",
+            "message": "Работай с предусмотренными presets и штатными возможностями TableView. Ручное изменение текстовых стилей, отступов, заливок и обводок запрещено.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "8167:278186",
+        "name": "[D] TableView :: Horizontal",
+        "type": "INSTANCE",
+        "pageName": "   ·  Оформление страховки",
+        "path": "Оформление страховки · MVP / [D] 1700 / Body / content / Header / Frame 2131330348 / content / Frame 2131330339 / Frame 2147225142 / [D] TableView :: Horizontal",
+        "visible": true,
+        "ancestorNodeIds": [
+          "8167:278171",
+          "8167:278173",
+          "8167:278175",
+          "8167:278176",
+          "8167:278177",
+          "8167:278179",
+          "8167:278180",
+          "8167:278181"
+        ]
+      },
+      "component": {
+        "name": "[D] TableView :: Horizontal",
+        "key": "fc30a28cc1077ced1817c3076a9941955262bc08",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TableView.json"
+      },
+      "variant": {
+        "name": "Compact=True",
+        "key": "fc30a28cc1077ced1817c3076a9941955262bc08"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I8167:278186;60668:82231;60742:420968;60742:431238;60740:312553",
+            "name": "value",
+            "type": null,
+            "pageName": "   ·  Оформление страховки",
+            "path": "Compact=True / Row / Cells / Column / Content / Title / container / value",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Action/16–24 Primary Medium → Paragraph/16–24 Primary Medium",
+          "referenceValue": "Action/16–24 Primary Medium",
+          "actualValue": "Paragraph/16–24 Primary Medium",
+          "referenceRawValue": "Action/16–24 Primary Medium",
+          "actualRawValue": "Paragraph/16–24 Primary Medium",
+          "referenceDisplayValue": "Action/16–24 Primary Medium",
+          "actualDisplayValue": "Paragraph/16–24 Primary Medium",
+          "referenceResource": {
+            "name": "Action/16–24 Primary Medium",
+            "key": "aae5de06136376c7653394d3648478f48372d63f",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": {
+            "name": "Paragraph/16–24 Primary Medium",
+            "key": "f0f0d59f9f92db92901605dd929cfa3b93540058",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "5ce1cffe9bf235dcc7b4902d2a77a315dca912ce",
+            "actualNestedOwnerPath": "Compact=True / Row / Cells / Column / Content / Title",
+            "actualNestedOwnerRelativePath": "container / value",
+            "nestedOwnerComponentKey": "c65ca1d60347f0eecae4bf9acd8b89c417f6d648",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Compact=True / Row",
+            "nestedOwnerRelativePath": "Cells / Column / Content / Title / container / value",
+            "actualVariantProperties": {
+              "Presets": "Text"
+            },
+            "referenceVariantProperties": {
+              "Presets": "Body",
+              "Compact": "True",
+              "Skeleton": "False"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "8167:278181",
+              "nodeName": "Frame 2147225142",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-view.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            },
+            {
+              "ruleId": "component:web-corp.table-view.manual-visual-overrides-forbidden",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "design-system-author",
+                "revision": 3
+              },
+              "severityScope": null,
+              "appliesTo": "styles.text|layout.padding|layout.itemSpacing|fill|stroke",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Работай с предусмотренными presets и штатными возможностями TableView. Ручное изменение текстовых стилей, отступов, заливок и обводок запрещено.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": "Стиль текст",
+            "priority": 30,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.table-view.manual-visual-overrides-forbidden",
+            "message": "Работай с предусмотренными presets и штатными возможностями TableView. Ручное изменение текстовых стилей, отступов, заливок и обводок запрещено.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "8167:278187",
+        "name": "Row",
+        "type": "INSTANCE",
+        "pageName": "   ·  Оформление страховки",
+        "path": "Оформление страховки · MVP / [D] 1700 / Body / content / Header / Frame 2131330348 / content / Frame 2131330339 / Frame 2147225142 / Row",
+        "visible": true,
+        "ancestorNodeIds": [
+          "8167:278171",
+          "8167:278173",
+          "8167:278175",
+          "8167:278176",
+          "8167:278177",
+          "8167:278179",
+          "8167:278180",
+          "8167:278181"
+        ]
+      },
+      "component": {
+        "name": "Row",
+        "key": "c65ca1d60347f0eecae4bf9acd8b89c417f6d648",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TableView.json"
+      },
+      "variant": {
+        "name": "Presets=Body, Compact=True, Skeleton=False",
+        "key": "c65ca1d60347f0eecae4bf9acd8b89c417f6d648"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I8167:278187;60742:420968;60742:431238;60740:312553",
+            "name": "value",
+            "type": null,
+            "pageName": "   ·  Оформление страховки",
+            "path": "Presets=Body, Compact=True, Skeleton=False / Cells / Column / Content / Title / container / value",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Action/16–24 Primary Medium → Paragraph/16–24 Primary Medium",
+          "referenceValue": "Action/16–24 Primary Medium",
+          "actualValue": "Paragraph/16–24 Primary Medium",
+          "referenceRawValue": "Action/16–24 Primary Medium",
+          "actualRawValue": "Paragraph/16–24 Primary Medium",
+          "referenceDisplayValue": "Action/16–24 Primary Medium",
+          "actualDisplayValue": "Paragraph/16–24 Primary Medium",
+          "referenceResource": {
+            "name": "Action/16–24 Primary Medium",
+            "key": "aae5de06136376c7653394d3648478f48372d63f",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": {
+            "name": "Paragraph/16–24 Primary Medium",
+            "key": "f0f0d59f9f92db92901605dd929cfa3b93540058",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "5ce1cffe9bf235dcc7b4902d2a77a315dca912ce",
+            "actualNestedOwnerPath": "Presets=Body, Compact=True, Skeleton=False / Cells / Column / Content / Title",
+            "actualNestedOwnerRelativePath": "container / value",
+            "nestedOwnerComponentKey": "af59b50bbe31bfad10b6f9fe6decb9798b465771",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Presets=Body, Compact=True, Skeleton=False / Cells / Column",
+            "nestedOwnerRelativePath": "Content / Title / container / value",
+            "actualVariantProperties": {
+              "Presets": "Text"
+            },
+            "referenceVariantProperties": {
+              "Skeleton": "False"
+            },
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "8167:278181",
+              "nodeName": "Frame 2147225142",
+              "tokenId": null,
+              "tokenName": null,
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-view.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            },
+            {
+              "ruleId": "component:web-corp.table-view.manual-visual-overrides-forbidden",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "design-system-author",
+                "revision": 3
+              },
+              "severityScope": null,
+              "appliesTo": "styles.text|layout.padding|layout.itemSpacing|fill|stroke",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Работай с предусмотренными presets и штатными возможностями TableView. Ручное изменение текстовых стилей, отступов, заливок и обводок запрещено.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": "Стиль текст",
+            "priority": 30,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.table-view.manual-visual-overrides-forbidden",
+            "message": "Работай с предусмотренными presets и штатными возможностями TableView. Ручное изменение текстовых стилей, отступов, заливок и обводок запрещено.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I8167:278206;2799:12337;2799:12430",
+        "name": "IconButton",
+        "type": "INSTANCE",
+        "pageName": "   ·  Оформление страховки",
+        "path": "Оформление страховки · MVP / [D] 1700 / Body / content / Header / Frame 2131330348 / content / Frame 2131330339 / 🔒 [D] Forms :: BasicPlate / Frame 2131327932 / Frame 2131327794 / FileUploadItem / RightAddon / IconButton",
+        "visible": true,
+        "ancestorNodeIds": [
+          "8167:278171",
+          "8167:278173",
+          "8167:278175",
+          "8167:278176",
+          "8167:278177",
+          "8167:278179",
+          "8167:278180",
+          "8167:278198",
+          "8167:278204",
+          "8167:278205",
+          "8167:278206",
+          "I8167:278206;2799:12337"
+        ]
+      },
+      "component": {
+        "name": "[D] IconButton",
+        "key": "a99a5cfd51c0bea4498e5bc38364866b435f310e",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconButton.json"
+      },
+      "variant": {
+        "name": "Size=48, View=Tertiary, TransparentBg=False",
+        "key": "a99a5cfd51c0bea4498e5bc38364866b435f310e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I8167:278206;2799:12337;2799:12430",
+            "name": "IconButton",
+            "type": null,
+            "pageName": "   ·  Оформление страховки",
+            "path": "Size=48, View=Tertiary, TransparentBg=False",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 10 → 8",
+          "referenceValue": "10",
+          "actualValue": "8",
+          "referenceRawValue": "10",
+          "actualRawValue": "8",
+          "referenceDisplayValue": "10",
+          "actualDisplayValue": "8",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "a99a5cfd51c0bea4498e5bc38364866b435f310e",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "48",
+              "View": "Tertiary",
+              "TransparentBg": "False",
+              "Inverted": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "8167:278175",
+              "nodeName": "content",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.icon-button.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "generated-policy",
+                "revision": 1
+              },
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            },
+            {
+              "ruleId": "component:web-core.icon-button.manual-root-layer-property",
+              "severity": "warning",
+              "source": "component-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Ручные изменения root layout, fill, stroke, radius или opacity на IconButton являются layer customizations и должны сравниваться с effective component state baseline.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "component-state"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.icon-button.layer-properties-use-effective-baseline",
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I8167:278206;2799:12337;2799:12430",
+            "name": "IconButton",
+            "type": null,
+            "pageName": "   ·  Оформление страховки",
+            "path": "Size=48, View=Tertiary, TransparentBg=False",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Inverted",
+          "message": "variant.Inverted: Параметр не объявлен в Component API → False",
+          "referenceValue": "Параметр не объявлен в Component API",
+          "actualValue": "False",
+          "referenceRawValue": "Параметр не объявлен в Component API",
+          "actualRawValue": "False",
+          "referenceDisplayValue": "Параметр не объявлен в Component API",
+          "actualDisplayValue": "False",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "a99a5cfd51c0bea4498e5bc38364866b435f310e",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "48",
+              "View": "Tertiary",
+              "TransparentBg": "False",
+              "Inverted": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "8167:278175",
+              "nodeName": "content",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.icon-button.component-properties-are-first-class",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения variant/property в этом семействе компонентов являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "part-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-api-unknown-variant-property",
+            "ruleId": "component-api:icon-button.desktop",
+            "contractId": "icon-button.desktop",
+            "constraintId": "component-api-unknown-variant-property",
+            "evidence": {
+              "property": "Inverted",
+              "allowedProperties": [
+                "Size",
+                "TransparentBg",
+                "View"
+              ]
+            },
+            "message": "Параметр Inverted отсутствует в Component API [D] IconButton",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I8167:278213;2799:12337;2799:12430",
+        "name": "IconButton",
+        "type": "INSTANCE",
+        "pageName": "   ·  Оформление страховки",
+        "path": "Оформление страховки · MVP / [D] 1700 / Body / content / Header / Frame 2131330348 / content / Frame 2131330339 / 🔒 [D] Forms :: BasicPlate / Frame 2131327932 / Frame 2131327794 / FileUploadItem / RightAddon / IconButton",
+        "visible": true,
+        "ancestorNodeIds": [
+          "8167:278171",
+          "8167:278173",
+          "8167:278175",
+          "8167:278176",
+          "8167:278177",
+          "8167:278179",
+          "8167:278180",
+          "8167:278198",
+          "8167:278204",
+          "8167:278205",
+          "8167:278213",
+          "I8167:278213;2799:12337"
+        ]
+      },
+      "component": {
+        "name": "[D] IconButton",
+        "key": "a99a5cfd51c0bea4498e5bc38364866b435f310e",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconButton.json"
+      },
+      "variant": {
+        "name": "Size=48, View=Tertiary, TransparentBg=False",
+        "key": "a99a5cfd51c0bea4498e5bc38364866b435f310e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I8167:278213;2799:12337;2799:12430",
+            "name": "IconButton",
+            "type": null,
+            "pageName": "   ·  Оформление страховки",
+            "path": "Size=48, View=Tertiary, TransparentBg=False",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 10 → 8",
+          "referenceValue": "10",
+          "actualValue": "8",
+          "referenceRawValue": "10",
+          "actualRawValue": "8",
+          "referenceDisplayValue": "10",
+          "actualDisplayValue": "8",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "a99a5cfd51c0bea4498e5bc38364866b435f310e",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "48",
+              "View": "Tertiary",
+              "TransparentBg": "False",
+              "Inverted": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "8167:278175",
+              "nodeName": "content",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.icon-button.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "generated-policy",
+                "revision": 1
+              },
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            },
+            {
+              "ruleId": "component:web-core.icon-button.manual-root-layer-property",
+              "severity": "warning",
+              "source": "component-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Ручные изменения root layout, fill, stroke, radius или opacity на IconButton являются layer customizations и должны сравниваться с effective component state baseline.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "component-state"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.icon-button.layer-properties-use-effective-baseline",
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I8167:278213;2799:12337;2799:12430",
+            "name": "IconButton",
+            "type": null,
+            "pageName": "   ·  Оформление страховки",
+            "path": "Size=48, View=Tertiary, TransparentBg=False",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Inverted",
+          "message": "variant.Inverted: Параметр не объявлен в Component API → False",
+          "referenceValue": "Параметр не объявлен в Component API",
+          "actualValue": "False",
+          "referenceRawValue": "Параметр не объявлен в Component API",
+          "actualRawValue": "False",
+          "referenceDisplayValue": "Параметр не объявлен в Component API",
+          "actualDisplayValue": "False",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "a99a5cfd51c0bea4498e5bc38364866b435f310e",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "48",
+              "View": "Tertiary",
+              "TransparentBg": "False",
+              "Inverted": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "8167:278175",
+              "nodeName": "content",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.icon-button.component-properties-are-first-class",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения variant/property в этом семействе компонентов являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "part-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-api-unknown-variant-property",
+            "ruleId": "component-api:icon-button.desktop",
+            "contractId": "icon-button.desktop",
+            "constraintId": "component-api-unknown-variant-property",
+            "evidence": {
+              "property": "Inverted",
+              "allowedProperties": [
+                "Size",
+                "TransparentBg",
+                "View"
+              ]
+            },
+            "message": "Параметр Inverted отсутствует в Component API [D] IconButton",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I8167:278214;2799:12337;2799:12430",
+        "name": "IconButton",
+        "type": "INSTANCE",
+        "pageName": "   ·  Оформление страховки",
+        "path": "Оформление страховки · MVP / [D] 1700 / Body / content / Header / Frame 2131330348 / content / Frame 2131330339 / 🔒 [D] Forms :: BasicPlate / Frame 2131327932 / Frame 2131327794 / FileUploadItem / RightAddon / IconButton",
+        "visible": true,
+        "ancestorNodeIds": [
+          "8167:278171",
+          "8167:278173",
+          "8167:278175",
+          "8167:278176",
+          "8167:278177",
+          "8167:278179",
+          "8167:278180",
+          "8167:278198",
+          "8167:278204",
+          "8167:278205",
+          "8167:278214",
+          "I8167:278214;2799:12337"
+        ]
+      },
+      "component": {
+        "name": "[D] IconButton",
+        "key": "a99a5cfd51c0bea4498e5bc38364866b435f310e",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconButton.json"
+      },
+      "variant": {
+        "name": "Size=48, View=Tertiary, TransparentBg=False",
+        "key": "a99a5cfd51c0bea4498e5bc38364866b435f310e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I8167:278214;2799:12337;2799:12430",
+            "name": "IconButton",
+            "type": null,
+            "pageName": "   ·  Оформление страховки",
+            "path": "Size=48, View=Tertiary, TransparentBg=False",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 10 → 8",
+          "referenceValue": "10",
+          "actualValue": "8",
+          "referenceRawValue": "10",
+          "actualRawValue": "8",
+          "referenceDisplayValue": "10",
+          "actualDisplayValue": "8",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "a99a5cfd51c0bea4498e5bc38364866b435f310e",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "48",
+              "View": "Tertiary",
+              "TransparentBg": "False",
+              "Inverted": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "8167:278175",
+              "nodeName": "content",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.icon-button.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "generated-policy",
+                "revision": 1
+              },
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            },
+            {
+              "ruleId": "component:web-core.icon-button.manual-root-layer-property",
+              "severity": "warning",
+              "source": "component-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Ручные изменения root layout, fill, stroke, radius или opacity на IconButton являются layer customizations и должны сравниваться с effective component state baseline.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "component-state"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.icon-button.layer-properties-use-effective-baseline",
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I8167:278214;2799:12337;2799:12430",
+            "name": "IconButton",
+            "type": null,
+            "pageName": "   ·  Оформление страховки",
+            "path": "Size=48, View=Tertiary, TransparentBg=False",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Inverted",
+          "message": "variant.Inverted: Параметр не объявлен в Component API → False",
+          "referenceValue": "Параметр не объявлен в Component API",
+          "actualValue": "False",
+          "referenceRawValue": "Параметр не объявлен в Component API",
+          "actualRawValue": "False",
+          "referenceDisplayValue": "Параметр не объявлен в Component API",
+          "actualDisplayValue": "False",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "a99a5cfd51c0bea4498e5bc38364866b435f310e",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "48",
+              "View": "Tertiary",
+              "TransparentBg": "False",
+              "Inverted": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "8167:278175",
+              "nodeName": "content",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.icon-button.component-properties-are-first-class",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения variant/property в этом семействе компонентов являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "part-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-api-unknown-variant-property",
+            "ruleId": "component-api:icon-button.desktop",
+            "contractId": "icon-button.desktop",
+            "constraintId": "component-api-unknown-variant-property",
+            "evidence": {
+              "property": "Inverted",
+              "allowedProperties": [
+                "Size",
+                "TransparentBg",
+                "View"
+              ]
+            },
+            "message": "Параметр Inverted отсутствует в Component API [D] IconButton",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I8167:278215;2799:12337;2799:12430",
+        "name": "IconButton",
+        "type": "INSTANCE",
+        "pageName": "   ·  Оформление страховки",
+        "path": "Оформление страховки · MVP / [D] 1700 / Body / content / Header / Frame 2131330348 / content / Frame 2131330339 / 🔒 [D] Forms :: BasicPlate / Frame 2131327932 / Frame 2131327794 / FileUploadItem / RightAddon / IconButton",
+        "visible": true,
+        "ancestorNodeIds": [
+          "8167:278171",
+          "8167:278173",
+          "8167:278175",
+          "8167:278176",
+          "8167:278177",
+          "8167:278179",
+          "8167:278180",
+          "8167:278198",
+          "8167:278204",
+          "8167:278205",
+          "8167:278215",
+          "I8167:278215;2799:12337"
+        ]
+      },
+      "component": {
+        "name": "[D] IconButton",
+        "key": "a99a5cfd51c0bea4498e5bc38364866b435f310e",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- IconButton.json"
+      },
+      "variant": {
+        "name": "Size=48, View=Tertiary, TransparentBg=False",
+        "key": "a99a5cfd51c0bea4498e5bc38364866b435f310e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I8167:278215;2799:12337;2799:12430",
+            "name": "IconButton",
+            "type": null,
+            "pageName": "   ·  Оформление страховки",
+            "path": "Size=48, View=Tertiary, TransparentBg=False",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 10 → 8",
+          "referenceValue": "10",
+          "actualValue": "8",
+          "referenceRawValue": "10",
+          "actualRawValue": "8",
+          "referenceDisplayValue": "10",
+          "actualDisplayValue": "8",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "a99a5cfd51c0bea4498e5bc38364866b435f310e",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "48",
+              "View": "Tertiary",
+              "TransparentBg": "False",
+              "Inverted": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "8167:278175",
+              "nodeName": "content",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.icon-button.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "generated-policy",
+                "revision": 1
+              },
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            },
+            {
+              "ruleId": "component:web-core.icon-button.manual-root-layer-property",
+              "severity": "warning",
+              "source": "component-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Ручные изменения root layout, fill, stroke, radius или opacity на IconButton являются layer customizations и должны сравниваться с effective component state baseline.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "component-state"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.icon-button.layer-properties-use-effective-baseline",
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I8167:278215;2799:12337;2799:12430",
+            "name": "IconButton",
+            "type": null,
+            "pageName": "   ·  Оформление страховки",
+            "path": "Size=48, View=Tertiary, TransparentBg=False",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Inverted",
+          "message": "variant.Inverted: Параметр не объявлен в Component API → False",
+          "referenceValue": "Параметр не объявлен в Component API",
+          "actualValue": "False",
+          "referenceRawValue": "Параметр не объявлен в Component API",
+          "actualRawValue": "False",
+          "referenceDisplayValue": "Параметр не объявлен в Component API",
+          "actualDisplayValue": "False",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "a99a5cfd51c0bea4498e5bc38364866b435f310e",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "48",
+              "View": "Tertiary",
+              "TransparentBg": "False",
+              "Inverted": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "8167:278175",
+              "nodeName": "content",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.icon-button.component-properties-are-first-class",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения variant/property в этом семействе компонентов являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "part-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-api-unknown-variant-property",
+            "ruleId": "component-api:icon-button.desktop",
+            "contractId": "icon-button.desktop",
+            "constraintId": "component-api-unknown-variant-property",
+            "evidence": {
+              "property": "Inverted",
+              "allowedProperties": [
+                "Size",
+                "TransparentBg",
+                "View"
+              ]
+            },
+            "message": "Параметр Inverted отсутствует в Component API [D] IconButton",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "8167:278226",
+        "name": "🔒 [D] IsleBlock :: 1024+",
+        "type": "INSTANCE",
+        "pageName": "   ·  Оформление страховки",
+        "path": "Оформление страховки · MVP / [D] 1700 / Body / content / Header / Frame 2131330348 / content / 🔒 [D] IsleBlock :: 1024+",
+        "visible": true,
+        "ancestorNodeIds": [
+          "8167:278171",
+          "8167:278173",
+          "8167:278175",
+          "8167:278176",
+          "8167:278177",
+          "8167:278179"
+        ]
+      },
+      "component": {
+        "name": "🔒 [D] IsleBlock :: 1024+",
+        "key": "9dd86bd040376734e605227c0d849d1328e62d76",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- IsleBlock.json"
+      },
+      "variant": {
+        "name": "Type=Static",
+        "key": "9dd86bd040376734e605227c0d849d1328e62d76"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I8167:278226;62722:160365",
+            "name": "IsleContent",
+            "type": null,
+            "pageName": "   ·  Оформление страховки",
+            "path": "Type=Static / body / content / IsleContent",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": "0",
+          "referenceRawValue": 8,
+          "actualRawValue": "0",
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": "0",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "f6a208753e14a9a435dff14c2aea920aeffd4eee",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "9dd86bd040376734e605227c0d849d1328e62d76",
+            "actualNestedOwnerPath": "Type=Static",
+            "actualNestedOwnerRelativePath": "body / content / IsleContent",
+            "nestedOwnerComponentKey": "f6a208753e14a9a435dff14c2aea920aeffd4eee",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "Type=Static / body / content / IsleContent",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "Type": "Stepper"
+            },
+            "referenceVariantProperties": {
+              "Type": "Custom"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "8167:278175",
+              "nodeName": "content",
+              "tokenId": "VariableID:5ffdfac4b248819bc8fc25adf4a5f74b165af190/3541:139",
+              "tokenName": "base-bg-alt/primary",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.isle-block.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "8167:278226",
+        "name": "🔒 [D] IsleBlock :: 1024+",
+        "type": "INSTANCE",
+        "pageName": "   ·  Оформление страховки",
+        "path": "Оформление страховки · MVP / [D] 1700 / Body / content / Header / Frame 2131330348 / content / 🔒 [D] IsleBlock :: 1024+",
+        "visible": true,
+        "ancestorNodeIds": [
+          "8167:278171",
+          "8167:278173",
+          "8167:278175",
+          "8167:278176",
+          "8167:278177",
+          "8167:278179"
+        ]
+      },
+      "component": {
+        "name": "🔒 [D] IsleBlock :: 1024+",
+        "key": "9dd86bd040376734e605227c0d849d1328e62d76",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- IsleBlock.json"
+      },
+      "variant": {
+        "name": "Type=Static",
+        "key": "9dd86bd040376734e605227c0d849d1328e62d76"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "9dd86bd040376734e605227c0d849d1328e62d76",
+        "currentComponentId": "7982:188554",
+        "latestComponentId": "7982:188554"
+      },
+      "localComponentOwner": null
+    }
+  ],
+  "componentContexts": [
+    {
+      "componentKey": "web-core.icon-button",
+      "summary": "IconButton — семейство компонентов для icon-only actions. Apollo должен трактовать Size, View, TransparentBg и nested Icon Type как component/part properties, а ручные root/icon visual changes как layer customizations.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] IconButton",
+        "[D] IconButton_Inverted",
+        "[M] IconButton",
+        "[M] IconButton_Inverted",
+        "🔄 [D][Corporate] IconButton",
+        "🔄 [D][Corporate] IconButton_Inverted",
+        "🔄 [M][Corporate] IconButton",
+        "🔄 [M][Corporate] IconButton_Inverted",
+        "🔩 Icon"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*",
+          "variant.Size",
+          "variant.View",
+          "variant.TransparentBg"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent",
+          "strokeWeight",
+          "layout.padding",
+          "layout.itemSpacing"
+        ],
+        "baselinePolicy": "Если component property изменилась, а затем icon/root layer был вручную кастомизирован, сравнивай layer с текущим IconButton state baseline, а не с исходным reference baseline.",
+        "partProperties": [
+          "Icon.variant.Type"
+        ],
+        "ordering": [
+          "component-property",
+          "part-property",
+          "layer-property"
+        ]
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.Size",
+            "variant.View",
+            "variant.TransparentBg"
+          ],
+          "layerProperties": [
+            "fills",
+            "strokes",
+            "strokeWeight",
+            "cornerRadius",
+            "opacity",
+            "layout.padding",
+            "layout.itemSpacing"
+          ],
+          "dependencyPolicy": "При reset IconButton component property visual differences, вызванные только этой property, могут исчезнуть автоматически. Ручные layer overrides должны оставаться независимо сбрасываемыми, пока reset родительской property не уберёт их target state."
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web-core.icon-view",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Content",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "IconView"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.pure-cell",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔄 [M][Corporate] PureCell",
+        "🔄 [D][Corporate] PureCell",
+        "[M] PureCell",
+        "[D] PureCell",
+        "🔄 🔩 [M][Corporate] RowValue",
+        "🔄 🔩 [D][Corporate] RowValue",
+        "🔄 🔩 [M][Corporate] RowTitle",
+        "🔄 🔩 [D][Corporate] RowTitle",
+        "🔄 🔩 [M][Corporate] Footer",
+        "🔄 🔩 [D][Corporate] Footer",
+        "🔄 🔩 [M][Corporate] Addon",
+        "🔄 🔩 [D][Corporate] Addon",
+        "🔄 🔩 [M][Corporate] Graphics",
+        "🔄 🔩 [D][Corporate] Graphics",
+        "🔩 [M] RowValue",
+        "🔩 [D] RowValue",
+        "🔩 [M] RowTitle",
+        "🔩 [D] RowTitle",
+        "🔩 [M] Footer",
+        "🔩 [D] Footer",
+        "🔩 [M] Addon",
+        "🔩 [D] Addon",
+        "🔩 [M] Graphics",
+        "🔩 [D] Graphics"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "6f52eb09fb75c59e3624216d8f409af586e24d6c",
+          "name": "[D] PureCell",
+          "purpose": "🟠 При создании макетов для мобильной версии замени кнопки и заголовки (если они есть) на мобильные инстансы / стили. Например, если у тебя есть кнопка в футере ячейки, в мобильной версии её нужно свопнуть на кнопку с приставкой [M].",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.steps",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "❌  Indicator",
+        "❌  Line",
+        "❌ Steps_Vertical",
+        "🔩 IndicatorContent",
+        "🔩 Line",
+        "🔩 Line",
+        "🔩 MinSpace",
+        "Steps_Horizontal",
+        "Steps_Vertical",
+        "❌   HorizontalLabel",
+        "❌  Steps_Horizontal",
+        "❌  SwapMe",
+        "🔩 HorizontalLabel",
+        "🔩 SwapMe"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.isle-block",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] IsleContent :: 768",
+        "[D] IsleFooter :: 1024+",
+        "[D] IsleFooter :: 768",
+        "[D] IsleHeader :: 1024+",
+        "[D] IsleHeader :: 768",
+        "[D] Status",
+        "[D] Status :: 1024+",
+        "[D] TopAddon",
+        "[D] TopAddon :: 1024+",
+        "[M] IsleContent",
+        "[M] IsleFooter",
+        "[M] IsleHeader",
+        "[M] TopAddon",
+        "❌ IsleCustomContent",
+        "🔒 [D] IsleBlock :: 1024+",
+        "🔒 [D] IsleBlock :: 768",
+        "🔒 [M] IsleBlock",
+        "🔩 StatusCompact",
+        "IsleContent"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.table-view",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] TableView :: Horizontal",
+        "Caption",
+        "Caption",
+        "Column",
+        "Column",
+        "RightAddon",
+        "Row",
+        "Row",
+        "Row :: SidePanel",
+        "ShowMore",
+        "ShowMore",
+        "Subtitle",
+        "TableView :: Vertical",
+        "Title",
+        "[D] TableView :: Horizontal SidePanel"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "b4ec18377538bff9a815ad1926179469ca3b899b",
+          "name": "[D] TableView :: Horizontal",
+          "purpose": "Desktop-представление параметров и значений в горизонтальной структуре из одной или нескольких колонок.",
+          "useWhen": [
+            "Нужно компактно показать набор характеристик объекта на desktop."
+          ],
+          "doNotUseWhen": [
+            "Нужна таблица со множеством однотипных объектов, сортировкой и постраничной навигацией."
+          ],
+          "relationship": "Публичный горизонтальный корень TableView; использует служебные Caption, Column и Row.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.*"
+          ],
+          "layerProperties": [
+            "styles.text",
+            "layout.padding",
+            "layout.itemSpacing",
+            "fills",
+            "strokes"
+          ],
+          "dependencyPolicy": "Nested diffs TableView должны использовать effective baseline выбранного root variant и значения Compact."
+        },
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.title-view",
+      "summary": "TitleView — составная обёртка заголовка для сценария с основным заголовком, статусом и действиями. Компонент объединяет Title, Status, TitleAddon, RightAddon, выбор компании, Subtitle, TitleStatus и Button group в готовую DS-композицию.",
+      "criticalBaselines": [
+        "Nested [D]/[M] Button instances внутри Button group являются частью TitleView baseline; изменения variant дизайнером нужно показывать относительно TitleView effective baseline.",
+        "StatusPreset и Status внутри MainContent / Status являются ожидаемыми nested structures; само использование preset нормально, если preset не изменён за пределами его variant API.",
+        "View и Skeleton являются public TitleView component properties.",
+        "На странице допускается только один TitleView с View=xLarge.",
+        "Внешние отступы 40 px, 32 px и 12 px, определённые правилами TitleView, обязательны для соответствующих соседних блоков.",
+        "Если одновременно используются Status и TitleStatus, значения Type должны совпадать: Type определяет статусный цвет.",
+        "В View=xLarge primary-действия размещаются в Button group. В View=Large, Medium и Small primary-действия размещаются вне TitleView.",
+        "Запрет primary-действия в RightAddon применяется ко всем значениям View.",
+        "Частичная загрузка отдельных слотов допустима при Skeleton=False у родительского TitleView.",
+        "Для View=Large, Medium и Small доступны только Title, Subtitle, TitleAddon и RightAddon.",
+        "Holding обязателен для одиночного выбора компании, когда пользователь работает от группы компаний, а страница доступна только в моно-режиме.",
+        "Ручные изменения layout, sizing, типографики, цвета, прозрачности и других стилей корня и всего внутреннего дерева TitleView запрещены.",
+        "Для корня TitleView рекомендуется ширина Fill container и высота Hug contents; правило одинаково для desktop и mobile-web.",
+        "Порядок слотов Status -> Heading -> Holding -> Subtitle -> TitleStatus -> Button group обязателен.",
+        "В предусмотренных слотах разрешён instance swap на произвольные компоненты, если сохраняются порядок слотов и структура TitleView.",
+        "Корень TitleView не оформляется вручную и не может быть единой кликабельной поверхностью."
+      ],
+      "agentInstructions": [
+        "Не выводи pattern violations из примеров. Используй только exact rules и exact component contracts.",
+        "Используй component-property facts для variant changes и layer-property facts для styles/layout/paint changes.",
+        "Если nested diff принадлежит host wrapper и actual совпадает с effective baseline, не показывай его как designer customization.",
+        "Если actual отличается от effective baseline, показывай effectiveBaseline -> actual.",
+        "Для сценария заголовка со статусом и действиями рекомендуй настройку встроенных slots TitleView, а не внешнюю ручную композицию из отдельных локальных компонентов.",
+        "Не считай отсутствие опциональных Status, TitleStatus, TitleAddon, RightAddon, Subtitle или Button group нарушением без отдельного правила.",
+        "Если загружается только отдельный вложенный элемент, не требуй переключать весь TitleView в Skeleton=True.",
+        "Для View=Large, Medium и Small рекомендуй primary-действие вне TitleView, а не в RightAddon.",
+        "Не считай изменение label у Status нарушением, если Type корректен и нет отдельного текстового правила.",
+        "Не придумывай ограничения параметров FilterCompanySelect_Single: используй его собственный компонентный контракт, когда он будет доступен.",
+        "Для настроек View, addons, hint и singleIcon вложенных Button используй паттерн «Кнопки и группы кнопок»; не создавай отдельные ограничения TitleView.",
+        "Применяй правила p_title-view-editable.md как часть правил TitleView, когда обнаружен editable-сценарий.",
+        "Не требуй Enter, Escape или отдельные кнопки подтверждения и отмены без точного правила для конкретной платформы и сценария.",
+        "Не считай сам факт instance swap внутри предусмотренного слота нарушением; оценивай выбранный компонент по его собственному контракту.",
+        "Проверяй обязательный порядок слотов отдельно от содержимого каждого слота.",
+        "Не разрешай ручное оформление корня или внутренних слоёв TitleView и не предлагай делать весь TitleView кликабельным."
+      ],
+      "includedComponents": [
+        "[D] RightAddon",
+        "[D] RightAddonXL",
+        "[D] TitleAddon",
+        "[D] TitleAddonXL",
+        "[D] TitleStatus",
+        "[D] TitleView",
+        "[M] RightAddon",
+        "[M] RightAddonXL",
+        "[M] TitleAddon",
+        "[M] TitleAddonXL",
+        "[M] TitleStatus",
+        "[M] TitleView"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "fbc4ff889c9fe2db128bc76471f512271d4cc229",
+          "name": "[D] TitleView",
+          "purpose": "Готовая desktop-композиция заголовка страницы или секции с обязательным Title, статусами, дополнениями и контекстными действиями.",
+          "useWhen": [
+            "Нужно собрать заголовочную область продукта из системных слотов TitleView вместо ручной композиции."
+          ],
+          "doNotUseWhen": [
+            "Нужен простой текстовый заголовок без структуры, статусов и действий TitleView."
+          ],
+          "relationship": "Публичный desktop-корень семейства TitleView; вложенные TitleAddon, RightAddon, TitleStatus и Button group настраиваются через его slots.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.*"
+          ],
+          "layerProperties": [
+            "layout.*",
+            "styles.*",
+            "fill",
+            "stroke",
+            "radius",
+            "opacity",
+            "text.*"
+          ],
+          "dependencyPolicy": "Component-property reset и layer-property reset разделены. Layer reset должен использовать effective baseline после nested variant/materialization resolution."
+        },
+        "publicApi": {
+          "components": [
+            {
+              "name": "[D] RightAddon",
+              "key": "edd174301746415867bc998cd0c0322b68c6269c",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] RightAddonXL",
+              "key": "8edd3829b4b7091209299a5b5c838f0a159018aa",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleAddon",
+              "key": "f32313498fd345a1a41584c8d9edc61c3e2053bf",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleAddonXL",
+              "key": "b4cd3e21d108962a24b75aec2de71fba0672d63f",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleStatus",
+              "key": "6a8aa56ae7c8b57b9d9dfbbf23af14c348d83763",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleView",
+              "key": "fbc4ff889c9fe2db128bc76471f512271d4cc229",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] RightAddon",
+              "key": "b762143a2872257a497f9c3e0a012a9bed92f9ca",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] RightAddonXL",
+              "key": "c1092f678271e7de3291bb5699eeab4ad43c7710",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleAddon",
+              "key": "50d8b48cc1dcd4052efc7a151219578d1d993e2f",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleAddonXL",
+              "key": "a40e2549a5a23e645fb38c2af4c15df0f6813153",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleStatus",
+              "key": "e64c6d19cadc818b180b9176a51e3f65714b84b0",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleView",
+              "key": "227149bd55130d69d63e33cd3c8c52ae3f4e7e19",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            }
+          ],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web.spacing-component",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "↔ SpacingHorizontal",
+        "↕ SpacingVertical",
+        ".SpacerСell"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "2038eba49b808faf3f35b4c9e57166f366e2660b",
+          "name": "↕ SpacingVertical",
+          "purpose": "Shift+ctrl+4 чтобы увидеть заливку. Можно тянуть влево и вправо.",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    }
+  ]
+}
