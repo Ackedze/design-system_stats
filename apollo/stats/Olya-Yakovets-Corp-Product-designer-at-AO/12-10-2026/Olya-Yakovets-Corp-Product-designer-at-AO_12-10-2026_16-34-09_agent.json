@@ -1,0 +1,3841 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1483372718148105801-1791812049803-2k5rst6l:agent",
+  "sourceReportId": "apollo-1483372718148105801-1791812049803-2k5rst6l",
+  "generatedAt": "2026-10-12T13:34:09.803Z",
+  "suggestedFileName": "Olya-Yakovets-Corp-Product-designer-at-AO_12-10-2026_16-34-09_agent.json",
+  "user": {
+    "id": "1483372718148105801",
+    "name": "Olya Yakovets / Corp / Product designer at AO",
+    "slug": "Olya-Yakovets-Corp-Product-designer-at-AO"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.1.63"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "[W] Редизайн РегБиз 2026",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "startedAt": "2026-10-12T13:33:41.382Z",
+    "finishedAt": "2026-10-12T13:34:09.803Z",
+    "durationMs": 28421,
+    "selection": [
+      {
+        "nodeId": "3175:106157",
+        "name": "[D] CorporatePage",
+        "nodeType": "FRAME",
+        "path": "Шаг 3 - Налоговые режимы / [D] CorporatePage",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 113,
+    "problemOccurrenceCount": 36,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 19,
+      "updates": 7,
+      "customizations": 1,
+      "localComponents": 6,
+      "detachedComponents": 0,
+      "presets": 3,
+      "technicalComponents": 0,
+      "currentComponents": 91,
+      "wrongChannel": 0,
+      "themization": 0
+    },
+    "includedFindingCount": 36,
+    "omittedCurrentComponentCount": 91
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with severity=error and matchKind=exact_component_rule for the same property/change.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 19,
+      "includedCount": 19,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 7,
+      "includedCount": 7,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 1,
+      "includedCount": 1,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 6,
+      "includedCount": 6,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 3,
+      "includedCount": 3,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I3175:106161;135096:147276;3181:231495;3181:231537;3181:231474",
+        "name": "Rectangle 240662357",
+        "type": "RECTANGLE",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Шаг 3 - Налоговые режимы / [D] CorporatePage / Body / [D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / Content / Frame 2136140590 / Карточка РНО / 1 / Mask group / Rectangle 240662357",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I3175:106161;135096:147276;3181:231495;3181:231537;3181:231474",
+        "name": "Rectangle 240662357",
+        "type": "RECTANGLE",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Шаг 3 - Налоговые режимы / [D] CorporatePage / Body / [D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / Content / Frame 2136140590 / Карточка РНО / 1 / Mask group / Rectangle 240662357",
+        "visible": true
+      },
+      "style": {
+        "name": "Слой (Layer blur)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Слой (Layer blur)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I3175:106161;135096:147276;3181:231495;3175:106032",
+        "name": "Frame 2147238287",
+        "type": "FRAME",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Шаг 3 - Налоговые режимы / [D] CorporatePage / Body / [D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / Content / Frame 2136140590 / Карточка РНО / Frame 2147238287",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I3175:106161;135096:147276;3181:231495;3175:106032",
+        "name": "Frame 2147238287",
+        "type": "FRAME",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Шаг 3 - Налоговые режимы / [D] CorporatePage / Body / [D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / Content / Frame 2136140590 / Карточка РНО / Frame 2147238287",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I3175:106161;135096:147276;3181:231495;3175:106032",
+        "name": "Frame 2147238287",
+        "type": "FRAME",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Шаг 3 - Налоговые режимы / [D] CorporatePage / Body / [D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / Content / Frame 2136140590 / Карточка РНО / Frame 2147238287",
+        "visible": true
+      },
+      "style": {
+        "name": "GLASS",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:GLASS"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I3175:106161;135096:147276;3181:231632;3181:231537;3181:231443",
+        "name": "Rectangle 240662309",
+        "type": "RECTANGLE",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Шаг 3 - Налоговые режимы / [D] CorporatePage / Body / [D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / Content / Frame 2136140590 / Карточка РНО / 2 / Mask group / Rectangle 240662309",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I3175:106161;135096:147276;3181:231632;3181:231537;3181:231443",
+        "name": "Rectangle 240662309",
+        "type": "RECTANGLE",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Шаг 3 - Налоговые режимы / [D] CorporatePage / Body / [D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / Content / Frame 2136140590 / Карточка РНО / 2 / Mask group / Rectangle 240662309",
+        "visible": true
+      },
+      "style": {
+        "name": "Слой (Layer blur)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Слой (Layer blur)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I3175:106161;135096:147276;3181:231632;3181:231537;3181:231446",
+        "name": "Rectangle 240662308",
+        "type": "RECTANGLE",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Шаг 3 - Налоговые режимы / [D] CorporatePage / Body / [D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / Content / Frame 2136140590 / Карточка РНО / 2 / Rectangle 240662308",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I3175:106161;135096:147276;3181:231632;3181:231537;3181:231446",
+        "name": "Rectangle 240662308",
+        "type": "RECTANGLE",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Шаг 3 - Налоговые режимы / [D] CorporatePage / Body / [D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / Content / Frame 2136140590 / Карточка РНО / 2 / Rectangle 240662308",
+        "visible": true
+      },
+      "style": {
+        "name": "Слой (Layer blur)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Слой (Layer blur)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I3175:106161;135096:147276;3181:231632;3181:231537;3181:231447",
+        "name": "Rectangle 240662309",
+        "type": "RECTANGLE",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Шаг 3 - Налоговые режимы / [D] CorporatePage / Body / [D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / Content / Frame 2136140590 / Карточка РНО / 2 / Rectangle 240662309",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I3175:106161;135096:147276;3181:231632;3181:231537;3181:231447",
+        "name": "Rectangle 240662309",
+        "type": "RECTANGLE",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Шаг 3 - Налоговые режимы / [D] CorporatePage / Body / [D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / Content / Frame 2136140590 / Карточка РНО / 2 / Rectangle 240662309",
+        "visible": true
+      },
+      "style": {
+        "name": "Слой (Layer blur)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Слой (Layer blur)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I3175:106161;135096:147276;3181:231632;3181:231537;3181:231448",
+        "name": "Ellipse 7570",
+        "type": "ELLIPSE",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Шаг 3 - Налоговые режимы / [D] CorporatePage / Body / [D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / Content / Frame 2136140590 / Карточка РНО / 2 / Ellipse 7570",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I3175:106161;135096:147276;3181:231632;3175:106032",
+        "name": "Frame 2147238287",
+        "type": "FRAME",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Шаг 3 - Налоговые режимы / [D] CorporatePage / Body / [D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / Content / Frame 2136140590 / Карточка РНО / Frame 2147238287",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I3175:106161;135096:147276;3181:231632;3175:106032",
+        "name": "Frame 2147238287",
+        "type": "FRAME",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Шаг 3 - Налоговые режимы / [D] CorporatePage / Body / [D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / Content / Frame 2136140590 / Карточка РНО / Frame 2147238287",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I3175:106161;135096:147276;3181:231632;3175:106032",
+        "name": "Frame 2147238287",
+        "type": "FRAME",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Шаг 3 - Налоговые режимы / [D] CorporatePage / Body / [D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / Content / Frame 2136140590 / Карточка РНО / Frame 2147238287",
+        "visible": true
+      },
+      "style": {
+        "name": "GLASS",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:GLASS"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I3175:106161;135096:147276;3181:231562;3175:106032",
+        "name": "Frame 2147238287",
+        "type": "FRAME",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Шаг 3 - Налоговые режимы / [D] CorporatePage / Body / [D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / Content / Frame 2136140590 / Карточка РНО / Frame 2147238287",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I3175:106161;135096:147276;3181:231562;3175:106032",
+        "name": "Frame 2147238287",
+        "type": "FRAME",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Шаг 3 - Налоговые режимы / [D] CorporatePage / Body / [D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / Content / Frame 2136140590 / Карточка РНО / Frame 2147238287",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw stroke",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "stroke"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I3175:106161;135096:147276;3181:231562;3175:106032",
+        "name": "Frame 2147238287",
+        "type": "FRAME",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Шаг 3 - Налоговые режимы / [D] CorporatePage / Body / [D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / Content / Frame 2136140590 / Карточка РНО / Frame 2147238287",
+        "visible": true
+      },
+      "style": {
+        "name": "GLASS",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:GLASS"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I3175:106161;135096:147276;3175:111949;166:8521;166:8106",
+        "name": "Oval",
+        "type": "VECTOR",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Шаг 3 - Налоговые режимы / [D] CorporatePage / Body / [D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / 👻 Content / SwitchLabel / Switch / Oval",
+        "visible": true
+      },
+      "style": {
+        "name": "3120d28d00861693ccd49006ad3356e5030cad79",
+        "key": "3120d28d00861693ccd49006ad3356e5030cad79",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I3175:106161;135096:147276;3175:111861",
+        "name": "[D] TitleView",
+        "type": "INSTANCE",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Шаг 3 - Налоговые режимы / [D] CorporatePage / Body / [D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / Content / [D] TitleView",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] TitleView",
+        "key": "22c9df3a231be047e827af4f1625eca22ad9c26d",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "View=Medium, Skeleton=False",
+        "key": "22c9df3a231be047e827af4f1625eca22ad9c26d"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "22c9df3a231be047e827af4f1625eca22ad9c26d",
+        "currentComponentId": "2:28595",
+        "latestComponentId": "1665:178878"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I3175:106161;135096:147276;3175:111942",
+        "name": "[D] TitleView",
+        "type": "INSTANCE",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Шаг 3 - Налоговые режимы / [D] CorporatePage / Body / [D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / Content / [D] TitleView",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] TitleView",
+        "key": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "View=Small, Skeleton=False",
+        "key": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+        "currentComponentId": "569:16176",
+        "latestComponentId": "1665:178879"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I3175:106161;135096:147276;3175:111947",
+        "name": "[D] TitleView",
+        "type": "INSTANCE",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Шаг 3 - Налоговые режимы / [D] CorporatePage / Body / [D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / 👻 Content / [D] TitleView",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] TitleView",
+        "key": "22c9df3a231be047e827af4f1625eca22ad9c26d",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "View=Medium, Skeleton=False",
+        "key": "22c9df3a231be047e827af4f1625eca22ad9c26d"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "22c9df3a231be047e827af4f1625eca22ad9c26d",
+        "currentComponentId": "569:16168",
+        "latestComponentId": "1665:178878"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "I3175:106161;135096:147276;3175:111949",
+        "name": "SwitchLabel",
+        "type": "INSTANCE",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Шаг 3 - Налоговые режимы / [D] CorporatePage / Body / [D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / 👻 Content / SwitchLabel",
+        "visible": true
+      },
+      "component": {
+        "name": "SwitchLabel_24",
+        "key": "c95dbb4fd131076336d96a38a49a088e6522e559",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Switch.json"
+      },
+      "variant": {
+        "name": "Hint=False",
+        "key": "c95dbb4fd131076336d96a38a49a088e6522e559"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "c95dbb4fd131076336d96a38a49a088e6522e559",
+        "currentComponentId": "2:53366",
+        "latestComponentId": "681:62680"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "3175:106022",
+        "name": "[D] TitleView",
+        "type": "INSTANCE",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Компоненты / Карточка РНО / Frame 2147238284 / Frame 2147238284 / Frame 2136140587 / [D] TitleView",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] TitleView",
+        "key": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- TitleView.json"
+      },
+      "variant": {
+        "name": "View=Small, Skeleton=False",
+        "key": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+        "currentComponentId": "2:8290",
+        "latestComponentId": "1665:178879"
+      },
+      "localComponentOwner": {
+        "id": "3175:106116",
+        "name": "Карточка РНО",
+        "type": "COMPONENT",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Компоненты / Карточка РНО",
+        "visible": true
+      }
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "3175:106031",
+        "name": "Radio_24",
+        "type": "INSTANCE",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Компоненты / Карточка РНО / Radio_24",
+        "visible": true
+      },
+      "component": {
+        "name": "Radio_24",
+        "key": "05511c529e5f60bd2a16a7847a865ac3138c1feb",
+        "library": "Web _ Core",
+        "sourceFile": "web/components/web-core/core/Web _ Core -- Radio.json"
+      },
+      "variant": {
+        "name": "SelectedState=False, DisabledState=False",
+        "key": "05511c529e5f60bd2a16a7847a865ac3138c1feb"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "05511c529e5f60bd2a16a7847a865ac3138c1feb",
+        "currentComponentId": "2:63545",
+        "latestComponentId": "560:16394"
+      },
+      "localComponentOwner": {
+        "id": "3175:106116",
+        "name": "Карточка РНО",
+        "type": "COMPONENT",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Компоненты / Карточка РНО",
+        "visible": true
+      }
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "3175:106043",
+        "name": "🔒 [D] StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Компоненты / Карточка РНО / Frame 2147238287 / 🔒 [D] StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "e0fc03042272d1a842ac94090148e08003db2766",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Processing, Style=Contrast, Size=20",
+        "key": "e0fc03042272d1a842ac94090148e08003db2766"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "e0fc03042272d1a842ac94090148e08003db2766",
+        "currentComponentId": "1189:59171",
+        "latestComponentId": "569:15366"
+      },
+      "localComponentOwner": {
+        "id": "3175:106116",
+        "name": "Карточка РНО",
+        "type": "COMPONENT",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Компоненты / Карточка РНО",
+        "visible": true
+      }
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "3175:106161",
+        "name": "[D] CorporateContent",
+        "type": "INSTANCE",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Шаг 3 - Налоговые режимы / [D] CorporatePage / Body / [D] CorporateContent",
+        "visible": true
+      },
+      "component": {
+        "name": "[D] CorporateContent",
+        "key": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- CorporateContent.json"
+      },
+      "variant": {
+        "name": "[D] CorporateContent",
+        "key": "a8d13cb6e1ae67a7296709f669238f41971c7197"
+      },
+      "comparisonIssues": [
+        "Нет данных для обводка в снапшоте для «[D] CorporateContent / [D] Body / [D] TitleView / MainContent / Heading / [D] TitleAddonXL / 🔒 [D] Neurohelper :: Addon / IconView / Content / ShapeContent / Border»",
+        "Нет данных для толщины обводки в снапшоте для «[D] CorporateContent / [D] Body / [D] TitleView / MainContent / Heading / [D] TitleAddonXL / 🔒 [D] Neurohelper :: Addon / IconView / Content / ShapeContent / Border»"
+      ],
+      "changes": [
+        {
+          "node": {
+            "id": "I3175:106161;135096:147276;3181:231495;3175:106022;37705:55415",
+            "name": "Title",
+            "type": null,
+            "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+            "path": "[D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / Content / Frame 2136140590 / Карточка РНО / Frame 2147238284 / Frame 2147238284 / Frame 2136140587 / [D] TitleView / MainContent / Heading / Title",
+            "visible": true
+          },
+          "kind": "text-style",
+          "property": "styles.text",
+          "message": "Стиль текст: Headline–System/18–22 xSmall → Action/16–24 Primary Medium",
+          "referenceValue": "Headline–System/18–22 xSmall",
+          "actualValue": "Action/16–24 Primary Medium",
+          "referenceRawValue": "Headline–System/18–22 xSmall",
+          "actualRawValue": "Action/16–24 Primary Medium",
+          "referenceDisplayValue": "Headline–System/18–22 xSmall",
+          "actualDisplayValue": "Action/16–24 Primary Medium",
+          "referenceResource": {
+            "name": "Headline–System/18–22 xSmall",
+            "key": "69723bb178c1d1f9ec90e7b5670389dadb9de724",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "actualResource": {
+            "name": "Action/16–24 Primary Medium",
+            "key": "aae5de06136376c7653394d3648478f48372d63f",
+            "library": "Web :: Typography",
+            "sourceFile": "styles/Web _ Typography.json"
+          },
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / Content / Frame 2136140590 / Карточка РНО / Frame 2147238284 / Frame 2147238284 / Frame 2136140587 / [D] TitleView",
+            "actualNestedOwnerRelativePath": "MainContent / Heading / Title",
+            "nestedOwnerComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / Content / Frame 2136140590 / Карточка РНО / Frame 2147238284 / Frame 2147238284 / Frame 2136140587 / [D] TitleView",
+            "nestedOwnerRelativePath": "MainContent / Heading / Title",
+            "actualVariantProperties": {
+              "View": "Small"
+            },
+            "referenceVariantProperties": {
+              "View": "Small"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "3175:106161",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "styles.text",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Типографика Title и Subtitle фиксируется выбранным View компонента TitleView. Менять текстовый стиль заголовка или подзаголовка вручную запрещено.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": "Стиль текст",
+            "priority": 30,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.title-view.title-and-subtitle-typography-is-fixed",
+            "message": "Типографика Title и Subtitle фиксируется выбранным View компонента TitleView. Менять текстовый стиль заголовка или подзаголовка вручную запрещено.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I3175:106161;135096:147276;3175:111949;166:8521;166:8106",
+            "name": "Oval",
+            "type": null,
+            "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+            "path": "[D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / 👻 Content / SwitchLabel / Switch / Oval",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: static_neutral/0 → VariableID:3120d28d00861693ccd49006ad3356e5030cad79/1629:14",
+          "referenceValue": "static_neutral/0",
+          "actualValue": "VariableID:3120d28d00861693ccd49006ad3356e5030cad79/1629:14",
+          "referenceRawValue": "static_neutral/0",
+          "actualRawValue": "VariableID:3120d28d00861693ccd49006ad3356e5030cad79/1629:14",
+          "referenceDisplayValue": "static_neutral/0",
+          "actualDisplayValue": "VariableID:3120d28d00861693ccd49006ad3356e5030cad79/1629:14",
+          "referenceResource": {
+            "name": "static_neutral/0",
+            "key": "301d7bbf1c36b77ee22fa00b2008e56228859595",
+            "library": "Interface Static",
+            "sourceFile": "002 :: Interface Static Colors"
+          },
+          "actualResource": {
+            "name": "VariableID:3120d28d00861693ccd49006ad3356e5030cad79/1629:14",
+            "key": "3120d28d00861693ccd49006ad3356e5030cad79",
+            "library": null,
+            "sourceFile": null
+          },
+          "referenceBinding": {
+            "id": "VariableID:301d7bbf1c36b77ee22fa00b2008e56228859595/1930:47",
+            "key": "301d7bbf1c36b77ee22fa00b2008e56228859595",
+            "name": "static_neutral/0",
+            "collectionId": null,
+            "collectionName": "Interface Static",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:3120d28d00861693ccd49006ad3356e5030cad79/1629:14",
+            "key": null,
+            "name": null,
+            "collectionId": null,
+            "collectionName": null,
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "unresolved-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "a65f40e3d8b146e4ff5499b25871c37b8760fd2a",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / 👻 Content / SwitchLabel / Switch",
+            "actualNestedOwnerRelativePath": "Oval",
+            "nestedOwnerComponentKey": "a65f40e3d8b146e4ff5499b25871c37b8760fd2a",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / 👻 Content / SwitchLabel / Switch",
+            "nestedOwnerRelativePath": "Oval",
+            "actualVariantProperties": {
+              "SelectedState": "False",
+              "DisabledState": "False"
+            },
+            "referenceVariantProperties": {
+              "SelectedState": "False",
+              "DisabledState": "False"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "3175:106161",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.switch.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 30,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.switch.layer-properties-use-effective-baseline",
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I3175:106161;135096:147276;3175:106200;62722:160365",
+            "name": "IsleContent",
+            "type": null,
+            "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+            "path": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "radius",
+          "message": "Скругления: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": "0",
+          "referenceRawValue": 8,
+          "actualRawValue": "0",
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": "0",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "f6a208753e14a9a435dff14c2aea920aeffd4eee",
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "9dd86bd040376734e605227c0d849d1328e62d76",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+",
+            "actualNestedOwnerRelativePath": "body / content / IsleContent",
+            "nestedOwnerComponentKey": "f6a208753e14a9a435dff14c2aea920aeffd4eee",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent",
+            "nestedOwnerRelativePath": "",
+            "actualVariantProperties": {
+              "Type": "Stepper"
+            },
+            "referenceVariantProperties": {
+              "Type": "Stepper"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "3175:106161",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.isle-block.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 60,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I3175:106161;135096:147276;3175:106200;62722:160365;84613:100551;4530:3853",
+            "name": "Content",
+            "type": null,
+            "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+            "path": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent / First / Content",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.top",
+          "message": "Паддинг top: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": 0,
+          "referenceRawValue": 8,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 0,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "40f736b756c33be093841bcb07bf1cc97650ae9d",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent / First",
+            "actualNestedOwnerRelativePath": "Content",
+            "nestedOwnerComponentKey": "f6a208753e14a9a435dff14c2aea920aeffd4eee",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent",
+            "nestedOwnerRelativePath": "First / Content",
+            "actualVariantProperties": {
+              "LastStep": "False"
+            },
+            "referenceVariantProperties": {
+              "Type": "Stepper"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "3175:106161",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.isle-block.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I3175:106161;135096:147276;3175:106200;62722:160365;84613:100551;4530:3853",
+            "name": "Content",
+            "type": null,
+            "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+            "path": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent / First / Content",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.right",
+          "message": "Паддинг right: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": 0,
+          "referenceRawValue": 8,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 0,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "40f736b756c33be093841bcb07bf1cc97650ae9d",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent / First",
+            "actualNestedOwnerRelativePath": "Content",
+            "nestedOwnerComponentKey": "f6a208753e14a9a435dff14c2aea920aeffd4eee",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent",
+            "nestedOwnerRelativePath": "First / Content",
+            "actualVariantProperties": {
+              "LastStep": "False"
+            },
+            "referenceVariantProperties": {
+              "Type": "Stepper"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "3175:106161",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.isle-block.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I3175:106161;135096:147276;3175:106200;62722:160365;84613:100551;4530:3853",
+            "name": "Content",
+            "type": null,
+            "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+            "path": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent / First / Content",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.bottom",
+          "message": "Паддинг bottom: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": 0,
+          "referenceRawValue": 8,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 0,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "40f736b756c33be093841bcb07bf1cc97650ae9d",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent / First",
+            "actualNestedOwnerRelativePath": "Content",
+            "nestedOwnerComponentKey": "f6a208753e14a9a435dff14c2aea920aeffd4eee",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent",
+            "nestedOwnerRelativePath": "First / Content",
+            "actualVariantProperties": {
+              "LastStep": "False"
+            },
+            "referenceVariantProperties": {
+              "Type": "Stepper"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "3175:106161",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.isle-block.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I3175:106161;135096:147276;3175:106200;62722:160365;84613:100551;4530:3853",
+            "name": "Content",
+            "type": null,
+            "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+            "path": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent / First / Content",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.left",
+          "message": "Паддинг left: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": 0,
+          "referenceRawValue": 8,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 0,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "40f736b756c33be093841bcb07bf1cc97650ae9d",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent / First",
+            "actualNestedOwnerRelativePath": "Content",
+            "nestedOwnerComponentKey": "f6a208753e14a9a435dff14c2aea920aeffd4eee",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent",
+            "nestedOwnerRelativePath": "First / Content",
+            "actualVariantProperties": {
+              "LastStep": "False"
+            },
+            "referenceVariantProperties": {
+              "Type": "Stepper"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "3175:106161",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.isle-block.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I3175:106161;135096:147276;3175:106200;62722:160365;84613:100552;4530:3853",
+            "name": "Content",
+            "type": null,
+            "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+            "path": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent / Steps_Vertical / Content",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.top",
+          "message": "Паддинг top: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": 0,
+          "referenceRawValue": 8,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 0,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "40f736b756c33be093841bcb07bf1cc97650ae9d",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent / Steps_Vertical",
+            "actualNestedOwnerRelativePath": "Content",
+            "nestedOwnerComponentKey": "f6a208753e14a9a435dff14c2aea920aeffd4eee",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent",
+            "nestedOwnerRelativePath": "Steps_Vertical / Content",
+            "actualVariantProperties": {
+              "LastStep": "False"
+            },
+            "referenceVariantProperties": {
+              "Type": "Stepper"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "3175:106161",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.isle-block.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I3175:106161;135096:147276;3175:106200;62722:160365;84613:100552;4530:3853",
+            "name": "Content",
+            "type": null,
+            "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+            "path": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent / Steps_Vertical / Content",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.right",
+          "message": "Паддинг right: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": 0,
+          "referenceRawValue": 8,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 0,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "40f736b756c33be093841bcb07bf1cc97650ae9d",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent / Steps_Vertical",
+            "actualNestedOwnerRelativePath": "Content",
+            "nestedOwnerComponentKey": "f6a208753e14a9a435dff14c2aea920aeffd4eee",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent",
+            "nestedOwnerRelativePath": "Steps_Vertical / Content",
+            "actualVariantProperties": {
+              "LastStep": "False"
+            },
+            "referenceVariantProperties": {
+              "Type": "Stepper"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "3175:106161",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.isle-block.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I3175:106161;135096:147276;3175:106200;62722:160365;84613:100552;4530:3853",
+            "name": "Content",
+            "type": null,
+            "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+            "path": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent / Steps_Vertical / Content",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.bottom",
+          "message": "Паддинг bottom: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": 0,
+          "referenceRawValue": 8,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 0,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "40f736b756c33be093841bcb07bf1cc97650ae9d",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent / Steps_Vertical",
+            "actualNestedOwnerRelativePath": "Content",
+            "nestedOwnerComponentKey": "f6a208753e14a9a435dff14c2aea920aeffd4eee",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent",
+            "nestedOwnerRelativePath": "Steps_Vertical / Content",
+            "actualVariantProperties": {
+              "LastStep": "False"
+            },
+            "referenceVariantProperties": {
+              "Type": "Stepper"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "3175:106161",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.isle-block.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I3175:106161;135096:147276;3175:106200;62722:160365;84613:100552;4530:3853",
+            "name": "Content",
+            "type": null,
+            "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+            "path": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent / Steps_Vertical / Content",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.left",
+          "message": "Паддинг left: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": 0,
+          "referenceRawValue": 8,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 0,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "40f736b756c33be093841bcb07bf1cc97650ae9d",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent / Steps_Vertical",
+            "actualNestedOwnerRelativePath": "Content",
+            "nestedOwnerComponentKey": "f6a208753e14a9a435dff14c2aea920aeffd4eee",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent",
+            "nestedOwnerRelativePath": "Steps_Vertical / Content",
+            "actualVariantProperties": {
+              "LastStep": "False"
+            },
+            "referenceVariantProperties": {
+              "Type": "Stepper"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "3175:106161",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.isle-block.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I3175:106161;135096:147276;3175:106200;62722:160365;84613:100555;4530:5321",
+            "name": "Content",
+            "type": null,
+            "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+            "path": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent / Last / Content",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.top",
+          "message": "Паддинг top: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": 0,
+          "referenceRawValue": 8,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 0,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "39f8620fc762b4625dfdffeec51abe7f3f7fb12f",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent / Last",
+            "actualNestedOwnerRelativePath": "Content",
+            "nestedOwnerComponentKey": "f6a208753e14a9a435dff14c2aea920aeffd4eee",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent",
+            "nestedOwnerRelativePath": "Last / Content",
+            "actualVariantProperties": {
+              "LastStep": "True"
+            },
+            "referenceVariantProperties": {
+              "Type": "Stepper"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "3175:106161",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.isle-block.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I3175:106161;135096:147276;3175:106200;62722:160365;84613:100555;4530:5321",
+            "name": "Content",
+            "type": null,
+            "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+            "path": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent / Last / Content",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.right",
+          "message": "Паддинг right: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": 0,
+          "referenceRawValue": 8,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 0,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "39f8620fc762b4625dfdffeec51abe7f3f7fb12f",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent / Last",
+            "actualNestedOwnerRelativePath": "Content",
+            "nestedOwnerComponentKey": "f6a208753e14a9a435dff14c2aea920aeffd4eee",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent",
+            "nestedOwnerRelativePath": "Last / Content",
+            "actualVariantProperties": {
+              "LastStep": "True"
+            },
+            "referenceVariantProperties": {
+              "Type": "Stepper"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "3175:106161",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.isle-block.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I3175:106161;135096:147276;3175:106200;62722:160365;84613:100555;4530:5321",
+            "name": "Content",
+            "type": null,
+            "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+            "path": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent / Last / Content",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.bottom",
+          "message": "Паддинг bottom: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": 0,
+          "referenceRawValue": 8,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 0,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "39f8620fc762b4625dfdffeec51abe7f3f7fb12f",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent / Last",
+            "actualNestedOwnerRelativePath": "Content",
+            "nestedOwnerComponentKey": "f6a208753e14a9a435dff14c2aea920aeffd4eee",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent",
+            "nestedOwnerRelativePath": "Last / Content",
+            "actualVariantProperties": {
+              "LastStep": "True"
+            },
+            "referenceVariantProperties": {
+              "Type": "Stepper"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "3175:106161",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.isle-block.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I3175:106161;135096:147276;3175:106200;62722:160365;84613:100555;4530:5321",
+            "name": "Content",
+            "type": null,
+            "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+            "path": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent / Last / Content",
+            "visible": true
+          },
+          "kind": "layout",
+          "property": "layout.padding.left",
+          "message": "Паддинг left: 8 → 0",
+          "referenceValue": 8,
+          "actualValue": 0,
+          "referenceRawValue": 8,
+          "actualRawValue": 0,
+          "referenceDisplayValue": 8,
+          "actualDisplayValue": 0,
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "nested-component",
+            "actualNestedOwnerComponentKey": "39f8620fc762b4625dfdffeec51abe7f3f7fb12f",
+            "actualNestedOwnerPath": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent / Last",
+            "actualNestedOwnerRelativePath": "Content",
+            "nestedOwnerComponentKey": "f6a208753e14a9a435dff14c2aea920aeffd4eee",
+            "nestedOwnerComponentRole": "Main",
+            "nestedOwnerPath": "[D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+ / body / content / IsleContent",
+            "nestedOwnerRelativePath": "Last / Content",
+            "actualVariantProperties": {
+              "LastStep": "True"
+            },
+            "referenceVariantProperties": {
+              "Type": "Stepper"
+            },
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "3175:106161",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+              "severity": "error",
+              "source": "composition-contract",
+              "ruleKind": "design-rule",
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-corp.isle-block.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 20,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-core.steps.layer-properties-use-effective-baseline",
+            "message": "Layer/style свойства Core-компонента должны совпадать с effective baseline текущего component variant и nested owner context. Любое фактическое отклонение является нарушением, если отдельное approved правило явно не разрешает эту кастомизацию.",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I3175:106161;135096:147276;3175:111861",
+            "name": "[D] TitleView",
+            "type": null,
+            "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+            "path": "[D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / Content / [D] TitleView",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.combination",
+          "message": "variant.combination: 8 допустимых комбинаций → View=Medium",
+          "referenceValue": "8 допустимых комбинаций",
+          "actualValue": "View=Medium",
+          "referenceRawValue": "8 допустимых комбинаций",
+          "actualRawValue": "View=Medium",
+          "referenceDisplayValue": "8 допустимых комбинаций",
+          "actualDisplayValue": "View=Medium",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "22c9df3a231be047e827af4f1625eca22ad9c26d",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Medium"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "3175:106161",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.component-properties-are-first-class",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения variant/property в компонентах семейства TitleView являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-api-invalid-variant-combination",
+            "ruleId": "component-api:title-view.desktop",
+            "contractId": "title-view.desktop",
+            "constraintId": "component-api-invalid-variant-combination",
+            "evidence": {
+              "actualProperties": {
+                "View": "Medium"
+              },
+              "allowedCombinations": [
+                {
+                  "View": "xLarge",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "Large",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "Medium",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "Small",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "xLarge",
+                  "Skeleton": "True"
+                },
+                {
+                  "View": "Large",
+                  "Skeleton": "True"
+                },
+                {
+                  "View": "Medium",
+                  "Skeleton": "True"
+                },
+                {
+                  "View": "Small",
+                  "Skeleton": "True"
+                }
+              ]
+            },
+            "message": "Комбинация параметров отсутствует в Component API [D] TitleView",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I3175:106161;135096:147276;3181:231495;3175:106022",
+            "name": "[D] TitleView",
+            "type": null,
+            "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+            "path": "[D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / Content / Frame 2136140590 / Карточка РНО / Frame 2147238284 / Frame 2147238284 / Frame 2136140587 / [D] TitleView",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.combination",
+          "message": "variant.combination: 8 допустимых комбинаций → View=Small",
+          "referenceValue": "8 допустимых комбинаций",
+          "actualValue": "View=Small",
+          "referenceRawValue": "8 допустимых комбинаций",
+          "actualRawValue": "View=Small",
+          "referenceDisplayValue": "8 допустимых комбинаций",
+          "actualDisplayValue": "View=Small",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Small"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "3175:106161",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.component-properties-are-first-class",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения variant/property в компонентах семейства TitleView являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-api-invalid-variant-combination",
+            "ruleId": "component-api:title-view.desktop",
+            "contractId": "title-view.desktop",
+            "constraintId": "component-api-invalid-variant-combination",
+            "evidence": {
+              "actualProperties": {
+                "View": "Small"
+              },
+              "allowedCombinations": [
+                {
+                  "View": "xLarge",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "Large",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "Medium",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "Small",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "xLarge",
+                  "Skeleton": "True"
+                },
+                {
+                  "View": "Large",
+                  "Skeleton": "True"
+                },
+                {
+                  "View": "Medium",
+                  "Skeleton": "True"
+                },
+                {
+                  "View": "Small",
+                  "Skeleton": "True"
+                }
+              ]
+            },
+            "message": "Комбинация параметров отсутствует в Component API [D] TitleView",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I3175:106161;135096:147276;3181:231632;3175:106022",
+            "name": "[D] TitleView",
+            "type": null,
+            "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+            "path": "[D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / Content / Frame 2136140590 / Карточка РНО / Frame 2147238284 / Frame 2147238284 / Frame 2136140587 / [D] TitleView",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.combination",
+          "message": "variant.combination: 8 допустимых комбинаций → View=Small",
+          "referenceValue": "8 допустимых комбинаций",
+          "actualValue": "View=Small",
+          "referenceRawValue": "8 допустимых комбинаций",
+          "actualRawValue": "View=Small",
+          "referenceDisplayValue": "8 допустимых комбинаций",
+          "actualDisplayValue": "View=Small",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Small"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "3175:106161",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.component-properties-are-first-class",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения variant/property в компонентах семейства TitleView являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-api-invalid-variant-combination",
+            "ruleId": "component-api:title-view.desktop",
+            "contractId": "title-view.desktop",
+            "constraintId": "component-api-invalid-variant-combination",
+            "evidence": {
+              "actualProperties": {
+                "View": "Small"
+              },
+              "allowedCombinations": [
+                {
+                  "View": "xLarge",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "Large",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "Medium",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "Small",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "xLarge",
+                  "Skeleton": "True"
+                },
+                {
+                  "View": "Large",
+                  "Skeleton": "True"
+                },
+                {
+                  "View": "Medium",
+                  "Skeleton": "True"
+                },
+                {
+                  "View": "Small",
+                  "Skeleton": "True"
+                }
+              ]
+            },
+            "message": "Комбинация параметров отсутствует в Component API [D] TitleView",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I3175:106161;135096:147276;3181:231562;3175:106022",
+            "name": "[D] TitleView",
+            "type": null,
+            "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+            "path": "[D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / Content / Frame 2136140590 / Карточка РНО / Frame 2147238284 / Frame 2147238284 / Frame 2136140587 / [D] TitleView",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.combination",
+          "message": "variant.combination: 8 допустимых комбинаций → View=Small",
+          "referenceValue": "8 допустимых комбинаций",
+          "actualValue": "View=Small",
+          "referenceRawValue": "8 допустимых комбинаций",
+          "actualRawValue": "View=Small",
+          "referenceDisplayValue": "8 допустимых комбинаций",
+          "actualDisplayValue": "View=Small",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "fe1e4ac3b634cad80e22e4368a979d09c32e9c8e",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "View": "Small"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "3175:106161",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.title-view.component-properties-are-first-class",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения variant/property в компонентах семейства TitleView являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-api-invalid-variant-combination",
+            "ruleId": "component-api:title-view.desktop",
+            "contractId": "title-view.desktop",
+            "constraintId": "component-api-invalid-variant-combination",
+            "evidence": {
+              "actualProperties": {
+                "View": "Small"
+              },
+              "allowedCombinations": [
+                {
+                  "View": "xLarge",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "Large",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "Medium",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "Small",
+                  "Skeleton": "False"
+                },
+                {
+                  "View": "xLarge",
+                  "Skeleton": "True"
+                },
+                {
+                  "View": "Large",
+                  "Skeleton": "True"
+                },
+                {
+                  "View": "Medium",
+                  "Skeleton": "True"
+                },
+                {
+                  "View": "Small",
+                  "Skeleton": "True"
+                }
+              ]
+            },
+            "message": "Комбинация параметров отсутствует в Component API [D] TitleView",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I3175:106161;135096:147276;3175:111949",
+            "name": "SwitchLabel",
+            "type": null,
+            "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+            "path": "[D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / 👻 Content / SwitchLabel",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Reverse",
+          "message": "variant.Reverse: Параметр не объявлен в Component API → False",
+          "referenceValue": "Параметр не объявлен в Component API",
+          "actualValue": "False",
+          "referenceRawValue": "Параметр не объявлен в Component API",
+          "actualRawValue": "False",
+          "referenceDisplayValue": "Параметр не объявлен в Component API",
+          "actualDisplayValue": "False",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "c95dbb4fd131076336d96a38a49a088e6522e559",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Reverse": "False",
+              "Hint": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-color",
+              "nodeId": "3175:106161",
+              "nodeName": "[D] CorporateContent",
+              "tokenId": "VariableID:db84ea8cdc3ae910e107478f4b4b3fad114302a0/136950:27",
+              "tokenName": "BackgroundColor",
+              "color": "#F2F3F5"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-core.switch.component-properties-are-first-class",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения variant/property в этом семействе компонентов являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+              "remediation": null,
+              "numericConstraint": null
+            },
+            {
+              "ruleId": "component:web-core.switch.variant-state-is-component-property",
+              "severity": "info",
+              "source": "component-contract",
+              "ruleKind": null,
+              "severityScope": null,
+              "appliesTo": "variant.*",
+              "checkType": "deterministic",
+              "matchKind": null,
+              "changeScope": null,
+              "ruleText": "Изменения SelectedState, DisabledState, Reverse и Hint являются component property changes и должны показываться как самостоятельные customizations.",
+              "remediation": null,
+              "numericConstraint": null
+            }
+          ],
+          "presentation": {
+            "scope": "component-property",
+            "groupTitle": "Параметры компонента",
+            "displayName": null,
+            "priority": 10,
+            "resetAction": "reset-component-properties",
+            "effectiveBaseline": null
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-api-unknown-variant-property",
+            "ruleId": "component-api:switch-label-24.universal",
+            "contractId": "switch-label-24.universal",
+            "constraintId": "component-api-unknown-variant-property",
+            "evidence": {
+              "property": "Reverse",
+              "allowedProperties": [
+                "Hint"
+              ]
+            },
+            "message": "Параметр Reverse отсутствует в Component API SwitchLabel_24",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I3175:106161;135096:147276;3181:231495",
+        "name": "Карточка РНО",
+        "type": "INSTANCE",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Шаг 3 - Налоговые режимы / [D] CorporatePage / Body / [D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / Content / Frame 2136140590 / Карточка РНО",
+        "visible": true
+      },
+      "component": {
+        "name": "Карточка РНО",
+        "key": "8872eeda052c18d763680ec76fdd85e0060435b7",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I3175:106161;135096:147276;3181:231495;3181:231537",
+        "name": "1",
+        "type": "INSTANCE",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Шаг 3 - Налоговые режимы / [D] CorporatePage / Body / [D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / Content / Frame 2136140590 / Карточка РНО / 1",
+        "visible": true
+      },
+      "component": {
+        "name": "1",
+        "key": "07006981f5aa930fd9bc12655c583685e1ecb05f",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I3175:106161;135096:147276;3181:231632",
+        "name": "Карточка РНО",
+        "type": "INSTANCE",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Шаг 3 - Налоговые режимы / [D] CorporatePage / Body / [D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / Content / Frame 2136140590 / Карточка РНО",
+        "visible": true
+      },
+      "component": {
+        "name": "Карточка РНО",
+        "key": "8872eeda052c18d763680ec76fdd85e0060435b7",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I3175:106161;135096:147276;3181:231632;3181:231537",
+        "name": "2",
+        "type": "INSTANCE",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Шаг 3 - Налоговые режимы / [D] CorporatePage / Body / [D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / Content / Frame 2136140590 / Карточка РНО / 2",
+        "visible": true
+      },
+      "component": {
+        "name": "2",
+        "key": "9fea6367501950ab39049e4ee25b0725d842c7ad",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I3175:106161;135096:147276;3181:231562",
+        "name": "Карточка РНО",
+        "type": "INSTANCE",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Шаг 3 - Налоговые режимы / [D] CorporatePage / Body / [D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / Content / Frame 2136140590 / Карточка РНО",
+        "visible": true
+      },
+      "component": {
+        "name": "Карточка РНО",
+        "key": "8872eeda052c18d763680ec76fdd85e0060435b7",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "I3175:106161;135096:147276;3181:231562;3181:231537",
+        "name": "3",
+        "type": "INSTANCE",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Шаг 3 - Налоговые режимы / [D] CorporatePage / Body / [D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / Content / Frame 2136140590 / Карточка РНО / 3",
+        "visible": true
+      },
+      "component": {
+        "name": "3",
+        "key": "9f82c1a963ac61e9c33dcd82d005c7e8169044ae",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I3175:106161;135096:147276;3175:106166;116960:6821;116980:123117",
+        "name": "🔒 [D] Neurohelper :: Addon",
+        "type": "INSTANCE",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Шаг 3 - Налоговые режимы / [D] CorporatePage / Body / [D] CorporateContent / [D] Body / [D] TitleView / MainContent / Heading / [D] TitleAddonXL / 🔒 [D] Neurohelper :: Addon",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] Neurohelper :: Addon",
+        "key": "2ad3305f7675013beda736c6a4b5a92aba280873",
+        "library": "Web :: Corp Presets",
+        "sourceFile": "web/components/web-corp-presets/Web _ Corp Presets -- Neurohelper.json"
+      },
+      "variant": {
+        "name": "State=Default",
+        "key": "2ad3305f7675013beda736c6a4b5a92aba280873"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I3175:106161;135096:147276;3181:231495;3175:106043",
+        "name": "🔒 [D] StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Шаг 3 - Налоговые режимы / [D] CorporatePage / Body / [D] CorporateContent / [D] Body / ContentPage step 1 / LeftSide (8 column) / [D] Form / Content / Frame 2136140590 / Карточка РНО / Frame 2147238287 / 🔒 [D] StatusPreset",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "e0fc03042272d1a842ac94090148e08003db2766",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Processing, Style=Contrast, Size=20",
+        "key": "e0fc03042272d1a842ac94090148e08003db2766"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I3175:106161;135096:147276;3175:106200",
+        "name": "🔒 [D] IsleBlock :: 1024+",
+        "type": "INSTANCE",
+        "pageName": "👉 MVP Q4 2026 (Самое актуальное)",
+        "path": "Шаг 3 - Налоговые режимы / [D] CorporatePage / Body / [D] CorporateContent / [D] Body / ContentPage step 1 / 🔒 [D] IsleBlock :: 1024+",
+        "visible": true
+      },
+      "component": {
+        "name": "🔒 [D] IsleBlock :: 1024+",
+        "key": "9dd86bd040376734e605227c0d849d1328e62d76",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- IsleBlock.json"
+      },
+      "variant": {
+        "name": "Type=Static",
+        "key": "9dd86bd040376734e605227c0d849d1328e62d76"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "current",
+        "reason": "remote-component-current",
+        "componentKey": "9dd86bd040376734e605227c0d849d1328e62d76",
+        "currentComponentId": "699:49273",
+        "latestComponentId": "699:49273"
+      },
+      "localComponentOwner": null
+    }
+  ],
+  "componentContexts": [
+    {
+      "componentKey": "web-core.icon-view",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Border",
+        "🔩 Content",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "🔩 Shape",
+        "IconView"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.radio",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "Radio_20",
+        "Radio_20_Inverted",
+        "Radio_24",
+        "Radio_24_Inverted",
+        "RadioLabel_20",
+        "RadioLabel_20_Inverted",
+        "RadioLabel_20_Reverse",
+        "RadioLabel_20_Reverse_Inverted",
+        "RadioLabel_24",
+        "RadioLabel_24_Inverted",
+        "RadioLabel_24_Reverse",
+        "RadioLabel_24_Reverse_Inverted"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.steps",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "❌  Indicator",
+        "❌  Line",
+        "❌ Steps_Vertical",
+        "🔩 IndicatorContent",
+        "🔩 Line",
+        "🔩 Line",
+        "🔩 MinSpace",
+        "Steps_Horizontal",
+        "Steps_Vertical",
+        "❌   HorizontalLabel",
+        "❌  Steps_Horizontal",
+        "❌  SwapMe",
+        "🔩 HorizontalLabel",
+        "🔩 SwapMe"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-core.switch",
+      "summary": "Switch — семейство бинарных on/off controls. Apollo должен трактовать SelectedState, DisabledState, Reverse и Hint как component property changes, а ручные area/oval/label visual changes как layer customizations.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "Switch_20",
+        "Switch_20_Inverted",
+        "Switch_24",
+        "Switch_24_Inverted",
+        "SwitchLabel_20",
+        "SwitchLabel_20_Inverted",
+        "SwitchLabel_20_Reverse",
+        "SwitchLabel_20_Reverse_Inverted",
+        "SwitchLabel_24",
+        "SwitchLabel_24_Inverted",
+        "SwitchLabel_24_Reverse",
+        "SwitchLabel_24_Reverse_Inverted"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*",
+          "variant.SelectedState",
+          "variant.DisabledState",
+          "variant.Reverse",
+          "variant.Hint"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent",
+          "strokeWeight",
+          "layout.padding",
+          "layout.itemSpacing"
+        ],
+        "baselinePolicy": "Если component property изменилась, сравнивай ручные layer overrides с baseline текущего actual-состояния компонента, а не с исходным reference baseline.",
+        "slotProperties": [
+          "Switch.variant.SelectedState",
+          "Switch.variant.DisabledState"
+        ],
+        "contentProperties": [
+          "Label.characters"
+        ],
+        "ordering": [
+          "component-property",
+          "slot-property",
+          "layer-property",
+          "content-property"
+        ]
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.SelectedState",
+            "variant.DisabledState",
+            "variant.Reverse",
+            "variant.Hint"
+          ],
+          "layerProperties": [
+            "fills",
+            "strokes",
+            "strokeWeight",
+            "cornerRadius",
+            "opacity",
+            "layout.padding",
+            "layout.itemSpacing",
+            "styles.text",
+            "typography"
+          ],
+          "dependencyPolicy": "При reset состояния компонента layer differences, вызванные только этим состоянием, могут исчезнуть автоматически. Ручные layer overrides должны оставаться независимо сбрасываемыми, пока reset родительского состояния не уберёт их target state."
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web-corp.corporate-content",
+      "summary": "CorporateContent — обязательная контентная область продуктовой страницы. Используй [D] CorporateContent для desktop и [M] CorporateContent для mobile-web.",
+      "criticalBaselines": [],
+      "agentInstructions": [
+        "Не считай произвольный контент или несколько дочерних элементов внутри Body нарушением сами по себе.",
+        "Проверяй содержимое Body по собственным компонентным контрактам и паттернам.",
+        "Считай использование переходного [T] CorporateContent явным нарушением.",
+        "Не рекомендуй ручную правку fill, grid style или padding корня CorporateContent; рекомендуй правильный mode переменных.",
+        "Не требуй наличия родительского компонента CorporatePage в Figma: такого компонента нет, самостоятельное использование CorporateContent допустимо.",
+        "Не применяй Gutter как обязательный itemSpacing внутри Body; он допустим в любой горизонтальной композиции без обязательного Section.",
+        "На ширине 768 требуй [D] CorporateContent и mode 768 коллекции [D] Grid & Cols.",
+        "Не придумывай условия выбора между base-bg-alt и base-bg до появления отдельного паттерна; default — base-bg-alt (grey).",
+        "Не разрешай кликабельность корня или detach CorporateContent и Body.",
+        "Не разрешай вкладывать CorporateContent внутрь CorporateContent и не оставляй SwapMe после добавления реального содержимого.",
+        "Требуй Header или HeaderMenu непосредственно над CorporateContent в общем вертикальном контейнере с gap 0.",
+        "Не разрешай менять вертикальное направление, itemSpacing=0 или clipsContent=false корня CorporateContent."
+      ],
+      "includedComponents": [
+        "[D] Section",
+        "[D] CorporateContent",
+        "[M] CorporateContent",
+        "❌ [D] Body",
+        "❌ [M} Body",
+        "❌ [T] Body",
+        "❌ [T] CorporateContent"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "a8d13cb6e1ae67a7296709f669238f41971c7197",
+          "name": "[D] CorporateContent",
+          "purpose": "Основная desktop-контентная область корпоративной продуктовой страницы с системной сеткой, фоном и адаптивными отступами.",
+          "useWhen": [
+            "Собирается содержимое корпоративной страницы на ширине 768 px и выше."
+          ],
+          "doNotUseWhen": [
+            "Нужен вложенный контейнер внутри другого CorporateContent."
+          ],
+          "relationship": "Единственный корневой контентный контейнер CorporatePage на desktop; принимает произвольную композицию в Body.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.isle-block",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] IsleContent :: 768",
+        "[D] IsleFooter :: 1024+",
+        "[D] IsleFooter :: 768",
+        "[D] IsleHeader :: 1024+",
+        "[D] IsleHeader :: 768",
+        "[D] Status",
+        "[D] Status :: 1024+",
+        "[D] TopAddon",
+        "[D] TopAddon :: 1024+",
+        "[M] IsleContent",
+        "[M] IsleFooter",
+        "[M] IsleHeader",
+        "[M] TopAddon",
+        "❌ IsleCustomContent",
+        "🔒 [D] IsleBlock :: 1024+",
+        "🔒 [D] IsleBlock :: 768",
+        "🔒 [M] IsleBlock",
+        "🔩 StatusCompact",
+        "IsleContent"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.status-property",
+      "summary": "StatusPreset показывает состояние объекта или процесса, PropertyPreset — характеристику или свойство объекта. Оба preset-компонента разрешено использовать самостоятельно на desktop и mobile-web.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔒 [D] PropertyPreset",
+        "🔒 [D] StatusPreset",
+        "🔒 [M] PropertyPreset",
+        "🔒 [M] StatusPreset"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "5062ff1e0c435b64f3d1f4a0ae699dcb646b34f4",
+          "name": "🔒 [D] StatusPreset",
+          "purpose": "Вспомогательный компонент Figma, в коде существует только Status в core-components.",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.title-view",
+      "summary": "TitleView — составная обёртка заголовка для сценария с основным заголовком, статусом и действиями. Компонент объединяет Title, Status, TitleAddon, RightAddon, выбор компании, Subtitle, TitleStatus и Button group в готовую DS-композицию.",
+      "criticalBaselines": [
+        "Nested [D]/[M] Button instances внутри Button group являются частью TitleView baseline; изменения variant дизайнером нужно показывать относительно TitleView effective baseline.",
+        "StatusPreset и Status внутри MainContent / Status являются ожидаемыми nested structures; само использование preset нормально, если preset не изменён за пределами его variant API.",
+        "View и Skeleton являются public TitleView component properties.",
+        "На странице допускается только один TitleView с View=xLarge.",
+        "Внешние отступы 40 px, 32 px и 12 px, определённые правилами TitleView, обязательны для соответствующих соседних блоков.",
+        "Если одновременно используются Status и TitleStatus, значения Type должны совпадать: Type определяет статусный цвет.",
+        "В View=xLarge primary-действия размещаются в Button group. В View=Large, Medium и Small primary-действия размещаются вне TitleView.",
+        "Запрет primary-действия в RightAddon применяется ко всем значениям View.",
+        "Частичная загрузка отдельных слотов допустима при Skeleton=False у родительского TitleView.",
+        "Для View=Large, Medium и Small доступны только Title, Subtitle, TitleAddon и RightAddon.",
+        "Holding обязателен для одиночного выбора компании, когда пользователь работает от группы компаний, а страница доступна только в моно-режиме.",
+        "Ручные изменения layout, sizing, типографики, цвета, прозрачности и других стилей корня и всего внутреннего дерева TitleView запрещены.",
+        "Для корня TitleView рекомендуется ширина Fill container и высота Hug contents; правило одинаково для desktop и mobile-web.",
+        "Порядок слотов Status -> Heading -> Holding -> Subtitle -> TitleStatus -> Button group обязателен.",
+        "В предусмотренных слотах разрешён instance swap на произвольные компоненты, если сохраняются порядок слотов и структура TitleView.",
+        "Корень TitleView не оформляется вручную и не может быть единой кликабельной поверхностью."
+      ],
+      "agentInstructions": [
+        "Не выводи pattern violations из примеров. Используй только exact rules и exact component contracts.",
+        "Используй component-property facts для variant changes и layer-property facts для styles/layout/paint changes.",
+        "Если nested diff принадлежит host wrapper и actual совпадает с effective baseline, не показывай его как designer customization.",
+        "Если actual отличается от effective baseline, показывай effectiveBaseline -> actual.",
+        "Для сценария заголовка со статусом и действиями рекомендуй настройку встроенных slots TitleView, а не внешнюю ручную композицию из отдельных локальных компонентов.",
+        "Не считай отсутствие опциональных Status, TitleStatus, TitleAddon, RightAddon, Subtitle или Button group нарушением без отдельного правила.",
+        "Если загружается только отдельный вложенный элемент, не требуй переключать весь TitleView в Skeleton=True.",
+        "Для View=Large, Medium и Small рекомендуй primary-действие вне TitleView, а не в RightAddon.",
+        "Не считай изменение label у Status нарушением, если Type корректен и нет отдельного текстового правила.",
+        "Не придумывай ограничения параметров FilterCompanySelect_Single: используй его собственный компонентный контракт, когда он будет доступен.",
+        "Для настроек View, addons, hint и singleIcon вложенных Button используй паттерн «Кнопки и группы кнопок»; не создавай отдельные ограничения TitleView.",
+        "Применяй правила p_title-view-editable.md как часть правил TitleView, когда обнаружен editable-сценарий.",
+        "Не требуй Enter, Escape или отдельные кнопки подтверждения и отмены без точного правила для конкретной платформы и сценария.",
+        "Не считай сам факт instance swap внутри предусмотренного слота нарушением; оценивай выбранный компонент по его собственному контракту.",
+        "Проверяй обязательный порядок слотов отдельно от содержимого каждого слота.",
+        "Не разрешай ручное оформление корня или внутренних слоёв TitleView и не предлагай делать весь TitleView кликабельным."
+      ],
+      "includedComponents": [
+        "[D] RightAddon",
+        "[D] RightAddonXL",
+        "[D] TitleAddon",
+        "[D] TitleAddonXL",
+        "[D] TitleStatus",
+        "[D] TitleView",
+        "[M] RightAddon",
+        "[M] RightAddonXL",
+        "[M] TitleAddon",
+        "[M] TitleAddonXL",
+        "[M] TitleStatus",
+        "[M] TitleView"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "fbc4ff889c9fe2db128bc76471f512271d4cc229",
+          "name": "[D] TitleView",
+          "purpose": "Готовая desktop-композиция заголовка страницы или секции с обязательным Title, статусами, дополнениями и контекстными действиями.",
+          "useWhen": [
+            "Нужно собрать заголовочную область продукта из системных слотов TitleView вместо ручной композиции."
+          ],
+          "doNotUseWhen": [
+            "Нужен простой текстовый заголовок без структуры, статусов и действий TitleView."
+          ],
+          "relationship": "Публичный desktop-корень семейства TitleView; вложенные TitleAddon, RightAddon, TitleStatus и Button group настраиваются через его slots.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.*"
+          ],
+          "layerProperties": [
+            "layout.*",
+            "styles.*",
+            "fill",
+            "stroke",
+            "radius",
+            "opacity",
+            "text.*"
+          ],
+          "dependencyPolicy": "Component-property reset и layer-property reset разделены. Layer reset должен использовать effective baseline после nested variant/materialization resolution."
+        },
+        "publicApi": {
+          "components": [
+            {
+              "name": "[D] RightAddon",
+              "key": "edd174301746415867bc998cd0c0322b68c6269c",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] RightAddonXL",
+              "key": "8edd3829b4b7091209299a5b5c838f0a159018aa",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleAddon",
+              "key": "f32313498fd345a1a41584c8d9edc61c3e2053bf",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleAddonXL",
+              "key": "b4cd3e21d108962a24b75aec2de71fba0672d63f",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleStatus",
+              "key": "6a8aa56ae7c8b57b9d9dfbbf23af14c348d83763",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[D] TitleView",
+              "key": "fbc4ff889c9fe2db128bc76471f512271d4cc229",
+              "role": "main",
+              "platform": "desktop",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] RightAddon",
+              "key": "b762143a2872257a497f9c3e0a012a9bed92f9ca",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] RightAddonXL",
+              "key": "c1092f678271e7de3291bb5699eeab4ad43c7710",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleAddon",
+              "key": "50d8b48cc1dcd4052efc7a151219578d1d993e2f",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleAddonXL",
+              "key": "a40e2549a5a23e645fb38c2af4c15df0f6813153",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleStatus",
+              "key": "e64c6d19cadc818b180b9176a51e3f65714b84b0",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            },
+            {
+              "name": "[M] TitleView",
+              "key": "227149bd55130d69d63e33cd3c8c52ae3f4e7e19",
+              "role": "main",
+              "platform": "mobile-web",
+              "status": "active",
+              "generationStatus": null,
+              "allowForNewLayouts": null
+            }
+          ],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    },
+    {
+      "componentKey": "web.neurohelper",
+      "summary": "Сгенерированный контекст компонента. Для рекомендаций используй exact component rules и pattern rules; не выводи дизайн-запреты только из этого сгенерированного контекста.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔒 [M] Neurohelper :: Addon",
+        "🔒 [D] Neurohelper :: Addon",
+        "🔒 [M] Neurohelper :: Chat",
+        "🔒 [T] Neurohelper :: Chat",
+        "🔒 [D] Neurohelper :: Chat",
+        "🔒 [M] Neurohelper :: ChatSuggest",
+        "🔒 [T] Neurohelper :: ChatSuggest",
+        "🔒 [D] Neurohelper :: ChatSuggest",
+        "🔒 [M] Neurohelper :: WelcomePage",
+        "🔒 [T] Neurohelper :: WelcomePage",
+        "🔒 [D] Neurohelper :: WelcomePage",
+        "Neurohelper :: Purchase",
+        "Neurohelper :: LocalChat",
+        "Neurohelper :: ModalHeaderSubtitle",
+        "[D] Neurohelper :: Markdown",
+        "[D] Neurohelper :: ButtonWithLegal",
+        "[D] Neurohelper :: ModalHeader",
+        "[D] Neurohelper :: Input",
+        "[D] Neurohelper :: MainPageChat",
+        "[M] Neurohelper :: Markdown",
+        "[M] Neurohelper :: ButtonWithLegal",
+        "[M] Neurohelper :: Input",
+        "[M] Neurohelper :: MainPageChat",
+        "[M] Neurohelper :: ModalHeader",
+        "[M] Neurohelper :: Tag"
+      ],
+      "componentSemantics": [],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    }
+  ]
+}
