@@ -1,0 +1,1458 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1476876806177187106-1793101275207-d5lf3xjn:agent",
+  "sourceReportId": "apollo-1476876806177187106-1793101275207-d5lf3xjn",
+  "generatedAt": "2026-10-27T11:41:15.207Z",
+  "suggestedFileName": "Artem-Kiselev_27-10-2026_14-41-15_agent.json",
+  "user": {
+    "id": "1476876806177187106",
+    "name": "Artem Kiselev",
+    "slug": "Artem-Kiselev"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.3.0"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "[W] РБСК Смета",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "pageType": null,
+    "startedAt": "2026-10-27T11:41:13.189Z",
+    "finishedAt": "2026-10-27T11:41:15.207Z",
+    "durationMs": 2018,
+    "selection": [
+      {
+        "nodeId": "9034:432112",
+        "name": "[D] HeadRow :: Universal",
+        "nodeType": "COMPONENT",
+        "path": "[D] HeadRow :: Universal",
+        "componentKey": "c72cc3653313bc44d97d22282f2d3e69b33752aa"
+      },
+      {
+        "nodeId": "9034:432239",
+        "name": "[D] BodyRow :: Basic",
+        "nodeType": "COMPONENT",
+        "path": "[D] BodyRow :: Basic",
+        "componentKey": "a2a4c9cc6a0021b21e6689471e644ee435245aef"
+      },
+      {
+        "nodeId": "9208:475537",
+        "name": "[D] HeadRow :: Universal",
+        "nodeType": "COMPONENT",
+        "path": "[D] HeadRow :: Universal",
+        "componentKey": "bcb50f8b6c65bfa0b70fbb5e26d5d2bfd365a56e"
+      },
+      {
+        "nodeId": "9208:475698",
+        "name": "[D] BodyGroupRow :: Wide",
+        "nodeType": "COMPONENT",
+        "path": "[D] BodyGroupRow :: Wide",
+        "componentKey": "d96518f72996a42e410dc3d8f51207cab0eb2b3e"
+      },
+      {
+        "nodeId": "9208:475820",
+        "name": "[D] BodyRow :: Wide",
+        "nodeType": "COMPONENT",
+        "path": "[D] BodyRow :: Wide",
+        "componentKey": "624de328cb8d22c6ce7d8dc9b96b4e52824639e5"
+      },
+      {
+        "nodeId": "9231:201806",
+        "name": "[D] BodyRow :: Wide",
+        "nodeType": "COMPONENT",
+        "path": "[D] BodyRow :: Wide",
+        "componentKey": "b411219b9d5582be1d21e491c957079103f34f6c"
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 180,
+    "problemOccurrenceCount": 15,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 0,
+      "updates": 2,
+      "customizations": 11,
+      "localComponents": 6,
+      "detachedComponents": 0,
+      "presets": 3,
+      "technicalComponents": 0,
+      "currentComponents": 172,
+      "wrongChannel": 0,
+      "themization": 0
+    },
+    "includedFindingCount": 15,
+    "omittedCurrentComponentCount": 172
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, authority.status=active, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with authority.status=active, severity=error, and matchKind=exact_component_rule for the same property/change. Missing, draft, or malformed authority never confirms a violation.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 2,
+      "includedCount": 2,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 11,
+      "includedCount": 4,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 6,
+      "includedCount": 6,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 3,
+      "includedCount": 3,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "9034:432041",
+        "name": "[D] HeadControlCell",
+        "type": "INSTANCE",
+        "pageName": "🅰️ Локальные компоненты",
+        "path": "[D] HeadRow :: Universal / Cells / [D] HeadControlCell",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9034:432040"
+        ]
+      },
+      "component": {
+        "name": "[D] HeadControlCell",
+        "key": "06fdff74009d7b7dbecd01c6397fcc6c2cfd09a8",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Presets=None, Skeleton=false",
+        "key": "06fdff74009d7b7dbecd01c6397fcc6c2cfd09a8"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "06fdff74009d7b7dbecd01c6397fcc6c2cfd09a8",
+        "currentComponentId": "8802:277131",
+        "latestComponentId": "7650:153612"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "updates",
+      "severityHint": "medium",
+      "title": "Доступна новая версия компонента",
+      "node": {
+        "id": "9208:475656",
+        "name": "[D] BodyCell :: Wide",
+        "type": "INSTANCE",
+        "pageName": "🅰️ Локальные компоненты",
+        "path": "[D] BodyGroupRow :: Wide / Cells / [D] BodyCell :: Wide",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9208:475653"
+        ]
+      },
+      "component": {
+        "name": "[D] BodyCell :: Wide",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Skeleton=False, Group=False",
+        "key": "81c0c7da8606faed93da9d43295534b24370878e"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [
+        "library-update-available"
+      ],
+      "libraryFreshness": {
+        "status": "update-available",
+        "reason": "remote-component-update-available",
+        "componentKey": "81c0c7da8606faed93da9d43295534b24370878e",
+        "currentComponentId": "8808:323278",
+        "latestComponentId": "8802:318132"
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "9208:475432",
+        "name": "[D] HeadActionCell",
+        "type": "INSTANCE",
+        "pageName": "🅰️ Локальные компоненты",
+        "path": "[D] HeadRow :: Universal / Cells / [D] HeadActionCell",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9208:475425"
+        ]
+      },
+      "component": {
+        "name": "[D] HeadActionCell",
+        "key": "e0a8b40251fe93638697613d5aa04ecfd0ba3060",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Presets=Controls",
+        "key": "e0a8b40251fe93638697613d5aa04ecfd0ba3060"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I9208:475432;74728:178843",
+            "name": "Shadow",
+            "type": null,
+            "pageName": "🅰️ Локальные компоненты",
+            "path": "Presets=Controls / OverflowEffect / Shadow",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: — → paint:GRADIENT_LINEAR",
+          "referenceValue": null,
+          "actualValue": "paint:GRADIENT_LINEAR",
+          "referenceRawValue": null,
+          "actualRawValue": "paint:GRADIENT_LINEAR",
+          "referenceDisplayValue": null,
+          "actualDisplayValue": "paint:GRADIENT_LINEAR",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "e0a8b40251fe93638697613d5aa04ecfd0ba3060",
+            "actualNestedOwnerPath": "Presets=Controls",
+            "actualNestedOwnerRelativePath": "OverflowEffect / Shadow",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Presets": "Controls"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "9208:475432",
+              "nodeName": "[D] HeadActionCell",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-wide.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.manual-visual-styles-forbidden",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "design-system-author",
+                "revision": 2
+              },
+              "severityScope": null,
+              "appliesTo": "styles.text|fill|stroke|opacity|layout.padding|layout.itemSpacing|radius",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "В строках и ячейках Table Wide запрещено вручную менять typography, fill, stroke, opacity, padding, spacing и radius. Разрешены alignment, ширина обычных колонок, текст и предусмотренные компонентом presets.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.visual-states-use-effective-baseline",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "design-system-author",
+                "revision": 1
+              },
+              "severityScope": null,
+              "appliesTo": "state.hover|state.selected|state.disabled|fill|stroke|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Hover, selected и disabled состояния строк и ячеек Table Wide полностью определяются effective baseline. Ручная настройка их цветов и визуальных стилей запрещена.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.table-wide-d.manual-visual-styles-forbidden",
+            "message": "В строках и ячейках Table Wide запрещено вручную менять typography, fill, stroke, opacity, padding, spacing и radius. Разрешены alignment, ширина обычных колонок, текст и предусмотренные компонентом presets.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "9208:475660",
+        "name": "[D] BodyActionCell :: Wide",
+        "type": "INSTANCE",
+        "pageName": "🅰️ Локальные компоненты",
+        "path": "[D] BodyGroupRow :: Wide / Cells / [D] BodyActionCell :: Wide",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9208:475653"
+        ]
+      },
+      "component": {
+        "name": "[D] BodyActionCell :: Wide",
+        "key": "2bbdd7d35e940e13bf72e50b78509a698ba8e665",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Presets=None, Skeleton=False",
+        "key": "2bbdd7d35e940e13bf72e50b78509a698ba8e665"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I9208:475660;74754:49838",
+            "name": "Shadow",
+            "type": null,
+            "pageName": "🅰️ Локальные компоненты",
+            "path": "Presets=None, Skeleton=False / Overflow / GradientEffect / Shadow",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: — → paint:GRADIENT_LINEAR",
+          "referenceValue": null,
+          "actualValue": "paint:GRADIENT_LINEAR",
+          "referenceRawValue": null,
+          "actualRawValue": "paint:GRADIENT_LINEAR",
+          "referenceDisplayValue": null,
+          "actualDisplayValue": "paint:GRADIENT_LINEAR",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "2bbdd7d35e940e13bf72e50b78509a698ba8e665",
+            "actualNestedOwnerPath": "Presets=None, Skeleton=False",
+            "actualNestedOwnerRelativePath": "Overflow / GradientEffect / Shadow",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Presets": "None",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "unknown",
+              "source": "unresolved",
+              "nodeId": null,
+              "nodeName": null,
+              "tokenId": null,
+              "tokenName": null,
+              "color": null
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-wide.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.manual-visual-styles-forbidden",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "design-system-author",
+                "revision": 2
+              },
+              "severityScope": null,
+              "appliesTo": "styles.text|fill|stroke|opacity|layout.padding|layout.itemSpacing|radius",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "В строках и ячейках Table Wide запрещено вручную менять typography, fill, stroke, opacity, padding, spacing и radius. Разрешены alignment, ширина обычных колонок, текст и предусмотренные компонентом presets.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.visual-states-use-effective-baseline",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "design-system-author",
+                "revision": 1
+              },
+              "severityScope": null,
+              "appliesTo": "state.hover|state.selected|state.disabled|fill|stroke|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Hover, selected и disabled состояния строк и ячеек Table Wide полностью определяются effective baseline. Ручная настройка их цветов и визуальных стилей запрещена.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.table-wide-d.manual-visual-styles-forbidden",
+            "message": "В строках и ячейках Table Wide запрещено вручную менять typography, fill, stroke, opacity, padding, spacing и radius. Разрешены alignment, ширина обычных колонок, текст и предусмотренные компонентом presets.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "9208:475753",
+        "name": "[D] BodyActionCell :: Wide",
+        "type": "INSTANCE",
+        "pageName": "🅰️ Локальные компоненты",
+        "path": "[D] BodyRow :: Wide / Cells / [D] BodyActionCell :: Wide",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9208:475746"
+        ]
+      },
+      "component": {
+        "name": "[D] BodyActionCell :: Wide",
+        "key": "9ff55b757e5cb99fcc948d58b9427911ff1b8850",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Presets=Button, Skeleton=False",
+        "key": "9ff55b757e5cb99fcc948d58b9427911ff1b8850"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I9208:475753;74754:50893",
+            "name": "Shadow",
+            "type": null,
+            "pageName": "🅰️ Локальные компоненты",
+            "path": "Presets=Button, Skeleton=False / Overflow / GradientEffect / Shadow",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: — → paint:GRADIENT_LINEAR",
+          "referenceValue": null,
+          "actualValue": "paint:GRADIENT_LINEAR",
+          "referenceRawValue": null,
+          "actualRawValue": "paint:GRADIENT_LINEAR",
+          "referenceDisplayValue": null,
+          "actualDisplayValue": "paint:GRADIENT_LINEAR",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "9ff55b757e5cb99fcc948d58b9427911ff1b8850",
+            "actualNestedOwnerPath": "Presets=Button, Skeleton=False",
+            "actualNestedOwnerRelativePath": "Overflow / GradientEffect / Shadow",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Presets": "Button",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "9208:475753",
+              "nodeName": "[D] BodyActionCell :: Wide",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-wide.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.manual-visual-styles-forbidden",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "design-system-author",
+                "revision": 2
+              },
+              "severityScope": null,
+              "appliesTo": "styles.text|fill|stroke|opacity|layout.padding|layout.itemSpacing|radius",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "В строках и ячейках Table Wide запрещено вручную менять typography, fill, stroke, opacity, padding, spacing и radius. Разрешены alignment, ширина обычных колонок, текст и предусмотренные компонентом presets.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.visual-states-use-effective-baseline",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "design-system-author",
+                "revision": 1
+              },
+              "severityScope": null,
+              "appliesTo": "state.hover|state.selected|state.disabled|fill|stroke|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Hover, selected и disabled состояния строк и ячеек Table Wide полностью определяются effective baseline. Ручная настройка их цветов и визуальных стилей запрещена.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.table-wide-d.manual-visual-styles-forbidden",
+            "message": "В строках и ячейках Table Wide запрещено вручную менять typography, fill, stroke, opacity, padding, spacing и radius. Разрешены alignment, ширина обычных колонок, текст и предусмотренные компонентом presets.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "9231:201447",
+        "name": "[D] BodyActionCell :: Wide",
+        "type": "INSTANCE",
+        "pageName": "🅰️ Локальные компоненты",
+        "path": "[D] BodyRow :: Wide / Cells / [D] BodyActionCell :: Wide",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9231:201440"
+        ]
+      },
+      "component": {
+        "name": "[D] BodyActionCell :: Wide",
+        "key": "9ff55b757e5cb99fcc948d58b9427911ff1b8850",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Table _ _ Wide [D].json"
+      },
+      "variant": {
+        "name": "Presets=Button, Skeleton=False",
+        "key": "9ff55b757e5cb99fcc948d58b9427911ff1b8850"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I9231:201447;74754:50893",
+            "name": "Shadow",
+            "type": null,
+            "pageName": "🅰️ Локальные компоненты",
+            "path": "Presets=Button, Skeleton=False / Overflow / GradientEffect / Shadow",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: — → paint:GRADIENT_LINEAR",
+          "referenceValue": null,
+          "actualValue": "paint:GRADIENT_LINEAR",
+          "referenceRawValue": null,
+          "actualRawValue": "paint:GRADIENT_LINEAR",
+          "referenceDisplayValue": null,
+          "actualDisplayValue": "paint:GRADIENT_LINEAR",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "9ff55b757e5cb99fcc948d58b9427911ff1b8850",
+            "actualNestedOwnerPath": "Presets=Button, Skeleton=False",
+            "actualNestedOwnerRelativePath": "Overflow / GradientEffect / Shadow",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Presets": "Button",
+              "Skeleton": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "gray",
+              "source": "ancestor-fill-token",
+              "nodeId": "9231:201447",
+              "nodeName": "[D] BodyActionCell :: Wide",
+              "tokenId": "VariableID:8e2800951104c0afbc2ed28e5331d61aa4214a9a/3541:172",
+              "tokenName": "base-bg-alt/secondary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [
+            {
+              "ruleId": "component:web-corp.table-wide.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри этого семейства компонентов нужно сравнивать с effective baseline текущего component variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.layer-properties-use-effective-baseline",
+              "severity": "warning",
+              "source": "composition-contract",
+              "ruleKind": null,
+              "authority": null,
+              "severityScope": null,
+              "appliesTo": "layout.*|styles.text|fill|stroke|radius|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Изменения layer/style внутри компонентов семейства таблиц нужно сравнивать с effective baseline текущего table variant и nested owner context.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.manual-visual-styles-forbidden",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "design-system-author",
+                "revision": 2
+              },
+              "severityScope": null,
+              "appliesTo": "styles.text|fill|stroke|opacity|layout.padding|layout.itemSpacing|radius",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "В строках и ячейках Table Wide запрещено вручную менять typography, fill, stroke, opacity, padding, spacing и radius. Разрешены alignment, ширина обычных колонок, текст и предусмотренные компонентом presets.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            },
+            {
+              "ruleId": "component:web-corp.table-wide-d.visual-states-use-effective-baseline",
+              "severity": "error",
+              "source": "component-contract",
+              "ruleKind": "design-rule",
+              "authority": {
+                "status": "active",
+                "provenance": "design-system-author",
+                "revision": 1
+              },
+              "severityScope": null,
+              "appliesTo": "state.hover|state.selected|state.disabled|fill|stroke|opacity",
+              "checkType": "deterministic",
+              "matchKind": "exact_component_rule",
+              "changeScope": null,
+              "ruleText": "Hover, selected и disabled состояния строк и ячеек Table Wide полностью определяются effective baseline. Ручная настройка их цветов и визуальных стилей запрещена.",
+              "remediation": null,
+              "numericConstraint": null,
+              "requiredTokenSource": null
+            }
+          ],
+          "presentation": {
+            "scope": "layer-property",
+            "groupTitle": "Параметры слоя",
+            "displayName": null,
+            "priority": 40,
+            "resetAction": "reset-layer-properties",
+            "effectiveBaseline": "composition-contract"
+          },
+          "assessment": {
+            "verdict": "violation",
+            "source": "component-contract",
+            "reasonCode": "component-contract-violation",
+            "ruleId": "component:web-corp.table-wide-d.manual-visual-styles-forbidden",
+            "message": "В строках и ячейках Table Wide запрещено вручную менять typography, fill, stroke, opacity, padding, spacing и radius. Разрешены alignment, ширина обычных колонок, текст и предусмотренные компонентом presets.",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "9034:432112",
+        "name": "[D] HeadRow :: Universal",
+        "type": "COMPONENT",
+        "pageName": "🅰️ Локальные компоненты",
+        "path": "[D] HeadRow :: Universal",
+        "visible": true,
+        "ancestorNodeIds": []
+      },
+      "component": {
+        "name": "[D] HeadRow :: Universal",
+        "key": "c72cc3653313bc44d97d22282f2d3e69b33752aa",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "9034:432239",
+        "name": "[D] BodyRow :: Basic",
+        "type": "COMPONENT",
+        "pageName": "🅰️ Локальные компоненты",
+        "path": "[D] BodyRow :: Basic",
+        "visible": true,
+        "ancestorNodeIds": []
+      },
+      "component": {
+        "name": "[D] BodyRow :: Basic",
+        "key": "a2a4c9cc6a0021b21e6689471e644ee435245aef",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "9208:475537",
+        "name": "[D] HeadRow :: Universal",
+        "type": "COMPONENT",
+        "pageName": "🅰️ Локальные компоненты",
+        "path": "[D] HeadRow :: Universal",
+        "visible": true,
+        "ancestorNodeIds": []
+      },
+      "component": {
+        "name": "[D] HeadRow :: Universal",
+        "key": "bcb50f8b6c65bfa0b70fbb5e26d5d2bfd365a56e",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "9208:475698",
+        "name": "[D] BodyGroupRow :: Wide",
+        "type": "COMPONENT",
+        "pageName": "🅰️ Локальные компоненты",
+        "path": "[D] BodyGroupRow :: Wide",
+        "visible": true,
+        "ancestorNodeIds": []
+      },
+      "component": {
+        "name": "[D] BodyGroupRow :: Wide",
+        "key": "d96518f72996a42e410dc3d8f51207cab0eb2b3e",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "9208:475820",
+        "name": "[D] BodyRow :: Wide",
+        "type": "COMPONENT",
+        "pageName": "🅰️ Локальные компоненты",
+        "path": "[D] BodyRow :: Wide",
+        "visible": true,
+        "ancestorNodeIds": []
+      },
+      "component": {
+        "name": "[D] BodyRow :: Wide",
+        "key": "624de328cb8d22c6ce7d8dc9b96b4e52824639e5",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "localComponents",
+      "severityHint": "high",
+      "title": "Локальный компонент",
+      "node": {
+        "id": "9231:201806",
+        "name": "[D] BodyRow :: Wide",
+        "type": "COMPONENT",
+        "pageName": "🅰️ Локальные компоненты",
+        "path": "[D] BodyRow :: Wide",
+        "visible": true,
+        "ancestorNodeIds": []
+      },
+      "component": {
+        "name": "[D] BodyRow :: Wide",
+        "key": "b411219b9d5582be1d21e491c957079103f34f6c",
+        "library": null,
+        "sourceFile": null
+      },
+      "variant": null,
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": null,
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I9034:432192;74754:73719",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "🅰️ Локальные компоненты",
+        "path": "[D] BodyRow :: Basic / Cells / [D] BodyCell :: Basic / Content / StatusPreset",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9034:432187",
+          "9034:432192",
+          "I9034:432192;74754:73718"
+        ]
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Approved, Style=Muted, Size=20",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I9208:475751;74661:67583;74661:67482",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "🅰️ Локальные компоненты",
+        "path": "[D] BodyRow :: Wide / Cells / [D] BodyCell :: Wide / Text / StatusPreset",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9208:475746",
+          "9208:475751",
+          "I9208:475751;74661:67583"
+        ]
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Approved, Style=Muted, Size=20",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    },
+    {
+      "category": "presets",
+      "severityHint": "low",
+      "title": "Preset-компонент",
+      "node": {
+        "id": "I9231:201445;74661:67583;74661:67482",
+        "name": "StatusPreset",
+        "type": "INSTANCE",
+        "pageName": "🅰️ Локальные компоненты",
+        "path": "[D] BodyRow :: Wide / Cells / [D] BodyCell :: Wide / Text / StatusPreset",
+        "visible": true,
+        "ancestorNodeIds": [
+          "9231:201440",
+          "9231:201445",
+          "I9231:201445;74661:67583"
+        ]
+      },
+      "component": {
+        "name": "🔒 [D] StatusPreset",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7",
+        "library": "Web _ Corp Components",
+        "sourceFile": "web/components/web-corp/Web _ Corp Components -- Status & Property.json"
+      },
+      "variant": {
+        "name": "Type=Approved, Style=Muted, Size=20",
+        "key": "48ffd17941f3b25a1cc63bb0a2740b6d447ccbd7"
+      },
+      "comparisonIssues": [],
+      "updateReasons": [],
+      "libraryFreshness": {
+        "status": "not-applicable",
+        "reason": "instance-sublayer",
+        "componentKey": null,
+        "currentComponentId": null,
+        "latestComponentId": null
+      },
+      "localComponentOwner": null
+    }
+  ],
+  "componentContexts": [
+    {
+      "componentKey": "web-corp.status-property",
+      "summary": "StatusPreset показывает состояние объекта или процесса, PropertyPreset — характеристику или свойство объекта. Оба preset-компонента разрешено использовать самостоятельно на desktop и mobile-web.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "🔒 [D] PropertyPreset",
+        "🔒 [D] StatusPreset",
+        "🔒 [M] PropertyPreset",
+        "🔒 [M] StatusPreset"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "5062ff1e0c435b64f3d1f4a0ae699dcb646b34f4",
+          "name": "🔒 [D] StatusPreset",
+          "purpose": "Вспомогательный компонент Figma, в коде существует только Status в core-components.",
+          "useWhen": [],
+          "doNotUseWhen": [],
+          "relationship": null,
+          "status": "source",
+          "provenance": "figma"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context.",
+        "localContract": "Локальные ограничения пресета и его Label. Внутренний baseline — Core Status с доказанным контекстом родителя.",
+        "customColor": "Токены обязательны; принадлежность библиотеке проверяется общим правилом. Контраст не проверяется этим контрактом.",
+        "context": "Style по поверхности, смысл Type, группировка, Tooltip и выбор цветов — внешние паттерны.",
+        "remainingGaps": [],
+        "frontendBehaviorCheck": "No click remains a policy; Figma does not claim reaction verification.",
+        "text": "Больше20 исходных code points — ошибка. Status: максимум2слова. Обрезка не проверяется."
+      },
+      "overrideContext": {
+        "resetModel": null,
+        "publicApi": null
+      }
+    },
+    {
+      "componentKey": "web-corp.table-wide-d",
+      "summary": "Table Wide [D] — семейство для таблиц с одним текстовым слотом в ячейке, большим количеством столбцов, группировкой и горизонтальным скроллом.",
+      "criticalBaselines": [],
+      "agentInstructions": [],
+      "includedComponents": [
+        "[D] BodyActionCell :: Wide",
+        "[D] BodyCell :: Wide",
+        "[D] BodyControlCell :: Wide",
+        "[D] HeadActionCell",
+        "[D] HeadCell",
+        "[D] HeadControlCell",
+        "ActionButton",
+        "BorderLine",
+        "Chevron",
+        "ColumnControl",
+        "ColumnControl :: OptionList",
+        "ControlAddon",
+        "HeaderAddon",
+        "LeftAddon",
+        "RightAddon",
+        "Sorting",
+        "Text",
+        "[D] BodyGroupRow :: Wide",
+        "[D] BodyRow :: Wide",
+        "[D] HeadRow :: Universal",
+        "GroupBorderLine",
+        "HeadDivider"
+      ],
+      "componentSemantics": [
+        {
+          "componentKey": "50fd36cfcba2755a48aec59144cbb3bbd6aa4380",
+          "name": "[D] HeadRow :: Universal",
+          "purpose": "Универсальная строка заголовков desktop-таблицы, задающая структуру и ширины колонок.",
+          "useWhen": [
+            "Собирается заголовок Table Basic или Table Wide."
+          ],
+          "doNotUseWhen": [
+            "Нужно показать строку данных, а не названия колонок."
+          ],
+          "relationship": "Общий header-row для табличных семейств; структура должна совпадать с body-строками.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        },
+        {
+          "componentKey": "4ebc8002c21ea12d0e149fb782cdf0b219769a8a",
+          "name": "[D] BodyRow :: Wide",
+          "purpose": "Строка данных для desktop-таблицы с большим количеством столбцов и горизонтальным скроллом.",
+          "useWhen": [
+            "Таблица содержит много колонок или требует закрепления и горизонтального скролла."
+          ],
+          "doNotUseWhen": [
+            "Достаточно простой таблицы до пяти столбцов без горизонтального скролла."
+          ],
+          "relationship": "Основная строка Table Wide; наполняется Wide-ячейками с ширинами, согласованными с HeadRow.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        },
+        {
+          "componentKey": "ecd3eaf818ad2287192606a5911450f836e83d31",
+          "name": "[D] BodyGroupRow :: Wide",
+          "purpose": "Группирующая строка Table Wide для одного поддерживаемого уровня группировки данных.",
+          "useWhen": [
+            "Строки Wide-таблицы нужно объединить в раскрываемую или обозначенную группу первого уровня."
+          ],
+          "doNotUseWhen": [
+            "Нужна многоуровневая иерархия групп."
+          ],
+          "relationship": "Опциональная групповая строка Table Wide; семейство поддерживает только один уровень группировки.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        },
+        {
+          "componentKey": "6968c89343b210b7e5071d4d6ac6e7bd29576dc6",
+          "name": "[D] HeadCell",
+          "purpose": "Обычная ячейка заголовка таблицы для названия колонки и предусмотренного состояния сортировки.",
+          "useWhen": [
+            "В HeadRow нужна колонка с текстовым заголовком."
+          ],
+          "doNotUseWhen": [
+            "Колонка предназначена только для выбора строк или действий."
+          ],
+          "relationship": "Контентная ячейка внутри [D] HeadRow :: Universal; её ширина согласуется с BodyCell.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        },
+        {
+          "componentKey": "2c22a72d9783d35f3d682e28cbc61c9d4376505d",
+          "name": "[D] HeadControlCell",
+          "purpose": "Фиксированная ячейка заголовка таблицы для массового выбора или другого предусмотренного контролла.",
+          "useWhen": [
+            "У таблицы есть control-колонка для выбора строк."
+          ],
+          "doNotUseWhen": [
+            "Колонка содержит обычный заголовок данных или действия."
+          ],
+          "relationship": "Control-ячейка [D] HeadRow :: Universal, парная BodyControlCell.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        },
+        {
+          "componentKey": "7b19337a73c797add443b6cee14337437a4c82f4",
+          "name": "[D] HeadActionCell",
+          "purpose": "Фиксированная ячейка заголовка для колонки действий над отдельной строкой.",
+          "useWhen": [
+            "В body-строках есть отдельная action-колонка."
+          ],
+          "doNotUseWhen": [
+            "Действия относятся ко всей таблице и должны находиться в CorporateTopbar."
+          ],
+          "relationship": "Header-пара для BodyActionCell в [D] HeadRow :: Universal.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        },
+        {
+          "componentKey": "da8f6b4841c28ace944c4071abb9502cfaf9ed8c",
+          "name": "[D] BodyCell :: Wide",
+          "purpose": "Обычная ячейка Table Wide для одного смыслового значения, статуса, ссылки, суммы или аккаунта.",
+          "useWhen": [
+            "В строке Wide нужно показать значение одной колонки."
+          ],
+          "doNotUseWhen": [
+            "Колонка предназначена только для выбора строки или действия."
+          ],
+          "relationship": "Контентная ячейка внутри [D] BodyRow :: Wide; соответствует HeadCell той же колонки.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        },
+        {
+          "componentKey": "7652b5e6dac3680a7279abd9007082164107c321",
+          "name": "[D] BodyActionCell :: Wide",
+          "purpose": "Фиксированная ячейка строки Table Wide для предусмотренного действия над объектом.",
+          "useWhen": [
+            "У каждой строки Wide-таблицы должно быть действие в отдельной колонке."
+          ],
+          "doNotUseWhen": [
+            "Действие относится ко всей таблице или является обычным значением."
+          ],
+          "relationship": "Body-пара HeadActionCell внутри [D] BodyRow :: Wide.",
+          "status": "approved",
+          "provenance": "design-system-author"
+        }
+      ],
+      "auditInterpretation": {
+        "componentProperties": [
+          "variant.*"
+        ],
+        "layerProperties": [
+          "fill",
+          "stroke",
+          "stroke.*",
+          "styles.text",
+          "layout.*",
+          "radius",
+          "opacity",
+          "opacityToken",
+          "effects.*",
+          "blend.mode",
+          "blendMode",
+          "clipsContent"
+        ],
+        "baselinePolicy": "Сравнивай изменения layer с effective baseline текущего состояния компонента, если доступен host composition context."
+      },
+      "overrideContext": {
+        "resetModel": {
+          "componentProperties": [
+            "variant.*"
+          ],
+          "layerProperties": [
+            "fills",
+            "strokes",
+            "strokeWeight",
+            "cornerRadius",
+            "opacity",
+            "layout.padding",
+            "layout.itemSpacing",
+            "styles.text",
+            "typography"
+          ],
+          "dependencyPolicy": "Nested diffs семейства таблиц должны использовать effective baseline выбранного table component перед fallback к standalone baselines вложенных компонентов."
+        },
+        "publicApi": {
+          "components": [],
+          "aliases": null,
+          "codeExports": []
+        }
+      }
+    }
+  ]
+}
