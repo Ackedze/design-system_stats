@@ -1,6 +1,14 @@
 # Apollo Stats
 
-Каталог статистики проверок Apollo.
+Каталог входящих отчётов проверок Apollo.
+
+Исходные отчёты V3 удалены из текущей ветки 29.10.2026. Итоги и компактные
+агрегаты сохранены в [аналитике V3](../analytics/v3-2026-10-29/README.md).
+Список удалённых файлов и SHA-256 — в
+[manifest](../analytics/v3-2026-10-29/source-manifest.json).
+Каталог остаётся доступен для отчётов следующих версий.
+
+## Исторический формат V3
 
 ```text
 apollo/stats/
@@ -10,10 +18,15 @@ apollo/stats/
       User-Name_06-06-2026_12-13-42_agent.json
 ```
 
-Одна успешная проверка создаёт два файла:
+Успешная проверка V3 могла создавать несколько представлений одного запуска:
 
 - полный отчёт Apollo: `<User-Name>_dd-mm-yyyy_hh-mm-ss.json`;
-- компактный агентский отчёт: `<User-Name>_dd-mm-yyyy_hh-mm-ss_agent.json`.
+- компактный агентский отчёт: `<User-Name>_dd-mm-yyyy_hh-mm-ss_agent.json`;
+- WIP-кастомизации: `<User-Name>_dd-mm-yyyy_hh-mm-ss_customizations-wip.json`;
+- предикаты: `<User-Name>_dd-mm-yyyy_hh-mm-ss_predicates.json`.
+
+Представления связываются через `reportId` / `sourceReportId`; их нельзя
+считать отдельными проверками. Состав и схема новых версий могут отличаться.
 
 Отчёт содержит устаревшие компоненты и стили, кастомные стили, обновления, кастомизации, локальные и detached-компоненты, пресеты, технические и актуальные компоненты, ошибки канала и темизации.
 
@@ -21,8 +34,8 @@ apollo/stats/
 
 Production-отчёты автоматически публикует Supabase Edge Function. Локальный `services/apollo-stats-collector` используется только для изолированной отладки и сохраняет файлы в той же структуре.
 
-Корневой каталог сохранения:
+Путь внутри репозитория:
 
 ```text
-/Users/alexkukhta/Desktop/DS-AB-Plugin/shared/design-system_stats/apollo/stats
+apollo/stats/
 ```
