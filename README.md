@@ -18,6 +18,7 @@ apollo/
         <figma-user>_dd-mm-yyyy_hh-mm-ss.json
         <figma-user>_dd-mm-yyyy_hh-mm-ss_agent.json
         <figma-user>_dd-mm-yyyy_hh-mm-ss_customizations-wip.json
+        <figma-user>_dd-mm-yyyy_hh-mm-ss_metrics-<origin>.json
 ```
 
 ## Аналитика Apollo V3
@@ -73,13 +74,24 @@ Production-сборка Apollo не пишет в репозиторий нап�
 
 ## Метрики актуального Apollo
 
-`apollo/metrics/<prefix>/<sha256(reportId)>.json` — компактные отчёты schemaVersion=2
+`apollo/stats/<figma-user>/<dd-mm-yyyy>/<figma-user>_<dd-mm-yyyy>_<hh-mm-ss>_metrics-<origin>.json`
+— компактные отчёты schemaVersion=2
 из фактических контрактных, нативных и агентских проверок. Origin и operation
 разделяют эти источники и перепроверки. Classifications/UNKNOWN/coverage
 сохраняют фактическую неопределённость; null не означает ноль. Не суммируйте
 повторные обследования как новые уникальные компоненты. Полные snapshots и
 тексты макета в этот формат не входят. Историческая schema1 в `apollo/stats/`
-сохраняется.
+сохраняется. Имя берётся из Figma, дата и время окончания — локальные,
+как в V3. `origin` принимает `contract-area`, `native-document`, `pattern-agent`.
+Коллизии имени получают суффикс `-2`, `-3` и далее; повторная отправка того же
+содержимого возвращает прежний путь.
+
+31.10.2026 перенесены 16 новых отчётов из hash-папок `apollo/metrics/`
+без изменения байтов. В них не было автора и часового пояса: они лежат в
+`Unknown-User`, дата и время взяты из исходного `startedAt` в UTC. Имя автора
+не восстанавливалось предположением. Старые установленные Proxy временно
+могут создавать hash-папки: новый формат включается совместимым sender и
+отдельным deploy Edge Function, а не push репозитория.
 
 `apollo/tests/` и любой отчёт с `excludeFromAnalytics=true` — синтетическая
 проверка доставки, исключённая из рабочих показателей. Получение receipt
