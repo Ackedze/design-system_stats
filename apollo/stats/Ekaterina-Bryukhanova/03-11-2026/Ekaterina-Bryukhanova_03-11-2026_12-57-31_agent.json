@@ -1,0 +1,1152 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1460581696862694392-1793699851082-1jlex06n:agent",
+  "sourceReportId": "apollo-1460581696862694392-1793699851082-1jlex06n",
+  "generatedAt": "2026-11-03T09:57:31.082Z",
+  "suggestedFileName": "Ekaterina-Bryukhanova_03-11-2026_12-57-31_agent.json",
+  "user": {
+    "id": "1460581696862694392",
+    "name": "Ekaterina Bryukhanova",
+    "slug": "Ekaterina-Bryukhanova"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.3.0"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "[M] Сделки ЛПР – Мои сделки",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "pageType": null,
+    "startedAt": "2026-11-03T09:57:00.334Z",
+    "finishedAt": "2026-11-03T09:57:31.082Z",
+    "durationMs": 30748,
+    "selection": [
+      {
+        "nodeId": "28997:222347",
+        "name": "Заявка на факторинг",
+        "nodeType": "FRAME",
+        "path": "Иконки / Заявка на факторинг",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 59,
+    "problemOccurrenceCount": 25,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 20,
+      "updates": 0,
+      "customizations": 5,
+      "localComponents": 0,
+      "detachedComponents": 0,
+      "presets": 0,
+      "technicalComponents": 0,
+      "currentComponents": 5,
+      "wrongChannel": 0,
+      "themization": 0
+    },
+    "includedFindingCount": 25,
+    "omittedCurrentComponentCount": 5
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, authority.status=active, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with authority.status=active, severity=error, and matchKind=exact_component_rule for the same property/change. Missing, draft, or malformed authority never confirms a violation.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 20,
+      "includedCount": 20,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 5,
+      "includedCount": 5,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I28997:222349;13:266614;1209:389",
+        "name": "Wifi-path",
+        "type": "VECTOR",
+        "pageName": "иконки glyph-26",
+        "path": "Иконки / Заявка на факторинг / Header / NavigationBar / Default / Status Bar / content / Wifi / Wifi-path",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I28997:222349;13:266614;1209:390",
+        "name": "Wifi-path",
+        "type": "VECTOR",
+        "pageName": "иконки glyph-26",
+        "path": "Иконки / Заявка на факторинг / Header / NavigationBar / Default / Status Bar / content / Wifi / Wifi-path",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I28997:222349;13:266614;1209:391",
+        "name": "Wifi-path",
+        "type": "VECTOR",
+        "pageName": "иконки glyph-26",
+        "path": "Иконки / Заявка на факторинг / Header / NavigationBar / Default / Status Bar / content / Wifi / Wifi-path",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I28997:222349;13:266614;1209:393",
+        "name": "Cellular-Connection-path",
+        "type": "VECTOR",
+        "pageName": "иконки glyph-26",
+        "path": "Иконки / Заявка на факторинг / Header / NavigationBar / Default / Status Bar / content / Cellular Connection / Cellular-Connection-path",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I28997:222349;13:266614;1209:394",
+        "name": "Cellular-Connection-path",
+        "type": "VECTOR",
+        "pageName": "иконки glyph-26",
+        "path": "Иконки / Заявка на факторинг / Header / NavigationBar / Default / Status Bar / content / Cellular Connection / Cellular-Connection-path",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I28997:222349;13:266614;1209:395",
+        "name": "Cellular-Connection-path",
+        "type": "VECTOR",
+        "pageName": "иконки glyph-26",
+        "path": "Иконки / Заявка на факторинг / Header / NavigationBar / Default / Status Bar / content / Cellular Connection / Cellular-Connection-path",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I28997:222349;13:266614;1209:396",
+        "name": "Cellular-Connection-path",
+        "type": "VECTOR",
+        "pageName": "иконки glyph-26",
+        "path": "Иконки / Заявка на факторинг / Header / NavigationBar / Default / Status Bar / content / Cellular Connection / Cellular-Connection-path",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I28997:222349;13:266614;2019:263;2019:247",
+        "name": "Time",
+        "type": "TEXT",
+        "pageName": "иконки glyph-26",
+        "path": "Иконки / Заявка на факторинг / Header / NavigationBar / Default / Status Bar / content / Time / Time",
+        "visible": true
+      },
+      "style": {
+        "name": "14/auto · Semibold · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I28997:222349;13:266620",
+        "name": "_title",
+        "type": "TEXT",
+        "pageName": "иконки glyph-26",
+        "path": "Иконки / Заявка на факторинг / Header / NavigationBar / Default / .NavBar / Header / _title",
+        "visible": true
+      },
+      "style": {
+        "name": "17/22 px · Semibold · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I28997:222351;18842:57213",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "иконки glyph-26",
+        "path": "Иконки / Заявка на факторинг / Content / TextLabel / VerticalPaddingsGroup / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17/20 px · Semibold · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I28997:222352;29194:20083",
+        "name": "label",
+        "type": "TEXT",
+        "pageName": "иконки glyph-26",
+        "path": "Иконки / Заявка на факторинг / Content / TextField / ContentGroup / LabelGroup / label",
+        "visible": true
+      },
+      "style": {
+        "name": "15/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I28997:222352;29194:20088",
+        "name": "value",
+        "type": "TEXT",
+        "pageName": "иконки glyph-26",
+        "path": "Иконки / Заявка на факторинг / Content / TextField / ContentGroup / InputGroup / InputContentGroup / value",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I28997:222353;18842:57213",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "иконки glyph-26",
+        "path": "Иконки / Заявка на факторинг / Content / TextLabel / VerticalPaddingsGroup / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17/20 px · Semibold · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I28997:222354;29194:19615",
+        "name": "label",
+        "type": "TEXT",
+        "pageName": "иконки glyph-26",
+        "path": "Иконки / Заявка на факторинг / Content / TextField / ContentGroup / LabelGroup / label",
+        "visible": true
+      },
+      "style": {
+        "name": "15/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I28997:222355;29194:19558",
+        "name": "label",
+        "type": "TEXT",
+        "pageName": "иконки glyph-26",
+        "path": "Иконки / Заявка на факторинг / Content / TextField / ContentGroup / LabelGroup / label",
+        "visible": true
+      },
+      "style": {
+        "name": "15/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I28997:222355;29194:19564",
+        "name": "placeholder",
+        "type": "TEXT",
+        "pageName": "иконки glyph-26",
+        "path": "Иконки / Заявка на факторинг / Content / TextField / ContentGroup / InputGroup / InputContentGroup / placeholder",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I28997:222356;114733:77488;18842:57213",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "иконки glyph-26",
+        "path": "Иконки / Заявка на факторинг / Content / StackWrapper / VerticalPaddingsGroup / ContentGroup / ContentViewB / VerticalPaddingsGroup / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "28997:222357",
+        "name": "BlurFooter",
+        "type": "FRAME",
+        "pageName": "иконки glyph-26",
+        "path": "Иконки / Заявка на факторинг / BlurFooter",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "28997:222357",
+        "name": "BlurFooter",
+        "type": "FRAME",
+        "pageName": "иконки glyph-26",
+        "path": "Иконки / Заявка на факторинг / BlurFooter",
+        "visible": true
+      },
+      "style": {
+        "name": "Material Blur",
+        "key": "a9ddc9ea703377fabf170f86830ab4a514c9033c",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Фон (Background blur)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I28997:222358;11955:9350;18842:57177",
+        "name": "Value",
+        "type": "TEXT",
+        "pageName": "иконки glyph-26",
+        "path": "Иконки / Заявка на факторинг / BlurFooter / ButtonViewV2 / PrimaryRectangleShape / VerticalPaddingsGroup / 🎨 ContentGroup / TextLabelsStack / Title_Statable / VerticalPaddingsGroup / ContentGroup / Value",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Semibold · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I28997:222349;13:266618;13:270442",
+        "name": "chevron-left-shift-left",
+        "type": "INSTANCE",
+        "pageName": "иконки glyph-26",
+        "path": "Иконки / Заявка на факторинг / Header / NavigationBar / Default / .NavBar / .Accessory / Glyph / chevron-left-shift-left",
+        "visible": true,
+        "ancestorNodeIds": [
+          "28997:222347",
+          "28997:222348",
+          "28997:222349",
+          "I28997:222349;13:266615",
+          "I28997:222349;13:266618"
+        ]
+      },
+      "component": {
+        "name": "chevron-left-shift-left",
+        "key": "21a5bd6b97986412959b36554720c67002083bc2",
+        "library": "Icons",
+        "sourceFile": "icons/Icons -- ios.json"
+      },
+      "variant": {
+        "name": "Size=m",
+        "key": "21a5bd6b97986412959b36554720c67002083bc2"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I28997:222349;13:266618;13:270442;18233:1152",
+            "name": "Vector",
+            "type": null,
+            "pageName": "иконки glyph-26",
+            "path": "Size=m / Vector",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #3EA2FF → neutral-translucent/1300",
+          "referenceValue": "#3EA2FF",
+          "actualValue": "neutral-translucent/1300",
+          "referenceRawValue": "#3EA2FF",
+          "actualRawValue": "neutral-translucent/1300",
+          "referenceDisplayValue": "#3EA2FF",
+          "actualDisplayValue": "neutral-translucent/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/1300",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:e86a96753bbf5affba4ec9ebf5bc294c4b824a97/3541:128",
+            "key": "e86a96753bbf5affba4ec9ebf5bc294c4b824a97",
+            "name": "neutral-translucent/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "21a5bd6b97986412959b36554720c67002083bc2",
+            "actualNestedOwnerPath": "Size=m",
+            "actualNestedOwnerRelativePath": "Vector",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "m"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "28997:222349",
+              "nodeName": "NavigationBar / Default",
+              "tokenId": "VariableID:14ac29210fc546f67acfa8e0dfd252c210d0c78b/3541:157",
+              "tokenName": "base-bg/primary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I28997:222349;13:266638;13:270442",
+        "name": "🤙DummyContent",
+        "type": "INSTANCE",
+        "pageName": "иконки glyph-26",
+        "path": "Иконки / Заявка на факторинг / Header / NavigationBar / Default / .NavBar / Glyphs / .Accessory / Glyph / 🤙DummyContent",
+        "visible": true,
+        "ancestorNodeIds": [
+          "28997:222347",
+          "28997:222348",
+          "28997:222349",
+          "I28997:222349;13:266615",
+          "I28997:222349;13:266636",
+          "I28997:222349;13:266638"
+        ]
+      },
+      "component": {
+        "name": "bubble-lines",
+        "key": "c6bde41e2840a3d188027052a92deb5d21e48469",
+        "library": "Icons",
+        "sourceFile": "icons/Icons -- glyph-26.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "c6bde41e2840a3d188027052a92deb5d21e48469"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I28997:222349;13:266638;13:270442;148564:18563",
+            "name": "icon",
+            "type": null,
+            "pageName": "иконки glyph-26",
+            "path": "Size=24, Style=Line, Color=False / icon",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #9032EE → text/primary",
+          "referenceValue": "#9032EE",
+          "actualValue": "text/primary",
+          "referenceRawValue": "#9032EE",
+          "actualRawValue": "text/primary",
+          "referenceDisplayValue": "#9032EE",
+          "actualDisplayValue": "text/primary",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "text/primary",
+            "key": "53f842b1771349c5dca692351edfc422e8f081b5",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:53f842b1771349c5dca692351edfc422e8f081b5/3541:208",
+            "key": "53f842b1771349c5dca692351edfc422e8f081b5",
+            "name": "text/primary",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "c6bde41e2840a3d188027052a92deb5d21e48469",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "icon",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "28997:222349",
+              "nodeName": "NavigationBar / Default",
+              "tokenId": "VariableID:14ac29210fc546f67acfa8e0dfd252c210d0c78b/3541:157",
+              "tokenName": "base-bg/primary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I28997:222352;30576:9869",
+        "name": "lock-closed",
+        "type": "INSTANCE",
+        "pageName": "иконки glyph-26",
+        "path": "Иконки / Заявка на факторинг / Content / TextField / ContentGroup / InputGroup / (n)UIImageView / lock-closed",
+        "visible": true,
+        "ancestorNodeIds": [
+          "28997:222347",
+          "28997:222350",
+          "28997:222352",
+          "I28997:222352;29194:20081",
+          "I28997:222352;29194:20085",
+          "I28997:222352;30576:9868"
+        ]
+      },
+      "component": {
+        "name": "lock-closed",
+        "key": "a83bfff3dbe01abf176d527905536d800226c391",
+        "library": "Icons",
+        "sourceFile": "icons/Icons -- glyph-26.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "a83bfff3dbe01abf176d527905536d800226c391"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I28997:222352;30576:9869;155588:17861",
+            "name": "icon",
+            "type": null,
+            "pageName": "иконки glyph-26",
+            "path": "Size=24, Style=Line, Color=False / icon",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #9032EE → neutral-translucent/500",
+          "referenceValue": "#9032EE",
+          "actualValue": "neutral-translucent/500",
+          "referenceRawValue": "#9032EE",
+          "actualRawValue": "neutral-translucent/500",
+          "referenceDisplayValue": "#9032EE",
+          "actualDisplayValue": "neutral-translucent/500",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/500",
+            "key": "8e44b1c2e5a90ce2fea643e2e5be2c6e838feaef",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:8e44b1c2e5a90ce2fea643e2e5be2c6e838feaef/1250:680",
+            "key": "8e44b1c2e5a90ce2fea643e2e5be2c6e838feaef",
+            "name": "neutral-translucent/500",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "a83bfff3dbe01abf176d527905536d800226c391",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "icon",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "28997:222347",
+              "nodeName": "Заявка на факторинг",
+              "tokenId": "VariableID:14ac29210fc546f67acfa8e0dfd252c210d0c78b/3541:157",
+              "tokenName": "base-bg/primary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I28997:222354;29194:19622;173:54783",
+        "name": "chevron-down",
+        "type": "INSTANCE",
+        "pageName": "иконки glyph-26",
+        "path": "Иконки / Заявка на факторинг / Content / TextField / ContentGroup / InputGroup / RightIcon / IconViewContentGroup / ImageView / chevron-down",
+        "visible": true,
+        "ancestorNodeIds": [
+          "28997:222347",
+          "28997:222350",
+          "28997:222354",
+          "I28997:222354;29194:19613",
+          "I28997:222354;29194:19617",
+          "I28997:222354;29194:19622",
+          "I28997:222354;29194:19622;173:54777",
+          "I28997:222354;29194:19622;173:54782"
+        ]
+      },
+      "component": {
+        "name": "chevron-down",
+        "key": "645841737310d1bcfa26d8a3868d7d3bf1ce564e",
+        "library": "Icons",
+        "sourceFile": "icons/Icons -- glyph-26.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "645841737310d1bcfa26d8a3868d7d3bf1ce564e"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I28997:222354;29194:19622;173:54783;150844:115779",
+            "name": "icon",
+            "type": null,
+            "pageName": "иконки glyph-26",
+            "path": "Size=24, Style=Line, Color=False / icon",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #9032EE → neutral-translucent/700",
+          "referenceValue": "#9032EE",
+          "actualValue": "neutral-translucent/700",
+          "referenceRawValue": "#9032EE",
+          "actualRawValue": "neutral-translucent/700",
+          "referenceDisplayValue": "#9032EE",
+          "actualDisplayValue": "neutral-translucent/700",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/700",
+            "key": "faac436b14cc199cfe97243b05af867af9ecb365",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:faac436b14cc199cfe97243b05af867af9ecb365/3541:130",
+            "key": "faac436b14cc199cfe97243b05af867af9ecb365",
+            "name": "neutral-translucent/700",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "645841737310d1bcfa26d8a3868d7d3bf1ce564e",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "icon",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "28997:222347",
+              "nodeName": "Заявка на факторинг",
+              "tokenId": "VariableID:14ac29210fc546f67acfa8e0dfd252c210d0c78b/3541:157",
+              "tokenName": "base-bg/primary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I28997:222356;114733:77486;173:57987",
+        "name": "plus",
+        "type": "INSTANCE",
+        "pageName": "иконки glyph-26",
+        "path": "Иконки / Заявка на факторинг / Content / StackWrapper / VerticalPaddingsGroup / ContentGroup / ContentViewA / IconViewContentGroup / ImageView / plus",
+        "visible": true,
+        "ancestorNodeIds": [
+          "28997:222347",
+          "28997:222350",
+          "28997:222356",
+          "I28997:222356;114733:77483",
+          "I28997:222356;114733:77485",
+          "I28997:222356;114733:77486",
+          "I28997:222356;114733:77486;173:57978",
+          "I28997:222356;114733:77486;173:57986"
+        ]
+      },
+      "component": {
+        "name": "plus",
+        "key": "27d9fc6cbd050a89c52715dd768f0c0eec2048d4",
+        "library": "Icons",
+        "sourceFile": "icons/Icons -- glyph-26.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "27d9fc6cbd050a89c52715dd768f0c0eec2048d4"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I28997:222356;114733:77486;173:57987;150624:185813",
+            "name": "icon",
+            "type": null,
+            "pageName": "иконки glyph-26",
+            "path": "Size=24, Style=Line, Color=False / icon",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #9032EE → neutral-translucent/700",
+          "referenceValue": "#9032EE",
+          "actualValue": "neutral-translucent/700",
+          "referenceRawValue": "#9032EE",
+          "actualRawValue": "neutral-translucent/700",
+          "referenceDisplayValue": "#9032EE",
+          "actualDisplayValue": "neutral-translucent/700",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral-translucent/700",
+            "key": "faac436b14cc199cfe97243b05af867af9ecb365",
+            "library": "Interface Dynamic",
+            "sourceFile": "001 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:faac436b14cc199cfe97243b05af867af9ecb365/1250:698",
+            "key": "faac436b14cc199cfe97243b05af867af9ecb365",
+            "name": "neutral-translucent/700",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "27d9fc6cbd050a89c52715dd768f0c0eec2048d4",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "icon",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "28997:222347",
+              "nodeName": "Заявка на факторинг",
+              "tokenId": "VariableID:14ac29210fc546f67acfa8e0dfd252c210d0c78b/3541:157",
+              "tokenName": "base-bg/primary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    }
+  ],
+  "componentContexts": []
+}
