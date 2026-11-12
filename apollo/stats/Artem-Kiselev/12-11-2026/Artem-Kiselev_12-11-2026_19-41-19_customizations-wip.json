@@ -1,0 +1,329 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-customizations-wip-report",
+  "reportId": "apollo-1476876806177187106-1794501679981-efwifixm:customizations-wip",
+  "sourceReportId": "apollo-1476876806177187106-1794501679981-efwifixm",
+  "generatedAt": "2026-11-12T16:41:19.981Z",
+  "suggestedFileName": "Artem-Kiselev_12-11-2026_19-41-19_customizations-wip.json",
+  "user": {
+    "id": "1476876806177187106",
+    "name": "Artem Kiselev",
+    "slug": "Artem-Kiselev"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.3.0"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "[W] РБСК РПП",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "Desktop",
+    "pageType": null,
+    "startedAt": "2026-11-12T16:41:13.612Z",
+    "finishedAt": "2026-11-12T16:41:19.981Z",
+    "durationMs": 6369,
+    "selection": [
+      {
+        "nodeId": "186:172814",
+        "name": "Суммы",
+        "nodeType": "FRAME",
+        "path": "Суммы",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 16,
+    "componentCount": 2,
+    "changeCount": 2
+  },
+  "category": {
+    "id": "customizationsWip",
+    "title": "Кастомизации [WIP]",
+    "count": 2,
+    "changeCount": 2,
+    "items": [
+      {
+        "node": {
+          "id": "186:172815",
+          "name": "Row",
+          "type": "INSTANCE",
+          "pageName": "🅰️ Локальные компоненты",
+          "path": "Суммы / Row",
+          "visible": true,
+          "ancestorNodeIds": []
+        },
+        "component": {
+          "type": "component",
+          "name": "Row",
+          "key": "2a3737bd5eb59de0d2e60313b13a5afa92b1df87",
+          "id": null,
+          "library": "Web _ Corp Components",
+          "sourceFile": "web/components/web-corp/Web _ Corp Components -- TableView.json"
+        },
+        "variant": {
+          "type": "component-variant",
+          "name": "Compact=True, Skeleton=False",
+          "key": "2a3737bd5eb59de0d2e60313b13a5afa92b1df87",
+          "id": null,
+          "library": "Web _ Corp Components",
+          "sourceFile": "web/components/web-corp/Web _ Corp Components -- TableView.json"
+        },
+        "comparisonIssues": [],
+        "updateReasons": [],
+        "libraryFreshness": {
+          "status": "current",
+          "reason": "remote-component-current",
+          "componentKey": "2a3737bd5eb59de0d2e60313b13a5afa92b1df87",
+          "currentComponentId": "185:155206",
+          "latestComponentId": "185:155206"
+        },
+        "localComponentOwner": null,
+        "changes": [
+          {
+            "node": {
+              "id": "I186:172815;60742:464278;60742:460388",
+              "name": "Title",
+              "type": null,
+              "pageName": "🅰️ Локальные компоненты",
+              "path": "Compact=True, Skeleton=False / Cells / Column / Content / Title",
+              "visible": true
+            },
+            "kind": "other",
+            "property": "variant.Presets",
+            "message": "presets: Text → Amount",
+            "reference": {
+              "value": "Text",
+              "resource": null,
+              "binding": null
+            },
+            "actual": {
+              "value": "Amount",
+              "resource": null,
+              "binding": null
+            },
+            "bindingStatus": null,
+            "variableMode": null,
+            "signature": "component:2a3737bd5eb59de0d2e60313b13a5afa92b1df87:other:variant.Presets:Text->Amount",
+            "context": {
+              "actualComponentKey": "d2127f583b3ad07b9865d18946415cbd8eecdeae",
+              "referenceComponentKey": "235feae16071c429dd309269fa31e271488ba20a",
+              "referenceOrigin": "host",
+              "actualNestedOwnerComponentKey": "545628e3f5f442a7e459754afd11d0eccd3ff9f1",
+              "actualNestedOwnerPath": "Compact=True, Skeleton=False / Cells / Column",
+              "actualNestedOwnerRelativePath": "Content / Title",
+              "nestedOwnerComponentKey": "235feae16071c429dd309269fa31e271488ba20a",
+              "nestedOwnerComponentRole": null,
+              "nestedOwnerPath": "Compact=True, Skeleton=False / Cells / Column / Content / Title",
+              "nestedOwnerRelativePath": "",
+              "actualVariantProperties": {
+                "Presets": "Amount"
+              },
+              "referenceVariantProperties": {
+                "Presets": "Text"
+              },
+              "surfaceContext": null
+            },
+            "componentRules": [
+              {
+                "ruleId": "component:web-corp.table-view.component-properties-are-first-class",
+                "severity": "info",
+                "source": "component-contract",
+                "ruleKind": null,
+                "authority": null,
+                "severityScope": null,
+                "appliesTo": "variant.*",
+                "checkType": "deterministic",
+                "matchKind": "exact_component_rule",
+                "changeScope": null,
+                "ruleText": "Изменения variant/property в этом семействе компонентов являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+                "remediation": null,
+                "numericConstraint": null,
+                "requiredTokenSource": null
+              },
+              {
+                "ruleId": "component:web-corp.table-view.title-subtitle-presets-are-contextual",
+                "severity": "info",
+                "source": "component-contract",
+                "ruleKind": null,
+                "authority": null,
+                "severityScope": null,
+                "appliesTo": "variant.Presets",
+                "checkType": "manual",
+                "matchKind": "exact_component_rule",
+                "changeScope": null,
+                "ruleText": "Дизайнер свободно выбирает предусмотренные presets у Title и Subtitle в зависимости от типа данных.",
+                "remediation": null,
+                "numericConstraint": null,
+                "requiredTokenSource": null
+              }
+            ],
+            "presentation": {
+              "scope": "component-property",
+              "groupTitle": "Параметры компонента",
+              "displayName": null,
+              "priority": 10,
+              "resetAction": "reset-component-properties",
+              "effectiveBaseline": null
+            },
+            "assessment": {
+              "verdict": "expected",
+              "source": "catalog-host",
+              "reasonCode": "matches-selected-nested-context",
+              "ruleId": null,
+              "contractId": null,
+              "constraintId": null,
+              "evidence": null,
+              "message": "Значение задано выбранной конфигурацией вложенного компонента",
+              "remediation": null
+            }
+          }
+        ]
+      },
+      {
+        "node": {
+          "id": "186:172816",
+          "name": "Row",
+          "type": "INSTANCE",
+          "pageName": "🅰️ Локальные компоненты",
+          "path": "Суммы / Row",
+          "visible": true,
+          "ancestorNodeIds": []
+        },
+        "component": {
+          "type": "component",
+          "name": "Row",
+          "key": "2a3737bd5eb59de0d2e60313b13a5afa92b1df87",
+          "id": null,
+          "library": "Web _ Corp Components",
+          "sourceFile": "web/components/web-corp/Web _ Corp Components -- TableView.json"
+        },
+        "variant": {
+          "type": "component-variant",
+          "name": "Compact=True, Skeleton=False",
+          "key": "2a3737bd5eb59de0d2e60313b13a5afa92b1df87",
+          "id": null,
+          "library": "Web _ Corp Components",
+          "sourceFile": "web/components/web-corp/Web _ Corp Components -- TableView.json"
+        },
+        "comparisonIssues": [],
+        "updateReasons": [],
+        "libraryFreshness": {
+          "status": "current",
+          "reason": "remote-component-current",
+          "componentKey": "2a3737bd5eb59de0d2e60313b13a5afa92b1df87",
+          "currentComponentId": "185:155206",
+          "latestComponentId": "185:155206"
+        },
+        "localComponentOwner": null,
+        "changes": [
+          {
+            "node": {
+              "id": "I186:172816;60742:464278;60742:460388",
+              "name": "Title",
+              "type": null,
+              "pageName": "🅰️ Локальные компоненты",
+              "path": "Compact=True, Skeleton=False / Cells / Column / Content / Title",
+              "visible": true
+            },
+            "kind": "other",
+            "property": "variant.Presets",
+            "message": "presets: Text → Amount",
+            "reference": {
+              "value": "Text",
+              "resource": null,
+              "binding": null
+            },
+            "actual": {
+              "value": "Amount",
+              "resource": null,
+              "binding": null
+            },
+            "bindingStatus": null,
+            "variableMode": null,
+            "signature": "component:2a3737bd5eb59de0d2e60313b13a5afa92b1df87:other:variant.Presets:Text->Amount",
+            "context": {
+              "actualComponentKey": "d2127f583b3ad07b9865d18946415cbd8eecdeae",
+              "referenceComponentKey": "235feae16071c429dd309269fa31e271488ba20a",
+              "referenceOrigin": "host",
+              "actualNestedOwnerComponentKey": "545628e3f5f442a7e459754afd11d0eccd3ff9f1",
+              "actualNestedOwnerPath": "Compact=True, Skeleton=False / Cells / Column",
+              "actualNestedOwnerRelativePath": "Content / Title",
+              "nestedOwnerComponentKey": "235feae16071c429dd309269fa31e271488ba20a",
+              "nestedOwnerComponentRole": null,
+              "nestedOwnerPath": "Compact=True, Skeleton=False / Cells / Column / Content / Title",
+              "nestedOwnerRelativePath": "",
+              "actualVariantProperties": {
+                "Presets": "Amount"
+              },
+              "referenceVariantProperties": {
+                "Presets": "Text"
+              },
+              "surfaceContext": null
+            },
+            "componentRules": [
+              {
+                "ruleId": "component:web-corp.table-view.component-properties-are-first-class",
+                "severity": "info",
+                "source": "component-contract",
+                "ruleKind": null,
+                "authority": null,
+                "severityScope": null,
+                "appliesTo": "variant.*",
+                "checkType": "deterministic",
+                "matchKind": "exact_component_rule",
+                "changeScope": null,
+                "ruleText": "Изменения variant/property в этом семействе компонентов являются component-property customizations. Показывай их отдельно от производных визуальных изменений layer.",
+                "remediation": null,
+                "numericConstraint": null,
+                "requiredTokenSource": null
+              },
+              {
+                "ruleId": "component:web-corp.table-view.title-subtitle-presets-are-contextual",
+                "severity": "info",
+                "source": "component-contract",
+                "ruleKind": null,
+                "authority": null,
+                "severityScope": null,
+                "appliesTo": "variant.Presets",
+                "checkType": "manual",
+                "matchKind": "exact_component_rule",
+                "changeScope": null,
+                "ruleText": "Дизайнер свободно выбирает предусмотренные presets у Title и Subtitle в зависимости от типа данных.",
+                "remediation": null,
+                "numericConstraint": null,
+                "requiredTokenSource": null
+              }
+            ],
+            "presentation": {
+              "scope": "component-property",
+              "groupTitle": "Параметры компонента",
+              "displayName": null,
+              "priority": 10,
+              "resetAction": "reset-component-properties",
+              "effectiveBaseline": null
+            },
+            "assessment": {
+              "verdict": "expected",
+              "source": "catalog-host",
+              "reasonCode": "matches-selected-nested-context",
+              "ruleId": null,
+              "contractId": null,
+              "constraintId": null,
+              "evidence": null,
+              "message": "Значение задано выбранной конфигурацией вложенного компонента",
+              "remediation": null
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
