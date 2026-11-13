@@ -1,0 +1,1223 @@
+{
+  "schemaVersion": 1,
+  "reportKind": "apollo-agent-report",
+  "reportId": "apollo-1184817422263765019-1794577268601-razmimau:agent",
+  "sourceReportId": "apollo-1184817422263765019-1794577268601-razmimau",
+  "generatedAt": "2026-11-13T13:41:08.601Z",
+  "suggestedFileName": "Vitaliy-Kashtanov_13-11-2026_16-41-08_agent.json",
+  "user": {
+    "id": "1184817422263765019",
+    "name": "Vitaliy Kashtanov",
+    "slug": "Vitaliy-Kashtanov"
+  },
+  "plugin": {
+    "name": "Apollo",
+    "version": "0.3.0"
+  },
+  "figma": {
+    "fileKey": null,
+    "fileName": "[М] Реестры платежей",
+    "editorType": "figma"
+  },
+  "scan": {
+    "channel": "iOS",
+    "pageType": "other",
+    "startedAt": "2026-11-13T13:40:56.398Z",
+    "finishedAt": "2026-11-13T13:41:08.601Z",
+    "durationMs": 12203,
+    "selection": [
+      {
+        "nodeId": "18756:283399",
+        "name": "Черновики",
+        "nodeType": "FRAME",
+        "path": "iOS_Исправление ошибок / Черновики",
+        "componentKey": null
+      }
+    ],
+    "settings": {
+      "shellAuditEnabled": false,
+      "experimentalContractV2Enabled": false
+    }
+  },
+  "summary": {
+    "scannedComponents": 90,
+    "problemOccurrenceCount": 25,
+    "categoryCounts": {
+      "deprecatedComponents": 0,
+      "deprecatedStyles": 0,
+      "customStyles": 21,
+      "updates": 0,
+      "customizations": 4,
+      "localComponents": 0,
+      "detachedComponents": 0,
+      "presets": 0,
+      "technicalComponents": 0,
+      "currentComponents": 71,
+      "wrongChannel": 0,
+      "themization": 0
+    },
+    "includedFindingCount": 25,
+    "omittedCurrentComponentCount": 71
+  },
+  "guidance": {
+    "purpose": "Use this compact Apollo audit report to compare deterministic audit facts with design-system patterns and produce prioritized recommendations.",
+    "expectedOutput": "Return a table-like recommendation list with priority, affected area, evidence, rationale, and suggested next action.",
+    "notes": [
+      "Apollo facts are deterministic audit output; do not reinterpret expected/allowed customization changes as problems.",
+      "currentComponents are intentionally omitted from findings and represented only as coverage counts.",
+      "Variant/state changes with properties starting with variant. are first-class evidence and should be surfaced explicitly before derived visual changes.",
+      "Values of properties starting with variant. are component state labels, not user-facing copy. Do not apply copywriting/status wording patterns to them unless an exact rule targets the same variant property and value change.",
+      "Status model wording rules apply to visible text/content fields, not to component variant labels such as variant.Type=Processing.",
+      "When referenceValue is null, phrase the change as an observed state without a reference baseline rather than as a confirmed pattern violation.",
+      "Do not infer additional pattern violations from a nearby pattern unless the change has assessment.ruleId or an exact matched rule for that property.",
+      "Screen-, composition-, and package-level instructions from componentContexts are contextual constraints. Do not attach them to an atomic change unless that change contains the exact component rule or assessment.ruleId.",
+      "For customization findings, use change.node as the affected nested layer/component; finding.node is the audited root selection.",
+      "For customization findings, each item in finding.changes is an independent recommendation candidate. If one finding contains several changes, evaluate every change separately instead of selecting only the first or most visible change.",
+      "Every change with assessment.verdict=violation must appear in the main recommendation table as its own row, even when the same finding also contains another pattern violation.",
+      "Every change with a componentRules entry where ruleKind=design-rule, authority.status=active, severity=error, and matchKind=exact_component_rule must appear in the main recommendation table as its own row. Use the component contract ruleId as the evidence when no pattern link exists.",
+      "If the recommendation table is shortened, never omit high-priority exact pattern violations or component-contract design-rule violations.",
+      "When rendering values, use change.referenceValue and change.actualValue as the human-readable values. Raw technical ids are preserved separately in referenceRawValue and actualRawValue for evidence only.",
+      "Never infer that a numeric, color, radius, opacity, or layout value is manual from referenceValue != actualValue alone. Use change.bindingStatus and actualBinding as the binding evidence.",
+      "bindingStatus=unbound confirms a missing actual variable binding. bindingStatus=different-binding confirms a variable substitution. bindingStatus=unresolved-binding or missing-reference-binding requires a manual check and must not be described as a confirmed manual override.",
+      "A bindingStatus=unbound finding remains a violation even when the current raw value numerically matches the reference or a valid responsive mode. Describe it as a detached variable, not as spacing from another mode.",
+      "When actualBinding names a collection and resolved mode, report that variable/mode evidence. A value produced by the same variable in another mode is mode context, not a manual layer override.",
+      "change.context.surfaceContext is deterministic evidence about the nearest resolvable containing surface. Use its kind and tokenName only when an exact contextual component rule targets the same variant property; kind=unknown does not confirm any surface requirement.",
+      "Do not invent usage rationale, action examples, or allowed scenarios that are not present in this report or in an exact pattern source quote.",
+      "If assessment.ruleId is null, do not write \"the pattern confirms\" unless an external pattern lookup returned an exact rule for the same property.",
+      "If a pattern source states a prohibition, do not rewrite it as conditional permission.",
+      "When exact pattern context is available, include the pattern name and link in the recommendation table.",
+      "Pattern examples and anti-examples are not rules; treat them as contextual_example unless an explicit rule text covers the same property/change.",
+      "You may raise severity only when pattern lookup returns match_kind=exact_rule for the same property/change and the exact rule has severity=error or an explicit prohibition in the source quote.",
+      "You may also raise severity when change.componentRules contains a component-contract design-rule with authority.status=active, severity=error, and matchKind=exact_component_rule for the same property/change. Missing, draft, or malformed authority never confirms a violation.",
+      "Do not raise severity for change.componentRules with severity=info; mention them as classification/context notes for the same change instead of treating them as violations.",
+      "Do not omit a reported customization only because all matched componentRules are info-level. Surface it as an informational explanation, a manual-check item, or merge it explicitly with a related violation.",
+      "If assessment.ruleId is null but change.componentRules contains matched info rules, do not say there is no context; say the component rule explains classification but does not confirm a violation.",
+      "When pattern lookup returns match_kind=no_rule or found=false, do not use pattern-agent rationale as a rule; still provide an Apollo-based manual-check recommendation without claiming pattern confirmation.",
+      "The presets category is informational. Preset usage is allowed by default and must not be reported as a violation unless there is a separate customization finding or exact rule for the changed preset property.",
+      "Do not recommend replacing preset components with base components solely because the component appears in the presets category.",
+      "Use node.id and node.path as evidence anchors for manual follow-up in Figma."
+    ]
+  },
+  "categorySummaries": {
+    "deprecatedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "deprecatedStyles": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customStyles": {
+      "totalCount": 21,
+      "includedCount": 21,
+      "severityHint": "medium"
+    },
+    "updates": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "medium"
+    },
+    "customizations": {
+      "totalCount": 4,
+      "includedCount": 4,
+      "severityHint": "medium"
+    },
+    "localComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "detachedComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "presets": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "technicalComponents": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "low"
+    },
+    "wrongChannel": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    },
+    "themization": {
+      "totalCount": 0,
+      "includedCount": 0,
+      "severityHint": "high"
+    }
+  },
+  "findings": [
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I18756:283658;10860:15723;86776:219",
+        "name": "Time",
+        "type": "TEXT",
+        "pageName": "↳ Редактирование ошибок в платежах",
+        "path": "iOS_Исправление ошибок / Черновики / Header / (n)NavBar / Default / Item_Statable / (n)StatusBar / Time",
+        "visible": true
+      },
+      "style": {
+        "name": "17/22 px · Semibold · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I18756:283658;10860:15723;86776:183",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "↳ Редактирование ошибок в платежах",
+        "path": "iOS_Исправление ошибок / Черновики / Header / (n)NavBar / Default / Item_Statable / (n)StatusBar / RightContentGroup / Icon / Cellular Connection / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I18756:283658;10860:15723;86776:184",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "↳ Редактирование ошибок в платежах",
+        "path": "iOS_Исправление ошибок / Черновики / Header / (n)NavBar / Default / Item_Statable / (n)StatusBar / RightContentGroup / Icon / Cellular Connection / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I18756:283658;10860:15723;86776:185",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "↳ Редактирование ошибок в платежах",
+        "path": "iOS_Исправление ошибок / Черновики / Header / (n)NavBar / Default / Item_Statable / (n)StatusBar / RightContentGroup / Icon / Cellular Connection / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I18756:283658;10860:15723;86776:186",
+        "name": "Vector",
+        "type": "VECTOR",
+        "pageName": "↳ Редактирование ошибок в платежах",
+        "path": "iOS_Исправление ошибок / Черновики / Header / (n)NavBar / Default / Item_Statable / (n)StatusBar / RightContentGroup / Icon / Cellular Connection / Vector",
+        "visible": true
+      },
+      "style": {
+        "name": "Raw fill",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I18756:283658;10860:15726",
+        "name": "Title",
+        "type": "TEXT",
+        "pageName": "↳ Редактирование ошибок в платежах",
+        "path": "iOS_Исправление ошибок / Черновики / Header / (n)NavBar / Default / Item_Statable / NavBar / Header / Title",
+        "visible": true
+      },
+      "style": {
+        "name": "17/22 px · Medium · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I18756:283658;10860:15732",
+        "name": "Glass Effect",
+        "type": "FRAME",
+        "pageName": "↳ Редактирование ошибок в платежах",
+        "path": "iOS_Исправление ошибок / Черновики / Header / (n)NavBar / Default / Item_Statable / NavBar / BackButton / Glass Effect",
+        "visible": true
+      },
+      "style": {
+        "name": "GLASS",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:GLASS"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I18756:283658;10860:15732",
+        "name": "Glass Effect",
+        "type": "FRAME",
+        "pageName": "↳ Редактирование ошибок в платежах",
+        "path": "iOS_Исправление ошибок / Черновики / Header / (n)NavBar / Default / Item_Statable / NavBar / BackButton / Glass Effect",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Inner shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Inner shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I18756:283658;10860:15732",
+        "name": "Glass Effect",
+        "type": "FRAME",
+        "pageName": "↳ Редактирование ошибок в платежах",
+        "path": "iOS_Исправление ошибок / Черновики / Header / (n)NavBar / Default / Item_Statable / NavBar / BackButton / Glass Effect",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Inner shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Inner shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I18756:283658;10860:15732",
+        "name": "Glass Effect",
+        "type": "FRAME",
+        "pageName": "↳ Редактирование ошибок в платежах",
+        "path": "iOS_Исправление ошибок / Черновики / Header / (n)NavBar / Default / Item_Statable / NavBar / BackButton / Glass Effect",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Inner shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Inner shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I18756:283658;10860:15733",
+        "name": "Fill + Shadow",
+        "type": "FRAME",
+        "pageName": "↳ Редактирование ошибок в платежах",
+        "path": "iOS_Исправление ошибок / Черновики / Header / (n)NavBar / Default / Item_Statable / NavBar / BackButton / Fill + Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "776333138a10e0b57799736779fd8ba57e56df1e",
+        "key": "776333138a10e0b57799736779fd8ba57e56df1e",
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "fill"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I18756:283658;10860:15733",
+        "name": "Fill + Shadow",
+        "type": "FRAME",
+        "pageName": "↳ Редактирование ошибок в платежах",
+        "path": "iOS_Исправление ошибок / Черновики / Header / (n)NavBar / Default / Item_Statable / NavBar / BackButton / Fill + Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I18756:283658;10860:15733",
+        "name": "Fill + Shadow",
+        "type": "FRAME",
+        "pageName": "↳ Редактирование ошибок в платежах",
+        "path": "iOS_Исправление ошибок / Черновики / Header / (n)NavBar / Default / Item_Statable / NavBar / BackButton / Fill + Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I18756:283658;10860:15733",
+        "name": "Fill + Shadow",
+        "type": "FRAME",
+        "pageName": "↳ Редактирование ошибок в платежах",
+        "path": "iOS_Исправление ошибок / Черновики / Header / (n)NavBar / Default / Item_Statable / NavBar / BackButton / Fill + Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I18756:283658;10860:15733",
+        "name": "Fill + Shadow",
+        "type": "FRAME",
+        "pageName": "↳ Редактирование ошибок в платежах",
+        "path": "iOS_Исправление ошибок / Черновики / Header / (n)NavBar / Default / Item_Statable / NavBar / BackButton / Fill + Shadow",
+        "visible": true
+      },
+      "style": {
+        "name": "Тень (Drop shadow)",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "effect:Тень (Drop shadow)"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I18756:283403;114733:49214;114733:50065;1055:72993;2151:74587;723:59558",
+        "name": "title",
+        "type": "TEXT",
+        "pageName": "↳ Редактирование ошибок в платежах",
+        "path": "iOS_Исправление ошибок / Черновики / Content / GenericWrapper / DataView / VerticalPaddingsGroup / ContentGroup / MainContentView / VerticalPaddingsGroup / ContentGroup / MainContentView / VerticalPaddingsLayoutGroup / DataContentContentGroup / FirstLine / Title / VerticalPaddingsGroup / ContentGroup / Title / title",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I18756:283403;114733:49214;114733:50065;1055:72998;15186:20337;723:59558",
+        "name": "title",
+        "type": "TEXT",
+        "pageName": "↳ Редактирование ошибок в платежах",
+        "path": "iOS_Исправление ошибок / Черновики / Content / GenericWrapper / DataView / VerticalPaddingsGroup / ContentGroup / MainContentView / VerticalPaddingsGroup / ContentGroup / MainContentView / VerticalPaddingsLayoutGroup / DataContentContentGroup / SecondLine / Subtitle / VerticalPaddingsGroup / ContentGroup / Title / title",
+        "visible": true
+      },
+      "style": {
+        "name": "15/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I18756:283403;114733:49216;145:49201",
+        "name": "value",
+        "type": "TEXT",
+        "pageName": "↳ Редактирование ошибок в платежах",
+        "path": "iOS_Исправление ошибок / Черновики / Content / GenericWrapper / DataView / VerticalPaddingsGroup / ContentGroup / AddonContentView / ContentGroup / value",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Bold · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I18756:283404;114733:49214;114733:50065;1055:72993;2151:74587;723:59558",
+        "name": "title",
+        "type": "TEXT",
+        "pageName": "↳ Редактирование ошибок в платежах",
+        "path": "iOS_Исправление ошибок / Черновики / Content / GenericWrapper / DataView / VerticalPaddingsGroup / ContentGroup / MainContentView / VerticalPaddingsGroup / ContentGroup / MainContentView / VerticalPaddingsLayoutGroup / DataContentContentGroup / FirstLine / Title / VerticalPaddingsGroup / ContentGroup / Title / title",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I18756:283404;114733:49214;114733:50065;1055:72998;15186:20337;723:59558",
+        "name": "title",
+        "type": "TEXT",
+        "pageName": "↳ Редактирование ошибок в платежах",
+        "path": "iOS_Исправление ошибок / Черновики / Content / GenericWrapper / DataView / VerticalPaddingsGroup / ContentGroup / MainContentView / VerticalPaddingsGroup / ContentGroup / MainContentView / VerticalPaddingsLayoutGroup / DataContentContentGroup / SecondLine / Subtitle / VerticalPaddingsGroup / ContentGroup / Title / title",
+        "visible": true
+      },
+      "style": {
+        "name": "15/20 px · Regular · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customStyles",
+      "severityHint": "medium",
+      "title": "Кастомный стиль или raw-значение",
+      "node": {
+        "id": "I18756:283404;114733:49216;145:49201",
+        "name": "value",
+        "type": "TEXT",
+        "pageName": "↳ Редактирование ошибок в платежах",
+        "path": "iOS_Исправление ошибок / Черновики / Content / GenericWrapper / DataView / VerticalPaddingsGroup / ContentGroup / AddonContentView / ContentGroup / value",
+        "visible": true
+      },
+      "style": {
+        "name": "17/24 px · Bold · Proportional numbers",
+        "key": null,
+        "library": null,
+        "sourceFile": null
+      },
+      "usage": "typography"
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I18756:283403;114733:49214;114733:50063;173:57987",
+        "name": "rub",
+        "type": "INSTANCE",
+        "pageName": "↳ Редактирование ошибок в платежах",
+        "path": "iOS_Исправление ошибок / Черновики / Content / GenericWrapper / DataView / VerticalPaddingsGroup / ContentGroup / MainContentView / VerticalPaddingsGroup / ContentGroup / AddonContentView / IconViewContentGroup / ImageView / rub",
+        "visible": true,
+        "ancestorNodeIds": [
+          "18756:283399",
+          "18756:283402",
+          "18756:283403",
+          "I18756:283403;114733:49211",
+          "I18756:283403;114733:49213",
+          "I18756:283403;114733:49214",
+          "I18756:283403;114733:49214;114733:50060",
+          "I18756:283403;114733:49214;114733:50062",
+          "I18756:283403;114733:49214;114733:50063",
+          "I18756:283403;114733:49214;114733:50063;173:57978",
+          "I18756:283403;114733:49214;114733:50063;173:57986"
+        ]
+      },
+      "component": {
+        "name": "rub",
+        "key": "0315454d4d56869a14389614f373be53af3294df",
+        "library": "Icons",
+        "sourceFile": "icons/Icons -- ios.json"
+      },
+      "variant": {
+        "name": "Size=m",
+        "key": "0315454d4d56869a14389614f373be53af3294df"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I18756:283403;114733:49214;114733:50063;173:57987;13704:1391",
+            "name": "₽",
+            "type": null,
+            "pageName": "↳ Редактирование ошибок в платежах",
+            "path": "Size=m / ₽",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #3EA2FF → neutral/1300",
+          "referenceValue": "#3EA2FF",
+          "actualValue": "neutral/1300",
+          "referenceRawValue": "#3EA2FF",
+          "actualRawValue": "neutral/1300",
+          "referenceDisplayValue": "#3EA2FF",
+          "actualDisplayValue": "neutral/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral/1300",
+            "key": "d8fdd2d33bde75b054a497055e53d61a7553c3e3",
+            "library": "Interface Dynamic",
+            "sourceFile": "201 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:d8fdd2d33bde75b054a497055e53d61a7553c3e3/3541:169",
+            "key": "d8fdd2d33bde75b054a497055e53d61a7553c3e3",
+            "name": "neutral/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "0315454d4d56869a14389614f373be53af3294df",
+            "actualNestedOwnerPath": "Size=m",
+            "actualNestedOwnerRelativePath": "₽",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "m"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "18756:283399",
+              "nodeName": "Черновики",
+              "tokenId": "VariableID:14ac29210fc546f67acfa8e0dfd252c210d0c78b/3541:157",
+              "tokenName": "base-bg/primary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I18756:283403;114733:49216",
+        "name": "AddonContentView",
+        "type": "INSTANCE",
+        "pageName": "↳ Редактирование ошибок в платежах",
+        "path": "iOS_Исправление ошибок / Черновики / Content / GenericWrapper / DataView / VerticalPaddingsGroup / ContentGroup / AddonContentView",
+        "visible": true,
+        "ancestorNodeIds": [
+          "18756:283399",
+          "18756:283402",
+          "18756:283403",
+          "I18756:283403;114733:49211",
+          "I18756:283403;114733:49213"
+        ]
+      },
+      "component": {
+        "name": "IndicatorView (🍏🟦 13.10)",
+        "key": "adf6c946f503731340b1f90e67abb9f818cd571b",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- IndicatorView.json"
+      },
+      "variant": {
+        "name": "Size=Large, HasStroke=False",
+        "key": "adf6c946f503731340b1f90e67abb9f818cd571b"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I18756:283403;114733:49216",
+            "name": "AddonContentView",
+            "type": null,
+            "pageName": "↳ Редактирование ошибок в платежах",
+            "path": "Size=Large, HasStroke=False",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Size",
+          "message": "size: Large → m [24]",
+          "referenceValue": "Large",
+          "actualValue": "m [24]",
+          "referenceRawValue": "Large",
+          "actualRawValue": "m [24]",
+          "referenceDisplayValue": "Large",
+          "actualDisplayValue": "m [24]",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "adf6c946f503731340b1f90e67abb9f818cd571b",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "m [24]",
+              "hasStroke": "false"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "18756:283399",
+              "nodeName": "Черновики",
+              "tokenId": "VariableID:14ac29210fc546f67acfa8e0dfd252c210d0c78b/3541:157",
+              "tokenName": "base-bg/primary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I18756:283403;114733:49216;145:49172",
+            "name": "ContentGroup",
+            "type": null,
+            "pageName": "↳ Редактирование ошибок в платежах",
+            "path": "Size=Large, HasStroke=False / ContentGroup",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: status/negative → accent/primary",
+          "referenceValue": "status/negative",
+          "actualValue": "accent/primary",
+          "referenceRawValue": "status/negative",
+          "actualRawValue": "accent/primary",
+          "referenceDisplayValue": "status/negative",
+          "actualDisplayValue": "accent/primary",
+          "referenceResource": {
+            "name": "status/negative",
+            "key": "c00af0030dca573ab6bfdc1a6c47bc162e36090d",
+            "library": "Interface Dynamic",
+            "sourceFile": "201 :: Interface Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "accent/primary",
+            "key": "15bff314b7c8001f28f69bab9b6234c4e0050b43",
+            "library": "Interface Dynamic",
+            "sourceFile": "201 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": {
+            "id": "VariableID:c00af0030dca573ab6bfdc1a6c47bc162e36090d/3541:204",
+            "key": "c00af0030dca573ab6bfdc1a6c47bc162e36090d",
+            "name": "status/negative",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:15bff314b7c8001f28f69bab9b6234c4e0050b43/3541:203",
+            "key": "15bff314b7c8001f28f69bab9b6234c4e0050b43",
+            "name": "accent/primary",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "adf6c946f503731340b1f90e67abb9f818cd571b",
+            "actualNestedOwnerPath": "Size=Large, HasStroke=False",
+            "actualNestedOwnerRelativePath": "ContentGroup",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "m [24]",
+              "hasStroke": "false"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "18756:283399",
+              "nodeName": "Черновики",
+              "tokenId": "VariableID:14ac29210fc546f67acfa8e0dfd252c210d0c78b/3541:157",
+              "tokenName": "base-bg/primary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I18756:283404;114733:49214;114733:50063;173:57987",
+        "name": "document-stack",
+        "type": "INSTANCE",
+        "pageName": "↳ Редактирование ошибок в платежах",
+        "path": "iOS_Исправление ошибок / Черновики / Content / GenericWrapper / DataView / VerticalPaddingsGroup / ContentGroup / MainContentView / VerticalPaddingsGroup / ContentGroup / AddonContentView / IconViewContentGroup / ImageView / document-stack",
+        "visible": true,
+        "ancestorNodeIds": [
+          "18756:283399",
+          "18756:283402",
+          "18756:283404",
+          "I18756:283404;114733:49211",
+          "I18756:283404;114733:49213",
+          "I18756:283404;114733:49214",
+          "I18756:283404;114733:49214;114733:50060",
+          "I18756:283404;114733:49214;114733:50062",
+          "I18756:283404;114733:49214;114733:50063",
+          "I18756:283404;114733:49214;114733:50063;173:57978",
+          "I18756:283404;114733:49214;114733:50063;173:57986"
+        ]
+      },
+      "component": {
+        "name": "document-stack",
+        "key": "7cf426983ae39bc1d3326c2318fe8321fade8573",
+        "library": "Icons",
+        "sourceFile": "icons/Icons -- glyph-26.json"
+      },
+      "variant": {
+        "name": "Size=24, Style=Line, Color=False",
+        "key": "7cf426983ae39bc1d3326c2318fe8321fade8573"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I18756:283404;114733:49214;114733:50063;173:57987;148606:15387",
+            "name": "icon",
+            "type": null,
+            "pageName": "↳ Редактирование ошибок в платежах",
+            "path": "Size=24, Style=Line, Color=False / icon",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: #9032EE → neutral/1300",
+          "referenceValue": "#9032EE",
+          "actualValue": "neutral/1300",
+          "referenceRawValue": "#9032EE",
+          "actualRawValue": "neutral/1300",
+          "referenceDisplayValue": "#9032EE",
+          "actualDisplayValue": "neutral/1300",
+          "referenceResource": null,
+          "actualResource": {
+            "name": "neutral/1300",
+            "key": "d8fdd2d33bde75b054a497055e53d61a7553c3e3",
+            "library": "Interface Dynamic",
+            "sourceFile": "201 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": null,
+          "actualBinding": {
+            "id": "VariableID:d8fdd2d33bde75b054a497055e53d61a7553c3e3/3541:169",
+            "key": "d8fdd2d33bde75b054a497055e53d61a7553c3e3",
+            "name": "neutral/1300",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "missing-reference-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "7cf426983ae39bc1d3326c2318fe8321fade8573",
+            "actualNestedOwnerPath": "Size=24, Style=Line, Color=False",
+            "actualNestedOwnerRelativePath": "icon",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "24",
+              "Style": "Line",
+              "Color": "False"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "18756:283399",
+              "nodeName": "Черновики",
+              "tokenId": "VariableID:14ac29210fc546f67acfa8e0dfd252c210d0c78b/3541:157",
+              "tokenName": "base-bg/primary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    },
+    {
+      "category": "customizations",
+      "severityHint": "medium",
+      "title": "Неподтверждённая кастомизация",
+      "node": {
+        "id": "I18756:283404;114733:49216",
+        "name": "AddonContentView",
+        "type": "INSTANCE",
+        "pageName": "↳ Редактирование ошибок в платежах",
+        "path": "iOS_Исправление ошибок / Черновики / Content / GenericWrapper / DataView / VerticalPaddingsGroup / ContentGroup / AddonContentView",
+        "visible": true,
+        "ancestorNodeIds": [
+          "18756:283399",
+          "18756:283402",
+          "18756:283404",
+          "I18756:283404;114733:49211",
+          "I18756:283404;114733:49213"
+        ]
+      },
+      "component": {
+        "name": "IndicatorView (🍏🟦 13.10)",
+        "key": "adf6c946f503731340b1f90e67abb9f818cd571b",
+        "library": "iOS _ Views",
+        "sourceFile": "abm/ios/Views/iOS _ Views -- IndicatorView.json"
+      },
+      "variant": {
+        "name": "Size=Large, HasStroke=False",
+        "key": "adf6c946f503731340b1f90e67abb9f818cd571b"
+      },
+      "comparisonIssues": [],
+      "changes": [
+        {
+          "node": {
+            "id": "I18756:283404;114733:49216",
+            "name": "AddonContentView",
+            "type": null,
+            "pageName": "↳ Редактирование ошибок в платежах",
+            "path": "Size=Large, HasStroke=False",
+            "visible": true
+          },
+          "kind": "other",
+          "property": "variant.Size",
+          "message": "size: Large → m [24]",
+          "referenceValue": "Large",
+          "actualValue": "m [24]",
+          "referenceRawValue": "Large",
+          "actualRawValue": "m [24]",
+          "referenceDisplayValue": "Large",
+          "actualDisplayValue": "m [24]",
+          "referenceResource": null,
+          "actualResource": null,
+          "referenceBinding": null,
+          "actualBinding": null,
+          "bindingStatus": null,
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": "adf6c946f503731340b1f90e67abb9f818cd571b",
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": null,
+            "actualNestedOwnerPath": null,
+            "actualNestedOwnerRelativePath": null,
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "m [24]",
+              "hasStroke": "false"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "18756:283399",
+              "nodeName": "Черновики",
+              "tokenId": "VariableID:14ac29210fc546f67acfa8e0dfd252c210d0c78b/3541:157",
+              "tokenName": "base-bg/primary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        },
+        {
+          "node": {
+            "id": "I18756:283404;114733:49216;145:49172",
+            "name": "ContentGroup",
+            "type": null,
+            "pageName": "↳ Редактирование ошибок в платежах",
+            "path": "Size=Large, HasStroke=False / ContentGroup",
+            "visible": true
+          },
+          "kind": "paint",
+          "property": "fill",
+          "message": "заливка: status/negative → accent/primary",
+          "referenceValue": "status/negative",
+          "actualValue": "accent/primary",
+          "referenceRawValue": "status/negative",
+          "actualRawValue": "accent/primary",
+          "referenceDisplayValue": "status/negative",
+          "actualDisplayValue": "accent/primary",
+          "referenceResource": {
+            "name": "status/negative",
+            "key": "c00af0030dca573ab6bfdc1a6c47bc162e36090d",
+            "library": "Interface Dynamic",
+            "sourceFile": "201 :: Interface Dynamic Colors"
+          },
+          "actualResource": {
+            "name": "accent/primary",
+            "key": "15bff314b7c8001f28f69bab9b6234c4e0050b43",
+            "library": "Interface Dynamic",
+            "sourceFile": "201 :: Interface Dynamic Colors"
+          },
+          "referenceBinding": {
+            "id": "VariableID:c00af0030dca573ab6bfdc1a6c47bc162e36090d/3541:204",
+            "key": "c00af0030dca573ab6bfdc1a6c47bc162e36090d",
+            "name": "status/negative",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "actualBinding": {
+            "id": "VariableID:15bff314b7c8001f28f69bab9b6234c4e0050b43/3541:203",
+            "key": "15bff314b7c8001f28f69bab9b6234c4e0050b43",
+            "name": "accent/primary",
+            "collectionId": "VariableCollectionId:868:9636",
+            "collectionName": "Interface Dynamic",
+            "resolvedModeId": null,
+            "resolvedModeName": null,
+            "explicitModeId": null,
+            "explicitModeName": null,
+            "modeSource": "unknown",
+            "modeOwnerNodeId": null,
+            "modeOwnerName": null,
+            "modeOwnerPath": null
+          },
+          "bindingStatus": "different-binding",
+          "variableMode": null,
+          "context": {
+            "actualComponentKey": null,
+            "referenceComponentKey": null,
+            "referenceOrigin": "host",
+            "actualNestedOwnerComponentKey": "adf6c946f503731340b1f90e67abb9f818cd571b",
+            "actualNestedOwnerPath": "Size=Large, HasStroke=False",
+            "actualNestedOwnerRelativePath": "ContentGroup",
+            "nestedOwnerComponentKey": null,
+            "nestedOwnerComponentRole": null,
+            "nestedOwnerPath": null,
+            "nestedOwnerRelativePath": null,
+            "actualVariantProperties": {
+              "Size": "m [24]",
+              "hasStroke": "false"
+            },
+            "referenceVariantProperties": null,
+            "surfaceContext": {
+              "kind": "white",
+              "source": "ancestor-fill-color",
+              "nodeId": "18756:283399",
+              "nodeName": "Черновики",
+              "tokenId": "VariableID:14ac29210fc546f67acfa8e0dfd252c210d0c78b/3541:157",
+              "tokenName": "base-bg/primary",
+              "color": "#FFFFFF"
+            }
+          },
+          "componentRules": [],
+          "presentation": null,
+          "assessment": {
+            "verdict": "unknown",
+            "source": "standalone-reference",
+            "reasonCode": "no-contextual-expectation",
+            "ruleId": null,
+            "contractId": null,
+            "constraintId": null,
+            "evidence": null,
+            "message": "Контекстное правило не найдено",
+            "remediation": null
+          }
+        }
+      ]
+    }
+  ],
+  "componentContexts": []
+}
